@@ -8,7 +8,7 @@ import torch
 from .index import inferred_as_of, key_vector
 from .io import atomic_bytes
 
-METHODS = ('transmem_streaming', 'version_index', 'independent', 'vcrm', 'text_log')
+METHODS = ('icae_independent', 'icae_text', 'transmem_streaming', 'version_index', 'independent', 'vcrm', 'text_log')
 MAGIC = b'VCRM001\n'
 
 
@@ -51,10 +51,17 @@ class MemoryStore:
         if current and event['time'] < current['time']:
             raise ValueError('Events must be ingested in chronological order')
         entry = {'id': event['id'], 'state': state, 'time': event['time'], 'key': key}
-        if self.method == 'text_log':
+        if any(e['id'] == event['id'] for e in self.entries):
+            raise ValueError('Duplicate memory entry id')
+        if self.method in ('text_log', 'icae_text'):
             entry.update(kind='text', payload=event['text'].encode())
         else:
-            if tuple(bundle.shape) != self.shape or not torch.isfinite(bundle).all():
+            valid_shape = tuple(bundle.shape) == self.shape
+            if self.method == 'icae_independent':
+                valid_shape = (bundle.ndim == 2 and len(self.shape) == 2 and
+                               bundle.shape[1] == self.shape[1] and bundle.shape[0] > 0 and
+                               bundle.shape[0] % self.shape[0] == 0)
+            if not valid_shape or not torch.isfinite(bundle).all():
                 raise ValueError('Invalid memory feature shape or non-finite features')
             full = bundle.detach().float().cpu()
             if self.method in ('independent', 'vcrm') and current is not None:
@@ -80,8 +87,11 @@ class MemoryStore:
 
     def select(self, query, slot_limit):
         key = key_vector(query['question'], self.key_dimensions)
-        as_of = inferred_as_of(query) if self.method != 'transmem_streaming' else None
+        as_of = (query.get('as_of') or query.get('time')) if self.method.startswith('icae_') else (
+            inferred_as_of(query) if self.method != 'transmem_streaming' else None)
         eligible = [e for e in self.entries if not as_of or e['time'] <= as_of]
+        if query.get('state_key'):
+            eligible = [e for e in eligible if e['state'] == query['state_key']]
         if self.method != 'transmem_streaming':
             # For a past-version query select the last observation not later than the requested time.
             latest = {}
@@ -92,7 +102,7 @@ class MemoryStore:
         ranked = sorted(eligible, key=lambda e: (float(key @ e['key']), e['time'], e['id']), reverse=True)
         selected, slots = [], 0
         for entry in ranked:
-            n = self.shape[1]
+            n = 0 if entry['kind'] == 'text' else int(entry['payload'].shape[-2])
             if slots + n > slot_limit:
                 break
             selected.append(entry)
@@ -100,11 +110,12 @@ class MemoryStore:
         return selected
 
     def bundle(self, selected):
-        return torch.cat([self.decode(e) for e in selected], dim=1) if selected else None
+        return torch.cat([self.decode(e) for e in selected], dim=-2) if selected else None
 
     def retrieval_audit(self, query, selected):
         key = key_vector(query['question'], self.key_dimensions)
-        as_of = inferred_as_of(query) if self.method != 'transmem_streaming' else None
+        as_of = (query.get('as_of') or query.get('time')) if self.method.startswith('icae_') else (
+            inferred_as_of(query) if self.method != 'transmem_streaming' else None)
         chosen = {e['id'] for e in selected}
         return {'as_of': as_of, 'candidates': [
             {'id': e['id'], 'time': e['time'], 'similarity': float(key @ e['key']),
@@ -159,7 +170,7 @@ class MemoryStore:
 
     def accounting(self):
         payload = sum(len(e['payload']) if isinstance(e['payload'], bytes) else e['payload'].nbytes for e in self.entries)
-        keys = sum(e['key'].nbytes for e in self.entries)
+        keys = sum(e['key'].astype('<f2').nbytes for e in self.entries)
         total = len(self.serialize())
         return {'memory_bytes': payload, 'index_key_bytes': keys,
                 'metadata_and_format_bytes': total - payload - keys, 'total_bytes': total,

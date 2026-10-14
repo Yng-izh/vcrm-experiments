@@ -8,4 +8,9 @@ runs/
 checkpoints/
 debug_checkpoints/
 *.source.json
-*.pyc
+models/
+download_manifest.json
+environment.json
+source_data_manifest.json
+icae_parity.json
+._*

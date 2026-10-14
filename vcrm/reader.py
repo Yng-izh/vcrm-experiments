@@ -1,172 +1,213 @@
+"""ICAE v2 encoder and adapter-disabled, frozen Mistral decoder."""
 import contextlib
-import sys
+import importlib.util
+import math
+from pathlib import Path
 import time
 from types import SimpleNamespace
 
 import torch
 
 
+def load_upstream(config):
+    from peft import LoraConfig
+    from safetensors.torch import load_file
+    from transformers import AutoModelForCausalLM
+
+    source = Path(config['icae_root']) / 'code/icae_v2/modeling_icae_multi_span.py'
+    from .io import file_digest
+    if file_digest(source) != config['icae_source_sha256']:
+        raise ValueError('Official ICAE source hash mismatch')
+    spec = importlib.util.spec_from_file_location('vcrm_official_icae_v2', source)
+    module = importlib.util.module_from_spec(spec)
+    # dataclass introspection requires registration during module execution.
+    import sys
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    original = AutoModelForCausalLM.from_pretrained
+    descriptor = AutoModelForCausalLM.__dict__.get('from_pretrained')
+
+    def v100_load(*args, **kwargs):
+        kwargs.pop('use_flash_attention_2', None)
+        kwargs.pop('resume_download', None)
+        kwargs.update(attn_implementation=config['attention'], local_files_only=True)
+        return original(*args, **kwargs)
+
+    # The released constructor hardcodes FlashAttention2/BF16. V100 uses FP16/SDPA;
+    # the source file and checkpoint are untouched and the loader is restored.
+    AutoModelForCausalLM.from_pretrained = staticmethod(v100_load)
+    try:
+        model = module.ICAE(
+            SimpleNamespace(model_name_or_path=config['model_path'], train=False),
+            SimpleNamespace(bf16=False, fixed_mem_size=config['memory_tokens'],
+                            mean_compression_rate=config['compression_rate']),
+            LoraConfig(r=config['encoder_lora_rank'], lora_alpha=32, lora_dropout=0.,
+                       bias='none', task_type='CAUSAL_LM'))
+    finally:
+        if descriptor is None:
+            del AutoModelForCausalLM.from_pretrained
+        else:
+            AutoModelForCausalLM.from_pretrained = descriptor
+    weights = load_file(config['checkpoint'])
+    expected = {k for k in model.state_dict() if 'lora_' in k or k == 'memory_token_embed.weight'}
+    if set(weights) != expected:
+        raise ValueError(f'ICAE adapter keys mismatch: missing={sorted(expected-set(weights))[:8]}, '
+                         f'unexpected={sorted(set(weights)-expected)[:8]}')
+    incompatible = model.load_state_dict(weights, strict=False)
+    if incompatible.unexpected_keys:
+        raise ValueError('Unexpected checkpoint keys')
+    adapted = config.get('adapted_checkpoint')
+    if adapted:
+        state = load_file(adapted)
+        if set(state) != expected:
+            raise ValueError('Adapted encoder must contain exactly the ICAE encoder adapter and token embeddings')
+        if not torch.equal(state['memory_token_embed.weight'][-3:].float(),
+                           weights['memory_token_embed.weight'][-3:].float()):
+            raise ValueError('Adaptation changed frozen decoder task embeddings')
+        model.load_state_dict(state, strict=False)
+    return model
+
+
 class FrozenReader:
     def __init__(self, config):
-        for name in ('transmem_root', 'delta_root'):
-            sys.path.insert(0, config[name])
-        from transmem.evaluate import Evaluator
-        from .runtime import configure_runtime
-        self.runtime = configure_runtime()
-        # Upstream CLI omits FP16 although PyTorch/V100 support it; keep source untouched.
-        import transmem.evaluate as evaluation
-        evaluation._DTYPE['float16'] = torch.float16
+        if config['dtype'] != 'float16' or config['attention'] != 'sdpa':
+            raise ValueError('This V100 adapter is audited only for FP16/SDPA')
+        if not torch.cuda.is_available():
+            raise RuntimeError('ICAE Mistral requires a CUDA device')
+        torch.manual_seed(config['seed'])
         self.cfg = config
-        args = SimpleNamespace(model_path=config['model_path'], ckpt=config['checkpoint'],
-                               config='', N=4, mode='transmem', device='cuda:0', dtype=config['dtype'],
-                               attn_impl=config['attention'], gate_diagnostics=None, thinking=False,
-                               max_answer_tokens=config['max_answer_tokens'], max_prompt_tokens=None)
-        self.ev = Evaluator(args)
-        self.model, self.mem, self.tok = self.ev.model, self.ev.mem, self.ev.tok
-        self.mem.eval().requires_grad_(False)
-        self.layers = self.mem.inject_layers
-        self.shape = (len(self.layers), self.mem.config.n_mem, self.mem.config.dim)
-        self.device = self.ev.device
-        self.injection_count = 0
-        self.delta_max = 0.
-        self.layer_diagnostics = {}
+        self.device = torch.device('cuda:0')
+        self.net = load_upstream(config).to(self.device).eval().requires_grad_(False)
+        self.model, self.tok = self.net.icae, self.net.tokenizer
+        self.shape = (self.net.mem_size, self.net.dim)
+        self.encoder_trainable = False
+        if self.net.bos_id != self.tok.bos_token_id or self.net.eos_id != self.tok.eos_token_id:
+            raise ValueError('Checkpoint/tokenizer BOS/EOS mismatch')
+        # These are exactly the instruction-template token ids in official v2 inference.
+        self.left_ids = [1, 733, 16289, 28793]
+        self.right_ids = [733, 28748, 16289, 28793]
+        self._base_vocab = self.net.vocab_size - 1
 
-    def encode_event(self, event):
-        return self.encode(f"DATE: {event['time']}\nCONVERSATION:\n{event['text']}")
+    def enable_encoder_adaptation(self):
+        self.net.requires_grad_(False)
+        for name, parameter in self.net.named_parameters():
+            if 'lora_' in name or name == 'memory_token_embed.weight':
+                parameter.requires_grad_(True)
+        self.net.memory_token_embed.weight.register_hook(
+            lambda g: torch.cat((g[:-3], torch.zeros_like(g[-3:])), dim=0))
+        self.model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={'use_reentrant': False})
+        self.model.train()
+        self.encoder_trainable = True
+        # Dropout stays disabled: the same frozen reader is used for training/evaluation.
+        return [p for p in self.net.parameters() if p.requires_grad]
 
-    @torch.inference_mode()
-    def encode(self, text):
-        from transmem.extract_features import build_chat_prompt_ids, hm_positions
-        ids = build_chat_prompt_ids(self.tok, text, '', self.device, thinking=False)
-        length = len(self.tok.encode(text, add_special_tokens=False))
-        if ids.shape[1] > self.model.config.max_position_embeddings:
-            raise ValueError('Session exceeds model limit; cannot silently crop')
-        positions = hm_positions(max(length, self.mem.config.n_mem), self.mem.config.n_mem, self.mem.config.hm_mode)
-        captured = {layer: {} for layer in self.layers}
-        state = {'offset': 0}
-        def hook(layer):
-            def capture(_module, inputs, output):
-                target = output[0] if isinstance(output, tuple) else output
-                source = inputs[0] if self.mem.config.transmem_before else target
-                for i, position in enumerate(positions):
-                    if state['offset'] <= position < state['offset'] + source.shape[1]:
-                        captured[layer][i] = source[0, position - state['offset']].detach().cpu().clone()
-            return capture
-        handles = [self.model.model.layers[layer].register_forward_hook(hook(layer)) for layer in self.layers]
-        past, output = None, None
-        try:
-            width = self.cfg['encode_chunk_tokens']
-            for offset in range(0, ids.shape[1], width):
-                state['offset'] = offset
-                chunk = ids[:, offset:offset + width]
-                output = self.model.model(input_ids=chunk, past_key_values=past, use_cache=True,
-                                          attention_mask=torch.ones((1, offset + chunk.shape[1]), dtype=torch.long, device=self.device))
-                past = output.past_key_values
-            return torch.stack([torch.stack([captured[layer][i] for i in range(len(positions))]) for layer in self.layers])
-        finally:
-            for handle in handles:
-                handle.remove()
-            del past, output
+    def encoder_state(self):
+        return {k: v.detach().cpu().contiguous() for k, v in self.net.state_dict().items()
+                if 'lora_' in k or k == 'memory_token_embed.weight'}
 
-    @contextlib.contextmanager
-    def inject(self, bundle, start_position, training=False):
-        from transformers.cache_utils import DynamicCache
-        caches, handles = {}, []
-        if bundle is None:
-            yield
-            return
-        def hook(index, layer):
-            def apply(_module, inputs, output):
-                target = output[0] if isinstance(output, tuple) else output
-                source = inputs[0] if self.mem.config.transmem_before else target
-                block = self.mem.block(layer)
-                if layer not in caches:
-                    query = source[:, start_position:, :]
-                    memory = bundle[index].to(self.device, dtype=next(block.parameters()).dtype).unsqueeze(0)
-                    caches[layer] = DynamicCache()
-                    value = torch.cat([memory, query], dim=1)
-                else:
-                    query = source
-                    value = query
-                proposal = block(value.to(next(block.parameters()).dtype), past_key_values=caches[layer], use_cache=True)
-                # TransMem returns a proposal for the final query position. Teacher forcing
-                # therefore uses sequential token calls, matching upstream greedy decoding.
-                corrected = target.clone()
-                value = block.correct(target[:, -1, :], proposal)
-                self.injection_count += 1
-                self.delta_max = max(self.delta_max, float((value - target[:, -1, :]).detach().float().abs().max()))
-                if not training:
-                    stats = self.layer_diagnostics.setdefault(str(layer), {'steps': 0, 'gate_sum': 0.,
-                                                                          'proposal_norm_sum': 0., 'correction_norm_sum': 0.})
-                    stats['steps'] += 1
-                    stats['gate_sum'] += float(proposal.gate.detach().float().mean())
-                    stats['proposal_norm_sum'] += float(proposal.ms.detach().float().norm())
-                    stats['correction_norm_sum'] += float((value - target[:, -1, :]).detach().float().norm())
-                corrected[:, -1, :] = value
-                return (corrected,) + output[1:] if isinstance(output, tuple) else corrected
-            return apply
-        try:
-            for index, layer in enumerate(self.layers):
-                handles.append(self.model.model.layers[layer].register_forward_hook(hook(index, layer)))
-            yield
-        finally:
-            for handle in handles:
-                handle.remove()
-            caches.clear()
+    def event_text(self, event):
+        return f"DATE: {event['time']}\n{event['text']}"
 
-    def prompt(self, query, context=''):
-        from transmem.extract_features import build_chat_prompt_ids
-        date_label = 'As of' if query.get('as_of') else 'Current date'
-        question = f"{date_label}: {query['time']}\n{query['question']}\nWrite a short answer in a few words."
-        return build_chat_prompt_ids(self.tok, context, question, self.device, thinking=False)
+    def encode_event(self, event, training=False):
+        return self.encode(self.event_text(event), training=training)
 
-    @torch.inference_mode()
+    def encode(self, text, training=False):
+        if training and not self.encoder_trainable:
+            raise RuntimeError('Encoder adaptation was not enabled')
+        ids = self.tok(text, add_special_tokens=True, truncation=False)['input_ids']
+        if not ids or len(ids) > self.cfg['encoder_max_tokens']:
+            raise ValueError(f'Entry has {len(ids)} tokens; ICAE limit {self.cfg["encoder_max_tokens"]}. '
+                             'Do not silently crop or split without a new protocol.')
+        context = contextlib.nullcontext() if training else torch.no_grad()
+        with context:
+            ids = torch.tensor([ids], device=self.device)
+            segments = self.net.compute_num_segments(ids.shape[1])
+            width = math.ceil(ids.shape[1] / segments)
+            outputs = []
+            for index in range(segments):
+                part = ids[:, index * width:(index + 1) * width]
+                part = torch.cat((part, self.net.append_sequence.to(self.device)), dim=1)
+                embeddings = self.net.tokens_to_embeddings(part)
+                # Match the author's memory-position extraction exactly.
+                result = self.net.icae(inputs_embeds=embeddings, output_hidden_states=True, use_cache=False)
+                outputs.append(result.hidden_states[-1][0, -self.net.mem_size:])
+            memory = torch.cat(outputs, dim=0)
+            if not torch.isfinite(memory).all():
+                raise ValueError('Non-finite ICAE memory')
+            return memory if training else memory.detach().cpu().to(torch.float16)
+
+    def question(self, query):
+        question = query['question']
+        if '_X_' in question:
+            question = f'Fill the blank _X_ in this statement. Return only the missing fact: {question}'
+        date = query.get('as_of') or query.get('time')
+        return (f'As of {date}:\n' if date else '') + question
+
+    def prompt_embeddings(self, query, bundle=None, text=''):
+        if text and bundle is not None:
+            raise ValueError('Raw history and latent memory cannot be mixed in this protocol')
+        if bundle is not None and (bundle.ndim != 2 or bundle.shape[1] != self.net.dim or
+                                   bundle.shape[0] > self.cfg['read_latent_slots']):
+            raise ValueError('Invalid or over-budget ICAE decoder memory')
+        prompt = self.question(query)
+        if text:
+            prompt = f'Context:\n{text}\n\n{prompt}'
+        right = [self.net.ft_token_id] + self.tok.encode(prompt, add_special_tokens=False) + self.right_ids
+        left = self.net.tokens_to_embeddings(torch.tensor([self.left_ids], device=self.device))
+        right = self.net.tokens_to_embeddings(torch.tensor([right], device=self.device))
+        parts = [left]
+        if bundle is not None:
+            parts.append(bundle.to(device=self.device, dtype=left.dtype).unsqueeze(0))
+        parts.append(right)
+        result = torch.cat(parts, dim=1)
+        if result.shape[1] + self.cfg['max_answer_tokens'] > self.model.config.max_position_embeddings:
+            raise ValueError('Decoder prompt exceeds model context; no silent cropping')
+        return result
+
+    @torch.no_grad()
     def answer(self, query, bundle=None, text=''):
-        ids = self.prompt(query, text)
-        if bundle is not None and bundle.shape[1] > self.cfg['read_latent_slots']:
-            raise AssertionError('Read slot budget exceeded')
+        inputs = self.prompt_embeddings(query, bundle, text)
         torch.cuda.synchronize()
         torch.cuda.reset_peak_memory_stats()
         started = time.perf_counter()
-        self.injection_count, self.delta_max = 0, 0.
-        self.layer_diagnostics = {}
-        tokens, output, past = [], None, None
-        with self.inject(bundle, ids.shape[1] - 1):
-            output = self.model.model(input_ids=ids, attention_mask=torch.ones_like(ids), use_cache=True)
-            past = output.past_key_values
-            logits = self.model.lm_head(output.last_hidden_state[:, -1, :])
-            for i in range(self.cfg['max_answer_tokens']):
+        tokens, past, stopped = [], None, False
+        with self.model.disable_adapter():
+            for _ in range(self.cfg['max_answer_tokens']):
+                output = self.model(inputs_embeds=inputs, past_key_values=past, use_cache=True)
+                logits = output.logits[:, -1, :self._base_vocab]
                 if not torch.isfinite(logits).all():
-                    raise ValueError('Non-finite decode logits')
-                token = int(logits.argmax(-1).item())
-                tokens.append(token)
-                if token in self.ev._eos_ids or i + 1 == self.cfg['max_answer_tokens']:
-                    break
-                output = self.model.model(input_ids=torch.tensor([[token]], device=self.device), past_key_values=past, use_cache=True)
+                    raise ValueError('Non-finite ICAE decode logits')
                 past = output.past_key_values
-                logits = self.model.lm_head(output.last_hidden_state[:, -1, :])
+                token = int(logits.argmax(-1).item())
+                if token == self.net.eos_id:
+                    stopped = True
+                    break
+                tokens.append(token)
+                inputs = self.net.tokens_to_embeddings(torch.tensor([[token]], device=self.device))
         torch.cuda.synchronize()
         return {'answer': self.tok.decode(tokens, skip_special_tokens=True).strip(), 'token_ids': tokens,
-                'generation_limit_hit': len(tokens) == self.cfg['max_answer_tokens'] and tokens[-1] not in self.ev._eos_ids,
-                'read_seconds': time.perf_counter() - started, 'prompt_tokens': int(ids.shape[1]),
-                'read_latent_slots': 0 if bundle is None else int(bundle.shape[1]),
+                'generation_limit_hit': not stopped, 'read_seconds': time.perf_counter() - started,
+                'prompt_tokens': int(self.prompt_embeddings(query, bundle, text).shape[1]),
+                'read_latent_slots': 0 if bundle is None else int(bundle.shape[0]),
                 'peak_gpu_bytes': torch.cuda.max_memory_allocated(),
-                'layer_diagnostics': self.layer_diagnostics,
-                'injection_count': self.injection_count, 'delta_max': self.delta_max}
+                'raw_history_access': bool(text), 'decoder_adapter_enabled': False}
 
     def qa_loss(self, query, answer, bundle):
-        ids = self.prompt(query)
-        labels = self.tok.encode(answer, add_special_tokens=False) + [self.tok.eos_token_id]
-        labels = labels[:self.cfg['max_answer_tokens']]
-        losses = []
-        output, past = None, None
-        with self.inject(bundle, ids.shape[1] - 1, training=True):
-            output = self.model.model(input_ids=ids, attention_mask=torch.ones_like(ids), use_cache=True)
-            past = output.past_key_values
-            for i, token in enumerate(labels):
-                logits = self.model.lm_head(output.last_hidden_state[:, -1, :]).float()
-                losses.append(torch.nn.functional.cross_entropy(logits, torch.tensor([token], device=self.device)))
-                if i + 1 < len(labels):
-                    output = self.model.model(input_ids=torch.tensor([[token]], device=self.device), past_key_values=past, use_cache=True)
-                    past = output.past_key_values
-        return torch.stack(losses).mean()
+        prompt = self.prompt_embeddings(query, bundle)
+        ids = self.tok.encode(answer, add_special_tokens=False) + [self.net.eos_id]
+        if len(ids) > self.cfg['max_answer_tokens']:
+            raise ValueError('QA target exceeds answer limit; no silent target truncation')
+        target = torch.tensor([ids], device=self.device)
+        embeddings = self.net.tokens_to_embeddings(target)
+        backbone = self.model.get_base_model().model
+        was_training = backbone.training
+        # Avoid recomputing decoder checkpoints after disable_adapter() has exited.
+        # Encoder checkpoints are still enabled and have the adapter active.
+        backbone.training = False
+        try:
+            with self.model.disable_adapter():
+                output = self.model(inputs_embeds=torch.cat((prompt, embeddings), dim=1), use_cache=False)
+        finally:
+            backbone.training = was_training
+        logits = output.logits[:, prompt.shape[1] - 1:-1, :self._base_vocab].float()
+        return torch.nn.functional.cross_entropy(logits.reshape(-1, logits.shape[-1]), target.reshape(-1))

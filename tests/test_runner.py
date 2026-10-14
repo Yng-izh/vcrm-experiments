@@ -1,53 +1,47 @@
-import fcntl
-import json
-from pathlib import Path
-import subprocess
-import sys
 import importlib.util
+from pathlib import Path
 from types import SimpleNamespace
 
 import pytest
 
-from vcrm.io import write_json
 
-
-def test_status_can_read_atomic_outputs_while_run_is_locked(tmp_path):
-    root = tmp_path / 'runs/busy'
-    root.mkdir(parents=True)
-    config = tmp_path / 'config.json'
-    write_json(config, {'output_root': str(tmp_path / 'runs'),
-                        'transmem_root': str(tmp_path), 'delta_root': str(tmp_path)})
-    write_json(root / 'templama_val/vcrm/budget_1000/episodes/one.json', {'id': 'one'})
-    with (root / '.lock').open('w') as lock:
-        fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
-        result = subprocess.run([sys.executable, str(Path(__file__).parents[1] / 'run.py'),
-                                 '--stage', 'status', '--config', str(config), '--run-name', 'busy'],
-                                check=True, capture_output=True, text=True, timeout=20)
-    assert json.loads(result.stdout) == {'generated': 1, 'scored': 0, 'root': str(root),
-                                        'locomo_completed_questions': 0}
-
-
-def test_reproduction_rejects_incomplete_or_duplicate_original_questions():
-    spec = importlib.util.spec_from_file_location('vcrm_runner', Path(__file__).parents[1] / 'run.py')
+def runner():
+    path = Path(__file__).parents[1] / 'run.py'
+    spec = importlib.util.spec_from_file_location('icae_experiment_runner_test', path)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
-    samples = [{'sample_id': 's', 'qa': [{'category': 1}, {'category': 2}, {'category': 5}]}]
-    row = lambda i: {'key': f's:{i}', 'category': i + 1, 'score': .5, 'raw_prediction': 'answer'}
-    payload = {'summary': {'num_questions': 2}, 'records': [row(0), row(1)]}
-    assert len(module.validate_reproduction(payload, samples)) == 2
-    for rows in ([row(0)], [row(0), row(0)]):
-        with pytest.raises(RuntimeError, match='question keys'):
-            module.validate_reproduction(payload | {'records': rows}, samples)
+    return module
 
 
-def test_failed_streaming_baseline_holds_formal_training_and_comparisons(tmp_path):
-    spec = importlib.util.spec_from_file_location('vcrm_runner', Path(__file__).parents[1] / 'run.py')
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    write_json(tmp_path / 'stage2_decision.json', {'decision': 'hold_formal_comparisons_and_codec_training'})
-    config = {'project': str(tmp_path)}
-    for stage, methods in [('train', ['vcrm']), ('stream', ['independent', 'vcrm'])]:
-        with pytest.raises(RuntimeError, match='diagnosis failed'):
-            module.require_streaming_baseline(config, SimpleNamespace(limit=None, stage=stage, methods=methods))
-    module.require_streaming_baseline(config, SimpleNamespace(limit=None, stage='stream', methods=['transmem_streaming']))
-    module.require_streaming_baseline(config, SimpleNamespace(limit=1, stage='train', methods=['vcrm']))
+def test_gpu_selection_excludes_busy_and_duplicate_cards(monkeypatch):
+    module = runner()
+    monkeypatch.setattr(module.subprocess, 'run', lambda *args, **kwargs: SimpleNamespace(
+        stdout='0, 0, 32501, 0\n1, 17816, 14000, 98\n2, 0, 32501, 0\n'))
+    assert module.choose_gpus('all') == [0, 2]
+    assert module.choose_gpus('auto') == [0]
+    with pytest.raises(RuntimeError):
+        module.choose_gpus('1')
+    with pytest.raises(RuntimeError):
+        module.choose_gpus('2,2')
+
+
+def test_worker_does_not_acquire_parent_run_lock(tmp_path, monkeypatch):
+    import json
+    module = runner()
+    config_path = tmp_path / 'config.json'
+    config_path.write_text(json.dumps({'output_root': str(tmp_path / 'runs')}))
+    args = SimpleNamespace(config=str(config_path), run_name='worker', limit=None, worker=True,
+                           stage='readability', shard=0, shards=1)
+    monkeypatch.setattr(module, 'arguments', lambda: args)
+    monkeypatch.setattr(module.fcntl, 'flock', lambda *args: pytest.fail('Worker must not acquire parent lock'))
+    calls = []
+    monkeypatch.setattr(module, 'worker', lambda config, root, options: calls.append(str(root)))
+    module.main()
+    assert calls == [str(tmp_path / 'runs/worker')]
+
+
+def test_retired_stages_unavailable():
+    assert 'reproduce' not in runner().STAGES
+    assert 'train' not in runner().STAGES
+    assert 'features' not in runner().STAGES
+    assert 'adapt' in runner().STAGES

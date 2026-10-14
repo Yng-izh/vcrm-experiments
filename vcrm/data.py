@@ -45,6 +45,7 @@ def templama(path, split):
                                'state_key': f'{entity}:{relation}', 'key_text': row['query']})
             previous_answers = answer_set
             queries.append({'id': row['id'], 'question': row['query'], 'time': date,
+                            'state_key': f'{entity}:{relation}',
                             'as_of': date, 'answers': answers, 'latest': row is records[-1],
                             'type': 'latest' if row is records[-1] else 'historical'})
         result.append({'id': f'templama:{split}:{entity}:{relation}', 'dataset': 'templama',
@@ -139,7 +140,40 @@ def ingestion_view(episode):
 
 
 def query_view(query):
-    return {k: query[k] for k in ('id', 'question', 'time', 'as_of') if k in query}
+    return {k: query[k] for k in ('id', 'question', 'time', 'as_of', 'state_key') if k in query}
+
+
+def prepare_icae(config):
+    """Keep published labels; filter entity overlap without reassigning any split."""
+    data = Path(config['data_root'])
+    output = data / 'prepared'
+    sets = {s: templama(data / 'templama' / f'{s}.json', s) for s in ('train', 'val', 'test')}
+    entities = {s: {e['entity'] for e in values} for s, values in sets.items()}
+    excluded = {'train': entities['train'] & (entities['val'] | entities['test']),
+                'val': entities['val'] & entities['test'], 'test': set()}
+    manifest = {'protocol': 'icae_version_readability_v1', 'sources': {}, 'splits': {}}
+    for split, episodes in sets.items():
+        source = data / 'templama' / f'{split}.json'
+        manifest['sources'][split] = {'sha256': digest(source.read_bytes())}
+        episodes = [e for e in episodes if e['entity'] not in excluded[split]]
+        if not episodes:
+            raise ValueError(f'Empty TempLAMA {split} after entity filtering')
+        write_json(output / f'templama_{split}.json', episodes)
+        manifest['splits'][split] = {'episodes': len(episodes), 'sha256': digest(episodes),
+                                    'queries': sum(len(e['queries']) for e in episodes)}
+    write_json(output / 'entity_split_audit.json', {
+        'policy': 'Official source splits, filtered train/val; test unchanged. No reassignment.',
+        'excluded_entities': {s: sorted(v) for s, v in excluded.items()},
+        'input_entity_counts': {s: len(v) for s, v in entities.items()},
+        'fact_source': 'Published answers are the stream facts, shared by all methods; not an unseen-fact benchmark.',
+        'longmemeval': 'Evaluation only; never used for fitting, threshold selection or model adaptation.'})
+    lme = data / 'longmemeval_s_cleaned.json'
+    if lme.exists():
+        episodes = longmemeval(lme)
+        write_json(output / 'longmemeval_test.json', episodes)
+        manifest['longmemeval_test'] = {'episodes': len(episodes), 'sha256': digest(episodes)}
+    write_json(output / 'manifest.json', manifest)
+    return manifest
 
 
 def import_stale(path, config, provenance):

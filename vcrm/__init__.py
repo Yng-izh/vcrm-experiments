@@ -1,1 +1,1 @@
-"""Version-conditioned residual memory experiments."""
+"""ICAE versioned latent memory; conditionally compressed history is gated."""

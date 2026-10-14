@@ -1,67 +1,86 @@
-# VCRM Experiments
+# VCRM: ICAE Versioned Memory
 
-Reproducible artifacts for the TransMem baseline audit and the first
-TransMem-Streaming diagnostic on v100-2.
+The active baseline is official ICAE v2, Mistral-7B-Instruct-v0.2 with the
+instruction-finetuned ICAE checkpoint. The TransMem study is retained in
+`legacy/transmem` and the separate immutable phase12 results. It is not a main
+comparison or a prerequisite. No original results/manifests are overwritten.
 
-## Results
+## First Gate
 
-- **Official TransMem + LoCoMo reproduction:** 1,540 questions, overall token F1 **53.95%** versus the paper's 54.11%.
-- **TransMem-Streaming + LongMemEval-S diagnostic:** 500 questions, overall judged accuracy **11.20%**; Knowledge Update **14.10%**.
-- The streaming run used a no-eviction diagnostic ceiling. It is not a fixed-budget comparison and does not establish a VCRM improvement.
-- Formal VCRM codec training and comparisons are held until the streaming reader/encoding protocol is repaired and independently validated.
+New event -> ICAE encoder -> independent FP16 version entry -> explicit state/time
+index -> frozen ICAE decoder + query. Current means the latest observed version;
+historical entries remain independent. No raw-history fallback, codec, hidden-state
+reconstruction objective, RL or learned eviction is enabled.
 
-## Repository Layout
+Use published TempLAMA train for encoder-only answer-loss adaptation and its
+independent validation split for current/historical reading. Official source train
+and val are filtered for entity overlaps; test is unchanged. This adaptation and
+the supplied-fact streaming protocol are explicit, not the official TempLAMA task.
+LongMemEval-S preparation and the original custom-judge protocol are retained for
+later transfer evaluation; none of its 500 QA may train/adapt/select this reader.
 
-- `run.py`, `run_experiments.sh`, `vcrm/`: unified experiment runner and implementation.
-- `tests/`: 23 project tests.
-- `diagnostics/`: reader parity and streaming error-control tools.
-- `results/v1002_phase12/`: reports, provenance, manifests, predictions, scores, and source snapshots from the completed v100-2 runs.
-- `IMPLEMENTATION.md`: detailed protocol and implementation notes.
-- `EXPERIMENT_PLAN.zh.md`: the planned VCRM experiment design.
+The constructor uses an unchanged official ICAE source, replacing its hardcoded
+FlashAttention2/BF16 loader at runtime with FP16/SDPA for V100. Adapter checkpoint
+keys must exactly match the expected LoRA+memory embedding keys. The official
+Mistral instruction token layout and adapter-disabled decoding are preserved.
+Entries over the published 5120-token limit raise, not silently crop. Longer inputs
+need a separately audited chunking policy before LongMemEval transfer.
 
-## Reproduction Notes
+## Commands
 
-The repository does not include model weights, raw benchmark files, upstream
-checkouts, durable stores, or API credentials. Download the pinned external
-dependencies separately and provide paths through a local `config.json` and
-`.env`. The judge key is read only from `OPENAI_API_KEY`; no key value is
-stored in this repository.
-
-`config.json` is the v100-2 path template, not a portable installation config.
-Set `project`, data/output/upstream/model paths and `judge_base_url` for your
-own environment. Keep `stage2_decision.json` under the configured project so
-the failed-baseline hold remains effective. Install Python/CUDA dependencies
-before invoking the runner; `IMPLEMENTATION.md` documents the tested runtime.
-
-Pinned artifacts used for the completed experiments:
-
-| Artifact | Revision |
-|---|---|
-| TransMem, `Haodong-Lei-Ray/Project4` | `6d7a6127967ad44482c958b555d8c83bfb75e9b9` |
-| delta-Mem, `Haodong-Lei-Ray/delta-Mem` | `bb6e99bb6b3a94ddae7f9b4743bfd8ae37e98675` |
-| `Qwen/Qwen3-4B-Instruct-2507` | `cdbee75f17c01a7cc42f958dc650907174af0554` |
-| `Rayleihaodong/TransMem-qwen3-4B-D4` | `85ba1010eb226e312e208940180bb60424a2cb79` |
-
-The full hashes and runtime audit are in `phase12_input_audit.json` and
-`provenance.json`. Do not replace pinned upstream sources with an unverified
-checkout. `bootstrap.py` uses HEAD for some supplemental dependencies and is
-not an exact historical environment restorer.
-
-The LoCoMo result uses the released TransMem evaluator and scoring protocol,
-with the documented V100 FP16 + SDPA runtime adapter. The LongMemEval result
-uses the official prompt with a Qwen3.5-9B-compatible judge endpoint, not the
-official GPT-4o score.
+Host v100-2, isolated project `/share/latent2/vcrm_icae`. Credentials stay outside
+manifests and Git in `.env`, mode 600. No API is needed for TempLAMA validation.
 
 ```bash
+# Environment/download preparation, no GPU allocation.
+./run_experiments.sh --stage download --run-name download
+./run_experiments.sh --stage prepare --run-name preparation
 ./run_experiments.sh --stage preflight
-python -m pytest -q tests
+./run_experiments.sh --stage parity --gpus auto --run-name implementation_parity
+
+# First confirm loading/decoding on a debug validation episode.
+./run_experiments.sh --stage readability --limit 1 --gpus auto --run-name smoke
+./run_experiments.sh --stage summarize --limit 1 --run-name smoke
+
+# Full train-only encoder adaptation, no VCRM codec.
+./run_experiments.sh --stage adapt --gpus auto --run-name encoder_adapt
+./run_experiments.sh --stage activate --adaptation-run encoder_adapt
+./run_experiments.sh --config config.adapted.json --stage readability \
+  --gpus all --run-name adapted_validation
+./run_experiments.sh --config config.adapted.json --stage summarize --run-name adapted_validation
+./run_experiments.sh --config config.adapted.json --stage gate \
+  --adaptation-run encoder_adapt --run-name adapted_validation
 ```
 
-See `results/v1002_phase12/阶段1复现报告.md` and
-`results/v1002_phase12/阶段2基线报告.md` for the full conclusions.
+Thresholds are provisional engineering criteria fixed before validation: single
+entry accuracy >=0.8, current accuracy >=0.8, historical F1 >=0.8, latent minus
+no-memory accuracy >=0.1. Full validation and manual review are mandatory. Debug
+or incomplete runs cannot unlock the gate. Failed reading means repair/replace the
+checkpoint, not introduce a codec. Passing only makes the run eligible for manual
+review; no compression training entry exists yet.
 
-The original-protocol TransMem result on these same 500 LongMemEval-S questions
-has not yet been run in this phase-1/2 project. The poor streaming result alone
-does not establish that the official TransMem checkpoint fails on this dataset.
-The paper also describes overflow chunk-level HM aggregation; this is not the
-same as this project's session-level retrieval wrapper.
+The single-entry and multi-version indexed tensors must match after a durable
+save/reload. Generate once for identical tensors, not twice as purported independent
+evidence. Report text/no-memory/wrong-version controls, changed-fact historical
+coverage, answer EM/F1, group macro accuracy, exact serialized bytes, read tokens,
+write/read seconds and GPU peak. All controls share the same decoder and selected
+fact version. Text controls have unequal inference cost, reported explicitly.
+
+GPU workers use only cards observed idle, shard whole episodes and log separately.
+Run code/config/data fingerprints prevent reuse across changed protocols. Encoder
+adaptation currently restarts only in a new run; optimizer resume is not implemented.
+
+## Storage Caveat
+
+128 x 4096 FP16 tokens occupy 1,048,576 payload bytes per segment, often far larger
+than a short UTF-8 fact log. Exact budgets include memory, keys, IDs, timestamps,
+format and metadata. Model/adapter weights are separate shared costs. Do not assume
+latent memory wins persistent bytes; longer passages and inference token/latency
+costs are separate hypotheses requiring measurements.
+
+Once this gate succeeds, compare Independent ICAE Memory and Version-Conditioned
+ICAE Memory with the same frozen reader, QA supervision, train samples/steps and
+persistent byte budget. Future history codes should optimize historical answer
+loss, not recover complete original hidden states. Current anchors, dependencies
+and rewriting costs must count. MemoryLLM/M+ remain external related work and later
+competitors, not prerequisites for this engineering gate.
