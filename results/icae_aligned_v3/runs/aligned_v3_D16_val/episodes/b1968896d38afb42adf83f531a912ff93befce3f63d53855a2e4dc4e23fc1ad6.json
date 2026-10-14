@@ -1,0 +1,576 @@
+{
+  "id": "templama:val:Q1390688:P39",
+  "group": "Q1390688:P39",
+  "split": "val",
+  "versions": 3,
+  "queries": [
+    {
+      "query_id": "Q1390688_P39_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q1390688_P39_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Minister for Finance",
+        "token_ids": [
+          8241,
+          354,
+          22814
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.18343026796355844,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499690496,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1390688_P39_2018",
+          "Q1390688_P39_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.007436541840434074,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 1001,
+          "total_bytes": 1312489,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Teachdála / Minister for Finance",
+        "token_ids": [
+          2263,
+          595,
+          28715,
+          28820,
+          2220,
+          732,
+          8241,
+          354,
+          22814
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3999460069462657,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528240128,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.8571428571428571
+      }
+    },
+    {
+      "query_id": "Q1390688_P39_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q1390688_P39_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Minister for Finance",
+        "token_ids": [
+          5805,
+          1330,
+          354,
+          22814
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22259475803002715,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499821568,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1390688_P39_2018",
+          "Q1390688_P39_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0071046240627765656,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 1001,
+          "total_bytes": 1312489,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Teachdála / Minister for Finance",
+        "token_ids": [
+          2263,
+          595,
+          28715,
+          28820,
+          2220,
+          732,
+          8241,
+          354,
+          22814
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.40252808202058077,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528240128,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.8571428571428571
+      }
+    },
+    {
+      "query_id": "Q1390688_P39_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q1390688_P39_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Minister for Finance",
+        "token_ids": [
+          5805,
+          1330,
+          354,
+          22814
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22280234610661864,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499690496,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1390688_P39_2018",
+          "Q1390688_P39_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.007660907227545977,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 1001,
+          "total_bytes": 1312489,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Teachdála / Minister for Finance",
+        "token_ids": [
+          2263,
+          595,
+          28715,
+          28820,
+          2220,
+          732,
+          8241,
+          354,
+          22814
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.40125698084011674,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528240128,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.8571428571428571
+      }
+    },
+    {
+      "query_id": "Q1390688_P39_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q1390688_P39_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Minister for Finance",
+        "token_ids": [
+          5805,
+          1330,
+          354,
+          22814
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.21651682117953897,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499821568,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1390688_P39_2018",
+          "Q1390688_P39_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.009440572001039982,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 1001,
+          "total_bytes": 1312489,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Teachta Dála / Minister for Finance",
+        "token_ids": [
+          2263,
+          4755,
+          28708,
+          384,
+          28820,
+          2220,
+          732,
+          8241,
+          354,
+          22814
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4564812700264156,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528240128,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.75
+      }
+    },
+    {
+      "query_id": "Q1390688_P39_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q1390688_P39_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Minister for Finance",
+        "token_ids": [
+          5805,
+          1330,
+          354,
+          22814
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22558142617344856,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499690496,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1390688_P39_2018",
+          "Q1390688_P39_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.010323341004550457,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 1001,
+          "total_bytes": 1312489,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Teachta Dála / Minister for Finance",
+        "token_ids": [
+          2263,
+          4755,
+          28708,
+          384,
+          28820,
+          2220,
+          732,
+          8241,
+          354,
+          22814
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.43696876196190715,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528240128,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.75
+      }
+    },
+    {
+      "query_id": "Q1390688_P39_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q1390688_P39_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Minister for Finance",
+        "token_ids": [
+          5805,
+          1330,
+          354,
+          22814
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.21420776518061757,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499821568,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1390688_P39_2018",
+          "Q1390688_P39_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.009498176164925098,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 1001,
+          "total_bytes": 1312489,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Teachta Dála / Minister for Finance",
+        "token_ids": [
+          2263,
+          4755,
+          28708,
+          384,
+          28820,
+          2220,
+          732,
+          8241,
+          354,
+          22814
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.41848867293447256,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528240128,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.75
+      }
+    },
+    {
+      "query_id": "Q1390688_P39_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q1390688_P39_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Minister for Finance",
+        "token_ids": [
+          5805,
+          1330,
+          354,
+          22814
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2095343777909875,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499690496,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1390688_P39_2018",
+          "Q1390688_P39_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.011245083063840866,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 1001,
+          "total_bytes": 1312489,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Teachta Dála / Minister for Finance",
+        "token_ids": [
+          2263,
+          4755,
+          28708,
+          384,
+          28820,
+          2220,
+          732,
+          8241,
+          354,
+          22814
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.41357132280245423,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528240128,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.75
+      }
+    }
+  ],
+  "write_seconds": 0.11244777264073491,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 384,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 160,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1310720,
+      "index_key_bytes": 768,
+      "metadata_and_format_bytes": 1001,
+      "total_bytes": 1312489,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 160,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1310720,
+    "index_key_bytes": 768,
+    "metadata_and_format_bytes": 1001,
+    "total_bytes": 1312489,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

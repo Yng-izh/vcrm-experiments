@@ -1,0 +1,550 @@
+{
+  "id": "templama:val:Q20027181:P102",
+  "group": "Q20027181:P102",
+  "split": "val",
+  "versions": 5,
+  "queries": [
+    {
+      "query_id": "Q20027181_P102_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q20027181_P102_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "The People of Freedom",
+        "token_ids": [
+          1014,
+          5619,
+          302,
+          22429
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2186304279603064,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500474880,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q20027181_P102_2020",
+          "Q20027181_P102_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.008829476311802864,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1509,
+          "total_bytes": 1575653,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "The People of Freedom",
+        "token_ids": [
+          415,
+          5619,
+          302,
+          22429
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2390191126614809,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528992256,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q20027181_P102_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q20027181_P102_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Nicola Giorgino is a member of the Five Star Movement.",
+        "token_ids": [
+          28759,
+          294,
+          4362,
+          420,
+          1782,
+          28721,
+          2164,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          15243,
+          7383,
+          25361,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5971350129693747,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500343808,
+        "kv_cache_bytes": 29753344,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q20027181_P102_2020",
+          "Q20027181_P102_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.008715830743312836,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1509,
+          "total_bytes": 1575653,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Lega per Salvini Premier",
+        "token_ids": [
+          393,
+          4770,
+          660,
+          17857,
+          3494,
+          16103
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3042524070478976,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528992256,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q20027181_P102_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q20027181_P102_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Five Star Movement",
+        "token_ids": [
+          15243,
+          7383,
+          25361
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.18385520204901695,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500474880,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q20027181_P102_2020",
+          "Q20027181_P102_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.008710599970072508,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1509,
+          "total_bytes": 1575653,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Lega per Salvini Premier",
+        "token_ids": [
+          393,
+          4770,
+          660,
+          17857,
+          3494,
+          16103
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3048261282965541,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528992256,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q20027181_P102_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q20027181_P102_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Five Star Movement",
+        "token_ids": [
+          15243,
+          7383,
+          25361
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.18313734466210008,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500343808,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q20027181_P102_2020",
+          "Q20027181_P102_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.008809823077172041,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1509,
+          "total_bytes": 1575653,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Lega per Salvini Premier",
+        "token_ids": [
+          393,
+          4770,
+          660,
+          17857,
+          3494,
+          16103
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3069375748746097,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528992256,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q20027181_P102_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q20027181_P102_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Five Star Movement",
+        "token_ids": [
+          15243,
+          7383,
+          25361
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1847335621714592,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500474880,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q20027181_P102_2020",
+          "Q20027181_P102_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.008712179027497768,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1509,
+          "total_bytes": 1575653,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Lega.",
+        "token_ids": [
+          393,
+          4770,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20723420567810535,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528992256,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q20027181_P102_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q20027181_P102_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Forza Italia",
+        "token_ids": [
+          1263,
+          2166,
+          16995
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1887619299814105,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500343808,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q20027181_P102_2020",
+          "Q20027181_P102_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.00901824701577425,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1509,
+          "total_bytes": 1575653,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.8,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Lega.",
+        "token_ids": [
+          393,
+          4770,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20435676584020257,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528992256,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q20027181_P102_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q20027181_P102_2019",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Lega",
+        "token_ids": [
+          393,
+          4770
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.14985140692442656,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500474880,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q20027181_P102_2020",
+          "Q20027181_P102_2019"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.008339710999280214,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1509,
+          "total_bytes": 1575653,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.4,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Lega per Salvini Premier",
+        "token_ids": [
+          393,
+          4770,
+          660,
+          17857,
+          3494,
+          16103
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3045312464237213,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528992256,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.2372838743031025,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 640,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 192,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1572864,
+      "index_key_bytes": 1280,
+      "metadata_and_format_bytes": 1509,
+      "total_bytes": 1575653,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 192,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1572864,
+    "index_key_bytes": 1280,
+    "metadata_and_format_bytes": 1509,
+    "total_bytes": 1575653,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

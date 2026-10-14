@@ -1,0 +1,434 @@
+{
+  "id": "templama:val:Q2690188:P102",
+  "group": "Q2690188:P102",
+  "split": "val",
+  "versions": 5,
+  "queries": [
+    {
+      "query_id": "Q2690188_P102_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q2690188_P102_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Oleksandr Vilkul is a member of the Ukrainian Democratic Alliance for Reform.",
+        "token_ids": [
+          28762,
+          291,
+          2285,
+          391,
+          28712,
+          23415,
+          28729,
+          353,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          23129,
+          753,
+          12821,
+          20966,
+          354,
+          1298,
+          674,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.7775543304160237,
+        "prompt_tokens": 213,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500910080,
+        "kv_cache_bytes": 30670848,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q2690188_P102_2019",
+          "Q2690188_P102_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037336600944399834,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1429,
+          "total_bytes": 1575573,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.15384615384615385,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Oleksandr Vilkul is a member of the Opposition Bloc.",
+        "token_ids": [
+          451,
+          291,
+          2285,
+          391,
+          28712,
+          23415,
+          28729,
+          353,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          22396,
+          385,
+          685,
+          365,
+          1614,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.7330209752544761,
+        "prompt_tokens": 325,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15529492992,
+        "kv_cache_bytes": 45088768,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.4444444444444444
+      }
+    },
+    {
+      "query_id": "Q2690188_P102_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q2690188_P102_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "People's Front",
+        "token_ids": [
+          5619,
+          28742,
+          28713,
+          13794
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20980344293639064,
+        "prompt_tokens": 213,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500779008,
+        "kv_cache_bytes": 28442624,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q2690188_P102_2019",
+          "Q2690188_P102_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003551843110471964,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1429,
+          "total_bytes": 1575573,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Opposition Bloc",
+        "token_ids": [
+          22396,
+          385,
+          685,
+          365,
+          1614
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2885490469634533,
+        "prompt_tokens": 325,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15529492992,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q2690188_P102_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q2690188_P102_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "People's Front",
+        "token_ids": [
+          5619,
+          28742,
+          28713,
+          13794
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.21548327524214983,
+        "prompt_tokens": 213,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500910080,
+        "kv_cache_bytes": 28442624,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q2690188_P102_2019",
+          "Q2690188_P102_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004016080405563116,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1429,
+          "total_bytes": 1575573,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Opposition Bloc",
+        "token_ids": [
+          22396,
+          385,
+          685,
+          365,
+          1614
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2708274628967047,
+        "prompt_tokens": 325,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15529492992,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q2690188_P102_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q2690188_P102_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "People's Front",
+        "token_ids": [
+          5619,
+          28742,
+          28713,
+          13794
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.21321094874292612,
+        "prompt_tokens": 213,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500779008,
+        "kv_cache_bytes": 28442624,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q2690188_P102_2019",
+          "Q2690188_P102_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038526509888470173,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1429,
+          "total_bytes": 1575573,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Opposition Bloc",
+        "token_ids": [
+          22396,
+          385,
+          685,
+          365,
+          1614
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.27605150965973735,
+        "prompt_tokens": 325,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15529492992,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q2690188_P102_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q2690188_P102_2018",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Opposition Bloc",
+        "token_ids": [
+          28762,
+          587,
+          385,
+          685,
+          365,
+          1614
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.28431760612875223,
+        "prompt_tokens": 213,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500910080,
+        "kv_cache_bytes": 28704768,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q2690188_P102_2019",
+          "Q2690188_P102_2018"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0040094610303640366,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1429,
+          "total_bytes": 1575573,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Opposition Bloc",
+        "token_ids": [
+          22396,
+          385,
+          685,
+          365,
+          1614
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.27896126406267285,
+        "prompt_tokens": 325,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15529492992,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.14852493489161134,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 640,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 192,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1572864,
+      "index_key_bytes": 1280,
+      "metadata_and_format_bytes": 1429,
+      "total_bytes": 1575573,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 192,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1572864,
+    "index_key_bytes": 1280,
+    "metadata_and_format_bytes": 1429,
+    "total_bytes": 1575573,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

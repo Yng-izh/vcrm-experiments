@@ -1,0 +1,9 @@
+{
+  "explicit_user_authorization": true,
+  "authorization_note": "User explicitly requested: ignore this gate, start C/D directly with multi-GPU parallelism. Original failed readability result must remain unchanged.",
+  "gate_run": "paper_v1_baseline_val",
+  "summary_sha256": "08e9312bc7f7465d7ed2b6bf025d3b0fa6249c9a3307850195d9a7d0fb30ec97",
+  "gate_sha256": "c3ac4b14d5decc9c8641c20b0d7522e402f3f8b2b29171e71c79984e181af8c8",
+  "original_decision": "hold_replace_or_fix_icae_checkpoint",
+  "scope": "Override only empirical readability thresholds/manual-review prerequisite; preserve complete validation, reader identity, feature and GPU gradient checks."
+}

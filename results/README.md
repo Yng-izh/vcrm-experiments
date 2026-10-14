@@ -1,6 +1,14 @@
 # Completed Experiment Artifacts
 
-All current results are under `v1002_phase12/`.
+The latest ICAE C16/D16 results are under `icae_aligned_v3/`; see
+[`icae_aligned_v3/README.zh.md`](icae_aligned_v3/README.zh.md) for the protocol,
+scores, limitations, and source snapshot. The fixed 481-query diagnostic gives
+C16 55.07% historical F1 and D16 51.56%; D-C's clustered 95% confidence interval
+includes zero. These are our custom official-checkpoint evaluations, not
+published ICAE benchmark numbers or untouched test results.
+
+The earlier TransMem reproduction and streaming diagnostics remain under
+`v1002_phase12/`. The table below describes that archival study.
 
 | File / Directory | Contents |
 |---|---|

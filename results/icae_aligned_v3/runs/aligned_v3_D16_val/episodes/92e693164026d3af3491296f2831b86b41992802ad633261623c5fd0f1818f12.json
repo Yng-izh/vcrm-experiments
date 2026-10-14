@@ -1,0 +1,372 @@
+{
+  "id": "templama:val:Q208425:P54",
+  "group": "Q208425:P54",
+  "split": "val",
+  "versions": 6,
+  "queries": [
+    {
+      "query_id": "Q208425_P54_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q208425_P54_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Borussia Mönchengladbach",
+        "token_ids": [
+          28760,
+          271,
+          28397,
+          351,
+          5438,
+          1839,
+          1727,
+          316,
+          11875
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3814089740626514,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499169280,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q208425_P54_2015",
+          "Q208425_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.009070529136806726,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1692,
+          "total_bytes": 1707164,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Club de Fútbol Monterrey",
+        "token_ids": [
+          5933,
+          340,
+          401,
+          24043,
+          2329,
+          3217,
+          360,
+          6439
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3706524819135666,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527489536,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q208425_P54_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q208425_P54_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Major League Soccer (MLS) / Toronto FC",
+        "token_ids": [
+          28755,
+          2577,
+          6165,
+          4234,
+          2742,
+          325,
+          3827,
+          28735,
+          28731,
+          732,
+          14984,
+          9138
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4997240761294961,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499038208,
+        "kv_cache_bytes": 28442624,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q208425_P54_2015",
+          "Q208425_P54_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.008053186349570751,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1692,
+          "total_bytes": 1707164,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Michael Bradley plays for Club de Fútbol Monterrey.",
+        "token_ids": [
+          5459,
+          12906,
+          2047,
+          8928,
+          354,
+          5933,
+          340,
+          401,
+          24043,
+          2329,
+          3217,
+          360,
+          6439,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5615056129172444,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527489536,
+        "kv_cache_bytes": 43384832,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q208425_P54_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q208425_P54_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Major League Soccer (MLS) / Toronto FC",
+        "token_ids": [
+          28755,
+          2577,
+          6165,
+          4234,
+          2742,
+          325,
+          3827,
+          28735,
+          28731,
+          732,
+          14984,
+          9138
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.47206206480041146,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499169280,
+        "kv_cache_bytes": 28442624,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q208425_P54_2015",
+          "Q208425_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.006613324861973524,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1692,
+          "total_bytes": 1707164,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Club de Fútbol Monterrey",
+        "token_ids": [
+          5933,
+          340,
+          401,
+          24043,
+          2329,
+          3217,
+          360,
+          6439
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.35877790907397866,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527489536,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q208425_P54_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q208425_P54_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Michael Bradley plays for Toronto FC.",
+        "token_ids": [
+          5459,
+          12906,
+          2047,
+          8928,
+          354,
+          14984,
+          9138,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3413462108001113,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499038208,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q208425_P54_2015",
+          "Q208425_P54_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.007938284892588854,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1692,
+          "total_bytes": 1707164,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Club de Fútbol Monterrey",
+        "token_ids": [
+          5933,
+          340,
+          401,
+          24043,
+          2329,
+          3217,
+          360,
+          6439
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3679994740523398,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527489536,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.09339052205905318,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 768,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 208,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1703936,
+      "index_key_bytes": 1536,
+      "metadata_and_format_bytes": 1692,
+      "total_bytes": 1707164,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 208,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1703936,
+    "index_key_bytes": 1536,
+    "metadata_and_format_bytes": 1692,
+    "total_bytes": 1707164,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

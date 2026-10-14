@@ -1,0 +1,1 @@
+codec-train: physical GPU 0; log=/share/latent2/vcrm_icae/runs/aligned_v3_C16_train/logs/codec-train.gpu0.log

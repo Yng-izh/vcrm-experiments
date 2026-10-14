@@ -1,0 +1,237 @@
+{
+  "id": "templama:val:Q273274:P39",
+  "group": "Q273274:P39",
+  "split": "val",
+  "versions": 4,
+  "queries": [
+    {
+      "query_id": "Q273274_P39_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q273274_P39_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Minister for Enterprise, Trade and Innovation",
+        "token_ids": [
+          5805,
+          1330,
+          354,
+          27018,
+          28725,
+          17684,
+          304,
+          24013,
+          352
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.38188637094572186,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500125696,
+        "kv_cache_bytes": 28704768,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q273274_P39_2013",
+          "Q273274_P39_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.00765958009287715,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1224,
+          "total_bytes": 1444040,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.46153846153846156,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Minister for Defence / Minister for Housing, Planning, and Local Government / Minister for Social Protection / Teachta Dála / Leader of Fianna Fáil",
+        "token_ids": [
+          8241,
+          354,
+          4367,
+          636,
+          732,
+          8241,
+          354,
+          382,
+          23291,
+          28725,
+          23542,
+          28725,
+          304,
+          9553,
+          9714,
+          732,
+          8241,
+          354,
+          7575,
+          21154,
+          732,
+          2263,
+          4755,
+          28708,
+          384,
+          28820,
+          2220,
+          732,
+          26144,
+          302,
+          401,
+          753,
+          1520,
+          401,
+          28820,
+          309
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 1.302892374806106,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528741376,
+        "kv_cache_bytes": 46923776,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5185185185185185
+      }
+    },
+    {
+      "query_id": "Q273274_P39_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q273274_P39_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Minister for Agriculture, Food and the Marine",
+        "token_ids": [
+          5805,
+          1330,
+          354,
+          23837,
+          482,
+          28725,
+          11435,
+          304,
+          272,
+          16155
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4262675098143518,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500256768,
+        "kv_cache_bytes": 28835840,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q273274_P39_2013",
+          "Q273274_P39_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.009148627985268831,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1224,
+          "total_bytes": 1444040,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Teachta Dála / Leader of Fianna Fáil",
+        "token_ids": [
+          2263,
+          4755,
+          28708,
+          384,
+          28820,
+          2220,
+          732,
+          26144,
+          302,
+          401,
+          753,
+          1520,
+          401,
+          28820,
+          309
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6025958410464227,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528741376,
+        "kv_cache_bytes": 44171264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.8
+      }
+    }
+  ],
+  "write_seconds": 0.06328609492629766,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 512,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 176,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1441792,
+      "index_key_bytes": 1024,
+      "metadata_and_format_bytes": 1224,
+      "total_bytes": 1444040,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 176,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1441792,
+    "index_key_bytes": 1024,
+    "metadata_and_format_bytes": 1224,
+    "total_bytes": 1444040,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

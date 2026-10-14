@@ -1,0 +1,463 @@
+{
+  "id": "templama:val:Q3328963:P108",
+  "group": "Q3328963:P108",
+  "split": "val",
+  "versions": 6,
+  "queries": [
+    {
+      "query_id": "Q3328963_P108_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q3328963_P108_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Mustapha Madih works for the Moroccan national football team.",
+        "token_ids": [
+          14242,
+          2366,
+          28708,
+          5311,
+          4371,
+          3791,
+          354,
+          272,
+          4151,
+          402,
+          4230,
+          4282,
+          6569,
+          1918,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.569424076937139,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499473408,
+        "kv_cache_bytes": 29097984,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q3328963_P108_2016",
+          "Q3328963_P108_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.007207171060144901,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1732,
+          "total_bytes": 1707204,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "FAR Rabat / Hassania Agadir",
+        "token_ids": [
+          401,
+          1087,
+          17467,
+          270,
+          732,
+          27340,
+          4877,
+          3786,
+          316,
+          361
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4941850840114057,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527990272,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666
+      }
+    },
+    {
+      "query_id": "Q3328963_P108_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q3328963_P108_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Mustapha Madih works for the Moroccan national football team.",
+        "token_ids": [
+          14242,
+          2366,
+          28708,
+          5311,
+          4371,
+          3791,
+          354,
+          272,
+          4151,
+          402,
+          4230,
+          4282,
+          6569,
+          1918,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.7228589002043009,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499604480,
+        "kv_cache_bytes": 29097984,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q3328963_P108_2016",
+          "Q3328963_P108_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.011798264924436808,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1732,
+          "total_bytes": 1707204,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Hassania Agadir",
+        "token_ids": [
+          27340,
+          4877,
+          3786,
+          316,
+          361
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.313963552005589,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527990272,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q3328963_P108_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q3328963_P108_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Morocco national under-17 football team",
+        "token_ids": [
+          4151,
+          402,
+          1115,
+          4282,
+          916,
+          28733,
+          28740,
+          28787,
+          6569,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.507087211124599,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499473408,
+        "kv_cache_bytes": 28442624,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q3328963_P108_2016",
+          "Q3328963_P108_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.007530410774052143,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1732,
+          "total_bytes": 1707204,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 1
+      },
+      "uncompressed_pair": {
+        "answer": "Hassania Agadir",
+        "token_ids": [
+          27340,
+          4877,
+          3786,
+          316,
+          361
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3150433744303882,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527990272,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q3328963_P108_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q3328963_P108_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Morocco national under-17 football team",
+        "token_ids": [
+          4151,
+          402,
+          1115,
+          4282,
+          916,
+          28733,
+          28740,
+          28787,
+          6569,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.42176591884344816,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499604480,
+        "kv_cache_bytes": 28442624,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q3328963_P108_2016",
+          "Q3328963_P108_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.011597339063882828,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1732,
+          "total_bytes": 1707204,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 1
+      },
+      "uncompressed_pair": {
+        "answer": "Mustapha Madih works for Chabab Rif Al Hoceima.",
+        "token_ids": [
+          14242,
+          2366,
+          28708,
+          5311,
+          4371,
+          3791,
+          354,
+          689,
+          375,
+          375,
+          399,
+          335,
+          976,
+          10488,
+          358,
+          4250,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6872357758693397,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527990272,
+        "kv_cache_bytes": 44040192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666
+      }
+    },
+    {
+      "query_id": "Q3328963_P108_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q3328963_P108_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Morocco national under-17 football team",
+        "token_ids": [
+          4151,
+          402,
+          1115,
+          4282,
+          916,
+          28733,
+          28740,
+          28787,
+          6569,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.42436831444501877,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499473408,
+        "kv_cache_bytes": 28442624,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q3328963_P108_2016",
+          "Q3328963_P108_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.008362115826457739,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1732,
+          "total_bytes": 1707204,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Morocco national under-17 football team",
+        "token_ids": [
+          4151,
+          402,
+          1115,
+          4282,
+          916,
+          28733,
+          28740,
+          28787,
+          6569,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4329685168340802,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527990272,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.09355659829452634,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 768,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 208,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1703936,
+      "index_key_bytes": 1536,
+      "metadata_and_format_bytes": 1732,
+      "total_bytes": 1707204,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 208,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1703936,
+    "index_key_bytes": 1536,
+    "metadata_and_format_bytes": 1732,
+    "total_bytes": 1707204,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

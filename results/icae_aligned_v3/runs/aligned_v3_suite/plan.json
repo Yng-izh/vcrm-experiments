@@ -1,0 +1,14 @@
+{
+  "base_config": "config.json",
+  "run_prefix": "aligned_v3",
+  "baseline_prefix": "paper_v1",
+  "previous_diagnostic_run": "refine_v2_C16_train",
+  "feature_root": "/share/latent2/vcrm_icae/features/paper_v1_official",
+  "memory_protocol": "final_current_snapshot_v1",
+  "history_slots": [
+    16
+  ],
+  "codec_epochs": 5,
+  "seed": 42,
+  "note": "Only C16/D16. Final-current training pairs, negative answers and reader co-injection are aligned. D encodes/decodes against the same final current; C never sees condition in codec. Both have zero anchor dropout. All original data/features, historical targets and fixed diagnostic question IDs retained. Offline snapshots only, not incremental or lossily rebased streaming memory. Original single-entry teacher and loss weights retained."
+}

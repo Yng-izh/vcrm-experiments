@@ -1,0 +1,590 @@
+{
+  "id": "templama:val:Q180444:P54",
+  "group": "Q180444:P54",
+  "split": "val",
+  "versions": 6,
+  "queries": [
+    {
+      "query_id": "Q180444_P54_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q180444_P54_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Brazil national association football team",
+        "token_ids": [
+          28760,
+          5237,
+          309,
+          4282,
+          13895,
+          6569,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3111256640404463,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499255296,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q180444_P54_2018",
+          "Q180444_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003646290861070156,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1623,
+          "total_bytes": 1707095,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.8,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "FC Shakhtar Donetsk",
+        "token_ids": [
+          9138,
+          1295,
+          491,
+          407,
+          283,
+          3189,
+          299,
+          1252
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.37254631193354726,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527739392,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q180444_P54_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q180444_P54_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Brazil national association football team",
+        "token_ids": [
+          28760,
+          5237,
+          309,
+          4282,
+          13895,
+          6569,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3143005599267781,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499386368,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q180444_P54_2018",
+          "Q180444_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.00349993072450161,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1623,
+          "total_bytes": 1707095,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.8,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "FC Shakhtar Donetsk",
+        "token_ids": [
+          9138,
+          1295,
+          491,
+          407,
+          283,
+          3189,
+          299,
+          1252
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.37238571560010314,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527739392,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q180444_P54_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q180444_P54_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Brazil national association football team",
+        "token_ids": [
+          28760,
+          5237,
+          309,
+          4282,
+          13895,
+          6569,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3139432230964303,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499255296,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q180444_P54_2018",
+          "Q180444_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0034226570278406143,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1623,
+          "total_bytes": 1707095,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.8,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "FC Shakhtar Donetsk",
+        "token_ids": [
+          9138,
+          1295,
+          491,
+          407,
+          283,
+          3189,
+          299,
+          1252
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3750789533369243,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527739392,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q180444_P54_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q180444_P54_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Brazil national association football team",
+        "token_ids": [
+          28760,
+          5237,
+          309,
+          4282,
+          13895,
+          6569,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3165804040618241,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499386368,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q180444_P54_2018",
+          "Q180444_P54_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0034741577692329884,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1623,
+          "total_bytes": 1707095,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.8,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "FC Shakhtar Donetsk / Clube de Regatão",
+        "token_ids": [
+          9138,
+          1295,
+          491,
+          407,
+          283,
+          3189,
+          299,
+          1252,
+          732,
+          1366,
+          4276,
+          340,
+          2678,
+          270,
+          2069
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6042317543178797,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527739392,
+        "kv_cache_bytes": 43646976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666
+      }
+    },
+    {
+      "query_id": "Q180444_P54_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q180444_P54_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Benfica S.C.",
+        "token_ids": [
+          4121,
+          17643,
+          318,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.28716212790459394,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499255296,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q180444_P54_2018",
+          "Q180444_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036653857678174973,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1623,
+          "total_bytes": 1707095,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Eduardo da Silva plays for FC Shakhtar Donetsk.",
+        "token_ids": [
+          22726,
+          9749,
+          1866,
+          28655,
+          8928,
+          354,
+          9138,
+          1295,
+          491,
+          407,
+          283,
+          3189,
+          299,
+          1252,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6058470197021961,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527739392,
+        "kv_cache_bytes": 43646976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5454545454545454
+      }
+    },
+    {
+      "query_id": "Q180444_P54_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q180444_P54_2016",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Benfica",
+        "token_ids": [
+          4121,
+          17643
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1575633892789483,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499386368,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q180444_P54_2018",
+          "Q180444_P54_2016"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004646460060030222,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1623,
+          "total_bytes": 1707095,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "FC Shakhtar Donetsk",
+        "token_ids": [
+          9138,
+          1295,
+          491,
+          407,
+          283,
+          3189,
+          299,
+          1252
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.37052128883078694,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527739392,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q180444_P54_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q180444_P54_2016",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Benfica",
+        "token_ids": [
+          4121,
+          17643
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.152654601726681,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499255296,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q180444_P54_2018",
+          "Q180444_P54_2016"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0034759389236569405,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1623,
+          "total_bytes": 1707095,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "FC Shakhtar Donetsk",
+        "token_ids": [
+          9138,
+          1295,
+          491,
+          407,
+          283,
+          3189,
+          299,
+          1252
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3741698111407459,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527739392,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.24785001715645194,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 768,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 208,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1703936,
+      "index_key_bytes": 1536,
+      "metadata_and_format_bytes": 1623,
+      "total_bytes": 1707095,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 208,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1703936,
+    "index_key_bytes": 1536,
+    "metadata_and_format_bytes": 1623,
+    "total_bytes": 1707095,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

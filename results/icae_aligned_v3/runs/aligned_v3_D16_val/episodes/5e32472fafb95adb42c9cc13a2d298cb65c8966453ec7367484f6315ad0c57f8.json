@@ -1,0 +1,463 @@
+{
+  "id": "templama:val:Q239938:P54",
+  "group": "Q239938:P54",
+  "split": "val",
+  "versions": 6,
+  "queries": [
+    {
+      "query_id": "Q239938_P54_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q239938_P54_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Kilmarnock F.C.",
+        "token_ids": [
+          28796,
+          309,
+          28719,
+          1331,
+          629,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3769141589291394,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499255296,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q239938_P54_2016",
+          "Q239938_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.006487399339675903,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1692,
+          "total_bytes": 1707164,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.5,
+        "wrong_version": 1
+      },
+      "uncompressed_pair": {
+        "answer": "Middlesbrough F.C.",
+        "token_ids": [
+          351,
+          2558,
+          867,
+          28726,
+          996,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4104884499683976,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527739392,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q239938_P54_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q239938_P54_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Kris Boyd plays for Ross County F.C.",
+        "token_ids": [
+          28796,
+          3665,
+          11036,
+          28715,
+          8928,
+          354,
+          12124,
+          5068,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.48494392400607467,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499386368,
+        "kv_cache_bytes": 28573696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q239938_P54_2016",
+          "Q239938_P54_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.01013376098126173,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1692,
+          "total_bytes": 1707164,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Kris Boyd plays for Kilmarnock F.C.",
+        "token_ids": [
+          524,
+          3665,
+          11036,
+          28715,
+          8928,
+          354,
+          16098,
+          28719,
+          1331,
+          629,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5712865116074681,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527739392,
+        "kv_cache_bytes": 43515904,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q239938_P54_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q239938_P54_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Kilmarnock F.C.",
+        "token_ids": [
+          28796,
+          309,
+          28719,
+          1331,
+          629,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3888306152075529,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499255296,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q239938_P54_2016",
+          "Q239938_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.008745445869863033,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1692,
+          "total_bytes": 1707164,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Kilmarnock F.C.",
+        "token_ids": [
+          16098,
+          28719,
+          1331,
+          629,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.37338085286319256,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527739392,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q239938_P54_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q239938_P54_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Kilmarnock F.C.",
+        "token_ids": [
+          28796,
+          309,
+          28719,
+          1331,
+          629,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4068980887532234,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499386368,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q239938_P54_2016",
+          "Q239938_P54_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0097993528470397,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1692,
+          "total_bytes": 1707164,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Kris Boyd plays for Kilmarnock F.C.",
+        "token_ids": [
+          524,
+          3665,
+          11036,
+          28715,
+          8928,
+          354,
+          16098,
+          28719,
+          1331,
+          629,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5770916007459164,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527739392,
+        "kv_cache_bytes": 43515904,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q239938_P54_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q239938_P54_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Kilmarnock F.C.",
+        "token_ids": [
+          28796,
+          309,
+          28719,
+          1331,
+          629,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.417941068764776,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499255296,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q239938_P54_2016",
+          "Q239938_P54_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.009163707960397005,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1692,
+          "total_bytes": 1707164,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Kris Boyd plays for Kilmarnock F.C.",
+        "token_ids": [
+          524,
+          3665,
+          11036,
+          28715,
+          8928,
+          354,
+          16098,
+          28719,
+          1331,
+          629,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5838966611772776,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527739392,
+        "kv_cache_bytes": 43515904,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    }
+  ],
+  "write_seconds": 0.29116065008565784,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 768,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 208,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1703936,
+      "index_key_bytes": 1536,
+      "metadata_and_format_bytes": 1692,
+      "total_bytes": 1707164,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 208,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1703936,
+    "index_key_bytes": 1536,
+    "metadata_and_format_bytes": 1692,
+    "total_bytes": 1707164,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

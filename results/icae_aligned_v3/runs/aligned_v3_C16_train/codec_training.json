@@ -1,0 +1,200 @@
+{
+  "completed": true,
+  "scope": "full_training_split",
+  "method": "C",
+  "checkpoint": "/share/latent2/vcrm_icae/runs/aligned_v3_C16_train/codec.safetensors",
+  "checkpoint_sha256": "362e031d5bc9329a84761213abf20b2cf2351c82b20848b242c0b5d65ee17871",
+  "training_data_sha256": "fb646f0e96e93e90a753c9c093aa7b8dcfceb75766e9ec04f378241951286e7d",
+  "base_checkpoint_sha256": "ae637cf4e4fdbe623a4ad606339facf07128ab1dc8a4a6fad9be055e4c3c1f56",
+  "adapted_checkpoint_sha256": null,
+  "model_revision": "63a8b081895390a26e140280378bc85ec8bce07a",
+  "codec_width": 256,
+  "codec_heads": 4,
+  "keyframe_interval": 5,
+  "reader_sha256": "0685d17c08188910b93a0c7dd7be8008d575af7b725f0b2ba8e263025eb9569c",
+  "semantic_index_sha256": "8972e6ebe2e117f29dd6056340f17167d655bff7053517878f8bfca83525e36e",
+  "pair_ids_sha256": "4ac7d630b7157f2a227325a6ad4d46ff2234fbe768a0a1d5911616c65ca85b55",
+  "pairs": 1711,
+  "pair_content_sha256": "dc288ad3d6b3f227df777d013981ee996e1fc8b5ec48c3b1da6590f815e07d02",
+  "memory_protocol": "final_current_snapshot_v1",
+  "seed": 42,
+  "codec_parameters": 16661760,
+  "marker_parameters": 24576,
+  "index_parameters": 528384,
+  "steps": 2140,
+  "seconds": 8281.3542496562,
+  "history_slots": 16,
+  "role_time_slots_per_entry": 2,
+  "anchor_dropout": 0.0,
+  "codec_epochs": 5,
+  "epoch_history": [
+    {
+      "epoch": 1,
+      "steps": 428,
+      "pairs": 1711,
+      "mean": {
+        "loss": 4.894136887224427,
+        "negative_version_loss": 0.016262591153718586,
+        "contrastive_loss": 1.1537817638521999,
+        "pooled_alignment_loss": 0.9406808648521896,
+        "index_loss": 0.07348884033362535
+      },
+      "qa_ce_mean": [
+        0.5386730144290262,
+        1.7625721847058249
+      ],
+      "teacher_kl_mean": [
+        0.9107779682396727,
+        4.156668704131554
+      ],
+      "train_conflict_diagnostic": {
+        "scope": "in_sample_training_diagnostic_not_validation",
+        "queries": 200,
+        "accuracy": 0.255,
+        "f1": 0.37756150793650795,
+        "stale_answer": 0.06,
+        "current_policy": "final observed current version, matching validation co-injection"
+      }
+    },
+    {
+      "epoch": 2,
+      "steps": 856,
+      "pairs": 1711,
+      "mean": {
+        "loss": 3.43324392567177,
+        "negative_version_loss": 0.009532067632317434,
+        "contrastive_loss": 0.7271721592158829,
+        "pooled_alignment_loss": 0.9288756343650929,
+        "index_loss": 0.024812381616605785
+      },
+      "qa_ce_mean": [
+        0.2786948320084082,
+        1.2956985173184121
+      ],
+      "teacher_kl_mean": [
+        0.5896102226508563,
+        3.148383508137553
+      ],
+      "train_conflict_diagnostic": {
+        "scope": "in_sample_training_diagnostic_not_validation",
+        "queries": 200,
+        "accuracy": 0.295,
+        "f1": 0.42122725885225887,
+        "stale_answer": 0.04,
+        "current_policy": "final observed current version, matching validation co-injection"
+      }
+    },
+    {
+      "epoch": 3,
+      "steps": 1284,
+      "pairs": 1711,
+      "mean": {
+        "loss": 3.0562921540560186,
+        "negative_version_loss": 0.0054876532941183906,
+        "contrastive_loss": 0.5603101177958631,
+        "pooled_alignment_loss": 0.9279842707652366,
+        "index_loss": 0.05759193132942284
+      },
+      "qa_ce_mean": [
+        0.2648265402674814,
+        1.1982344636363742
+      ],
+      "teacher_kl_mean": [
+        0.5627509501073041,
+        2.8607377984383033
+      ],
+      "train_conflict_diagnostic": {
+        "scope": "in_sample_training_diagnostic_not_validation",
+        "queries": 200,
+        "accuracy": 0.34,
+        "f1": 0.47917694805194805,
+        "stale_answer": 0.015,
+        "current_policy": "final observed current version, matching validation co-injection"
+      }
+    },
+    {
+      "epoch": 4,
+      "steps": 1712,
+      "pairs": 1711,
+      "mean": {
+        "loss": 2.830281378928853,
+        "negative_version_loss": 0.0036955225513095086,
+        "contrastive_loss": 0.4788017542842255,
+        "pooled_alignment_loss": 0.9280010371233273,
+        "index_loss": 0.04503435857075826
+      },
+      "qa_ce_mean": [
+        0.25315420169433367,
+        1.1216573182456435
+      ],
+      "teacher_kl_mean": [
+        0.5449184872806595,
+        2.680683165144182
+      ],
+      "train_conflict_diagnostic": {
+        "scope": "in_sample_training_diagnostic_not_validation",
+        "queries": 200,
+        "accuracy": 0.33,
+        "f1": 0.472652417027417,
+        "stale_answer": 0.02,
+        "current_policy": "final observed current version, matching validation co-injection"
+      }
+    },
+    {
+      "epoch": 5,
+      "steps": 2140,
+      "pairs": 1711,
+      "mean": {
+        "loss": 2.6789238831580278,
+        "negative_version_loss": 0.003239170526409104,
+        "contrastive_loss": 0.41023689458143425,
+        "pooled_alignment_loss": 0.927548489049469,
+        "index_loss": 0.12258893348089371
+      },
+      "qa_ce_mean": [
+        0.25207215582615516,
+        1.0644915164788518
+      ],
+      "teacher_kl_mean": [
+        0.536212122558781,
+        2.566677727140508
+      ],
+      "train_conflict_diagnostic": {
+        "scope": "in_sample_training_diagnostic_not_validation",
+        "queries": 200,
+        "accuracy": 0.35,
+        "f1": 0.47437219724719726,
+        "stale_answer": 0.015,
+        "current_policy": "final observed current version, matching validation co-injection"
+      }
+    }
+  ],
+  "learning_rate": 0.0001,
+  "lr_schedule": "warmup_cosine",
+  "warmup_fraction": 0.05,
+  "shuffle_each_epoch": true,
+  "contrastive_margin": 1.5,
+  "contrastive_weight": 1.0,
+  "contrastive_protocol": "Mean answer text token log-probability excluding EOS; mean over valid negative aliases",
+  "anchor_policy": "final current shared with reader; offline snapshot, not online rebase",
+  "decoder_frozen": true,
+  "encoder_frozen": true,
+  "index_validated_for_routing": false,
+  "teacher_policy": "Uncompressed target entry, same gold teacher-forced prefixes; detached logits",
+  "loss_weights": {
+    "distillation_weight": 1.0,
+    "unlikelihood_weight": 0.1,
+    "pooled_alignment_weight": 0.05,
+    "index_loss_weight": 0.1
+  },
+  "readability_gate_override": {
+    "explicit_user_authorization": true,
+    "authorization_note": "User explicitly requested: ignore this gate, start C/D directly with multi-GPU parallelism. Original failed readability result must remain unchanged.",
+    "gate_run": "paper_v1_baseline_val",
+    "summary_sha256": "08e9312bc7f7465d7ed2b6bf025d3b0fa6249c9a3307850195d9a7d0fb30ec97",
+    "gate_sha256": "c3ac4b14d5decc9c8641c20b0d7522e402f3f8b2b29171e71c79984e181af8c8",
+    "original_decision": "hold_replace_or_fix_icae_checkpoint",
+    "scope": "Override only empirical readability thresholds/manual-review prerequisite; preserve complete validation, reader identity, feature and GPU gradient checks."
+  },
+  "warning": "Training completion does not validate readability, retrieval, or research claims."
+}

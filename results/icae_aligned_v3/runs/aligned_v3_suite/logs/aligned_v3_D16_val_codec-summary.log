@@ -1,0 +1,5246 @@
+{
+  "complete": true,
+  "scope": "post_hoc_fixed_validation_diagnostic_not_untouched_test",
+  "expected_episodes": 172,
+  "completed_episodes": 172,
+  "queries": 481,
+  "current_accuracy": null,
+  "historical_f1": 0.5156262923290788,
+  "uncompressed_pair_current_accuracy": null,
+  "uncompressed_pair_historical_f1": 0.6874252467012648,
+  "compressed_history_f1": 0.5156262923290788,
+  "compressed_history_queries": 481,
+  "accuracy": 0.3762993762993763,
+  "wrong_version_rate": 0.035343035343035345,
+  "decoder_latent_slots_mean": 148,
+  "auxiliary_anchor_slots_mean": 0,
+  "read_seconds_mean": 0.3551492559522189,
+  "recovery_seconds_mean": 0.0082327385090307,
+  "kv_cache_bytes_mean": 28328719.434511434,
+  "resident_latent_slots_mean": 179.72093023255815,
+  "disk_bytes_mean": 1474648.3662790698,
+  "write_seconds_mean": 0.15392497196782726,
+  "resident_slot_budget": 2048,
+  "history_slot_budget": 16,
+  "memory_protocol": "final_current_snapshot_v1",
+  "note": "Offline final-current snapshots built from all original event features, then persisted/reloaded. Only final current is full; every historical entry is m slots. Current is reused as D condition, not counted twice. Source history features are builder inputs, not persisted reader inputs. No online rebase/update claim. Old runs have different pairing and anchor protocols.",
+  "fixed_diagnostic": {
+    "all_compressed": {
+      "queries": 481,
+      "f1": 0.5156262923290788,
+      "accuracy": 0.3762993762993763,
+      "stale_answer": 0.018711018711018712,
+      "rows": [
+        {
+          "query_id": "Q101859_P286_2018",
+          "group": "templama:val:Q101859:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q101859_P286_2019",
+          "group": "templama:val:Q101859:P286",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q10233_P54_2011",
+          "group": "templama:val:Q10233:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1025_P6_2018",
+          "group": "templama:val:Q1025:P6",
+          "f1": 0.5714285714285714,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1025_P6_2019",
+          "group": "templama:val:Q1025:P6",
+          "f1": 0.5714285714285714,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q10356884_P108_2014",
+          "group": "templama:val:Q10356884:P108",
+          "f1": 0.3333333333333333,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q10356884_P108_2015",
+          "group": "templama:val:Q10356884:P108",
+          "f1": 0.3333333333333333,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q103699_P6_2015",
+          "group": "templama:val:Q103699:P6",
+          "f1": 0.5,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q10384918_P54_2011",
+          "group": "templama:val:Q10384918:P54",
+          "f1": 0.2222222222222222,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q10384918_P54_2012",
+          "group": "templama:val:Q10384918:P54",
+          "f1": 0.2,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q10384918_P54_2013",
+          "group": "templama:val:Q10384918:P54",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q10384918_P54_2014",
+          "group": "templama:val:Q10384918:P54",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q10384918_P54_2016",
+          "group": "templama:val:Q10384918:P54",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1049_P6_2018",
+          "group": "templama:val:Q1049:P6",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1049_P6_2019",
+          "group": "templama:val:Q1049:P6",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q105844_P286_2018",
+          "group": "templama:val:Q105844:P286",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1077159_P108_2011",
+          "group": "templama:val:Q1077159:P108",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1077159_P108_2012",
+          "group": "templama:val:Q1077159:P108",
+          "f1": 0.5,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1077159_P108_2013",
+          "group": "templama:val:Q1077159:P108",
+          "f1": 0.5,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1077159_P108_2014",
+          "group": "templama:val:Q1077159:P108",
+          "f1": 0.5,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1077159_P108_2015",
+          "group": "templama:val:Q1077159:P108",
+          "f1": 0.5,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1077159_P108_2016",
+          "group": "templama:val:Q1077159:P108",
+          "f1": 0.5,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1077159_P108_2017",
+          "group": "templama:val:Q1077159:P108",
+          "f1": 0.5,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1077159_P108_2018",
+          "group": "templama:val:Q1077159:P108",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q10773317_P69_2011",
+          "group": "templama:val:Q10773317:P69",
+          "f1": 0.6666666666666666,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1077594_P39_2013",
+          "group": "templama:val:Q1077594:P39",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q10819807_P39_2017",
+          "group": "templama:val:Q10819807:P39",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1085_P6_2011",
+          "group": "templama:val:Q1085:P6",
+          "f1": 0.2,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1085_P6_2012",
+          "group": "templama:val:Q1085:P6",
+          "f1": 0.2,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1085_P6_2013",
+          "group": "templama:val:Q1085:P6",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1085_P6_2014",
+          "group": "templama:val:Q1085:P6",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1085_P6_2015",
+          "group": "templama:val:Q1085:P6",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1085_P6_2016",
+          "group": "templama:val:Q1085:P6",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1085_P6_2017",
+          "group": "templama:val:Q1085:P6",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 1
+        },
+        {
+          "query_id": "Q1086856_P108_2013",
+          "group": "templama:val:Q1086856:P108",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q10905_P54_2011",
+          "group": "templama:val:Q10905:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q10905_P54_2012",
+          "group": "templama:val:Q10905:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1093223_P102_2019",
+          "group": "templama:val:Q1093223:P102",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q11196_P6_2018",
+          "group": "templama:val:Q11196:P6",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q11213484_P69_2012",
+          "group": "templama:val:Q11213484:P69",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q11719711_P102_2012",
+          "group": "templama:val:Q11719711:P102",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q11719711_P102_2013",
+          "group": "templama:val:Q11719711:P102",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q11719711_P102_2014",
+          "group": "templama:val:Q11719711:P102",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q11719711_P102_2015",
+          "group": "templama:val:Q11719711:P102",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q11719711_P102_2016",
+          "group": "templama:val:Q11719711:P102",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q11719711_P102_2017",
+          "group": "templama:val:Q11719711:P102",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q11719711_P102_2018",
+          "group": "templama:val:Q11719711:P102",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q11719711_P102_2019",
+          "group": "templama:val:Q11719711:P102",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1185837_P488_2014",
+          "group": "templama:val:Q1185837:P488",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q11938637_P102_2016",
+          "group": "templama:val:Q11938637:P102",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q11954_P54_2011",
+          "group": "templama:val:Q11954:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q11954_P54_2012",
+          "group": "templama:val:Q11954:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q11954_P54_2013",
+          "group": "templama:val:Q11954:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1197_P6_2011",
+          "group": "templama:val:Q1197:P6",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1197_P6_2012",
+          "group": "templama:val:Q1197:P6",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1197_P6_2013",
+          "group": "templama:val:Q1197:P6",
+          "f1": 0.5,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1198574_P127_2016",
+          "group": "templama:val:Q1198574:P127",
+          "f1": 0.36363636363636365,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q11997_P286_2018",
+          "group": "templama:val:Q11997:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q11997_P286_2019",
+          "group": "templama:val:Q11997:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q12032389_P127_2014",
+          "group": "templama:val:Q12032389:P127",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q122880_P488_2011",
+          "group": "templama:val:Q122880:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q122880_P488_2012",
+          "group": "templama:val:Q122880:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q122880_P488_2013",
+          "group": "templama:val:Q122880:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q122880_P488_2014",
+          "group": "templama:val:Q122880:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q122880_P488_2015",
+          "group": "templama:val:Q122880:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q122880_P488_2019",
+          "group": "templama:val:Q122880:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 1
+        },
+        {
+          "query_id": "Q123979_P39_2013",
+          "group": "templama:val:Q123979:P39",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q12752123_P102_2015",
+          "group": "templama:val:Q12752123:P102",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q129700_P54_2011",
+          "group": "templama:val:Q129700:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q129700_P54_2012",
+          "group": "templama:val:Q129700:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q129700_P54_2013",
+          "group": "templama:val:Q129700:P54",
+          "f1": 0.6,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q129700_P54_2014",
+          "group": "templama:val:Q129700:P54",
+          "f1": 0.2222222222222222,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q129700_P54_2015",
+          "group": "templama:val:Q129700:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q129700_P54_2017",
+          "group": "templama:val:Q129700:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q129700_P54_2018",
+          "group": "templama:val:Q129700:P54",
+          "f1": 0.5,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q129700_P54_2019",
+          "group": "templama:val:Q129700:P54",
+          "f1": 0.5,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1346314_P286_2018",
+          "group": "templama:val:Q1346314:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1346314_P286_2019",
+          "group": "templama:val:Q1346314:P286",
+          "f1": 0.5714285714285714,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1354960_P54_2011",
+          "group": "templama:val:Q1354960:P54",
+          "f1": 0.25,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1354960_P54_2012",
+          "group": "templama:val:Q1354960:P54",
+          "f1": 0.25,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1354960_P54_2013",
+          "group": "templama:val:Q1354960:P54",
+          "f1": 1.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1354960_P54_2014",
+          "group": "templama:val:Q1354960:P54",
+          "f1": 0.5,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1354960_P54_2016",
+          "group": "templama:val:Q1354960:P54",
+          "f1": 0.5,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1354960_P54_2017",
+          "group": "templama:val:Q1354960:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1358496_P54_2011",
+          "group": "templama:val:Q1358496:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1358496_P54_2012",
+          "group": "templama:val:Q1358496:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1358496_P54_2013",
+          "group": "templama:val:Q1358496:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1365787_P39_2011",
+          "group": "templama:val:Q1365787:P39",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q136678_P54_2012",
+          "group": "templama:val:Q136678:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1390688_P39_2011",
+          "group": "templama:val:Q1390688:P39",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1390688_P39_2012",
+          "group": "templama:val:Q1390688:P39",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1390688_P39_2013",
+          "group": "templama:val:Q1390688:P39",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1390688_P39_2014",
+          "group": "templama:val:Q1390688:P39",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1390688_P39_2015",
+          "group": "templama:val:Q1390688:P39",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1390688_P39_2016",
+          "group": "templama:val:Q1390688:P39",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1390688_P39_2017",
+          "group": "templama:val:Q1390688:P39",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1410_P6_2011",
+          "group": "templama:val:Q1410:P6",
+          "f1": 0.5,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q141971_P286_2014",
+          "group": "templama:val:Q141971:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q141971_P286_2015",
+          "group": "templama:val:Q141971:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q141971_P286_2016",
+          "group": "templama:val:Q141971:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q141971_P286_2017",
+          "group": "templama:val:Q141971:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1420661_P102_2014",
+          "group": "templama:val:Q1420661:P102",
+          "f1": 0.5454545454545454,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1420661_P102_2015",
+          "group": "templama:val:Q1420661:P102",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1420661_P102_2016",
+          "group": "templama:val:Q1420661:P102",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1420661_P102_2017",
+          "group": "templama:val:Q1420661:P102",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1420661_P102_2018",
+          "group": "templama:val:Q1420661:P102",
+          "f1": 0.6666666666666666,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q14525857_P39_2015",
+          "group": "templama:val:Q14525857:P39",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1466907_P488_2016",
+          "group": "templama:val:Q1466907:P488",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1466907_P488_2017",
+          "group": "templama:val:Q1466907:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q15051198_P108_2014",
+          "group": "templama:val:Q15051198:P108",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q15051198_P108_2015",
+          "group": "templama:val:Q15051198:P108",
+          "f1": 0.36363636363636365,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q15051198_P108_2016",
+          "group": "templama:val:Q15051198:P108",
+          "f1": 0.36363636363636365,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q15051198_P108_2017",
+          "group": "templama:val:Q15051198:P108",
+          "f1": 0.36363636363636365,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q15051198_P108_2018",
+          "group": "templama:val:Q15051198:P108",
+          "f1": 0.6,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q15081858_P488_2015",
+          "group": "templama:val:Q15081858:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q15081858_P488_2016",
+          "group": "templama:val:Q15081858:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q15081858_P488_2017",
+          "group": "templama:val:Q15081858:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 1
+        },
+        {
+          "query_id": "Q151269_P54_2011",
+          "group": "templama:val:Q151269:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q151269_P54_2012",
+          "group": "templama:val:Q151269:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q151269_P54_2013",
+          "group": "templama:val:Q151269:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q151269_P54_2014",
+          "group": "templama:val:Q151269:P54",
+          "f1": 0.8,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1515752_P39_2014",
+          "group": "templama:val:Q1515752:P39",
+          "f1": 0.2222222222222222,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1537_P6_2019",
+          "group": "templama:val:Q1537:P6",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1540020_P286_2016",
+          "group": "templama:val:Q1540020:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1540020_P286_2017",
+          "group": "templama:val:Q1540020:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1563383_P488_2012",
+          "group": "templama:val:Q1563383:P488",
+          "f1": 0.5,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1563383_P488_2013",
+          "group": "templama:val:Q1563383:P488",
+          "f1": 0.5,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1563383_P488_2014",
+          "group": "templama:val:Q1563383:P488",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q158085_P488_2014",
+          "group": "templama:val:Q158085:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q15983409_P102_2012",
+          "group": "templama:val:Q15983409:P102",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q15983409_P102_2013",
+          "group": "templama:val:Q15983409:P102",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q15983409_P102_2014",
+          "group": "templama:val:Q15983409:P102",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q15983409_P102_2015",
+          "group": "templama:val:Q15983409:P102",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q15983409_P102_2016",
+          "group": "templama:val:Q15983409:P102",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q15983409_P102_2017",
+          "group": "templama:val:Q15983409:P102",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q15995100_P108_2014",
+          "group": "templama:val:Q15995100:P108",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q16091391_P102_2014",
+          "group": "templama:val:Q16091391:P102",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q161038_P54_2014",
+          "group": "templama:val:Q161038:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q161038_P54_2015",
+          "group": "templama:val:Q161038:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q161038_P54_2016",
+          "group": "templama:val:Q161038:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q161038_P54_2017",
+          "group": "templama:val:Q161038:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q161038_P54_2018",
+          "group": "templama:val:Q161038:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q161038_P54_2019",
+          "group": "templama:val:Q161038:P54",
+          "f1": 0.6666666666666666,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q16186858_P102_2015",
+          "group": "templama:val:Q16186858:P102",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q16194444_P102_2019",
+          "group": "templama:val:Q16194444:P102",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q16216161_P108_2013",
+          "group": "templama:val:Q16216161:P108",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q16216161_P108_2014",
+          "group": "templama:val:Q16216161:P108",
+          "f1": 0.3333333333333333,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q16216161_P108_2015",
+          "group": "templama:val:Q16216161:P108",
+          "f1": 0.3333333333333333,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q16216161_P108_2016",
+          "group": "templama:val:Q16216161:P108",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q16217237_P102_2015",
+          "group": "templama:val:Q16217237:P102",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q16217237_P102_2016",
+          "group": "templama:val:Q16217237:P102",
+          "f1": 0.26666666666666666,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q16217237_P102_2017",
+          "group": "templama:val:Q16217237:P102",
+          "f1": 0.26666666666666666,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q16217237_P102_2018",
+          "group": "templama:val:Q16217237:P102",
+          "f1": 0.16666666666666666,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q16217237_P102_2019",
+          "group": "templama:val:Q16217237:P102",
+          "f1": 0.16666666666666666,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q16553_P6_2014",
+          "group": "templama:val:Q16553:P6",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q167240_P54_2011",
+          "group": "templama:val:Q167240:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q167240_P54_2012",
+          "group": "templama:val:Q167240:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q167240_P54_2013",
+          "group": "templama:val:Q167240:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q167240_P54_2014",
+          "group": "templama:val:Q167240:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q16728614_P108_2019",
+          "group": "templama:val:Q16728614:P108",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q16730484_P108_2018",
+          "group": "templama:val:Q16730484:P108",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q16935101_P39_2018",
+          "group": "templama:val:Q16935101:P39",
+          "f1": 0.3333333333333333,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q16970977_P108_2014",
+          "group": "templama:val:Q16970977:P108",
+          "f1": 0.6,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q16983371_P108_2015",
+          "group": "templama:val:Q16983371:P108",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q170117_P286_2017",
+          "group": "templama:val:Q170117:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q170117_P286_2018",
+          "group": "templama:val:Q170117:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q170117_P286_2019",
+          "group": "templama:val:Q170117:P286",
+          "f1": 0.26666666666666666,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q170235_P54_2011",
+          "group": "templama:val:Q170235:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q170235_P54_2012",
+          "group": "templama:val:Q170235:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q170235_P54_2013",
+          "group": "templama:val:Q170235:P54",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q170235_P54_2014",
+          "group": "templama:val:Q170235:P54",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q170235_P54_2016",
+          "group": "templama:val:Q170235:P54",
+          "f1": 0.2222222222222222,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1721_P6_2013",
+          "group": "templama:val:Q1721:P6",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q17527554_P127_2014",
+          "group": "templama:val:Q17527554:P127",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1753819_P488_2011",
+          "group": "templama:val:Q1753819:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1753819_P488_2012",
+          "group": "templama:val:Q1753819:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1753819_P488_2013",
+          "group": "templama:val:Q1753819:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1753819_P488_2014",
+          "group": "templama:val:Q1753819:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q17541422_P69_2019",
+          "group": "templama:val:Q17541422:P69",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q176_P6_2012",
+          "group": "templama:val:Q176:P6",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q176_P6_2013",
+          "group": "templama:val:Q176:P6",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q176_P6_2014",
+          "group": "templama:val:Q176:P6",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q176_P6_2015",
+          "group": "templama:val:Q176:P6",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q176_P6_2016",
+          "group": "templama:val:Q176:P6",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q176_P6_2017",
+          "group": "templama:val:Q176:P6",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q178195_P54_2011",
+          "group": "templama:val:Q178195:P54",
+          "f1": 0.2857142857142857,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q178195_P54_2012",
+          "group": "templama:val:Q178195:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q178195_P54_2013",
+          "group": "templama:val:Q178195:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q178195_P54_2014",
+          "group": "templama:val:Q178195:P54",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q180444_P54_2011",
+          "group": "templama:val:Q180444:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q180444_P54_2012",
+          "group": "templama:val:Q180444:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q180444_P54_2013",
+          "group": "templama:val:Q180444:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q180444_P54_2014",
+          "group": "templama:val:Q180444:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q180444_P54_2015",
+          "group": "templama:val:Q180444:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q180444_P54_2016",
+          "group": "templama:val:Q180444:P54",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q180444_P54_2017",
+          "group": "templama:val:Q180444:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q180581_P54_2013",
+          "group": "templama:val:Q180581:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q180581_P54_2014",
+          "group": "templama:val:Q180581:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q180581_P54_2015",
+          "group": "templama:val:Q180581:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q180581_P54_2016",
+          "group": "templama:val:Q180581:P54",
+          "f1": 0.2,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1810165_P127_2013",
+          "group": "templama:val:Q1810165:P127",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q18356062_P127_2014",
+          "group": "templama:val:Q18356062:P127",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q18359043_P108_2013",
+          "group": "templama:val:Q18359043:P108",
+          "f1": 0.4444444444444444,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q184277_P54_2011",
+          "group": "templama:val:Q184277:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q184277_P54_2012",
+          "group": "templama:val:Q184277:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q184277_P54_2013",
+          "group": "templama:val:Q184277:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q184277_P54_2014",
+          "group": "templama:val:Q184277:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q184277_P54_2015",
+          "group": "templama:val:Q184277:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q184277_P54_2016",
+          "group": "templama:val:Q184277:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q184277_P54_2017",
+          "group": "templama:val:Q184277:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q184277_P54_2018",
+          "group": "templama:val:Q184277:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1856805_P102_2018",
+          "group": "templama:val:Q1856805:P102",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q187184_P54_2011",
+          "group": "templama:val:Q187184:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q187184_P54_2012",
+          "group": "templama:val:Q187184:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q187184_P54_2013",
+          "group": "templama:val:Q187184:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q187184_P54_2014",
+          "group": "templama:val:Q187184:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q187184_P54_2015",
+          "group": "templama:val:Q187184:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q187184_P54_2016",
+          "group": "templama:val:Q187184:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q187184_P54_2017",
+          "group": "templama:val:Q187184:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q187184_P54_2018",
+          "group": "templama:val:Q187184:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q18744_P286_2019",
+          "group": "templama:val:Q18744:P286",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1892745_P127_2013",
+          "group": "templama:val:Q1892745:P127",
+          "f1": 0.6666666666666666,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1892745_P127_2014",
+          "group": "templama:val:Q1892745:P127",
+          "f1": 0.6666666666666666,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1892745_P127_2015",
+          "group": "templama:val:Q1892745:P127",
+          "f1": 0.6666666666666666,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1892745_P127_2016",
+          "group": "templama:val:Q1892745:P127",
+          "f1": 0.6666666666666666,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1892745_P127_2017",
+          "group": "templama:val:Q1892745:P127",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1916_P54_2014",
+          "group": "templama:val:Q1916:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1916_P54_2015",
+          "group": "templama:val:Q1916:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1916_P54_2016",
+          "group": "templama:val:Q1916:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1916_P54_2017",
+          "group": "templama:val:Q1916:P54",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q192334_P488_2013",
+          "group": "templama:val:Q192334:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1939_P54_2011",
+          "group": "templama:val:Q1939:P54",
+          "f1": 0.5,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1939_P54_2012",
+          "group": "templama:val:Q1939:P54",
+          "f1": 0.3333333333333333,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1939_P54_2013",
+          "group": "templama:val:Q1939:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1939_P54_2014",
+          "group": "templama:val:Q1939:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q19518_P286_2019",
+          "group": "templama:val:Q19518:P286",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q196219_P54_2011",
+          "group": "templama:val:Q196219:P54",
+          "f1": 0.8,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q196219_P54_2012",
+          "group": "templama:val:Q196219:P54",
+          "f1": 0.8,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q196219_P54_2013",
+          "group": "templama:val:Q196219:P54",
+          "f1": 0.8,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q196219_P54_2014",
+          "group": "templama:val:Q196219:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q196219_P54_2015",
+          "group": "templama:val:Q196219:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q196219_P54_2016",
+          "group": "templama:val:Q196219:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q196219_P54_2018",
+          "group": "templama:val:Q196219:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q19666344_P108_2019",
+          "group": "templama:val:Q19666344:P108",
+          "f1": 0.6666666666666666,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1969585_P488_2016",
+          "group": "templama:val:Q1969585:P488",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1972672_P54_2015",
+          "group": "templama:val:Q1972672:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q20027181_P102_2013",
+          "group": "templama:val:Q20027181:P102",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q20027181_P102_2014",
+          "group": "templama:val:Q20027181:P102",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q20027181_P102_2015",
+          "group": "templama:val:Q20027181:P102",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q20027181_P102_2016",
+          "group": "templama:val:Q20027181:P102",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q20027181_P102_2017",
+          "group": "templama:val:Q20027181:P102",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q20027181_P102_2018",
+          "group": "templama:val:Q20027181:P102",
+          "f1": 0.8,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q20027181_P102_2019",
+          "group": "templama:val:Q20027181:P102",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q20136005_P127_2014",
+          "group": "templama:val:Q20136005:P127",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q201860_P54_2012",
+          "group": "templama:val:Q201860:P54",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q201860_P54_2013",
+          "group": "templama:val:Q201860:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q20278674_P102_2016",
+          "group": "templama:val:Q20278674:P102",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q20278674_P102_2017",
+          "group": "templama:val:Q20278674:P102",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q204220_P286_2018",
+          "group": "templama:val:Q204220:P286",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2057994_P54_2011",
+          "group": "templama:val:Q2057994:P54",
+          "f1": 0.5,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2057994_P54_2012",
+          "group": "templama:val:Q2057994:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2057994_P54_2013",
+          "group": "templama:val:Q2057994:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2057994_P54_2014",
+          "group": "templama:val:Q2057994:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2073145_P286_2011",
+          "group": "templama:val:Q2073145:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2073145_P286_2012",
+          "group": "templama:val:Q2073145:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2073145_P286_2013",
+          "group": "templama:val:Q2073145:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2073145_P286_2014",
+          "group": "templama:val:Q2073145:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2073145_P286_2015",
+          "group": "templama:val:Q2073145:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2073145_P286_2016",
+          "group": "templama:val:Q2073145:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2073145_P286_2018",
+          "group": "templama:val:Q2073145:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2073145_P286_2019",
+          "group": "templama:val:Q2073145:P286",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q208406_P286_2019",
+          "group": "templama:val:Q208406:P286",
+          "f1": 0.26666666666666666,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q208425_P54_2011",
+          "group": "templama:val:Q208425:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q208425_P54_2012",
+          "group": "templama:val:Q208425:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q208425_P54_2013",
+          "group": "templama:val:Q208425:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q208425_P54_2014",
+          "group": "templama:val:Q208425:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q208619_P54_2011",
+          "group": "templama:val:Q208619:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q208619_P54_2012",
+          "group": "templama:val:Q208619:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q208619_P54_2013",
+          "group": "templama:val:Q208619:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q208619_P54_2014",
+          "group": "templama:val:Q208619:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2092290_P54_2012",
+          "group": "templama:val:Q2092290:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2092290_P54_2013",
+          "group": "templama:val:Q2092290:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2092290_P54_2014",
+          "group": "templama:val:Q2092290:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2092290_P54_2015",
+          "group": "templama:val:Q2092290:P54",
+          "f1": 0.8,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2092290_P54_2016",
+          "group": "templama:val:Q2092290:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2092290_P54_2017",
+          "group": "templama:val:Q2092290:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q20971281_P39_2017",
+          "group": "templama:val:Q20971281:P39",
+          "f1": 0.4444444444444444,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q210025_P286_2019",
+          "group": "templama:val:Q210025:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2110896_P488_2011",
+          "group": "templama:val:Q2110896:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2110896_P488_2012",
+          "group": "templama:val:Q2110896:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2110896_P488_2013",
+          "group": "templama:val:Q2110896:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2110896_P488_2014",
+          "group": "templama:val:Q2110896:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2110896_P488_2015",
+          "group": "templama:val:Q2110896:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2110896_P488_2016",
+          "group": "templama:val:Q2110896:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 1
+        },
+        {
+          "query_id": "Q2113902_P54_2013",
+          "group": "templama:val:Q2113902:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2113902_P54_2014",
+          "group": "templama:val:Q2113902:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2113902_P54_2015",
+          "group": "templama:val:Q2113902:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2113902_P54_2016",
+          "group": "templama:val:Q2113902:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q212101_P488_2015",
+          "group": "templama:val:Q212101:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q21260355_P108_2017",
+          "group": "templama:val:Q21260355:P108",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q213119_P54_2011",
+          "group": "templama:val:Q213119:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q213119_P54_2012",
+          "group": "templama:val:Q213119:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q213119_P54_2013",
+          "group": "templama:val:Q213119:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q213119_P54_2014",
+          "group": "templama:val:Q213119:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q219703_P286_2019",
+          "group": "templama:val:Q219703:P286",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q221671_P286_2018",
+          "group": "templama:val:Q221671:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q221671_P286_2019",
+          "group": "templama:val:Q221671:P286",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q22302425_P69_2018",
+          "group": "templama:val:Q22302425:P69",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 1
+        },
+        {
+          "query_id": "Q22302425_P69_2019",
+          "group": "templama:val:Q22302425:P69",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q223450_P286_2018",
+          "group": "templama:val:Q223450:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q223450_P286_2019",
+          "group": "templama:val:Q223450:P286",
+          "f1": 0.14285714285714285,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q225823_P39_2012",
+          "group": "templama:val:Q225823:P39",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q225823_P39_2013",
+          "group": "templama:val:Q225823:P39",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q22978304_P102_2018",
+          "group": "templama:val:Q22978304:P102",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2316438_P54_2011",
+          "group": "templama:val:Q2316438:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2316438_P54_2012",
+          "group": "templama:val:Q2316438:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2316438_P54_2013",
+          "group": "templama:val:Q2316438:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2316438_P54_2014",
+          "group": "templama:val:Q2316438:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2316438_P54_2015",
+          "group": "templama:val:Q2316438:P54",
+          "f1": 0.4444444444444444,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q232_P6_2016",
+          "group": "templama:val:Q232:P6",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q232_P6_2017",
+          "group": "templama:val:Q232:P6",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q232_P6_2018",
+          "group": "templama:val:Q232:P6",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q232_P6_2019",
+          "group": "templama:val:Q232:P6",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q232301_P102_2012",
+          "group": "templama:val:Q232301:P102",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2376804_P127_2017",
+          "group": "templama:val:Q2376804:P127",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q239938_P54_2011",
+          "group": "templama:val:Q239938:P54",
+          "f1": 0.5,
+          "accuracy": 0,
+          "stale_answer": 1
+        },
+        {
+          "query_id": "Q239938_P54_2012",
+          "group": "templama:val:Q239938:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q239938_P54_2013",
+          "group": "templama:val:Q239938:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q239938_P54_2014",
+          "group": "templama:val:Q239938:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q239938_P54_2015",
+          "group": "templama:val:Q239938:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q24239052_P108_2014",
+          "group": "templama:val:Q24239052:P108",
+          "f1": 0.125,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q24239052_P108_2015",
+          "group": "templama:val:Q24239052:P108",
+          "f1": 0.125,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q24239052_P108_2016",
+          "group": "templama:val:Q24239052:P108",
+          "f1": 0.125,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q24239052_P108_2017",
+          "group": "templama:val:Q24239052:P108",
+          "f1": 0.125,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q24239052_P108_2018",
+          "group": "templama:val:Q24239052:P108",
+          "f1": 0.125,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q24239052_P108_2019",
+          "group": "templama:val:Q24239052:P108",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 1
+        },
+        {
+          "query_id": "Q251095_P39_2011",
+          "group": "templama:val:Q251095:P39",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q253515_P39_2011",
+          "group": "templama:val:Q253515:P39",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q25352258_P488_2011",
+          "group": "templama:val:Q25352258:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q25352258_P488_2012",
+          "group": "templama:val:Q25352258:P488",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2551877_P54_2011",
+          "group": "templama:val:Q2551877:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2551877_P54_2012",
+          "group": "templama:val:Q2551877:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2551877_P54_2013",
+          "group": "templama:val:Q2551877:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2551877_P54_2014",
+          "group": "templama:val:Q2551877:P54",
+          "f1": 0.25,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q260725_P54_2011",
+          "group": "templama:val:Q260725:P54",
+          "f1": 0.3333333333333333,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q260725_P54_2012",
+          "group": "templama:val:Q260725:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q260725_P54_2013",
+          "group": "templama:val:Q260725:P54",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q260725_P54_2014",
+          "group": "templama:val:Q260725:P54",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q26192_P54_2011",
+          "group": "templama:val:Q26192:P54",
+          "f1": 0.7142857142857143,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q26192_P54_2012",
+          "group": "templama:val:Q26192:P54",
+          "f1": 0.7142857142857143,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q26192_P54_2013",
+          "group": "templama:val:Q26192:P54",
+          "f1": 0.5714285714285714,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q26192_P54_2014",
+          "group": "templama:val:Q26192:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q26192_P54_2016",
+          "group": "templama:val:Q26192:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2634730_P286_2016",
+          "group": "templama:val:Q2634730:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2634730_P286_2017",
+          "group": "templama:val:Q2634730:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2634730_P286_2018",
+          "group": "templama:val:Q2634730:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q263566_P102_2014",
+          "group": "templama:val:Q263566:P102",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2654539_P54_2016",
+          "group": "templama:val:Q2654539:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2654539_P54_2017",
+          "group": "templama:val:Q2654539:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2654539_P54_2018",
+          "group": "templama:val:Q2654539:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2690188_P102_2014",
+          "group": "templama:val:Q2690188:P102",
+          "f1": 0.5454545454545454,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2690188_P102_2015",
+          "group": "templama:val:Q2690188:P102",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2690188_P102_2016",
+          "group": "templama:val:Q2690188:P102",
+          "f1": 0.4444444444444444,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2690188_P102_2017",
+          "group": "templama:val:Q2690188:P102",
+          "f1": 0.4444444444444444,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2690188_P102_2018",
+          "group": "templama:val:Q2690188:P102",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q270_P6_2018",
+          "group": "templama:val:Q270:P6",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q27049069_P69_2015",
+          "group": "templama:val:Q27049069:P69",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q273274_P39_2011",
+          "group": "templama:val:Q273274:P39",
+          "f1": 0.46153846153846156,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q273274_P39_2012",
+          "group": "templama:val:Q273274:P39",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q27825033_P39_2019",
+          "group": "templama:val:Q27825033:P39",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q282089_P39_2016",
+          "group": "templama:val:Q282089:P39",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q285093_P488_2014",
+          "group": "templama:val:Q285093:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q28549362_P102_2011",
+          "group": "templama:val:Q28549362:P102",
+          "f1": 0.3333333333333333,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q28549362_P102_2012",
+          "group": "templama:val:Q28549362:P102",
+          "f1": 0.18181818181818182,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q28549362_P102_2013",
+          "group": "templama:val:Q28549362:P102",
+          "f1": 0.18181818181818182,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q28549362_P102_2014",
+          "group": "templama:val:Q28549362:P102",
+          "f1": 0.2,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q28549362_P102_2015",
+          "group": "templama:val:Q28549362:P102",
+          "f1": 0.36363636363636365,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q28860635_P102_2019",
+          "group": "templama:val:Q28860635:P102",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q28873702_P108_2013",
+          "group": "templama:val:Q28873702:P108",
+          "f1": 0.6,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q288838_P488_2011",
+          "group": "templama:val:Q288838:P488",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q288838_P488_2012",
+          "group": "templama:val:Q288838:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q288838_P488_2013",
+          "group": "templama:val:Q288838:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q288838_P488_2014",
+          "group": "templama:val:Q288838:P488",
+          "f1": 0.5,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2895519_P54_2011",
+          "group": "templama:val:Q2895519:P54",
+          "f1": 0.2222222222222222,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2895519_P54_2012",
+          "group": "templama:val:Q2895519:P54",
+          "f1": 0.2222222222222222,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2895519_P54_2013",
+          "group": "templama:val:Q2895519:P54",
+          "f1": 0.2,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2895519_P54_2014",
+          "group": "templama:val:Q2895519:P54",
+          "f1": 0.2,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2919162_P102_2012",
+          "group": "templama:val:Q2919162:P102",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q29207_P39_2012",
+          "group": "templama:val:Q29207:P39",
+          "f1": 0.3333333333333333,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q292507_P54_2011",
+          "group": "templama:val:Q292507:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q292507_P54_2012",
+          "group": "templama:val:Q292507:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q29253032_P108_2011",
+          "group": "templama:val:Q29253032:P108",
+          "f1": 0.5,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2936_P6_2014",
+          "group": "templama:val:Q2936:P6",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2964727_P54_2011",
+          "group": "templama:val:Q2964727:P54",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2964727_P54_2012",
+          "group": "templama:val:Q2964727:P54",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2964727_P54_2013",
+          "group": "templama:val:Q2964727:P54",
+          "f1": 0.2,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2964727_P54_2014",
+          "group": "templama:val:Q2964727:P54",
+          "f1": 0.2,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2964727_P54_2015",
+          "group": "templama:val:Q2964727:P54",
+          "f1": 0.6,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q297146_P54_2011",
+          "group": "templama:val:Q297146:P54",
+          "f1": 0.3333333333333333,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q297146_P54_2012",
+          "group": "templama:val:Q297146:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q297146_P54_2013",
+          "group": "templama:val:Q297146:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q297146_P54_2014",
+          "group": "templama:val:Q297146:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q297964_P54_2011",
+          "group": "templama:val:Q297964:P54",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q297964_P54_2012",
+          "group": "templama:val:Q297964:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q297964_P54_2013",
+          "group": "templama:val:Q297964:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q297964_P54_2014",
+          "group": "templama:val:Q297964:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q29829857_P108_2018",
+          "group": "templama:val:Q29829857:P108",
+          "f1": 0.2,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q29829857_P108_2019",
+          "group": "templama:val:Q29829857:P108",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q30226340_P69_2014",
+          "group": "templama:val:Q30226340:P69",
+          "f1": 0.3333333333333333,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q30748335_P108_2015",
+          "group": "templama:val:Q30748335:P108",
+          "f1": 0.6,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3082132_P108_2018",
+          "group": "templama:val:Q3082132:P108",
+          "f1": 0.5,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q310369_P54_2011",
+          "group": "templama:val:Q310369:P54",
+          "f1": 0.25,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q310369_P54_2012",
+          "group": "templama:val:Q310369:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q310369_P54_2013",
+          "group": "templama:val:Q310369:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q310369_P54_2014",
+          "group": "templama:val:Q310369:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3107510_P54_2011",
+          "group": "templama:val:Q3107510:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3107510_P54_2012",
+          "group": "templama:val:Q3107510:P54",
+          "f1": 0.6666666666666666,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3107510_P54_2013",
+          "group": "templama:val:Q3107510:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3107510_P54_2014",
+          "group": "templama:val:Q3107510:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q311043_P54_2011",
+          "group": "templama:val:Q311043:P54",
+          "f1": 0.5,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q311043_P54_2012",
+          "group": "templama:val:Q311043:P54",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q311043_P54_2013",
+          "group": "templama:val:Q311043:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q311043_P54_2014",
+          "group": "templama:val:Q311043:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q311155_P54_2011",
+          "group": "templama:val:Q311155:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q311155_P54_2012",
+          "group": "templama:val:Q311155:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q311155_P54_2013",
+          "group": "templama:val:Q311155:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q311155_P54_2014",
+          "group": "templama:val:Q311155:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q311155_P54_2015",
+          "group": "templama:val:Q311155:P54",
+          "f1": 0.5,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q311205_P108_2013",
+          "group": "templama:val:Q311205:P108",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3123610_P102_2015",
+          "group": "templama:val:Q3123610:P102",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q313089_P54_2011",
+          "group": "templama:val:Q313089:P54",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q313089_P54_2012",
+          "group": "templama:val:Q313089:P54",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q313089_P54_2013",
+          "group": "templama:val:Q313089:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q313089_P54_2014",
+          "group": "templama:val:Q313089:P54",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q313815_P108_2014",
+          "group": "templama:val:Q313815:P108",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q314008_P488_2013",
+          "group": "templama:val:Q314008:P488",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3140358_P54_2011",
+          "group": "templama:val:Q3140358:P54",
+          "f1": 0.6666666666666666,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3140358_P54_2012",
+          "group": "templama:val:Q3140358:P54",
+          "f1": 0.6666666666666666,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3140358_P54_2013",
+          "group": "templama:val:Q3140358:P54",
+          "f1": 0.6666666666666666,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3140358_P54_2014",
+          "group": "templama:val:Q3140358:P54",
+          "f1": 0.6666666666666666,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3140358_P54_2015",
+          "group": "templama:val:Q3140358:P54",
+          "f1": 0.6666666666666666,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3140358_P54_2016",
+          "group": "templama:val:Q3140358:P54",
+          "f1": 0.6666666666666666,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3140358_P54_2017",
+          "group": "templama:val:Q3140358:P54",
+          "f1": 0.3333333333333333,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3162959_P39_2013",
+          "group": "templama:val:Q3162959:P39",
+          "f1": 0.5882352941176471,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3162959_P39_2014",
+          "group": "templama:val:Q3162959:P39",
+          "f1": 0.5555555555555556,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3162959_P39_2015",
+          "group": "templama:val:Q3162959:P39",
+          "f1": 0.5263157894736842,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q319810_P54_2011",
+          "group": "templama:val:Q319810:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q319810_P54_2012",
+          "group": "templama:val:Q319810:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q319810_P54_2013",
+          "group": "templama:val:Q319810:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q319810_P54_2014",
+          "group": "templama:val:Q319810:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q319810_P54_2015",
+          "group": "templama:val:Q319810:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q319810_P54_2016",
+          "group": "templama:val:Q319810:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q319810_P54_2017",
+          "group": "templama:val:Q319810:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q319810_P54_2018",
+          "group": "templama:val:Q319810:P54",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3202252_P54_2011",
+          "group": "templama:val:Q3202252:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3202252_P54_2012",
+          "group": "templama:val:Q3202252:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3202252_P54_2013",
+          "group": "templama:val:Q3202252:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3202252_P54_2014",
+          "group": "templama:val:Q3202252:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3202252_P54_2015",
+          "group": "templama:val:Q3202252:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3202252_P54_2016",
+          "group": "templama:val:Q3202252:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3202252_P54_2017",
+          "group": "templama:val:Q3202252:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q320306_P488_2019",
+          "group": "templama:val:Q320306:P488",
+          "f1": 0.5,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3224_P6_2014",
+          "group": "templama:val:Q3224:P6",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3224_P6_2015",
+          "group": "templama:val:Q3224:P6",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3224_P6_2016",
+          "group": "templama:val:Q3224:P6",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3224_P6_2017",
+          "group": "templama:val:Q3224:P6",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3270032_P108_2011",
+          "group": "templama:val:Q3270032:P108",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3270032_P108_2012",
+          "group": "templama:val:Q3270032:P108",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3270032_P108_2013",
+          "group": "templama:val:Q3270032:P108",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3270032_P108_2014",
+          "group": "templama:val:Q3270032:P108",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3298727_P108_2014",
+          "group": "templama:val:Q3298727:P108",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3328963_P108_2011",
+          "group": "templama:val:Q3328963:P108",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3328963_P108_2012",
+          "group": "templama:val:Q3328963:P108",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3328963_P108_2013",
+          "group": "templama:val:Q3328963:P108",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 1
+        },
+        {
+          "query_id": "Q3328963_P108_2014",
+          "group": "templama:val:Q3328963:P108",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 1
+        },
+        {
+          "query_id": "Q3328963_P108_2015",
+          "group": "templama:val:Q3328963:P108",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q337453_P39_2012",
+          "group": "templama:val:Q337453:P39",
+          "f1": 0.25,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q337453_P39_2013",
+          "group": "templama:val:Q337453:P39",
+          "f1": 0.5,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q337453_P39_2014",
+          "group": "templama:val:Q337453:P39",
+          "f1": 0.7692307692307693,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q337453_P39_2015",
+          "group": "templama:val:Q337453:P39",
+          "f1": 0.7692307692307693,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q337453_P39_2016",
+          "group": "templama:val:Q337453:P39",
+          "f1": 0.8,
+          "accuracy": 0,
+          "stale_answer": 0
+        }
+      ]
+    },
+    "disjoint_current_conflicts": {
+      "queries": 262,
+      "f1": 0.4264536738545908,
+      "accuracy": 0.30916030534351147,
+      "stale_answer": 0.026717557251908396,
+      "rows": [
+        {
+          "query_id": "Q101859_P286_2018",
+          "group": "templama:val:Q101859:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1025_P6_2018",
+          "group": "templama:val:Q1025:P6",
+          "f1": 0.5714285714285714,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q10384918_P54_2011",
+          "group": "templama:val:Q10384918:P54",
+          "f1": 0.2222222222222222,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q10384918_P54_2012",
+          "group": "templama:val:Q10384918:P54",
+          "f1": 0.2,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q10384918_P54_2013",
+          "group": "templama:val:Q10384918:P54",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q10384918_P54_2014",
+          "group": "templama:val:Q10384918:P54",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1049_P6_2018",
+          "group": "templama:val:Q1049:P6",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1085_P6_2011",
+          "group": "templama:val:Q1085:P6",
+          "f1": 0.2,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1085_P6_2012",
+          "group": "templama:val:Q1085:P6",
+          "f1": 0.2,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1085_P6_2013",
+          "group": "templama:val:Q1085:P6",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1085_P6_2014",
+          "group": "templama:val:Q1085:P6",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1085_P6_2015",
+          "group": "templama:val:Q1085:P6",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1085_P6_2016",
+          "group": "templama:val:Q1085:P6",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1085_P6_2017",
+          "group": "templama:val:Q1085:P6",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 1
+        },
+        {
+          "query_id": "Q10905_P54_2011",
+          "group": "templama:val:Q10905:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q11719711_P102_2012",
+          "group": "templama:val:Q11719711:P102",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q11719711_P102_2013",
+          "group": "templama:val:Q11719711:P102",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q11719711_P102_2014",
+          "group": "templama:val:Q11719711:P102",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q11719711_P102_2015",
+          "group": "templama:val:Q11719711:P102",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q11719711_P102_2016",
+          "group": "templama:val:Q11719711:P102",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q11719711_P102_2017",
+          "group": "templama:val:Q11719711:P102",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q11719711_P102_2018",
+          "group": "templama:val:Q11719711:P102",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1197_P6_2011",
+          "group": "templama:val:Q1197:P6",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1197_P6_2012",
+          "group": "templama:val:Q1197:P6",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q122880_P488_2011",
+          "group": "templama:val:Q122880:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q122880_P488_2012",
+          "group": "templama:val:Q122880:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q122880_P488_2013",
+          "group": "templama:val:Q122880:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q122880_P488_2014",
+          "group": "templama:val:Q122880:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q122880_P488_2015",
+          "group": "templama:val:Q122880:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q129700_P54_2011",
+          "group": "templama:val:Q129700:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q129700_P54_2012",
+          "group": "templama:val:Q129700:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q129700_P54_2013",
+          "group": "templama:val:Q129700:P54",
+          "f1": 0.6,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q129700_P54_2014",
+          "group": "templama:val:Q129700:P54",
+          "f1": 0.2222222222222222,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q129700_P54_2015",
+          "group": "templama:val:Q129700:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q129700_P54_2017",
+          "group": "templama:val:Q129700:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q129700_P54_2018",
+          "group": "templama:val:Q129700:P54",
+          "f1": 0.5,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1346314_P286_2018",
+          "group": "templama:val:Q1346314:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q141971_P286_2014",
+          "group": "templama:val:Q141971:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q141971_P286_2015",
+          "group": "templama:val:Q141971:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q141971_P286_2016",
+          "group": "templama:val:Q141971:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q141971_P286_2017",
+          "group": "templama:val:Q141971:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1420661_P102_2014",
+          "group": "templama:val:Q1420661:P102",
+          "f1": 0.5454545454545454,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1420661_P102_2015",
+          "group": "templama:val:Q1420661:P102",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1420661_P102_2016",
+          "group": "templama:val:Q1420661:P102",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1420661_P102_2017",
+          "group": "templama:val:Q1420661:P102",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1466907_P488_2016",
+          "group": "templama:val:Q1466907:P488",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q15051198_P108_2014",
+          "group": "templama:val:Q15051198:P108",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q15051198_P108_2015",
+          "group": "templama:val:Q15051198:P108",
+          "f1": 0.36363636363636365,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q15051198_P108_2016",
+          "group": "templama:val:Q15051198:P108",
+          "f1": 0.36363636363636365,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q15051198_P108_2017",
+          "group": "templama:val:Q15051198:P108",
+          "f1": 0.36363636363636365,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q15081858_P488_2015",
+          "group": "templama:val:Q15081858:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q15081858_P488_2016",
+          "group": "templama:val:Q15081858:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q15081858_P488_2017",
+          "group": "templama:val:Q15081858:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 1
+        },
+        {
+          "query_id": "Q151269_P54_2011",
+          "group": "templama:val:Q151269:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q151269_P54_2012",
+          "group": "templama:val:Q151269:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q151269_P54_2013",
+          "group": "templama:val:Q151269:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1540020_P286_2016",
+          "group": "templama:val:Q1540020:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1540020_P286_2017",
+          "group": "templama:val:Q1540020:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1563383_P488_2012",
+          "group": "templama:val:Q1563383:P488",
+          "f1": 0.5,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1563383_P488_2013",
+          "group": "templama:val:Q1563383:P488",
+          "f1": 0.5,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q15983409_P102_2012",
+          "group": "templama:val:Q15983409:P102",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q15983409_P102_2013",
+          "group": "templama:val:Q15983409:P102",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q15983409_P102_2014",
+          "group": "templama:val:Q15983409:P102",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q15983409_P102_2015",
+          "group": "templama:val:Q15983409:P102",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q15983409_P102_2016",
+          "group": "templama:val:Q15983409:P102",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q161038_P54_2014",
+          "group": "templama:val:Q161038:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q161038_P54_2015",
+          "group": "templama:val:Q161038:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q161038_P54_2016",
+          "group": "templama:val:Q161038:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q161038_P54_2017",
+          "group": "templama:val:Q161038:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q161038_P54_2018",
+          "group": "templama:val:Q161038:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q16216161_P108_2013",
+          "group": "templama:val:Q16216161:P108",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q16216161_P108_2014",
+          "group": "templama:val:Q16216161:P108",
+          "f1": 0.3333333333333333,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q16216161_P108_2015",
+          "group": "templama:val:Q16216161:P108",
+          "f1": 0.3333333333333333,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q16217237_P102_2015",
+          "group": "templama:val:Q16217237:P102",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q16217237_P102_2016",
+          "group": "templama:val:Q16217237:P102",
+          "f1": 0.26666666666666666,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q16217237_P102_2017",
+          "group": "templama:val:Q16217237:P102",
+          "f1": 0.26666666666666666,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q16217237_P102_2018",
+          "group": "templama:val:Q16217237:P102",
+          "f1": 0.16666666666666666,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q16217237_P102_2019",
+          "group": "templama:val:Q16217237:P102",
+          "f1": 0.16666666666666666,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q167240_P54_2011",
+          "group": "templama:val:Q167240:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q167240_P54_2012",
+          "group": "templama:val:Q167240:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q167240_P54_2013",
+          "group": "templama:val:Q167240:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q167240_P54_2014",
+          "group": "templama:val:Q167240:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q170117_P286_2017",
+          "group": "templama:val:Q170117:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q170117_P286_2018",
+          "group": "templama:val:Q170117:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q170235_P54_2011",
+          "group": "templama:val:Q170235:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q170235_P54_2012",
+          "group": "templama:val:Q170235:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q170235_P54_2013",
+          "group": "templama:val:Q170235:P54",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q170235_P54_2014",
+          "group": "templama:val:Q170235:P54",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q170235_P54_2016",
+          "group": "templama:val:Q170235:P54",
+          "f1": 0.2222222222222222,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1753819_P488_2011",
+          "group": "templama:val:Q1753819:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1753819_P488_2012",
+          "group": "templama:val:Q1753819:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1753819_P488_2013",
+          "group": "templama:val:Q1753819:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1753819_P488_2014",
+          "group": "templama:val:Q1753819:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q176_P6_2012",
+          "group": "templama:val:Q176:P6",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q176_P6_2013",
+          "group": "templama:val:Q176:P6",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q176_P6_2014",
+          "group": "templama:val:Q176:P6",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q176_P6_2015",
+          "group": "templama:val:Q176:P6",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q176_P6_2016",
+          "group": "templama:val:Q176:P6",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q176_P6_2017",
+          "group": "templama:val:Q176:P6",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q178195_P54_2011",
+          "group": "templama:val:Q178195:P54",
+          "f1": 0.2857142857142857,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q178195_P54_2012",
+          "group": "templama:val:Q178195:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q178195_P54_2013",
+          "group": "templama:val:Q178195:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q180581_P54_2016",
+          "group": "templama:val:Q180581:P54",
+          "f1": 0.2,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q184277_P54_2011",
+          "group": "templama:val:Q184277:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q184277_P54_2012",
+          "group": "templama:val:Q184277:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q184277_P54_2013",
+          "group": "templama:val:Q184277:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q184277_P54_2014",
+          "group": "templama:val:Q184277:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q184277_P54_2015",
+          "group": "templama:val:Q184277:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q184277_P54_2016",
+          "group": "templama:val:Q184277:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q184277_P54_2017",
+          "group": "templama:val:Q184277:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q184277_P54_2018",
+          "group": "templama:val:Q184277:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q187184_P54_2011",
+          "group": "templama:val:Q187184:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q187184_P54_2012",
+          "group": "templama:val:Q187184:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q187184_P54_2013",
+          "group": "templama:val:Q187184:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q187184_P54_2014",
+          "group": "templama:val:Q187184:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q187184_P54_2015",
+          "group": "templama:val:Q187184:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q187184_P54_2016",
+          "group": "templama:val:Q187184:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q187184_P54_2017",
+          "group": "templama:val:Q187184:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1892745_P127_2013",
+          "group": "templama:val:Q1892745:P127",
+          "f1": 0.6666666666666666,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1892745_P127_2014",
+          "group": "templama:val:Q1892745:P127",
+          "f1": 0.6666666666666666,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1892745_P127_2015",
+          "group": "templama:val:Q1892745:P127",
+          "f1": 0.6666666666666666,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1892745_P127_2016",
+          "group": "templama:val:Q1892745:P127",
+          "f1": 0.6666666666666666,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1916_P54_2014",
+          "group": "templama:val:Q1916:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1916_P54_2015",
+          "group": "templama:val:Q1916:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1916_P54_2016",
+          "group": "templama:val:Q1916:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1916_P54_2017",
+          "group": "templama:val:Q1916:P54",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1939_P54_2011",
+          "group": "templama:val:Q1939:P54",
+          "f1": 0.5,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1939_P54_2012",
+          "group": "templama:val:Q1939:P54",
+          "f1": 0.3333333333333333,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q1939_P54_2013",
+          "group": "templama:val:Q1939:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q196219_P54_2011",
+          "group": "templama:val:Q196219:P54",
+          "f1": 0.8,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q196219_P54_2012",
+          "group": "templama:val:Q196219:P54",
+          "f1": 0.8,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q196219_P54_2013",
+          "group": "templama:val:Q196219:P54",
+          "f1": 0.8,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q196219_P54_2014",
+          "group": "templama:val:Q196219:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q196219_P54_2015",
+          "group": "templama:val:Q196219:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q196219_P54_2016",
+          "group": "templama:val:Q196219:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q20027181_P102_2013",
+          "group": "templama:val:Q20027181:P102",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q20027181_P102_2014",
+          "group": "templama:val:Q20027181:P102",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q20027181_P102_2015",
+          "group": "templama:val:Q20027181:P102",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q20027181_P102_2016",
+          "group": "templama:val:Q20027181:P102",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q20027181_P102_2017",
+          "group": "templama:val:Q20027181:P102",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q20027181_P102_2018",
+          "group": "templama:val:Q20027181:P102",
+          "f1": 0.8,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q201860_P54_2013",
+          "group": "templama:val:Q201860:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2057994_P54_2011",
+          "group": "templama:val:Q2057994:P54",
+          "f1": 0.5,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2057994_P54_2012",
+          "group": "templama:val:Q2057994:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2057994_P54_2013",
+          "group": "templama:val:Q2057994:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2073145_P286_2011",
+          "group": "templama:val:Q2073145:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2073145_P286_2012",
+          "group": "templama:val:Q2073145:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2073145_P286_2013",
+          "group": "templama:val:Q2073145:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2073145_P286_2014",
+          "group": "templama:val:Q2073145:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2073145_P286_2015",
+          "group": "templama:val:Q2073145:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2073145_P286_2016",
+          "group": "templama:val:Q2073145:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2073145_P286_2018",
+          "group": "templama:val:Q2073145:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q208425_P54_2011",
+          "group": "templama:val:Q208425:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q208425_P54_2012",
+          "group": "templama:val:Q208425:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q208425_P54_2013",
+          "group": "templama:val:Q208425:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q208619_P54_2011",
+          "group": "templama:val:Q208619:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q208619_P54_2012",
+          "group": "templama:val:Q208619:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q208619_P54_2013",
+          "group": "templama:val:Q208619:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q208619_P54_2014",
+          "group": "templama:val:Q208619:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2092290_P54_2012",
+          "group": "templama:val:Q2092290:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2092290_P54_2013",
+          "group": "templama:val:Q2092290:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2110896_P488_2011",
+          "group": "templama:val:Q2110896:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2110896_P488_2012",
+          "group": "templama:val:Q2110896:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2110896_P488_2013",
+          "group": "templama:val:Q2110896:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2110896_P488_2014",
+          "group": "templama:val:Q2110896:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2110896_P488_2015",
+          "group": "templama:val:Q2110896:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2110896_P488_2016",
+          "group": "templama:val:Q2110896:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 1
+        },
+        {
+          "query_id": "Q2113902_P54_2013",
+          "group": "templama:val:Q2113902:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2113902_P54_2014",
+          "group": "templama:val:Q2113902:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2113902_P54_2015",
+          "group": "templama:val:Q2113902:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2113902_P54_2016",
+          "group": "templama:val:Q2113902:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q213119_P54_2011",
+          "group": "templama:val:Q213119:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q213119_P54_2012",
+          "group": "templama:val:Q213119:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q213119_P54_2013",
+          "group": "templama:val:Q213119:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q213119_P54_2014",
+          "group": "templama:val:Q213119:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q221671_P286_2018",
+          "group": "templama:val:Q221671:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q22302425_P69_2018",
+          "group": "templama:val:Q22302425:P69",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 1
+        },
+        {
+          "query_id": "Q223450_P286_2018",
+          "group": "templama:val:Q223450:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2316438_P54_2011",
+          "group": "templama:val:Q2316438:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2316438_P54_2012",
+          "group": "templama:val:Q2316438:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2316438_P54_2013",
+          "group": "templama:val:Q2316438:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2316438_P54_2014",
+          "group": "templama:val:Q2316438:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q232_P6_2016",
+          "group": "templama:val:Q232:P6",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q232_P6_2017",
+          "group": "templama:val:Q232:P6",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q232_P6_2018",
+          "group": "templama:val:Q232:P6",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q239938_P54_2011",
+          "group": "templama:val:Q239938:P54",
+          "f1": 0.5,
+          "accuracy": 0,
+          "stale_answer": 1
+        },
+        {
+          "query_id": "Q239938_P54_2012",
+          "group": "templama:val:Q239938:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2551877_P54_2011",
+          "group": "templama:val:Q2551877:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2551877_P54_2012",
+          "group": "templama:val:Q2551877:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2551877_P54_2013",
+          "group": "templama:val:Q2551877:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2551877_P54_2014",
+          "group": "templama:val:Q2551877:P54",
+          "f1": 0.25,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q260725_P54_2011",
+          "group": "templama:val:Q260725:P54",
+          "f1": 0.3333333333333333,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q260725_P54_2012",
+          "group": "templama:val:Q260725:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q26192_P54_2011",
+          "group": "templama:val:Q26192:P54",
+          "f1": 0.7142857142857143,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q26192_P54_2012",
+          "group": "templama:val:Q26192:P54",
+          "f1": 0.7142857142857143,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q26192_P54_2013",
+          "group": "templama:val:Q26192:P54",
+          "f1": 0.5714285714285714,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2634730_P286_2016",
+          "group": "templama:val:Q2634730:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2634730_P286_2017",
+          "group": "templama:val:Q2634730:P286",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2690188_P102_2014",
+          "group": "templama:val:Q2690188:P102",
+          "f1": 0.5454545454545454,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2690188_P102_2015",
+          "group": "templama:val:Q2690188:P102",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2690188_P102_2016",
+          "group": "templama:val:Q2690188:P102",
+          "f1": 0.4444444444444444,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2690188_P102_2017",
+          "group": "templama:val:Q2690188:P102",
+          "f1": 0.4444444444444444,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q288838_P488_2011",
+          "group": "templama:val:Q288838:P488",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q288838_P488_2012",
+          "group": "templama:val:Q288838:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q288838_P488_2013",
+          "group": "templama:val:Q288838:P488",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2895519_P54_2011",
+          "group": "templama:val:Q2895519:P54",
+          "f1": 0.2222222222222222,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2895519_P54_2012",
+          "group": "templama:val:Q2895519:P54",
+          "f1": 0.2222222222222222,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2895519_P54_2013",
+          "group": "templama:val:Q2895519:P54",
+          "f1": 0.2,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2895519_P54_2014",
+          "group": "templama:val:Q2895519:P54",
+          "f1": 0.2,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q292507_P54_2011",
+          "group": "templama:val:Q292507:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q292507_P54_2012",
+          "group": "templama:val:Q292507:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q2964727_P54_2011",
+          "group": "templama:val:Q2964727:P54",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q297146_P54_2012",
+          "group": "templama:val:Q297146:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q297146_P54_2013",
+          "group": "templama:val:Q297146:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q297964_P54_2011",
+          "group": "templama:val:Q297964:P54",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q297964_P54_2012",
+          "group": "templama:val:Q297964:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q297964_P54_2013",
+          "group": "templama:val:Q297964:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q310369_P54_2011",
+          "group": "templama:val:Q310369:P54",
+          "f1": 0.25,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q310369_P54_2012",
+          "group": "templama:val:Q310369:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q310369_P54_2013",
+          "group": "templama:val:Q310369:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q310369_P54_2014",
+          "group": "templama:val:Q310369:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3107510_P54_2011",
+          "group": "templama:val:Q3107510:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3107510_P54_2012",
+          "group": "templama:val:Q3107510:P54",
+          "f1": 0.6666666666666666,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3107510_P54_2013",
+          "group": "templama:val:Q3107510:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3107510_P54_2014",
+          "group": "templama:val:Q3107510:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q311043_P54_2011",
+          "group": "templama:val:Q311043:P54",
+          "f1": 0.5,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q311043_P54_2012",
+          "group": "templama:val:Q311043:P54",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q311043_P54_2013",
+          "group": "templama:val:Q311043:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q311043_P54_2014",
+          "group": "templama:val:Q311043:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q311155_P54_2011",
+          "group": "templama:val:Q311155:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q311155_P54_2012",
+          "group": "templama:val:Q311155:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q311155_P54_2013",
+          "group": "templama:val:Q311155:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q311155_P54_2014",
+          "group": "templama:val:Q311155:P54",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q313089_P54_2011",
+          "group": "templama:val:Q313089:P54",
+          "f1": 0.4,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3162959_P39_2013",
+          "group": "templama:val:Q3162959:P39",
+          "f1": 0.5882352941176471,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3162959_P39_2014",
+          "group": "templama:val:Q3162959:P39",
+          "f1": 0.5555555555555556,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3162959_P39_2015",
+          "group": "templama:val:Q3162959:P39",
+          "f1": 0.5263157894736842,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q319810_P54_2011",
+          "group": "templama:val:Q319810:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q319810_P54_2012",
+          "group": "templama:val:Q319810:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q319810_P54_2013",
+          "group": "templama:val:Q319810:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q319810_P54_2014",
+          "group": "templama:val:Q319810:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q319810_P54_2015",
+          "group": "templama:val:Q319810:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q319810_P54_2016",
+          "group": "templama:val:Q319810:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3202252_P54_2011",
+          "group": "templama:val:Q3202252:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3202252_P54_2012",
+          "group": "templama:val:Q3202252:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3202252_P54_2013",
+          "group": "templama:val:Q3202252:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3202252_P54_2014",
+          "group": "templama:val:Q3202252:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3202252_P54_2015",
+          "group": "templama:val:Q3202252:P54",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3224_P6_2014",
+          "group": "templama:val:Q3224:P6",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3224_P6_2015",
+          "group": "templama:val:Q3224:P6",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3224_P6_2016",
+          "group": "templama:val:Q3224:P6",
+          "f1": 1.0,
+          "accuracy": 1,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3270032_P108_2011",
+          "group": "templama:val:Q3270032:P108",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3270032_P108_2012",
+          "group": "templama:val:Q3270032:P108",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3270032_P108_2013",
+          "group": "templama:val:Q3270032:P108",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3328963_P108_2011",
+          "group": "templama:val:Q3328963:P108",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3328963_P108_2012",
+          "group": "templama:val:Q3328963:P108",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q3328963_P108_2013",
+          "group": "templama:val:Q3328963:P108",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 1
+        },
+        {
+          "query_id": "Q3328963_P108_2014",
+          "group": "templama:val:Q3328963:P108",
+          "f1": 0.0,
+          "accuracy": 0,
+          "stale_answer": 1
+        },
+        {
+          "query_id": "Q337453_P39_2012",
+          "group": "templama:val:Q337453:P39",
+          "f1": 0.25,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q337453_P39_2013",
+          "group": "templama:val:Q337453:P39",
+          "f1": 0.5,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q337453_P39_2014",
+          "group": "templama:val:Q337453:P39",
+          "f1": 0.7692307692307693,
+          "accuracy": 0,
+          "stale_answer": 0
+        },
+        {
+          "query_id": "Q337453_P39_2015",
+          "group": "templama:val:Q337453:P39",
+          "f1": 0.7692307692307693,
+          "accuracy": 0,
+          "stale_answer": 0
+        }
+      ]
+    }
+  }
+}

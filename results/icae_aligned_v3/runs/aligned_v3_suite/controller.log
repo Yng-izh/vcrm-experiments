@@ -1,0 +1,3 @@
+refinement_training {'gpus': {'C': 0, 'D': 2}, 'epochs': 5, 'slots': 16, 'train_diagnostic': 200, 'validation_diagnostic': 481, 'next_action': 'Only C16/D16; C32/D32 and full test remain paused.'}
+refinement_validation_481 {'gpus': {'C': 0, 'D': 2}}
+complete {'report': '/share/latent2/vcrm_icae/runs/aligned_v3_suite/comparison.json'}

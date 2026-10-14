@@ -1,0 +1,393 @@
+{
+  "id": "templama:val:Q2551877:P54",
+  "group": "Q2551877:P54",
+  "split": "val",
+  "versions": 6,
+  "queries": [
+    {
+      "query_id": "Q2551877_P54_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q2551877_P54_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Migen Memelli plays for Albania national football team.",
+        "token_ids": [
+          351,
+          3347,
+          6011,
+          8763,
+          8928,
+          354,
+          26037,
+          515,
+          4282,
+          6569,
+          1918,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.47920066909864545,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499386368,
+        "kv_cache_bytes": 28573696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q2551877_P54_2015",
+          "Q2551877_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.006969790905714035,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1712,
+          "total_bytes": 1707184,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Migen Memelli plays for Al-Faisaly FC.",
+        "token_ids": [
+          351,
+          3347,
+          6011,
+          8763,
+          8928,
+          354,
+          976,
+          28733,
+          28765,
+          1555,
+          8910,
+          9138,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5408674729987979,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527739392,
+        "kv_cache_bytes": 43384832,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q2551877_P54_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q2551877_P54_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Migen Memelli plays for Albania national football team.",
+        "token_ids": [
+          351,
+          3347,
+          6011,
+          8763,
+          8928,
+          354,
+          26037,
+          515,
+          4282,
+          6569,
+          1918,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.48105574306100607,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499255296,
+        "kv_cache_bytes": 28573696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q2551877_P54_2015",
+          "Q2551877_P54_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.007490826305001974,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1712,
+          "total_bytes": 1707184,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Migen Memelli plays for KS Kastrioti.",
+        "token_ids": [
+          351,
+          3347,
+          6011,
+          8763,
+          8928,
+          354,
+          524,
+          28735,
+          524,
+          529,
+          373,
+          9469,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5701856650412083,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527739392,
+        "kv_cache_bytes": 43384832,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q2551877_P54_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q2551877_P54_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Migen Memelli plays for Albania national football team.",
+        "token_ids": [
+          351,
+          3347,
+          6011,
+          8763,
+          8928,
+          354,
+          26037,
+          515,
+          4282,
+          6569,
+          1918,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4854763299226761,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499386368,
+        "kv_cache_bytes": 28573696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q2551877_P54_2015",
+          "Q2551877_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.009401740040630102,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1712,
+          "total_bytes": 1707184,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Migen Memelli plays for KS Kastrioti.",
+        "token_ids": [
+          351,
+          3347,
+          6011,
+          8763,
+          8928,
+          354,
+          524,
+          28735,
+          524,
+          529,
+          373,
+          9469,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5429691048339009,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527739392,
+        "kv_cache_bytes": 43384832,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q2551877_P54_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q2551877_P54_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Migen Memelli plays for KF Tirana.",
+        "token_ids": [
+          351,
+          3347,
+          6011,
+          8763,
+          8928,
+          354,
+          524,
+          28765,
+          320,
+          361,
+          2238,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4798979847691953,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499255296,
+        "kv_cache_bytes": 28573696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q2551877_P54_2015",
+          "Q2551877_P54_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.006895286962389946,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1712,
+          "total_bytes": 1707184,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.25,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Migen Memelli plays for Partizani Tirana.",
+        "token_ids": [
+          351,
+          3347,
+          6011,
+          8763,
+          8928,
+          354,
+          2914,
+          463,
+          4499,
+          320,
+          361,
+          2238,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5234433151781559,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527739392,
+        "kv_cache_bytes": 43384832,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    }
+  ],
+  "write_seconds": 0.27430484164506197,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 768,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 208,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1703936,
+      "index_key_bytes": 1536,
+      "metadata_and_format_bytes": 1712,
+      "total_bytes": 1707184,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 208,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1703936,
+    "index_key_bytes": 1536,
+    "metadata_and_format_bytes": 1712,
+    "total_bytes": 1707184,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

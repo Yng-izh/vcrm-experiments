@@ -1,0 +1,113 @@
+{
+  "id": "templama:val:Q10233:P54",
+  "group": "Q10233:P54",
+  "split": "val",
+  "versions": 3,
+  "queries": [
+    {
+      "query_id": "Q10233_P54_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q10233_P54_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "India national cricket team",
+        "token_ids": [
+          1961,
+          515,
+          4282,
+          26023,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.30229324381798506,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500474880,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10233_P54_2012",
+          "Q10233_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.008985031861811876,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 979,
+          "total_bytes": 1312467,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "India national cricket team",
+        "token_ids": [
+          5558,
+          4282,
+          26023,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.28120070323348045,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528992256,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.05518046207726002,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 384,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 160,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1310720,
+      "index_key_bytes": 768,
+      "metadata_and_format_bytes": 979,
+      "total_bytes": 1312467,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 160,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1310720,
+    "index_key_bytes": 768,
+    "metadata_and_format_bytes": 979,
+    "total_bytes": 1312467,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

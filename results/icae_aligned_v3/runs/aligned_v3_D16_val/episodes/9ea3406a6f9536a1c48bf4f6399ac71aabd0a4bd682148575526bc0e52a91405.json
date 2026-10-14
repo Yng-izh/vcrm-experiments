@@ -1,0 +1,116 @@
+{
+  "id": "templama:val:Q314008:P488",
+  "group": "Q314008:P488",
+  "split": "val",
+  "versions": 3,
+  "queries": [
+    {
+      "query_id": "Q314008_P488_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q314008_P488_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Christoph M. Schmidt",
+        "token_ids": [
+          17701,
+          3126,
+          351,
+          28723,
+          1609,
+          26366
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.28497197898104787,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500343808,
+        "kv_cache_bytes": 28442624,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q314008_P488_2014",
+          "Q314008_P488_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.00874397112056613,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 1001,
+          "total_bytes": 1312489,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Christoph M. Schmidt",
+        "token_ids": [
+          2393,
+          3126,
+          351,
+          28723,
+          1609,
+          26366
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3083855779841542,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528992256,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.1358816740103066,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 384,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 160,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1310720,
+      "index_key_bytes": 768,
+      "metadata_and_format_bytes": 1001,
+      "total_bytes": 1312489,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 160,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1310720,
+    "index_key_bytes": 768,
+    "metadata_and_format_bytes": 1001,
+    "total_bytes": 1312489,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}
