@@ -1,0 +1,131 @@
+{
+  "id": "longmemeval:0edc2aef",
+  "query": {
+    "id": "0edc2aef",
+    "question": "Can you suggest a hotel for my upcoming trip to Miami?",
+    "time": "2023-05-30T20:23:00",
+    "answers": [
+      "The user would prefer suggestions of hotels in Miami that offer great views, possibly of the ocean or the city skyline, and have unique features such as a rooftop pool or a hot tub on the balcony. They may not prefer suggestions of basic or budget hotels without these features."
+    ],
+    "type": "single-session-preference",
+    "abstention": false
+  },
+  "baseline_answer": "Marriott Miami Beach.",
+  "baseline_accuracy": 0,
+  "selected_ids": [
+    "event_000042",
+    "event_000022",
+    "event_000018",
+    "event_000002",
+    "event_000031",
+    "event_000039",
+    "event_000036",
+    "event_000030"
+  ],
+  "gold_ids": [
+    "event_000039"
+  ],
+  "controls": {
+    "no_memory": {
+      "answer": "Try the Four Seasons Miami Beach.",
+      "token_ids": [
+        21453,
+        279,
+        13322,
+        67200,
+        17584,
+        12721,
+        13,
+        151645
+      ],
+      "generation_limit_hit": false,
+      "read_seconds": 0.30748393712565303,
+      "prompt_tokens": 79,
+      "read_latent_slots": 0,
+      "peak_gpu_bytes": 8994475520,
+      "layer_diagnostics": {},
+      "injection_count": 0,
+      "delta_max": 0.0,
+      "accuracy": 1,
+      "judge_model": "Qwen3.5-9B",
+      "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+      "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "response": "yes"
+    },
+    "selected_text": {
+      "answer": "Try the Four Seasons or the Ritz-Carlton for luxury and great views.",
+      "token_ids": [
+        21453,
+        279,
+        13322,
+        67200,
+        476,
+        279,
+        431,
+        11042,
+        7658,
+        48258,
+        777,
+        369,
+        19352,
+        323,
+        2244,
+        6194,
+        13,
+        151645
+      ],
+      "generation_limit_hit": false,
+      "read_seconds": 9.690849214792252,
+      "prompt_tokens": 22064,
+      "read_latent_slots": 0,
+      "peak_gpu_bytes": 13983536640,
+      "layer_diagnostics": {},
+      "injection_count": 0,
+      "delta_max": 0.0,
+      "accuracy": 1,
+      "judge_model": "Qwen3.5-9B",
+      "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+      "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "response": "yes"
+    },
+    "oracle_evidence_text": {
+      "answer": "Try the Four Seasons Miami or the Ritz-Carlton Miami for stunning views and luxury.",
+      "token_ids": [
+        21453,
+        279,
+        13322,
+        67200,
+        17584,
+        476,
+        279,
+        431,
+        11042,
+        7658,
+        48258,
+        777,
+        17584,
+        369,
+        19850,
+        6194,
+        323,
+        19352,
+        13,
+        151645
+      ],
+      "generation_limit_hit": false,
+      "read_seconds": 1.4408214949071407,
+      "prompt_tokens": 3919,
+      "read_latent_slots": 0,
+      "peak_gpu_bytes": 9865464320,
+      "layer_diagnostics": {},
+      "injection_count": 0,
+      "delta_max": 0.0,
+      "accuracy": 1,
+      "judge_model": "Qwen3.5-9B",
+      "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+      "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "response": "yes"
+    }
+  },
+  "scope": "Offline selected-error controls, excluded from all formal scores"
+}

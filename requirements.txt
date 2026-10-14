@@ -1,0 +1,8 @@
+# Base versions verified on v100-1; CUDA wheel comes from the installed latent2 runtime.
+torch==2.5.1
+transformers==4.51.3
+numpy==2.2.6
+pytest==9.1.1
+openai==3.29.0
+tiktoken==0.14.0
+matplotlib==3.10.9

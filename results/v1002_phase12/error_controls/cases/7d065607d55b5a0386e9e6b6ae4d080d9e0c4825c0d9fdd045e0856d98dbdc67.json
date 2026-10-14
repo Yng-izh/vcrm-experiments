@@ -1,0 +1,130 @@
+{
+  "id": "longmemeval:b6025781",
+  "query": {
+    "id": "b6025781",
+    "question": "I'm planning my meal prep next week, any suggestions for new recipes?",
+    "time": "2023-05-30T21:41:00",
+    "answers": [
+      "The user would prefer responses that suggest healthy meal prep recipes, especially those that incorporate quinoa and roasted vegetables, and offer variations in protein sources. They might appreciate suggestions that build upon their existing preferences, such as new twists on chicken Caesar salads or turkey and avocado wraps. The user may not prefer responses that suggest unhealthy or high-calorie meal prep options, or those that deviate significantly from their established healthy eating habits."
+    ],
+    "type": "single-session-preference",
+    "abstention": false
+  },
+  "baseline_answer": "Try quinoa bowls, stir-fries, and sheet pan dinners.",
+  "baseline_accuracy": 0,
+  "selected_ids": [
+    "event_000030",
+    "event_000040",
+    "event_000019",
+    "event_000013",
+    "event_000015",
+    "event_000016",
+    "event_000017",
+    "event_000012"
+  ],
+  "gold_ids": [
+    "event_000019"
+  ],
+  "controls": {
+    "no_memory": {
+      "answer": "Try quinoa salad, lentil curry, and sheet pan chicken.",
+      "token_ids": [
+        21453,
+        922,
+        78994,
+        32466,
+        11,
+        47807,
+        321,
+        54078,
+        11,
+        323,
+        10834,
+        7215,
+        16158,
+        13,
+        151645
+      ],
+      "generation_limit_hit": false,
+      "read_seconds": 0.585576606914401,
+      "prompt_tokens": 82,
+      "read_latent_slots": 0,
+      "peak_gpu_bytes": 8995047936,
+      "layer_diagnostics": {},
+      "injection_count": 0,
+      "delta_max": 0.0,
+      "accuracy": 1,
+      "judge_model": "Qwen3.5-9B",
+      "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+      "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "response": "yes"
+    },
+    "selected_text": {
+      "answer": "Try lentil bolognese with roasted sweet potatoes and quinoa.",
+      "token_ids": [
+        21453,
+        47807,
+        321,
+        293,
+        1609,
+        77,
+        2367,
+        448,
+        53562,
+        10226,
+        34167,
+        323,
+        922,
+        78994,
+        13,
+        151645
+      ],
+      "generation_limit_hit": false,
+      "read_seconds": 9.442254763096571,
+      "prompt_tokens": 22057,
+      "read_latent_slots": 0,
+      "peak_gpu_bytes": 13982358016,
+      "layer_diagnostics": {},
+      "injection_count": 0,
+      "delta_max": 0.0,
+      "accuracy": 1,
+      "judge_model": "Qwen3.5-9B",
+      "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+      "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "response": "yes"
+    },
+    "oracle_evidence_text": {
+      "answer": "Try chickpea curry with quinoa and roasted sweet potatoes.",
+      "token_ids": [
+        21453,
+        30763,
+        375,
+        64,
+        54078,
+        448,
+        922,
+        78994,
+        323,
+        53562,
+        10226,
+        34167,
+        13,
+        151645
+      ],
+      "generation_limit_hit": false,
+      "read_seconds": 0.9856900861486793,
+      "prompt_tokens": 2917,
+      "read_latent_slots": 0,
+      "peak_gpu_bytes": 9641205248,
+      "layer_diagnostics": {},
+      "injection_count": 0,
+      "delta_max": 0.0,
+      "accuracy": 1,
+      "judge_model": "Qwen3.5-9B",
+      "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+      "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "response": "yes"
+    }
+  },
+  "scope": "Offline selected-error controls, excluded from all formal scores"
+}

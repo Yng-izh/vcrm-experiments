@@ -1,0 +1,7 @@
+{
+  "accuracy": 1,
+  "judge_model": "Qwen3.5-9B",
+  "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+  "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+  "response": "yes"
+}

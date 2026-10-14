@@ -1,0 +1,14 @@
+{
+  "stage": "stream",
+  "gpus": [
+    0,
+    2,
+    3,
+    4,
+    5,
+    7,
+    9
+  ],
+  "shards": 7,
+  "reproduction_mode": null
+}

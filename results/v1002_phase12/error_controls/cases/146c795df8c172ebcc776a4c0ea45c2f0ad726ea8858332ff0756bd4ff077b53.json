@@ -1,0 +1,123 @@
+{
+  "id": "longmemeval:gpt4_e414231f",
+  "query": {
+    "id": "gpt4_e414231f",
+    "question": "Which bike did I fixed or serviced the past weekend?",
+    "time": "2023-03-21T21:43:00",
+    "answers": [
+      "road bike"
+    ],
+    "type": "temporal-reasoning",
+    "abstention": false
+  },
+  "baseline_answer": "I don't know.",
+  "baseline_accuracy": 0,
+  "selected_ids": [
+    "event_000011",
+    "event_000013",
+    "event_000034",
+    "event_000012",
+    "event_000020",
+    "event_000033",
+    "event_000007",
+    "event_000039"
+  ],
+  "gold_ids": [
+    "event_000033",
+    "event_000034"
+  ],
+  "controls": {
+    "no_memory": {
+      "answer": "I don't know.",
+      "token_ids": [
+        40,
+        1513,
+        944,
+        1414,
+        13,
+        151645
+      ],
+      "generation_limit_hit": false,
+      "read_seconds": 0.23700328590348363,
+      "prompt_tokens": 78,
+      "read_latent_slots": 0,
+      "peak_gpu_bytes": 8994306560,
+      "layer_diagnostics": {},
+      "injection_count": 0,
+      "delta_max": 0.0,
+      "accuracy": 0,
+      "judge_model": "Qwen3.5-9B",
+      "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+      "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "response": "no"
+    },
+    "selected_text": {
+      "answer": "Mountain bike (fixed flat tire) and road bike (maintenance check).",
+      "token_ids": [
+        91169,
+        12963,
+        320,
+        22021,
+        10063,
+        27287,
+        8,
+        323,
+        5636,
+        12963,
+        320,
+        98078,
+        1779,
+        568,
+        151645
+      ],
+      "generation_limit_hit": false,
+      "read_seconds": 4.973641220014542,
+      "prompt_tokens": 14121,
+      "read_latent_slots": 0,
+      "peak_gpu_bytes": 12179766784,
+      "layer_diagnostics": {},
+      "injection_count": 0,
+      "delta_max": 0.0,
+      "accuracy": 1,
+      "judge_model": "Qwen3.5-9B",
+      "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+      "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "response": "yes"
+    },
+    "oracle_evidence_text": {
+      "answer": "Road bike (pedals, brakes, chain, tires, quick releases).",
+      "token_ids": [
+        56959,
+        12963,
+        320,
+        6874,
+        1127,
+        11,
+        44564,
+        11,
+        8781,
+        11,
+        30700,
+        11,
+        3974,
+        19232,
+        568,
+        151645
+      ],
+      "generation_limit_hit": false,
+      "read_seconds": 2.0074198860675097,
+      "prompt_tokens": 6519,
+      "read_latent_slots": 0,
+      "peak_gpu_bytes": 10455415296,
+      "layer_diagnostics": {},
+      "injection_count": 0,
+      "delta_max": 0.0,
+      "accuracy": 1,
+      "judge_model": "Qwen3.5-9B",
+      "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+      "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "response": "yes"
+    }
+  },
+  "scope": "Offline selected-error controls, excluded from all formal scores"
+}

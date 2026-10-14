@@ -1,0 +1,108 @@
+{
+  "id": "longmemeval:gpt4_61e13b3c",
+  "query": {
+    "id": "gpt4_61e13b3c",
+    "question": "How many weeks passed between the time I sold homemade baked goods at the Farmers' Market for the last time and the time I participated in the Spring Fling Market?",
+    "time": "2023-04-01T00:57:00",
+    "answers": [
+      "3 weeks"
+    ],
+    "type": "temporal-reasoning",
+    "abstention": false
+  },
+  "baseline_answer": "Last sale: 2023-03-25  \nSpring Fling: 2023-04-01  \nDifference: 7 days = 1 week",
+  "baseline_accuracy": 0,
+  "selected_ids": [
+    "event_000044",
+    "event_000036",
+    "event_000031",
+    "event_000006",
+    "event_000021",
+    "event_000040",
+    "event_000007",
+    "event_000009"
+  ],
+  "gold_ids": [
+    "event_000031",
+    "event_000044"
+  ],
+  "controls": {
+    "no_memory": {
+      "answer": "Information missing to determine weeks passed.",
+      "token_ids": [
+        14873,
+        7402,
+        311,
+        8253,
+        5555,
+        5823,
+        13,
+        151645
+      ],
+      "generation_limit_hit": false,
+      "read_seconds": 0.3179444749839604,
+      "prompt_tokens": 100,
+      "read_latent_slots": 0,
+      "peak_gpu_bytes": 8999130624,
+      "layer_diagnostics": {},
+      "injection_count": 0,
+      "delta_max": 0.0,
+      "accuracy": 0,
+      "judge_model": "Qwen3.5-9B",
+      "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+      "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "response": "no"
+    },
+    "selected_text": {
+      "answer": "Insufficient information to determine the number of weeks.",
+      "token_ids": [
+        15474,
+        26683,
+        1995,
+        311,
+        8253,
+        279,
+        1372,
+        315,
+        5555,
+        13,
+        151645
+      ],
+      "generation_limit_hit": false,
+      "read_seconds": 8.710135042667389,
+      "prompt_tokens": 22065,
+      "read_latent_slots": 0,
+      "peak_gpu_bytes": 13983705600,
+      "layer_diagnostics": {},
+      "injection_count": 0,
+      "delta_max": 0.0,
+      "accuracy": 0,
+      "judge_model": "Qwen3.5-9B",
+      "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+      "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "response": "no"
+    },
+    "oracle_evidence_text": {
+      "answer": "3 weeks",
+      "token_ids": [
+        18,
+        5555,
+        151645
+      ],
+      "generation_limit_hit": false,
+      "read_seconds": 1.526558507233858,
+      "prompt_tokens": 7276,
+      "read_latent_slots": 0,
+      "peak_gpu_bytes": 10626991616,
+      "layer_diagnostics": {},
+      "injection_count": 0,
+      "delta_max": 0.0,
+      "accuracy": 1,
+      "judge_model": "Qwen3.5-9B",
+      "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+      "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "response": "yes"
+    }
+  },
+  "scope": "Offline selected-error controls, excluded from all formal scores"
+}

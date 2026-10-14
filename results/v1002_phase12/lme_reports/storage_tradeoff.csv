@@ -1,0 +1,2 @@
+dataset_split,method,budget_bytes,actual_store_bytes_max,latest_accuracy,historical_f1,qa_metric,complete,scope
+longmemeval_test,transmem_streaming,1099511627776,5105532,,,0.112,True,formal

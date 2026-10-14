@@ -1,0 +1,118 @@
+{
+  "id": "longmemeval:21436231",
+  "query": {
+    "id": "21436231",
+    "question": "How many largemouth bass did I catch on my fishing trip to Lake Michigan?",
+    "time": "2023-05-30T19:25:00",
+    "answers": [
+      "12"
+    ],
+    "type": "single-session-user",
+    "abstention": false
+  },
+  "baseline_answer": "I don't know how many largemouth bass you caught.",
+  "baseline_accuracy": 0,
+  "selected_ids": [
+    "event_000006",
+    "event_000003",
+    "event_000007",
+    "event_000004",
+    "event_000010",
+    "event_000020",
+    "event_000018",
+    "event_000025"
+  ],
+  "gold_ids": [
+    "event_000006"
+  ],
+  "controls": {
+    "no_memory": {
+      "answer": "I don't know how many largemouth bass you caught.",
+      "token_ids": [
+        40,
+        1513,
+        944,
+        1414,
+        1246,
+        1657,
+        4053,
+        86041,
+        21529,
+        498,
+        10568,
+        13,
+        151645
+      ],
+      "generation_limit_hit": false,
+      "read_seconds": 0.5153477662242949,
+      "prompt_tokens": 83,
+      "read_latent_slots": 0,
+      "peak_gpu_bytes": 8995275264,
+      "layer_diagnostics": {},
+      "injection_count": 0,
+      "delta_max": 0.0,
+      "accuracy": 0,
+      "judge_model": "Qwen3.5-9B",
+      "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+      "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "response": "no"
+    },
+    "selected_text": {
+      "answer": "12",
+      "token_ids": [
+        16,
+        17,
+        151645
+      ],
+      "generation_limit_hit": false,
+      "read_seconds": 4.039871909189969,
+      "prompt_tokens": 14556,
+      "read_latent_slots": 0,
+      "peak_gpu_bytes": 12278863360,
+      "layer_diagnostics": {},
+      "injection_count": 0,
+      "delta_max": 0.0,
+      "accuracy": 1,
+      "judge_model": "Qwen3.5-9B",
+      "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+      "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "response": "yes"
+    },
+    "oracle_evidence_text": {
+      "answer": "You caught 12 largemouth bass on your last trip to Lake Michigan.",
+      "token_ids": [
+        2610,
+        10568,
+        220,
+        16,
+        17,
+        4053,
+        86041,
+        21529,
+        389,
+        697,
+        1537,
+        8411,
+        311,
+        11678,
+        14630,
+        13,
+        151645
+      ],
+      "generation_limit_hit": false,
+      "read_seconds": 1.2843694747425616,
+      "prompt_tokens": 3802,
+      "read_latent_slots": 0,
+      "peak_gpu_bytes": 9838922240,
+      "layer_diagnostics": {},
+      "injection_count": 0,
+      "delta_max": 0.0,
+      "accuracy": 1,
+      "judge_model": "Qwen3.5-9B",
+      "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+      "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "response": "yes"
+    }
+  },
+  "scope": "Offline selected-error controls, excluded from all formal scores"
+}

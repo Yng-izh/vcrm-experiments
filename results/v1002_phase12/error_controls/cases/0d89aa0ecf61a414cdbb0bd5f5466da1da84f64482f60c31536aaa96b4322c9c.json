@@ -1,0 +1,121 @@
+{
+  "id": "longmemeval:c960da58",
+  "query": {
+    "id": "c960da58",
+    "question": "How many playlists do I have on Spotify?",
+    "time": "2023-05-30T18:45:00",
+    "answers": [
+      "20"
+    ],
+    "type": "single-session-user",
+    "abstention": false
+  },
+  "baseline_answer": "I don't know how many playlists you have on Spotify.",
+  "baseline_accuracy": 0,
+  "selected_ids": [
+    "event_000038",
+    "event_000004",
+    "event_000020",
+    "event_000029",
+    "event_000041",
+    "event_000003",
+    "event_000035",
+    "event_000018"
+  ],
+  "gold_ids": [
+    "event_000004"
+  ],
+  "controls": {
+    "no_memory": {
+      "answer": "I don't know how many playlists you have on Spotify.",
+      "token_ids": [
+        40,
+        1513,
+        944,
+        1414,
+        1246,
+        1657,
+        68808,
+        498,
+        614,
+        389,
+        40537,
+        13,
+        151645
+      ],
+      "generation_limit_hit": false,
+      "read_seconds": 0.5056043812073767,
+      "prompt_tokens": 76,
+      "read_latent_slots": 0,
+      "peak_gpu_bytes": 8993969664,
+      "layer_diagnostics": {},
+      "injection_count": 0,
+      "delta_max": 0.0,
+      "accuracy": 0,
+      "judge_model": "Qwen3.5-9B",
+      "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+      "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "response": "no"
+    },
+    "selected_text": {
+      "answer": "I don't know how many playlists you have on Spotify.",
+      "token_ids": [
+        40,
+        1513,
+        944,
+        1414,
+        1246,
+        1657,
+        68808,
+        498,
+        614,
+        389,
+        40537,
+        13,
+        151645
+      ],
+      "generation_limit_hit": false,
+      "read_seconds": 6.38143861386925,
+      "prompt_tokens": 17366,
+      "read_latent_slots": 0,
+      "peak_gpu_bytes": 12915888640,
+      "layer_diagnostics": {},
+      "injection_count": 0,
+      "delta_max": 0.0,
+      "accuracy": 0,
+      "judge_model": "Qwen3.5-9B",
+      "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+      "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "response": "no"
+    },
+    "oracle_evidence_text": {
+      "answer": "You have 20 playlists on Spotify.",
+      "token_ids": [
+        2610,
+        614,
+        220,
+        17,
+        15,
+        68808,
+        389,
+        40537,
+        13,
+        151645
+      ],
+      "generation_limit_hit": false,
+      "read_seconds": 0.9357102662324905,
+      "prompt_tokens": 3573,
+      "read_latent_slots": 0,
+      "peak_gpu_bytes": 9786973696,
+      "layer_diagnostics": {},
+      "injection_count": 0,
+      "delta_max": 0.0,
+      "accuracy": 1,
+      "judge_model": "Qwen3.5-9B",
+      "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+      "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "response": "yes"
+    }
+  },
+  "scope": "Offline selected-error controls, excluded from all formal scores"
+}

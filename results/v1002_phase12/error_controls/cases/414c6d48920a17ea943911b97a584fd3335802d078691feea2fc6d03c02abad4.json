@@ -1,0 +1,122 @@
+{
+  "id": "longmemeval:caf03d32",
+  "query": {
+    "id": "caf03d32",
+    "question": "I've been struggling with my slow cooker recipes. Any advice on getting better results?",
+    "time": "2023-05-30T23:44:00",
+    "answers": [
+      "The user would prefer responses that provide tips and advice specifically tailored to their slow cooker experiences, utilizing their recent success with beef stew and interest in making yogurt in the slow cooker. They might not prefer general slow cooker recipes or advice unrelated to their specific experiences and interests."
+    ],
+    "type": "single-session-preference",
+    "abstention": false
+  },
+  "baseline_answer": "Use proper liquid, cook times, and seasonings.",
+  "baseline_accuracy": 0,
+  "selected_ids": [
+    "event_000044",
+    "event_000039",
+    "event_000026",
+    "event_000016",
+    "event_000050",
+    "event_000022",
+    "event_000029",
+    "event_000024"
+  ],
+  "gold_ids": [
+    "event_000050"
+  ],
+  "controls": {
+    "no_memory": {
+      "answer": "Use proper cooking times, check recipes, and avoid overcooking.",
+      "token_ids": [
+        10253,
+        6169,
+        17233,
+        3039,
+        11,
+        1779,
+        18627,
+        11,
+        323,
+        5648,
+        916,
+        1015,
+        10746,
+        13,
+        151645
+      ],
+      "generation_limit_hit": false,
+      "read_seconds": 0.6117970081977546,
+      "prompt_tokens": 84,
+      "read_latent_slots": 0,
+      "peak_gpu_bytes": 8995501568,
+      "layer_diagnostics": {},
+      "injection_count": 0,
+      "delta_max": 0.0,
+      "accuracy": 0,
+      "judge_model": "Qwen3.5-9B",
+      "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+      "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "response": "no"
+    },
+    "selected_text": {
+      "answer": "Use quality ingredients, consistent heat, and proper timing.",
+      "token_ids": [
+        10253,
+        4271,
+        13966,
+        11,
+        12966,
+        8628,
+        11,
+        323,
+        6169,
+        18405,
+        13,
+        151645
+      ],
+      "generation_limit_hit": false,
+      "read_seconds": 7.183686880860478,
+      "prompt_tokens": 19125,
+      "read_latent_slots": 0,
+      "peak_gpu_bytes": 13314913792,
+      "layer_diagnostics": {},
+      "injection_count": 0,
+      "delta_max": 0.0,
+      "accuracy": 0,
+      "judge_model": "Qwen3.5-9B",
+      "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+      "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "response": "no"
+    },
+    "oracle_evidence_text": {
+      "answer": "Balance flavors, control temps, cook consistently.",
+      "token_ids": [
+        21190,
+        31423,
+        11,
+        2524,
+        26046,
+        11,
+        4296,
+        20699,
+        13,
+        151645
+      ],
+      "generation_limit_hit": false,
+      "read_seconds": 1.228729615919292,
+      "prompt_tokens": 4786,
+      "read_latent_slots": 0,
+      "peak_gpu_bytes": 10062835200,
+      "layer_diagnostics": {},
+      "injection_count": 0,
+      "delta_max": 0.0,
+      "accuracy": 0,
+      "judge_model": "Qwen3.5-9B",
+      "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+      "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "response": "no"
+    }
+  },
+  "scope": "Offline selected-error controls, excluded from all formal scores"
+}

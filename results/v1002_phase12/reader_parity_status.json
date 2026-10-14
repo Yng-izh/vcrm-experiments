@@ -1,0 +1,295 @@
+{
+  "status": "passed",
+  "started_at": "2026-10-13T17:39:09.734211+00:00",
+  "config_path": "/share/latent2/vcrm_v1002_phase12/config.json",
+  "checks": {
+    "block_cache": {
+      "32": {
+        "first": {
+          "seq_length": 5,
+          "layer_lengths": [
+            5
+          ],
+          "finite": true
+        },
+        "second": {
+          "seq_length": 6,
+          "layer_lengths": [
+            6
+          ],
+          "finite": true
+        },
+        "passed": true
+      },
+      "33": {
+        "first": {
+          "seq_length": 5,
+          "layer_lengths": [
+            5
+          ],
+          "finite": true
+        },
+        "second": {
+          "seq_length": 6,
+          "layer_lengths": [
+            6
+          ],
+          "finite": true
+        },
+        "passed": true
+      },
+      "34": {
+        "first": {
+          "seq_length": 5,
+          "layer_lengths": [
+            5
+          ],
+          "finite": true
+        },
+        "second": {
+          "seq_length": 6,
+          "layer_lengths": [
+            6
+          ],
+          "finite": true
+        },
+        "passed": true
+      },
+      "35": {
+        "first": {
+          "seq_length": 5,
+          "layer_lengths": [
+            5
+          ],
+          "finite": true
+        },
+        "second": {
+          "seq_length": 6,
+          "layer_lengths": [
+            6
+          ],
+          "finite": true
+        },
+        "passed": true
+      }
+    },
+    "chunked_features": {
+      "shape": [
+        4,
+        4,
+        2560
+      ],
+      "max_abs": 1.0,
+      "rms": 0.01682041957974434,
+      "reference_rms": 9.1965913772583,
+      "rms_relative": 0.001828984119196439,
+      "finite": true,
+      "passed": true
+    },
+    "single_entry": {
+      "custom_cache_lengths": {
+        "32": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "33": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "34": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "35": [
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      "upstream_cache_lengths": {
+        "32": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "33": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "34": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "35": [
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      "custom_token_ids": [
+        25221,
+        11870,
+        40640,
+        151645
+      ],
+      "custom_answer": "Northstar Labs",
+      "injection_count": 16,
+      "delta_max": 9.25,
+      "upstream_token_ids": [
+        25221,
+        11870,
+        40640,
+        151645
+      ],
+      "upstream_answer": "Northstar Labs",
+      "tokens_equal": true,
+      "finite": true,
+      "passed": true
+    },
+    "multi_entry": {
+      "custom_cache_lengths": {
+        "32": [
+          9,
+          10,
+          11,
+          12
+        ],
+        "33": [
+          9,
+          10,
+          11,
+          12
+        ],
+        "34": [
+          9,
+          10,
+          11,
+          12
+        ],
+        "35": [
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      "upstream_cache_lengths": {
+        "32": [
+          9,
+          10,
+          11,
+          12
+        ],
+        "33": [
+          9,
+          10,
+          11,
+          12
+        ],
+        "34": [
+          9,
+          10,
+          11,
+          12
+        ],
+        "35": [
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      "custom_token_ids": [
+        25221,
+        11870,
+        40640,
+        151645
+      ],
+      "custom_answer": "Northstar Labs",
+      "injection_count": 16,
+      "delta_max": 9.1875,
+      "upstream_token_ids": [
+        25221,
+        11870,
+        40640,
+        151645
+      ],
+      "upstream_answer": "Northstar Labs",
+      "tokens_equal": true,
+      "finite": true,
+      "passed": true
+    }
+  },
+  "max_new_tokens": 8,
+  "thresholds": {
+    "hm_rms_relative": 0.01,
+    "hm_max_abs": 1.0,
+    "generated_token_ids": "exact equality"
+  },
+  "scope": "Synthetic reader sanity only; no benchmark or reproduction approval",
+  "checkpoint": "/share/latent2/hf/TransMem-qwen3-4B-D4/best.pt",
+  "model_path": "/share/latent2/hf/Qwen3-4B-Instruct-2507",
+  "transmem_root": "/share/latent2/vcrm_v1002_phase12/upstream/TransMem",
+  "config_sha256": "5bab679935dd4f0bf5ac853c72eda578657b5e400c71d47a376a4f64e1f101f6",
+  "report_path": "/share/latent2/vcrm_v1002_phase12/runs/reader_parity_status.json",
+  "runtime_adaptation": {
+    "qwen3_cache_keyword_adapter": true,
+    "note": "Released TransMem uses past_key_values; installed 4.51 decoder accepts past_key_value. Keyword translation only, upstream source and weights remain unchanged."
+  },
+  "versions": {
+    "torch": "2.5.1+cu124",
+    "transformers": "4.51.3"
+  },
+  "device": "cuda:0",
+  "gpu": "Tesla V100-PCIE-32GB",
+  "memory_shape": [
+    4,
+    4,
+    2560
+  ],
+  "inject_layers": [
+    32,
+    33,
+    34,
+    35
+  ],
+  "loaded_sources": {
+    "/share/latent2/vcrm_v1002_phase12/upstream/TransMem/transmem/transmem.py": "4d450712842622e5d2c60c55f6ed3dac92fa35afbfd24db6584361eeb750e7c5",
+    "/share/latent2/vcrm_v1002_phase12/upstream/TransMem/transmem/layered.py": "30b08347bdd9dd0805b4ff20d546f83bf3b685ff926edfd015436e7f99c2e472",
+    "/share/latent2/vcrm_v1002_phase12/upstream/TransMem/transmem/extract_features.py": "3070cce1b263a65c74c733ae910ca36755a839c8b9e6c976037697920ad28555"
+  },
+  "active_check": null,
+  "synthetic_input": {
+    "context": "DATE: 2023-06-12T09:00:00\nCONVERSATION:\nuser: I work at Northstar Labs as a software engineer.\nassistant: Your workplace is Northstar Labs.\nuser: Our team meets on Monday to discuss software releases.\nassistant: The Monday meeting covers the release schedule.\nuser: I work at Northstar Labs as a software engineer.\nassistant: Your workplace is Northstar Labs.\nuser: Our team meets on Monday to discuss software releases.\nassistant: The Monday meeting covers the release schedule.\nuser: I work at Northstar Labs as a software engineer.\nassistant: Your workplace is Northstar Labs.\nuser: Our team meets on Monday to discuss software releases.\nassistant: The Monday meeting covers the release schedule.\nuser: I work at Northstar Labs as a software engineer.\nassistant: Your workplace is Northstar Labs.\nuser: Our team meets on Monday to discuss software releases.\nassistant: The Monday meeting covers the release schedule.\nuser: I work at Northstar Labs as a software engineer.\nassistant: Your workplace is Northstar Labs.\nuser: Our team meets on Monday to discuss software releases.\nassistant: The Monday meeting covers the release schedule.\nuser: I work at Northstar Labs as a software engineer.\nassistant: Your workplace is Northstar Labs.\nuser: Our team meets on Monday to discuss software releases.\nassistant: The Monday meeting covers the release schedule.\nuser: I work at Northstar Labs as a software engineer.\nassistant: Your workplace is Northstar Labs.\nuser: Our team meets on Monday to discuss software releases.\nassistant: The Monday meeting covers the release schedule.\nuser: I work at Northstar Labs as a software engineer.\nassistant: Your workplace is Northstar Labs.\nuser: Our team meets on Monday to discuss software releases.\nassistant: The Monday meeting covers the release schedule.",
+    "extra_context": "DATE: 2023-05-01T09:00:00\nCONVERSATION:\nuser: I used to work at Riverside Analytics.\nassistant: Riverside Analytics was your previous workplace.",
+    "query": {
+      "id": "synthetic-workplace",
+      "time": "2023-06-13T09:00:00",
+      "question": "What is my current workplace?"
+    },
+    "encode_prompt_tokens": 413,
+    "query_prompt_tokens": 452,
+    "len_cl": 379,
+    "hm_positions": [
+      93,
+      187,
+      281,
+      375
+    ],
+    "hm_prompt_prefix_equal": true
+  },
+  "finished_at": "2026-10-13T17:40:25.676834+00:00"
+}

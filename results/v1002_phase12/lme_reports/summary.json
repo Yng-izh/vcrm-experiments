@@ -1,0 +1,47 @@
+{
+  "results": {
+    "longmemeval_test/transmem_streaming/budget_1099511627776": {
+      "generated_episodes": 500,
+      "scored_episodes": 500,
+      "store_bytes_max": 5105532,
+      "write_seconds_mean": 19.314516629265622,
+      "read_seconds_mean": 0.42032555521372705,
+      "generation_limit_hits": 0,
+      "capacity_protocol": "no-eviction baseline; not fixed-budget comparison",
+      "retained_entries_mean": 47.734,
+      "expected_episodes": 500,
+      "complete": true,
+      "scope": "formal",
+      "peak_gpu_bytes": 9006766080,
+      "accuracy": 0.112,
+      "by_type": {
+        "knowledge-update": 0.14102564102564102,
+        "multi-session": 0.09022556390977443,
+        "single-session-assistant": 0.125,
+        "single-session-preference": 0.1,
+        "single-session-user": 0.1,
+        "temporal-reasoning": 0.12030075187969924
+      },
+      "evidence_diagnostics": {
+        "all": {
+          "failure_buckets": {
+            "selected_but_wrong": 317,
+            "retained_but_unselected": 127,
+            "correct": 56
+          },
+          "any_evidence_selected_rate": 0.704
+        },
+        "knowledge-update": {
+          "failure_buckets": {
+            "selected_but_wrong": 59,
+            "retained_but_unselected": 8,
+            "correct": 11
+          },
+          "any_evidence_selected_rate": 0.8717948717948718
+        }
+      }
+    }
+  },
+  "paired_comparisons": {},
+  "warning": "Smoke runs and unfinished runs are not publication results. C/D comparisons require equal training provenance and a frozen budget plan."
+}

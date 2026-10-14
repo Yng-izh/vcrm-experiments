@@ -1,0 +1,100 @@
+{
+  "id": "longmemeval:7e00a6cb",
+  "query": {
+    "id": "7e00a6cb",
+    "question": "I'm planning my trip to Amsterdam again and I was wondering, what was the name of that hostel near the Red Light District that you recommended last time?",
+    "time": "2023-05-30T21:40:00",
+    "answers": [
+      "International Budget Hostel"
+    ],
+    "type": "single-session-assistant",
+    "abstention": false
+  },
+  "baseline_answer": "Hostel 24 is the name.",
+  "baseline_accuracy": 0,
+  "selected_ids": [
+    "event_000035",
+    "event_000036",
+    "event_000037",
+    "event_000001",
+    "event_000030",
+    "event_000025",
+    "event_000029",
+    "event_000022"
+  ],
+  "gold_ids": [
+    "event_000035"
+  ],
+  "controls": {
+    "no_memory": {
+      "answer": "Hostel Amsterdam.",
+      "token_ids": [
+        9296,
+        301,
+        37741,
+        13,
+        151645
+      ],
+      "generation_limit_hit": false,
+      "read_seconds": 0.19819130282849073,
+      "prompt_tokens": 98,
+      "read_latent_slots": 0,
+      "peak_gpu_bytes": 8998676992,
+      "layer_diagnostics": {},
+      "injection_count": 0,
+      "delta_max": 0.0,
+      "accuracy": 0,
+      "judge_model": "Qwen3.5-9B",
+      "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+      "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "response": "no"
+    },
+    "selected_text": {
+      "answer": "International Budget Hostel",
+      "token_ids": [
+        33646,
+        27269,
+        16102,
+        301,
+        151645
+      ],
+      "generation_limit_hit": false,
+      "read_seconds": 4.926632306072861,
+      "prompt_tokens": 16257,
+      "read_latent_slots": 0,
+      "peak_gpu_bytes": 12664509952,
+      "layer_diagnostics": {},
+      "injection_count": 0,
+      "delta_max": 0.0,
+      "accuracy": 1,
+      "judge_model": "Qwen3.5-9B",
+      "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+      "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "response": "yes"
+    },
+    "oracle_evidence_text": {
+      "answer": "International Budget Hostel",
+      "token_ids": [
+        33646,
+        27269,
+        16102,
+        301,
+        151645
+      ],
+      "generation_limit_hit": false,
+      "read_seconds": 0.29293776489794254,
+      "prompt_tokens": 838,
+      "read_latent_slots": 0,
+      "peak_gpu_bytes": 9189546496,
+      "layer_diagnostics": {},
+      "injection_count": 0,
+      "delta_max": 0.0,
+      "accuracy": 1,
+      "judge_model": "Qwen3.5-9B",
+      "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+      "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "response": "yes"
+    }
+  },
+  "scope": "Offline selected-error controls, excluded from all formal scores"
+}

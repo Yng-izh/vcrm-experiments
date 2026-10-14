@@ -1,0 +1,128 @@
+{
+  "id": "longmemeval:51c32626",
+  "query": {
+    "id": "51c32626",
+    "question": "When did I submit my research paper on sentiment analysis?",
+    "time": "2023-05-30T16:23:00",
+    "answers": [
+      "February 1st"
+    ],
+    "type": "multi-session",
+    "abstention": false
+  },
+  "baseline_answer": "I don't know when you submitted your research paper.",
+  "baseline_accuracy": 0,
+  "selected_ids": [
+    "event_000047",
+    "event_000009",
+    "event_000017",
+    "event_000049",
+    "event_000037",
+    "event_000015",
+    "event_000008",
+    "event_000045"
+  ],
+  "gold_ids": [
+    "event_000009",
+    "event_000047"
+  ],
+  "controls": {
+    "no_memory": {
+      "answer": "I don't know when you submitted your research paper.",
+      "token_ids": [
+        40,
+        1513,
+        944,
+        1414,
+        979,
+        498,
+        14634,
+        697,
+        3412,
+        5567,
+        13,
+        151645
+      ],
+      "generation_limit_hit": false,
+      "read_seconds": 0.47127870190888643,
+      "prompt_tokens": 78,
+      "read_latent_slots": 0,
+      "peak_gpu_bytes": 8994306560,
+      "layer_diagnostics": {},
+      "injection_count": 0,
+      "delta_max": 0.0,
+      "accuracy": 0,
+      "judge_model": "Qwen3.5-9B",
+      "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+      "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "response": "no"
+    },
+    "selected_text": {
+      "answer": "I don't have information about your submission date for a research paper on sentiment analysis.",
+      "token_ids": [
+        40,
+        1513,
+        944,
+        614,
+        1995,
+        911,
+        697,
+        20503,
+        2400,
+        369,
+        264,
+        3412,
+        5567,
+        389,
+        25975,
+        6358,
+        13,
+        151645
+      ],
+      "generation_limit_hit": false,
+      "read_seconds": 8.554236838128418,
+      "prompt_tokens": 20167,
+      "read_latent_slots": 0,
+      "peak_gpu_bytes": 13551290880,
+      "layer_diagnostics": {},
+      "injection_count": 0,
+      "delta_max": 0.0,
+      "accuracy": 0,
+      "judge_model": "Qwen3.5-9B",
+      "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+      "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "response": "no"
+    },
+    "oracle_evidence_text": {
+      "answer": "I don't know when you submitted your research paper.",
+      "token_ids": [
+        40,
+        1513,
+        944,
+        1414,
+        979,
+        498,
+        14634,
+        697,
+        3412,
+        5567,
+        13,
+        151645
+      ],
+      "generation_limit_hit": false,
+      "read_seconds": 1.575027011334896,
+      "prompt_tokens": 5734,
+      "read_latent_slots": 0,
+      "peak_gpu_bytes": 10282337792,
+      "layer_diagnostics": {},
+      "injection_count": 0,
+      "delta_max": 0.0,
+      "accuracy": 0,
+      "judge_model": "Qwen3.5-9B",
+      "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+      "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "response": "no"
+    }
+  },
+  "scope": "Offline selected-error controls, excluded from all formal scores"
+}

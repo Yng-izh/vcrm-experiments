@@ -1,0 +1,231 @@
+{
+  "source_files": {
+    "transmem_root": {
+      "scripts/eval/benchmark/benchmark_context_scaling.py": "438e9616eb17a56b50a8e8446e90081502baebcbd26cd5d48229c55f061423a4",
+      "scripts/eval/compare_locomo_heldout.py": "00cf30eacc689254b31c80fb6edac1f05a672de5b20ec34bc74b763b40220860",
+      "scripts/eval/diagnose_transmem_vs_student.py": "293d3542133dc4c0d3788d73df1cd1209776f08c321a768f46241a4e8988afab",
+      "scripts/eval/eval_checkpoint_curve.py": "6e2c1affa04e0f040acd257bd30b8d753d6704470d01d052018659766f31e822",
+      "scripts/eval/eval_hm_ablation.py": "7cc9a87c8782f43afa4e3f03b100104bbf88e4e2bd8d192f08df80e6caf119e6",
+      "scripts/eval/eval_hotpot_official.py": "01dd13d05a097a0eaf2a1e6362a0760fcba6de536e3223a6c728ec9d3f0dded4",
+      "scripts/eval/eval_locomo.py": "416b172035d67105f273473404e58a545cf51c2179f734c1c4e0b8960999681c",
+      "scripts/eval/eval_longmemeval.py": "2510261c6e06c322007329ec9e5019f3a78cfa466150ead62c7db6978b94822d",
+      "scripts/eval/eval_memory_agent_bench.py": "64cfde7b4dac3eb6f4e06fdda85ee60441f6c8d113386d4ce3bf836c601c2927",
+      "scripts/eval/eval_memory_agent_bench_judge.py": "5e04b6c96165c6d6ee3dee9336b3b1fe829aa84f6222c1ea3d808c06c5c82031",
+      "scripts/eval/eval_offpolicy_diagnostics.py": "f8f5083cbad2a46320097cee3434b135aa69c9b5c00835765c22ee2854e7b5c6",
+      "scripts/eval/merge_hotpot_official_shards.py": "8ff8fff47332ddb2e7664129698bc611fccb072dd0159174c902982f87237ab2",
+      "scripts/eval/merge_locomo_shards.py": "88e41df768682741d055159cd90b61557586a003e88ce93f383d290ac2b1645b",
+      "scripts/eval/merge_longmemeval_shards.py": "026162486880431b00ce0f143d26f288fc2b72b29ab734f24a4c60ea798afb07",
+      "scripts/eval/plan_mab_parallel.py": "08e0ccf99dea0d1c4589238ad4998df22df0d4600d1eb79511995fe5599f9927",
+      "scripts/eval/prepare_hotpot_official_dev.py": "fe55e03a4f3028f04fd96d1cc7ceaba0b03f742d3a97246e3792eb4a9e7e533f",
+      "scripts/eval/test_mab_adapter.py": "09e7895e38476e421ca507a04b7f2609f35a7d7a9ea407a947c372345e6b2f45",
+      "scripts/eval/test_mab_judge.py": "9a81795fc5f42ffce49d46164aa76006fedc0912fcda226d5376533d172fa191",
+      "scripts/eval/test_mab_parallel_plan.py": "5da8bbe0dc8fd0a685ee87a0fb051c3fd780a47ae7c6a164c4fabbda7176b9a8",
+      "scripts/test/dump_one_sample.py": "475868f65009fb7a372869f755a717a3918ac996b82e85eb43ae5d92e206faac",
+      "scripts/test/dump_wrong_samples.py": "ef058b9def1641cf667d0777fdd3190e778ff786caa9c13569cdf1e7b17c4a79",
+      "scripts/train/data/build_locomo_train.py": "f20f54279b791de1372af585b8d26457572517d23940c5d1d6e4d7427daa09a3",
+      "scripts/train/stage0/hotpotqa/split_pool_meta.py": "7721cbf351fd7aea27cfbabf9b04a42169fb800e1134841179d2d72b51c1d792",
+      "transmem/__init__.py": "207cdaf1c1fbf5bd18de5212b379191b37fd6438c341eb2f3c011229e807bb9d",
+      "transmem/checkpoints.py": "cc309429776749776647d7abf509587de1657d94d485d7c6786a76f80e257c15",
+      "transmem/diagnostics.py": "4bbfe1ba99a990a09c8e61ade594e720c3def528f0b782745830998786bc4e68",
+      "transmem/evaluate.py": "c06826f060181857097da157409d11b44f7e3921525cb97ee3e2877eb81c3952",
+      "transmem/extract_features.py": "3070cce1b263a65c74c733ae910ca36755a839c8b9e6c976037697920ad28555",
+      "transmem/gate_training.py": "278501c519df96f2f9efa1450bfc73b228a7c4dc0a7875bf80edcc9512bd70d7",
+      "transmem/layered.py": "30b08347bdd9dd0805b4ff20d546f83bf3b685ff926edfd015436e7f99c2e472",
+      "transmem/layers.py": "e6eb8c03f3f9170592e29aea0189f8eafc32eb9062923e71bb1c65ff1344d94d",
+      "transmem/migrate_checkpoint.py": "0b4f6015ac7faa5328fa7624447610355df4a9b249c79c291ebea91671959963",
+      "transmem/nvme_s3_checkpoint.py": "021fecbd90c4f7d5596eafed7ad20fe85940838340c91b14950ba5ca80c797d8",
+      "transmem/objectives.py": "d6c571e5701a0ae55fde77a1d1f319a433f5fb16bfb73f8bae8fdcea05f7840b",
+      "transmem/rl.py": "88dd47068da60aee1471024ccfb3476dcbfb046623933a82a7a2b9472f97def1",
+      "transmem/test_checkpoint_curve.py": "cffdf30dcfac08afd4cef3c74c0f2cacf7461b3c29cad84bcecf89293fac01a8",
+      "transmem/test_diagnostics.py": "b9f906a0d28899c845cd5c743448e3fe23e23a4da5c9481e5ad52154af2e3b45",
+      "transmem/test_dynamic_gate.py": "7b059bc92f6892e48bdbf7a8e1cdba963e2894279774ea19f8da173204dbe3ae",
+      "transmem/test_dynamic_layers.py": "136277b8994c4ae4b274cf4d36606a92eeb78943ea8df80b06399c72278789e2",
+      "transmem/test_hm_override.py": "c5d18cc9a26d9f133a6677a9369e24af3f91d660464c7821374af16c357d13c3",
+      "transmem/test_inloop.py": "859e56244ff0d2ed1aa7217fe268df6fb282a1770bc2d6d0f42506b57450d237",
+      "transmem/test_layered.py": "891a691e0f60cdf880f2fbf265c58f3bdea56329a37995e52b2ecbd9887c5e2b",
+      "transmem/test_layered_overflow.py": "49ad74f061e1064877397980408771e6a1cca4b12b85d31826aeb6ef327bc7e6",
+      "transmem/test_nvme_s3_checkpoint.py": "0fca63259baf516d7402dbff7290957b77b5c084272c0ba6efeebe586ed99c3a",
+      "transmem/test_pool.py": "4cd6da83dc0bc91554afbaecd5c2ede8c6efdfc7b533eacbc6bb3ff53cfca99b",
+      "transmem/test_rl_posttraining.py": "0a72b79a6fc2eca9f584af0b5d496ef00436b95c3c2a9a229c88389dc802f7f6",
+      "transmem/test_shapes.py": "ea0f6a46eb4614d1c490dfdb5286b004045c01f4240b96390b6767e28e0359f9",
+      "transmem/test_teacher_gen.py": "fe6eecad6517f81d11184814cee1ea45ac17b6ec9f0c1bbad5e33d5177483cd2",
+      "transmem/test_transmem_before.py": "99276c8314aab6562ac3c7f58f287264302e814bf22d28414719dbf8452d77eb",
+      "transmem/train_grpo.py": "826d51369557bbe1f2742726900018260f2b78a9e2a3fdf4201fcaf53c256c54",
+      "transmem/train_inloop.py": "88efd1d35e2e5a5182e3a24573f070d112aabf4a504e01bab0b5b39327868bdd",
+      "transmem/train_layered.py": "15d338c5ffa355f4024d618303c49021ccccf82051672b617163be35ed2975ae",
+      "transmem/train_offpolicy.py": "713b8e6135aa960a855d2d2e30e884dd949dd65e06b84f20d76ef31f4add4e3f",
+      "transmem/train_onpolicy.py": "4e1f2d3497883c6a7e16d3ef0ebab0df426eeb07b3f64c2cf4f200f3edc4e2ac",
+      "transmem/transmem.py": "4d450712842622e5d2c60c55f6ed3dac92fa35afbfd24db6584361eeb750e7c5"
+    },
+    "delta_root": {
+      "deltamem/__init__.py": "36c4771154e3d315a30fa59936327f9b0d4d16967250646bca3ff5b07a508bcb",
+      "deltamem/chat_templates.py": "c405098fbbdea310cffed706072149a1b964bcfbbbd2a7997fd67a1861c57e02",
+      "deltamem/core/__init__.py": "3c71f36d1ffdf8b1b3694318b434d36b95428b43bb5b596b5e050feee1663f8a",
+      "deltamem/core/backbone_compat.py": "ce07ae69967a674390e258d5d07274cf562651fc87c8402b9ae66ed027a3ee69",
+      "deltamem/core/delta.py": "bad6e63a6d98692b3cd2a53ac4ee4001e1d24ac9d9dde8c6865128b48c2272e4",
+      "deltamem/core/delta_impl.py": "2dbf52e3849070bc69372ec9c16b4846ad9f5d953fee6f4f945b043d35027934",
+      "deltamem/core/write_segmentation.py": "c913ebb37443c85406f8b1756664a0efbc61c82d1529df720cead1860311e045",
+      "deltamem/demo/__init__.py": "ff22ede9869b32471a3825882022e5b3c5eb8ca4f88d32c0a342f936f6e81ddd",
+      "deltamem/demo/chat_demo.py": "985b7713817bdde226ecf7aebd0c223dcd5becbda080d25d66f3d59f556ba4ad",
+      "deltamem/eval/__init__.py": "bacf362780f450d663d18d8d87d055e7c5f813873519a9070f5b7202fc76cecb",
+      "deltamem/eval/benchmark_compare.py": "797e612955c66553ffd39a6c6f104e85a8a305b22fe96416c94d2fccf8d03f39",
+      "deltamem/eval/common.py": "2aef55d9fcc136ee5126def3a1439faa5a4176bac4e4458ac04f9f006f0a606e",
+      "deltamem/eval/ifeval_compat.py": "9707d54f35f824791bf3b7a83f6bc211b15a032bc422f53cdd8d181f0f5781ef",
+      "deltamem/eval/locomo_delta.py": "bcfb918ac0efcfd848ba1bebca591a7d11ec9061c45c8c7ebf1d2c365ccd0dba",
+      "deltamem/eval/locomo_protocol.py": "c7429f5c8b041b67bd29f88885169e516467b65e91e9911a90e7ba40d9822e63",
+      "deltamem/eval/official_eval_utils.py": "3568dc0a6dc97e5d8b40ab9c263d9efa2a21febf0e78fd08cc36d9515b67f1e3",
+      "deltamem/eval/official_memory_agent_bench.py": "53bf50895c366f1dc0402ccad5070818e1391f6ec8b6ca181255fca6395361f1",
+      "deltamem/eval/official_memory_agent_bench_templates.py": "a5cca199cd0ee155ea53b9fd73ae79c7bdc526bfc84ac133b7d951fc9851cf51",
+      "deltamem/eval/peft_compat.py": "a9ca95d63d21408759afe607cc5cce74c83db448d8f62105e5e3ca55d59e7577",
+      "deltamem/kernels/__init__.py": "0feb826ca71a35467897d7d0020c9852ac03696eba610878503708839718da72",
+      "deltamem/kernels/affine_scan.py": "c668b2041e4ee2fce054d1a3923d0fc3d6a018679a5a053c2a0128e8afd02009",
+      "deltamem/model_loading.py": "97673428234d79df1e556a466a57352705306cee7dd527113decd4f16db36c79",
+      "deltamem/runtime/__init__.py": "5e586d693e081553053612ee22b05a728a06166f910ed26cb9e11318815adfeb",
+      "deltamem/runtime/chat.py": "6b2c41da5ceca654009fec41ee881c6a2c34092206cdb0c2827ee080c8e99250",
+      "deltamem/runtime/chat_base.py": "6a68883ce3c3309fd45071203bd70b6edf2322978ef8f0e34b5b137af79b50c6",
+      "deltamem/runtime/chat_cli.py": "43a54eb67f87b0917ecefb183b813255f66eb32e2afe11438321a3eca6b11808",
+      "deltamem/runtime/chat_lora.py": "3605938e6868e9554d6dc7f57ff4db0696c5952f97c707c9b23be2a340d539dc",
+      "deltamem/runtime/session.py": "2b45bd859ed9403fe73da650e8ccf302a639a078235c8f49565945425edc5ba0",
+      "deltamem/tests/test_delta_mem_regressions.py": "8e58fab558dc6b3a04f3bc07a5c84d262620dff4dea23bb85be5cfbab8f832dd",
+      "deltamem/tests/test_locomo_eval.py": "4526891a4a233d0496948abb91d4c9c4480bcdc40eac0a4cd0f9f5720cd4546c",
+      "deltamem/tests/test_memory_agent_bench_summary.py": "370d57252ee558d1784c03c25ee5b2a2177a67289f7c80549bbd2ef70cb6e0fb",
+      "deltamem/tests/test_qasper_suite_regressions.py": "6861d67b5de37705d7179d9a31f143c3ec4027383415551e111b08198e6ad5b4",
+      "deltamem/tools/__init__.py": "4915880cf11434dcdc9a8a774018722949d4ed5d62a5dc5c1d23c31cad2a06d3",
+      "deltamem/tools/bench_scan.py": "fb67695119dd110d0499e802a51c1fc4f1548b003f4176cc54de2fbbd55c843e",
+      "deltamem/tools/generation_tps_benchmark.py": "2f9e3ef9c289c1d95332973b5d7ce5411fcdf4fe68d16c32e941891441963034",
+      "deltamem/tools/inspect.py": "890cb050607756d7408af01f7c6189aa35fc1884636b786adde4f9a55d3535c8",
+      "deltamem/train/__init__.py": "bbe40ab2866b987e5b38eb03e428631909c7be2481b6e72d204a6d22844cf3ae",
+      "deltamem/train/delta_sft.py": "fceca2ea03a97cc17e688f42bb7da253ee2b7c8e04d06bdfa30a2bdfa542154a",
+      "deltamem/train/delta_sft_experimental.py": "d9ae4ef1e8e784949d9648abad179ba5b8d927f8a79492f9daad8fe422afb3d5"
+    },
+    "longmemeval_root": {
+      "data/custom_history/sample_haystack_and_timestamp.py": "a2105d0d05116e52ff6f8fd997aa5a426661a6e3d2e6c0971a211f5791fe30f4",
+      "src/evaluation/evaluate_qa.py": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "src/evaluation/print_qa_metrics.py": "e9283933a0cefb7a0ded7365e436ae3d1be5aac41853325e6155d83bf07607f0",
+      "src/evaluation/print_retrieval_metrics.py": "58b70c0b562ea57372a7774a554c347cd908e901b77ac0149fc90b097b6f1b8f",
+      "src/generation/run_generation.py": "4f1eb3c69d7ad40f04065b9c0bc86f6582441018fc6ff751d162d66c95baf672",
+      "src/index_expansion/batch_expansion_session_keyphrases.py": "5ab3bd4af3c450b860bb0c005f40dd4f1ce832d55799daab40db3edf09a4853d",
+      "src/index_expansion/batch_expansion_session_summ.py": "e3fefc379efa19e55166d2dc5839ed91e2127dc60391fdbd2b6ef4f2d3b9f3e8",
+      "src/index_expansion/batch_expansion_session_temp_event.py": "870138d62368562c1aa8d185a8c60a52b050130ee317b27ca219d8530fca3b88",
+      "src/index_expansion/batch_expansion_session_userfact.py": "1b1772111b42c00b37a064b2b766428f560e1db02a69a2f7382b7ca4822ee9da",
+      "src/index_expansion/batch_expansion_turn_keyphrases.py": "081dec1aab9502c3ded950f2f27ac94d40aeb5bfd46f4b22f48a9f843824a427",
+      "src/index_expansion/batch_expansion_turn_userfact.py": "2d0cedf4b70452cee470e250b5614dd3ac31e7f0807a58b4d2cc5e9595e77201",
+      "src/index_expansion/temp_query_search_pruning.py": "d8b480b0a333e85247fc2692574913b93888baa62792328a097721651d744341",
+      "src/retrieval/eval_utils.py": "c98b8d1096877a15aa755c9de44fe33c195298466a2eb6f3c0f9f6bde8c72349",
+      "src/retrieval/index_expansion_utils.py": "d0a4a0907f7a9a2e8f9140dbc50b3f0a5f268d466787a0b40cb0a9bc2a06efe7",
+      "src/retrieval/run_retrieval.py": "efd7fc5969a904717741fadca3c7dc73611ddbb2aaf3ef33117ebb6943b3e346"
+    }
+  },
+  "model_files": {
+    "model_path": {
+      "/share/latent2/hf/Qwen3-4B-Instruct-2507/config.json": {
+        "bytes": 727,
+        "sha256": "5beea1a4a34c62782bfb2f911c606741a3bab8f92d80a118fa053c28af12e8ba"
+      },
+      "/share/latent2/hf/Qwen3-4B-Instruct-2507/generation_config.json": {
+        "bytes": 238,
+        "sha256": "835fffe355c9438e7a25be099b3fccaa98350b83451f9fd2d99512e74f1ade48"
+      },
+      "/share/latent2/hf/Qwen3-4B-Instruct-2507/model.safetensors.index.json": {
+        "bytes": 32819,
+        "sha256": "d6c42883a895dfef5b0080ed2116a1bcd764f558406b98923d675978a1abf29c"
+      },
+      "/share/latent2/hf/Qwen3-4B-Instruct-2507/tokenizer.json": {
+        "bytes": 11422654,
+        "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+      },
+      "/share/latent2/hf/Qwen3-4B-Instruct-2507/tokenizer_config.json": {
+        "bytes": 9377,
+        "sha256": "a62ff0a2472a0fa1b8eaabcb57c59b58afa42a22831dc141400b6e0cf2b65ce3"
+      },
+      "/share/latent2/hf/Qwen3-4B-Instruct-2507/vocab.json": {
+        "bytes": 2776833,
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      },
+      "hf_revision_metadata": {
+        "vocab.json.metadata": [
+          "cdbee75f17c01a7cc42f958dc650907174af0554",
+          "4783fe10ac3adce15ac8f358ef5462739852c569"
+        ],
+        "config.json.metadata": [
+          "cdbee75f17c01a7cc42f958dc650907174af0554",
+          "6988f134db143052042f2bd6e0c897bc6a605189"
+        ],
+        "model-00003-of-00003.safetensors.metadata": [
+          "cdbee75f17c01a7cc42f958dc650907174af0554",
+          "7dd39ccca5e4de123c74c14af44c9bf2eb75df33b4614382af0134528e060d5d"
+        ],
+        "generation_config.json.metadata": [
+          "cdbee75f17c01a7cc42f958dc650907174af0554",
+          "432531a002c181a19de338313d2375e9d7494d7e"
+        ],
+        "README.md.metadata": [
+          "cdbee75f17c01a7cc42f958dc650907174af0554",
+          "b85879f8e465b5b02bd7ea13dd7ffaf22816bf59"
+        ],
+        "LICENSE.metadata": [
+          "cdbee75f17c01a7cc42f958dc650907174af0554",
+          "6634c8cc3133b3848ec74b9f275acaaa1ea618ab"
+        ],
+        ".gitattributes.metadata": [
+          "cdbee75f17c01a7cc42f958dc650907174af0554",
+          "52373fe24473b1aa44333d318f578ae6bf04b49b"
+        ],
+        "merges.txt.metadata": [
+          "cdbee75f17c01a7cc42f958dc650907174af0554",
+          "20024bfe7c83998e9aeaf98a0cd6a2ce6306c2f0"
+        ],
+        "model-00001-of-00003.safetensors.metadata": [
+          "cdbee75f17c01a7cc42f958dc650907174af0554",
+          "75311d91bb08cf0b882913da464a1e722a31fb44db35208663487efb7a3d8ed6"
+        ],
+        "model.safetensors.index.json.metadata": [
+          "cdbee75f17c01a7cc42f958dc650907174af0554",
+          "4747b0297d3109f14db49886972e3369c9a00b2a"
+        ],
+        "tokenizer.json.metadata": [
+          "cdbee75f17c01a7cc42f958dc650907174af0554",
+          "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+        ],
+        "tokenizer_config.json.metadata": [
+          "cdbee75f17c01a7cc42f958dc650907174af0554",
+          "51c1be0d9192e7f6e6596de71d0f07d58fbc32ac"
+        ],
+        "model-00002-of-00003.safetensors.metadata": [
+          "cdbee75f17c01a7cc42f958dc650907174af0554",
+          "0b48adbb1f60e901153d91907ba11ce63bd4b8b584482e730f48808d055dfba1"
+        ]
+      }
+    },
+    "checkpoint": {
+      "/share/latent2/hf/TransMem-qwen3-4B-D4/best.pt": {
+        "bytes": 1719857634,
+        "sha256": "f338bb669c2be6982077a46196573daefa86f78415e43e2de4c0bcd8e6bedae2"
+      },
+      "hf_revision_metadata": {
+        "README.md.metadata": [
+          "85ba1010eb226e312e208940180bb60424a2cb79",
+          "32897cd3e640101ba184f8c4ccd896981de3804a"
+        ],
+        ".gitattributes.metadata": [
+          "85ba1010eb226e312e208940180bb60424a2cb79",
+          "a6344aac8c09253b3b630fb776ae94478aa0275b"
+        ],
+        "best.pt.metadata": [
+          "85ba1010eb226e312e208940180bb60424a2cb79",
+          "f338bb669c2be6982077a46196573daefa86f78415e43e2de4c0bcd8e6bedae2"
+        ]
+      }
+    }
+  },
+  "versions": {
+    "torch": "2.5.1+cu124",
+    "transformers": "4.51.3",
+    "numpy": "2.2.6",
+    "pytest": "9.1.1",
+    "openai": "3.29.0",
+    "tiktoken": "0.14.0",
+    "matplotlib": "3.10.9",
+    "nltk": "3.10.3"
+  }
+}

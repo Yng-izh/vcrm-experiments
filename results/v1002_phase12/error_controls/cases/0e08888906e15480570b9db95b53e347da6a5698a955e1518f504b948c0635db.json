@@ -1,0 +1,114 @@
+{
+  "id": "longmemeval:e61a7584",
+  "query": {
+    "id": "e61a7584",
+    "question": "How long have I had my cat, Luna?",
+    "time": "2023-11-30T12:46:00",
+    "answers": [
+      "9 months"
+    ],
+    "type": "knowledge-update",
+    "abstention": false
+  },
+  "baseline_answer": "I don't know who you are or when you got Luna.",
+  "baseline_accuracy": 0,
+  "selected_ids": [
+    "event_000034",
+    "event_000016",
+    "event_000010",
+    "event_000001",
+    "event_000049",
+    "event_000031",
+    "event_000028",
+    "event_000027"
+  ],
+  "gold_ids": [
+    "event_000016",
+    "event_000031"
+  ],
+  "controls": {
+    "no_memory": {
+      "answer": "I don't know who you are or when you got Luna.",
+      "token_ids": [
+        40,
+        1513,
+        944,
+        1414,
+        879,
+        498,
+        525,
+        476,
+        979,
+        498,
+        2684,
+        49805,
+        13,
+        151645
+      ],
+      "generation_limit_hit": false,
+      "read_seconds": 0.5757771050557494,
+      "prompt_tokens": 77,
+      "read_latent_slots": 0,
+      "peak_gpu_bytes": 8994138624,
+      "layer_diagnostics": {},
+      "injection_count": 0,
+      "delta_max": 0.0,
+      "accuracy": 0,
+      "judge_model": "Qwen3.5-9B",
+      "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+      "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "response": "no"
+    },
+    "selected_text": {
+      "answer": "You've had Luna for about 9 months.",
+      "token_ids": [
+        2610,
+        3003,
+        1030,
+        49805,
+        369,
+        911,
+        220,
+        24,
+        3951,
+        13,
+        151645
+      ],
+      "generation_limit_hit": false,
+      "read_seconds": 3.9968179860152304,
+      "prompt_tokens": 12753,
+      "read_latent_slots": 0,
+      "peak_gpu_bytes": 11869844992,
+      "layer_diagnostics": {},
+      "injection_count": 0,
+      "delta_max": 0.0,
+      "accuracy": 1,
+      "judge_model": "Qwen3.5-9B",
+      "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+      "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "response": "yes"
+    },
+    "oracle_evidence_text": {
+      "answer": "9 months",
+      "token_ids": [
+        24,
+        3951,
+        151645
+      ],
+      "generation_limit_hit": false,
+      "read_seconds": 1.1374231409281492,
+      "prompt_tokens": 5710,
+      "read_latent_slots": 0,
+      "peak_gpu_bytes": 10276589056,
+      "layer_diagnostics": {},
+      "injection_count": 0,
+      "delta_max": 0.0,
+      "accuracy": 1,
+      "judge_model": "Qwen3.5-9B",
+      "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+      "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "response": "yes"
+    }
+  },
+  "scope": "Offline selected-error controls, excluded from all formal scores"
+}

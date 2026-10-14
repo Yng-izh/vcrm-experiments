@@ -1,0 +1,122 @@
+{
+  "id": "longmemeval:ba61f0b9",
+  "query": {
+    "id": "ba61f0b9",
+    "question": "How many women are on the team led by my former manager Rachel?",
+    "time": "2023-08-03T06:02:00",
+    "answers": [
+      "6"
+    ],
+    "type": "knowledge-update",
+    "abstention": false
+  },
+  "baseline_answer": "I don't know.",
+  "baseline_accuracy": 0,
+  "selected_ids": [
+    "event_000013",
+    "event_000006",
+    "event_000030",
+    "event_000022",
+    "event_000040",
+    "event_000041",
+    "event_000026",
+    "event_000007"
+  ],
+  "gold_ids": [
+    "event_000013",
+    "event_000040"
+  ],
+  "controls": {
+    "no_memory": {
+      "answer": "I don't know who your former manager Rachel is or her team. Cannot answer.",
+      "token_ids": [
+        40,
+        1513,
+        944,
+        1414,
+        879,
+        697,
+        4741,
+        6645,
+        31432,
+        374,
+        476,
+        1059,
+        2083,
+        13,
+        34655,
+        4226,
+        13,
+        151645
+      ],
+      "generation_limit_hit": false,
+      "read_seconds": 0.6973042087629437,
+      "prompt_tokens": 81,
+      "read_latent_slots": 0,
+      "peak_gpu_bytes": 8994821632,
+      "layer_diagnostics": {},
+      "injection_count": 0,
+      "delta_max": 0.0,
+      "accuracy": 0,
+      "judge_model": "Qwen3.5-9B",
+      "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+      "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "response": "no"
+    },
+    "selected_text": {
+      "answer": "Five women are on Rachel's team.",
+      "token_ids": [
+        37020,
+        3198,
+        525,
+        389,
+        31432,
+        594,
+        2083,
+        13,
+        151645
+      ],
+      "generation_limit_hit": false,
+      "read_seconds": 9.56264607096091,
+      "prompt_tokens": 23778,
+      "read_latent_slots": 0,
+      "peak_gpu_bytes": 14370715136,
+      "layer_diagnostics": {},
+      "injection_count": 0,
+      "delta_max": 0.0,
+      "accuracy": 0,
+      "judge_model": "Qwen3.5-9B",
+      "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+      "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "response": "no"
+    },
+    "oracle_evidence_text": {
+      "answer": "Five women are on Rachel's team.",
+      "token_ids": [
+        37020,
+        3198,
+        525,
+        389,
+        31432,
+        594,
+        2083,
+        13,
+        151645
+      ],
+      "generation_limit_hit": false,
+      "read_seconds": 1.5784389008767903,
+      "prompt_tokens": 6271,
+      "read_latent_slots": 0,
+      "peak_gpu_bytes": 10399009280,
+      "layer_diagnostics": {},
+      "injection_count": 0,
+      "delta_max": 0.0,
+      "accuracy": 0,
+      "judge_model": "Qwen3.5-9B",
+      "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+      "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "response": "no"
+    }
+  },
+  "scope": "Offline selected-error controls, excluded from all formal scores"
+}

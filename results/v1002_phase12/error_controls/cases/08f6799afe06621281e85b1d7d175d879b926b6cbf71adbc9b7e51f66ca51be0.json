@@ -1,0 +1,97 @@
+{
+  "id": "longmemeval:ac031881",
+  "query": {
+    "id": "ac031881",
+    "question": "I'm trying to recall what the designation on my jumpsuit was that helped me find the file number in the records room?",
+    "time": "2023-05-30T22:54:00",
+    "answers": [
+      "The designation on your jumpsuit was 'LIV'."
+    ],
+    "type": "single-session-assistant",
+    "abstention": false
+  },
+  "baseline_answer": "Suit patch number",
+  "baseline_accuracy": 0,
+  "selected_ids": [
+    "event_000005",
+    "event_000031",
+    "event_000042",
+    "event_000029",
+    "event_000003",
+    "event_000002",
+    "event_000024",
+    "event_000044"
+  ],
+  "gold_ids": [
+    "event_000005"
+  ],
+  "controls": {
+    "no_memory": {
+      "answer": "Jumpsuit patch number",
+      "token_ids": [
+        41,
+        11793,
+        3083,
+        10900,
+        1372,
+        151645
+      ],
+      "generation_limit_hit": false,
+      "read_seconds": 0.2555601648055017,
+      "prompt_tokens": 92,
+      "read_latent_slots": 0,
+      "peak_gpu_bytes": 8997316096,
+      "layer_diagnostics": {},
+      "injection_count": 0,
+      "delta_max": 0.0,
+      "accuracy": 0,
+      "judge_model": "Qwen3.5-9B",
+      "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+      "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "response": "no"
+    },
+    "selected_text": {
+      "answer": "LIV",
+      "token_ids": [
+        43,
+        3090,
+        151645
+      ],
+      "generation_limit_hit": false,
+      "read_seconds": 8.352622793987393,
+      "prompt_tokens": 23191,
+      "read_latent_slots": 0,
+      "peak_gpu_bytes": 14237856256,
+      "layer_diagnostics": {},
+      "injection_count": 0,
+      "delta_max": 0.0,
+      "accuracy": 1,
+      "judge_model": "Qwen3.5-9B",
+      "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+      "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "response": "yes"
+    },
+    "oracle_evidence_text": {
+      "answer": "LIV",
+      "token_ids": [
+        43,
+        3090,
+        151645
+      ],
+      "generation_limit_hit": false,
+      "read_seconds": 0.38564423890784383,
+      "prompt_tokens": 2034,
+      "read_latent_slots": 0,
+      "peak_gpu_bytes": 9438929408,
+      "layer_diagnostics": {},
+      "injection_count": 0,
+      "delta_max": 0.0,
+      "accuracy": 1,
+      "judge_model": "Qwen3.5-9B",
+      "protocol": "Official LongMemEval prompt; custom judge, not official GPT-4o scores",
+      "prompt_source_sha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "response": "yes"
+    }
+  },
+  "scope": "Offline selected-error controls, excluded from all formal scores"
+}

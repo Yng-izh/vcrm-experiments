@@ -1,0 +1,11 @@
+.env
+.venv/
+__pycache__/
+.pytest_cache/
+data/
+upstream/
+runs/
+checkpoints/
+debug_checkpoints/
+*.source.json
+*.pyc
