@@ -1,0 +1,4 @@
+codec-eval: physical GPU 1; log=/share/latent2/vcrm_icae/runs/architecture_v6_E3_test/logs/codec-eval.gpu1.log
+codec-eval: physical GPU 2; log=/share/latent2/vcrm_icae/runs/architecture_v6_E3_test/logs/codec-eval.gpu2.log
+codec-eval: physical GPU 3; log=/share/latent2/vcrm_icae/runs/architecture_v6_E3_test/logs/codec-eval.gpu3.log
+codec-eval: physical GPU 4; log=/share/latent2/vcrm_icae/runs/architecture_v6_E3_test/logs/codec-eval.gpu4.log

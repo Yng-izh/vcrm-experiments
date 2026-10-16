@@ -1,0 +1,344 @@
+{
+  "id": "templama:val:Q141971:P286",
+  "group": "Q141971:P286",
+  "split": "val",
+  "versions": 7,
+  "queries": [
+    {
+      "query_id": "Q141971_P286_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q141971_P286_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Norbert Düwel",
+        "token_ids": [
+          28759,
+          271,
+          4555,
+          384,
+          28837,
+          28727,
+          301
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2918377141468227,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491645952,
+        "kv_cache_bytes": 28704768,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q141971_P286_2019",
+          "Q141971_P286_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.005722125992178917,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1860,
+          "total_bytes": 1838660,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Urs Fischer",
+        "token_ids": [
+          28305,
+          401,
+          6283
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19710119999945164,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520327168,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q141971_P286_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q141971_P286_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Norbert Düwel",
+        "token_ids": [
+          28759,
+          271,
+          4555,
+          384,
+          28837,
+          28727,
+          301
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2940704138018191,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491777024,
+        "kv_cache_bytes": 28704768,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q141971_P286_2019",
+          "Q141971_P286_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0034703752025961876,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1860,
+          "total_bytes": 1838660,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "The head coach of 1. FC Union Berlin is Norbert Düwel.",
+        "token_ids": [
+          415,
+          1335,
+          7786,
+          302,
+          28705,
+          28740,
+          28723,
+          9138,
+          7085,
+          8430,
+          349,
+          4953,
+          4555,
+          384,
+          28837,
+          28727,
+          301,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6585185150615871,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520327168,
+        "kv_cache_bytes": 44826624,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.3333333333333333
+      }
+    },
+    {
+      "query_id": "Q141971_P286_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q141971_P286_2016",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Andre Hofschneider",
+        "token_ids": [
+          17905,
+          24557,
+          2452,
+          485,
+          1184
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23541411804035306,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491645952,
+        "kv_cache_bytes": 28442624,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q141971_P286_2019",
+          "Q141971_P286_2016"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003561784978955984,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1860,
+          "total_bytes": 1838660,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.5,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Urs Fischer",
+        "token_ids": [
+          28305,
+          401,
+          6283
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19749700417742133,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520327168,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q141971_P286_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q141971_P286_2017",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Jens Keller",
+        "token_ids": [
+          475,
+          596,
+          524,
+          5371
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20699496800079942,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491777024,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q141971_P286_2019",
+          "Q141971_P286_2017"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003561721183359623,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1860,
+          "total_bytes": 1838660,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Jens Keller",
+        "token_ids": [
+          475,
+          596,
+          524,
+          5371
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23157620523124933,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520327168,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.2683053403161466,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 896,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 224,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1835008,
+      "index_key_bytes": 1792,
+      "metadata_and_format_bytes": 1860,
+      "total_bytes": 1838660,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 224,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1835008,
+    "index_key_bytes": 1792,
+    "metadata_and_format_bytes": 1860,
+    "total_bytes": 1838660,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

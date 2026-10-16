@@ -1,0 +1,113 @@
+{
+  "id": "templama:val:Q105844:P286",
+  "group": "Q105844:P286",
+  "split": "val",
+  "versions": 3,
+  "queries": [
+    {
+      "query_id": "Q105844_P286_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q105844_P286_2018",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Ralf Rangnick",
+        "token_ids": [
+          28754,
+          2121,
+          24237,
+          22554
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.21226244093850255,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500560896,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q105844_P286_2019",
+          "Q105844_P286_2018"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0040289368480443954,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Uwe Neuhaus",
+        "token_ids": [
+          500,
+          769,
+          3147,
+          8884,
+          1899
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.26730611035600305,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15529242112,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.05464361887425184,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 384,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 160,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1310720,
+      "index_key_bytes": 768,
+      "metadata_and_format_bytes": 972,
+      "total_bytes": 1312460,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 160,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1310720,
+    "index_key_bytes": 768,
+    "metadata_and_format_bytes": 972,
+    "total_bytes": 1312460,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

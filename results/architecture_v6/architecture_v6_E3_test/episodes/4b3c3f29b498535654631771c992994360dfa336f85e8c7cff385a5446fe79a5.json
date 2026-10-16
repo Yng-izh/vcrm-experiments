@@ -1,0 +1,195 @@
+{
+  "id": "templama:test:Q102027:P54",
+  "group": "Q102027:P54",
+  "split": "test",
+  "versions": 2,
+  "queries": [
+    {
+      "query_id": "Q102027_P54_2010",
+      "latest": false,
+      "as_of": "2010-01-01T00:00:00",
+      "selected_entry_id": "Q102027_P54_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Shabab Al Ahli Club",
+        "token_ids": [
+          1295,
+          375,
+          375,
+          976,
+          10103,
+          1144,
+          5933
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3451295760460198,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490558464,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q102027_P54_2011",
+          "Q102027_P54_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003844458144158125,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 743,
+          "total_bytes": 1180903,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Shabab Al Ahli Club",
+        "token_ids": [
+          1295,
+          375,
+          375,
+          976,
+          10103,
+          1144,
+          5933
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3675592918880284,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q102027_P54_2011",
+      "latest": true,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q102027_P54_2011",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Shabab Al Ahli Club",
+        "token_ids": [
+          1981,
+          375,
+          375,
+          976,
+          10103,
+          1144,
+          5933
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3418369307182729,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490689536,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q102027_P54_2011",
+          "Q102027_P54_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004085386171936989,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 743,
+          "total_bytes": 1180903,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Shabab Al Ahli Club",
+        "token_ids": [
+          1295,
+          375,
+          375,
+          976,
+          10103,
+          1144,
+          5933
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.36541243689134717,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.08478575432673097,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 256,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 144,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1179648,
+      "index_key_bytes": 512,
+      "metadata_and_format_bytes": 743,
+      "total_bytes": 1180903,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 144,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1179648,
+    "index_key_bytes": 512,
+    "metadata_and_format_bytes": 743,
+    "total_bytes": 1180903,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

@@ -1,0 +1,521 @@
+{
+  "id": "templama:val:Q2110896:P488",
+  "group": "Q2110896:P488",
+  "split": "val",
+  "versions": 6,
+  "queries": [
+    {
+      "query_id": "Q2110896_P488_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q2110896_P488_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Petros Efthymiou",
+        "token_ids": [
+          6728,
+          2737,
+          413,
+          28722,
+          362,
+          1082,
+          28710,
+          280
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.32974677719175816,
+        "prompt_tokens": 219,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15493030400,
+        "kv_cache_bytes": 29753344,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q2110896_P488_2017",
+          "Q2110896_P488_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003992944024503231,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1653,
+          "total_bytes": 1707125,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Petros Tsereteli",
+        "token_ids": [
+          6728,
+          2737,
+          320,
+          457,
+          299,
+          20949
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2932438640855253,
+        "prompt_tokens": 331,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15522080256,
+        "kv_cache_bytes": 44171264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q2110896_P488_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q2110896_P488_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Petros Efthymiou",
+        "token_ids": [
+          6728,
+          2737,
+          413,
+          28722,
+          362,
+          1082,
+          28710,
+          280
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.33080896688625216,
+        "prompt_tokens": 219,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15492899328,
+        "kv_cache_bytes": 29753344,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q2110896_P488_2017",
+          "Q2110896_P488_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003746681846678257,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1653,
+          "total_bytes": 1707125,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Petros Tsereteli",
+        "token_ids": [
+          6728,
+          2737,
+          320,
+          457,
+          299,
+          20949
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.29439968103542924,
+        "prompt_tokens": 331,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15522080256,
+        "kv_cache_bytes": 44171264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q2110896_P488_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q2110896_P488_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Ranko Krivokapić",
+        "token_ids": [
+          24347,
+          28709,
+          524,
+          814,
+          493,
+          3016,
+          28900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2941389540210366,
+        "prompt_tokens": 219,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15493030400,
+        "kv_cache_bytes": 29622272,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q2110896_P488_2017",
+          "Q2110896_P488_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036409208551049232,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1653,
+          "total_bytes": 1707125,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Gigi Tsereteli",
+        "token_ids": [
+          420,
+          15495,
+          320,
+          457,
+          299,
+          20949
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2904132539406419,
+        "prompt_tokens": 331,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15522080256,
+        "kv_cache_bytes": 44171264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q2110896_P488_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q2110896_P488_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "The missing fact is: Ranko Krivokapić is the chair of Parliamentary Assembly of the Organization for Security and Co-operation in Europe.",
+        "token_ids": [
+          415,
+          6925,
+          1639,
+          349,
+          28747,
+          15938,
+          28709,
+          524,
+          814,
+          493,
+          3016,
+          28900,
+          349,
+          272,
+          6225,
+          302,
+          15490,
+          628,
+          12033,
+          302,
+          272,
+          21919,
+          354,
+          9769,
+          304,
+          3092,
+          28733,
+          9731,
+          297,
+          3401,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 1.0123569020070136,
+        "prompt_tokens": 219,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15492899328,
+        "kv_cache_bytes": 32768000,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q2110896_P488_2017",
+          "Q2110896_P488_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003977952990680933,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1653,
+          "total_bytes": 1707125,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.2,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Gigi Tsereteli",
+        "token_ids": [
+          420,
+          15495,
+          320,
+          457,
+          299,
+          20949
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.29297408275306225,
+        "prompt_tokens": 331,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15522080256,
+        "kv_cache_bytes": 44171264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q2110896_P488_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q2110896_P488_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Ilkka Kanerva",
+        "token_ids": [
+          2661,
+          28729,
+          2117,
+          14748,
+          784,
+          28708
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2658758177421987,
+        "prompt_tokens": 219,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15493030400,
+        "kv_cache_bytes": 29491200,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q2110896_P488_2017",
+          "Q2110896_P488_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003773591946810484,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1653,
+          "total_bytes": 1707125,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Ilkka Tapiola",
+        "token_ids": [
+          2661,
+          28729,
+          2117,
+          320,
+          3016,
+          4362
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3303953520953655,
+        "prompt_tokens": 331,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15522080256,
+        "kv_cache_bytes": 44171264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q2110896_P488_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q2110896_P488_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Ilkka Kanerva",
+        "token_ids": [
+          2661,
+          28729,
+          2117,
+          14748,
+          784,
+          28708
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2671142378821969,
+        "prompt_tokens": 219,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15492899328,
+        "kv_cache_bytes": 29491200,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q2110896_P488_2017",
+          "Q2110896_P488_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037255240604281425,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1653,
+          "total_bytes": 1707125,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Ilkka Tapiola",
+        "token_ids": [
+          2661,
+          28729,
+          2117,
+          320,
+          3016,
+          4362
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.29470863193273544,
+        "prompt_tokens": 331,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15522080256,
+        "kv_cache_bytes": 44171264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    }
+  ],
+  "write_seconds": 0.19808522472158074,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 768,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 208,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1703936,
+      "index_key_bytes": 1536,
+      "metadata_and_format_bytes": 1653,
+      "total_bytes": 1707125,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 208,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1703936,
+    "index_key_bytes": 1536,
+    "metadata_and_format_bytes": 1653,
+    "total_bytes": 1707125,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

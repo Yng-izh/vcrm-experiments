@@ -1,0 +1,370 @@
+{
+  "id": "templama:val:Q2895519:P54",
+  "group": "Q2895519:P54",
+  "split": "val",
+  "versions": 7,
+  "queries": [
+    {
+      "query_id": "Q2895519_P54_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q2895519_P54_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Ben May plays for AFC Wimbledon.",
+        "token_ids": [
+          4121,
+          2246,
+          8928,
+          354,
+          330,
+          5417,
+          394,
+          321,
+          9704,
+          266,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5410928651690483,
+        "prompt_tokens": 204,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15498820096,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q2895519_P54_2016",
+          "Q2895519_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004710876848548651,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1949,
+          "total_bytes": 1838749,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Bromley F.C.",
+        "token_ids": [
+          365,
+          436,
+          2047,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3779253219254315,
+        "prompt_tokens": 316,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527238656,
+        "kv_cache_bytes": 42336256,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q2895519_P54_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q2895519_P54_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Ben May plays for Dagenham & Redbridge F.C.",
+        "token_ids": [
+          4121,
+          2246,
+          8928,
+          354,
+          384,
+          5786,
+          3520,
+          567,
+          3690,
+          15401,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6266086469404399,
+        "prompt_tokens": 204,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15498951168,
+        "kv_cache_bytes": 28573696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q2895519_P54_2016",
+          "Q2895519_P54_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0043727620504796505,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1949,
+          "total_bytes": 1838749,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.2222222222222222,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Ben May plays for Barnet F.C.",
+        "token_ids": [
+          4121,
+          2246,
+          8928,
+          354,
+          15002,
+          299,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.522306886035949,
+        "prompt_tokens": 316,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527238656,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q2895519_P54_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q2895519_P54_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Ben May plays for Dagenham & Redbridge F.C.",
+        "token_ids": [
+          4121,
+          2246,
+          8928,
+          354,
+          384,
+          5786,
+          3520,
+          567,
+          3690,
+          15401,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6391993397846818,
+        "prompt_tokens": 204,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15498820096,
+        "kv_cache_bytes": 28573696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q2895519_P54_2016",
+          "Q2895519_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004445504862815142,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1949,
+          "total_bytes": 1838749,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.2,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Dover Athletic F.C.",
+        "token_ids": [
+          384,
+          1483,
+          19092,
+          294,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4387280778028071,
+        "prompt_tokens": 316,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527238656,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q2895519_P54_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q2895519_P54_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "AFC Wimbledon",
+        "token_ids": [
+          330,
+          5417,
+          394,
+          321,
+          9704,
+          266
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.32513188011944294,
+        "prompt_tokens": 204,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15498951168,
+        "kv_cache_bytes": 27525120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q2895519_P54_2016",
+          "Q2895519_P54_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004743799101561308,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1949,
+          "total_bytes": 1838749,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Bromley F.C.",
+        "token_ids": [
+          365,
+          436,
+          2047,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.38266574312001467,
+        "prompt_tokens": 316,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527238656,
+        "kv_cache_bytes": 42336256,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.4
+      }
+    }
+  ],
+  "write_seconds": 0.1269716490060091,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 896,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 224,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1835008,
+      "index_key_bytes": 1792,
+      "metadata_and_format_bytes": 1949,
+      "total_bytes": 1838749,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 224,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1835008,
+    "index_key_bytes": 1792,
+    "metadata_and_format_bytes": 1949,
+    "total_bytes": 1838749,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

@@ -1,0 +1,509 @@
+{
+  "id": "templama:val:Q15983409:P102",
+  "group": "Q15983409:P102",
+  "split": "val",
+  "versions": 4,
+  "queries": [
+    {
+      "query_id": "Q15983409_P102_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q15983409_P102_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Pakistan Peoples Party",
+        "token_ids": [
+          28753,
+          491,
+          7694,
+          3242,
+          19619,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.26209501130506396,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q15983409_P102_2018",
+          "Q15983409_P102_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037010577507317066,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1216,
+          "total_bytes": 1444032,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Pakistan Tehreek-e-Insaf",
+        "token_ids": [
+          15701,
+          2263,
+          28716,
+          6857,
+          28733,
+          28706,
+          28733,
+          17621,
+          2015
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3755915891379118,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.4
+      }
+    },
+    {
+      "query_id": "Q15983409_P102_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q15983409_P102_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Pakistan Peoples Party",
+        "token_ids": [
+          28753,
+          491,
+          7694,
+          3242,
+          19619,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.25776528427377343,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490906624,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q15983409_P102_2018",
+          "Q15983409_P102_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003768125083297491,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1216,
+          "total_bytes": 1444032,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Pakistan Tehreek-e-Insaf",
+        "token_ids": [
+          15701,
+          2263,
+          28716,
+          6857,
+          28733,
+          28706,
+          28733,
+          17621,
+          2015
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3781579900532961,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.4
+      }
+    },
+    {
+      "query_id": "Q15983409_P102_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q15983409_P102_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Pakistan Peoples Party",
+        "token_ids": [
+          28753,
+          491,
+          7694,
+          3242,
+          19619,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.26225236617028713,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q15983409_P102_2018",
+          "Q15983409_P102_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0034404699690639973,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1216,
+          "total_bytes": 1444032,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Pakistan Tehreek-e-Insaf",
+        "token_ids": [
+          15701,
+          2263,
+          28716,
+          6857,
+          28733,
+          28706,
+          28733,
+          17621,
+          2015
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3747153840959072,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.4
+      }
+    },
+    {
+      "query_id": "Q15983409_P102_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q15983409_P102_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Pakistan Peoples Party",
+        "token_ids": [
+          28753,
+          491,
+          7694,
+          3242,
+          19619,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2616409002803266,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490906624,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q15983409_P102_2018",
+          "Q15983409_P102_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036547109484672546,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1216,
+          "total_bytes": 1444032,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Pakistan Tehreek-e-Insaf",
+        "token_ids": [
+          15701,
+          2263,
+          28716,
+          6857,
+          28733,
+          28706,
+          28733,
+          17621,
+          2015
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3769251718185842,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.4
+      }
+    },
+    {
+      "query_id": "Q15983409_P102_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q15983409_P102_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Pakistan Peoples Party",
+        "token_ids": [
+          28753,
+          491,
+          7694,
+          3242,
+          19619,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.25938144233077765,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q15983409_P102_2018",
+          "Q15983409_P102_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037108762189745903,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1216,
+          "total_bytes": 1444032,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Pakistan Tehreek-e-Insaf",
+        "token_ids": [
+          15701,
+          2263,
+          28716,
+          6857,
+          28733,
+          28706,
+          28733,
+          17621,
+          2015
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.40644305013120174,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.4
+      }
+    },
+    {
+      "query_id": "Q15983409_P102_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q15983409_P102_2017",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Pakistan Peoples Party",
+        "token_ids": [
+          28753,
+          491,
+          7694,
+          3242,
+          19619,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3012047749944031,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490906624,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q15983409_P102_2018",
+          "Q15983409_P102_2017"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0043227109126746655,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1216,
+          "total_bytes": 1444032,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Pakistan Tehreek-e-Insaf",
+        "token_ids": [
+          15701,
+          2263,
+          28716,
+          6857,
+          28733,
+          28706,
+          28733,
+          17621,
+          2015
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3937637316994369,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.13623458612710238,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 512,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 176,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1441792,
+      "index_key_bytes": 1024,
+      "metadata_and_format_bytes": 1216,
+      "total_bytes": 1444032,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 176,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1441792,
+    "index_key_bytes": 1024,
+    "metadata_and_format_bytes": 1216,
+    "total_bytes": 1444032,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

@@ -1,0 +1,10 @@
+{
+  "sha256": "ae637cf4e4fdbe623a4ad606339facf07128ab1dc8a4a6fad9be055e4c3c1f56",
+  "bytes": 438373376,
+  "model_revision": "63a8b081895390a26e140280378bc85ec8bce07a",
+  "checkpoint_revision": "c95c70d670c8a284550610b49b0f26d2a3b2d1e3",
+  "checkpoint_ready": true,
+  "model_ready": false,
+  "gpu_parity_executed": false,
+  "validation_executed": false
+}

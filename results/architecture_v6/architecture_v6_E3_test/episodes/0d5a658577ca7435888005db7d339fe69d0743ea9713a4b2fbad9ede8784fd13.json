@@ -1,0 +1,801 @@
+{
+  "id": "templama:test:Q1094295:P286",
+  "group": "Q1094295:P286",
+  "split": "test",
+  "versions": 5,
+  "queries": [
+    {
+      "query_id": "Q1094295_P286_2010",
+      "latest": false,
+      "as_of": "2010-01-01T00:00:00",
+      "selected_entry_id": "Q1094295_P286_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Guy McKenna",
+        "token_ids": [
+          16520,
+          18346,
+          269,
+          1520
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20192038035020232,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491210752,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1094295_P286_2018",
+          "Q1094295_P286_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037995269522070885,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1429,
+          "total_bytes": 1575573,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Stuart",
+        "token_ids": [
+          23733
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.13515958515927196,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 42336256,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1094295_P286_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q1094295_P286_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Guy McKenna",
+        "token_ids": [
+          16520,
+          18346,
+          269,
+          1520
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20402907487004995,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491341824,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1094295_P286_2018",
+          "Q1094295_P286_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003660250920802355,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1429,
+          "total_bytes": 1575573,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Stuart",
+        "token_ids": [
+          23733
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.13568797009065747,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 42336256,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1094295_P286_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q1094295_P286_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Guy McKenna",
+        "token_ids": [
+          16520,
+          18346,
+          269,
+          1520
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20340763265267015,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491210752,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1094295_P286_2018",
+          "Q1094295_P286_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0032312441617250443,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1429,
+          "total_bytes": 1575573,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Stuart",
+        "token_ids": [
+          23733
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1354604149237275,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 42336256,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1094295_P286_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q1094295_P286_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Guy McKenna",
+        "token_ids": [
+          16520,
+          18346,
+          269,
+          1520
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20161038171499968,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491341824,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1094295_P286_2018",
+          "Q1094295_P286_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038265176117420197,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1429,
+          "total_bytes": 1575573,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Stuart",
+        "token_ids": [
+          23733
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.13491503475233912,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 42336256,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1094295_P286_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q1094295_P286_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Guy McKenna",
+        "token_ids": [
+          28777,
+          4533,
+          18346,
+          269,
+          1520
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2311633238568902,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491210752,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1094295_P286_2018",
+          "Q1094295_P286_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036809840239584446,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1429,
+          "total_bytes": 1575573,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Stuart McKenna",
+        "token_ids": [
+          23733,
+          18346,
+          269,
+          1520
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22725507197901607,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q1094295_P286_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q1094295_P286_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Rodney Eade",
+        "token_ids": [
+          8815,
+          2705,
+          413,
+          770
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20351393288001418,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491341824,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1094295_P286_2018",
+          "Q1094295_P286_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004414713010191917,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1429,
+          "total_bytes": 1575573,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Stuart Dew",
+        "token_ids": [
+          23733,
+          384,
+          889
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1949213589541614,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1094295_P286_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q1094295_P286_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Rodney Eade",
+        "token_ids": [
+          8815,
+          2705,
+          413,
+          770
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2000313294120133,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491210752,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1094295_P286_2018",
+          "Q1094295_P286_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003567194100469351,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1429,
+          "total_bytes": 1575573,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Stuart Dew",
+        "token_ids": [
+          23733,
+          384,
+          889
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19954356970265508,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1094295_P286_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q1094295_P286_2017",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Stuart Dew",
+        "token_ids": [
+          23733,
+          384,
+          889
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17471086606383324,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491341824,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1094295_P286_2018",
+          "Q1094295_P286_2017"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038663800805807114,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1429,
+          "total_bytes": 1575573,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Stuart Dew",
+        "token_ids": [
+          23733,
+          384,
+          889
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19967340305447578,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1094295_P286_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q1094295_P286_2018",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Stuart Dew",
+        "token_ids": [
+          23733,
+          384,
+          889
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1708841659128666,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491210752,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1094295_P286_2018",
+          "Q1094295_P286_2017"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0034502181224524975,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1429,
+          "total_bytes": 1575573,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Stuart Dew",
+        "token_ids": [
+          23733,
+          384,
+          889
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1954858019016683,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1094295_P286_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q1094295_P286_2018",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Stuart Dew",
+        "token_ids": [
+          23733,
+          384,
+          889
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17913215095177293,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491341824,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1094295_P286_2018",
+          "Q1094295_P286_2017"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0035989689640700817,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1429,
+          "total_bytes": 1575573,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Stuart Dew",
+        "token_ids": [
+          23733,
+          384,
+          889
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19915818609297276,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1094295_P286_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q1094295_P286_2018",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Stuart Dew",
+        "token_ids": [
+          23733,
+          384,
+          889
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.21221765410155058,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491210752,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1094295_P286_2018",
+          "Q1094295_P286_2017"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037492578849196434,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1429,
+          "total_bytes": 1575573,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Stuart Dew",
+        "token_ids": [
+          23733,
+          384,
+          889
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19804426468908787,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.231409496627748,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 640,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 192,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1572864,
+      "index_key_bytes": 1280,
+      "metadata_and_format_bytes": 1429,
+      "total_bytes": 1575573,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 192,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1572864,
+    "index_key_bytes": 1280,
+    "metadata_and_format_bytes": 1429,
+    "total_bytes": 1575573,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

@@ -1,0 +1,12 @@
+{
+  "base_config": "config.json",
+  "run_prefix": "comparison_matched_v4",
+  "historical_manifest": "/share/latent2/vcrm_icae/runs/matched_v4_suite/validation_481.json",
+  "feature_root": "/share/latent2/vcrm_icae/features/paper_v1_official",
+  "full_marker_run": "matched_v4_C16_train",
+  "training_runs": {
+    "C": "matched_v4_C16_train",
+    "D": "matched_v4_D16_train"
+  },
+  "note": "Use only after matched_v4 training is complete. No results from aligned_v3 are substituted. ICAE-Full explicitly uses matched_v4 C16-trained role/time markers. Preparing this plan does not load models, train or occupy GPUs."
+}

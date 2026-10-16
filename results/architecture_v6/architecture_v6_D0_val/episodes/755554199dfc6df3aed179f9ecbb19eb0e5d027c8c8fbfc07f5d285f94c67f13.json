@@ -1,0 +1,550 @@
+{
+  "id": "templama:val:Q3140358:P54",
+  "group": "Q3140358:P54",
+  "split": "val",
+  "versions": 5,
+  "queries": [
+    {
+      "query_id": "Q3140358_P54_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q3140358_P54_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "England national cricket team",
+        "token_ids": [
+          5871,
+          1207,
+          4282,
+          26023,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2442253241315484,
+        "prompt_tokens": 204,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15498951168,
+        "kv_cache_bytes": 27394048,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q3140358_P54_2018",
+          "Q3140358_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.009074865840375423,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1475,
+          "total_bytes": 1575619,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "England",
+        "token_ids": [
+          5783
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.13945986423641443,
+        "prompt_tokens": 316,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527238656,
+        "kv_cache_bytes": 41549824,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.3333333333333333
+      }
+    },
+    {
+      "query_id": "Q3140358_P54_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q3140358_P54_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "England and Wales cricket team",
+        "token_ids": [
+          5871,
+          1207,
+          304,
+          14831,
+          26023,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2810342460870743,
+        "prompt_tokens": 204,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15498820096,
+        "kv_cache_bytes": 27525120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q3140358_P54_2018",
+          "Q3140358_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.008715339936316013,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1475,
+          "total_bytes": 1575619,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "England",
+        "token_ids": [
+          5783
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1413284782320261,
+        "prompt_tokens": 316,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527238656,
+        "kv_cache_bytes": 41549824,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.3333333333333333
+      }
+    },
+    {
+      "query_id": "Q3140358_P54_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q3140358_P54_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "England and Wales cricket team",
+        "token_ids": [
+          5871,
+          1207,
+          304,
+          14831,
+          26023,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2731190351769328,
+        "prompt_tokens": 204,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15498951168,
+        "kv_cache_bytes": 27525120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q3140358_P54_2018",
+          "Q3140358_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.009728730656206608,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1475,
+          "total_bytes": 1575619,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "England and Wales cricket team",
+        "token_ids": [
+          5783,
+          304,
+          14831,
+          26023,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2628745841793716,
+        "prompt_tokens": 316,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527238656,
+        "kv_cache_bytes": 42074112,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q3140358_P54_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q3140358_P54_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "England and Wales cricket team",
+        "token_ids": [
+          5871,
+          1207,
+          304,
+          14831,
+          26023,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.27287637582048774,
+        "prompt_tokens": 204,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15498820096,
+        "kv_cache_bytes": 27525120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q3140358_P54_2018",
+          "Q3140358_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.009237382095307112,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1475,
+          "total_bytes": 1575619,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "England and Wales cricket team",
+        "token_ids": [
+          5783,
+          304,
+          14831,
+          26023,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2662409129552543,
+        "prompt_tokens": 316,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527238656,
+        "kv_cache_bytes": 42074112,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q3140358_P54_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q3140358_P54_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "England and Wales cricket team",
+        "token_ids": [
+          5871,
+          1207,
+          304,
+          14831,
+          26023,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2821325268596411,
+        "prompt_tokens": 204,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15498951168,
+        "kv_cache_bytes": 27525120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q3140358_P54_2018",
+          "Q3140358_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0077442871406674385,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1475,
+          "total_bytes": 1575619,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "England and Wales cricket team",
+        "token_ids": [
+          5783,
+          304,
+          14831,
+          26023,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2667621769942343,
+        "prompt_tokens": 316,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527238656,
+        "kv_cache_bytes": 42074112,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q3140358_P54_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q3140358_P54_2016",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "England and Wales cricket team",
+        "token_ids": [
+          5871,
+          1207,
+          304,
+          14831,
+          26023,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2723522521555424,
+        "prompt_tokens": 204,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15498820096,
+        "kv_cache_bytes": 27525120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q3140358_P54_2018",
+          "Q3140358_P54_2016"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.00989142432808876,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1475,
+          "total_bytes": 1575619,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "England and Wales cricket team",
+        "token_ids": [
+          5783,
+          304,
+          14831,
+          26023,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2655974319204688,
+        "prompt_tokens": 316,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527238656,
+        "kv_cache_bytes": 42074112,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q3140358_P54_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q3140358_P54_2016",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "England and Wales cricket team",
+        "token_ids": [
+          5871,
+          1207,
+          304,
+          14831,
+          26023,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.28657174203544855,
+        "prompt_tokens": 204,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15498951168,
+        "kv_cache_bytes": 27525120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q3140358_P54_2018",
+          "Q3140358_P54_2016"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.010076337028294802,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1475,
+          "total_bytes": 1575619,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "England and Wales cricket team",
+        "token_ids": [
+          5783,
+          304,
+          14831,
+          26023,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2647363627329469,
+        "prompt_tokens": 316,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527238656,
+        "kv_cache_bytes": 42074112,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.2687301211990416,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 640,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 192,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1572864,
+      "index_key_bytes": 1280,
+      "metadata_and_format_bytes": 1475,
+      "total_bytes": 1575619,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 192,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1572864,
+    "index_key_bytes": 1280,
+    "metadata_and_format_bytes": 1475,
+    "total_bytes": 1575619,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

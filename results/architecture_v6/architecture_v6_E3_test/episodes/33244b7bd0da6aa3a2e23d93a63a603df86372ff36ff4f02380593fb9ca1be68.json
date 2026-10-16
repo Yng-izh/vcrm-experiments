@@ -1,0 +1,773 @@
+{
+  "id": "templama:test:Q10853588:P39",
+  "group": "Q10853588:P39",
+  "split": "test",
+  "versions": 3,
+  "queries": [
+    {
+      "query_id": "Q10853588_P39_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q10853588_P39_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Attorney General of California",
+        "token_ids": [
+          23064,
+          3592,
+          302,
+          6247
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20585925318300724,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490689536,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10853588_P39_2018",
+          "Q10853588_P39_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036586150527000427,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Attorney General",
+        "token_ids": [
+          23064,
+          3592
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.16709322296082973,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 42074112,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666
+      }
+    },
+    {
+      "query_id": "Q10853588_P39_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q10853588_P39_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Attorney General of California",
+        "token_ids": [
+          23064,
+          3592,
+          302,
+          6247
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20578277204185724,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490558464,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10853588_P39_2018",
+          "Q10853588_P39_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037739062681794167,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Attorney General",
+        "token_ids": [
+          23064,
+          3592
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.16768937604501843,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 42074112,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666
+      }
+    },
+    {
+      "query_id": "Q10853588_P39_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q10853588_P39_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Attorney General of California",
+        "token_ids": [
+          23064,
+          3592,
+          302,
+          6247
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20394218806177378,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490689536,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10853588_P39_2018",
+          "Q10853588_P39_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003750341013073921,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Attorney General",
+        "token_ids": [
+          23064,
+          3592
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1664961250498891,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 42074112,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666
+      }
+    },
+    {
+      "query_id": "Q10853588_P39_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q10853588_P39_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Attorney General of California",
+        "token_ids": [
+          23064,
+          3592,
+          302,
+          6247
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2032072599977255,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490558464,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10853588_P39_2018",
+          "Q10853588_P39_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003726322203874588,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Attorney General",
+        "token_ids": [
+          23064,
+          3592
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.16587392706423998,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 42074112,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666
+      }
+    },
+    {
+      "query_id": "Q10853588_P39_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q10853588_P39_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Attorney General of California",
+        "token_ids": [
+          23064,
+          3592,
+          302,
+          6247
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20681934477761388,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490689536,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10853588_P39_2018",
+          "Q10853588_P39_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003624510020017624,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Attorney General",
+        "token_ids": [
+          23064,
+          3592
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1682669590227306,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 42074112,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666
+      }
+    },
+    {
+      "query_id": "Q10853588_P39_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q10853588_P39_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Attorney General of California",
+        "token_ids": [
+          23064,
+          3592,
+          302,
+          6247
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20861585810780525,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490558464,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10853588_P39_2018",
+          "Q10853588_P39_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004062619060277939,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Attorney General",
+        "token_ids": [
+          23064,
+          3592
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1657545561902225,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 42074112,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666
+      }
+    },
+    {
+      "query_id": "Q10853588_P39_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q10853588_P39_2017",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Attorney General of California",
+        "token_ids": [
+          2517,
+          10899,
+          3592,
+          302,
+          6247
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23456805711612105,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490689536,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10853588_P39_2018",
+          "Q10853588_P39_2017"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038587660528719425,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Kamala Harris holds the position of Attorney General of California.",
+        "token_ids": [
+          15346,
+          4575,
+          16692,
+          8288,
+          272,
+          2840,
+          302,
+          23064,
+          3592,
+          302,
+          6247,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4721217630431056,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 43384832,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6153846153846154
+      }
+    },
+    {
+      "query_id": "Q10853588_P39_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q10853588_P39_2018",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Attorney General of California",
+        "token_ids": [
+          2517,
+          10899,
+          3592,
+          302,
+          6247
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23839500499889255,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490558464,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10853588_P39_2018",
+          "Q10853588_P39_2017"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003943286836147308,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Kamala Harris holds the position of Attorney General of California.",
+        "token_ids": [
+          15346,
+          4575,
+          16692,
+          8288,
+          272,
+          2840,
+          302,
+          23064,
+          3592,
+          302,
+          6247,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.47487556282430887,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 43384832,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q10853588_P39_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q10853588_P39_2018",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "United States senator",
+        "token_ids": [
+          2969,
+          3543,
+          5351,
+          1028
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20169161772355437,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490689536,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10853588_P39_2018",
+          "Q10853588_P39_2017"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003869623877108097,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Kamala Harris holds the position of Attorney General of California.",
+        "token_ids": [
+          15346,
+          4575,
+          16692,
+          8288,
+          272,
+          2840,
+          302,
+          23064,
+          3592,
+          302,
+          6247,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4706635642796755,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 43384832,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q10853588_P39_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q10853588_P39_2018",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "United States senator",
+        "token_ids": [
+          2969,
+          3543,
+          5351,
+          1028
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20225758804008365,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490558464,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10853588_P39_2018",
+          "Q10853588_P39_2017"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003569867927581072,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Kamala Harris holds the position of Attorney General of California.",
+        "token_ids": [
+          15346,
+          4575,
+          16692,
+          8288,
+          272,
+          2840,
+          302,
+          23064,
+          3592,
+          302,
+          6247,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4818492978811264,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 43384832,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    }
+  ],
+  "write_seconds": 0.10538974031805992,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 384,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 160,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1310720,
+      "index_key_bytes": 768,
+      "metadata_and_format_bytes": 981,
+      "total_bytes": 1312469,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 160,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1310720,
+    "index_key_bytes": 768,
+    "metadata_and_format_bytes": 981,
+    "total_bytes": 1312469,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

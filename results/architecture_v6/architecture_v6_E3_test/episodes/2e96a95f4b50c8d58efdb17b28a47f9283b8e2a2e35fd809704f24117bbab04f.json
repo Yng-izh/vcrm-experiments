@@ -1,0 +1,993 @@
+{
+  "id": "templama:test:Q109428:P54",
+  "group": "Q109428:P54",
+  "split": "test",
+  "versions": 6,
+  "queries": [
+    {
+      "query_id": "Q109428_P54_2010",
+      "latest": false,
+      "as_of": "2010-01-01T00:00:00",
+      "selected_entry_id": "Q109428_P54_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Juventus FC",
+        "token_ids": [
+          13697,
+          1071,
+          381,
+          9138
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20377570297569036,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491210752,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q109428_P54_2016",
+          "Q109428_P54_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038001579232513905,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1623,
+          "total_bytes": 1707095,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Clube de Regatas do Flamengo / Fenerbahçe FC",
+        "token_ids": [
+          1366,
+          4276,
+          340,
+          2678,
+          270,
+          293,
+          511,
+          2494,
+          314,
+          980,
+          28709,
+          732,
+          401,
+          790,
+          28726,
+          912,
+          28857,
+          28706,
+          9138
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6895074979402125,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 44695552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.2222222222222222
+      }
+    },
+    {
+      "query_id": "Q109428_P54_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q109428_P54_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Atlético Madrid",
+        "token_ids": [
+          7751,
+          27771,
+          14334
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17368855886161327,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491341824,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q109428_P54_2016",
+          "Q109428_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037961131893098354,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1623,
+          "total_bytes": 1707095,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Clube de Regatas do Flamengo / Fenerbahçe FC",
+        "token_ids": [
+          1366,
+          4276,
+          340,
+          2678,
+          270,
+          293,
+          511,
+          2494,
+          314,
+          980,
+          28709,
+          732,
+          401,
+          790,
+          28726,
+          912,
+          28857,
+          28706,
+          9138
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.7230224339291453,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 44695552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q109428_P54_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q109428_P54_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Atlético Madrid",
+        "token_ids": [
+          7751,
+          27771,
+          14334
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17924733273684978,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491210752,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q109428_P54_2016",
+          "Q109428_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003912578336894512,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1623,
+          "total_bytes": 1707095,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Clube de Regatas do Flamengo / Fenerbahçe FC",
+        "token_ids": [
+          1366,
+          4276,
+          340,
+          2678,
+          270,
+          293,
+          511,
+          2494,
+          314,
+          980,
+          28709,
+          732,
+          401,
+          790,
+          28726,
+          912,
+          28857,
+          28706,
+          9138
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6882666856981814,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 44695552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q109428_P54_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q109428_P54_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "VfL Wolfsburg",
+        "token_ids": [
+          28790,
+          28722,
+          28758,
+          12840,
+          2547,
+          5467
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.272935651242733,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491341824,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q109428_P54_2016",
+          "Q109428_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0035468293353915215,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1623,
+          "total_bytes": 1707095,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Clube de Regatas do Flamengo / Fenerbahçe FC",
+        "token_ids": [
+          1366,
+          4276,
+          340,
+          2678,
+          270,
+          293,
+          511,
+          2494,
+          314,
+          980,
+          28709,
+          732,
+          401,
+          790,
+          28726,
+          912,
+          28857,
+          28706,
+          9138
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.683296917937696,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 44695552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q109428_P54_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q109428_P54_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Atlético Madrid",
+        "token_ids": [
+          7751,
+          27771,
+          14334
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17112895706668496,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491210752,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q109428_P54_2016",
+          "Q109428_P54_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003725233022123575,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1623,
+          "total_bytes": 1707095,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Clube de Regatas do Flamengo / Fenerbahçe FC /",
+        "token_ids": [
+          1366,
+          4276,
+          340,
+          2678,
+          270,
+          293,
+          511,
+          2494,
+          314,
+          980,
+          28709,
+          732,
+          401,
+          790,
+          28726,
+          912,
+          28857,
+          28706,
+          9138,
+          732
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.7239223020151258,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 44826624,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.4444444444444444
+      }
+    },
+    {
+      "query_id": "Q109428_P54_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q109428_P54_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Fenerbahçe FC",
+        "token_ids": [
+          401,
+          790,
+          28726,
+          912,
+          28857,
+          28706,
+          9138
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.289099439047277,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491341824,
+        "kv_cache_bytes": 28442624,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q109428_P54_2016",
+          "Q109428_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037426091730594635,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1623,
+          "total_bytes": 1707095,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Fenerbahçe FC",
+        "token_ids": [
+          401,
+          790,
+          28726,
+          912,
+          28857,
+          28706,
+          9138
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3197241947054863,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q109428_P54_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q109428_P54_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Clube de Regatas do Flamengo / Fenerbahçe FC",
+        "token_ids": [
+          1199,
+          4276,
+          340,
+          2678,
+          270,
+          293,
+          511,
+          2494,
+          314,
+          980,
+          28709,
+          732,
+          401,
+          790,
+          28726,
+          912,
+          28857,
+          28706,
+          9138
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6496967920102179,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491210752,
+        "kv_cache_bytes": 30015488,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q109428_P54_2016",
+          "Q109428_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003915728069841862,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1623,
+          "total_bytes": 1707095,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.8333333333333334,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Fenerbahçe FC",
+        "token_ids": [
+          401,
+          790,
+          28726,
+          912,
+          28857,
+          28706,
+          9138
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.32152935210615396,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q109428_P54_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q109428_P54_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Clube de Regatas do Flamengo / Fenerbahçe FC",
+        "token_ids": [
+          1199,
+          4276,
+          340,
+          2678,
+          270,
+          293,
+          511,
+          2494,
+          314,
+          980,
+          28709,
+          732,
+          401,
+          790,
+          28726,
+          912,
+          28857,
+          28706,
+          9138
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6544633721932769,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491341824,
+        "kv_cache_bytes": 30015488,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q109428_P54_2016",
+          "Q109428_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004348640330135822,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1623,
+          "total_bytes": 1707095,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.8333333333333334,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Fenerbahçe FC",
+        "token_ids": [
+          401,
+          790,
+          28726,
+          912,
+          28857,
+          28706,
+          9138
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.31981721706688404,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q109428_P54_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q109428_P54_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Clube de Regatas do Flamengo / Fenerbahçe FC",
+        "token_ids": [
+          1199,
+          4276,
+          340,
+          2678,
+          270,
+          293,
+          511,
+          2494,
+          314,
+          980,
+          28709,
+          732,
+          401,
+          790,
+          28726,
+          912,
+          28857,
+          28706,
+          9138
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6523652728646994,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491210752,
+        "kv_cache_bytes": 30015488,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q109428_P54_2016",
+          "Q109428_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037126289680600166,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1623,
+          "total_bytes": 1707095,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.8333333333333334,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Fenerbahçe FC",
+        "token_ids": [
+          401,
+          790,
+          28726,
+          912,
+          28857,
+          28706,
+          9138
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.32206539902836084,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q109428_P54_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q109428_P54_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Clube de Regatas do Flamengo / Fenerbahçe FC",
+        "token_ids": [
+          1199,
+          4276,
+          340,
+          2678,
+          270,
+          293,
+          511,
+          2494,
+          314,
+          980,
+          28709,
+          732,
+          401,
+          790,
+          28726,
+          912,
+          28857,
+          28706,
+          9138
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6566201411187649,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491341824,
+        "kv_cache_bytes": 30015488,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q109428_P54_2016",
+          "Q109428_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003952288068830967,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1623,
+          "total_bytes": 1707095,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.8333333333333334,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Fenerbahçe FC",
+        "token_ids": [
+          401,
+          790,
+          28726,
+          912,
+          28857,
+          28706,
+          9138
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.32522075716406107,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q109428_P54_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q109428_P54_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Clube de Regatas do Flamengo / Fenerbahçe FC",
+        "token_ids": [
+          1199,
+          4276,
+          340,
+          2678,
+          270,
+          293,
+          511,
+          2494,
+          314,
+          980,
+          28709,
+          732,
+          401,
+          790,
+          28726,
+          912,
+          28857,
+          28706,
+          9138
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6494840970262885,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491210752,
+        "kv_cache_bytes": 30015488,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q109428_P54_2016",
+          "Q109428_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036951149813830853,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1623,
+          "total_bytes": 1707095,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.8333333333333334,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Fenerbahçe FC",
+        "token_ids": [
+          401,
+          790,
+          28726,
+          912,
+          28857,
+          28706,
+          9138
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3212872068397701,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.23790320986881852,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 768,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 208,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1703936,
+      "index_key_bytes": 1536,
+      "metadata_and_format_bytes": 1623,
+      "total_bytes": 1707095,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 208,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1703936,
+    "index_key_bytes": 1536,
+    "metadata_and_format_bytes": 1623,
+    "total_bytes": 1707095,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

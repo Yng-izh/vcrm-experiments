@@ -1,0 +1,727 @@
+{
+  "id": "templama:test:Q10516040:P54",
+  "group": "Q10516040:P54",
+  "split": "test",
+  "versions": 3,
+  "queries": [
+    {
+      "query_id": "Q10516040_P54_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q10516040_P54_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Michigan Wolverines men's basketball",
+        "token_ids": [
+          13642,
+          394,
+          8867,
+          1303,
+          1683,
+          28742,
+          28713,
+          16382
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.38466391107067466,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10516040_P54_2014",
+          "Q10516040_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004023908171802759,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Michigan Wolverines",
+        "token_ids": [
+          13642,
+          394,
+          8867,
+          1303
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.25910951802507043,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42205184,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666
+      }
+    },
+    {
+      "query_id": "Q10516040_P54_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q10516040_P54_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Michigan Wolverines men's basketball",
+        "token_ids": [
+          13642,
+          394,
+          8867,
+          1303,
+          1683,
+          28742,
+          28713,
+          16382
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.38778438977897167,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10516040_P54_2014",
+          "Q10516040_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0045239427126944065,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Michigan Wolverines",
+        "token_ids": [
+          13642,
+          394,
+          8867,
+          1303
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.24862125888466835,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42205184,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666
+      }
+    },
+    {
+      "query_id": "Q10516040_P54_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q10516040_P54_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Utah Jazz",
+        "token_ids": [
+          23672,
+          22049
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1511945892125368,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10516040_P54_2014",
+          "Q10516040_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004248117096722126,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Utah Jazz",
+        "token_ids": [
+          23672,
+          22049
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1697078626602888,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 41943040,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10516040_P54_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q10516040_P54_2014",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Utah Jazz",
+        "token_ids": [
+          23672,
+          22049
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.14508632803335786,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10516040_P54_2014",
+          "Q10516040_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004002021159976721,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Utah Jazz",
+        "token_ids": [
+          23672,
+          22049
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.16930308798328042,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 41943040,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10516040_P54_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q10516040_P54_2014",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Utah Jazz",
+        "token_ids": [
+          23672,
+          22049
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.14965709717944264,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10516040_P54_2014",
+          "Q10516040_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0041040717624127865,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Utah Jazz",
+        "token_ids": [
+          23672,
+          22049
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17172280605882406,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 41943040,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10516040_P54_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q10516040_P54_2014",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Utah Jazz",
+        "token_ids": [
+          23672,
+          22049
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.14694242971017957,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10516040_P54_2014",
+          "Q10516040_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004232714883983135,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Utah Jazz",
+        "token_ids": [
+          23672,
+          22049
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.16370353708043694,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 41943040,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10516040_P54_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q10516040_P54_2014",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Utah Jazz",
+        "token_ids": [
+          23672,
+          22049
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.15243767714127898,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10516040_P54_2014",
+          "Q10516040_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.00495149614289403,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Utah Jazz",
+        "token_ids": [
+          23672,
+          22049
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.16873183706775308,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 41943040,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10516040_P54_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q10516040_P54_2014",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Utah Jazz",
+        "token_ids": [
+          23672,
+          22049
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.16378809697926044,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10516040_P54_2014",
+          "Q10516040_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038039865903556347,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Utah Jazz",
+        "token_ids": [
+          23672,
+          22049
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17403382482007146,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 41943040,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10516040_P54_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q10516040_P54_2014",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Utah Jazz",
+        "token_ids": [
+          23672,
+          22049
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.15177075238898396,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10516040_P54_2014",
+          "Q10516040_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004984472878277302,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Utah Jazz",
+        "token_ids": [
+          23672,
+          22049
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1711660590954125,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 41943040,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10516040_P54_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q10516040_P54_2014",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Utah Jazz",
+        "token_ids": [
+          23672,
+          22049
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.15750711876899004,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10516040_P54_2014",
+          "Q10516040_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004728994332253933,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Utah Jazz",
+        "token_ids": [
+          23672,
+          22049
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1861092229373753,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 41943040,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.12479610228911042,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 384,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 160,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1310720,
+      "index_key_bytes": 768,
+      "metadata_and_format_bytes": 981,
+      "total_bytes": 1312469,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 160,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1310720,
+    "index_key_bytes": 768,
+    "metadata_and_format_bytes": 981,
+    "total_bytes": 1312469,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

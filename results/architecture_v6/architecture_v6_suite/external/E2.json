@@ -1,0 +1,9 @@
+{
+  "label": "E2",
+  "hostname": "3f95e3692e78",
+  "pid": 8602,
+  "gpu": 6,
+  "config_sha256": "64824379f465778448fbab6fc6aacc212c82f2bca5a6446762bc181f6fac00fd",
+  "status": "complete",
+  "updated_unix": 1792048004.9879274
+}

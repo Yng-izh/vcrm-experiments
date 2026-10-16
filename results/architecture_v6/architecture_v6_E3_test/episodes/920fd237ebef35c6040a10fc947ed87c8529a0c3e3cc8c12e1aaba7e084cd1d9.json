@@ -1,0 +1,620 @@
+{
+  "id": "templama:test:Q11668:P39",
+  "group": "Q11668:P39",
+  "split": "test",
+  "versions": 3,
+  "queries": [
+    {
+      "query_id": "Q11668_P39_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q11668_P39_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Governor of South Carolina",
+        "token_ids": [
+          28777,
+          5794,
+          271,
+          302,
+          3658,
+          11434
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2642952627502382,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490993664,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11668_P39_2018",
+          "Q11668_P39_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003734532743692398,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 954,
+          "total_bytes": 1312442,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Governor",
+        "token_ids": [
+          16658
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1388920033350587,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42205184,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.4
+      }
+    },
+    {
+      "query_id": "Q11668_P39_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q11668_P39_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Governor of South Carolina",
+        "token_ids": [
+          28777,
+          5794,
+          271,
+          302,
+          3658,
+          11434
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2712674862705171,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491124736,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11668_P39_2018",
+          "Q11668_P39_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036213421262800694,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 954,
+          "total_bytes": 1312442,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Governor",
+        "token_ids": [
+          16658
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.13817190704867244,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42205184,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.4
+      }
+    },
+    {
+      "query_id": "Q11668_P39_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q11668_P39_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Governor of South Carolina",
+        "token_ids": [
+          28777,
+          5794,
+          271,
+          302,
+          3658,
+          11434
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.27503570914268494,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490993664,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11668_P39_2018",
+          "Q11668_P39_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037339781410992146,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 954,
+          "total_bytes": 1312442,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Governor",
+        "token_ids": [
+          16658
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.13896561274304986,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42205184,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.4
+      }
+    },
+    {
+      "query_id": "Q11668_P39_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q11668_P39_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Governor of South Carolina",
+        "token_ids": [
+          28777,
+          5794,
+          271,
+          302,
+          3658,
+          11434
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2625608369708061,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491124736,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11668_P39_2018",
+          "Q11668_P39_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037706918083131313,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 954,
+          "total_bytes": 1312442,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Governor",
+        "token_ids": [
+          16658
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.13651719922199845,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42205184,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.4
+      }
+    },
+    {
+      "query_id": "Q11668_P39_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q11668_P39_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Governor of South Carolina",
+        "token_ids": [
+          28777,
+          5794,
+          271,
+          302,
+          3658,
+          11434
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.27506110491231084,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490993664,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11668_P39_2018",
+          "Q11668_P39_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003646927885711193,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 954,
+          "total_bytes": 1312442,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Governor",
+        "token_ids": [
+          16658
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.14873981568962336,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42205184,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.4
+      }
+    },
+    {
+      "query_id": "Q11668_P39_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q11668_P39_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Governor of South Carolina",
+        "token_ids": [
+          28777,
+          5794,
+          271,
+          302,
+          3658,
+          11434
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2890266701579094,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491124736,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11668_P39_2018",
+          "Q11668_P39_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004114081151783466,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 954,
+          "total_bytes": 1312442,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Governor",
+        "token_ids": [
+          16658
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1507645109668374,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42205184,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.4
+      }
+    },
+    {
+      "query_id": "Q11668_P39_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q11668_P39_2017",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "United States Ambassador to the United Nations",
+        "token_ids": [
+          1733,
+          1345,
+          3543,
+          12086,
+          19536,
+          298,
+          272,
+          2969,
+          16419
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.40519857313483953,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490993664,
+        "kv_cache_bytes": 28573696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11668_P39_2018",
+          "Q11668_P39_2017"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004373654257506132,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 954,
+          "total_bytes": 1312442,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "United States Ambassador to the United Nations",
+        "token_ids": [
+          2969,
+          3543,
+          12086,
+          19536,
+          298,
+          272,
+          2969,
+          16419
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3799039600417018,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q11668_P39_2018",
+      "latest": true,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q11668_P39_2018",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "United States Ambassador to the United Nations",
+        "token_ids": [
+          2969,
+          3543,
+          12086,
+          19536,
+          298,
+          272,
+          2969,
+          16419
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.37400449765846133,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491124736,
+        "kv_cache_bytes": 28442624,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11668_P39_2018",
+          "Q11668_P39_2017"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0034792451187968254,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 954,
+          "total_bytes": 1312442,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "United States Ambassador to the United Nations",
+        "token_ids": [
+          2969,
+          3543,
+          12086,
+          19536,
+          298,
+          272,
+          2969,
+          16419
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3537920843809843,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.13659253111109138,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 384,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 160,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1310720,
+      "index_key_bytes": 768,
+      "metadata_and_format_bytes": 954,
+      "total_bytes": 1312442,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 160,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1310720,
+    "index_key_bytes": 768,
+    "metadata_and_format_bytes": 954,
+    "total_bytes": 1312442,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

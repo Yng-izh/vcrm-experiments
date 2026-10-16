@@ -1,0 +1,667 @@
+{
+  "id": "templama:val:Q129700:P54",
+  "group": "Q129700:P54",
+  "split": "val",
+  "versions": 9,
+  "queries": [
+    {
+      "query_id": "Q129700_P54_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q129700_P54_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Manchester City F.C.",
+        "token_ids": [
+          17533,
+          3805,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2654806603677571,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q129700_P54_2020",
+          "Q129700_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0035395370796322823,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 256,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 2097152,
+          "index_key_bytes": 2304,
+          "metadata_and_format_bytes": 2284,
+          "total_bytes": 2101740,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Brescia Calcio",
+        "token_ids": [
+          365,
+          411,
+          5011,
+          2984,
+          12636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2592795309610665,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42336256,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q129700_P54_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q129700_P54_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Manchester City F.C.",
+        "token_ids": [
+          17533,
+          3805,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.26295004691928625,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q129700_P54_2020",
+          "Q129700_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.005858941935002804,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 256,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 2097152,
+          "index_key_bytes": 2304,
+          "metadata_and_format_bytes": 2284,
+          "total_bytes": 2101740,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Brescia Calcio",
+        "token_ids": [
+          365,
+          411,
+          5011,
+          2984,
+          12636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.25791986379772425,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42336256,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q129700_P54_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q129700_P54_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Mario Balotelli plays for Manchester City.",
+        "token_ids": [
+          20564,
+          9573,
+          322,
+          8763,
+          8928,
+          354,
+          17533,
+          3805,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3582756370306015,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q129700_P54_2020",
+          "Q129700_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003738819155842066,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 256,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 2097152,
+          "index_key_bytes": 2304,
+          "metadata_and_format_bytes": 2284,
+          "total_bytes": 2101740,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.4444444444444444,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Mario Balotelli plays for Brescia Calcio.",
+        "token_ids": [
+          20564,
+          9573,
+          322,
+          8763,
+          8928,
+          354,
+          365,
+          411,
+          5011,
+          2984,
+          12636,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4713460970669985,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.2222222222222222
+      }
+    },
+    {
+      "query_id": "Q129700_P54_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q129700_P54_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Mario Balotelli plays for Associazione Calcio Milan.",
+        "token_ids": [
+          20564,
+          9573,
+          322,
+          8763,
+          8928,
+          354,
+          3348,
+          402,
+          515,
+          9826,
+          2984,
+          12636,
+          23600,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5063012586906552,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 28835840,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q129700_P54_2020",
+          "Q129700_P54_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003902831580489874,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 256,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 2097152,
+          "index_key_bytes": 2304,
+          "metadata_and_format_bytes": 2284,
+          "total_bytes": 2101740,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.6,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Mario Balotelli plays for Brescia Calcio.",
+        "token_ids": [
+          20564,
+          9573,
+          322,
+          8763,
+          8928,
+          354,
+          365,
+          411,
+          5011,
+          2984,
+          12636,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4712625010870397,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.2222222222222222
+      }
+    },
+    {
+      "query_id": "Q129700_P54_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q129700_P54_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Mario Balotelli plays for Associazione Calcio Milan.",
+        "token_ids": [
+          20564,
+          9573,
+          322,
+          8763,
+          8928,
+          354,
+          3348,
+          402,
+          515,
+          9826,
+          2984,
+          12636,
+          23600,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5100709251128137,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 28835840,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q129700_P54_2020",
+          "Q129700_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0040058051235973835,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 256,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 2097152,
+          "index_key_bytes": 2304,
+          "metadata_and_format_bytes": 2284,
+          "total_bytes": 2101740,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.6,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Mario Balotelli plays for Associazione Calcio Milan.",
+        "token_ids": [
+          20564,
+          9573,
+          322,
+          8763,
+          8928,
+          354,
+          3348,
+          402,
+          515,
+          9826,
+          2984,
+          12636,
+          23600,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5331233707256615,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 43515904,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6
+      }
+    },
+    {
+      "query_id": "Q129700_P54_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q129700_P54_2017",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "OGC Nice",
+        "token_ids": [
+          28762,
+          9389,
+          22277
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17357198568060994,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 27394048,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q129700_P54_2020",
+          "Q129700_P54_2017"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003529593348503113,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 256,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 2097152,
+          "index_key_bytes": 2304,
+          "metadata_and_format_bytes": 2284,
+          "total_bytes": 2101740,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "OGC Nice",
+        "token_ids": [
+          451,
+          9389,
+          22277
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19638372119516134,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42074112,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q129700_P54_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q129700_P54_2017",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "OGC Nice",
+        "token_ids": [
+          28762,
+          9389,
+          22277
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.174503390211612,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 27394048,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q129700_P54_2020",
+          "Q129700_P54_2017"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036196671426296234,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 256,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 2097152,
+          "index_key_bytes": 2304,
+          "metadata_and_format_bytes": 2284,
+          "total_bytes": 2101740,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "OGC Nice",
+        "token_ids": [
+          451,
+          9389,
+          22277
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19893759116530418,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42074112,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q129700_P54_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q129700_P54_2019",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "OGC Nice",
+        "token_ids": [
+          28762,
+          9389,
+          22277
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17439641570672393,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 27394048,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q129700_P54_2020",
+          "Q129700_P54_2019"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003557827789336443,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 256,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 2097152,
+          "index_key_bytes": 2304,
+          "metadata_and_format_bytes": 2284,
+          "total_bytes": 2101740,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Mario Balotelli plays for OGC Nice.",
+        "token_ids": [
+          20564,
+          9573,
+          322,
+          8763,
+          8928,
+          354,
+          451,
+          9389,
+          22277,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.41076165018603206,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    }
+  ],
+  "write_seconds": 0.3724749688990414,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 1152,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 256,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 2097152,
+      "index_key_bytes": 2304,
+      "metadata_and_format_bytes": 2284,
+      "total_bytes": 2101740,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 256,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 2097152,
+    "index_key_bytes": 2304,
+    "metadata_and_format_bytes": 2284,
+    "total_bytes": 2101740,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

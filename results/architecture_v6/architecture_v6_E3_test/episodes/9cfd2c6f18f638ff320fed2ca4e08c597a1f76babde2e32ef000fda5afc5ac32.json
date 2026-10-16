@@ -1,0 +1,899 @@
+{
+  "id": "templama:test:Q10577:P54",
+  "group": "Q10577:P54",
+  "split": "test",
+  "versions": 7,
+  "queries": [
+    {
+      "query_id": "Q10577_P54_2010",
+      "latest": false,
+      "as_of": "2010-01-01T00:00:00",
+      "selected_entry_id": "Q10577_P54_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Watford F.C.",
+        "token_ids": [
+          28780,
+          270,
+          4401,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.29797885194420815,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10577_P54_2016",
+          "Q10577_P54_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0035158670507371426,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1826,
+          "total_bytes": 1838626,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Tom Cleverley plays for Everton F.C.",
+        "token_ids": [
+          4660,
+          12132,
+          343,
+          2047,
+          8928,
+          354,
+          12763,
+          1158,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.48149447375908494,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.25
+      }
+    },
+    {
+      "query_id": "Q10577_P54_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q10577_P54_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "England national under-21 football team",
+        "token_ids": [
+          5783,
+          4282,
+          916,
+          28733,
+          28750,
+          28740,
+          6569,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.32987348176538944,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10577_P54_2016",
+          "Q10577_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038082627579569817,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1826,
+          "total_bytes": 1838626,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Tom Cleverley plays for Everton F.C.",
+        "token_ids": [
+          4660,
+          12132,
+          343,
+          2047,
+          8928,
+          354,
+          12763,
+          1158,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.47144505893811584,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.2222222222222222
+      }
+    },
+    {
+      "query_id": "Q10577_P54_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q10577_P54_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "England national association football team",
+        "token_ids": [
+          5783,
+          4282,
+          13895,
+          6569,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2304196530021727,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10577_P54_2016",
+          "Q10577_P54_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003843065816909075,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1826,
+          "total_bytes": 1838626,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Tom Cleverley plays for Everton F.C.",
+        "token_ids": [
+          4660,
+          12132,
+          343,
+          2047,
+          8928,
+          354,
+          12763,
+          1158,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.47088198689743876,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.2222222222222222
+      }
+    },
+    {
+      "query_id": "Q10577_P54_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q10577_P54_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "England national association football team",
+        "token_ids": [
+          5783,
+          4282,
+          13895,
+          6569,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2576118940487504,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10577_P54_2016",
+          "Q10577_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004012279212474823,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1826,
+          "total_bytes": 1838626,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Tom Cleverley plays for Everton F.C.",
+        "token_ids": [
+          4660,
+          12132,
+          343,
+          2047,
+          8928,
+          354,
+          12763,
+          1158,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4695641929283738,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.2222222222222222
+      }
+    },
+    {
+      "query_id": "Q10577_P54_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q10577_P54_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Aston Villa F.C.",
+        "token_ids": [
+          330,
+          6549,
+          21192,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3017233293503523,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10577_P54_2016",
+          "Q10577_P54_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003927558194845915,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1826,
+          "total_bytes": 1838626,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Tom Cleverley plays for Everton F.C.",
+        "token_ids": [
+          4660,
+          12132,
+          343,
+          2047,
+          8928,
+          354,
+          12763,
+          1158,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4706663666293025,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.2222222222222222
+      }
+    },
+    {
+      "query_id": "Q10577_P54_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q10577_P54_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Everton F.C.",
+        "token_ids": [
+          28749,
+          343,
+          1158,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2944309301674366,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10577_P54_2016",
+          "Q10577_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0035740607418119907,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1826,
+          "total_bytes": 1838626,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Everton F.C.",
+        "token_ids": [
+          12763,
+          1158,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.28749946178868413,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10577_P54_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q10577_P54_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Everton F.C.",
+        "token_ids": [
+          12763,
+          1158,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.266349864192307,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10577_P54_2016",
+          "Q10577_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.005541460122913122,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1826,
+          "total_bytes": 1838626,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Everton F.C.",
+        "token_ids": [
+          12763,
+          1158,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2866613622754812,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10577_P54_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q10577_P54_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Everton F.C.",
+        "token_ids": [
+          12763,
+          1158,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2805029107257724,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10577_P54_2016",
+          "Q10577_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003556888084858656,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1826,
+          "total_bytes": 1838626,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Everton F.C.",
+        "token_ids": [
+          12763,
+          1158,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2855013282969594,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10577_P54_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q10577_P54_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Everton F.C.",
+        "token_ids": [
+          12763,
+          1158,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2653429717756808,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10577_P54_2016",
+          "Q10577_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003769978415220976,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1826,
+          "total_bytes": 1838626,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Everton F.C.",
+        "token_ids": [
+          12763,
+          1158,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2848902912810445,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10577_P54_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q10577_P54_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Everton F.C.",
+        "token_ids": [
+          12763,
+          1158,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.26432642294093966,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10577_P54_2016",
+          "Q10577_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038507203571498394,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1826,
+          "total_bytes": 1838626,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Everton F.C.",
+        "token_ids": [
+          12763,
+          1158,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2873821696266532,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10577_P54_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q10577_P54_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Everton F.C.",
+        "token_ids": [
+          12763,
+          1158,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.26161410193890333,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10577_P54_2016",
+          "Q10577_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038387891836464405,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1826,
+          "total_bytes": 1838626,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Everton F.C.",
+        "token_ids": [
+          12763,
+          1158,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.28468987019732594,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.2996526430360973,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 896,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 224,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1835008,
+      "index_key_bytes": 1792,
+      "metadata_and_format_bytes": 1826,
+      "total_bytes": 1838626,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 224,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1835008,
+    "index_key_bytes": 1792,
+    "metadata_and_format_bytes": 1826,
+    "total_bytes": 1838626,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

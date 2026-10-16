@@ -1,0 +1,822 @@
+{
+  "id": "templama:test:Q1047535:P286",
+  "group": "Q1047535:P286",
+  "split": "test",
+  "versions": 7,
+  "queries": [
+    {
+      "query_id": "Q1047535_P286_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q1047535_P286_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Takeshi Oki",
+        "token_ids": [
+          320,
+          1593,
+          5365,
+          451,
+          3430
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.27269269386306405,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491559936,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1047535_P286_2019",
+          "Q1047535_P286_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.00377790629863739,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1877,
+          "total_bytes": 1838677,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Takeshi Okada",
+        "token_ids": [
+          320,
+          1593,
+          5365,
+          6504,
+          1540
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.28825642773881555,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520077312,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q1047535_P286_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q1047535_P286_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Takeshi Oki",
+        "token_ids": [
+          320,
+          1593,
+          5365,
+          451,
+          3430
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2660384369082749,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491428864,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1047535_P286_2019",
+          "Q1047535_P286_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004078934900462627,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1877,
+          "total_bytes": 1838677,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Takeshi Okada",
+        "token_ids": [
+          320,
+          1593,
+          5365,
+          6504,
+          1540
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2895639147609472,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520077312,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q1047535_P286_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q1047535_P286_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Takeshi Oki",
+        "token_ids": [
+          320,
+          1593,
+          5365,
+          451,
+          3430
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2696033320389688,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491559936,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1047535_P286_2019",
+          "Q1047535_P286_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0040337019599974155,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1877,
+          "total_bytes": 1838677,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Takeshi Okada",
+        "token_ids": [
+          320,
+          1593,
+          5365,
+          6504,
+          1540
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2890350939705968,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520077312,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q1047535_P286_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q1047535_P286_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Valdeir Vieira",
+        "token_ids": [
+          2637,
+          450,
+          361,
+          550,
+          412,
+          4807
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.31246979301795363,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491428864,
+        "kv_cache_bytes": 28442624,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1047535_P286_2019",
+          "Q1047535_P286_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003927550278604031,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1877,
+          "total_bytes": 1838677,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Valdeir Vieira",
+        "token_ids": [
+          3474,
+          450,
+          361,
+          550,
+          412,
+          4807
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3255446976982057,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520077312,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1047535_P286_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q1047535_P286_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Masahiro Wada",
+        "token_ids": [
+          28755,
+          293,
+          912,
+          4812,
+          394,
+          1540
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.30655157286673784,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491559936,
+        "kv_cache_bytes": 28442624,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1047535_P286_2019",
+          "Q1047535_P286_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037658531218767166,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1877,
+          "total_bytes": 1838677,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Masahiro Wada",
+        "token_ids": [
+          9183,
+          912,
+          4812,
+          394,
+          1540
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.29007722763344646,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520077312,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1047535_P286_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q1047535_P286_2016",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Kiyotaka Ishimaru",
+        "token_ids": [
+          524,
+          11672,
+          322,
+          8389,
+          315,
+          811,
+          321,
+          24344
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.38023837888613343,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491428864,
+        "kv_cache_bytes": 28704768,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1047535_P286_2019",
+          "Q1047535_P286_2016"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004039384890347719,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1877,
+          "total_bytes": 1838677,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Ichizo Takakura",
+        "token_ids": [
+          27774,
+          19692,
+          18754,
+          491,
+          2614
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.29366816813126206,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520077312,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1047535_P286_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q1047535_P286_2017",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Nunobe Takanori",
+        "token_ids": [
+          418,
+          370,
+          8898,
+          18754,
+          276,
+          6519
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3084140061400831,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491559936,
+        "kv_cache_bytes": 28442624,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1047535_P286_2019",
+          "Q1047535_P286_2017"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003967675846070051,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1877,
+          "total_bytes": 1838677,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Nunobe Takanori",
+        "token_ids": [
+          418,
+          370,
+          8898,
+          18754,
+          276,
+          6519
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.323594574816525,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520077312,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1047535_P286_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q1047535_P286_2018",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Boško Gjurović",
+        "token_ids": [
+          6681,
+          28873,
+          4798,
+          420,
+          28768,
+          2138,
+          5219,
+          28900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.38081591110676527,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491428864,
+        "kv_cache_bytes": 28704768,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1047535_P286_2019",
+          "Q1047535_P286_2018"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003795130178332329,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1877,
+          "total_bytes": 1838677,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.5,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "The head coach of Kyoto Sanga FC is Boško Gjurović.",
+        "token_ids": [
+          415,
+          1335,
+          7786,
+          302,
+          15595,
+          2587,
+          318,
+          14836,
+          9138,
+          349,
+          3268,
+          28873,
+          4798,
+          420,
+          28768,
+          2138,
+          5219,
+          28900,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.8285046601668,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520077312,
+        "kv_cache_bytes": 44826624,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.18181818181818182
+      }
+    },
+    {
+      "query_id": "Q1047535_P286_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q1047535_P286_2019",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Ichizo Nakata",
+        "token_ids": [
+          27774,
+          19692,
+          24828,
+          563
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23245666502043605,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491559936,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1047535_P286_2019",
+          "Q1047535_P286_2018"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004107933025807142,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1877,
+          "total_bytes": 1838677,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "The head coach of Kyoto Sanga FC is Boško Gjurović.",
+        "token_ids": [
+          415,
+          1335,
+          7786,
+          302,
+          15595,
+          2587,
+          318,
+          14836,
+          9138,
+          349,
+          3268,
+          28873,
+          4798,
+          420,
+          28768,
+          2138,
+          5219,
+          28900,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.8260964113287628,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520077312,
+        "kv_cache_bytes": 44826624,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1047535_P286_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q1047535_P286_2019",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Ichizo Nakata",
+        "token_ids": [
+          27774,
+          19692,
+          24828,
+          563
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23373145097866654,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491428864,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1047535_P286_2019",
+          "Q1047535_P286_2018"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004307644907385111,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1877,
+          "total_bytes": 1838677,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "The head coach of Kyoto Sanga FC is Boško Gjurović.",
+        "token_ids": [
+          415,
+          1335,
+          7786,
+          302,
+          15595,
+          2587,
+          318,
+          14836,
+          9138,
+          349,
+          3268,
+          28873,
+          4798,
+          420,
+          28768,
+          2138,
+          5219,
+          28900,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.8175207981839776,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520077312,
+        "kv_cache_bytes": 44826624,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    }
+  ],
+  "write_seconds": 0.30528159299865365,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 896,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 224,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1835008,
+      "index_key_bytes": 1792,
+      "metadata_and_format_bytes": 1877,
+      "total_bytes": 1838677,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 224,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1835008,
+    "index_key_bytes": 1792,
+    "metadata_and_format_bytes": 1877,
+    "total_bytes": 1838677,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

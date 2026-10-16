@@ -1,0 +1,12 @@
+{
+  "base_config": "config.json",
+  "run_prefix": "comparison_aligned_v3",
+  "historical_manifest": "/share/latent2/vcrm_icae/runs/aligned_v3_suite/validation_481.json",
+  "feature_root": "/share/latent2/vcrm_icae/features/paper_v1_official",
+  "full_marker_run": "aligned_v3_C16_train",
+  "training_runs": {
+    "C": "aligned_v3_C16_train",
+    "D": "aligned_v3_D16_train"
+  },
+  "note": "Prepare only by default; GPU evaluation must be explicitly launched. Four methods use the same 481 historical, 262 disjoint conflicts, and 172 latest QA. ICAE-Full uses the official checkpoint and C16-trained role/time markers as an explicit project protocol control, not an official paper result. Full-marker provenance may be changed only with a new run_prefix. No substitution of old metrics; no training or equal-byte claim."
+}

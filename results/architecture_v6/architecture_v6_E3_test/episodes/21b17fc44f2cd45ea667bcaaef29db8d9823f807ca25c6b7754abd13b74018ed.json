@@ -1,0 +1,843 @@
+{
+  "id": "templama:test:Q1139429:P127",
+  "group": "Q1139429:P127",
+  "split": "test",
+  "versions": 3,
+  "queries": [
+    {
+      "query_id": "Q1139429_P127_2010",
+      "latest": false,
+      "as_of": "2010-01-01T00:00:00",
+      "selected_entry_id": "Q1139429_P127_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "REFER",
+        "token_ids": [
+          14329,
+          725
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.14567923778668046,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1139429_P127_2016",
+          "Q1139429_P127_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004396004136651754,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Infrastructures of Portugal.",
+        "token_ids": [
+          560,
+          10512,
+          3699,
+          1238,
+          302,
+          16160,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3300083978101611,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1139429_P127_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q1139429_P127_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "REFER",
+        "token_ids": [
+          14329,
+          725
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1496241739951074,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1139429_P127_2016",
+          "Q1139429_P127_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037939627654850483,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Infrastructures of Portugal.",
+        "token_ids": [
+          560,
+          10512,
+          3699,
+          1238,
+          302,
+          16160,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3196480078622699,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1139429_P127_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q1139429_P127_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "REFER",
+        "token_ids": [
+          14329,
+          725
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1499103750102222,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1139429_P127_2016",
+          "Q1139429_P127_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0039040292613208294,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Infrastructures of Portugal.",
+        "token_ids": [
+          560,
+          10512,
+          3699,
+          1238,
+          302,
+          16160,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3187927082180977,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1139429_P127_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q1139429_P127_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "REFER",
+        "token_ids": [
+          14329,
+          725
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.14251268981024623,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1139429_P127_2016",
+          "Q1139429_P127_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003834553062915802,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Infrastructures of Portugal.",
+        "token_ids": [
+          560,
+          10512,
+          3699,
+          1238,
+          302,
+          16160,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.33775677625089884,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1139429_P127_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q1139429_P127_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "REFER",
+        "token_ids": [
+          14329,
+          725
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.15115164779126644,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1139429_P127_2016",
+          "Q1139429_P127_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003911504987627268,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Infrastructures of Portugal.",
+        "token_ids": [
+          560,
+          10512,
+          3699,
+          1238,
+          302,
+          16160,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.32196452701464295,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1139429_P127_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q1139429_P127_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "REFER",
+        "token_ids": [
+          14329,
+          725
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.14439551625400782,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1139429_P127_2016",
+          "Q1139429_P127_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037205503322184086,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Infrastructures of Portugal",
+        "token_ids": [
+          560,
+          10512,
+          3699,
+          1238,
+          302,
+          16160
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.28816383285447955,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1139429_P127_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q1139429_P127_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "REFER",
+        "token_ids": [
+          14329,
+          725
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.14567750971764326,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1139429_P127_2016",
+          "Q1139429_P127_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003755359910428524,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Infrastructures of Portugal",
+        "token_ids": [
+          560,
+          10512,
+          3699,
+          1238,
+          302,
+          16160
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.29108457919210196,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1139429_P127_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q1139429_P127_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Infrastructures of Portugal",
+        "token_ids": [
+          560,
+          10512,
+          3699,
+          1238,
+          302,
+          16160
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2622412689961493,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1139429_P127_2016",
+          "Q1139429_P127_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004004945978522301,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Infrastructures of Portugal",
+        "token_ids": [
+          560,
+          10512,
+          3699,
+          1238,
+          302,
+          16160
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2950269738212228,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1139429_P127_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q1139429_P127_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Infrastructures of Portugal",
+        "token_ids": [
+          560,
+          10512,
+          3699,
+          1238,
+          302,
+          16160
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2727662450633943,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1139429_P127_2016",
+          "Q1139429_P127_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036345189437270164,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Infrastructures of Portugal",
+        "token_ids": [
+          560,
+          10512,
+          3699,
+          1238,
+          302,
+          16160
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3105354690924287,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1139429_P127_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q1139429_P127_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Infrastructures of Portugal",
+        "token_ids": [
+          560,
+          10512,
+          3699,
+          1238,
+          302,
+          16160
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.26456362288445234,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1139429_P127_2016",
+          "Q1139429_P127_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003538945224136114,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Infrastructures of Portugal",
+        "token_ids": [
+          560,
+          10512,
+          3699,
+          1238,
+          302,
+          16160
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.292035351973027,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1139429_P127_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q1139429_P127_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Infrastructures of Portugal",
+        "token_ids": [
+          560,
+          10512,
+          3699,
+          1238,
+          302,
+          16160
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.30129721481353045,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1139429_P127_2016",
+          "Q1139429_P127_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0035358029417693615,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Infrastructures of Portugal",
+        "token_ids": [
+          560,
+          10512,
+          3699,
+          1238,
+          302,
+          16160
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3070657658390701,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.12318800203502178,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 384,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 160,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1310720,
+      "index_key_bytes": 768,
+      "metadata_and_format_bytes": 981,
+      "total_bytes": 1312469,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 160,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1310720,
+    "index_key_bytes": 768,
+    "metadata_and_format_bytes": 981,
+    "total_bytes": 1312469,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

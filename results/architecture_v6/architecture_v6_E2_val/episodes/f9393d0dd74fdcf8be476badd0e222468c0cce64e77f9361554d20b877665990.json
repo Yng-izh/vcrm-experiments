@@ -1,0 +1,474 @@
+{
+  "id": "templama:val:Q176:P6",
+  "group": "Q176:P6",
+  "split": "val",
+  "versions": 7,
+  "queries": [
+    {
+      "query_id": "Q176_P6_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q176_P6_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Pauline Marois",
+        "token_ids": [
+          22241,
+          473,
+          1471,
+          5628
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.21381501806899905,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499908608,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q176_P6_2019",
+          "Q176_P6_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004216030007228255,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1834,
+          "total_bytes": 1838634,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Jean Charest",
+        "token_ids": [
+          6719,
+          689,
+          11713
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2066774140112102,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528491520,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q176_P6_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q176_P6_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Pauline Marois",
+        "token_ids": [
+          22241,
+          473,
+          1471,
+          5628
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22230851906351745,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500039680,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q176_P6_2019",
+          "Q176_P6_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004445748869329691,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1834,
+          "total_bytes": 1838634,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Pauline Marois",
+        "token_ids": [
+          3920,
+          473,
+          1471,
+          5628
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2417608588002622,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528491520,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q176_P6_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q176_P6_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Philippe Couillard",
+        "token_ids": [
+          23886,
+          508,
+          386,
+          12376,
+          425,
+          488
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2833789801225066,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499908608,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q176_P6_2019",
+          "Q176_P6_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004491886124014854,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1834,
+          "total_bytes": 1838634,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Pauline Marois",
+        "token_ids": [
+          3920,
+          473,
+          1471,
+          5628
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23942499491386116,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528491520,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q176_P6_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q176_P6_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Philippe Couillard",
+        "token_ids": [
+          23886,
+          508,
+          386,
+          12376,
+          425,
+          488
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2839288378600031,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500039680,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q176_P6_2019",
+          "Q176_P6_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004109778208658099,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1834,
+          "total_bytes": 1838634,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Philippe Couillard",
+        "token_ids": [
+          26637,
+          12376,
+          425,
+          488
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.24154666811227798,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528491520,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q176_P6_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q176_P6_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Philippe Couillard",
+        "token_ids": [
+          23886,
+          508,
+          386,
+          12376,
+          425,
+          488
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2838053919840604,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499908608,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q176_P6_2019",
+          "Q176_P6_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004288304829970002,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1834,
+          "total_bytes": 1838634,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Philippe Couillard",
+        "token_ids": [
+          26637,
+          12376,
+          425,
+          488
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.24473443091847003,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528491520,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q176_P6_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q176_P6_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Philippe Couillard",
+        "token_ids": [
+          23886,
+          508,
+          386,
+          12376,
+          425,
+          488
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2862578290514648,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500039680,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q176_P6_2019",
+          "Q176_P6_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004175442038103938,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1834,
+          "total_bytes": 1838634,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Philippe Couillard",
+        "token_ids": [
+          26637,
+          12376,
+          425,
+          488
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.24341524601913989,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528491520,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.28511196095496416,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 896,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 224,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1835008,
+      "index_key_bytes": 1792,
+      "metadata_and_format_bytes": 1834,
+      "total_bytes": 1838634,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 224,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1835008,
+    "index_key_bytes": 1792,
+    "metadata_and_format_bytes": 1834,
+    "total_bytes": 1838634,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

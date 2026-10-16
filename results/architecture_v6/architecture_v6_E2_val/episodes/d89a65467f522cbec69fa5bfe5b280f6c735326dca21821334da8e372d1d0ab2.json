@@ -1,0 +1,116 @@
+{
+  "id": "templama:val:Q28873702:P108",
+  "group": "Q28873702:P108",
+  "split": "val",
+  "versions": 3,
+  "queries": [
+    {
+      "query_id": "Q28873702_P108_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q28873702_P108_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "University of Edinburgh / Edinburgh Napier University",
+        "token_ids": [
+          14953,
+          472,
+          302,
+          25970,
+          732,
+          25970,
+          11629,
+          749,
+          2900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3661077718716115,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499169280,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q28873702_P108_2014",
+          "Q28873702_P108_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003948057070374489,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 1023,
+          "total_bytes": 1312511,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "University of Edinburgh",
+        "token_ids": [
+          2900,
+          302,
+          25970
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20693382201716304,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527489536,
+        "kv_cache_bytes": 41943040,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.11048589693382382,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 384,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 160,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1310720,
+      "index_key_bytes": 768,
+      "metadata_and_format_bytes": 1023,
+      "total_bytes": 1312511,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 160,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1310720,
+    "index_key_bytes": 768,
+    "metadata_and_format_bytes": 1023,
+    "total_bytes": 1312511,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

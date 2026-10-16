@@ -1,0 +1,451 @@
+{
+  "id": "templama:val:Q1420661:P102",
+  "group": "Q1420661:P102",
+  "split": "val",
+  "versions": 5,
+  "queries": [
+    {
+      "query_id": "Q1420661_P102_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q1420661_P102_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Yuriy Boyko is a member of the Party of Regions.",
+        "token_ids": [
+          627,
+          6395,
+          28724,
+          11036,
+          4798,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          6636,
+          302,
+          2678,
+          594,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.579348823055625,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500125696,
+        "kv_cache_bytes": 29491200,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1420661_P102_2019",
+          "Q1420661_P102_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004288215888664126,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1492,
+          "total_bytes": 1575636,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.5454545454545454,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Opposition Platform — For Life",
+        "token_ids": [
+          22396,
+          385,
+          685,
+          21018,
+          1040,
+          1263,
+          5372
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.36911564506590366,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528741376,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.2857142857142857
+      }
+    },
+    {
+      "query_id": "Q1420661_P102_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q1420661_P102_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Yuriy Boyko is a member of the Solidarity party.",
+        "token_ids": [
+          627,
+          6395,
+          28724,
+          11036,
+          4798,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          6849,
+          313,
+          11910,
+          4150,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5878051079344004,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500256768,
+        "kv_cache_bytes": 29491200,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1420661_P102_2019",
+          "Q1420661_P102_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004370382986962795,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1492,
+          "total_bytes": 1575636,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Opposition Bloc",
+        "token_ids": [
+          22396,
+          385,
+          685,
+          365,
+          1614
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2766593301203102,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528741376,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1420661_P102_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q1420661_P102_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Yuriy Boyko is a member of the Solidarity.",
+        "token_ids": [
+          627,
+          6395,
+          28724,
+          11036,
+          4798,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          6849,
+          313,
+          11910,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5521504550706595,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500125696,
+        "kv_cache_bytes": 29360128,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1420661_P102_2019",
+          "Q1420661_P102_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004440330900251865,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1492,
+          "total_bytes": 1575636,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Opposition Bloc",
+        "token_ids": [
+          22396,
+          385,
+          685,
+          365,
+          1614
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2682095440104604,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528741376,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1420661_P102_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q1420661_P102_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Yuriy Boyko is a member of the Solidarity.",
+        "token_ids": [
+          627,
+          6395,
+          28724,
+          11036,
+          4798,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          6849,
+          313,
+          11910,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5355329958256334,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500256768,
+        "kv_cache_bytes": 29360128,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1420661_P102_2019",
+          "Q1420661_P102_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004134522983804345,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1492,
+          "total_bytes": 1575636,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Opposition Bloc",
+        "token_ids": [
+          22396,
+          385,
+          685,
+          365,
+          1614
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.27097743190824986,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528741376,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1420661_P102_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q1420661_P102_2018",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Opposition Platform — For Life",
+        "token_ids": [
+          22396,
+          385,
+          685,
+          21018,
+          1040,
+          1263,
+          5372
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3103134448174387,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500125696,
+        "kv_cache_bytes": 28442624,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1420661_P102_2019",
+          "Q1420661_P102_2018"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0040014199912548065,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1492,
+          "total_bytes": 1575636,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Opposition Bloc — For Life",
+        "token_ids": [
+          22396,
+          385,
+          685,
+          365,
+          1614,
+          1040,
+          1263,
+          5372
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.36954669607803226,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528741376,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.8
+      }
+    }
+  ],
+  "write_seconds": 0.19137253193184733,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 640,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 192,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1572864,
+      "index_key_bytes": 1280,
+      "metadata_and_format_bytes": 1492,
+      "total_bytes": 1575636,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 192,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1572864,
+    "index_key_bytes": 1280,
+    "metadata_and_format_bytes": 1492,
+    "total_bytes": 1575636,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

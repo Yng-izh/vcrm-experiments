@@ -1,0 +1,850 @@
+{
+  "id": "templama:test:Q1128374:P488",
+  "group": "Q1128374:P488",
+  "split": "test",
+  "versions": 3,
+  "queries": [
+    {
+      "query_id": "Q1128374_P488_2010",
+      "latest": false,
+      "as_of": "2010-01-01T00:00:00",
+      "selected_entry_id": "Q1128374_P488_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Kuupik Kleist",
+        "token_ids": [
+          28796,
+          28718,
+          715,
+          849,
+          14306,
+          392
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2639515739865601,
+        "prompt_tokens": 213,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491995136,
+        "kv_cache_bytes": 28704768,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1128374_P488_2015",
+          "Q1128374_P488_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038069533184170723,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Sara Olsvig",
+        "token_ids": [
+          23365,
+          451,
+          4911,
+          28728,
+          326
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.25732016935944557,
+        "prompt_tokens": 325,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520578048,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1128374_P488_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q1128374_P488_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Kuupik Kleist",
+        "token_ids": [
+          28796,
+          28718,
+          715,
+          849,
+          14306,
+          392
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.26641716016456485,
+        "prompt_tokens": 213,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491864064,
+        "kv_cache_bytes": 28704768,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1128374_P488_2015",
+          "Q1128374_P488_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038028256967663765,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Sara Olsvig",
+        "token_ids": [
+          23365,
+          451,
+          4911,
+          28728,
+          326
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.25824609212577343,
+        "prompt_tokens": 325,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520578048,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1128374_P488_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q1128374_P488_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Kuupik Kleist",
+        "token_ids": [
+          28796,
+          28718,
+          715,
+          849,
+          14306,
+          392
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.25906518334522843,
+        "prompt_tokens": 213,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491995136,
+        "kv_cache_bytes": 28704768,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1128374_P488_2015",
+          "Q1128374_P488_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003630789928138256,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Sara Olsvig",
+        "token_ids": [
+          23365,
+          451,
+          4911,
+          28728,
+          326
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.25714195612818,
+        "prompt_tokens": 325,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520578048,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1128374_P488_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q1128374_P488_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Kuupik Kleist",
+        "token_ids": [
+          28796,
+          28718,
+          715,
+          849,
+          14306,
+          392
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.26340453140437603,
+        "prompt_tokens": 213,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491864064,
+        "kv_cache_bytes": 28704768,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1128374_P488_2015",
+          "Q1128374_P488_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038054371252655983,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Sara Olsvig",
+        "token_ids": [
+          23365,
+          451,
+          4911,
+          28728,
+          326
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.25342838698998094,
+        "prompt_tokens": 325,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520578048,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1128374_P488_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q1128374_P488_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Kuupik Kleist",
+        "token_ids": [
+          28796,
+          28718,
+          715,
+          849,
+          14306,
+          392
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2623511762358248,
+        "prompt_tokens": 213,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491995136,
+        "kv_cache_bytes": 28704768,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1128374_P488_2015",
+          "Q1128374_P488_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003765484783798456,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Sara Olsvig",
+        "token_ids": [
+          23365,
+          451,
+          4911,
+          28728,
+          326
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2555809011682868,
+        "prompt_tokens": 325,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520578048,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1128374_P488_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q1128374_P488_2015",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Kuupik Kleist",
+        "token_ids": [
+          28796,
+          28718,
+          715,
+          849,
+          14306,
+          392
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2598961368203163,
+        "prompt_tokens": 213,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491864064,
+        "kv_cache_bytes": 28704768,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1128374_P488_2015",
+          "Q1128374_P488_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003773737233132124,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Sara Olsvig",
+        "token_ids": [
+          23365,
+          451,
+          4911,
+          28728,
+          326
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.25761154294013977,
+        "prompt_tokens": 325,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520578048,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1128374_P488_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q1128374_P488_2015",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Sara Olsvig",
+        "token_ids": [
+          23365,
+          451,
+          4911,
+          28728,
+          326
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23066627327352762,
+        "prompt_tokens": 213,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491995136,
+        "kv_cache_bytes": 28573696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1128374_P488_2015",
+          "Q1128374_P488_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038793832063674927,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Sara Olsvig",
+        "token_ids": [
+          23365,
+          451,
+          4911,
+          28728,
+          326
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2564138830639422,
+        "prompt_tokens": 325,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520578048,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1128374_P488_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q1128374_P488_2015",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Sara Olsvig",
+        "token_ids": [
+          23365,
+          451,
+          4911,
+          28728,
+          326
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23641836689785123,
+        "prompt_tokens": 213,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491864064,
+        "kv_cache_bytes": 28573696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1128374_P488_2015",
+          "Q1128374_P488_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037346133030951023,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Sara Olsvig",
+        "token_ids": [
+          23365,
+          451,
+          4911,
+          28728,
+          326
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.25931579107418656,
+        "prompt_tokens": 325,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520578048,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1128374_P488_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q1128374_P488_2015",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Sara Olsvig",
+        "token_ids": [
+          23365,
+          451,
+          4911,
+          28728,
+          326
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23173630982637405,
+        "prompt_tokens": 213,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491995136,
+        "kv_cache_bytes": 28573696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1128374_P488_2015",
+          "Q1128374_P488_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004047105088829994,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Sara Olsvig",
+        "token_ids": [
+          23365,
+          451,
+          4911,
+          28728,
+          326
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.25373172760009766,
+        "prompt_tokens": 325,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520578048,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1128374_P488_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q1128374_P488_2015",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Sara Olsvig",
+        "token_ids": [
+          23365,
+          451,
+          4911,
+          28728,
+          326
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23180162021890283,
+        "prompt_tokens": 213,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491864064,
+        "kv_cache_bytes": 28573696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1128374_P488_2015",
+          "Q1128374_P488_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036610369570553303,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Sara Olsvig",
+        "token_ids": [
+          23365,
+          451,
+          4911,
+          28728,
+          326
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.25892128190025687,
+        "prompt_tokens": 325,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520578048,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1128374_P488_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q1128374_P488_2015",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Sara Olsvig",
+        "token_ids": [
+          23365,
+          451,
+          4911,
+          28728,
+          326
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22922871727496386,
+        "prompt_tokens": 213,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491995136,
+        "kv_cache_bytes": 28573696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1128374_P488_2015",
+          "Q1128374_P488_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0034697451628744602,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 981,
+          "total_bytes": 1312469,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Sara Olsvig",
+        "token_ids": [
+          23365,
+          451,
+          4911,
+          28728,
+          326
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.25381980976089835,
+        "prompt_tokens": 325,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520578048,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.13611558126285672,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 384,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 160,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1310720,
+      "index_key_bytes": 768,
+      "metadata_and_format_bytes": 981,
+      "total_bytes": 1312469,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 160,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1310720,
+    "index_key_bytes": 768,
+    "metadata_and_format_bytes": 981,
+    "total_bytes": 1312469,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

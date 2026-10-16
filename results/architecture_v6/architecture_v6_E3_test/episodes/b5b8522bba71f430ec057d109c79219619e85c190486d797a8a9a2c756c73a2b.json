@@ -1,0 +1,849 @@
+{
+  "id": "templama:test:Q1133513:P54",
+  "group": "Q1133513:P54",
+  "split": "test",
+  "versions": 3,
+  "queries": [
+    {
+      "query_id": "Q1133513_P54_2010",
+      "latest": false,
+      "as_of": "2010-01-01T00:00:00",
+      "selected_entry_id": "Q1133513_P54_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Cincinnati Reds",
+        "token_ids": [
+          28743,
+          1814,
+          2594,
+          3986,
+          3690,
+          28713
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3086227900348604,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15488121344,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1133513_P54_2016",
+          "Q1133513_P54_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004298183135688305,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "New York Yankees",
+        "token_ids": [
+          1450,
+          2726,
+          18421,
+          405,
+          274
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.290047531016171,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1133513_P54_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q1133513_P54_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Cincinnati Reds",
+        "token_ids": [
+          28743,
+          1814,
+          2594,
+          3986,
+          3690,
+          28713
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2741115838289261,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1133513_P54_2016",
+          "Q1133513_P54_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037232772447168827,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "New York Yankees",
+        "token_ids": [
+          1450,
+          2726,
+          18421,
+          405,
+          274
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.27081489097326994,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1133513_P54_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q1133513_P54_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Cincinnati Reds",
+        "token_ids": [
+          28743,
+          1814,
+          2594,
+          3986,
+          3690,
+          28713
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.28212322015315294,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490906624,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1133513_P54_2016",
+          "Q1133513_P54_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004634933080524206,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "New York Yankees",
+        "token_ids": [
+          1450,
+          2726,
+          18421,
+          405,
+          274
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2686867443844676,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1133513_P54_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q1133513_P54_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Cincinnati Reds",
+        "token_ids": [
+          28743,
+          1814,
+          2594,
+          3986,
+          3690,
+          28713
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2745657148770988,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1133513_P54_2016",
+          "Q1133513_P54_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037517352029681206,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "New York Yankees",
+        "token_ids": [
+          1450,
+          2726,
+          18421,
+          405,
+          274
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2742349631153047,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1133513_P54_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q1133513_P54_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Cincinnati Reds",
+        "token_ids": [
+          28743,
+          1814,
+          2594,
+          3986,
+          3690,
+          28713
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2787761730141938,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490906624,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1133513_P54_2016",
+          "Q1133513_P54_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004299202933907509,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "New York Yankees",
+        "token_ids": [
+          1450,
+          2726,
+          18421,
+          405,
+          274
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.26829984690994024,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1133513_P54_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q1133513_P54_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "New York Yankees",
+        "token_ids": [
+          1450,
+          2726,
+          18421,
+          405,
+          274
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.26762137887999415,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1133513_P54_2016",
+          "Q1133513_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003762967884540558,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "New York Yankees",
+        "token_ids": [
+          1450,
+          2726,
+          18421,
+          405,
+          274
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.28966575767844915,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1133513_P54_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q1133513_P54_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "New York Yankees",
+        "token_ids": [
+          1450,
+          2726,
+          18421,
+          405,
+          274
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.24090595403686166,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490906624,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1133513_P54_2016",
+          "Q1133513_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0040362379513680935,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "New York Yankees",
+        "token_ids": [
+          1450,
+          2726,
+          18421,
+          405,
+          274
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2631689542904496,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1133513_P54_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q1133513_P54_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "New York Yankees",
+        "token_ids": [
+          1450,
+          2726,
+          18421,
+          405,
+          274
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23616938013583422,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1133513_P54_2016",
+          "Q1133513_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003959034103900194,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "New York Yankees",
+        "token_ids": [
+          1450,
+          2726,
+          18421,
+          405,
+          274
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2674042880535126,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1133513_P54_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q1133513_P54_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "New York Yankees",
+        "token_ids": [
+          1450,
+          2726,
+          18421,
+          405,
+          274
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.24556497484445572,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490906624,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1133513_P54_2016",
+          "Q1133513_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037078247405588627,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "New York Yankees",
+        "token_ids": [
+          1450,
+          2726,
+          18421,
+          405,
+          274
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.27775069419294596,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1133513_P54_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q1133513_P54_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "New York Yankees",
+        "token_ids": [
+          1450,
+          2726,
+          18421,
+          405,
+          274
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2584066782146692,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1133513_P54_2016",
+          "Q1133513_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0039018234238028526,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "New York Yankees",
+        "token_ids": [
+          1450,
+          2726,
+          18421,
+          405,
+          274
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2792952712625265,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1133513_P54_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q1133513_P54_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "New York Yankees",
+        "token_ids": [
+          1450,
+          2726,
+          18421,
+          405,
+          274
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2469305619597435,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490906624,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1133513_P54_2016",
+          "Q1133513_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037051928229629993,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "New York Yankees",
+        "token_ids": [
+          1450,
+          2726,
+          18421,
+          405,
+          274
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.27051022509112954,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.11038087913766503,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 384,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 160,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1310720,
+      "index_key_bytes": 768,
+      "metadata_and_format_bytes": 972,
+      "total_bytes": 1312460,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 160,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1310720,
+    "index_key_bytes": 768,
+    "metadata_and_format_bytes": 972,
+    "total_bytes": 1312460,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

@@ -1,0 +1,811 @@
+{
+  "id": "templama:test:Q1077389:P54",
+  "group": "Q1077389:P54",
+  "split": "test",
+  "versions": 3,
+  "queries": [
+    {
+      "query_id": "Q1077389_P54_2010",
+      "latest": false,
+      "as_of": "2010-01-01T00:00:00",
+      "selected_entry_id": "Q1077389_P54_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Tennessee Titans",
+        "token_ids": [
+          28738,
+          18895,
+          9495,
+          509
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20466696890071034,
+        "prompt_tokens": 204,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15489905152,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1077389_P54_2015",
+          "Q1077389_P54_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038044401444494724,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Arizona Cardinals",
+        "token_ids": [
+          17289,
+          8564,
+          15658
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20022490294650197,
+        "prompt_tokens": 316,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518323712,
+        "kv_cache_bytes": 41811968,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1077389_P54_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q1077389_P54_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Tennessee Titans",
+        "token_ids": [
+          28738,
+          18895,
+          9495,
+          509
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20721632009372115,
+        "prompt_tokens": 204,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490036224,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1077389_P54_2015",
+          "Q1077389_P54_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0035064159892499447,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Arizona Cardinals",
+        "token_ids": [
+          17289,
+          8564,
+          15658
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19523849757388234,
+        "prompt_tokens": 316,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518323712,
+        "kv_cache_bytes": 41811968,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1077389_P54_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q1077389_P54_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Tennessee Titans",
+        "token_ids": [
+          28738,
+          18895,
+          9495,
+          509
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20429222704842687,
+        "prompt_tokens": 204,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15489905152,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1077389_P54_2015",
+          "Q1077389_P54_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003567177802324295,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Arizona Cardinals",
+        "token_ids": [
+          17289,
+          8564,
+          15658
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1947534796781838,
+        "prompt_tokens": 316,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518323712,
+        "kv_cache_bytes": 41811968,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1077389_P54_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q1077389_P54_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Tennessee Titans",
+        "token_ids": [
+          28738,
+          18895,
+          9495,
+          509
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2026707991026342,
+        "prompt_tokens": 204,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490036224,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1077389_P54_2015",
+          "Q1077389_P54_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038111298345029354,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Arizona Cardinals",
+        "token_ids": [
+          17289,
+          8564,
+          15658
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19401797698810697,
+        "prompt_tokens": 316,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518323712,
+        "kv_cache_bytes": 41811968,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1077389_P54_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q1077389_P54_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Tennessee Titans",
+        "token_ids": [
+          28738,
+          18895,
+          9495,
+          509
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20329389302060008,
+        "prompt_tokens": 204,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15489905152,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1077389_P54_2015",
+          "Q1077389_P54_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037808972410857677,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Tennessee Titans",
+        "token_ids": [
+          19793,
+          9495,
+          509
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19374960521236062,
+        "prompt_tokens": 316,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518323712,
+        "kv_cache_bytes": 41811968,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1077389_P54_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q1077389_P54_2015",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Arizona Cardinals",
+        "token_ids": [
+          28741,
+          15943,
+          8564,
+          15658
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2012477028183639,
+        "prompt_tokens": 204,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490036224,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1077389_P54_2015",
+          "Q1077389_P54_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003743463195860386,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Tennessee Titans",
+        "token_ids": [
+          19793,
+          9495,
+          509
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19764249492436647,
+        "prompt_tokens": 316,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518323712,
+        "kv_cache_bytes": 41811968,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1077389_P54_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q1077389_P54_2015",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Arizona Cardinals",
+        "token_ids": [
+          28741,
+          15943,
+          8564,
+          15658
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2036792510189116,
+        "prompt_tokens": 204,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15489905152,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1077389_P54_2015",
+          "Q1077389_P54_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0034678680822253227,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Tennessee Titans",
+        "token_ids": [
+          19793,
+          9495,
+          509
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19441017787903547,
+        "prompt_tokens": 316,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518323712,
+        "kv_cache_bytes": 41811968,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1077389_P54_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q1077389_P54_2015",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Arizona Cardinals",
+        "token_ids": [
+          28741,
+          15943,
+          8564,
+          15658
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2017488949932158,
+        "prompt_tokens": 204,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490036224,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1077389_P54_2015",
+          "Q1077389_P54_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003894559107720852,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Tennessee Titans",
+        "token_ids": [
+          19793,
+          9495,
+          509
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1957713752053678,
+        "prompt_tokens": 316,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518323712,
+        "kv_cache_bytes": 41811968,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1077389_P54_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q1077389_P54_2015",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Arizona Cardinals",
+        "token_ids": [
+          28741,
+          15943,
+          8564,
+          15658
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.21028437884524465,
+        "prompt_tokens": 204,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15489905152,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1077389_P54_2015",
+          "Q1077389_P54_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036763609386980534,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Tennessee Titans",
+        "token_ids": [
+          19793,
+          9495,
+          509
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19425689475610852,
+        "prompt_tokens": 316,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518323712,
+        "kv_cache_bytes": 41811968,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1077389_P54_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q1077389_P54_2015",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Arizona Cardinals",
+        "token_ids": [
+          28741,
+          15943,
+          8564,
+          15658
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20439133374020457,
+        "prompt_tokens": 204,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490036224,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1077389_P54_2015",
+          "Q1077389_P54_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003682191949337721,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Tennessee Titans",
+        "token_ids": [
+          19793,
+          9495,
+          509
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19797652307897806,
+        "prompt_tokens": 316,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518323712,
+        "kv_cache_bytes": 41811968,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1077389_P54_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q1077389_P54_2015",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Arizona Cardinals",
+        "token_ids": [
+          28741,
+          15943,
+          8564,
+          15658
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2062110910192132,
+        "prompt_tokens": 204,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15489905152,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1077389_P54_2015",
+          "Q1077389_P54_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003608168102800846,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Tennessee Titans",
+        "token_ids": [
+          19793,
+          9495,
+          509
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19670478394255042,
+        "prompt_tokens": 316,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518323712,
+        "kv_cache_bytes": 41811968,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    }
+  ],
+  "write_seconds": 0.13984110997989774,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 384,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 160,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1310720,
+      "index_key_bytes": 768,
+      "metadata_and_format_bytes": 972,
+      "total_bytes": 1312460,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 160,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1310720,
+    "index_key_bytes": 768,
+    "metadata_and_format_bytes": 972,
+    "total_bytes": 1312460,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

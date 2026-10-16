@@ -1,0 +1,205 @@
+{
+  "completed": true,
+  "scope": "full_training_split",
+  "method": "C",
+  "checkpoint": "/share/latent2/vcrm_icae/runs/architecture_v6_E4_train/codec.safetensors",
+  "checkpoint_sha256": "9d6bce63942756e603b3dec8919cae0f1780a51418b49a8841b0717e18c7917f",
+  "training_data_sha256": "fb646f0e96e93e90a753c9c093aa7b8dcfceb75766e9ec04f378241951286e7d",
+  "base_checkpoint_sha256": "ae637cf4e4fdbe623a4ad606339facf07128ab1dc8a4a6fad9be055e4c3c1f56",
+  "adapted_checkpoint_sha256": null,
+  "model_revision": "63a8b081895390a26e140280378bc85ec8bce07a",
+  "codec_width": 256,
+  "codec_heads": 4,
+  "keyframe_interval": 5,
+  "reader_sha256": "0685d17c08188910b93a0c7dd7be8008d575af7b725f0b2ba8e263025eb9569c",
+  "semantic_index_sha256": "5cc83c5b5c15e85e14ed555b2e60b2f4e167817e0a64173d3c2649ac8b581ba3",
+  "pair_ids_sha256": "85c21858fe9798caf990ff388afe2f898e6aa8afa52198920b06e10d2a442253",
+  "pairs": 2954,
+  "pair_content_sha256": "1b83eb3d60a87333e7f6194125955d62745594af84ed0a479c01ce50efff854f",
+  "memory_protocol": "final_current_snapshot_v1",
+  "seed": 42,
+  "codec_parameters": 14433024,
+  "marker_parameters": 24576,
+  "index_parameters": 528384,
+  "steps": 3695,
+  "seconds": 13779.548056914005,
+  "history_slots": 16,
+  "role_time_slots_per_entry": 2,
+  "codec_variant": "residual",
+  "decode_conditioned": false,
+  "codec_value_path": "full",
+  "codec_activation_rms_cap": 8.0,
+  "anchor_dropout": 0.0,
+  "codec_epochs": 5,
+  "epoch_history": [
+    {
+      "epoch": 1,
+      "steps": 739,
+      "pairs": 2954,
+      "mean": {
+        "loss": 2.0300671096056315,
+        "negative_version_loss": 0.0022748676815364703,
+        "contrastive_loss": 0.5466287277406239,
+        "pooled_alignment_loss": 0.3432806830956634,
+        "index_loss": 0.04804168276352582
+      },
+      "qa_ce_mean": [
+        0.5685442702289224,
+        1.0681457754067532
+      ],
+      "teacher_kl_mean": [
+        0.4379545968778169,
+        1.7224467081524124
+      ],
+      "train_conflict_diagnostic": {
+        "scope": "in_sample_training_diagnostic_not_validation",
+        "queries": 200,
+        "accuracy": 0.805,
+        "f1": 0.90395223051802,
+        "stale_answer": 0.005,
+        "current_policy": "final observed current version, matching validation co-injection"
+      }
+    },
+    {
+      "epoch": 2,
+      "steps": 1478,
+      "pairs": 2954,
+      "mean": {
+        "loss": 0.7799838055265701,
+        "negative_version_loss": 0.00023108818492043834,
+        "contrastive_loss": 0.019860247468806616,
+        "pooled_alignment_loss": 0.14730841567085334,
+        "index_loss": 0.02324089307032813
+      },
+      "qa_ce_mean": [
+        0.2596948854079799,
+        0.2856432388059936
+      ],
+      "teacher_kl_mean": [
+        0.37329188985251943,
+        0.6139682615093872
+      ],
+      "train_conflict_diagnostic": {
+        "scope": "in_sample_training_diagnostic_not_validation",
+        "queries": 200,
+        "accuracy": 0.825,
+        "f1": 0.9202051040634632,
+        "stale_answer": 0,
+        "current_policy": "final observed current version, matching validation co-injection"
+      }
+    },
+    {
+      "epoch": 3,
+      "steps": 2217,
+      "pairs": 2954,
+      "mean": {
+        "loss": 0.6927318238756023,
+        "negative_version_loss": 0.00014195208807062188,
+        "contrastive_loss": 0.011228354207631616,
+        "pooled_alignment_loss": 0.07725367853991794,
+        "index_loss": 0.07190695894313327
+      },
+      "qa_ce_mean": [
+        0.23749707574964316,
+        0.24552233809051618
+      ],
+      "teacher_kl_mean": [
+        0.34677895478344317,
+        0.5290387885376417
+      ],
+      "train_conflict_diagnostic": {
+        "scope": "in_sample_training_diagnostic_not_validation",
+        "queries": 200,
+        "accuracy": 0.895,
+        "f1": 0.9543096070596071,
+        "stale_answer": 0,
+        "current_policy": "final observed current version, matching validation co-injection"
+      }
+    },
+    {
+      "epoch": 4,
+      "steps": 2956,
+      "pairs": 2954,
+      "mean": {
+        "loss": 0.6455352927583977,
+        "negative_version_loss": 0.00010101807329943635,
+        "contrastive_loss": 0.006809458741571403,
+        "pooled_alignment_loss": 0.05340687536111779,
+        "index_loss": 0.046141201366664754
+      },
+      "qa_ce_mean": [
+        0.22304434759432631,
+        0.22973858771281985
+      ],
+      "teacher_kl_mean": [
+        0.3354981092908896,
+        0.4854766260870381
+      ],
+      "train_conflict_diagnostic": {
+        "scope": "in_sample_training_diagnostic_not_validation",
+        "queries": 200,
+        "accuracy": 0.915,
+        "f1": 0.9675028647822765,
+        "stale_answer": 0,
+        "current_policy": "final observed current version, matching validation co-injection"
+      }
+    },
+    {
+      "epoch": 5,
+      "steps": 3695,
+      "pairs": 2954,
+      "mean": {
+        "loss": 0.6215153709356658,
+        "negative_version_loss": 5.321617711221114e-05,
+        "contrastive_loss": 0.00504034448337168,
+        "pooled_alignment_loss": 0.046922895318362544,
+        "index_loss": 0.07295520812999419
+      },
+      "qa_ce_mean": [
+        0.2153858813594651,
+        0.2167547187281138
+      ],
+      "teacher_kl_mean": [
+        0.3288987652047429,
+        0.4606812701194207
+      ],
+      "train_conflict_diagnostic": {
+        "scope": "in_sample_training_diagnostic_not_validation",
+        "queries": 200,
+        "accuracy": 0.9,
+        "f1": 0.9629195314489433,
+        "stale_answer": 0,
+        "current_policy": "final observed current version, matching validation co-injection"
+      }
+    }
+  ],
+  "learning_rate": 0.0001,
+  "lr_schedule": "warmup_cosine",
+  "warmup_fraction": 0.05,
+  "shuffle_each_epoch": true,
+  "contrastive_margin": 1.5,
+  "contrastive_weight": 0.2,
+  "contrastive_protocol": "Mean answer text token log-probability excluding EOS; mean over valid negative aliases",
+  "anchor_policy": "final current shared with reader; offline snapshot, not online rebase",
+  "decoder_frozen": true,
+  "encoder_frozen": true,
+  "index_validated_for_routing": false,
+  "teacher_policy": "Single uncompressed target entry, detached logits and gold prefixes",
+  "distillation_context": "single_target",
+  "loss_weights": {
+    "distillation_weight": 1.0,
+    "unlikelihood_weight": 0.1,
+    "pooled_alignment_weight": 0.05,
+    "index_loss_weight": 0.1
+  },
+  "readability_gate_override": {
+    "explicit_user_authorization": true,
+    "authorization_note": "User explicitly requested: ignore this gate, start C/D directly with multi-GPU parallelism. Original failed readability result must remain unchanged.",
+    "gate_run": "paper_v1_baseline_val",
+    "summary_sha256": "08e9312bc7f7465d7ed2b6bf025d3b0fa6249c9a3307850195d9a7d0fb30ec97",
+    "gate_sha256": "c3ac4b14d5decc9c8641c20b0d7522e402f3f8b2b29171e71c79984e181af8c8",
+    "original_decision": "hold_replace_or_fix_icae_checkpoint",
+    "scope": "Override only empirical readability thresholds/manual-review prerequisite; preserve complete validation, reader identity, feature and GPU gradient checks."
+  },
+  "warning": "Training completion does not validate readability, retrieval, or research claims."
+}

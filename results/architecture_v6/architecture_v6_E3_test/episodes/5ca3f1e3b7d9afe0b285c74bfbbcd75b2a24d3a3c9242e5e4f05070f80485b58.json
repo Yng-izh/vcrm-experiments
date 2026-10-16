@@ -1,0 +1,830 @@
+{
+  "id": "templama:test:Q1151872:P54",
+  "group": "Q1151872:P54",
+  "split": "test",
+  "versions": 5,
+  "queries": [
+    {
+      "query_id": "Q1151872_P54_2010",
+      "latest": false,
+      "as_of": "2010-01-01T00:00:00",
+      "selected_entry_id": "Q1151872_P54_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Boston Red Sox",
+        "token_ids": [
+          28760,
+          8410,
+          3690,
+          318,
+          1142
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.24207109631970525,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1151872_P54_2018",
+          "Q1151872_P54_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003872279077768326,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1416,
+          "total_bytes": 1575560,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "New York Mets",
+        "token_ids": [
+          1450,
+          2726,
+          351,
+          1468
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22779193427413702,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1151872_P54_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q1151872_P54_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Boston Red Sox",
+        "token_ids": [
+          28760,
+          8410,
+          3690,
+          318,
+          1142
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2395464526489377,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490906624,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1151872_P54_2018",
+          "Q1151872_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0035830610431730747,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1416,
+          "total_bytes": 1575560,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "New York Mets",
+        "token_ids": [
+          1450,
+          2726,
+          351,
+          1468
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22741223825141788,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1151872_P54_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q1151872_P54_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Boston Red Sox / Los Angeles Dodgers",
+        "token_ids": [
+          28760,
+          8410,
+          3690,
+          318,
+          1142,
+          732,
+          5729,
+          9479,
+          22790,
+          7850
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.388772944919765,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 28573696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1151872_P54_2018",
+          "Q1151872_P54_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037853247486054897,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1416,
+          "total_bytes": 1575560,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "New York Mets",
+        "token_ids": [
+          1450,
+          2726,
+          351,
+          1468
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23100227396935225,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1151872_P54_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q1151872_P54_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Los Angeles Dodgers",
+        "token_ids": [
+          5729,
+          9479,
+          22790,
+          7850
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2087180381640792,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490906624,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1151872_P54_2018",
+          "Q1151872_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038098832592368126,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1416,
+          "total_bytes": 1575560,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Los Angeles Dodgers",
+        "token_ids": [
+          5729,
+          9479,
+          22790,
+          7850
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2319409754127264,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1151872_P54_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q1151872_P54_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Los Angeles Dodgers",
+        "token_ids": [
+          5729,
+          9479,
+          22790,
+          7850
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20649958588182926,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1151872_P54_2018",
+          "Q1151872_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003872741013765335,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1416,
+          "total_bytes": 1575560,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Los Angeles Dodgers",
+        "token_ids": [
+          5729,
+          9479,
+          22790,
+          7850
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23194766184315085,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1151872_P54_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q1151872_P54_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Los Angeles Dodgers",
+        "token_ids": [
+          5729,
+          9479,
+          22790,
+          7850
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20709893992170691,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490906624,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1151872_P54_2018",
+          "Q1151872_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036810478195548058,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1416,
+          "total_bytes": 1575560,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "New York Mets",
+        "token_ids": [
+          1450,
+          2726,
+          351,
+          1468
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23074068082496524,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1151872_P54_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q1151872_P54_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Los Angeles Dodgers",
+        "token_ids": [
+          5729,
+          9479,
+          22790,
+          7850
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2058434784412384,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1151872_P54_2018",
+          "Q1151872_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003737257793545723,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1416,
+          "total_bytes": 1575560,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "New York Mets",
+        "token_ids": [
+          1450,
+          2726,
+          351,
+          1468
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22966335713863373,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1151872_P54_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q1151872_P54_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Los Angeles Dodgers",
+        "token_ids": [
+          5729,
+          9479,
+          22790,
+          7850
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2052139430306852,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490906624,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1151872_P54_2018",
+          "Q1151872_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0035279057919979095,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1416,
+          "total_bytes": 1575560,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "New York Mets",
+        "token_ids": [
+          1450,
+          2726,
+          351,
+          1468
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23007519589737058,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1151872_P54_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q1151872_P54_2018",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "New York Mets",
+        "token_ids": [
+          1450,
+          2726,
+          351,
+          1468
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20575663819909096,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1151872_P54_2018",
+          "Q1151872_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037604039534926414,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1416,
+          "total_bytes": 1575560,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "New York Mets",
+        "token_ids": [
+          1450,
+          2726,
+          351,
+          1468
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23036414105445147,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1151872_P54_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q1151872_P54_2018",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "New York Mets",
+        "token_ids": [
+          1450,
+          2726,
+          351,
+          1468
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20401764661073685,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490906624,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1151872_P54_2018",
+          "Q1151872_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003605579026043415,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1416,
+          "total_bytes": 1575560,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "New York Mets",
+        "token_ids": [
+          1450,
+          2726,
+          351,
+          1468
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23589825490489602,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1151872_P54_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q1151872_P54_2018",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "New York Mets",
+        "token_ids": [
+          1450,
+          2726,
+          351,
+          1468
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20650291023775935,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1151872_P54_2018",
+          "Q1151872_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003915989771485329,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1416,
+          "total_bytes": 1575560,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "New York Mets",
+        "token_ids": [
+          1450,
+          2726,
+          351,
+          1468
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23019394697621465,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.23294393299147487,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 640,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 192,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1572864,
+      "index_key_bytes": 1280,
+      "metadata_and_format_bytes": 1416,
+      "total_bytes": 1575560,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 192,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1572864,
+    "index_key_bytes": 1280,
+    "metadata_and_format_bytes": 1416,
+    "total_bytes": 1575560,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

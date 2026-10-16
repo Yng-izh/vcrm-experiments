@@ -12,7 +12,13 @@ import time
 
 from vcrm.io import digest, file_digest, read_json, write_json
 
-STAGES = ('download', 'preflight', 'prepare', 'parity', 'adapt', 'activate', 'readability', 'summarize', 'gate', 'status')
+STAGES = ('download', 'preflight', 'prepare', 'parity', 'adapt', 'activate', 'readability', 'summarize', 'gate', 'status',
+          'lme-audit', 'lme-diagnostic', 'lme-summary')
+STAGES += ('unit-tests', 'training-audit', 'codec-train')
+STAGES += ('features', 'features-finalize')
+STAGES += ('codec-eval', 'codec-summary')
+STAGES += ('comparison-eval', 'comparison-summary')
+STAGES += ('read-diagnostic', 'read-diagnostic-summary')
 
 
 def arguments():
@@ -21,10 +27,12 @@ def arguments():
     parser.add_argument('--stage', choices=STAGES, required=True)
     parser.add_argument('--gpus', default='auto')
     parser.add_argument('--run-name', default='icae_readability')
-    parser.add_argument('--split', choices=('val',), default='val')
+    parser.add_argument('--split', choices=('train', 'val', 'test'), default='val')
     parser.add_argument('--limit', type=int)
     parser.add_argument('--adaptation-run', help='Completed encoder adaptation run for the readability gate')
     parser.add_argument('--output-config', help='New config file written by activate; never overwrite the training config')
+    parser.add_argument('--method', choices=('C', 'D'), default='C')
+    parser.add_argument('--training-run', help='Completed C/D training run name for held-out evaluation')
     parser.add_argument('--worker', action='store_true', help=argparse.SUPPRESS)
     parser.add_argument('--shard', type=int, default=0, help=argparse.SUPPRESS)
     parser.add_argument('--shards', type=int, default=1, help=argparse.SUPPRESS)
@@ -69,15 +77,28 @@ def fingerprint(config, root, args):
     project = Path(__file__).parent
     files = list(project.glob('*.py')) + list((project / 'vcrm').glob('*.py'))
     value = {'config': config, 'code': {str(p.relative_to(project)): digest(p.read_bytes()) for p in sorted(files)},
-             'limit': args.limit}
+             'limit': args.limit, 'method': args.method, 'split': args.split,
+             'training_run': args.training_run}
+    if args.training_run:
+        if Path(args.training_run).name != args.training_run:
+            raise ValueError('--training-run must be a single path component')
+        training = Path(config['output_root']) / args.training_run
+        value['codec_training_sha256'] = file_digest(training / 'codec_training.json')
+        value['codec_checkpoint_sha256'] = file_digest(training / 'codec.safetensors')
     manifest = Path(config['data_root']) / 'prepared/manifest.json'
     value['data_signature'] = digest(manifest.read_bytes()) if manifest.exists() else None
+    if config.get('evaluation_query_manifest'):
+        value['evaluation_query_manifest_sha256'] = file_digest(config['evaluation_query_manifest'])
     weights = [config['checkpoint']] + ([config['adapted_checkpoint']] if config.get('adapted_checkpoint') else [])
     value['encoder_weights'] = {str(p): file_digest(p) for p in weights}
     upstream = Path(config['icae_root']) / 'code/icae_v2/modeling_icae_multi_span.py'
     value['upstream_source_sha256'] = file_digest(upstream)
     downloads = Path(config['project']) / 'download_manifest.json'
     value['download_manifest_sha256'] = file_digest(downloads) if downloads.exists() else None
+    if args.stage.startswith('lme-'):
+        folder = Path(config['diagnostic_root'])
+        value['diagnostic_source'] = {str(p.relative_to(folder)): file_digest(p)
+                                      for p in [folder / 'protocol.json', *sorted((folder / 'cases').glob('*.json'))]}
     signature = digest(value)
     path = root / 'manifest.json'
     if path.exists() and read_json(path)['signature'] != signature:
@@ -101,11 +122,34 @@ def worker(config, root, args):
         print(json.dumps(adapt_encoder(config, root, args.limit), indent=2), flush=True)
     elif args.stage == 'readability':
         evaluate(config, root, args.split, args.limit, args.shard, args.shards)
+    elif args.stage == 'lme-diagnostic':
+        from vcrm.diagnostics import evaluate as diagnose
+        diagnose(config, root, args.shard, args.shards)
+    elif args.stage == 'codec-train':
+        from vcrm.training import train_codec
+        print(json.dumps(train_codec(config, root, args.method == 'D', args.limit), indent=2), flush=True)
+    elif args.stage == 'features':
+        from vcrm.features import encode
+        encode(config, args.split, args.shard, args.shards)
+    elif args.stage == 'codec-eval':
+        from vcrm.codec_eval import evaluate as evaluate_codec
+        if not args.training_run:
+            raise ValueError('Provide --training-run for codec evaluation')
+        evaluate_codec(config, root, Path(config['output_root']) / args.training_run,
+                       args.split, args.limit, args.shard, args.shards)
+    elif args.stage == 'comparison-eval':
+        from vcrm.comparison import evaluate as evaluate_comparison
+        evaluate_comparison(config, root, args.shard, args.shards)
+    elif args.stage == 'read-diagnostic':
+        from vcrm.architecture import read_diagnostic
+        if not args.training_run:
+            raise ValueError('Read diagnostics require a completed training run')
+        read_diagnostic(config, root, Path(config['output_root']) / args.training_run, args.shard, args.shards)
 
 
 def launch(config, root, args):
     gpus = choose_gpus(args.gpus)
-    if args.stage in ('adapt', 'parity') and len(gpus) != 1:
+    if args.stage in ('adapt', 'parity', 'codec-train') and len(gpus) != 1:
         raise ValueError('adapt/parity requires exactly one idle GPU')
     plan = {'stage': args.stage, 'gpus': gpus, 'shards': len(gpus)}
     plan_path = root / 'execution_plan.json'
@@ -123,7 +167,9 @@ def launch(config, root, args):
             log.parent.mkdir(parents=True, exist_ok=True)
             handle = log.open('a')
             files.append(handle)
-            env = dict(os.environ, CUDA_VISIBLE_DEVICES=str(gpu), PYTHONUNBUFFERED='1', TOKENIZERS_PARALLELISM='false')
+            env = dict(os.environ, CUDA_VISIBLE_DEVICES=str(gpu), PYTHONUNBUFFERED='1',
+                       TOKENIZERS_PARALLELISM='false', OMP_NUM_THREADS='2', MKL_NUM_THREADS='2',
+                       OPENBLAS_NUM_THREADS='2')
             command = [sys.executable, str(Path(__file__).resolve()), *sys.argv[1:], '--worker',
                        '--shard', str(shard), '--shards', str(len(gpus))]
             processes.append(subprocess.Popen(command, env=env, stdout=handle, stderr=subprocess.STDOUT))
@@ -177,6 +223,29 @@ def main():
             from vcrm.data import prepare_icae
             print(json.dumps(prepare_icae(config), indent=2))
             return
+        if args.stage == 'unit-tests':
+            subprocess.run([sys.executable, '-m', 'pytest', '-q', str(Path(__file__).parent / 'tests')],
+                           cwd=Path(__file__).parent, check=True)
+            return
+        if args.stage == 'training-audit':
+            from vcrm.training import train_only, paragraph_samples, temporal_pairs
+            from vcrm.codec import SlotCodec, VersionMarkers
+            episodes = train_only(config, args.limit)
+            paragraphs = paragraph_samples(episodes, config['seed'])
+            pairs = temporal_pairs(episodes, config['keyframe_interval'])
+            c = SlotCodec(4096, config['history_slots'], config['codec_width'], config['codec_heads'], False)
+            d = SlotCodec(4096, config['history_slots'], config['codec_width'], config['codec_heads'], True)
+            result = {'scope': 'code/data audit, no GPU or training', 'groups': len(episodes),
+                      'paragraph_samples': len(paragraphs), 'temporal_pairs': len(pairs),
+                      'input_sha256': digest(paragraphs), 'pair_ids_sha256': digest(sorted(p['id'] for p in pairs)),
+                      'C_parameters': c.parameter_count(), 'D_parameters': d.parameter_count(),
+                      'parameter_matched': c.parameter_count() == d.parameter_count(),
+                      'history_decoder_slots': config['history_slots'], 'markers_per_entry': 2,
+                      'marker_parameter_bytes_fp32': sum(p.numel() * 4 for p in VersionMarkers().parameters()),
+                      'training_enabled': config.get('allow_training', False)}
+            write_json(root / 'training_audit.json', result)
+            print(json.dumps(result, indent=2))
+            return
         if args.stage == 'activate':
             if not args.adaptation_run or Path(args.adaptation_run).name != args.adaptation_run:
                 raise ValueError('Provide a single-component --adaptation-run')
@@ -191,9 +260,46 @@ def main():
             write_json(destination, config | {'adapted_checkpoint': adaptation['checkpoint']})
             print(f'Adapted configuration: {destination}')
             return
+        if args.stage in ('comparison-eval', 'comparison-summary'):
+            from vcrm.comparison import freeze_protocol, summarize as summarize_comparison
+            if args.split != 'val' or args.limit is not None:
+                raise ValueError('Unified comparison uses the complete fixed validation selection')
+            freeze_protocol(config, root)
+            if args.stage == 'comparison-eval':
+                launch(config, root, args)
+            else:
+                print(json.dumps(summarize_comparison(config, root), indent=2))
+            return
         fingerprint(config, root, args)
-        if args.stage in ('parity', 'adapt', 'readability'):
+        if args.stage in ('parity', 'adapt', 'readability', 'lme-diagnostic', 'codec-train', 'features', 'codec-eval', 'read-diagnostic'):
+            if args.stage in ('adapt', 'codec-train') and not config.get('allow_training'):
+                raise RuntimeError('Training is disabled by default; audit and explicitly authorize a new config first')
+            if args.stage != 'parity':
+                parity_path = Path(config['project']) / 'icae_parity.json'
+                if not parity_path.exists():
+                    raise RuntimeError('Run implementation parity before any GPU pilot')
+                parity_check = read_json(parity_path)
+                if (not parity_check.get('chunked_prefill_greedy_match') or
+                        not parity_check.get('official_encoder_exact_fp16_match') or
+                        parity_check.get('reader_sha256') != file_digest(Path(__file__).parent / 'vcrm/reader.py') or
+                        parity_check.get('checkpoint_sha256') != file_digest(config['checkpoint']) or
+                        parity_check.get('source_sha256') != config['icae_source_sha256'] or
+                        parity_check.get('model_revision') != config['model_revision']):
+                    raise RuntimeError('Implementation parity is stale or incomplete')
+                if args.stage == 'codec-train' and not parity_check.get('codec_qa_gradients_finite_nonzero'):
+                    raise RuntimeError('C/D training requires successful frozen-reader codec QA gradient checks')
+            if args.stage == 'lme-diagnostic':
+                from vcrm.diagnostics import audit
+                audit(config, root)
+            if args.stage == 'features':
+                from vcrm.features import prepare
+                prepare(config, args.split)
+            if args.stage == 'readability' and config.get('save_features'):
+                from vcrm.features import prepare
+                prepare(config, args.split)
             if args.stage == 'adapt':
+                if config.get('adaptation_protocol') != 'paragraph_memory_only_v1':
+                    raise RuntimeError('Paragraph memory-only adaptation is disabled. Audit and authorize training first.')
                 parity = Path(config['project']) / 'icae_parity.json'
                 if not parity.exists() or not read_json(parity).get('qa_gradient_finite_nonzero'):
                     raise RuntimeError('Run ICAE implementation parity/QA-gradient check before adapting the encoder')
@@ -204,12 +310,37 @@ def main():
                         check.get('reader_sha256') != file_digest(Path(__file__).parent / 'vcrm/reader.py')):
                     raise RuntimeError('ICAE parity identity differs from current reader/source/checkpoint')
             launch(config, root, args)
+        elif args.stage == 'features-finalize':
+            from vcrm.features import finalize
+            print(json.dumps(finalize(config, args.split), indent=2))
+        elif args.stage == 'read-diagnostic-summary':
+            from vcrm.architecture import diagnostic_summary
+            print(json.dumps(diagnostic_summary(config, root), indent=2))
+        elif args.stage == 'codec-summary':
+            from vcrm.codec_eval import summarize as summarize_codec
+            print(json.dumps(summarize_codec(config, root, args.split, args.limit), indent=2))
+        elif args.stage == 'lme-audit':
+            from vcrm.diagnostics import audit
+            result = audit(config, root)
+            print(json.dumps({'cases': len(result['cases']), 'audit': str(root / 'diagnostic_audit.json')}, indent=2))
+        elif args.stage == 'lme-summary':
+            from vcrm.diagnostics import summarize as summarize_diagnostic
+            print(json.dumps(summarize_diagnostic(config, root), indent=2))
         elif args.stage == 'summarize':
             from vcrm.pipeline import summarize
-            print(json.dumps(summarize(config, root, args.limit), indent=2))
+            print(json.dumps(summarize(config, root, args.limit, args.split), indent=2))
         elif args.stage == 'gate':
             from vcrm.pipeline import gate_decision
             summary = read_json(root / 'summary.json')
+            if not config.get('adapted_checkpoint'):
+                if args.adaptation_run:
+                    raise ValueError('Official zero-shot gate must not claim an adaptation run')
+                decision = gate_decision(config, summary)
+                write_json(root / 'gate.json', decision)
+                print(json.dumps(decision, indent=2))
+                if decision['decision'] != 'eligible_for_manual_review':
+                    raise RuntimeError('Official-checkpoint gate failed; do not train a codec')
+                return
             if not args.adaptation_run or Path(args.adaptation_run).name != args.adaptation_run:
                 raise ValueError('Provide --adaptation-run with a completed training run name')
             adaptation = read_json(Path(config['output_root']) / args.adaptation_run / 'adaptation.json')

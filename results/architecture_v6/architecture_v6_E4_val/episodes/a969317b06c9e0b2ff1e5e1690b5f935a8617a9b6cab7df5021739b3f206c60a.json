@@ -1,0 +1,567 @@
+{
+  "id": "templama:val:Q20027181:P102",
+  "group": "Q20027181:P102",
+  "split": "val",
+  "versions": 5,
+  "queries": [
+    {
+      "query_id": "Q20027181_P102_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q20027181_P102_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "The People of Freedom",
+        "token_ids": [
+          1014,
+          5619,
+          302,
+          22429
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20391066512092948,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491559936,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q20027181_P102_2020",
+          "Q20027181_P102_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037246840074658394,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1442,
+          "total_bytes": 1575586,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "The People of Freedom",
+        "token_ids": [
+          415,
+          5619,
+          302,
+          22429
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22880704887211323,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520077312,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q20027181_P102_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q20027181_P102_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Forza Italia (2014)",
+        "token_ids": [
+          1263,
+          2166,
+          16995,
+          325,
+          28750,
+          28734,
+          28740,
+          28781,
+          28731
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3886597538366914,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491428864,
+        "kv_cache_bytes": 28835840,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q20027181_P102_2020",
+          "Q20027181_P102_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0034783929586410522,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1442,
+          "total_bytes": 1575586,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Lega",
+        "token_ids": [
+          393,
+          4770,
+          13,
+          13
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.24971859902143478,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520077312,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q20027181_P102_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q20027181_P102_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Forza Italia (2015)",
+        "token_ids": [
+          1263,
+          2166,
+          16995,
+          325,
+          28750,
+          28734,
+          28740,
+          28782,
+          28731
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.35684406803920865,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491559936,
+        "kv_cache_bytes": 28835840,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q20027181_P102_2020",
+          "Q20027181_P102_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003510668408125639,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1442,
+          "total_bytes": 1575586,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Lega",
+        "token_ids": [
+          393,
+          4770,
+          13,
+          13
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22587809478864074,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520077312,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q20027181_P102_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q20027181_P102_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Forza Italia (2016)",
+        "token_ids": [
+          1263,
+          2166,
+          16995,
+          325,
+          28750,
+          28734,
+          28740,
+          28784,
+          28731
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3467021342366934,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491428864,
+        "kv_cache_bytes": 28835840,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q20027181_P102_2020",
+          "Q20027181_P102_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003783585038036108,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1442,
+          "total_bytes": 1575586,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Lega",
+        "token_ids": [
+          393,
+          4770,
+          13,
+          13
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22584959724918008,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520077312,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q20027181_P102_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q20027181_P102_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Forza Italia (2017)",
+        "token_ids": [
+          1263,
+          2166,
+          16995,
+          325,
+          28750,
+          28734,
+          28740,
+          28787,
+          28731
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3495992971584201,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491559936,
+        "kv_cache_bytes": 28835840,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q20027181_P102_2020",
+          "Q20027181_P102_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037019960582256317,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1442,
+          "total_bytes": 1575586,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Lega",
+        "token_ids": [
+          393,
+          4770,
+          13,
+          13
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22622635727748275,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520077312,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q20027181_P102_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q20027181_P102_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Forza Italia (2018)",
+        "token_ids": [
+          1263,
+          2166,
+          16995,
+          325,
+          28750,
+          28734,
+          28740,
+          28783,
+          28731
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3518725046887994,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491428864,
+        "kv_cache_bytes": 28835840,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q20027181_P102_2020",
+          "Q20027181_P102_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003506144043058157,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1442,
+          "total_bytes": 1575586,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Lega",
+        "token_ids": [
+          393,
+          4770,
+          13,
+          13
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22782171703875065,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520077312,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q20027181_P102_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q20027181_P102_2019",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Lega per Salvini Premier",
+        "token_ids": [
+          28758,
+          4770,
+          660,
+          17857,
+          3494,
+          16103
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.26116887386888266,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491559936,
+        "kv_cache_bytes": 28442624,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q20027181_P102_2020",
+          "Q20027181_P102_2019"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003461330197751522,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1442,
+          "total_bytes": 1575586,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Lega per Salvini Premier",
+        "token_ids": [
+          393,
+          4770,
+          660,
+          17857,
+          3494,
+          16103
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.28562580700963736,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520077312,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.14578068815171719,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 640,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 192,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1572864,
+      "index_key_bytes": 1280,
+      "metadata_and_format_bytes": 1442,
+      "total_bytes": 1575586,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 192,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1572864,
+    "index_key_bytes": 1280,
+    "metadata_and_format_bytes": 1442,
+    "total_bytes": 1575586,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

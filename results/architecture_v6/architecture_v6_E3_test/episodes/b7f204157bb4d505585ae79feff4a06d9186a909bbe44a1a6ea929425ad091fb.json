@@ -1,0 +1,950 @@
+{
+  "id": "templama:test:Q114859:P54",
+  "group": "Q114859:P54",
+  "split": "test",
+  "versions": 10,
+  "queries": [
+    {
+      "query_id": "Q114859_P54_2010",
+      "latest": false,
+      "as_of": "2010-01-01T00:00:00",
+      "selected_entry_id": "Q114859_P54_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "France national association football team",
+        "token_ids": [
+          2642,
+          617,
+          4282,
+          13895,
+          6569,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2806781120598316,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490689536,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q114859_P54_2020",
+          "Q114859_P54_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.005393536761403084,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 272,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 2228224,
+          "index_key_bytes": 2560,
+          "metadata_and_format_bytes": 2506,
+          "total_bytes": 2233290,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Loïc Rémy plays for France national association football team / OGC Nice / Olympique de Marseille.",
+        "token_ids": [
+          7300,
+          28920,
+          28717,
+          15417,
+          1916,
+          8928,
+          354,
+          4843,
+          4282,
+          13895,
+          6569,
+          1918,
+          732,
+          451,
+          9389,
+          22277,
+          732,
+          8562,
+          1651,
+          340,
+          1471,
+          331,
+          2457,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.8748591807670891,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 44957696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5263157894736842
+      }
+    },
+    {
+      "query_id": "Q114859_P54_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q114859_P54_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "France national association football team",
+        "token_ids": [
+          2642,
+          617,
+          4282,
+          13895,
+          6569,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2739382372237742,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490558464,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q114859_P54_2020",
+          "Q114859_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.005191042087972164,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 272,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 2228224,
+          "index_key_bytes": 2560,
+          "metadata_and_format_bytes": 2506,
+          "total_bytes": 2233290,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Loïc Rémy plays for Çaykur Rizespor.",
+        "token_ids": [
+          7300,
+          28920,
+          28717,
+          15417,
+          1916,
+          8928,
+          354,
+          28705,
+          29215,
+          339,
+          28729,
+          324,
+          399,
+          5004,
+          2006,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.60850676195696,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 43909120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q114859_P54_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q114859_P54_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "France national association football team",
+        "token_ids": [
+          2642,
+          617,
+          4282,
+          13895,
+          6569,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.275830065831542,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490689536,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q114859_P54_2020",
+          "Q114859_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004230595659464598,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 272,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 2228224,
+          "index_key_bytes": 2560,
+          "metadata_and_format_bytes": 2506,
+          "total_bytes": 2233290,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Loïc Rémy plays for Çaykur Rizespor.",
+        "token_ids": [
+          7300,
+          28920,
+          28717,
+          15417,
+          1916,
+          8928,
+          354,
+          28705,
+          29215,
+          339,
+          28729,
+          324,
+          399,
+          5004,
+          2006,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6076849205419421,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 43909120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q114859_P54_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q114859_P54_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "France national association football team",
+        "token_ids": [
+          2642,
+          617,
+          4282,
+          13895,
+          6569,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2725519030354917,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490558464,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q114859_P54_2020",
+          "Q114859_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003687904216349125,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 272,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 2228224,
+          "index_key_bytes": 2560,
+          "metadata_and_format_bytes": 2506,
+          "total_bytes": 2233290,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Loïc Rémy plays for France national association football team / Newcastle United F.C. / Queens Park Rangers F.C.",
+        "token_ids": [
+          7300,
+          28920,
+          28717,
+          15417,
+          1916,
+          8928,
+          354,
+          4843,
+          4282,
+          13895,
+          6569,
+          1918,
+          732,
+          1450,
+          25305,
+          2969,
+          401,
+          28723,
+          28743,
+          28723,
+          732,
+          19689,
+          4120,
+          28371,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.9915456427261233,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 45481984,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.47619047619047616
+      }
+    },
+    {
+      "query_id": "Q114859_P54_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q114859_P54_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "France national association football team",
+        "token_ids": [
+          2642,
+          617,
+          4282,
+          13895,
+          6569,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2743159979581833,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490689536,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q114859_P54_2020",
+          "Q114859_P54_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004850479774177074,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 272,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 2228224,
+          "index_key_bytes": 2560,
+          "metadata_and_format_bytes": 2506,
+          "total_bytes": 2233290,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Loïc Rémy plays for Çaykur Rizespor.",
+        "token_ids": [
+          7300,
+          28920,
+          28717,
+          15417,
+          1916,
+          8928,
+          354,
+          28705,
+          29215,
+          339,
+          28729,
+          324,
+          399,
+          5004,
+          2006,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6028510797768831,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 43909120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q114859_P54_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q114859_P54_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Chelsea F.C.",
+        "token_ids": [
+          27106,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23995961900800467,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490558464,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q114859_P54_2020",
+          "Q114859_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0039297547191381454,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 272,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 2228224,
+          "index_key_bytes": 2560,
+          "metadata_and_format_bytes": 2506,
+          "total_bytes": 2233290,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Loïc Rémy plays for Çaykur Rizespor.",
+        "token_ids": [
+          7300,
+          28920,
+          28717,
+          15417,
+          1916,
+          8928,
+          354,
+          28705,
+          29215,
+          339,
+          28729,
+          324,
+          399,
+          5004,
+          2006,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5999180367216468,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 43909120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q114859_P54_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q114859_P54_2016",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Chelsea F.C.",
+        "token_ids": [
+          27106,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23817244777455926,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490689536,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q114859_P54_2020",
+          "Q114859_P54_2016"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004131102003157139,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 272,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 2228224,
+          "index_key_bytes": 2560,
+          "metadata_and_format_bytes": 2506,
+          "total_bytes": 2233290,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Loïc Rémy plays for Çaykur Rizespor.",
+        "token_ids": [
+          7300,
+          28920,
+          28717,
+          15417,
+          1916,
+          8928,
+          354,
+          28705,
+          29215,
+          339,
+          28729,
+          324,
+          399,
+          5004,
+          2006,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6487833349965513,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 43909120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q114859_P54_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q114859_P54_2017",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Chelsea F.C.",
+        "token_ids": [
+          27106,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.25612952560186386,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490558464,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q114859_P54_2020",
+          "Q114859_P54_2017"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004421093966811895,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 272,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 2228224,
+          "index_key_bytes": 2560,
+          "metadata_and_format_bytes": 2506,
+          "total_bytes": 2233290,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Loïc Rémy plays for Chelsea F.C.",
+        "token_ids": [
+          7300,
+          28920,
+          28717,
+          15417,
+          1916,
+          8928,
+          354,
+          27106,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4806875609792769,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 43384832,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q114859_P54_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q114859_P54_2018",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Getafe CF",
+        "token_ids": [
+          420,
+          1632,
+          1512,
+          16308
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20621679862961173,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490689536,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q114859_P54_2020",
+          "Q114859_P54_2018"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004630756098777056,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 272,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 2228224,
+          "index_key_bytes": 2560,
+          "metadata_and_format_bytes": 2506,
+          "total_bytes": 2233290,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Getafe CF",
+        "token_ids": [
+          420,
+          1632,
+          1512,
+          16308
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23128508916124701,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 42336256,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q114859_P54_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q114859_P54_2019",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Lille OSC",
+        "token_ids": [
+          28758,
+          2457,
+          451,
+          3315
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20629597501829267,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490558464,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q114859_P54_2020",
+          "Q114859_P54_2019"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037077651359140873,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 272,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 2228224,
+          "index_key_bytes": 2560,
+          "metadata_and_format_bytes": 2506,
+          "total_bytes": 2233290,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Lille OSC",
+        "token_ids": [
+          393,
+          2457,
+          451,
+          3315
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2270003710873425,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 42336256,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q114859_P54_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q114859_P54_2020",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Çaykur Rizespor",
+        "token_ids": [
+          29215,
+          339,
+          28729,
+          324,
+          399,
+          5004,
+          2006
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3029787759296596,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490689536,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q114859_P54_2020",
+          "Q114859_P54_2019"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036667748354375362,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 272,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 2228224,
+          "index_key_bytes": 2560,
+          "metadata_and_format_bytes": 2506,
+          "total_bytes": 2233290,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Lille OSC",
+        "token_ids": [
+          393,
+          2457,
+          451,
+          3315
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22888669185340405,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 42336256,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.42964000906795263,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 1280,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 272,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 2228224,
+      "index_key_bytes": 2560,
+      "metadata_and_format_bytes": 2506,
+      "total_bytes": 2233290,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 272,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 2228224,
+    "index_key_bytes": 2560,
+    "metadata_and_format_bytes": 2506,
+    "total_bytes": 2233290,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

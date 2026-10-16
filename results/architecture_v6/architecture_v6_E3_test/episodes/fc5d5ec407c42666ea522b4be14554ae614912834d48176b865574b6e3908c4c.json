@@ -1,0 +1,284 @@
+{
+  "id": "templama:test:Q1137993:P286",
+  "group": "Q1137993:P286",
+  "split": "test",
+  "versions": 2,
+  "queries": [
+    {
+      "query_id": "Q1137993_P286_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q1137993_P286_2018",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Nenad Lalatović",
+        "token_ids": [
+          418,
+          269,
+          316,
+          393,
+          282,
+          270,
+          22006
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.29237869987264276,
+        "prompt_tokens": 214,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15492212224,
+        "kv_cache_bytes": 28966912,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1137993_P286_2020",
+          "Q1137993_P286_2018"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037273219786584377,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Nenad Lalatović",
+        "token_ids": [
+          418,
+          269,
+          316,
+          393,
+          282,
+          270,
+          22006
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3156887870281935,
+        "prompt_tokens": 326,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520827904,
+        "kv_cache_bytes": 43646976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1137993_P286_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q1137993_P286_2018",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Nenad Lalatović",
+        "token_ids": [
+          418,
+          269,
+          316,
+          393,
+          282,
+          270,
+          22006
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.28872263338416815,
+        "prompt_tokens": 214,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15492081152,
+        "kv_cache_bytes": 28966912,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1137993_P286_2020",
+          "Q1137993_P286_2018"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037374948151409626,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Nenad Lalatović",
+        "token_ids": [
+          418,
+          269,
+          316,
+          393,
+          282,
+          270,
+          22006
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.31866824021562934,
+        "prompt_tokens": 326,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520827904,
+        "kv_cache_bytes": 43646976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1137993_P286_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q1137993_P286_2020",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Radoslav Batak is the head coach of FK Radnički Niš.",
+        "token_ids": [
+          399,
+          3482,
+          12453,
+          13003,
+          491,
+          349,
+          272,
+          1335,
+          7786,
+          302,
+          401,
+          28796,
+          6444,
+          3023,
+          28862,
+          3430,
+          18001,
+          28873,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6411990369670093,
+        "prompt_tokens": 214,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15492212224,
+        "kv_cache_bytes": 30539776,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1137993_P286_2020",
+          "Q1137993_P286_2018"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003805657848715782,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.36363636363636365,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Nenad Lalatović",
+        "token_ids": [
+          418,
+          269,
+          316,
+          393,
+          282,
+          270,
+          22006
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.31433301977813244,
+        "prompt_tokens": 326,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520827904,
+        "kv_cache_bytes": 43646976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    }
+  ],
+  "write_seconds": 0.09445116203278303,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 256,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 144,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1179648,
+      "index_key_bytes": 512,
+      "metadata_and_format_bytes": 757,
+      "total_bytes": 1180917,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 144,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1179648,
+    "index_key_bytes": 512,
+    "metadata_and_format_bytes": 757,
+    "total_bytes": 1180917,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

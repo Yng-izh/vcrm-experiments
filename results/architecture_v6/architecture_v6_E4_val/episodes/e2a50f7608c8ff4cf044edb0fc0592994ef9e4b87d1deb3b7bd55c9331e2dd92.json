@@ -1,0 +1,596 @@
+{
+  "id": "templama:val:Q11719711:P102",
+  "group": "Q11719711:P102",
+  "split": "val",
+  "versions": 5,
+  "queries": [
+    {
+      "query_id": "Q11719711_P102_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q11719711_P102_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "New Majority",
+        "token_ids": [
+          1450,
+          10664,
+          472
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17166056018322706,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491777024,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11719711_P102_2020",
+          "Q11719711_P102_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036804070696234703,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1442,
+          "total_bytes": 1575586,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "For the People's Party",
+        "token_ids": [
+          1263,
+          272,
+          5619,
+          28742,
+          28713,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2863492821343243,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520327168,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q11719711_P102_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q11719711_P102_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "New Majority",
+        "token_ids": [
+          1450,
+          10664,
+          472
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17146742762997746,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491645952,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11719711_P102_2020",
+          "Q11719711_P102_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0032212818041443825,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1442,
+          "total_bytes": 1575586,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "New Majority",
+        "token_ids": [
+          1450,
+          10664,
+          472
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1953475079499185,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520327168,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q11719711_P102_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q11719711_P102_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "New Majority",
+        "token_ids": [
+          1450,
+          10664,
+          472
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1717209368944168,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491777024,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11719711_P102_2020",
+          "Q11719711_P102_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.00394157599657774,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1442,
+          "total_bytes": 1575586,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "New Majority",
+        "token_ids": [
+          1450,
+          10664,
+          472
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1981649319641292,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520327168,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q11719711_P102_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q11719711_P102_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "New Majority",
+        "token_ids": [
+          1450,
+          10664,
+          472
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17105888994410634,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491645952,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11719711_P102_2020",
+          "Q11719711_P102_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003523035906255245,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1442,
+          "total_bytes": 1575586,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "New Majority",
+        "token_ids": [
+          1450,
+          10664,
+          472
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19720793887972832,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520327168,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q11719711_P102_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q11719711_P102_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "New Majority",
+        "token_ids": [
+          1450,
+          10664,
+          472
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1703794077038765,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491777024,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11719711_P102_2020",
+          "Q11719711_P102_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0034992308355867863,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1442,
+          "total_bytes": 1575586,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "New Majority",
+        "token_ids": [
+          1450,
+          10664,
+          472
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19472667714580894,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520327168,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q11719711_P102_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q11719711_P102_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "New Majority",
+        "token_ids": [
+          1450,
+          10664,
+          472
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17274175537750125,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491645952,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11719711_P102_2020",
+          "Q11719711_P102_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037792809307575226,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1442,
+          "total_bytes": 1575586,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "New Majority",
+        "token_ids": [
+          1450,
+          10664,
+          472
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19691156456246972,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520327168,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q11719711_P102_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q11719711_P102_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "New Majority",
+        "token_ids": [
+          1450,
+          10664,
+          472
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17138020927086473,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491777024,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11719711_P102_2020",
+          "Q11719711_P102_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037137060426175594,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1442,
+          "total_bytes": 1575586,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "New Majority",
+        "token_ids": [
+          1450,
+          10664,
+          472
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19696474401280284,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520327168,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q11719711_P102_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q11719711_P102_2019",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "New Majority",
+        "token_ids": [
+          1450,
+          10664,
+          472
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17155075492337346,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491645952,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11719711_P102_2020",
+          "Q11719711_P102_2019"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038939351215958595,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1442,
+          "total_bytes": 1575586,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "For the People",
+        "token_ids": [
+          1263,
+          272,
+          5619
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1997194830328226,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520327168,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.19651986099779606,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 640,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 192,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1572864,
+      "index_key_bytes": 1280,
+      "metadata_and_format_bytes": 1442,
+      "total_bytes": 1575586,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 192,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1572864,
+    "index_key_bytes": 1280,
+    "metadata_and_format_bytes": 1442,
+    "total_bytes": 1575586,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

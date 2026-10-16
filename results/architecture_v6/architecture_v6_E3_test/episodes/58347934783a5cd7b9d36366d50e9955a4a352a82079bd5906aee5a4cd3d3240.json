@@ -1,0 +1,896 @@
+{
+  "id": "templama:test:Q1042470:P108",
+  "group": "Q1042470:P108",
+  "split": "test",
+  "versions": 2,
+  "queries": [
+    {
+      "query_id": "Q1042470_P108_2010",
+      "latest": false,
+      "as_of": "2010-01-01T00:00:00",
+      "selected_entry_id": "Q1042470_P108_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "University of the Mediterranean - Aix Marseille II",
+        "token_ids": [
+          14953,
+          472,
+          302,
+          272,
+          26848,
+          387,
+          330,
+          833,
+          1471,
+          331,
+          2457,
+          3717
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.44044781383126974,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 28573696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1042470_P108_2012",
+          "Q1042470_P108_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036718137562274933,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Aix-Marseille University",
+        "token_ids": [
+          330,
+          833,
+          28733,
+          7308,
+          331,
+          2457,
+          2900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.31472343672066927,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.25
+      }
+    },
+    {
+      "query_id": "Q1042470_P108_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q1042470_P108_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "University of the Mediterranean - Aix Marseille II",
+        "token_ids": [
+          14953,
+          472,
+          302,
+          272,
+          26848,
+          387,
+          330,
+          833,
+          1471,
+          331,
+          2457,
+          3717
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.444465515203774,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 28573696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1042470_P108_2012",
+          "Q1042470_P108_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003516069147735834,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Aix-Marseille University",
+        "token_ids": [
+          330,
+          833,
+          28733,
+          7308,
+          331,
+          2457,
+          2900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.31595902191475034,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.25
+      }
+    },
+    {
+      "query_id": "Q1042470_P108_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q1042470_P108_2012",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Aix-Marseille University",
+        "token_ids": [
+          28741,
+          833,
+          28733,
+          7308,
+          331,
+          2457,
+          2900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2901619281619787,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1042470_P108_2012",
+          "Q1042470_P108_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038653090596199036,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Aix-Marseille University",
+        "token_ids": [
+          330,
+          833,
+          28733,
+          7308,
+          331,
+          2457,
+          2900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.335890110116452,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1042470_P108_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q1042470_P108_2012",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "University of the Mediterranean",
+        "token_ids": [
+          14953,
+          472,
+          302,
+          272,
+          26848
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23604722088202834,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1042470_P108_2012",
+          "Q1042470_P108_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004103855695575476,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.4,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Aix-Marseille University",
+        "token_ids": [
+          330,
+          833,
+          28733,
+          7308,
+          331,
+          2457,
+          2900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.314066412858665,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1042470_P108_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q1042470_P108_2012",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Aix-Marseille University",
+        "token_ids": [
+          28741,
+          833,
+          28733,
+          7308,
+          331,
+          2457,
+          2900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2918193880468607,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1042470_P108_2012",
+          "Q1042470_P108_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037603420205414295,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Aix-Marseille University",
+        "token_ids": [
+          330,
+          833,
+          28733,
+          7308,
+          331,
+          2457,
+          2900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3172979182563722,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1042470_P108_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q1042470_P108_2012",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Aix-Marseille University",
+        "token_ids": [
+          28741,
+          833,
+          28733,
+          7308,
+          331,
+          2457,
+          2900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2890335819683969,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1042470_P108_2012",
+          "Q1042470_P108_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003619012888520956,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Aix-Marseille University",
+        "token_ids": [
+          330,
+          833,
+          28733,
+          7308,
+          331,
+          2457,
+          2900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3159263301640749,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1042470_P108_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q1042470_P108_2012",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Aix-Marseille University",
+        "token_ids": [
+          28741,
+          833,
+          28733,
+          7308,
+          331,
+          2457,
+          2900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.28973973309621215,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1042470_P108_2012",
+          "Q1042470_P108_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0035706181079149246,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Aix-Marseille University",
+        "token_ids": [
+          330,
+          833,
+          28733,
+          7308,
+          331,
+          2457,
+          2900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.31555120879784226,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1042470_P108_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q1042470_P108_2012",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Aix-Marseille University",
+        "token_ids": [
+          28741,
+          833,
+          28733,
+          7308,
+          331,
+          2457,
+          2900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2940032659098506,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1042470_P108_2012",
+          "Q1042470_P108_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003689575009047985,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Aix-Marseille University",
+        "token_ids": [
+          330,
+          833,
+          28733,
+          7308,
+          331,
+          2457,
+          2900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.31569154700264335,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1042470_P108_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q1042470_P108_2012",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Aix-Marseille University",
+        "token_ids": [
+          28741,
+          833,
+          28733,
+          7308,
+          331,
+          2457,
+          2900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2896603220142424,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1042470_P108_2012",
+          "Q1042470_P108_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036816811189055443,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Aix-Marseille University",
+        "token_ids": [
+          330,
+          833,
+          28733,
+          7308,
+          331,
+          2457,
+          2900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.31752813421189785,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1042470_P108_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q1042470_P108_2012",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Aix-Marseille University",
+        "token_ids": [
+          28741,
+          833,
+          28733,
+          7308,
+          331,
+          2457,
+          2900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.29257820500060916,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1042470_P108_2012",
+          "Q1042470_P108_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0035801418125629425,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Aix-Marseille University",
+        "token_ids": [
+          330,
+          833,
+          28733,
+          7308,
+          331,
+          2457,
+          2900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3151780585758388,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1042470_P108_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q1042470_P108_2012",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Aix-Marseille University",
+        "token_ids": [
+          28741,
+          833,
+          28733,
+          7308,
+          331,
+          2457,
+          2900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2908905833028257,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1042470_P108_2012",
+          "Q1042470_P108_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0034029968082904816,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Aix-Marseille University",
+        "token_ids": [
+          330,
+          833,
+          28733,
+          7308,
+          331,
+          2457,
+          2900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.31828528083860874,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.07823742320761085,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 256,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 144,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1179648,
+      "index_key_bytes": 512,
+      "metadata_and_format_bytes": 757,
+      "total_bytes": 1180917,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 144,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1179648,
+    "index_key_bytes": 512,
+    "metadata_and_format_bytes": 757,
+    "total_bytes": 1180917,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

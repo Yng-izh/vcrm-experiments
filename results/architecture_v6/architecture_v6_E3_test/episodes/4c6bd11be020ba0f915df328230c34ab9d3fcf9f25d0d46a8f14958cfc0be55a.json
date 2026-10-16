@@ -1,0 +1,912 @@
+{
+  "id": "templama:test:Q10304982:P102",
+  "group": "Q10304982:P102",
+  "split": "test",
+  "versions": 5,
+  "queries": [
+    {
+      "query_id": "Q10304982_P102_2010",
+      "latest": false,
+      "as_of": "2010-01-01T00:00:00",
+      "selected_entry_id": "Q10304982_P102_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Progressive Party",
+        "token_ids": [
+          19310,
+          495,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19794034399092197,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491341824,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10304982_P102_2019",
+          "Q10304982_P102_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038437661714851856,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1442,
+          "total_bytes": 1575586,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Jair Bolsonaro is a member of the Social Liberal Party.",
+        "token_ids": [
+          475,
+          992,
+          10823,
+          1265,
+          10281,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          7575,
+          18736,
+          6636,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6405084342695773,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 44040192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.2
+      }
+    },
+    {
+      "query_id": "Q10304982_P102_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q10304982_P102_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Progressive Party",
+        "token_ids": [
+          19310,
+          495,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19848428713157773,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491210752,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10304982_P102_2019",
+          "Q10304982_P102_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003991445992141962,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1442,
+          "total_bytes": 1575586,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Jair Bolsonaro is a member of the Social Liberal Party.",
+        "token_ids": [
+          475,
+          992,
+          10823,
+          1265,
+          10281,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          7575,
+          18736,
+          6636,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6422375780530274,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 44040192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.2
+      }
+    },
+    {
+      "query_id": "Q10304982_P102_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q10304982_P102_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Progressive Party",
+        "token_ids": [
+          19310,
+          495,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19676737301051617,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491341824,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10304982_P102_2019",
+          "Q10304982_P102_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004626040812581778,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1442,
+          "total_bytes": 1575586,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Jair Bolsonaro is a member of the Social Liberal Party.",
+        "token_ids": [
+          475,
+          992,
+          10823,
+          1265,
+          10281,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          7575,
+          18736,
+          6636,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6405116133391857,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 44040192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.2
+      }
+    },
+    {
+      "query_id": "Q10304982_P102_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q10304982_P102_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Progressive Party",
+        "token_ids": [
+          19310,
+          495,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20170633820816875,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491210752,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10304982_P102_2019",
+          "Q10304982_P102_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004607577342540026,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1442,
+          "total_bytes": 1575586,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Jair Bolsonaro is a member of the Social Liberal Party.",
+        "token_ids": [
+          475,
+          992,
+          10823,
+          1265,
+          10281,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          7575,
+          18736,
+          6636,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6259554629214108,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 44040192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.2
+      }
+    },
+    {
+      "query_id": "Q10304982_P102_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q10304982_P102_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Progressive Party",
+        "token_ids": [
+          19310,
+          495,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20090580405667424,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491341824,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10304982_P102_2019",
+          "Q10304982_P102_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.005621140357106924,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1442,
+          "total_bytes": 1575586,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Jair Bolsonaro is a member of the Social Liberal Party.",
+        "token_ids": [
+          475,
+          992,
+          10823,
+          1265,
+          10281,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          7575,
+          18736,
+          6636,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6400035382248461,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 44040192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.2
+      }
+    },
+    {
+      "query_id": "Q10304982_P102_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q10304982_P102_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Progressive Party",
+        "token_ids": [
+          19310,
+          495,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19986213697120547,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491210752,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10304982_P102_2019",
+          "Q10304982_P102_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004023762885481119,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1442,
+          "total_bytes": 1575586,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Jair Bolsonaro is a member of the Social Liberal Party.",
+        "token_ids": [
+          475,
+          992,
+          10823,
+          1265,
+          10281,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          7575,
+          18736,
+          6636,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6332173687405884,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 44040192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.2
+      }
+    },
+    {
+      "query_id": "Q10304982_P102_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q10304982_P102_2016",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Social Christian Party",
+        "token_ids": [
+          28735,
+          24186,
+          5899,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2330896290950477,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491341824,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10304982_P102_2019",
+          "Q10304982_P102_2016"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038935779593884945,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1442,
+          "total_bytes": 1575586,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Jair Bolsonaro is a member of the Social Christian Party.",
+        "token_ids": [
+          475,
+          992,
+          10823,
+          1265,
+          10281,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          7575,
+          5899,
+          6636,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6403019176796079,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 44040192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5454545454545454
+      }
+    },
+    {
+      "query_id": "Q10304982_P102_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q10304982_P102_2017",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Social Christian Party",
+        "token_ids": [
+          28735,
+          24186,
+          5899,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.25203498685732484,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491210752,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10304982_P102_2019",
+          "Q10304982_P102_2017"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004015828017145395,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1442,
+          "total_bytes": 1575586,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Social Christian Party",
+        "token_ids": [
+          7575,
+          5899,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.21640730509534478,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10304982_P102_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q10304982_P102_2018",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Social Christian Party",
+        "token_ids": [
+          7575,
+          5899,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20868771011009812,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491341824,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10304982_P102_2019",
+          "Q10304982_P102_2018"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.005172566045075655,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1442,
+          "total_bytes": 1575586,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Jair Bolsonaro is a member of the Social Christian Party.",
+        "token_ids": [
+          475,
+          992,
+          10823,
+          1265,
+          10281,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          7575,
+          5899,
+          6636,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6549297422170639,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 44040192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5454545454545454
+      }
+    },
+    {
+      "query_id": "Q10304982_P102_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q10304982_P102_2019",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Social Liberal Party",
+        "token_ids": [
+          7575,
+          18736,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19803988793864846,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491210752,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10304982_P102_2019",
+          "Q10304982_P102_2018"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038446132093667984,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1442,
+          "total_bytes": 1575586,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Jair Bolsonaro is a member of the Social Christian Party.",
+        "token_ids": [
+          475,
+          992,
+          10823,
+          1265,
+          10281,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          7575,
+          5899,
+          6636,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6430906169116497,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 44040192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.36363636363636365
+      }
+    },
+    {
+      "query_id": "Q10304982_P102_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q10304982_P102_2019",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Social Liberal Party",
+        "token_ids": [
+          7575,
+          18736,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19901173608377576,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491341824,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10304982_P102_2019",
+          "Q10304982_P102_2018"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003920691087841988,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1442,
+          "total_bytes": 1575586,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Jair Bolsonaro is a member of the Social Christian Party.",
+        "token_ids": [
+          475,
+          992,
+          10823,
+          1265,
+          10281,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          7575,
+          5899,
+          6636,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6426387378014624,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 44040192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.36363636363636365
+      }
+    }
+  ],
+  "write_seconds": 0.212510347366333,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 640,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 192,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1572864,
+      "index_key_bytes": 1280,
+      "metadata_and_format_bytes": 1442,
+      "total_bytes": 1575586,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 192,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1572864,
+    "index_key_bytes": 1280,
+    "metadata_and_format_bytes": 1442,
+    "total_bytes": 1575586,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

@@ -1,0 +1,252 @@
+{
+  "id": "templama:test:Q10512:P286",
+  "group": "Q10512:P286",
+  "split": "test",
+  "versions": 2,
+  "queries": [
+    {
+      "query_id": "Q10512_P286_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q10512_P286_2018",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Pacheta",
+        "token_ids": [
+          28753,
+          1344,
+          1100
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1728726513683796,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491124736,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10512_P286_2020",
+          "Q10512_P286_2018"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003378767054527998,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 743,
+          "total_bytes": 1180903,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Jorge Almiron",
+        "token_ids": [
+          26955,
+          976,
+          28719,
+          2311
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22867369232699275,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q10512_P286_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q10512_P286_2018",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Pacheta",
+        "token_ids": [
+          28753,
+          1344,
+          1100
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1746789151802659,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490993664,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10512_P286_2020",
+          "Q10512_P286_2018"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004269774071872234,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 743,
+          "total_bytes": 1180903,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Jorge Almiron",
+        "token_ids": [
+          26955,
+          976,
+          28719,
+          2311
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2341807377524674,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q10512_P286_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q10512_P286_2020",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Jorge Almiron",
+        "token_ids": [
+          26955,
+          976,
+          28719,
+          2311
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20725929783657193,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491124736,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10512_P286_2020",
+          "Q10512_P286_2018"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0034641949459910393,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 743,
+          "total_bytes": 1180903,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Jorge Almiron",
+        "token_ids": [
+          26955,
+          976,
+          28719,
+          2311
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23105073301121593,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.07884762203320861,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 256,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 144,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1179648,
+      "index_key_bytes": 512,
+      "metadata_and_format_bytes": 743,
+      "total_bytes": 1180903,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 144,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1179648,
+    "index_key_bytes": 512,
+    "metadata_and_format_bytes": 743,
+    "total_bytes": 1180903,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

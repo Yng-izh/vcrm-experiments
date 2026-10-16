@@ -1,0 +1,969 @@
+{
+  "id": "templama:test:Q10603:P54",
+  "group": "Q10603:P54",
+  "split": "test",
+  "versions": 7,
+  "queries": [
+    {
+      "query_id": "Q10603_P54_2010",
+      "latest": false,
+      "as_of": "2010-01-01T00:00:00",
+      "selected_entry_id": "Q10603_P54_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Marvin Sordell plays for Watford F.C. and Tranmere Rovers F.C.",
+        "token_ids": [
+          1471,
+          8830,
+          318,
+          556,
+          479,
+          8928,
+          354,
+          12037,
+          4401,
+          401,
+          28723,
+          28743,
+          28723,
+          304,
+          1319,
+          276,
+          28719,
+          397,
+          5243,
+          740,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.8067297991365194,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490558464,
+        "kv_cache_bytes": 30277632,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10603_P54_2016",
+          "Q10603_P54_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0034914519637823105,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1826,
+          "total_bytes": 1838626,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.46153846153846156,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Marvin Sordell plays for Watford F.C.",
+        "token_ids": [
+          1471,
+          8830,
+          318,
+          556,
+          479,
+          8928,
+          354,
+          12037,
+          4401,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5013212319463491,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 43515904,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q10603_P54_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q10603_P54_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Watford F.C.",
+        "token_ids": [
+          28780,
+          270,
+          4401,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.297211404889822,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490689536,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10603_P54_2016",
+          "Q10603_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038664648309350014,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1826,
+          "total_bytes": 1838626,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Watford F.C.",
+        "token_ids": [
+          12037,
+          4401,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2884051431901753,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10603_P54_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q10603_P54_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Watford F.C.",
+        "token_ids": [
+          28780,
+          270,
+          4401,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.29932582983747125,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490558464,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10603_P54_2016",
+          "Q10603_P54_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004082449246197939,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1826,
+          "total_bytes": 1838626,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Marvin Sordell plays for Watford F.C.",
+        "token_ids": [
+          1471,
+          8830,
+          318,
+          556,
+          479,
+          8928,
+          354,
+          12037,
+          4401,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5020367782562971,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 43515904,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q10603_P54_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q10603_P54_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "England national under-21 football team",
+        "token_ids": [
+          5871,
+          1207,
+          4282,
+          916,
+          28733,
+          28750,
+          28740,
+          6569,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3543520071543753,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490689536,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10603_P54_2016",
+          "Q10603_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.00368290301412344,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1826,
+          "total_bytes": 1838626,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Marvin Sordell plays for England national under-21 football team.",
+        "token_ids": [
+          1471,
+          8830,
+          318,
+          556,
+          479,
+          8928,
+          354,
+          5783,
+          4282,
+          916,
+          28733,
+          28750,
+          28740,
+          6569,
+          1918,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5874245059676468,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 43909120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.7142857142857143
+      }
+    },
+    {
+      "query_id": "Q10603_P54_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q10603_P54_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Burnley F.C.",
+        "token_ids": [
+          28760,
+          453,
+          2047,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2962254290468991,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490558464,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10603_P54_2016",
+          "Q10603_P54_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003825858235359192,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1826,
+          "total_bytes": 1838626,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Marvin Sordell plays for Burnley F.C.",
+        "token_ids": [
+          1471,
+          8830,
+          318,
+          556,
+          479,
+          8928,
+          354,
+          13708,
+          2047,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.499752604868263,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 43515904,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q10603_P54_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q10603_P54_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Burnley F.C.",
+        "token_ids": [
+          28760,
+          453,
+          2047,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.29453173326328397,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490689536,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10603_P54_2016",
+          "Q10603_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003526932094246149,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1826,
+          "total_bytes": 1838626,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Marvin Sordell plays for Burnley F.C.",
+        "token_ids": [
+          1471,
+          8830,
+          318,
+          556,
+          479,
+          8928,
+          354,
+          13708,
+          2047,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5016648857854307,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 43515904,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q10603_P54_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q10603_P54_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Colchester United F.C.",
+        "token_ids": [
+          1577,
+          11841,
+          2969,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2966782678849995,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490558464,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10603_P54_2016",
+          "Q10603_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0039361086674034595,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1826,
+          "total_bytes": 1838626,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Marvin Sordell plays for Burnley F.C.",
+        "token_ids": [
+          1471,
+          8830,
+          318,
+          556,
+          479,
+          8928,
+          354,
+          13708,
+          2047,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6033903360366821,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 43515904,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.2222222222222222
+      }
+    },
+    {
+      "query_id": "Q10603_P54_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q10603_P54_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Colchester United F.C.",
+        "token_ids": [
+          1577,
+          11841,
+          2969,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.347617672290653,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490689536,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10603_P54_2016",
+          "Q10603_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003996297251433134,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1826,
+          "total_bytes": 1838626,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Marvin Sordell plays for Burnley F.C.",
+        "token_ids": [
+          1471,
+          8830,
+          318,
+          556,
+          479,
+          8928,
+          354,
+          13708,
+          2047,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5995618128217757,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 43515904,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.2222222222222222
+      }
+    },
+    {
+      "query_id": "Q10603_P54_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q10603_P54_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Colchester United F.C.",
+        "token_ids": [
+          1577,
+          11841,
+          2969,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3545695738866925,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490558464,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10603_P54_2016",
+          "Q10603_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004196269437670708,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1826,
+          "total_bytes": 1838626,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Marvin Sordell plays for Burnley F.C.",
+        "token_ids": [
+          1471,
+          8830,
+          318,
+          556,
+          479,
+          8928,
+          354,
+          13708,
+          2047,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6103989188559353,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 43515904,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.2222222222222222
+      }
+    },
+    {
+      "query_id": "Q10603_P54_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q10603_P54_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Colchester United F.C.",
+        "token_ids": [
+          1577,
+          11841,
+          2969,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.35714047169312835,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490689536,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10603_P54_2016",
+          "Q10603_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.007794504053890705,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1826,
+          "total_bytes": 1838626,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Marvin Sordell plays for Burnley F.C.",
+        "token_ids": [
+          1471,
+          8830,
+          318,
+          556,
+          479,
+          8928,
+          354,
+          13708,
+          2047,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6104341498576105,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 43515904,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.2222222222222222
+      }
+    },
+    {
+      "query_id": "Q10603_P54_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q10603_P54_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Colchester United F.C.",
+        "token_ids": [
+          1577,
+          11841,
+          2969,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3851420688442886,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490558464,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10603_P54_2016",
+          "Q10603_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004723506048321724,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1826,
+          "total_bytes": 1838626,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Marvin Sordell plays for Burnley F.C.",
+        "token_ids": [
+          1471,
+          8830,
+          318,
+          556,
+          479,
+          8928,
+          354,
+          13708,
+          2047,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5149669898673892,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 43515904,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.2222222222222222
+      }
+    }
+  ],
+  "write_seconds": 0.2687378549017012,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 896,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 224,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1835008,
+      "index_key_bytes": 1792,
+      "metadata_and_format_bytes": 1826,
+      "total_bytes": 1838626,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 224,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1835008,
+    "index_key_bytes": 1792,
+    "metadata_and_format_bytes": 1826,
+    "total_bytes": 1838626,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

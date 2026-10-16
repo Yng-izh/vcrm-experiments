@@ -1,0 +1,844 @@
+{
+  "id": "templama:test:Q101410:P102",
+  "group": "Q101410:P102",
+  "split": "test",
+  "versions": 3,
+  "queries": [
+    {
+      "query_id": "Q101410_P102_2010",
+      "latest": false,
+      "as_of": "2010-01-01T00:00:00",
+      "selected_entry_id": "Q101410_P102_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Union for a Popular Movement",
+        "token_ids": [
+          7085,
+          354,
+          264,
+          22864,
+          25361
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23869726387783885,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q101410_P102_2016",
+          "Q101410_P102_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036649703979492188,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Union for a Popular Movement",
+        "token_ids": [
+          7085,
+          354,
+          264,
+          22864,
+          25361
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2556980708613992,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q101410_P102_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q101410_P102_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Union for a Popular Movement",
+        "token_ids": [
+          7085,
+          354,
+          264,
+          22864,
+          25361
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23406009003520012,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490906624,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q101410_P102_2016",
+          "Q101410_P102_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004451831337064505,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Union for a Popular Movement",
+        "token_ids": [
+          7085,
+          354,
+          264,
+          22864,
+          25361
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.26373845199123025,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q101410_P102_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q101410_P102_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Union for a Popular Movement",
+        "token_ids": [
+          7085,
+          354,
+          264,
+          22864,
+          25361
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23404480144381523,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q101410_P102_2016",
+          "Q101410_P102_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003932595252990723,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Union for a Popular Movement",
+        "token_ids": [
+          7085,
+          354,
+          264,
+          22864,
+          25361
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.25792134599760175,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q101410_P102_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q101410_P102_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Union for a Popular Movement",
+        "token_ids": [
+          7085,
+          354,
+          264,
+          22864,
+          25361
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2351707466877997,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490906624,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q101410_P102_2016",
+          "Q101410_P102_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003846398089081049,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Union for a Popular Movement",
+        "token_ids": [
+          7085,
+          354,
+          264,
+          22864,
+          25361
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3037651972845197,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q101410_P102_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q101410_P102_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Union for a Popular Movement",
+        "token_ids": [
+          7085,
+          354,
+          264,
+          22864,
+          25361
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23356651095673442,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q101410_P102_2016",
+          "Q101410_P102_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003948836587369442,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Union for a Popular Movement",
+        "token_ids": [
+          7085,
+          354,
+          264,
+          22864,
+          25361
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.25911630177870393,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q101410_P102_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q101410_P102_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "The Republicans",
+        "token_ids": [
+          1014,
+          20094
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1421500500291586,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490906624,
+        "kv_cache_bytes": 27525120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q101410_P102_2016",
+          "Q101410_P102_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038534938357770443,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "François Fillon is a member of the The Republicans.",
+        "token_ids": [
+          21976,
+          401,
+          16849,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          415,
+          20094,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.43983018212020397,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 43384832,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.2857142857142857
+      }
+    },
+    {
+      "query_id": "Q101410_P102_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q101410_P102_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "The Republicans",
+        "token_ids": [
+          1014,
+          20094
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.14149244781583548,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 27525120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q101410_P102_2016",
+          "Q101410_P102_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038170991465449333,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "The Republicans",
+        "token_ids": [
+          415,
+          20094
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.16392699908465147,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42205184,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q101410_P102_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q101410_P102_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "The Republicans",
+        "token_ids": [
+          1014,
+          20094
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.14248753897845745,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490906624,
+        "kv_cache_bytes": 27525120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q101410_P102_2016",
+          "Q101410_P102_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036978991702198982,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "François Fillon is a member of the The Republicans.",
+        "token_ids": [
+          21976,
+          401,
+          16849,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          415,
+          20094,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.43542854813858867,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 43384832,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.2857142857142857
+      }
+    },
+    {
+      "query_id": "Q101410_P102_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q101410_P102_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "The Republicans",
+        "token_ids": [
+          1014,
+          20094
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1491274368017912,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 27525120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q101410_P102_2016",
+          "Q101410_P102_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038673742674291134,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "François Fillon is a member of the The Republicans.",
+        "token_ids": [
+          21976,
+          401,
+          16849,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          415,
+          20094,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.48203667905181646,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 43384832,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.2857142857142857
+      }
+    },
+    {
+      "query_id": "Q101410_P102_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q101410_P102_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "The Republicans",
+        "token_ids": [
+          1014,
+          20094
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1414002082310617,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490906624,
+        "kv_cache_bytes": 27525120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q101410_P102_2016",
+          "Q101410_P102_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003794238902628422,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "François Fillon is a member of the The Republicans.",
+        "token_ids": [
+          21976,
+          401,
+          16849,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          415,
+          20094,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4408876639790833,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 43384832,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.2857142857142857
+      }
+    },
+    {
+      "query_id": "Q101410_P102_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q101410_P102_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "The Republicans",
+        "token_ids": [
+          1014,
+          20094
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.14325644867494702,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 27525120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q101410_P102_2016",
+          "Q101410_P102_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004314878955483437,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "The Republicans",
+        "token_ids": [
+          415,
+          20094
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.16744239395484328,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42205184,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.1307382807135582,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 384,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 160,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1310720,
+      "index_key_bytes": 768,
+      "metadata_and_format_bytes": 972,
+      "total_bytes": 1312460,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 160,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1310720,
+    "index_key_bytes": 768,
+    "metadata_and_format_bytes": 972,
+    "total_bytes": 1312460,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

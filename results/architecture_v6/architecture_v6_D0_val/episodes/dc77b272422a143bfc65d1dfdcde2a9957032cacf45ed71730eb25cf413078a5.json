@@ -1,0 +1,319 @@
+{
+  "id": "templama:val:Q288838:P488",
+  "group": "Q288838:P488",
+  "split": "val",
+  "versions": 5,
+  "queries": [
+    {
+      "query_id": "Q288838_P488_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q288838_P488_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "John Banks",
+        "token_ids": [
+          2215,
+          365,
+          3750
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.18156291311606765,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499690496,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q288838_P488_2015",
+          "Q288838_P488_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.009056586306542158,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1475,
+          "total_bytes": 1575619,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 1
+      },
+      "uncompressed_pair": {
+        "answer": "David Seymour",
+        "token_ids": [
+          4417,
+          1091,
+          1082,
+          423
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.24298877222463489,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528240128,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q288838_P488_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q288838_P488_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "John Banks",
+        "token_ids": [
+          2215,
+          365,
+          3750
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.18559697782620788,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499821568,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q288838_P488_2015",
+          "Q288838_P488_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.008714331779628992,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1475,
+          "total_bytes": 1575619,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "David Banks",
+        "token_ids": [
+          4417,
+          365,
+          3750
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20852897595614195,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528240128,
+        "kv_cache_bytes": 42336256,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q288838_P488_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q288838_P488_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "John Banks",
+        "token_ids": [
+          2215,
+          365,
+          3750
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.18202790524810553,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499690496,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q288838_P488_2015",
+          "Q288838_P488_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.009214709978550673,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1475,
+          "total_bytes": 1575619,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "David Banks",
+        "token_ids": [
+          4417,
+          365,
+          3750
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2129873912781477,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528240128,
+        "kv_cache_bytes": 42336256,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q288838_P488_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q288838_P488_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "John Banks",
+        "token_ids": [
+          2215,
+          365,
+          3750
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.18448440497741103,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499821568,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q288838_P488_2015",
+          "Q288838_P488_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.009499514941126108,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1475,
+          "total_bytes": 1575619,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "David Seymour",
+        "token_ids": [
+          4417,
+          1091,
+          1082,
+          423
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2500659078359604,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528240128,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.08061283407732844,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 640,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 192,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1572864,
+      "index_key_bytes": 1280,
+      "metadata_and_format_bytes": 1475,
+      "total_bytes": 1575619,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 192,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1572864,
+    "index_key_bytes": 1280,
+    "metadata_and_format_bytes": 1475,
+    "total_bytes": 1575619,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

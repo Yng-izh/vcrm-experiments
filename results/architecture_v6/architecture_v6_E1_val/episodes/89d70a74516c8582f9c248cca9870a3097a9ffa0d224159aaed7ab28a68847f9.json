@@ -1,0 +1,572 @@
+{
+  "id": "templama:val:Q161038:P54",
+  "group": "Q161038:P54",
+  "split": "val",
+  "versions": 6,
+  "queries": [
+    {
+      "query_id": "Q161038_P54_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q161038_P54_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Neven Subotić plays for Fenerbahçe S.K.",
+        "token_ids": [
+          418,
+          8790,
+          5078,
+          9469,
+          28900,
+          8928,
+          354,
+          401,
+          790,
+          28726,
+          912,
+          28857,
+          28706,
+          318,
+          28723,
+          28796,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6179464180022478,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499473408,
+        "kv_cache_bytes": 29360128,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q161038_P54_2020",
+          "Q161038_P54_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003884498029947281,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1692,
+          "total_bytes": 1707164,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Borussia Dortmund",
+        "token_ids": [
+          9411,
+          28397,
+          27238,
+          18060
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2332348208874464,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527990272,
+        "kv_cache_bytes": 42336256,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q161038_P54_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q161038_P54_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Neven Subotić plays for Fenerbahçe S.K.",
+        "token_ids": [
+          418,
+          8790,
+          5078,
+          9469,
+          28900,
+          8928,
+          354,
+          401,
+          790,
+          28726,
+          912,
+          28857,
+          28706,
+          318,
+          28723,
+          28796,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6253578932955861,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499604480,
+        "kv_cache_bytes": 29360128,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q161038_P54_2020",
+          "Q161038_P54_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.00433471892029047,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1692,
+          "total_bytes": 1707164,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Borussia Dortmund",
+        "token_ids": [
+          9411,
+          28397,
+          27238,
+          18060
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23128570010885596,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527990272,
+        "kv_cache_bytes": 42336256,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q161038_P54_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q161038_P54_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Neven Subotić plays for Fenerbahçe S.K.",
+        "token_ids": [
+          418,
+          8790,
+          5078,
+          9469,
+          28900,
+          8928,
+          354,
+          401,
+          790,
+          28726,
+          912,
+          28857,
+          28706,
+          318,
+          28723,
+          28796,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6363729289732873,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499473408,
+        "kv_cache_bytes": 29360128,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q161038_P54_2020",
+          "Q161038_P54_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004269467666745186,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1692,
+          "total_bytes": 1707164,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Borussia Dortmund",
+        "token_ids": [
+          9411,
+          28397,
+          27238,
+          18060
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23503127414733171,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527990272,
+        "kv_cache_bytes": 42336256,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q161038_P54_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q161038_P54_2017",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Neven Subotić plays for Fenerbahçe S.K.",
+        "token_ids": [
+          418,
+          8790,
+          5078,
+          9469,
+          28900,
+          8928,
+          354,
+          401,
+          790,
+          28726,
+          912,
+          28857,
+          28706,
+          318,
+          28723,
+          28796,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6518393149599433,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499604480,
+        "kv_cache_bytes": 29360128,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q161038_P54_2020",
+          "Q161038_P54_2017"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0044939639046788216,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1692,
+          "total_bytes": 1707164,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Neven Subotić plays for 1. FC Union Berlin.",
+        "token_ids": [
+          418,
+          8790,
+          5078,
+          9469,
+          28900,
+          8928,
+          354,
+          28705,
+          28740,
+          28723,
+          9138,
+          7085,
+          8430,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5610960461199284,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527990272,
+        "kv_cache_bytes": 43646976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.36363636363636365
+      }
+    },
+    {
+      "query_id": "Q161038_P54_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q161038_P54_2018",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Neven Subotić plays for FK Crvena zvezda.",
+        "token_ids": [
+          418,
+          8790,
+          5078,
+          9469,
+          28900,
+          8928,
+          354,
+          401,
+          28796,
+          4603,
+          1434,
+          28708,
+          686,
+          20650,
+          1705,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6112732500769198,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499473408,
+        "kv_cache_bytes": 29229056,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q161038_P54_2020",
+          "Q161038_P54_2018"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.005212398245930672,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1692,
+          "total_bytes": 1707164,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Neven Subotić plays for 1. FC Union Berlin.",
+        "token_ids": [
+          418,
+          8790,
+          5078,
+          9469,
+          28900,
+          8928,
+          354,
+          28705,
+          28740,
+          28723,
+          9138,
+          7085,
+          8430,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5887003228999674,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527990272,
+        "kv_cache_bytes": 43646976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q161038_P54_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q161038_P54_2019",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Neven Subotić plays for FC Schalke 04.",
+        "token_ids": [
+          418,
+          8790,
+          5078,
+          9469,
+          28900,
+          8928,
+          354,
+          9138,
+          1609,
+          282,
+          405,
+          28705,
+          28734,
+          28781,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.583494879771024,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499604480,
+        "kv_cache_bytes": 29097984,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q161038_P54_2020",
+          "Q161038_P54_2019"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.00437708105891943,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1692,
+          "total_bytes": 1707164,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.18181818181818182,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Neven Subotić plays for 1. FC Union Berlin.",
+        "token_ids": [
+          418,
+          8790,
+          5078,
+          9469,
+          28900,
+          8928,
+          354,
+          28705,
+          28740,
+          28723,
+          9138,
+          7085,
+          8430,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5598580460064113,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527990272,
+        "kv_cache_bytes": 43646976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666
+      }
+    }
+  ],
+  "write_seconds": 0.09817637875676155,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 768,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 208,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1703936,
+      "index_key_bytes": 1536,
+      "metadata_and_format_bytes": 1692,
+      "total_bytes": 1707164,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 208,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1703936,
+    "index_key_bytes": 1536,
+    "metadata_and_format_bytes": 1692,
+    "total_bytes": 1707164,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

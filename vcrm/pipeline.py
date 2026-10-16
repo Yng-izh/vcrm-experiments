@@ -10,12 +10,32 @@ from .metrics import exact, f1
 from .store import MemoryStore
 
 
+def validation_subset(episodes, limit=None):
+    if not limit:
+        return episodes
+    strata = defaultdict(list)
+    for episode in episodes:
+        strata[(episode['group'].split(':')[-1], len(episode['events']) > 1)].append(episode)
+    buckets = [sorted(rows, key=lambda e: digest(e['id'])) for _, rows in sorted(strata.items())]
+    chosen = []
+    while buckets and len(chosen) < limit:
+        for bucket in buckets:
+            if len(chosen) == limit:
+                break
+            chosen.append(bucket.pop(0))
+        buckets = [b for b in buckets if b]
+    return chosen
+
+
 def evaluate(config, root, split='val', limit=None, shard=0, shards=1):
     from .reader import FrozenReader
-    if split != 'val':
-        raise ValueError('Readability gate uses independent validation only, never benchmark test')
-    episodes = read_json(Path(config['data_root']) / 'prepared/templama_val.json')
-    episodes = (episodes[:limit] if limit else episodes)[shard::shards]
+    if split not in ('val', 'test'):
+        raise ValueError('Evaluate only independent validation or held-out test')
+    episodes = read_json(Path(config['data_root']) / f'prepared/templama_{split}.json')
+    episodes = validation_subset(episodes, limit)[shard::shards]
+    if config.get('use_feature_cache'):
+        from .features import check
+        check(config, split)
     reader = FrozenReader(config)
     ceiling = 2 ** 50
     for i, episode in enumerate(episodes):
@@ -27,7 +47,14 @@ def evaluate(config, root, split='val', limit=None, shard=0, shards=1):
         started = time.perf_counter()
         trace = []
         for event in ingestion_view(episode):
-            memory = reader.encode_event(event)
+            if config.get('use_feature_cache'):
+                from .features import load
+                memory = load(config, split, episode['id'], event)
+            else:
+                memory = reader.encode_event(event)
+            if config.get('save_features'):
+                from .features import save
+                save(config, split, episode['id'], event, memory)
             receipt = store.ingest(event, memory)
             if receipt['dropped']:
                 raise AssertionError('No eviction is allowed at the readability gate')
@@ -38,8 +65,12 @@ def evaluate(config, root, split='val', limit=None, shard=0, shards=1):
         store_path = row_path(root, 'stores', episode['id']).with_suffix('.memory')
         store.save(store_path)
         store = MemoryStore.load(store_path, ceiling)
-        outputs = []
+        partial = row_path(root, 'partial_episodes', episode['id'])
+        outputs = read_json(partial)['queries'] if partial.exists() else []
+        finished = {q['query_id'] for q in outputs}
         for query in episode['queries']:
+            if query['id'] in finished:
+                continue
             visible = query_view(query)
             chosen = store.select(visible, config['read_latent_slots'])
             if len(chosen) != 1:
@@ -70,18 +101,23 @@ def evaluate(config, root, split='val', limit=None, shard=0, shards=1):
                             'as_of': query['as_of'], 'selected_entry_id': chosen[0]['id'],
                             'selected_time': chosen[0]['time'], 'single_entry_equals_indexed': True,
                             'answers': answers, 'scores': scores})
+            write_json(partial, {'id': episode['id'], 'queries': outputs})
+            print(f'baseline shard={shard} episode={i+1}/{len(episodes)} '
+                  f'query={len(outputs)}/{len(episode["queries"])} '
+                  f'latent_EM={scores["latent"]["accuracy"]} text_EM={scores["text"]["accuracy"]}', flush=True)
         write_json(destination, {'id': episode['id'], 'group': episode['group'], 'dataset': 'templama',
-            'split': 'val', 'versions': len(store.entries), 'queries': outputs, 'write_seconds': write_seconds,
+            'split': split, 'versions': len(store.entries), 'queries': outputs, 'write_seconds': write_seconds,
             'write_trace': trace, 'latent_accounting': store.accounting(), 'text_accounting': text_store.accounting(),
             'capacity_protocol': 'unbounded readability diagnostic, no codec/eviction',
             'state_index_protocol': 'Explicit published entity/relation and requested observation year',
-            'scope': 'smoke' if limit else 'validation'})
+            'scope': 'smoke' if limit else 'validation' if split == 'val' else 'held_out_test'})
+        partial.unlink(missing_ok=True)
         print(f'shard={shard} {i+1}/{len(episodes)} {episode["id"]} versions={len(store.entries)}', flush=True)
 
 
-def summarize(config, root, limit=None):
-    episodes = read_json(Path(config['data_root']) / 'prepared/templama_val.json')
-    expected_ids = {e['id'] for e in (episodes[:limit] if limit else episodes)}
+def summarize(config, root, limit=None, split='val'):
+    episodes = read_json(Path(config['data_root']) / f'prepared/templama_{split}.json')
+    expected_ids = {e['id'] for e in validation_subset(episodes, limit)}
     rows = [read_json(p) for p in (Path(root) / 'episodes').glob('*.json')]
     ids = [r['id'] for r in rows]
     if len(ids) != len(set(ids)) or not set(ids) <= expected_ids:
@@ -105,23 +141,30 @@ def summarize(config, root, limit=None):
             'historical_f1': mean([q['scores'][method]['f1'] for q in historical if method in q['scores']]),
             'read_seconds_mean': mean([q['answers'][method]['read_seconds'] for q in chosen]),
             'prompt_tokens_mean': mean([q['answers'][method]['prompt_tokens'] for q in chosen]),
+            'decoder_latent_slots_mean': mean([q['answers'][method]['read_latent_slots'] for q in chosen]),
+            'kv_cache_bytes_mean': mean([q['answers'][method]['kv_cache_bytes'] for q in chosen]),
+            'peak_gpu_bytes_max': max((q['answers'][method]['peak_gpu_bytes'] for q in chosen), default=None),
             'generation_limit_hits': sum(q['answers'][method]['generation_limit_hit'] for q in chosen)}
     grouped = defaultdict(list)
     for row in rows:
         grouped[row['group']].extend(row['queries'])
-    result = {'complete': set(ids) == expected_ids and bool(rows), 'scope': 'smoke' if limit else 'validation',
+    result = {'complete': set(ids) == expected_ids and bool(rows),
+              'scope': 'smoke' if limit else 'validation' if split == 'val' else 'held_out_test',
               'expected_episodes': len(expected_ids), 'completed_episodes': len(rows), 'queries': len(flat),
               'multi_version_episodes': sum(r['versions'] > 1 for r in rows),
               'historical_queries_on_changed_facts': len(historical), 'methods': methods,
+              'wrong_version_return_rate': mean([q['scores']['latent']['stale_answer'] for q in historical]),
               'single_entry_accuracy': methods['latent']['accuracy'],
               'single_entry_equals_indexed': bool(flat) and all(q['single_entry_equals_indexed'] for q in flat),
               'latent_payload_bytes_mean': mean([r['latent_accounting']['memory_bytes'] for r in rows]),
               'latent_total_bytes_mean': mean([r['latent_accounting']['total_bytes'] for r in rows]),
+              'resident_latent_slots_mean': mean([r['latent_accounting']['resident_latent_slots'] for r in rows]),
               'text_total_bytes_mean': mean([r['text_accounting']['total_bytes'] for r in rows]),
               'write_seconds_mean': mean([r['write_seconds'] for r in rows]),
               'group_macro_accuracy': mean([mean([q['scores']['latent']['accuracy'] for q in qs])
                                             for qs in grouped.values()]),
               'notes': ['Current/Historical subset definitions use original yearly labels.',
+                        'Limited pilot uses deterministic round-robin relation/change strata, not first alphabetical groups.',
                         'Historical subset requires at least one observed fact change.',
                         'Single-entry and indexed memory identity is checked, not a duplicate trial.',
                         'Text/no-memory/wrong-version controls use the same frozen decoder.',
@@ -131,10 +174,10 @@ def summarize(config, root, limit=None):
     return result
 
 
-def gate_decision(config, summary, adaptation):
+def gate_decision(config, summary, adaptation=None):
     if summary.get('scope') != 'validation' or not summary.get('complete'):
         raise RuntimeError('A smoke/partial run cannot open the ICAE research gate')
-    if not adaptation.get('completed') or adaptation.get('scope') != 'full_training_split':
+    if adaptation is not None and (not adaptation.get('completed') or adaptation.get('scope') != 'full_training_split'):
         raise RuntimeError('Complete train-only encoder adaptation before accepting validation')
     latent, empty = summary['methods']['latent'], summary['methods']['no_memory']
     gap = latent['accuracy'] - empty['accuracy']
@@ -151,4 +194,5 @@ def gate_decision(config, summary, adaptation):
     return {'decision': 'eligible_for_manual_review' if all(checks.values()) else 'hold_replace_or_fix_icae_checkpoint',
             'checks': checks, 'criteria': config['gate'], 'latent_minus_no_memory': gap,
             'codec_training_allowed': False, 'manual_review_required': True,
+            'encoder_protocol': 'adapted' if adaptation is not None else 'official_zero_shot',
             'note': 'This is the only research-entry gate. TransMem/LoCoMo reproduction is archival, not required.'}

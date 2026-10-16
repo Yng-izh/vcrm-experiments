@@ -1,0 +1,848 @@
+{
+  "id": "templama:test:Q1021708:P39",
+  "group": "Q1021708:P39",
+  "split": "test",
+  "versions": 4,
+  "queries": [
+    {
+      "query_id": "Q1021708_P39_2010",
+      "latest": false,
+      "as_of": "2010-01-01T00:00:00",
+      "selected_entry_id": "Q1021708_P39_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "President of the Region of Murcia",
+        "token_ids": [
+          19167,
+          1129,
+          302,
+          272,
+          13365,
+          302,
+          7423,
+          5011
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.32224514428526163,
+        "prompt_tokens": 214,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15492212224,
+        "kv_cache_bytes": 29097984,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1021708_P39_2018",
+          "Q1021708_P39_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0034679980017244816,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1194,
+          "total_bytes": 1444010,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "President of the Region of Murcia",
+        "token_ids": [
+          5120,
+          302,
+          272,
+          13365,
+          302,
+          7423,
+          5011
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3149653831496835,
+        "prompt_tokens": 326,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520827904,
+        "kv_cache_bytes": 43646976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1021708_P39_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q1021708_P39_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "President of the Region of Murcia",
+        "token_ids": [
+          19167,
+          1129,
+          302,
+          272,
+          13365,
+          302,
+          7423,
+          5011
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3190469187684357,
+        "prompt_tokens": 214,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15492081152,
+        "kv_cache_bytes": 29097984,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1021708_P39_2018",
+          "Q1021708_P39_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037850728258490562,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1194,
+          "total_bytes": 1444010,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "President of the Region of Murcia",
+        "token_ids": [
+          5120,
+          302,
+          272,
+          13365,
+          302,
+          7423,
+          5011
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.314359936863184,
+        "prompt_tokens": 326,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520827904,
+        "kv_cache_bytes": 43646976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1021708_P39_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q1021708_P39_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "President of the Region of Murcia",
+        "token_ids": [
+          19167,
+          1129,
+          302,
+          272,
+          13365,
+          302,
+          7423,
+          5011
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3197642732411623,
+        "prompt_tokens": 214,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15492212224,
+        "kv_cache_bytes": 29097984,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1021708_P39_2018",
+          "Q1021708_P39_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036790650337934494,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1194,
+          "total_bytes": 1444010,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "President of the Region of Murcia",
+        "token_ids": [
+          5120,
+          302,
+          272,
+          13365,
+          302,
+          7423,
+          5011
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3186224661767483,
+        "prompt_tokens": 326,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520827904,
+        "kv_cache_bytes": 43646976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1021708_P39_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q1021708_P39_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "President of the Region of Murcia",
+        "token_ids": [
+          19167,
+          1129,
+          302,
+          272,
+          13365,
+          302,
+          7423,
+          5011
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3207233608700335,
+        "prompt_tokens": 214,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15492081152,
+        "kv_cache_bytes": 29097984,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1021708_P39_2018",
+          "Q1021708_P39_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004099640995264053,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1194,
+          "total_bytes": 1444010,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "President of the Region of Murcia",
+        "token_ids": [
+          5120,
+          302,
+          272,
+          13365,
+          302,
+          7423,
+          5011
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.31484212493523955,
+        "prompt_tokens": 326,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520827904,
+        "kv_cache_bytes": 43646976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1021708_P39_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q1021708_P39_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "member of the European Parliament",
+        "token_ids": [
+          4292,
+          302,
+          272,
+          6392,
+          15490
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2292923708446324,
+        "prompt_tokens": 214,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15492212224,
+        "kv_cache_bytes": 28704768,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1021708_P39_2018",
+          "Q1021708_P39_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003762710839509964,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1194,
+          "total_bytes": 1444010,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Member of the European Parliament / President of the European Parliament / Vice-President of the European Parliament",
+        "token_ids": [
+          15178,
+          302,
+          272,
+          6392,
+          15490,
+          732,
+          5120,
+          302,
+          272,
+          6392,
+          15490,
+          732,
+          17224,
+          28733,
+          19167,
+          1129,
+          302,
+          272,
+          6392,
+          15490
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.7107384549453855,
+        "prompt_tokens": 326,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520827904,
+        "kv_cache_bytes": 45350912,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q1021708_P39_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q1021708_P39_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "member of the European Parliament",
+        "token_ids": [
+          4292,
+          302,
+          272,
+          6392,
+          15490
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23087662691250443,
+        "prompt_tokens": 214,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15492081152,
+        "kv_cache_bytes": 28704768,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1021708_P39_2018",
+          "Q1021708_P39_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003675288986414671,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1194,
+          "total_bytes": 1444010,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Member of the European Parliament / Vice President of the European Parliament",
+        "token_ids": [
+          15178,
+          302,
+          272,
+          6392,
+          15490,
+          732,
+          17224,
+          5120,
+          302,
+          272,
+          6392,
+          15490
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4726073117926717,
+        "prompt_tokens": 326,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520827904,
+        "kv_cache_bytes": 44302336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.7142857142857143
+      }
+    },
+    {
+      "query_id": "Q1021708_P39_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q1021708_P39_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "member of the European Parliament",
+        "token_ids": [
+          4292,
+          302,
+          272,
+          6392,
+          15490
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23216183995828032,
+        "prompt_tokens": 214,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15492212224,
+        "kv_cache_bytes": 28704768,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1021708_P39_2018",
+          "Q1021708_P39_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.00384422205388546,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1194,
+          "total_bytes": 1444010,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Member of the European Parliament / Vice President of the European Parliament",
+        "token_ids": [
+          15178,
+          302,
+          272,
+          6392,
+          15490,
+          732,
+          17224,
+          5120,
+          302,
+          272,
+          6392,
+          15490
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4731954331509769,
+        "prompt_tokens": 326,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520827904,
+        "kv_cache_bytes": 44302336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.7142857142857143
+      }
+    },
+    {
+      "query_id": "Q1021708_P39_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q1021708_P39_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "member of the European Parliament",
+        "token_ids": [
+          4292,
+          302,
+          272,
+          6392,
+          15490
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22913134098052979,
+        "prompt_tokens": 214,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15492081152,
+        "kv_cache_bytes": 28704768,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1021708_P39_2018",
+          "Q1021708_P39_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.00391753064468503,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1194,
+          "total_bytes": 1444010,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Member of the European Parliament / Vice President of the European Parliament",
+        "token_ids": [
+          15178,
+          302,
+          272,
+          6392,
+          15490,
+          732,
+          17224,
+          5120,
+          302,
+          272,
+          6392,
+          15490
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.46796723222360015,
+        "prompt_tokens": 326,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520827904,
+        "kv_cache_bytes": 44302336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.7142857142857143
+      }
+    },
+    {
+      "query_id": "Q1021708_P39_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q1021708_P39_2018",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Member of the European Parliament",
+        "token_ids": [
+          15178,
+          302,
+          272,
+          6392,
+          15490
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22905046911910176,
+        "prompt_tokens": 214,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15492212224,
+        "kv_cache_bytes": 28704768,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1021708_P39_2018",
+          "Q1021708_P39_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036988207139074802,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1194,
+          "total_bytes": 1444010,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Member of the European Parliament / Vice President of the European Parliament",
+        "token_ids": [
+          15178,
+          302,
+          272,
+          6392,
+          15490,
+          732,
+          17224,
+          5120,
+          302,
+          272,
+          6392,
+          15490
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.46563866874203086,
+        "prompt_tokens": 326,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520827904,
+        "kv_cache_bytes": 44302336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.7142857142857143
+      }
+    },
+    {
+      "query_id": "Q1021708_P39_2019",
+      "latest": true,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q1021708_P39_2018",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Member of the European Parliament / Vice President of the European Parliament",
+        "token_ids": [
+          15178,
+          302,
+          272,
+          6392,
+          15490,
+          732,
+          17224,
+          5120,
+          302,
+          272,
+          6392,
+          15490
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.44535981491208076,
+        "prompt_tokens": 214,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15492081152,
+        "kv_cache_bytes": 29622272,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1021708_P39_2018",
+          "Q1021708_P39_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004942070692777634,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1194,
+          "total_bytes": 1444010,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.7142857142857143,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Member of the European Parliament / Vice President of the European Parliament",
+        "token_ids": [
+          15178,
+          302,
+          272,
+          6392,
+          15490,
+          732,
+          17224,
+          5120,
+          302,
+          272,
+          6392,
+          15490
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4771520011126995,
+        "prompt_tokens": 326,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520827904,
+        "kv_cache_bytes": 44302336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.7142857142857143
+      }
+    }
+  ],
+  "write_seconds": 0.1753891808912158,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 512,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 176,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1441792,
+      "index_key_bytes": 1024,
+      "metadata_and_format_bytes": 1194,
+      "total_bytes": 1444010,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 176,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1441792,
+    "index_key_bytes": 1024,
+    "metadata_and_format_bytes": 1194,
+    "total_bytes": 1444010,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

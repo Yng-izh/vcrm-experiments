@@ -1,0 +1,611 @@
+{
+  "id": "templama:val:Q11719711:P102",
+  "group": "Q11719711:P102",
+  "split": "val",
+  "versions": 5,
+  "queries": [
+    {
+      "query_id": "Q11719711_P102_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q11719711_P102_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Freedom and Solidarity Party",
+        "token_ids": [
+          28765,
+          6868,
+          304,
+          6849,
+          313,
+          11910,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3280963839497417,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500691968,
+        "kv_cache_bytes": 28704768,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11719711_P102_2020",
+          "Q11719711_P102_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004545964999124408,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1509,
+          "total_bytes": 1575653,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "For the People",
+        "token_ids": [
+          1263,
+          272,
+          5619
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2123303199186921,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15529242112,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q11719711_P102_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q11719711_P102_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Freedom and Solidarity Party",
+        "token_ids": [
+          22429,
+          304,
+          6849,
+          313,
+          11910,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.29538940894417465,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500560896,
+        "kv_cache_bytes": 28573696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11719711_P102_2020",
+          "Q11719711_P102_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004510323982685804,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1509,
+          "total_bytes": 1575653,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "For the People",
+        "token_ids": [
+          1263,
+          272,
+          5619
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2148811430670321,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15529242112,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q11719711_P102_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q11719711_P102_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Freedom and Solidarity Party",
+        "token_ids": [
+          22429,
+          304,
+          6849,
+          313,
+          11910,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2917642018292099,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500691968,
+        "kv_cache_bytes": 28573696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11719711_P102_2020",
+          "Q11719711_P102_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004489548038691282,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1509,
+          "total_bytes": 1575653,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "For the People",
+        "token_ids": [
+          1263,
+          272,
+          5619
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.21032340917736292,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15529242112,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q11719711_P102_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q11719711_P102_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Freedom and Solidarity Party",
+        "token_ids": [
+          22429,
+          304,
+          6849,
+          313,
+          11910,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2880660048685968,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500560896,
+        "kv_cache_bytes": 28573696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11719711_P102_2020",
+          "Q11719711_P102_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004519360838457942,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1509,
+          "total_bytes": 1575653,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "For the People",
+        "token_ids": [
+          1263,
+          272,
+          5619
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2066498079802841,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15529242112,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q11719711_P102_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q11719711_P102_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Freedom and Solidarity Party",
+        "token_ids": [
+          22429,
+          304,
+          6849,
+          313,
+          11910,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2860735689755529,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500691968,
+        "kv_cache_bytes": 28573696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11719711_P102_2020",
+          "Q11719711_P102_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004130625864490867,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1509,
+          "total_bytes": 1575653,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "For the People",
+        "token_ids": [
+          1263,
+          272,
+          5619
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20893132593482733,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15529242112,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q11719711_P102_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q11719711_P102_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "We Are Family party",
+        "token_ids": [
+          816,
+          4867,
+          10712,
+          4150
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2192308430094272,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500560896,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11719711_P102_2020",
+          "Q11719711_P102_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004405972082167864,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1509,
+          "total_bytes": 1575653,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "For the People",
+        "token_ids": [
+          1263,
+          272,
+          5619
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20549349603243172,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15529242112,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q11719711_P102_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q11719711_P102_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "We Are Family party",
+        "token_ids": [
+          816,
+          4867,
+          10712,
+          4150
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.223212850978598,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500691968,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11719711_P102_2020",
+          "Q11719711_P102_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004483612021431327,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1509,
+          "total_bytes": 1575653,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "For the People",
+        "token_ids": [
+          1263,
+          272,
+          5619
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20787689299322665,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15529242112,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q11719711_P102_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q11719711_P102_2019",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "For the People",
+        "token_ids": [
+          1263,
+          272,
+          5619
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19039912312291563,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500560896,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11719711_P102_2020",
+          "Q11719711_P102_2019"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004243587842211127,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1509,
+          "total_bytes": 1575653,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "For the People",
+        "token_ids": [
+          1263,
+          272,
+          5619
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.214590216986835,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15529242112,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.23859843611717224,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 640,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 192,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1572864,
+      "index_key_bytes": 1280,
+      "metadata_and_format_bytes": 1509,
+      "total_bytes": 1575653,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 192,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1572864,
+    "index_key_bytes": 1280,
+    "metadata_and_format_bytes": 1509,
+    "total_bytes": 1575653,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

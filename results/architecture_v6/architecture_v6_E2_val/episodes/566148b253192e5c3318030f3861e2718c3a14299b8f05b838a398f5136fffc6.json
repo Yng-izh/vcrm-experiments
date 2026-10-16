@@ -1,0 +1,179 @@
+{
+  "id": "templama:val:Q101859:P286",
+  "group": "Q101859:P286",
+  "split": "val",
+  "versions": 4,
+  "queries": [
+    {
+      "query_id": "Q101859_P286_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q101859_P286_2018",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Oliver Glasner",
+        "token_ids": [
+          17979,
+          22462,
+          1079
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2545354780741036,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15496366592,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q101859_P286_2020",
+          "Q101859_P286_2018"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004417890915647149,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1238,
+          "total_bytes": 1444054,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 1
+      },
+      "uncompressed_pair": {
+        "answer": "Oliver Schmidt",
+        "token_ids": [
+          17979,
+          1609,
+          26366
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.21033260296098888,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15529242112,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q101859_P286_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q101859_P286_2019",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Oliver Glasner",
+        "token_ids": [
+          17979,
+          22462,
+          1079
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.18713686801493168,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500560896,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q101859_P286_2020",
+          "Q101859_P286_2019"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004202370066195726,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1238,
+          "total_bytes": 1444054,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Oliver Glasner",
+        "token_ids": [
+          17979,
+          22462,
+          1079
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20871857181191444,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15529242112,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.4243595879524946,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 512,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 176,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1441792,
+      "index_key_bytes": 1024,
+      "metadata_and_format_bytes": 1238,
+      "total_bytes": 1444054,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 176,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1441792,
+    "index_key_bytes": 1024,
+    "metadata_and_format_bytes": 1238,
+    "total_bytes": 1444054,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

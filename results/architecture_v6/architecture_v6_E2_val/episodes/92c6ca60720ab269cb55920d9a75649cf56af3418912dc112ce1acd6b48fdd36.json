@@ -1,0 +1,479 @@
+{
+  "id": "templama:val:Q15051198:P108",
+  "group": "Q15051198:P108",
+  "split": "val",
+  "versions": 5,
+  "queries": [
+    {
+      "query_id": "Q15051198_P108_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q15051198_P108_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Peter Mathieson works for the University of Aberdeen.",
+        "token_ids": [
+          5966,
+          6960,
+          497,
+          266,
+          3791,
+          354,
+          272,
+          2900,
+          302,
+          25601,
+          450,
+          269,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5170008761342615,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499255296,
+        "kv_cache_bytes": 28704768,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q15051198_P108_2019",
+          "Q15051198_P108_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004168279934674501,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1509,
+          "total_bytes": 1575653,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.4,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Peter Mathieson works for University of Edinburgh and University of Hong Kong.",
+        "token_ids": [
+          5966,
+          6960,
+          497,
+          266,
+          3791,
+          354,
+          2900,
+          302,
+          25970,
+          304,
+          2900,
+          302,
+          12966,
+          12544,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5826224209740758,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527739392,
+        "kv_cache_bytes": 43646976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q15051198_P108_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q15051198_P108_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Peter Mathieson works for the University of Aberdeen.",
+        "token_ids": [
+          5966,
+          6960,
+          497,
+          266,
+          3791,
+          354,
+          272,
+          2900,
+          302,
+          25601,
+          450,
+          269,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4983424430247396,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499386368,
+        "kv_cache_bytes": 28704768,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q15051198_P108_2019",
+          "Q15051198_P108_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004149094922468066,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1509,
+          "total_bytes": 1575653,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.36363636363636365,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Peter Mathieson works for University of Edinburgh.",
+        "token_ids": [
+          5966,
+          6960,
+          497,
+          266,
+          3791,
+          354,
+          2900,
+          302,
+          25970,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4247475219890475,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527739392,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.36363636363636365
+      }
+    },
+    {
+      "query_id": "Q15051198_P108_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q15051198_P108_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Peter Mathieson works for the University of St Andrews.",
+        "token_ids": [
+          5966,
+          6960,
+          497,
+          266,
+          3791,
+          354,
+          272,
+          2900,
+          302,
+          662,
+          10390,
+          28713,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5119374371133745,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499255296,
+        "kv_cache_bytes": 28704768,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q15051198_P108_2019",
+          "Q15051198_P108_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004666587105020881,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1509,
+          "total_bytes": 1575653,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.3333333333333333,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Peter Mathieson works for University of Edinburgh.",
+        "token_ids": [
+          5966,
+          6960,
+          497,
+          266,
+          3791,
+          354,
+          2900,
+          302,
+          25970,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.42357593099586666,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527739392,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.36363636363636365
+      }
+    },
+    {
+      "query_id": "Q15051198_P108_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q15051198_P108_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Peter Mathieson works for the University of St Andrews.",
+        "token_ids": [
+          5966,
+          6960,
+          497,
+          266,
+          3791,
+          354,
+          272,
+          2900,
+          302,
+          662,
+          10390,
+          28713,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5134618820156902,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499386368,
+        "kv_cache_bytes": 28704768,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q15051198_P108_2019",
+          "Q15051198_P108_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004284215858206153,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1509,
+          "total_bytes": 1575653,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.3333333333333333,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Peter Mathieson works for University of Edinburgh.",
+        "token_ids": [
+          5966,
+          6960,
+          497,
+          266,
+          3791,
+          354,
+          2900,
+          302,
+          25970,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4353879059199244,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527739392,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.36363636363636365
+      }
+    },
+    {
+      "query_id": "Q15051198_P108_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q15051198_P108_2018",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Peter Mathieson works for the University of Edinburgh.",
+        "token_ids": [
+          5966,
+          6960,
+          497,
+          266,
+          3791,
+          354,
+          272,
+          2900,
+          302,
+          25970,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.45418344787321985,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499255296,
+        "kv_cache_bytes": 28442624,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q15051198_P108_2019",
+          "Q15051198_P108_2018"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004565899958834052,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1509,
+          "total_bytes": 1575653,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.6,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Peter Mathieson works for University of Edinburgh and University of Hong Kong.",
+        "token_ids": [
+          5966,
+          6960,
+          497,
+          266,
+          3791,
+          354,
+          2900,
+          302,
+          25970,
+          304,
+          2900,
+          302,
+          12966,
+          12544,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5854792150203139,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527739392,
+        "kv_cache_bytes": 43646976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    }
+  ],
+  "write_seconds": 0.2262930190190673,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 640,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 192,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1572864,
+      "index_key_bytes": 1280,
+      "metadata_and_format_bytes": 1509,
+      "total_bytes": 1575653,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 192,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1572864,
+    "index_key_bytes": 1280,
+    "metadata_and_format_bytes": 1509,
+    "total_bytes": 1575653,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

@@ -1,0 +1,816 @@
+{
+  "id": "templama:test:Q10340805:P102",
+  "group": "Q10340805:P102",
+  "split": "test",
+  "versions": 3,
+  "queries": [
+    {
+      "query_id": "Q10340805_P102_2010",
+      "latest": false,
+      "as_of": "2010-01-01T00:00:00",
+      "selected_entry_id": "Q10340805_P102_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Party of National Mobilization",
+        "token_ids": [
+          6636,
+          302,
+          3610,
+          351,
+          20087,
+          1837
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2627195683307946,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491124736,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10340805_P102_2012",
+          "Q10340805_P102_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003484059125185013,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 990,
+          "total_bytes": 1312478,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Social Democratic Party",
+        "token_ids": [
+          7575,
+          12821,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19819243112578988,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.2857142857142857
+      }
+    },
+    {
+      "query_id": "Q10340805_P102_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q10340805_P102_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Omar Aziz is a member of the Party of National Mobilization.",
+        "token_ids": [
+          451,
+          3479,
+          7393,
+          463,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          6636,
+          302,
+          3610,
+          351,
+          20087,
+          1837,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5647521810606122,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490993664,
+        "kv_cache_bytes": 29491200,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10340805_P102_2012",
+          "Q10340805_P102_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003873996902257204,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 990,
+          "total_bytes": 1312478,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.6153846153846154,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Social Democratic Party",
+        "token_ids": [
+          7575,
+          12821,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19441428082063794,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10340805_P102_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q10340805_P102_2012",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Social Democratic Party",
+        "token_ids": [
+          7575,
+          12821,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17145251110196114,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491124736,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10340805_P102_2012",
+          "Q10340805_P102_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036572557874023914,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 990,
+          "total_bytes": 1312478,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Social Democratic Party",
+        "token_ids": [
+          7575,
+          12821,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19639824982732534,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10340805_P102_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q10340805_P102_2012",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Social Democratic Party",
+        "token_ids": [
+          7575,
+          12821,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17464030906558037,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490993664,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10340805_P102_2012",
+          "Q10340805_P102_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003585976082831621,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 990,
+          "total_bytes": 1312478,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Social Democratic Party",
+        "token_ids": [
+          7575,
+          12821,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1964664850383997,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10340805_P102_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q10340805_P102_2012",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Social Democratic Party",
+        "token_ids": [
+          7575,
+          12821,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17798829032108188,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491124736,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10340805_P102_2012",
+          "Q10340805_P102_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003695688210427761,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 990,
+          "total_bytes": 1312478,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Social Democratic Party",
+        "token_ids": [
+          7575,
+          12821,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19794931821525097,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10340805_P102_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q10340805_P102_2012",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Social Democratic Party",
+        "token_ids": [
+          7575,
+          12821,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17109906394034624,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490993664,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10340805_P102_2012",
+          "Q10340805_P102_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0034363986924290657,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 990,
+          "total_bytes": 1312478,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Social Democratic Party",
+        "token_ids": [
+          7575,
+          12821,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1968156690709293,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10340805_P102_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q10340805_P102_2012",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Social Democratic Party",
+        "token_ids": [
+          7575,
+          12821,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17281025229021907,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491124736,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10340805_P102_2012",
+          "Q10340805_P102_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036613820120692253,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 990,
+          "total_bytes": 1312478,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Social Democratic Party",
+        "token_ids": [
+          7575,
+          12821,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19717569183558226,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10340805_P102_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q10340805_P102_2012",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Social Democratic Party",
+        "token_ids": [
+          7575,
+          12821,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1720330137759447,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490993664,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10340805_P102_2012",
+          "Q10340805_P102_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0035137818194925785,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 990,
+          "total_bytes": 1312478,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Social Democratic Party",
+        "token_ids": [
+          7575,
+          12821,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19520139414817095,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10340805_P102_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q10340805_P102_2012",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Social Democratic Party",
+        "token_ids": [
+          7575,
+          12821,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1783913802355528,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491124736,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10340805_P102_2012",
+          "Q10340805_P102_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003640166949480772,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 990,
+          "total_bytes": 1312478,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Social Democratic Party",
+        "token_ids": [
+          7575,
+          12821,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19559409702196717,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10340805_P102_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q10340805_P102_2012",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Social Democratic Party",
+        "token_ids": [
+          7575,
+          12821,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17227143608033657,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490993664,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10340805_P102_2012",
+          "Q10340805_P102_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0035013509914278984,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 990,
+          "total_bytes": 1312478,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Social Democratic Party",
+        "token_ids": [
+          7575,
+          12821,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19545596931129694,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10340805_P102_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q10340805_P102_2012",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Social Democratic Party",
+        "token_ids": [
+          7575,
+          12821,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17359451483935118,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491124736,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10340805_P102_2012",
+          "Q10340805_P102_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036026532761752605,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 990,
+          "total_bytes": 1312478,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Social Democratic Party",
+        "token_ids": [
+          7575,
+          12821,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19470896711573005,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.13483570329844952,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 384,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 160,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1310720,
+      "index_key_bytes": 768,
+      "metadata_and_format_bytes": 990,
+      "total_bytes": 1312478,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 160,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1310720,
+    "index_key_bytes": 768,
+    "metadata_and_format_bytes": 990,
+    "total_bytes": 1312478,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

@@ -1,0 +1,651 @@
+{
+  "id": "templama:val:Q1077159:P108",
+  "group": "Q1077159:P108",
+  "split": "val",
+  "versions": 5,
+  "queries": [
+    {
+      "query_id": "Q1077159_P108_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q1077159_P108_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Chris Dercon works for Tate Modern.",
+        "token_ids": [
+          9900,
+          4823,
+          514,
+          3791,
+          354,
+          320,
+          380,
+          13950,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.36204318096861243,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499169280,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1077159_P108_2019",
+          "Q1077159_P108_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0039477841928601265,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1429,
+          "total_bytes": 1575573,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.5,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Tate Modern / Haus der Kunst",
+        "token_ids": [
+          320,
+          380,
+          13950,
+          732,
+          21209,
+          891,
+          19280
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3352236021310091,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527489536,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.75
+      }
+    },
+    {
+      "query_id": "Q1077159_P108_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q1077159_P108_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Chris Dercon works for Museum Morsbroich.",
+        "token_ids": [
+          9900,
+          4823,
+          514,
+          3791,
+          354,
+          8770,
+          351,
+          734,
+          5601,
+          539,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.41726297326385975,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499038208,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1077159_P108_2019",
+          "Q1077159_P108_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038217799738049507,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1429,
+          "total_bytes": 1575573,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Tate Modern",
+        "token_ids": [
+          320,
+          380,
+          13950
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1963027035817504,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527489536,
+        "kv_cache_bytes": 41943040,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1077159_P108_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q1077159_P108_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Chris Dercon works for Museum Morsbroich.",
+        "token_ids": [
+          9900,
+          4823,
+          514,
+          3791,
+          354,
+          8770,
+          351,
+          734,
+          5601,
+          539,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.42373089119791985,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499169280,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1077159_P108_2019",
+          "Q1077159_P108_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003701779991388321,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1429,
+          "total_bytes": 1575573,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Tate Modern",
+        "token_ids": [
+          320,
+          380,
+          13950
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1957210497930646,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527489536,
+        "kv_cache_bytes": 41943040,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1077159_P108_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q1077159_P108_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Chris Dercon works for Museum Morsbroich.",
+        "token_ids": [
+          9900,
+          4823,
+          514,
+          3791,
+          354,
+          8770,
+          351,
+          734,
+          5601,
+          539,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.42454211926087737,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499038208,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1077159_P108_2019",
+          "Q1077159_P108_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003996287006884813,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1429,
+          "total_bytes": 1575573,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Tate Modern",
+        "token_ids": [
+          320,
+          380,
+          13950
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19727925397455692,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527489536,
+        "kv_cache_bytes": 41943040,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1077159_P108_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q1077159_P108_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Tate Modern",
+        "token_ids": [
+          320,
+          380,
+          13950
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17939347587525845,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499169280,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1077159_P108_2019",
+          "Q1077159_P108_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004229752346873283,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1429,
+          "total_bytes": 1575573,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Tate Modern / Volksbühne",
+        "token_ids": [
+          320,
+          380,
+          13950,
+          732,
+          5400,
+          2285,
+          28726,
+          11472,
+          485
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.38141329027712345,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527489536,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.8
+      }
+    },
+    {
+      "query_id": "Q1077159_P108_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q1077159_P108_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Tate Modern",
+        "token_ids": [
+          320,
+          380,
+          13950
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17723151110112667,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499038208,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1077159_P108_2019",
+          "Q1077159_P108_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036752051673829556,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1429,
+          "total_bytes": 1575573,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Tate Modern / Volksbühne",
+        "token_ids": [
+          320,
+          380,
+          13950,
+          732,
+          5400,
+          2285,
+          28726,
+          11472,
+          485
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3870782102458179,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527489536,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.8
+      }
+    },
+    {
+      "query_id": "Q1077159_P108_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q1077159_P108_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Tate Modern",
+        "token_ids": [
+          320,
+          380,
+          13950
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1767978691495955,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499169280,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1077159_P108_2019",
+          "Q1077159_P108_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004116959869861603,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1429,
+          "total_bytes": 1575573,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Tate Modern / Volksbühne",
+        "token_ids": [
+          320,
+          380,
+          13950,
+          732,
+          5400,
+          2285,
+          28726,
+          11472,
+          485
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.38082913821563125,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527489536,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.8
+      }
+    },
+    {
+      "query_id": "Q1077159_P108_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q1077159_P108_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Tate Modern",
+        "token_ids": [
+          320,
+          380,
+          13950
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1746375667862594,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499038208,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1077159_P108_2019",
+          "Q1077159_P108_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003889302723109722,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1429,
+          "total_bytes": 1575573,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Tate Modern / Volksbühne",
+        "token_ids": [
+          320,
+          380,
+          13950,
+          732,
+          5400,
+          2285,
+          28726,
+          11472,
+          485
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.38648278173059225,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527489536,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.8
+      }
+    }
+  ],
+  "write_seconds": 0.1962001700885594,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 640,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 192,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1572864,
+      "index_key_bytes": 1280,
+      "metadata_and_format_bytes": 1429,
+      "total_bytes": 1575573,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 192,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1572864,
+    "index_key_bytes": 1280,
+    "metadata_and_format_bytes": 1429,
+    "total_bytes": 1575573,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

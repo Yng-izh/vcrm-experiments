@@ -1,0 +1,272 @@
+{
+  "summaries": {
+    "text": {
+      "method": "text",
+      "complete": true,
+      "counts": {
+        "historical": 481,
+        "conflict": 262,
+        "latest": 172
+      },
+      "completed_episodes": 172,
+      "scored_queries": 653,
+      "historical_f1": 0.36670152662678407,
+      "conflict_f1": 0.3071292472778255,
+      "latest_accuracy": 0.1569767441860465,
+      "disk_bytes_mean": 2186.0232558139537,
+      "storage_MB": 0.002186023255813954,
+      "storage_MiB": 0.0020847542341365373,
+      "prompt_tokens_mean": 172.52220520673814,
+      "kv_cache_bytes_mean": 26660807.546707503,
+      "read_seconds_mean": 1.035276694830142,
+      "scope": "post_hoc_fixed_validation_diagnostic_not_untouched_test",
+      "storage_note": "All versions + keys + metadata per Episode; excludes shared model/codec weights and source feature cache. MB=1e6 bytes; not equal-byte text/latent comparison."
+    },
+    "full": {
+      "method": "full",
+      "complete": true,
+      "counts": {
+        "historical": 481,
+        "conflict": 262,
+        "latest": 172
+      },
+      "completed_episodes": 172,
+      "scored_queries": 653,
+      "historical_f1": 0.6624436869316602,
+      "conflict_f1": 0.5507611489679648,
+      "latest_accuracy": 0.5406976744186046,
+      "disk_bytes_mean": 4440081.162790698,
+      "storage_MB": 4.440081162790698,
+      "storage_MiB": 4.2343913677126865,
+      "prompt_tokens_mean": 320.166921898928,
+      "kv_cache_bytes_mean": 43074113.07810107,
+      "read_seconds_mean": 0.3983738229397519,
+      "scope": "post_hoc_fixed_validation_diagnostic_not_untouched_test",
+      "storage_note": "All versions + keys + metadata per Episode; excludes shared model/codec weights and source feature cache. MB=1e6 bytes; not equal-byte text/latent comparison."
+    },
+    "C": {
+      "method": "C",
+      "complete": true,
+      "counts": {
+        "historical": 481,
+        "conflict": 262,
+        "latest": 172
+      },
+      "completed_episodes": 172,
+      "scored_queries": 653,
+      "historical_f1": 0.5506833300950948,
+      "conflict_f1": 0.44792510288693493,
+      "latest_accuracy": 0.8953488372093024,
+      "disk_bytes_mean": 1474601.5697674418,
+      "storage_MB": 1.474601569767442,
+      "storage_MiB": 1.4062896440195483,
+      "prompt_tokens_mean": 208.16692189892802,
+      "kv_cache_bytes_mean": 28233069.378254212,
+      "read_seconds_mean": 0.32678316249176975,
+      "scope": "post_hoc_fixed_validation_diagnostic_not_untouched_test",
+      "storage_note": "All versions + keys + metadata per Episode; excludes shared model/codec weights and source feature cache. MB=1e6 bytes; not equal-byte text/latent comparison."
+    },
+    "D": {
+      "method": "D",
+      "complete": true,
+      "counts": {
+        "historical": 481,
+        "conflict": 262,
+        "latest": 172
+      },
+      "completed_episodes": 172,
+      "scored_queries": 653,
+      "historical_f1": 0.5156262923290788,
+      "conflict_f1": 0.4264536738545908,
+      "latest_accuracy": 0.9244186046511628,
+      "disk_bytes_mean": 1474648.3662790698,
+      "storage_MB": 1.4746483662790697,
+      "storage_MiB": 1.4063342726507853,
+      "prompt_tokens_mean": 208.16692189892802,
+      "kv_cache_bytes_mean": 28270002.376722816,
+      "read_seconds_mean": 0.3460842742916955,
+      "scope": "post_hoc_fixed_validation_diagnostic_not_untouched_test",
+      "storage_note": "All versions + keys + metadata per Episode; excludes shared model/codec weights and source feature cache. MB=1e6 bytes; not equal-byte text/latent comparison."
+    }
+  },
+  "paired_episode_bootstrap": {
+    "full_minus_text": {
+      "historical_f1": {
+        "n": 481,
+        "groups": 172,
+        "delta": 0.29574216030487616,
+        "ci95": [
+          0.2442218688067947,
+          0.34827642096862665
+        ]
+      },
+      "conflict_f1": {
+        "n": 262,
+        "groups": 75,
+        "delta": 0.24363190169013943,
+        "ci95": [
+          0.15982514341749546,
+          0.3282020798882386
+        ]
+      },
+      "latest_accuracy": {
+        "n": 172,
+        "groups": 172,
+        "delta": 0.38372093023255816,
+        "ci95": [
+          0.29651162790697677,
+          0.47093023255813954
+        ]
+      }
+    },
+    "C_minus_text": {
+      "historical_f1": {
+        "n": 481,
+        "groups": 172,
+        "delta": 0.1839818034683107,
+        "ci95": [
+          0.11592289936213825,
+          0.253899288126579
+        ]
+      },
+      "conflict_f1": {
+        "n": 262,
+        "groups": 75,
+        "delta": 0.14079585560910948,
+        "ci95": [
+          0.03890488736362944,
+          0.24624802862741377
+        ]
+      },
+      "latest_accuracy": {
+        "n": 172,
+        "groups": 172,
+        "delta": 0.7383720930232558,
+        "ci95": [
+          0.6686046511627907,
+          0.8081395348837209
+        ]
+      }
+    },
+    "D_minus_text": {
+      "historical_f1": {
+        "n": 481,
+        "groups": 172,
+        "delta": 0.14892476570229463,
+        "ci95": [
+          0.08138437527332232,
+          0.2199556367254244
+        ]
+      },
+      "conflict_f1": {
+        "n": 262,
+        "groups": 75,
+        "delta": 0.11932442657676537,
+        "ci95": [
+          0.011211888662212658,
+          0.22813032587410764
+        ]
+      },
+      "latest_accuracy": {
+        "n": 172,
+        "groups": 172,
+        "delta": 0.7674418604651163,
+        "ci95": [
+          0.6976744186046512,
+          0.8313953488372093
+        ]
+      }
+    },
+    "C_minus_full": {
+      "historical_f1": {
+        "n": 481,
+        "groups": 172,
+        "delta": -0.11176035683656546,
+        "ci95": [
+          -0.18132614005650788,
+          -0.0437697777694031
+        ]
+      },
+      "conflict_f1": {
+        "n": 262,
+        "groups": 75,
+        "delta": -0.10283604608102989,
+        "ci95": [
+          -0.2171844581309105,
+          0.009167550282554261
+        ]
+      },
+      "latest_accuracy": {
+        "n": 172,
+        "groups": 172,
+        "delta": 0.3546511627906977,
+        "ci95": [
+          0.28488372093023256,
+          0.4303779069767434
+        ]
+      }
+    },
+    "D_minus_full": {
+      "historical_f1": {
+        "n": 481,
+        "groups": 172,
+        "delta": -0.14681739460258153,
+        "ci95": [
+          -0.22112860332907688,
+          -0.0737125177281794
+        ]
+      },
+      "conflict_f1": {
+        "n": 262,
+        "groups": 75,
+        "delta": -0.124307475113374,
+        "ci95": [
+          -0.2517399036148632,
+          -0.004810128580640741
+        ]
+      },
+      "latest_accuracy": {
+        "n": 172,
+        "groups": 172,
+        "delta": 0.38372093023255816,
+        "ci95": [
+          0.3081395348837209,
+          0.45930232558139533
+        ]
+      }
+    },
+    "D_minus_C": {
+      "historical_f1": {
+        "n": 481,
+        "groups": 172,
+        "delta": -0.03505703776601609,
+        "ci95": [
+          -0.07271263309116163,
+          0.003382986809448086
+        ]
+      },
+      "conflict_f1": {
+        "n": 262,
+        "groups": 75,
+        "delta": -0.021471429032344114,
+        "ci95": [
+          -0.06844949943374178,
+          0.03441550980147569
+        ]
+      },
+      "latest_accuracy": {
+        "n": 172,
+        "groups": 172,
+        "delta": 0.029069767441860465,
+        "ci95": [
+          -0.011627906976744186,
+          0.0755813953488372
+        ]
+      }
+    }
+  },
+  "units": "Accuracy/F1 in JSON: fraction; Markdown: percent. Storage: decimal MB.",
+  "scope": "post_hoc_fixed_validation_diagnostic_not_untouched_test",
+  "full_marker_source": "aligned_v3_C16_train",
+  "note": "ICAE-Full is a project dual-version protocol control, not an official paper result or guaranteed upper bound. Text uses native Mistral chat; latent uses ICAE task template. Storage is measured, not forced equal to text. Historical scores from older runs are not substituted. Codec/marker training provenance is saved per method."
+}

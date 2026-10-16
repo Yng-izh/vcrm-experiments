@@ -1,0 +1,488 @@
+{
+  "id": "templama:test:Q102720:P286",
+  "group": "Q102720:P286",
+  "split": "test",
+  "versions": 3,
+  "queries": [
+    {
+      "query_id": "Q102720_P286_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q102720_P286_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Pál Dárdai",
+        "token_ids": [
+          28753,
+          4304,
+          384,
+          28820,
+          5240,
+          1585
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2696720617823303,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491341824,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q102720_P286_2020",
+          "Q102720_P286_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.00380956893786788,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Pál Dárdai",
+        "token_ids": [
+          367,
+          4304,
+          384,
+          28820,
+          5240,
+          1585
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.29047827469184995,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q102720_P286_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q102720_P286_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Pál Dárdai",
+        "token_ids": [
+          28753,
+          4304,
+          384,
+          28820,
+          5240,
+          1585
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2658409960567951,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491210752,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q102720_P286_2020",
+          "Q102720_P286_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003758822102099657,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Pál Dárdai",
+        "token_ids": [
+          367,
+          4304,
+          384,
+          28820,
+          5240,
+          1585
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.28792293230071664,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q102720_P286_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q102720_P286_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Pál Dárdai",
+        "token_ids": [
+          28753,
+          4304,
+          384,
+          28820,
+          5240,
+          1585
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2688383888453245,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491341824,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q102720_P286_2020",
+          "Q102720_P286_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003547359723597765,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Pál Dárdai",
+        "token_ids": [
+          367,
+          4304,
+          384,
+          28820,
+          5240,
+          1585
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2903637867420912,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q102720_P286_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q102720_P286_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Pál Dárdai",
+        "token_ids": [
+          28753,
+          4304,
+          384,
+          28820,
+          5240,
+          1585
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.26590872509405017,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491210752,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q102720_P286_2020",
+          "Q102720_P286_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003489243797957897,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Pál Dárdai",
+        "token_ids": [
+          367,
+          4304,
+          384,
+          28820,
+          5240,
+          1585
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.28592182602733374,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q102720_P286_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q102720_P286_2019",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Jürgen Klinsmann",
+        "token_ids": [
+          28798,
+          2355,
+          2383,
+          7211,
+          1126,
+          6482
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.26622268464416265,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491341824,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q102720_P286_2020",
+          "Q102720_P286_2019"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037108161486685276,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Jürgen Klinsmann",
+        "token_ids": [
+          475,
+          2355,
+          2383,
+          7211,
+          1126,
+          6482
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2976418328471482,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q102720_P286_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q102720_P286_2020",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Alexander Nouri",
+        "token_ids": [
+          11055,
+          418,
+          17337
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17165731498971581,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491210752,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q102720_P286_2020",
+          "Q102720_P286_2019"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0034226318821310997,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Jürgen Klinsmann",
+        "token_ids": [
+          475,
+          2355,
+          2383,
+          7211,
+          1126,
+          6482
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.28963003074750304,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.1268708510324359,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 384,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 160,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1310720,
+      "index_key_bytes": 768,
+      "metadata_and_format_bytes": 972,
+      "total_bytes": 1312460,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 160,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1310720,
+    "index_key_bytes": 768,
+    "metadata_and_format_bytes": 972,
+    "total_bytes": 1312460,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

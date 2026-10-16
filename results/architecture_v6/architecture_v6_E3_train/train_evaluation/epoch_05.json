@@ -1,0 +1,1410 @@
+{
+  "scope": "in_sample_training_diagnostic_not_validation",
+  "queries": 200,
+  "accuracy": 0.88,
+  "f1": 0.9532849160643279,
+  "stale_answer": 0,
+  "rows": [
+    {
+      "pair_id": "templama:train:Q6179106:P54:Q6179106_P54_2014",
+      "answer": "Port Vale F.C.",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q170134:P286:Q170134_P286_2016",
+      "answer": "Kenan Koçak",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q113000:P286:Q113000_P286_2018",
+      "answer": "Yannick Ferrera",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q23034479:P108:Q23034479_P108_2014",
+      "answer": "Access Now",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q214204:P54:Q214204_P54_2013",
+      "answer": "Chelsea F.C.",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q20900706:P102:Q20900706_P102_2019",
+      "answer": "independent politician",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q180462:P54:Q180462_P54_2014",
+      "answer": "Lille OSC",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q165125:P54:Q165125_P54_2017",
+      "answer": "Bayer 04 Leverkusen",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q726122:P54:Q726122_P54_2014",
+      "answer": "Tyresö FF",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q49201:P6:Q49201_P6_2016",
+      "answer": "Ethan Strimling / Ethan Strimling is the mayor of Portland.",
+      "accuracy": 0,
+      "f1": 0.4,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q154258:P54:Q154258_P54_2015",
+      "answer": "K.V. Kortrijk",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q560411:P54:Q560411_P54_2014",
+      "answer": "Albania national association football team",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q347505:P102:Q347505_P102_2015",
+      "answer": "Liberal Reformist Party (Romania)",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q118207:P54:Q118207_P54_2017",
+      "answer": "Paris Saint-Germain",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q1165833:P286:Q1165833_P286_2017",
+      "answer": "Yuri Puntus",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q1602351:P488:Q1602351_P488_2014",
+      "answer": "Peter Gülke",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q208399:P286:Q208399_P286_2018",
+      "answer": "François Ciccolini",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q209640:P286:Q209640_P286_2020",
+      "answer": "Jaroslav Kentoš",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q460724:P286:Q460724_P286_2017",
+      "answer": "Nanne Bergstrand",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q56390799:P69:Q56390799_P69_2015",
+      "answer": "Erasmus University Rotterdam",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q1156:P6:Q1156_P6_2019",
+      "answer": "Vishwanath Mahadeshwar",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q5130214:P54:Q5130214_P54_2014",
+      "answer": "Brentford F.C.",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q2003:P6:Q2003_P6_2020",
+      "answer": "Paul Davis",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q8988045:P108:Q8988045_P108_2017",
+      "answer": "Ming Pao",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q63314355:P69:Q63314355_P69_2017",
+      "answer": "University of Nebraska–Lincoln",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q840765:P286:Q840765_P286_2014",
+      "answer": "Pavel Kucherov",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q948:P6:Q948_P6_2015",
+      "answer": "Ali Laarayedh",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q340:P6:Q340_P6_2013",
+      "answer": "Michael Applebaum / Gérald Tremblay",
+      "accuracy": 0,
+      "f1": 0.6666666666666666,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q208584:P286:Q208584_P286_2015",
+      "answer": "Sixten Boström",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q386876:P54:Q386876_P54_2012",
+      "answer": "Real Madrid CF",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q560411:P54:Q560411_P54_2013",
+      "answer": "Albania national association football team",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q2339:P54:Q2339_P54_2016",
+      "answer": "Fenerbahçe FC",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q1043040:P102:Q1043040_P102_2012",
+      "answer": "National Destourian Initiative",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q186252:P286:Q186252_P286_2017",
+      "answer": "Alyaksandr Khatskevich",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q7988779:P127:Q7988779_P127_2015",
+      "answer": "Westfield Group",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q919421:P54:Q919421_P54_2012",
+      "answer": "Feyenoord",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q2835947:P108:Q2835947_P108_2013",
+      "answer": "Scuderia Ferrari",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q865:P6:Q865_P6_2017",
+      "answer": "Lin Chuan",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q1855840:P39:Q1855840_P39_2017",
+      "answer": "Democratic Caucus Chairman of the United States House of Representatives",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q20771279:P102:Q20771279_P102_2015",
+      "answer": "Podemos",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q27694:P54:Q27694_P54_2014",
+      "answer": "Bayer 04 Leverkusen",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q969725:P54:Q969725_P54_2012",
+      "answer": "England national under-19 football team",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q1602351:P488:Q1602351_P488_2012",
+      "answer": "Peter Gülke / Udo Zimmermann",
+      "accuracy": 0,
+      "f1": 0.6666666666666666,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q312518:P54:Q312518_P54_2013",
+      "answer": "Algeria national football team",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q163974:P54:Q163974_P54_2014",
+      "answer": "Hamburger SV",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q29:P6:Q29_P6_2012",
+      "answer": "Mariano Rajoy",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q2860914:P488:Q2860914_P488_2016",
+      "answer": "Carme Forcadell",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q56606095:P108:Q56606095_P108_2012",
+      "answer": "University of Dundee / NHS Lothian",
+      "accuracy": 0,
+      "f1": 0.75,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q220:P6:Q220_P6_2014",
+      "answer": "Ignazio Marino",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q129027:P54:Q129027_P54_2012",
+      "answer": "Suceava",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q38:P6:Q38_P6_2017",
+      "answer": "Paolo Gentiloni",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q484772:P54:Q484772_P54_2015",
+      "answer": "Anderson plays for ACF Fiorentina.",
+      "accuracy": 0,
+      "f1": 0.5714285714285714,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q17517103:P108:Q17517103_P108_2015",
+      "answer": "Commonwealth Scientific and Industrial Research Organisation (CSIRO)",
+      "accuracy": 0,
+      "f1": 0.9230769230769231,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q312322:P54:Q312322_P54_2020",
+      "answer": "Bahrain-Merida",
+      "accuracy": 0,
+      "f1": 0.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q148699:P54:Q148699_P54_2016",
+      "answer": "West Ham United F.C.",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q50349730:P102:Q50349730_P102_2014",
+      "answer": "Institutional Republican Party",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q2445140:P488:Q2445140_P488_2014",
+      "answer": "Vitaliy Zakharchenko",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q6110240:P54:Q6110240_P54_2012",
+      "answer": "Milton Keynes Dons F.C.",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q5906355:P54:Q5906355_P54_2013",
+      "answer": "Leicester City F.C.",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q302815:P39:Q302815_P39_2014",
+      "answer": "Shadow Secretary of State for Transport",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q5387865:P108:Q5387865_P108_2013",
+      "answer": "Joseph Korbel School of International Studies / University of Denver",
+      "accuracy": 0,
+      "f1": 0.6666666666666666,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q1943651:P127:Q1943651_P127_2019",
+      "answer": "JPIMedia",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q142:P6:Q142_P6_2013",
+      "answer": "François Fillon",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q1322550:P286:Q1322550_P286_2017",
+      "answer": "Octavian Grigore",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q689874:P286:Q689874_P286_2014",
+      "answer": "John Hackworth",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q209151:P488:Q209151_P488_2012",
+      "answer": "Thor Pedersen",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q24313:P39:Q24313_P39_2014",
+      "answer": "Governor of Indiana",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q14946896:P102:Q14946896_P102_2012",
+      "answer": "National Solidarity Party",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q907112:P6:Q907112_P6_2014",
+      "answer": "Tatiana Turanskaya",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q165125:P54:Q165125_P54_2016",
+      "answer": "Real Madrid CF",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q795626:P286:Q795626_P286_2017",
+      "answer": "Dmitry Molosh is the head coach of FC Smolevichi.",
+      "accuracy": 0,
+      "f1": 0.4,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q840765:P286:Q840765_P286_2016",
+      "answer": "Valery Strypeykis",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q38804313:P108:Q38804313_P108_2012",
+      "answer": "Angela Casini works for École polytechnique fédérale de Lausanne / University of Groningen.",
+      "accuracy": 0,
+      "f1": 0.5882352941176471,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q6138903:P102:Q6138903_P102_2013",
+      "answer": "People's National Congress Party",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q30404445:P102:Q30404445_P102_2017",
+      "answer": "National Rally",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q188544:P54:Q188544_P54_2014",
+      "answer": "Grêmio Foot-Ball Porto Alegrense",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q310610:P54:Q310610_P54_2015",
+      "answer": "Standard Liège",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q296416:P54:Q296416_P54_2015",
+      "answer": "FC Pune City",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q206171:P488:Q206171_P488_2012",
+      "answer": "Tricia Marwick / Alex Fergusson",
+      "accuracy": 0,
+      "f1": 0.6666666666666666,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q222031:P39:Q222031_P39_2017",
+      "answer": "Prime Minister of Serbia",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q6303349:P39:Q6303349_P39_2020",
+      "answer": "Minister of Corrections",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q142:P6:Q142_P6_2015",
+      "answer": "Manuel Valls",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q5720:P6:Q5720_P6_2012",
+      "answer": "Francisco Camps",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q717091:P54:Q717091_P54_2013",
+      "answer": "SK Rapid Wien / D.C. United",
+      "accuracy": 0,
+      "f1": 0.75,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q1910:P54:Q1910_P54_2012",
+      "answer": "France national association football team",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q483020:P286:Q483020_P286_2014",
+      "answer": "Laurent Blanc",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q969725:P54:Q969725_P54_2015",
+      "answer": "England national under-21 football team",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q1886:P286:Q1886_P286_2015",
+      "answer": "Stefano Colantuono",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q390690:P39:Q390690_P39_2017",
+      "answer": "Shadow Secretary of State for Work and Pensions",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q312518:P54:Q312518_P54_2012",
+      "answer": "Algeria national football team",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q228616:P54:Q228616_P54_2012",
+      "answer": "Santos FC",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q6228571:P102:Q6228571_P102_2015",
+      "answer": "No Pokies / Centre Alliance",
+      "accuracy": 0,
+      "f1": 0.6666666666666666,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q5105861:P54:Q5105861_P54_2015",
+      "answer": "Preston North End F.C.",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q208399:P286:Q208399_P286_2019",
+      "answer": "Stéphane Rossi",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q269909:P39:Q269909_P39_2016",
+      "answer": "Shadow Secretary of State for Health",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q133865:P6:Q133865_P6_2015",
+      "answer": "Cho Po-yuan",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q209151:P488:Q209151_P488_2015",
+      "answer": "Mogens Lykketoft",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q9141091:P102:Q9141091_P102_2019",
+      "answer": "Minkuotang",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q2616400:P488:Q2616400_P488_2019",
+      "answer": "Sam Altman",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q327536:P54:Q327536_P54_2012",
+      "answer": "England national under-17 football team",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q223827:P54:Q223827_P54_2013",
+      "answer": "England national association football team",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q1395772:P102:Q1395772_P102_2016",
+      "answer": "Democratic Party",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q20684288:P102:Q20684288_P102_2017",
+      "answer": "Democratic Party",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q517449:P488:Q517449_P488_2018",
+      "answer": "Mars Di Bartolomeo",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q2616400:P488:Q2616400_P488_2015",
+      "answer": "Paul Graham",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q206936:P488:Q206936_P488_2017",
+      "answer": "Franco Gabrielli",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q44754:P6:Q44754_P6_2019",
+      "answer": "María Eugenia Vidal",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q31932:P286:Q31932_P286_2020",
+      "answer": "Zoran Barisic",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q38:P6:Q38_P6_2015",
+      "answer": "Enrico Letta",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q180589:P39:Q180589_P39_2019",
+      "answer": "Secretary of State for Foreign and Commonwealth Affairs",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q220:P6:Q220_P6_2016",
+      "answer": "Ignazio Marino",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q969725:P54:Q969725_P54_2013",
+      "answer": "Norwich City F.C.",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q215:P6:Q215_P6_2015",
+      "answer": "Alenka Bratušek / Miro Cerar",
+      "accuracy": 0,
+      "f1": 0.6666666666666666,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q903822:P488:Q903822_P488_2013",
+      "answer": "Chen Chu",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q488486:P488:Q488486_P488_2017",
+      "answer": "Choi Kyoung-hwan",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q220863:P286:Q220863_P286_2020",
+      "answer": "Tudorel Pelin is the head coach of SC Oțelul Galați.",
+      "accuracy": 0,
+      "f1": 0.36363636363636365,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q558334:P488:Q558334_P488_2012",
+      "answer": "Mark Hinkle",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q350107:P54:Q350107_P54_2014",
+      "answer": "Trabzonspor",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q5525838:P54:Q5525838_P54_2014",
+      "answer": "Mansfield Town F.C.",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q326181:P54:Q326181_P54_2014",
+      "answer": "England national under-21 football team",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q749659:P39:Q749659_P39_2012",
+      "answer": "Shadow Secretary of State for Culture, Media and Sport",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q689874:P286:Q689874_P286_2013",
+      "answer": "Piotr Nowak",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q180462:P54:Q180462_P54_2013",
+      "answer": "Chelsea F.C.",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q463130:P102:Q463130_P102_2017",
+      "answer": "National Action",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q439524:P54:Q439524_P54_2016",
+      "answer": "Houston Dash",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q15961989:P488:Q15961989_P488_2014",
+      "answer": "Michele Boldrini",
+      "accuracy": 0,
+      "f1": 0.5,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q1322550:P286:Q1322550_P286_2019",
+      "answer": "Romulus Ciobanu",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q169814:P54:Q169814_P54_2013",
+      "answer": "Ducati Motor Holding S.p.A.",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q184946:P54:Q184946_P54_2015",
+      "answer": "West Ham United F.C.",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q865:P6:Q865_P6_2015",
+      "answer": "Mao Chi-kuo",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q843:P6:Q843_P6_2018",
+      "answer": "Shahid Khaqan Abbasi",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q5606121:P54:Q5606121_P54_2012",
+      "answer": "Aldershot Town F.C.",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q1395772:P102:Q1395772_P102_2013",
+      "answer": "Democratic National Alliance",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q314413:P54:Q314413_P54_2012",
+      "answer": "Washington Wizards",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q312518:P54:Q312518_P54_2014",
+      "answer": "1. FC Kaiserslautern",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q57446383:P108:Q57446383_P108_2015",
+      "answer": "University of Maryland / Los Alamos National Laboratory",
+      "accuracy": 0,
+      "f1": 0.7272727272727273,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q395246:P54:Q395246_P54_2014",
+      "answer": "Palermo FC",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q482947:P54:Q482947_P54_2016",
+      "answer": "Fenerbahçe SC",
+      "accuracy": 0,
+      "f1": 0.5,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q21621995:P54:Q21621995_P54_2016",
+      "answer": "AS Monaco FC",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q50349730:P102:Q50349730_P102_2017",
+      "answer": "independent politician",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q1069071:P286:Q1069071_P286_2017",
+      "answer": "Hiroki Hattori",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q17038792:P54:Q17038792_P54_2017",
+      "answer": "Kentucky Wildcats men's basketball",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q7694001:P54:Q7694001_P54_2019",
+      "answer": "Minnesota Vikings",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q948:P6:Q948_P6_2016",
+      "answer": "Ali Laarayedh",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q840765:P286:Q840765_P286_2017",
+      "answer": "Oleg Sidorenkov",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q9899:P6:Q9899_P6_2017",
+      "answer": "Eberhard van der Laan",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q7503354:P102:Q7503354_P102_2018",
+      "answer": "Vetëvendosje!",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q365965:P54:Q365965_P54_2012",
+      "answer": "Egypt national football team / Zamalek SC",
+      "accuracy": 0,
+      "f1": 0.8,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q186252:P286:Q186252_P286_2014",
+      "answer": "Georgi Kondratiev",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q717091:P54:Q717091_P54_2014",
+      "answer": "D.C. United",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q1024390:P286:Q1024390_P286_2019",
+      "answer": "Flavius Stoican",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q6067526:P54:Q6067526_P54_2012",
+      "answer": "Sarmiento de Resistencia",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q44757:P6:Q44757_P6_2019",
+      "answer": "Domingo Peppo",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q192071:P286:Q192071_P286_2019",
+      "answer": "Vahid Halilhodžić",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q463130:P102:Q463130_P102_2015",
+      "answer": "Brothers of Italy",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q166984:P54:Q166984_P54_2018",
+      "answer": "Tianjin Teda F.C.",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q24879:P6:Q24879_P6_2019",
+      "answer": "Carsten Sieling",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q560411:P54:Q560411_P54_2012",
+      "answer": "Albania national association football team",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q903822:P488:Q903822_P488_2012",
+      "answer": "Tsai Ing-wen",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q575027:P102:Q575027_P102_2019",
+      "answer": "UK Independence Party",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q311246:P54:Q311246_P54_2013",
+      "answer": "Germany national association football team",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q188544:P54:Q188544_P54_2013",
+      "answer": "Associação Portuguesa de Desportos",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q488744:P488:Q488744_P488_2012",
+      "answer": "Yu In-chon",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q482947:P54:Q482947_P54_2018",
+      "answer": "Valencia CF",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q1024390:P286:Q1024390_P286_2016",
+      "answer": "Nicolò Napoli",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q269909:P39:Q269909_P39_2015",
+      "answer": "Shadow Secretary of State for Health",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q42731:P54:Q42731_P54_2016",
+      "answer": "Atletico Madrid",
+      "accuracy": 0,
+      "f1": 0.5,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q108708:P286:Q108708_P286_2018",
+      "answer": "Antonio Calderón",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q5606121:P54:Q5606121_P54_2013",
+      "answer": "Aldershot Town F.C.",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q302815:P39:Q302815_P39_2015",
+      "answer": "Shadow Secretary of State for Environment, Food and Rural Affairs",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q257984:P286:Q257984_P286_2018",
+      "answer": "Nano Rodríguez",
+      "accuracy": 0,
+      "f1": 0.6666666666666666,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q213437:P54:Q213437_P54_2017",
+      "answer": "Trabzonspor",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q1344670:P488:Q1344670_P488_2015",
+      "answer": "Michel Wolter",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q213:P6:Q213_P6_2013",
+      "answer": "Petr Nečas",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q6179106:P54:Q6179106_P54_2013",
+      "answer": "Port Vale F.C.",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q757253:P286:Q757253_P286_2019",
+      "answer": "Ilshat Faizulin",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q154258:P54:Q154258_P54_2013",
+      "answer": "S.V. Zulte Waregem",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q42731:P54:Q42731_P54_2012",
+      "answer": "Chelsea F.C.",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q1426678:P54:Q1426678_P54_2016",
+      "answer": "York City F.C.",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q483020:P286:Q483020_P286_2013",
+      "answer": "Carlo Ancelotti",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q17517103:P108:Q17517103_P108_2018",
+      "answer": "Queensland University of Technology",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q1758683:P54:Q1758683_P54_2015",
+      "answer": "KF Teuta Durrës",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q406:P6:Q406_P6_2018",
+      "answer": "Kadir Topbaş",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q5015:P39:Q5015_P39_2015",
+      "answer": "Danish Minister for Labour and Justice",
+      "accuracy": 0,
+      "f1": 0.8,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q1887401:P54:Q1887401_P54_2012",
+      "answer": "Arsenal F.C.",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q611560:P54:Q611560_P54_2014",
+      "answer": "Real Madrid Baloncesto",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q482947:P54:Q482947_P54_2015",
+      "answer": "Sporting CP / Manchester United F.C.",
+      "accuracy": 0,
+      "f1": 0.75,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q348618:P54:Q348618_P54_2019",
+      "answer": "Boston Celtics",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q9899:P6:Q9899_P6_2018",
+      "answer": "Kajsa Ollongren",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q54215549:P108:Q54215549_P108_2019",
+      "answer": "Arna-Bjørnar",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q2004922:P54:Q2004922_P54_2013",
+      "answer": "Blackpool F.C.",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q261534:P54:Q261534_P54_2013",
+      "answer": "Inter Milan",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q604531:P102:Q604531_P102_2013",
+      "answer": "People and Land",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q5525838:P54:Q5525838_P54_2013",
+      "answer": "Mansfield Town F.C.",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q365965:P54:Q365965_P54_2015",
+      "answer": "Al Ahed FC",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q47522400:P108:Q47522400_P108_2018",
+      "answer": "Google",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q386876:P54:Q386876_P54_2017",
+      "answer": "Crystal Palace F.C.",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q17166195:P108:Q17166195_P108_2015",
+      "answer": "Bank of America / President of France",
+      "accuracy": 0,
+      "f1": 0.6666666666666666,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q215:P6:Q215_P6_2018",
+      "answer": "Miro Cerar",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    },
+    {
+      "pair_id": "templama:train:Q2091463:P54:Q2091463_P54_2013",
+      "answer": "France national under-17 football team",
+      "accuracy": 1,
+      "f1": 1.0,
+      "stale_answer": 0
+    }
+  ],
+  "current_policy": "final observed current version, matching validation co-injection"
+}

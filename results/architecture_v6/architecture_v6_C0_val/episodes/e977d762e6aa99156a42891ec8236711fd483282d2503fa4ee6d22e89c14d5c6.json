@@ -1,0 +1,128 @@
+{
+  "id": "templama:val:Q29253032:P108",
+  "group": "Q29253032:P108",
+  "split": "val",
+  "versions": 3,
+  "queries": [
+    {
+      "query_id": "Q29253032_P108_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q29253032_P108_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Josep Guerrero works for Aalborg University.",
+        "token_ids": [
+          6282,
+          28720,
+          2480,
+          694,
+          2036,
+          3791,
+          354,
+          330,
+          282,
+          20293,
+          2900,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4620244298130274,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499473408,
+        "kv_cache_bytes": 28704768,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q29253032_P108_2012",
+          "Q29253032_P108_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0047192261554300785,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 990,
+          "total_bytes": 1312478,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.5,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Josep Guerrero works for Aalborg University.",
+        "token_ids": [
+          6282,
+          28720,
+          2480,
+          694,
+          2036,
+          3791,
+          354,
+          330,
+          282,
+          20293,
+          2900,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4753078818321228,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527990272,
+        "kv_cache_bytes": 43384832,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    }
+  ],
+  "write_seconds": 0.12194136762991548,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 384,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 160,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1310720,
+      "index_key_bytes": 768,
+      "metadata_and_format_bytes": 990,
+      "total_bytes": 1312478,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 160,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1310720,
+    "index_key_bytes": 768,
+    "metadata_and_format_bytes": 990,
+    "total_bytes": 1312478,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

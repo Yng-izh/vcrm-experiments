@@ -1,0 +1,768 @@
+{
+  "id": "templama:test:Q10514:P54",
+  "group": "Q10514:P54",
+  "split": "test",
+  "versions": 2,
+  "queries": [
+    {
+      "query_id": "Q10514_P54_2010",
+      "latest": false,
+      "as_of": "2010-01-01T00:00:00",
+      "selected_entry_id": "Q10514_P54_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Fernando Alonso plays for Scuderia Ferrari.",
+        "token_ids": [
+          24302,
+          976,
+          24291,
+          8928,
+          354,
+          2522,
+          554,
+          10171,
+          16073,
+          1900,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.41984615102410316,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490123264,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10514_P54_2015",
+          "Q10514_P54_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0035840128548443317,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 736,
+          "total_bytes": 1180896,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.5,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Fernando Alonso plays for Scuderia Ferrari.",
+        "token_ids": [
+          24302,
+          976,
+          24291,
+          8928,
+          354,
+          2522,
+          554,
+          10171,
+          16073,
+          1900,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.43575339997187257,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518574592,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q10514_P54_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q10514_P54_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Fernando Alonso plays for Scuderia Ferrari.",
+        "token_ids": [
+          24302,
+          976,
+          24291,
+          8928,
+          354,
+          2522,
+          554,
+          10171,
+          16073,
+          1900,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.41495333099737763,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490254336,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10514_P54_2015",
+          "Q10514_P54_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036628879606723785,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 736,
+          "total_bytes": 1180896,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.5,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Fernando Alonso plays for Scuderia Ferrari.",
+        "token_ids": [
+          24302,
+          976,
+          24291,
+          8928,
+          354,
+          2522,
+          554,
+          10171,
+          16073,
+          1900,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4440631060861051,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518574592,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q10514_P54_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q10514_P54_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Scuderia Ferrari",
+        "token_ids": [
+          3224,
+          554,
+          10171,
+          16073,
+          1900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23655473161488771,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490123264,
+        "kv_cache_bytes": 27525120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10514_P54_2015",
+          "Q10514_P54_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037889336235821247,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 736,
+          "total_bytes": 1180896,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Fernando Alonso plays for Scuderia Ferrari.",
+        "token_ids": [
+          24302,
+          976,
+          24291,
+          8928,
+          354,
+          2522,
+          554,
+          10171,
+          16073,
+          1900,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4467262467369437,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518574592,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q10514_P54_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q10514_P54_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Fernando Alonso plays for Scuderia Ferrari.",
+        "token_ids": [
+          24302,
+          976,
+          24291,
+          8928,
+          354,
+          2522,
+          554,
+          10171,
+          16073,
+          1900,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.42715220525860786,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490254336,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10514_P54_2015",
+          "Q10514_P54_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003917946945875883,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 736,
+          "total_bytes": 1180896,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.5,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Fernando Alonso plays for Scuderia Ferrari.",
+        "token_ids": [
+          24302,
+          976,
+          24291,
+          8928,
+          354,
+          2522,
+          554,
+          10171,
+          16073,
+          1900,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.44411858078092337,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518574592,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q10514_P54_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q10514_P54_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Fernando Alonso plays for Scuderia Ferrari.",
+        "token_ids": [
+          24302,
+          976,
+          24291,
+          8928,
+          354,
+          2522,
+          554,
+          10171,
+          16073,
+          1900,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4273226046934724,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490123264,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10514_P54_2015",
+          "Q10514_P54_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004124009981751442,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 736,
+          "total_bytes": 1180896,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.5,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Fernando Alonso plays for Scuderia Ferrari.",
+        "token_ids": [
+          24302,
+          976,
+          24291,
+          8928,
+          354,
+          2522,
+          554,
+          10171,
+          16073,
+          1900,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4472726439125836,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518574592,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q10514_P54_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q10514_P54_2015",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "McLaren",
+        "token_ids": [
+          28641,
+          28758,
+          4184
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1759289437904954,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490254336,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10514_P54_2015",
+          "Q10514_P54_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038113221526145935,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 736,
+          "total_bytes": 1180896,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Fernando Alonso plays for Scuderia Ferrari.",
+        "token_ids": [
+          24302,
+          976,
+          24291,
+          8928,
+          354,
+          2522,
+          554,
+          10171,
+          16073,
+          1900,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.45293433172628284,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518574592,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q10514_P54_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q10514_P54_2015",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "McLaren",
+        "token_ids": [
+          28641,
+          28758,
+          4184
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17574208695441484,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490123264,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10514_P54_2015",
+          "Q10514_P54_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0035113603807985783,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 736,
+          "total_bytes": 1180896,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Fernando Alonso plays for Scuderia Ferrari.",
+        "token_ids": [
+          24302,
+          976,
+          24291,
+          8928,
+          354,
+          2522,
+          554,
+          10171,
+          16073,
+          1900,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.457001811824739,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518574592,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q10514_P54_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q10514_P54_2015",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "McLaren",
+        "token_ids": [
+          28641,
+          28758,
+          4184
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.18054159777238965,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490254336,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10514_P54_2015",
+          "Q10514_P54_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038175471127033234,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 736,
+          "total_bytes": 1180896,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Fernando Alonso plays for Scuderia Ferrari.",
+        "token_ids": [
+          24302,
+          976,
+          24291,
+          8928,
+          354,
+          2522,
+          554,
+          10171,
+          16073,
+          1900,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.44706201227381825,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518574592,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q10514_P54_2018",
+      "latest": true,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q10514_P54_2015",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "McLaren",
+        "token_ids": [
+          3283,
+          28758,
+          4184
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17545992508530617,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490123264,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10514_P54_2015",
+          "Q10514_P54_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037901350297033787,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 736,
+          "total_bytes": 1180896,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Fernando Alonso plays for Scuderia Ferrari.",
+        "token_ids": [
+          24302,
+          976,
+          24291,
+          8928,
+          354,
+          2522,
+          554,
+          10171,
+          16073,
+          1900,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.44046499114483595,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518574592,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    }
+  ],
+  "write_seconds": 0.0772075979039073,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 256,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 144,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1179648,
+      "index_key_bytes": 512,
+      "metadata_and_format_bytes": 736,
+      "total_bytes": 1180896,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 144,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1179648,
+    "index_key_bytes": 512,
+    "metadata_and_format_bytes": 736,
+    "total_bytes": 1180896,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

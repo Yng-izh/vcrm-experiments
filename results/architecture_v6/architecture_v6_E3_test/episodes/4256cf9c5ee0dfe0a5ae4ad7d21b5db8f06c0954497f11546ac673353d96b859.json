@@ -1,0 +1,912 @@
+{
+  "id": "templama:test:Q107365:P54",
+  "group": "Q107365:P54",
+  "split": "test",
+  "versions": 3,
+  "queries": [
+    {
+      "query_id": "Q107365_P54_2010",
+      "latest": false,
+      "as_of": "2010-01-01T00:00:00",
+      "selected_entry_id": "Q107365_P54_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "FC Schalke 04",
+        "token_ids": [
+          5417,
+          1609,
+          282,
+          405,
+          28705,
+          28734,
+          28781
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.29789736215025187,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490123264,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q107365_P54_2012",
+          "Q107365_P54_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003922538831830025,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 963,
+          "total_bytes": 1312451,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "FC Bayern Munich",
+        "token_ids": [
+          9138,
+          6644,
+          1173,
+          15818,
+          539
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.25844956189393997,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518574592,
+        "kv_cache_bytes": 42205184,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.3333333333333333
+      }
+    },
+    {
+      "query_id": "Q107365_P54_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q107365_P54_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Manuel Neuer plays for FC Bayern Munich.",
+        "token_ids": [
+          20761,
+          3147,
+          3807,
+          8928,
+          354,
+          9138,
+          6644,
+          1173,
+          15818,
+          539,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.41309754690155387,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490254336,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q107365_P54_2012",
+          "Q107365_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003833794966340065,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 963,
+          "total_bytes": 1312451,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.6,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Manuel Neuer plays for FC Bayern Munich.",
+        "token_ids": [
+          20761,
+          3147,
+          3807,
+          8928,
+          354,
+          9138,
+          6644,
+          1173,
+          15818,
+          539,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4380498440004885,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518574592,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6
+      }
+    },
+    {
+      "query_id": "Q107365_P54_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q107365_P54_2012",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "FC Bayern Munich",
+        "token_ids": [
+          5417,
+          6644,
+          1173,
+          15818,
+          539
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23039308888837695,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490123264,
+        "kv_cache_bytes": 27525120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q107365_P54_2012",
+          "Q107365_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003829723224043846,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 963,
+          "total_bytes": 1312451,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Manuel Neuer plays for FC Bayern Munich.",
+        "token_ids": [
+          20761,
+          3147,
+          3807,
+          8928,
+          354,
+          9138,
+          6644,
+          1173,
+          15818,
+          539,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4397494001314044,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518574592,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6
+      }
+    },
+    {
+      "query_id": "Q107365_P54_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q107365_P54_2012",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "FC Bayern Munich",
+        "token_ids": [
+          5417,
+          6644,
+          1173,
+          15818,
+          539
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23369031865149736,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490254336,
+        "kv_cache_bytes": 27525120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q107365_P54_2012",
+          "Q107365_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003590608946979046,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 963,
+          "total_bytes": 1312451,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Manuel Neuer plays for FC Bayern Munich.",
+        "token_ids": [
+          20761,
+          3147,
+          3807,
+          8928,
+          354,
+          9138,
+          6644,
+          1173,
+          15818,
+          539,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.43734506983309984,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518574592,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6
+      }
+    },
+    {
+      "query_id": "Q107365_P54_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q107365_P54_2012",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "FC Bayern Munich",
+        "token_ids": [
+          5417,
+          6644,
+          1173,
+          15818,
+          539
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23329281015321612,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490123264,
+        "kv_cache_bytes": 27525120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q107365_P54_2012",
+          "Q107365_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038154958747327328,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 963,
+          "total_bytes": 1312451,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Manuel Neuer plays for FC Bayern Munich.",
+        "token_ids": [
+          20761,
+          3147,
+          3807,
+          8928,
+          354,
+          9138,
+          6644,
+          1173,
+          15818,
+          539,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.44033038383349776,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518574592,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6
+      }
+    },
+    {
+      "query_id": "Q107365_P54_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q107365_P54_2012",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "FC Bayern Munich",
+        "token_ids": [
+          5417,
+          6644,
+          1173,
+          15818,
+          539
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2323378687724471,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490254336,
+        "kv_cache_bytes": 27525120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q107365_P54_2012",
+          "Q107365_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0039984080940485,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 963,
+          "total_bytes": 1312451,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Manuel Neuer plays for FC Bayern Munich.",
+        "token_ids": [
+          20761,
+          3147,
+          3807,
+          8928,
+          354,
+          9138,
+          6644,
+          1173,
+          15818,
+          539,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4413619670085609,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518574592,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6
+      }
+    },
+    {
+      "query_id": "Q107365_P54_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q107365_P54_2012",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "FC Bayern Munich",
+        "token_ids": [
+          5417,
+          6644,
+          1173,
+          15818,
+          539
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23110404005274177,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490123264,
+        "kv_cache_bytes": 27525120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q107365_P54_2012",
+          "Q107365_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036961459554731846,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 963,
+          "total_bytes": 1312451,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Manuel Neuer plays for FC Bayern Munich.",
+        "token_ids": [
+          20761,
+          3147,
+          3807,
+          8928,
+          354,
+          9138,
+          6644,
+          1173,
+          15818,
+          539,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.43767497269436717,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518574592,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6
+      }
+    },
+    {
+      "query_id": "Q107365_P54_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q107365_P54_2012",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "FC Bayern Munich",
+        "token_ids": [
+          5417,
+          6644,
+          1173,
+          15818,
+          539
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23238630592823029,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490254336,
+        "kv_cache_bytes": 27525120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q107365_P54_2012",
+          "Q107365_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.00382845476269722,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 963,
+          "total_bytes": 1312451,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Manuel Neuer plays for FC Bayern Munich.",
+        "token_ids": [
+          20761,
+          3147,
+          3807,
+          8928,
+          354,
+          9138,
+          6644,
+          1173,
+          15818,
+          539,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.44068068405613303,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518574592,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6
+      }
+    },
+    {
+      "query_id": "Q107365_P54_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q107365_P54_2012",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "FC Bayern Munich",
+        "token_ids": [
+          5417,
+          6644,
+          1173,
+          15818,
+          539
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23279152996838093,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490123264,
+        "kv_cache_bytes": 27525120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q107365_P54_2012",
+          "Q107365_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037996950559318066,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 963,
+          "total_bytes": 1312451,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Manuel Neuer plays for FC Bayern Munich.",
+        "token_ids": [
+          20761,
+          3147,
+          3807,
+          8928,
+          354,
+          9138,
+          6644,
+          1173,
+          15818,
+          539,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.438765998929739,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518574592,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6
+      }
+    },
+    {
+      "query_id": "Q107365_P54_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q107365_P54_2012",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "FC Bayern Munich",
+        "token_ids": [
+          5417,
+          6644,
+          1173,
+          15818,
+          539
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2298699701204896,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490254336,
+        "kv_cache_bytes": 27525120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q107365_P54_2012",
+          "Q107365_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003686176612973213,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 963,
+          "total_bytes": 1312451,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Manuel Neuer plays for FC Bayern Munich.",
+        "token_ids": [
+          20761,
+          3147,
+          3807,
+          8928,
+          354,
+          9138,
+          6644,
+          1173,
+          15818,
+          539,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.44239376997575164,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518574592,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6
+      }
+    },
+    {
+      "query_id": "Q107365_P54_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q107365_P54_2012",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "FC Bayern Munich",
+        "token_ids": [
+          5417,
+          6644,
+          1173,
+          15818,
+          539
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2327493978664279,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490123264,
+        "kv_cache_bytes": 27525120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q107365_P54_2012",
+          "Q107365_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003880569711327553,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 963,
+          "total_bytes": 1312451,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Manuel Neuer plays for FC Bayern Munich.",
+        "token_ids": [
+          20761,
+          3147,
+          3807,
+          8928,
+          354,
+          9138,
+          6644,
+          1173,
+          15818,
+          539,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.45388546539470553,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518574592,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6
+      }
+    }
+  ],
+  "write_seconds": 0.11921596387401223,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 384,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 160,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1310720,
+      "index_key_bytes": 768,
+      "metadata_and_format_bytes": 963,
+      "total_bytes": 1312451,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 160,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1310720,
+    "index_key_bytes": 768,
+    "metadata_and_format_bytes": 963,
+    "total_bytes": 1312451,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

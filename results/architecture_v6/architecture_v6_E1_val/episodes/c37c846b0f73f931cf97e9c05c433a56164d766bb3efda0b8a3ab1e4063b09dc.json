@@ -1,0 +1,336 @@
+{
+  "id": "templama:val:Q310369:P54",
+  "group": "Q310369:P54",
+  "split": "val",
+  "versions": 7,
+  "queries": [
+    {
+      "query_id": "Q310369_P54_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q310369_P54_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Benfica",
+        "token_ids": [
+          4121,
+          17643
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1476501883007586,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499255296,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q310369_P54_2016",
+          "Q310369_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.00431774603202939,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1926,
+          "total_bytes": 1838726,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "S.L. Benfica",
+        "token_ids": [
+          318,
+          28723,
+          28758,
+          28723,
+          4121,
+          17643
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2920964928343892,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527739392,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q310369_P54_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q310369_P54_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "United States national under-23 soccer team",
+        "token_ids": [
+          2969,
+          3543,
+          4282,
+          916,
+          28733,
+          28750,
+          28770,
+          22642,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.36416540620848536,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499386368,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q310369_P54_2016",
+          "Q310369_P54_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004154745955020189,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1926,
+          "total_bytes": 1838726,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.9230769230769231,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Tampa Bay Rowdies",
+        "token_ids": [
+          320,
+          20797,
+          6644,
+          14392,
+          28715,
+          497
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.29893053509294987,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527739392,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q310369_P54_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q310369_P54_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Real Salt Lake",
+        "token_ids": [
+          7960,
+          21943,
+          8703
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17914495896548033,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499255296,
+        "kv_cache_bytes": 27394048,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q310369_P54_2016",
+          "Q310369_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004476646892726421,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1926,
+          "total_bytes": 1838726,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Philadelphia Union",
+        "token_ids": [
+          15804,
+          7085
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17269009072333574,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527739392,
+        "kv_cache_bytes": 41943040,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q310369_P54_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q310369_P54_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Chivas USA",
+        "token_ids": [
+          1209,
+          25268,
+          7035
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17404416482895613,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499386368,
+        "kv_cache_bytes": 27394048,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q310369_P54_2016",
+          "Q310369_P54_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004103840794414282,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1926,
+          "total_bytes": 1838726,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "FK Jagodina / Esporte Clube Bahia",
+        "token_ids": [
+          401,
+          28796,
+          18672,
+          350,
+          1380,
+          732,
+          6177,
+          24095,
+          1366,
+          4276,
+          20057,
+          515
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4843499017879367,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527739392,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.75
+      }
+    }
+  ],
+  "write_seconds": 0.29789611883461475,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 896,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 224,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1835008,
+      "index_key_bytes": 1792,
+      "metadata_and_format_bytes": 1926,
+      "total_bytes": 1838726,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 224,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1835008,
+    "index_key_bytes": 1792,
+    "metadata_and_format_bytes": 1926,
+    "total_bytes": 1838726,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

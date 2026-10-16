@@ -1,0 +1,451 @@
+{
+  "id": "templama:val:Q28549362:P102",
+  "group": "Q28549362:P102",
+  "split": "val",
+  "versions": 4,
+  "queries": [
+    {
+      "query_id": "Q28549362_P102_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q28549362_P102_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Leïla Chaibi is a member of the Left Party / New Left.",
+        "token_ids": [
+          3514,
+          28920,
+          2220,
+          23330,
+          593,
+          28710,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          18365,
+          6636,
+          732,
+          1450,
+          18365,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6242187479510903,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491559936,
+        "kv_cache_bytes": 29884416,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q28549362_P102_2016",
+          "Q28549362_P102_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003511416260153055,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1216,
+          "total_bytes": 1444032,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.36363636363636365,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Leïla Chaibi is a member of the Left Party.",
+        "token_ids": [
+          1337,
+          28920,
+          2220,
+          23330,
+          593,
+          28710,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          18365,
+          6636,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5225883000530303,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520077312,
+        "kv_cache_bytes": 44171264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.4444444444444444
+      }
+    },
+    {
+      "query_id": "Q28549362_P102_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q28549362_P102_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Leïla Chaibi is a member of the Left Party.",
+        "token_ids": [
+          3514,
+          28920,
+          2220,
+          23330,
+          593,
+          28710,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          18365,
+          6636,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.49686379730701447,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491428864,
+        "kv_cache_bytes": 29491200,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q28549362_P102_2016",
+          "Q28549362_P102_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0035368800163269043,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1216,
+          "total_bytes": 1444032,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.4444444444444444,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Left Party",
+        "token_ids": [
+          18365,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1655926601961255,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520077312,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q28549362_P102_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q28549362_P102_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Leïla Chaibi is a member of the Left Party.",
+        "token_ids": [
+          3514,
+          28920,
+          2220,
+          23330,
+          593,
+          28710,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          18365,
+          6636,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.49833622574806213,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491559936,
+        "kv_cache_bytes": 29491200,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q28549362_P102_2016",
+          "Q28549362_P102_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003381341230124235,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1216,
+          "total_bytes": 1444032,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.4444444444444444,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Left Party",
+        "token_ids": [
+          18365,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.16558376979082823,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520077312,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q28549362_P102_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q28549362_P102_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Leïla Chaibi is a member of the Left Party.",
+        "token_ids": [
+          3514,
+          28920,
+          2220,
+          23330,
+          593,
+          28710,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          18365,
+          6636,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5002214461565018,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491428864,
+        "kv_cache_bytes": 29491200,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q28549362_P102_2016",
+          "Q28549362_P102_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0033014551736414433,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1216,
+          "total_bytes": 1444032,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.4444444444444444,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Left Party",
+        "token_ids": [
+          18365,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.16565196681767702,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520077312,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q28549362_P102_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q28549362_P102_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Leïla Chaibi is a member of the Left Party.",
+        "token_ids": [
+          3514,
+          28920,
+          2220,
+          23330,
+          593,
+          28710,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          18365,
+          6636,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.49942879006266594,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491559936,
+        "kv_cache_bytes": 29491200,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q28549362_P102_2016",
+          "Q28549362_P102_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0032887286506593227,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1216,
+          "total_bytes": 1444032,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.4444444444444444,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Left Party",
+        "token_ids": [
+          18365,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1657649572007358,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520077312,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.16494014486670494,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 512,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 176,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1441792,
+      "index_key_bytes": 1024,
+      "metadata_and_format_bytes": 1216,
+      "total_bytes": 1444032,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 176,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1441792,
+    "index_key_bytes": 1024,
+    "metadata_and_format_bytes": 1216,
+    "total_bytes": 1444032,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

@@ -1,0 +1,591 @@
+{
+  "id": "templama:test:Q1140538:P286",
+  "group": "Q1140538:P286",
+  "split": "test",
+  "versions": 2,
+  "queries": [
+    {
+      "query_id": "Q1140538_P286_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q1140538_P286_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Ólafur Thorðarson",
+        "token_ids": [
+          29125,
+          28714,
+          2015,
+          324,
+          20516,
+          29092,
+          1168,
+          266
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.33332790387794375,
+        "prompt_tokens": 219,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15492899328,
+        "kv_cache_bytes": 29753344,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1140538_P286_2019",
+          "Q1140538_P286_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004012074321508408,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.5,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Ólafur Arnarson",
+        "token_ids": [
+          28705,
+          29125,
+          28714,
+          2015,
+          324,
+          17385,
+          1168,
+          266
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.35752446996048093,
+        "prompt_tokens": 331,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15522080256,
+        "kv_cache_bytes": 44433408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q1140538_P286_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q1140538_P286_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Ólafur Thorðarson",
+        "token_ids": [
+          29125,
+          28714,
+          2015,
+          324,
+          20516,
+          29092,
+          1168,
+          266
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3417601059190929,
+        "prompt_tokens": 219,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15493030400,
+        "kv_cache_bytes": 29753344,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1140538_P286_2019",
+          "Q1140538_P286_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003616844303905964,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.5,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Ólafur Arnarson",
+        "token_ids": [
+          28705,
+          29125,
+          28714,
+          2015,
+          324,
+          17385,
+          1168,
+          266
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.38517067581415176,
+        "prompt_tokens": 331,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15522080256,
+        "kv_cache_bytes": 44433408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q1140538_P286_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q1140538_P286_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Ólafur Thorðarson",
+        "token_ids": [
+          29125,
+          28714,
+          2015,
+          324,
+          20516,
+          29092,
+          1168,
+          266
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3540614331141114,
+        "prompt_tokens": 219,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15492899328,
+        "kv_cache_bytes": 29753344,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1140538_P286_2019",
+          "Q1140538_P286_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004124975763261318,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.5,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Ólafur Arnarson",
+        "token_ids": [
+          28705,
+          29125,
+          28714,
+          2015,
+          324,
+          17385,
+          1168,
+          266
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3693854082375765,
+        "prompt_tokens": 331,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15522080256,
+        "kv_cache_bytes": 44433408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q1140538_P286_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q1140538_P286_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Ólafur Thorðarson",
+        "token_ids": [
+          29125,
+          28714,
+          2015,
+          324,
+          20516,
+          29092,
+          1168,
+          266
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3788100369274616,
+        "prompt_tokens": 219,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15493030400,
+        "kv_cache_bytes": 29753344,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1140538_P286_2019",
+          "Q1140538_P286_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003763780929148197,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.5,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Ólafur Arnarson",
+        "token_ids": [
+          28705,
+          29125,
+          28714,
+          2015,
+          324,
+          17385,
+          1168,
+          266
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3568351878784597,
+        "prompt_tokens": 331,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15522080256,
+        "kv_cache_bytes": 44433408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q1140538_P286_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q1140538_P286_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Ólafur Thorðarson",
+        "token_ids": [
+          29125,
+          28714,
+          2015,
+          324,
+          20516,
+          29092,
+          1168,
+          266
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.32528187008574605,
+        "prompt_tokens": 219,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15492899328,
+        "kv_cache_bytes": 29753344,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1140538_P286_2019",
+          "Q1140538_P286_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003840233199298382,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.5,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Ólafur Arnarson",
+        "token_ids": [
+          28705,
+          29125,
+          28714,
+          2015,
+          324,
+          17385,
+          1168,
+          266
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3575888420455158,
+        "prompt_tokens": 331,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15522080256,
+        "kv_cache_bytes": 44433408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q1140538_P286_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q1140538_P286_2019",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Arnar Gunnlaugsson",
+        "token_ids": [
+          1364,
+          24837,
+          420,
+          5494,
+          28714,
+          11614,
+          14542
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3455565646290779,
+        "prompt_tokens": 219,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15493030400,
+        "kv_cache_bytes": 29622272,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1140538_P286_2019",
+          "Q1140538_P286_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0035266350023448467,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Ólafur Arnason",
+        "token_ids": [
+          28705,
+          29125,
+          28714,
+          2015,
+          324,
+          17385,
+          1412
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.33837260119616985,
+        "prompt_tokens": 331,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15522080256,
+        "kv_cache_bytes": 44302336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1140538_P286_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q1140538_P286_2019",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Arnar Gunnlaugsson",
+        "token_ids": [
+          1364,
+          24837,
+          420,
+          5494,
+          28714,
+          11614,
+          14542
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2999994531273842,
+        "prompt_tokens": 219,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15492899328,
+        "kv_cache_bytes": 29622272,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1140538_P286_2019",
+          "Q1140538_P286_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004829342942684889,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Ólafur Arnarson",
+        "token_ids": [
+          28705,
+          29125,
+          28714,
+          2015,
+          324,
+          17385,
+          1168,
+          266
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3686481760814786,
+        "prompt_tokens": 331,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15522080256,
+        "kv_cache_bytes": 44433408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    }
+  ],
+  "write_seconds": 0.0801771879196167,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 256,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 144,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1179648,
+      "index_key_bytes": 512,
+      "metadata_and_format_bytes": 757,
+      "total_bytes": 1180917,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 144,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1179648,
+    "index_key_bytes": 512,
+    "metadata_and_format_bytes": 757,
+    "total_bytes": 1180917,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

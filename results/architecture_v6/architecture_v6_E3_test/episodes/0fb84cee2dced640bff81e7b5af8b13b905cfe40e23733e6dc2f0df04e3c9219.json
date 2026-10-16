@@ -1,0 +1,237 @@
+{
+  "id": "templama:test:Q109362:P69",
+  "group": "Q109362:P69",
+  "split": "test",
+  "versions": 2,
+  "queries": [
+    {
+      "query_id": "Q109362_P69_2010",
+      "latest": false,
+      "as_of": "2010-01-01T00:00:00",
+      "selected_entry_id": "Q109362_P69_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Humboldt University of Berlin / Berlin University of the Arts",
+        "token_ids": [
+          382,
+          2915,
+          738,
+          28707,
+          2900,
+          302,
+          8430,
+          732,
+          8430,
+          2900,
+          302,
+          272,
+          11263
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4978088540956378,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490254336,
+        "kv_cache_bytes": 28573696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q109362_P69_2011",
+          "Q109362_P69_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0040243808180093765,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 743,
+          "total_bytes": 1180903,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Humboldt University of Berlin / Paul H. Nitze School of Advanced International Studies",
+        "token_ids": [
+          382,
+          2915,
+          738,
+          28707,
+          2900,
+          302,
+          8430,
+          732,
+          3920,
+          382,
+          28723,
+          418,
+          279,
+          1374,
+          4228,
+          302,
+          22742,
+          5440,
+          15194
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.7431367579847574,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518574592,
+        "kv_cache_bytes": 44040192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.8
+      }
+    },
+    {
+      "query_id": "Q109362_P69_2011",
+      "latest": true,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q109362_P69_2011",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Humboldt University of Berlin / Paul H. Nitze School of Advanced International Studies",
+        "token_ids": [
+          382,
+          2915,
+          738,
+          28707,
+          2900,
+          302,
+          8430,
+          732,
+          3920,
+          382,
+          28723,
+          418,
+          279,
+          1374,
+          4228,
+          302,
+          22742,
+          5440,
+          15194
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.7565231411717832,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490123264,
+        "kv_cache_bytes": 29360128,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q109362_P69_2011",
+          "Q109362_P69_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004369295202195644,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 743,
+          "total_bytes": 1180903,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.8,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Humboldt University of Berlin / Paul H. Nitze School of Advanced International Studies",
+        "token_ids": [
+          382,
+          2915,
+          738,
+          28707,
+          2900,
+          302,
+          8430,
+          732,
+          3920,
+          382,
+          28723,
+          418,
+          279,
+          1374,
+          4228,
+          302,
+          22742,
+          5440,
+          15194
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6987569187767804,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518574592,
+        "kv_cache_bytes": 44040192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.8
+      }
+    }
+  ],
+  "write_seconds": 0.11380586680024862,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 256,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 144,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1179648,
+      "index_key_bytes": 512,
+      "metadata_and_format_bytes": 743,
+      "total_bytes": 1180903,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 144,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1179648,
+    "index_key_bytes": 512,
+    "metadata_and_format_bytes": 743,
+    "total_bytes": 1180903,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

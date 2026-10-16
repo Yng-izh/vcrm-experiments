@@ -1,0 +1,916 @@
+{
+  "id": "templama:test:Q109397:P54",
+  "group": "Q109397:P54",
+  "split": "test",
+  "versions": 5,
+  "queries": [
+    {
+      "query_id": "Q109397_P54_2010",
+      "latest": false,
+      "as_of": "2010-01-01T00:00:00",
+      "selected_entry_id": "Q109397_P54_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "SV Werder Bremen",
+        "token_ids": [
+          15952,
+          12153,
+          826,
+          365,
+          1569,
+          269
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.27179465908557177,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490689536,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q109397_P54_2016",
+          "Q109397_P54_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004111646208912134,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1403,
+          "total_bytes": 1575547,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "SV Werder Bremen",
+        "token_ids": [
+          15952,
+          12153,
+          826,
+          365,
+          1569,
+          269
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2920568659901619,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q109397_P54_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q109397_P54_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "SV Werder Bremen",
+        "token_ids": [
+          15952,
+          12153,
+          826,
+          365,
+          1569,
+          269
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2637840607203543,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490558464,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q109397_P54_2016",
+          "Q109397_P54_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003885327372699976,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1403,
+          "total_bytes": 1575547,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "SV Werder Bremen",
+        "token_ids": [
+          15952,
+          12153,
+          826,
+          365,
+          1569,
+          269
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.29145512403920293,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q109397_P54_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q109397_P54_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "SV Werder Bremen / FC Bayern Munich",
+        "token_ids": [
+          11607,
+          12153,
+          826,
+          365,
+          1569,
+          269,
+          732,
+          9138,
+          6644,
+          1173,
+          15818,
+          539
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4523028191179037,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490689536,
+        "kv_cache_bytes": 28704768,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q109397_P54_2016",
+          "Q109397_P54_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037583699449896812,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1403,
+          "total_bytes": 1575547,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "SV Werder Bremen / FC Bayern Munich",
+        "token_ids": [
+          15952,
+          12153,
+          826,
+          365,
+          1569,
+          269,
+          732,
+          9138,
+          6644,
+          1173,
+          15818,
+          539
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.47141442634165287,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 43384832,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666
+      }
+    },
+    {
+      "query_id": "Q109397_P54_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q109397_P54_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "FC Bayern Munich",
+        "token_ids": [
+          5417,
+          6644,
+          1173,
+          15818,
+          539
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2324356227181852,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490558464,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q109397_P54_2016",
+          "Q109397_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038987668231129646,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1403,
+          "total_bytes": 1575547,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "FC Bayern Munich",
+        "token_ids": [
+          9138,
+          6644,
+          1173,
+          15818,
+          539
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.26148059871047735,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q109397_P54_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q109397_P54_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "FC Bayern Munich",
+        "token_ids": [
+          5417,
+          6644,
+          1173,
+          15818,
+          539
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23345224373042583,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490689536,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q109397_P54_2016",
+          "Q109397_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003710792865604162,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1403,
+          "total_bytes": 1575547,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "FC Bayern Munich",
+        "token_ids": [
+          9138,
+          6644,
+          1173,
+          15818,
+          539
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.26318897074088454,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q109397_P54_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q109397_P54_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "SV Werder Bremen / FC Bayern Munich",
+        "token_ids": [
+          11607,
+          12153,
+          826,
+          365,
+          1569,
+          269,
+          732,
+          9138,
+          6644,
+          1173,
+          15818,
+          539
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4451190927065909,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490558464,
+        "kv_cache_bytes": 28704768,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q109397_P54_2016",
+          "Q109397_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003588978201150894,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1403,
+          "total_bytes": 1575547,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "SV Werder Bremen / FC Bayern Munich",
+        "token_ids": [
+          15952,
+          12153,
+          826,
+          365,
+          1569,
+          269,
+          732,
+          9138,
+          6644,
+          1173,
+          15818,
+          539
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4671086883172393,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 43384832,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666
+      }
+    },
+    {
+      "query_id": "Q109397_P54_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q109397_P54_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "SV Werder Bremen",
+        "token_ids": [
+          11607,
+          12153,
+          826,
+          365,
+          1569,
+          269
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.26258273888379335,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490689536,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q109397_P54_2016",
+          "Q109397_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.00375833036378026,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1403,
+          "total_bytes": 1575547,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "SV Werder Bremen / FC Bayern Munich",
+        "token_ids": [
+          15952,
+          12153,
+          826,
+          365,
+          1569,
+          269,
+          732,
+          9138,
+          6644,
+          1173,
+          15818,
+          539
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4683327879756689,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 43384832,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666
+      }
+    },
+    {
+      "query_id": "Q109397_P54_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q109397_P54_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "SV Werder Bremen",
+        "token_ids": [
+          11607,
+          12153,
+          826,
+          365,
+          1569,
+          269
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2661195220425725,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490558464,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q109397_P54_2016",
+          "Q109397_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003884911071509123,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1403,
+          "total_bytes": 1575547,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "SV Werder Bremen / FC Bayern Munich",
+        "token_ids": [
+          15952,
+          12153,
+          826,
+          365,
+          1569,
+          269,
+          732,
+          9138,
+          6644,
+          1173,
+          15818,
+          539
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.47461433289572597,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 43384832,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666
+      }
+    },
+    {
+      "query_id": "Q109397_P54_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q109397_P54_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "SV Werder Bremen",
+        "token_ids": [
+          11607,
+          12153,
+          826,
+          365,
+          1569,
+          269
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.26666064001619816,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490689536,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q109397_P54_2016",
+          "Q109397_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0035146111622452736,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1403,
+          "total_bytes": 1575547,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "SV Werder Bremen / FC Bayern Munich",
+        "token_ids": [
+          15952,
+          12153,
+          826,
+          365,
+          1569,
+          269,
+          732,
+          9138,
+          6644,
+          1173,
+          15818,
+          539
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4704006528481841,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 43384832,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666
+      }
+    },
+    {
+      "query_id": "Q109397_P54_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q109397_P54_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "SV Werder Bremen",
+        "token_ids": [
+          11607,
+          12153,
+          826,
+          365,
+          1569,
+          269
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2739593870937824,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490558464,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q109397_P54_2016",
+          "Q109397_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038601881824433804,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1403,
+          "total_bytes": 1575547,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "SV Werder Bremen / FC Bayern Munich",
+        "token_ids": [
+          15952,
+          12153,
+          826,
+          365,
+          1569,
+          269,
+          732,
+          9138,
+          6644,
+          1173,
+          15818,
+          539
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5633980468846858,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 43384832,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666
+      }
+    },
+    {
+      "query_id": "Q109397_P54_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q109397_P54_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "SV Werder Bremen",
+        "token_ids": [
+          11607,
+          12153,
+          826,
+          365,
+          1569,
+          269
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.30924808559939265,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490689536,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q109397_P54_2016",
+          "Q109397_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003956675995141268,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1403,
+          "total_bytes": 1575547,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "SV Werder Bremen / FC Bayern Munich",
+        "token_ids": [
+          15952,
+          12153,
+          826,
+          365,
+          1569,
+          269,
+          732,
+          9138,
+          6644,
+          1173,
+          15818,
+          539
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5606319541111588,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 43384832,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666
+      }
+    }
+  ],
+  "write_seconds": 0.2107198452576995,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 640,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 192,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1572864,
+      "index_key_bytes": 1280,
+      "metadata_and_format_bytes": 1403,
+      "total_bytes": 1575547,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 192,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1572864,
+    "index_key_bytes": 1280,
+    "metadata_and_format_bytes": 1403,
+    "total_bytes": 1575547,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

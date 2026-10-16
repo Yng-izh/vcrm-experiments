@@ -1,0 +1,821 @@
+{
+  "id": "templama:test:Q1102044:P102",
+  "group": "Q1102044:P102",
+  "split": "test",
+  "versions": 2,
+  "queries": [
+    {
+      "query_id": "Q1102044_P102_2010",
+      "latest": false,
+      "as_of": "2010-01-01T00:00:00",
+      "selected_entry_id": "Q1102044_P102_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Democratic Party",
+        "token_ids": [
+          16989,
+          26184,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17879198817536235,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490993664,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1102044_P102_2011",
+          "Q1102044_P102_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004563899245113134,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Union of the Centre",
+        "token_ids": [
+          7085,
+          302,
+          272,
+          11304
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22933949064463377,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1102044_P102_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q1102044_P102_2011",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Union of the Centre",
+        "token_ids": [
+          20981,
+          302,
+          272,
+          11304
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2010099017061293,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491124736,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1102044_P102_2011",
+          "Q1102044_P102_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0035707987844944,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Union of the Centre",
+        "token_ids": [
+          7085,
+          302,
+          272,
+          11304
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22704233368858695,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1102044_P102_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q1102044_P102_2011",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Union of the Centre",
+        "token_ids": [
+          20981,
+          302,
+          272,
+          11304
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20530481915920973,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490993664,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1102044_P102_2011",
+          "Q1102044_P102_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038954010233283043,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Union of the Centre",
+        "token_ids": [
+          7085,
+          302,
+          272,
+          11304
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22646070225164294,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1102044_P102_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q1102044_P102_2011",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Union of the Centre",
+        "token_ids": [
+          20981,
+          302,
+          272,
+          11304
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20286615984514356,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491124736,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1102044_P102_2011",
+          "Q1102044_P102_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003954631742089987,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Union of the Centre",
+        "token_ids": [
+          7085,
+          302,
+          272,
+          11304
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23403449403122067,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1102044_P102_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q1102044_P102_2011",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Union of the Centre",
+        "token_ids": [
+          20981,
+          302,
+          272,
+          11304
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20642508985474706,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490993664,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1102044_P102_2011",
+          "Q1102044_P102_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003989220131188631,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Union of the Centre",
+        "token_ids": [
+          7085,
+          302,
+          272,
+          11304
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22885433677583933,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1102044_P102_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q1102044_P102_2011",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Union of the Centre",
+        "token_ids": [
+          20981,
+          302,
+          272,
+          11304
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20674226712435484,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491124736,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1102044_P102_2011",
+          "Q1102044_P102_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003976917359977961,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Union of the Centre",
+        "token_ids": [
+          7085,
+          302,
+          272,
+          11304
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23031805409118533,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1102044_P102_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q1102044_P102_2011",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Union of the Centre",
+        "token_ids": [
+          20981,
+          302,
+          272,
+          11304
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20811362704262137,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490993664,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1102044_P102_2011",
+          "Q1102044_P102_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038038152270019054,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Union of the Centre",
+        "token_ids": [
+          7085,
+          302,
+          272,
+          11304
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23042212100699544,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1102044_P102_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q1102044_P102_2011",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Union of the Centre",
+        "token_ids": [
+          20981,
+          302,
+          272,
+          11304
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20909009408205748,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491124736,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1102044_P102_2011",
+          "Q1102044_P102_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003882959019392729,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Union of the Centre",
+        "token_ids": [
+          7085,
+          302,
+          272,
+          11304
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22702858317643404,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1102044_P102_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q1102044_P102_2011",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Union of the Centre",
+        "token_ids": [
+          20981,
+          302,
+          272,
+          11304
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20500335283577442,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490993664,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1102044_P102_2011",
+          "Q1102044_P102_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004132486879825592,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Union of the Centre",
+        "token_ids": [
+          7085,
+          302,
+          272,
+          11304
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2270742431282997,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1102044_P102_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q1102044_P102_2011",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Union of the Centre",
+        "token_ids": [
+          20981,
+          302,
+          272,
+          11304
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20191023498773575,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491124736,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1102044_P102_2011",
+          "Q1102044_P102_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004017543978989124,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Union of the Centre",
+        "token_ids": [
+          7085,
+          302,
+          272,
+          11304
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2621500459499657,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1102044_P102_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q1102044_P102_2011",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Union of the Centre",
+        "token_ids": [
+          20981,
+          302,
+          272,
+          11304
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20700509240850806,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490993664,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1102044_P102_2011",
+          "Q1102044_P102_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0041826507076621056,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Union of the Centre",
+        "token_ids": [
+          7085,
+          302,
+          272,
+          11304
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23047701502218843,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.086298868060112,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 256,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 144,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1179648,
+      "index_key_bytes": 512,
+      "metadata_and_format_bytes": 757,
+      "total_bytes": 1180917,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 144,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1179648,
+    "index_key_bytes": 512,
+    "metadata_and_format_bytes": 757,
+    "total_bytes": 1180917,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

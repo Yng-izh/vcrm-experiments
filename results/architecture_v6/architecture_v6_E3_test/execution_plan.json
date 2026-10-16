@@ -1,0 +1,10 @@
+{
+  "stage": "codec-eval",
+  "gpus": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "shards": 4
+}

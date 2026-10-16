@@ -1,0 +1,516 @@
+{
+  "id": "templama:val:Q2092290:P54",
+  "group": "Q2092290:P54",
+  "split": "val",
+  "versions": 7,
+  "queries": [
+    {
+      "query_id": "Q2092290_P54_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q2092290_P54_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Sparta Rotterdam",
+        "token_ids": [
+          1670,
+          18311,
+          13430,
+          360,
+          8929
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2559919620398432,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499604480,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q2092290_P54_2019",
+          "Q2092290_P54_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004412048030644655,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1949,
+          "total_bytes": 1838749,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Quincy Promes plays for Sevilla Eagles / FC Twente.",
+        "token_ids": [
+          2332,
+          1814,
+          28724,
+          12948,
+          274,
+          8928,
+          354,
+          26728,
+          4534,
+          413,
+          26664,
+          732,
+          9138,
+          5852,
+          3639,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6279407748952508,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527990272,
+        "kv_cache_bytes": 43909120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.4
+      }
+    },
+    {
+      "query_id": "Q2092290_P54_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q2092290_P54_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Netherlands national under-19 football team",
+        "token_ids": [
+          20526,
+          4282,
+          916,
+          28733,
+          28740,
+          28774,
+          6569,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3469283829908818,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499473408,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q2092290_P54_2019",
+          "Q2092290_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0043950569815933704,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1949,
+          "total_bytes": 1838749,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.8,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Netherlands national under-21 national association football team / Sevilla FC / FC Twente",
+        "token_ids": [
+          20526,
+          4282,
+          916,
+          28733,
+          28750,
+          28740,
+          4282,
+          13895,
+          6569,
+          1918,
+          732,
+          26728,
+          4534,
+          9138,
+          732,
+          9138,
+          5852,
+          3639
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.7112969199661165,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527990272,
+        "kv_cache_bytes": 44171264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.625
+      }
+    },
+    {
+      "query_id": "Q2092290_P54_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q2092290_P54_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Spartak Moscow",
+        "token_ids": [
+          1670,
+          444,
+          491,
+          17293
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.21849409979768097,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499604480,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q2092290_P54_2019",
+          "Q2092290_P54_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004120797151699662,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1949,
+          "total_bytes": 1838749,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Spartak Moscow",
+        "token_ids": [
+          1670,
+          444,
+          491,
+          17293
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2419035939965397,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527990272,
+        "kv_cache_bytes": 42336256,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q2092290_P54_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q2092290_P54_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Ajax Amsterdam",
+        "token_ids": [
+          330,
+          15797,
+          20970
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1869875369593501,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499473408,
+        "kv_cache_bytes": 27525120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q2092290_P54_2019",
+          "Q2092290_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004335073055699468,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1949,
+          "total_bytes": 1838749,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Quincy Promes plays for Sevilla FC.",
+        "token_ids": [
+          2332,
+          1814,
+          28724,
+          12948,
+          274,
+          8928,
+          354,
+          26728,
+          4534,
+          9138,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4721834908705205,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527990272,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q2092290_P54_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q2092290_P54_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Ajax Amsterdam",
+        "token_ids": [
+          330,
+          15797,
+          20970
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1845745590981096,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499604480,
+        "kv_cache_bytes": 27525120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q2092290_P54_2019",
+          "Q2092290_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004277538042515516,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1949,
+          "total_bytes": 1838749,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Quincy Promes plays for Sevilla FC.",
+        "token_ids": [
+          2332,
+          1814,
+          28724,
+          12948,
+          274,
+          8928,
+          354,
+          26728,
+          4534,
+          9138,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.48042425513267517,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527990272,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q2092290_P54_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q2092290_P54_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Ajax Amsterdam",
+        "token_ids": [
+          330,
+          15797,
+          20970
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.187668913975358,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499473408,
+        "kv_cache_bytes": 27525120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q2092290_P54_2019",
+          "Q2092290_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004603113047778606,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1949,
+          "total_bytes": 1838749,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Quincy Promes plays for Sevilla FC.",
+        "token_ids": [
+          2332,
+          1814,
+          28724,
+          12948,
+          274,
+          8928,
+          354,
+          26728,
+          4534,
+          9138,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4812076590023935,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527990272,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    }
+  ],
+  "write_seconds": 0.2952764821238816,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 896,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 224,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1835008,
+      "index_key_bytes": 1792,
+      "metadata_and_format_bytes": 1949,
+      "total_bytes": 1838749,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 224,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1835008,
+    "index_key_bytes": 1792,
+    "metadata_and_format_bytes": 1949,
+    "total_bytes": 1838749,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

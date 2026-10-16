@@ -1,0 +1,628 @@
+{
+  "id": "templama:test:Q10329:P286",
+  "group": "Q10329:P286",
+  "split": "test",
+  "versions": 5,
+  "queries": [
+    {
+      "query_id": "Q10329_P286_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q10329_P286_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Unai Emery",
+        "token_ids": [
+          935,
+          1585,
+          16762,
+          28724
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20512382173910737,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491124736,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10329_P286_2020",
+          "Q10329_P286_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003655610140413046,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1403,
+          "total_bytes": 1575547,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Unai Emery",
+        "token_ids": [
+          935,
+          1585,
+          16762,
+          28724
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22615124192088842,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10329_P286_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q10329_P286_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Unai Emery",
+        "token_ids": [
+          935,
+          1585,
+          16762,
+          28724
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20605992805212736,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490993664,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10329_P286_2020",
+          "Q10329_P286_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003725077025592327,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1403,
+          "total_bytes": 1575547,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Unai Emery",
+        "token_ids": [
+          935,
+          1585,
+          16762,
+          28724
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2255706931464374,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10329_P286_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q10329_P286_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Unai Emery",
+        "token_ids": [
+          935,
+          1585,
+          16762,
+          28724
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20217385096475482,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491124736,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10329_P286_2020",
+          "Q10329_P286_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.00372940581291914,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1403,
+          "total_bytes": 1575547,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Unai Emery",
+        "token_ids": [
+          935,
+          1585,
+          16762,
+          28724
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22582514118403196,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10329_P286_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q10329_P286_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Unai Emery",
+        "token_ids": [
+          935,
+          1585,
+          16762,
+          28724
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20201736222952604,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490993664,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10329_P286_2020",
+          "Q10329_P286_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0035110036842525005,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1403,
+          "total_bytes": 1575547,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Unai Emery",
+        "token_ids": [
+          935,
+          1585,
+          16762,
+          28724
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22864927211776376,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10329_P286_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q10329_P286_2017",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Vincenzo Montella",
+        "token_ids": [
+          28790,
+          1814,
+          269,
+          4167,
+          5684,
+          1994
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2677520648576319,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491124736,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10329_P286_2020",
+          "Q10329_P286_2017"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036422619596123695,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1403,
+          "total_bytes": 1575547,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Julen Lopetegui",
+        "token_ids": [
+          5376,
+          269,
+          393,
+          410,
+          299,
+          641,
+          1724
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.31747536920011044,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q10329_P286_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q10329_P286_2018",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Vincenzo Montella",
+        "token_ids": [
+          28790,
+          1814,
+          269,
+          4167,
+          5684,
+          1994
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2647551638074219,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490993664,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10329_P286_2020",
+          "Q10329_P286_2018"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003561353776603937,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1403,
+          "total_bytes": 1575547,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Vincenzo Montella",
+        "token_ids": [
+          550,
+          1814,
+          269,
+          4167,
+          5684,
+          1994
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.28736290615051985,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10329_P286_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q10329_P286_2019",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Pablo Machín",
+        "token_ids": [
+          28753,
+          22866,
+          16290,
+          5905
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2072442048229277,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491124736,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10329_P286_2020",
+          "Q10329_P286_2019"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003732510842382908,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1403,
+          "total_bytes": 1575547,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Julen Lopetegui",
+        "token_ids": [
+          5376,
+          269,
+          393,
+          410,
+          299,
+          641,
+          1724
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3184051108546555,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10329_P286_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q10329_P286_2020",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Julen Lopetegui",
+        "token_ids": [
+          28798,
+          353,
+          269,
+          393,
+          410,
+          299,
+          641,
+          1724
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.33807727694511414,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490993664,
+        "kv_cache_bytes": 28442624,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10329_P286_2020",
+          "Q10329_P286_2019"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003595747984945774,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1403,
+          "total_bytes": 1575547,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Julen Lopetegui",
+        "token_ids": [
+          5376,
+          269,
+          393,
+          410,
+          299,
+          641,
+          1724
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.319609337951988,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.2160450709052384,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 640,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 192,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1572864,
+      "index_key_bytes": 1280,
+      "metadata_and_format_bytes": 1403,
+      "total_bytes": 1575547,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 192,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1572864,
+    "index_key_bytes": 1280,
+    "metadata_and_format_bytes": 1403,
+    "total_bytes": 1575547,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

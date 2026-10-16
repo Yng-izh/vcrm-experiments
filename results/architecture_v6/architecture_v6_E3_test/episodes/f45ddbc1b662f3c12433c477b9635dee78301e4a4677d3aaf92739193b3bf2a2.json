@@ -1,0 +1,373 @@
+{
+  "id": "templama:test:Q1077015:P39",
+  "group": "Q1077015:P39",
+  "split": "test",
+  "versions": 2,
+  "queries": [
+    {
+      "query_id": "Q1077015_P39_2010",
+      "latest": false,
+      "as_of": "2010-01-01T00:00:00",
+      "selected_entry_id": "Q1077015_P39_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Minister for Immigration and Border Protection of Australia",
+        "token_ids": [
+          8241,
+          354,
+          25555,
+          7491,
+          304,
+          365,
+          2274,
+          21154,
+          302,
+          6664
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.47139925695955753,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490558464,
+        "kv_cache_bytes": 28442624,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1077015_P39_2013",
+          "Q1077015_P39_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036679101176559925,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 750,
+          "total_bytes": 1180910,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Minister for Immigration and Border Protection of Australia",
+        "token_ids": [
+          8241,
+          354,
+          25555,
+          7491,
+          304,
+          365,
+          2274,
+          21154,
+          302,
+          6664
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.48292599990963936,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1077015_P39_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q1077015_P39_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Minister for Immigration and Border Protection of Australia",
+        "token_ids": [
+          8241,
+          354,
+          25555,
+          7491,
+          304,
+          365,
+          2274,
+          21154,
+          302,
+          6664
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.45792910270392895,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490689536,
+        "kv_cache_bytes": 28442624,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1077015_P39_2013",
+          "Q1077015_P39_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038269925862550735,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 750,
+          "total_bytes": 1180910,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Minister for Immigration and Border Protection of Australia",
+        "token_ids": [
+          8241,
+          354,
+          25555,
+          7491,
+          304,
+          365,
+          2274,
+          21154,
+          302,
+          6664
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4812335269525647,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1077015_P39_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q1077015_P39_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Minister for Immigration and Border Protection of Australia",
+        "token_ids": [
+          8241,
+          354,
+          25555,
+          7491,
+          304,
+          365,
+          2274,
+          21154,
+          302,
+          6664
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4678604048676789,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490558464,
+        "kv_cache_bytes": 28442624,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1077015_P39_2013",
+          "Q1077015_P39_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004328582901507616,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 750,
+          "total_bytes": 1180910,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Minister for Immigration and Border Protection of Australia",
+        "token_ids": [
+          8241,
+          354,
+          25555,
+          7491,
+          304,
+          365,
+          2274,
+          21154,
+          302,
+          6664
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.47636080207303166,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1077015_P39_2013",
+      "latest": true,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q1077015_P39_2013",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Minister for Immigration and Border Protection of Australia",
+        "token_ids": [
+          8241,
+          354,
+          25555,
+          7491,
+          304,
+          365,
+          2274,
+          21154,
+          302,
+          6664
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.46757995802909136,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490689536,
+        "kv_cache_bytes": 28442624,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1077015_P39_2013",
+          "Q1077015_P39_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0039631063118577,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 750,
+          "total_bytes": 1180910,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Minister for Immigration and Border Protection of Australia",
+        "token_ids": [
+          8241,
+          354,
+          25555,
+          7491,
+          304,
+          365,
+          2274,
+          21154,
+          302,
+          6664
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4821265540085733,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.08467488689348102,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 256,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 144,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1179648,
+      "index_key_bytes": 512,
+      "metadata_and_format_bytes": 750,
+      "total_bytes": 1180910,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 144,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1179648,
+    "index_key_bytes": 512,
+    "metadata_and_format_bytes": 750,
+    "total_bytes": 1180910,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

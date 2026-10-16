@@ -1,0 +1,854 @@
+{
+  "id": "templama:test:Q1005:P6",
+  "group": "Q1005:P6",
+  "split": "test",
+  "versions": 3,
+  "queries": [
+    {
+      "query_id": "Q1005_P6_2010",
+      "latest": false,
+      "as_of": "2010-01-01T00:00:00",
+      "selected_entry_id": "Q1005_P6_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Yahya Jammeh",
+        "token_ids": [
+          28802,
+          912,
+          5157,
+          11776,
+          1127,
+          28716
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.261595768854022,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491645952,
+        "kv_cache_bytes": 28573696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1005_P6_2018",
+          "Q1005_P6_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.005806935019791126,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 936,
+          "total_bytes": 1312424,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Yahya Jammeh",
+        "token_ids": [
+          627,
+          912,
+          5157,
+          11776,
+          1127,
+          28716
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.28377282712608576,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520327168,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1005_P6_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q1005_P6_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Yahya Jammeh",
+        "token_ids": [
+          28802,
+          912,
+          5157,
+          11776,
+          1127,
+          28716
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2607843461446464,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491777024,
+        "kv_cache_bytes": 28573696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1005_P6_2018",
+          "Q1005_P6_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0035931849852204323,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 936,
+          "total_bytes": 1312424,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Yahya Jammeh",
+        "token_ids": [
+          627,
+          912,
+          5157,
+          11776,
+          1127,
+          28716
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2873810878954828,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520327168,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1005_P6_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q1005_P6_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Yahya Jammeh",
+        "token_ids": [
+          28802,
+          912,
+          5157,
+          11776,
+          1127,
+          28716
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.26625199522823095,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491645952,
+        "kv_cache_bytes": 28573696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1005_P6_2018",
+          "Q1005_P6_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036960048601031303,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 936,
+          "total_bytes": 1312424,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Yahya Jammeh",
+        "token_ids": [
+          627,
+          912,
+          5157,
+          11776,
+          1127,
+          28716
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2857448384165764,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520327168,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1005_P6_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q1005_P6_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Yahya Jammeh",
+        "token_ids": [
+          28802,
+          912,
+          5157,
+          11776,
+          1127,
+          28716
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.26738664181903005,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491777024,
+        "kv_cache_bytes": 28573696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1005_P6_2018",
+          "Q1005_P6_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037316856905817986,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 936,
+          "total_bytes": 1312424,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Yahya Jammeh",
+        "token_ids": [
+          627,
+          912,
+          5157,
+          11776,
+          1127,
+          28716
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2843858380801976,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520327168,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1005_P6_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q1005_P6_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Yahya Jammeh",
+        "token_ids": [
+          28802,
+          912,
+          5157,
+          11776,
+          1127,
+          28716
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.26859767083078623,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491645952,
+        "kv_cache_bytes": 28573696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1005_P6_2018",
+          "Q1005_P6_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003773055039346218,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 936,
+          "total_bytes": 1312424,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Yahya Jammeh",
+        "token_ids": [
+          627,
+          912,
+          5157,
+          11776,
+          1127,
+          28716
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.28563025081530213,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520327168,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1005_P6_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q1005_P6_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Yahya Jammeh",
+        "token_ids": [
+          28802,
+          912,
+          5157,
+          11776,
+          1127,
+          28716
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.25861009163782,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491777024,
+        "kv_cache_bytes": 28573696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1005_P6_2018",
+          "Q1005_P6_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036247950047254562,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 936,
+          "total_bytes": 1312424,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Yahya Jammeh",
+        "token_ids": [
+          627,
+          912,
+          5157,
+          11776,
+          1127,
+          28716
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2845302070491016,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520327168,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1005_P6_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q1005_P6_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Yahya Jammeh",
+        "token_ids": [
+          28802,
+          912,
+          5157,
+          11776,
+          1127,
+          28716
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2920782440342009,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491645952,
+        "kv_cache_bytes": 28573696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1005_P6_2018",
+          "Q1005_P6_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037187188863754272,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 936,
+          "total_bytes": 1312424,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Yahya Jammeh",
+        "token_ids": [
+          627,
+          912,
+          5157,
+          11776,
+          1127,
+          28716
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2857348849065602,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520327168,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1005_P6_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q1005_P6_2017",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Yahya Jammeh",
+        "token_ids": [
+          28802,
+          912,
+          5157,
+          11776,
+          1127,
+          28716
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.26248923409730196,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491777024,
+        "kv_cache_bytes": 28573696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1005_P6_2018",
+          "Q1005_P6_2017"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038081519305706024,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 936,
+          "total_bytes": 1312424,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Yahya Jammeh",
+        "token_ids": [
+          627,
+          912,
+          5157,
+          11776,
+          1127,
+          28716
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.283962928224355,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520327168,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1005_P6_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q1005_P6_2018",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Adama Barrow",
+        "token_ids": [
+          3261,
+          2786,
+          3011,
+          671
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2000402631238103,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491645952,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1005_P6_2018",
+          "Q1005_P6_2017"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038550198078155518,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 936,
+          "total_bytes": 1312424,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Adama Barrow",
+        "token_ids": [
+          1964,
+          2786,
+          3011,
+          671
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22464708238840103,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520327168,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1005_P6_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q1005_P6_2018",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Adama Barrow",
+        "token_ids": [
+          3261,
+          2786,
+          3011,
+          671
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20045889681205153,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491777024,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1005_P6_2018",
+          "Q1005_P6_2017"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038171587511897087,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 936,
+          "total_bytes": 1312424,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Adama Barrow",
+        "token_ids": [
+          1964,
+          2786,
+          3011,
+          671
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2237082221545279,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520327168,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1005_P6_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q1005_P6_2018",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Adama Barrow",
+        "token_ids": [
+          3261,
+          2786,
+          3011,
+          671
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1998611860908568,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491645952,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1005_P6_2018",
+          "Q1005_P6_2017"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003706761170178652,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 936,
+          "total_bytes": 1312424,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Adama Barrow",
+        "token_ids": [
+          1964,
+          2786,
+          3011,
+          671
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22744983015581965,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520327168,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.11876337975263596,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 384,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 160,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1310720,
+      "index_key_bytes": 768,
+      "metadata_and_format_bytes": 936,
+      "total_bytes": 1312424,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 160,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1310720,
+    "index_key_bytes": 768,
+    "metadata_and_format_bytes": 936,
+    "total_bytes": 1312424,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

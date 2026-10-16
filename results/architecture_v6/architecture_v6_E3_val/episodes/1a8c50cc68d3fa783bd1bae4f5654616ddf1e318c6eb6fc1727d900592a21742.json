@@ -1,0 +1,426 @@
+{
+  "id": "templama:val:Q1892745:P127",
+  "group": "Q1892745:P127",
+  "split": "val",
+  "versions": 5,
+  "queries": [
+    {
+      "query_id": "Q1892745_P127_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q1892745_P127_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Alexander Parish",
+        "token_ids": [
+          11055,
+          2316,
+          789
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17674563406035304,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1892745_P127_2018",
+          "Q1892745_P127_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003445328213274479,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1429,
+          "total_bytes": 1575573,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Abu Dhabi Tourism & Culture Authority",
+        "token_ids": [
+          24712,
+          384,
+          8237,
+          28710,
+          7113,
+          1443,
+          567,
+          17796,
+          20653
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.37649459997192025,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1892745_P127_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q1892745_P127_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Dmitry Rybolovlev",
+        "token_ids": [
+          384,
+          2162,
+          643,
+          15971,
+          2329,
+          626,
+          2303
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2910583387129009,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490906624,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1892745_P127_2018",
+          "Q1892745_P127_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038190712220966816,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1429,
+          "total_bytes": 1575573,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Dmitry Rybolovlev",
+        "token_ids": [
+          384,
+          2162,
+          643,
+          15971,
+          2329,
+          626,
+          2303
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3176051522605121,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1892745_P127_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q1892745_P127_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Dmitry Rybolovlev",
+        "token_ids": [
+          384,
+          2162,
+          643,
+          15971,
+          2329,
+          626,
+          2303
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2922030691988766,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1892745_P127_2018",
+          "Q1892745_P127_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037921080365777016,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1429,
+          "total_bytes": 1575573,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Dmitry Rybolovlev",
+        "token_ids": [
+          384,
+          2162,
+          643,
+          15971,
+          2329,
+          626,
+          2303
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3223338630050421,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1892745_P127_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q1892745_P127_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Dmitry Rybolovlev",
+        "token_ids": [
+          384,
+          2162,
+          643,
+          15971,
+          2329,
+          626,
+          2303
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.29328517289832234,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490906624,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1892745_P127_2018",
+          "Q1892745_P127_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038351211696863174,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1429,
+          "total_bytes": 1575573,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Dmitry Rybolovlev",
+        "token_ids": [
+          384,
+          2162,
+          643,
+          15971,
+          2329,
+          626,
+          2303
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.32620377000421286,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1892745_P127_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q1892745_P127_2017",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Dmitry Rybolovlev",
+        "token_ids": [
+          384,
+          2162,
+          643,
+          15971,
+          2329,
+          626,
+          2303
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2965741795487702,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1892745_P127_2018",
+          "Q1892745_P127_2017"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0035507245920598507,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1429,
+          "total_bytes": 1575573,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Abu Dhabi Tourism & Culture Authority",
+        "token_ids": [
+          24712,
+          384,
+          8237,
+          28710,
+          7113,
+          1443,
+          567,
+          17796,
+          20653
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3768700649961829,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.20679181860759854,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 640,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 192,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1572864,
+      "index_key_bytes": 1280,
+      "metadata_and_format_bytes": 1429,
+      "total_bytes": 1575573,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 192,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1572864,
+    "index_key_bytes": 1280,
+    "metadata_and_format_bytes": 1429,
+    "total_bytes": 1575573,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

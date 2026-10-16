@@ -1,0 +1,915 @@
+{
+  "id": "templama:test:Q10552391:P54",
+  "group": "Q10552391:P54",
+  "split": "test",
+  "versions": 4,
+  "queries": [
+    {
+      "query_id": "Q10552391_P54_2010",
+      "latest": false,
+      "as_of": "2010-01-01T00:00:00",
+      "selected_entry_id": "Q10552391_P54_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Santa Clara Broncos",
+        "token_ids": [
+          28735,
+          9092,
+          27901,
+          8303,
+          5832
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.24246784206479788,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10552391_P54_2014",
+          "Q10552391_P54_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003702240064740181,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1205,
+          "total_bytes": 1444021,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "United States women's national soccer team",
+        "token_ids": [
+          2969,
+          3543,
+          2525,
+          28742,
+          28713,
+          4282,
+          22642,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3533390457741916,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q10552391_P54_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q10552391_P54_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "United States women's national under-20 soccer team",
+        "token_ids": [
+          2969,
+          3543,
+          2525,
+          28742,
+          28713,
+          4282,
+          916,
+          28733,
+          28750,
+          28734,
+          22642,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4486281988210976,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 28573696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10552391_P54_2014",
+          "Q10552391_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038365800864994526,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1205,
+          "total_bytes": 1444021,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "United States women's national soccer team",
+        "token_ids": [
+          2969,
+          3543,
+          2525,
+          28742,
+          28713,
+          4282,
+          22642,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.352136611007154,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.9230769230769231
+      }
+    },
+    {
+      "query_id": "Q10552391_P54_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q10552391_P54_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "United States women's national under-20 soccer team",
+        "token_ids": [
+          2969,
+          3543,
+          2525,
+          28742,
+          28713,
+          4282,
+          916,
+          28733,
+          28750,
+          28734,
+          22642,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.44786286912858486,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 28573696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10552391_P54_2014",
+          "Q10552391_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037673013284802437,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1205,
+          "total_bytes": 1444021,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "United States women's national soccer team",
+        "token_ids": [
+          2969,
+          3543,
+          2525,
+          28742,
+          28713,
+          4282,
+          22642,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3497309572994709,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.9230769230769231
+      }
+    },
+    {
+      "query_id": "Q10552391_P54_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q10552391_P54_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "United States women's national soccer team",
+        "token_ids": [
+          2969,
+          3543,
+          2525,
+          28742,
+          28713,
+          4282,
+          22642,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.329726146068424,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10552391_P54_2014",
+          "Q10552391_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004014529287815094,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1205,
+          "total_bytes": 1444021,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "United States women's national soccer team",
+        "token_ids": [
+          2969,
+          3543,
+          2525,
+          28742,
+          28713,
+          4282,
+          22642,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.35450060898438096,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10552391_P54_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q10552391_P54_2014",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "United States women's national soccer team",
+        "token_ids": [
+          2969,
+          3543,
+          2525,
+          28742,
+          28713,
+          4282,
+          22642,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.33006169414147735,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10552391_P54_2014",
+          "Q10552391_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037722550332546234,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1205,
+          "total_bytes": 1444021,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "United States women's national soccer team",
+        "token_ids": [
+          2969,
+          3543,
+          2525,
+          28742,
+          28713,
+          4282,
+          22642,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.350188662763685,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10552391_P54_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q10552391_P54_2014",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "United States women's national soccer team",
+        "token_ids": [
+          2969,
+          3543,
+          2525,
+          28742,
+          28713,
+          4282,
+          22642,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.33003028901293874,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10552391_P54_2014",
+          "Q10552391_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003820616751909256,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1205,
+          "total_bytes": 1444021,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "United States women's national soccer team",
+        "token_ids": [
+          2969,
+          3543,
+          2525,
+          28742,
+          28713,
+          4282,
+          22642,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.35410109302029014,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10552391_P54_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q10552391_P54_2014",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "United States women's national soccer team",
+        "token_ids": [
+          2969,
+          3543,
+          2525,
+          28742,
+          28713,
+          4282,
+          22642,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.33262461982667446,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10552391_P54_2014",
+          "Q10552391_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003915362060070038,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1205,
+          "total_bytes": 1444021,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "United States women's national soccer team",
+        "token_ids": [
+          2969,
+          3543,
+          2525,
+          28742,
+          28713,
+          4282,
+          22642,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3644612664356828,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10552391_P54_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q10552391_P54_2014",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "United States women's national soccer team",
+        "token_ids": [
+          2969,
+          3543,
+          2525,
+          28742,
+          28713,
+          4282,
+          22642,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3345900662243366,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10552391_P54_2014",
+          "Q10552391_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003999912180006504,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1205,
+          "total_bytes": 1444021,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "United States women's national soccer team",
+        "token_ids": [
+          2969,
+          3543,
+          2525,
+          28742,
+          28713,
+          4282,
+          22642,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3568468070589006,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10552391_P54_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q10552391_P54_2014",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "United States women's national soccer team",
+        "token_ids": [
+          2969,
+          3543,
+          2525,
+          28742,
+          28713,
+          4282,
+          22642,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3349156738258898,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10552391_P54_2014",
+          "Q10552391_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004152551293373108,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1205,
+          "total_bytes": 1444021,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "United States women's national soccer team",
+        "token_ids": [
+          2969,
+          3543,
+          2525,
+          28742,
+          28713,
+          4282,
+          22642,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.37321960320696235,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10552391_P54_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q10552391_P54_2014",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "United States women's national soccer team",
+        "token_ids": [
+          2969,
+          3543,
+          2525,
+          28742,
+          28713,
+          4282,
+          22642,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.33475461602211,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10552391_P54_2014",
+          "Q10552391_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004236544948071241,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1205,
+          "total_bytes": 1444021,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "United States women's national soccer team",
+        "token_ids": [
+          2969,
+          3543,
+          2525,
+          28742,
+          28713,
+          4282,
+          22642,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.35500998981297016,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10552391_P54_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q10552391_P54_2014",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "United States women's national soccer team",
+        "token_ids": [
+          2969,
+          3543,
+          2525,
+          28742,
+          28713,
+          4282,
+          22642,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3397440677508712,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10552391_P54_2014",
+          "Q10552391_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0044345250353217125,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1205,
+          "total_bytes": 1444021,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "United States women's national soccer team",
+        "token_ids": [
+          2969,
+          3543,
+          2525,
+          28742,
+          28713,
+          4282,
+          22642,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.36054107965901494,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.17902738880366087,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 512,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 176,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1441792,
+      "index_key_bytes": 1024,
+      "metadata_and_format_bytes": 1205,
+      "total_bytes": 1444021,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 176,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1441792,
+    "index_key_bytes": 1024,
+    "metadata_and_format_bytes": 1205,
+    "total_bytes": 1444021,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

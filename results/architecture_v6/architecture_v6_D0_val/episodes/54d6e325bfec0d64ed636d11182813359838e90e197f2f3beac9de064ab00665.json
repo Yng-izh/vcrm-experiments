@@ -1,0 +1,315 @@
+{
+  "id": "templama:val:Q2113902:P54",
+  "group": "Q2113902:P54",
+  "split": "val",
+  "versions": 4,
+  "queries": [
+    {
+      "query_id": "Q2113902_P54_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q2113902_P54_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Chicago Sky",
+        "token_ids": [
+          8449,
+          14852
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1481066420674324,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499821568,
+        "kv_cache_bytes": 27525120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q2113902_P54_2017",
+          "Q2113902_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.007991863880306482,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1238,
+          "total_bytes": 1444054,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Chicago Sky",
+        "token_ids": [
+          8449,
+          14852
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.18004210200160742,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528240128,
+        "kv_cache_bytes": 42205184,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q2113902_P54_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q2113902_P54_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Chicago Sky",
+        "token_ids": [
+          1209,
+          7707,
+          14852
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19020877219736576,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499690496,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q2113902_P54_2017",
+          "Q2113902_P54_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.008882706984877586,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1238,
+          "total_bytes": 1444054,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Washington Mystics",
+        "token_ids": [
+          5924,
+          22737,
+          1063
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2063996926881373,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528240128,
+        "kv_cache_bytes": 42336256,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q2113902_P54_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q2113902_P54_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Chicago Sky",
+        "token_ids": [
+          1209,
+          7707,
+          14852
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19307509995996952,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499821568,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q2113902_P54_2017",
+          "Q2113902_P54_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.00744434492662549,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1238,
+          "total_bytes": 1444054,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Washington Mystics",
+        "token_ids": [
+          5924,
+          22737,
+          1063
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2043141578324139,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528240128,
+        "kv_cache_bytes": 42336256,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q2113902_P54_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q2113902_P54_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Washington Mystics",
+        "token_ids": [
+          5924,
+          22737,
+          1063
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.181476476136595,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499690496,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q2113902_P54_2017",
+          "Q2113902_P54_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.009658345021307468,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1238,
+          "total_bytes": 1444054,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 1
+      },
+      "uncompressed_pair": {
+        "answer": "Washington Mystics",
+        "token_ids": [
+          5924,
+          22737,
+          1063
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2147960728034377,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528240128,
+        "kv_cache_bytes": 42336256,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    }
+  ],
+  "write_seconds": 0.06315420288592577,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 512,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 176,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1441792,
+      "index_key_bytes": 1024,
+      "metadata_and_format_bytes": 1238,
+      "total_bytes": 1444054,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 176,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1441792,
+    "index_key_bytes": 1024,
+    "metadata_and_format_bytes": 1238,
+    "total_bytes": 1444054,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

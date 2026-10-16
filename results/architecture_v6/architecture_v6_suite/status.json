@@ -1,0 +1,6 @@
+{
+  "phase": "failed",
+  "pid": 46034,
+  "updated_unix": 1792074331.536768,
+  "error": "Suite workers failed: [('architecture_v6_D0_val', 1)]"
+}

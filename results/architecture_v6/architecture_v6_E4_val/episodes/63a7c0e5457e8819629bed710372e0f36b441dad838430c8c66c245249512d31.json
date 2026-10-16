@@ -1,0 +1,320 @@
+{
+  "id": "templama:val:Q11954:P54",
+  "group": "Q11954:P54",
+  "split": "val",
+  "versions": 5,
+  "queries": [
+    {
+      "query_id": "Q11954_P54_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q11954_P54_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "FC Utrecht",
+        "token_ids": [
+          5417,
+          500,
+          4110,
+          5862
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2059554122388363,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490689536,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11954_P54_2014",
+          "Q11954_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003328886814415455,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1390,
+          "total_bytes": 1575534,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Dries Mertens plays for FC Utrecht.",
+        "token_ids": [
+          384,
+          2040,
+          351,
+          930,
+          596,
+          8928,
+          354,
+          9138,
+          500,
+          4110,
+          5862,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.46674577705562115,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 43384832,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q11954_P54_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q11954_P54_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Belgium national football team / PSV Eindhoven",
+        "token_ids": [
+          20548,
+          28721,
+          1962,
+          4282,
+          6569,
+          1918,
+          732,
+          367,
+          11607,
+          413,
+          507,
+          28716,
+          8722
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.46777510084211826,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490558464,
+        "kv_cache_bytes": 28835840,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11954_P54_2014",
+          "Q11954_P54_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003701122011989355,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1390,
+          "total_bytes": 1575534,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.8,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Dries Mertens plays for Belgium national football team / S.S.C. Napoli",
+        "token_ids": [
+          384,
+          2040,
+          351,
+          930,
+          596,
+          8928,
+          354,
+          25129,
+          4282,
+          6569,
+          1918,
+          732,
+          318,
+          28723,
+          28735,
+          28723,
+          28743,
+          28723,
+          11629,
+          7320
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.7059016032144427,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 44433408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5714285714285714
+      }
+    },
+    {
+      "query_id": "Q11954_P54_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q11954_P54_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Belgium national football team / Netherlands national football team / S.S.C. Napoli",
+        "token_ids": [
+          20548,
+          28721,
+          1962,
+          4282,
+          6569,
+          1918,
+          732,
+          20526,
+          4282,
+          6569,
+          1918,
+          732,
+          318,
+          28723,
+          28735,
+          28723,
+          28743,
+          28723,
+          11629,
+          7320
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6765263229608536,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490689536,
+        "kv_cache_bytes": 29753344,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11954_P54_2014",
+          "Q11954_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036179800517857075,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1390,
+          "total_bytes": 1575534,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.5714285714285714,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Dries Mertens plays for Belgium national football team / S.S.C. Napoli.",
+        "token_ids": [
+          384,
+          2040,
+          351,
+          930,
+          596,
+          8928,
+          354,
+          25129,
+          4282,
+          6569,
+          1918,
+          732,
+          318,
+          28723,
+          28735,
+          28723,
+          28743,
+          28723,
+          11629,
+          7320,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.7337120180018246,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 44564480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5714285714285714
+      }
+    }
+  ],
+  "write_seconds": 0.1927048177458346,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 640,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 192,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1572864,
+      "index_key_bytes": 1280,
+      "metadata_and_format_bytes": 1390,
+      "total_bytes": 1575534,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 192,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1572864,
+    "index_key_bytes": 1280,
+    "metadata_and_format_bytes": 1390,
+    "total_bytes": 1575534,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

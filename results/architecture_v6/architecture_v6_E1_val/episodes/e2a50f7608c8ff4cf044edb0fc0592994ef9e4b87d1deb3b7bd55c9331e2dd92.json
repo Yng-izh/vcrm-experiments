@@ -1,0 +1,636 @@
+{
+  "id": "templama:val:Q11719711:P102",
+  "group": "Q11719711:P102",
+  "split": "val",
+  "versions": 5,
+  "queries": [
+    {
+      "query_id": "Q11719711_P102_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q11719711_P102_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Jana Žitňanská is a member of the Most-Híd party.",
+        "token_ids": [
+          475,
+          2238,
+          21211,
+          279,
+          29026,
+          18269,
+          28820,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          4822,
+          28733,
+          28769,
+          21180,
+          4150,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6550278048962355,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500691968,
+        "kv_cache_bytes": 30146560,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11719711_P102_2020",
+          "Q11719711_P102_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036431867629289627,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1509,
+          "total_bytes": 1575653,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "For the People's Party",
+        "token_ids": [
+          1263,
+          272,
+          5619,
+          28742,
+          28713,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.29611049173399806,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15529242112,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q11719711_P102_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q11719711_P102_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Slovak Democratic and Christian Union – Democratic Party",
+        "token_ids": [
+          27347,
+          491,
+          12821,
+          304,
+          5899,
+          7085,
+          764,
+          12821,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.391020679846406,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500560896,
+        "kv_cache_bytes": 28966912,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11719711_P102_2020",
+          "Q11719711_P102_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038111931644380093,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1509,
+          "total_bytes": 1575653,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "New Majority",
+        "token_ids": [
+          1450,
+          10664,
+          472
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20082617970183492,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15529242112,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q11719711_P102_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q11719711_P102_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Slovak Democratic and Christian Union – Democratic Party",
+        "token_ids": [
+          27347,
+          491,
+          12821,
+          304,
+          5899,
+          7085,
+          764,
+          12821,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.36135092191398144,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500691968,
+        "kv_cache_bytes": 28966912,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11719711_P102_2020",
+          "Q11719711_P102_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004003077279776335,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1509,
+          "total_bytes": 1575653,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "New Majority",
+        "token_ids": [
+          1450,
+          10664,
+          472
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1998617951758206,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15529242112,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q11719711_P102_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q11719711_P102_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Slovak Democratic and Christian Union – Democratic Party",
+        "token_ids": [
+          27347,
+          491,
+          12821,
+          304,
+          5899,
+          7085,
+          764,
+          12821,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3617969020269811,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500560896,
+        "kv_cache_bytes": 28966912,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11719711_P102_2020",
+          "Q11719711_P102_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0039354958571493626,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1509,
+          "total_bytes": 1575653,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "New Majority",
+        "token_ids": [
+          1450,
+          10664,
+          472
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20319656422361732,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15529242112,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q11719711_P102_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q11719711_P102_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Slovak National Party",
+        "token_ids": [
+          27347,
+          491,
+          3610,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.21566613344475627,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500691968,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11719711_P102_2020",
+          "Q11719711_P102_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004157877992838621,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1509,
+          "total_bytes": 1575653,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "New Majority",
+        "token_ids": [
+          1450,
+          10664,
+          472
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20650545181706548,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15529242112,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q11719711_P102_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q11719711_P102_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Freedom and Solidarity Party",
+        "token_ids": [
+          22429,
+          304,
+          6849,
+          313,
+          11910,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.27425753232091665,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500560896,
+        "kv_cache_bytes": 28573696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11719711_P102_2020",
+          "Q11719711_P102_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003944733180105686,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1509,
+          "total_bytes": 1575653,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "New Majority",
+        "token_ids": [
+          1450,
+          10664,
+          472
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2027026228606701,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15529242112,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q11719711_P102_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q11719711_P102_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Freedom and Solidarity Party",
+        "token_ids": [
+          22429,
+          304,
+          6849,
+          313,
+          11910,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2718373998068273,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500691968,
+        "kv_cache_bytes": 28573696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11719711_P102_2020",
+          "Q11719711_P102_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003792834933847189,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1509,
+          "total_bytes": 1575653,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "New Majority",
+        "token_ids": [
+          1450,
+          10664,
+          472
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20045120315626264,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15529242112,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q11719711_P102_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q11719711_P102_2019",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "For the People",
+        "token_ids": [
+          1263,
+          272,
+          5619
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1792987626977265,
+        "prompt_tokens": 212,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500560896,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11719711_P102_2020",
+          "Q11719711_P102_2019"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004233537707477808,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 192,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1572864,
+          "index_key_bytes": 1280,
+          "metadata_and_format_bytes": 1509,
+          "total_bytes": 1575653,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "For the People",
+        "token_ids": [
+          1263,
+          272,
+          5619
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2052338933572173,
+        "prompt_tokens": 324,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15529242112,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.2455051583237946,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 640,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 192,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1572864,
+      "index_key_bytes": 1280,
+      "metadata_and_format_bytes": 1509,
+      "total_bytes": 1575653,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 192,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1572864,
+    "index_key_bytes": 1280,
+    "metadata_and_format_bytes": 1509,
+    "total_bytes": 1575653,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

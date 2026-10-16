@@ -1,0 +1,8 @@
+{
+  "base_config": "config.json",
+  "run_prefix": "architecture_v5",
+  "historical_manifest": "/share/latent2/vcrm_icae/runs/aligned_v3_suite/validation_481.json",
+  "feature_root": "/share/latent2/vcrm_icae/features/paper_v1_official",
+  "teacher_context": "single_target",
+  "note": "User E1-E4 plan. Preserve official ICAE, 2954 historical targets, 5 epochs, fixed200/481, greedy64. Complete prior main baseline table, then frozen four-way read/code-precision diagnostic, matched fresh C/D controls, E1/E2, E3/E4 and supported final pair. No width sweep, RL, eviction, STE or grid. Held-out test separate explicit phase."
+}

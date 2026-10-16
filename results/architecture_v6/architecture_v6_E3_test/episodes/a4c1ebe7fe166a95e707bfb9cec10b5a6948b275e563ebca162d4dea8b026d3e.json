@@ -1,0 +1,465 @@
+{
+  "id": "templama:test:Q1163740:P108",
+  "group": "Q1163740:P108",
+  "split": "test",
+  "versions": 2,
+  "queries": [
+    {
+      "query_id": "Q1163740_P108_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q1163740_P108_2016",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Royal Concertgebouw Orchestra",
+        "token_ids": [
+          8413,
+          1325,
+          8422,
+          5141,
+          27298,
+          28076
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2771496521309018,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1163740_P108_2019",
+          "Q1163740_P108_2016"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003679786343127489,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Daniele Gatti works for Teatro dell'Opera di Roma.",
+        "token_ids": [
+          4294,
+          16607,
+          420,
+          16708,
+          3791,
+          354,
+          2263,
+          12094,
+          6332,
+          28742,
+          3935,
+          28708,
+          890,
+          17246,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5648070252500474,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 43646976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1163740_P108_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q1163740_P108_2016",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Royal Concertgebouw Orchestra",
+        "token_ids": [
+          8413,
+          1325,
+          8422,
+          5141,
+          27298,
+          28076
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.26734922314062715,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1163740_P108_2019",
+          "Q1163740_P108_2016"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037512811832129955,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Daniele Gatti works for Teatro dell'Opera di Roma.",
+        "token_ids": [
+          4294,
+          16607,
+          420,
+          16708,
+          3791,
+          354,
+          2263,
+          12094,
+          6332,
+          28742,
+          3935,
+          28708,
+          890,
+          17246,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5714841652661562,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 43646976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1163740_P108_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q1163740_P108_2016",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Royal Concertgebouw Orchestra",
+        "token_ids": [
+          8413,
+          1325,
+          8422,
+          5141,
+          27298,
+          28076
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2674005036242306,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1163740_P108_2019",
+          "Q1163740_P108_2016"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038146530278027058,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Daniele Gatti works for Teatro dell'Opera di Roma.",
+        "token_ids": [
+          4294,
+          16607,
+          420,
+          16708,
+          3791,
+          354,
+          2263,
+          12094,
+          6332,
+          28742,
+          3935,
+          28708,
+          890,
+          17246,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6138104759156704,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 43646976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1163740_P108_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q1163740_P108_2019",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Teatro dell'Opera di Roma",
+        "token_ids": [
+          2263,
+          12094,
+          6332,
+          28742,
+          3935,
+          28708,
+          890,
+          17246
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3525763601064682,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1163740_P108_2019",
+          "Q1163740_P108_2016"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004453641828149557,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Daniele Gatti works for Teatro dell'Opera di Roma.",
+        "token_ids": [
+          4294,
+          16607,
+          420,
+          16708,
+          3791,
+          354,
+          2263,
+          12094,
+          6332,
+          28742,
+          3935,
+          28708,
+          890,
+          17246,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6492816125974059,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 43646976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666
+      }
+    },
+    {
+      "query_id": "Q1163740_P108_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q1163740_P108_2019",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Teatro dell'Opera di Roma",
+        "token_ids": [
+          2263,
+          12094,
+          6332,
+          28742,
+          3935,
+          28708,
+          890,
+          17246
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.35904201166704297,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1163740_P108_2019",
+          "Q1163740_P108_2016"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036770813167095184,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 757,
+          "total_bytes": 1180917,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Daniele Gatti works for Teatro dell'Opera di Roma.",
+        "token_ids": [
+          4294,
+          16607,
+          420,
+          16708,
+          3791,
+          354,
+          2263,
+          12094,
+          6332,
+          28742,
+          3935,
+          28708,
+          890,
+          17246,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5754146296530962,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 43646976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666
+      }
+    }
+  ],
+  "write_seconds": 0.07937368517741561,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 256,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 144,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1179648,
+      "index_key_bytes": 512,
+      "metadata_and_format_bytes": 757,
+      "total_bytes": 1180917,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 144,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1179648,
+    "index_key_bytes": 512,
+    "metadata_and_format_bytes": 757,
+    "total_bytes": 1180917,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

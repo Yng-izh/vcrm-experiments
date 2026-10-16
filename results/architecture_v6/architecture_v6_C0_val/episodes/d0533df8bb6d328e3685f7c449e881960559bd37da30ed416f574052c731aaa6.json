@@ -1,0 +1,214 @@
+{
+  "id": "templama:val:Q223450:P286",
+  "group": "Q223450:P286",
+  "split": "val",
+  "versions": 4,
+  "queries": [
+    {
+      "query_id": "Q223450_P286_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q223450_P286_2018",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Rogério Ceni",
+        "token_ids": [
+          28754,
+          476,
+          28797,
+          7189,
+          334,
+          17914
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.27160957641899586,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500343808,
+        "kv_cache_bytes": 28442624,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q223450_P286_2020",
+          "Q223450_P286_2018"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004256280604749918,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1194,
+          "total_bytes": 1444010,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "José Peseiro",
+        "token_ids": [
+          12369,
+          367,
+          3368,
+          4812
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22976276371628046,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528992256,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q223450_P286_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q223450_P286_2019",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "The missing fact is: Vítor Pereira is the head coach of Vitória S.C.",
+        "token_ids": [
+          415,
+          6925,
+          1639,
+          349,
+          28747,
+          550,
+          4071,
+          271,
+          25229,
+          4807,
+          349,
+          272,
+          1335,
+          7786,
+          302,
+          20874,
+          21645,
+          318,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.75789799913764,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500474880,
+        "kv_cache_bytes": 30408704,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q223450_P286_2020",
+          "Q223450_P286_2019"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0039030718617141247,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1194,
+          "total_bytes": 1444010,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Ivo Vieira is the head coach of Vitória S.C..",
+        "token_ids": [
+          315,
+          3144,
+          550,
+          412,
+          4807,
+          349,
+          272,
+          1335,
+          7786,
+          302,
+          20874,
+          21645,
+          318,
+          28723,
+          28743,
+          568
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6120843458920717,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528992256,
+        "kv_cache_bytes": 44433408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.4
+      }
+    }
+  ],
+  "write_seconds": 0.1668655490502715,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 512,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 176,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1441792,
+      "index_key_bytes": 1024,
+      "metadata_and_format_bytes": 1194,
+      "total_bytes": 1444010,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 176,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1441792,
+    "index_key_bytes": 1024,
+    "metadata_and_format_bytes": 1194,
+    "total_bytes": 1444010,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

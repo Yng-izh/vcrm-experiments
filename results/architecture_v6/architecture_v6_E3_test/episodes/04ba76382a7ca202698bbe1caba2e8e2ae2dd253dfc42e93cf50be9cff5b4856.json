@@ -1,0 +1,868 @@
+{
+  "id": "templama:test:Q1054342:P54",
+  "group": "Q1054342:P54",
+  "split": "test",
+  "versions": 7,
+  "queries": [
+    {
+      "query_id": "Q1054342_P54_2010",
+      "latest": false,
+      "as_of": "2010-01-01T00:00:00",
+      "selected_entry_id": "Q1054342_P54_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Hong Kong national under-23 football team",
+        "token_ids": [
+          12966,
+          12544,
+          4282,
+          916,
+          28733,
+          28750,
+          28770,
+          6569,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3537588668987155,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490689536,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1054342_P54_2016",
+          "Q1054342_P54_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0033305082470178604,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1860,
+          "total_bytes": 1838660,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Hong Kong national under-23 football team / South China Sports Club / Citizen AA",
+        "token_ids": [
+          12966,
+          12544,
+          4282,
+          916,
+          28733,
+          28750,
+          28770,
+          6569,
+          1918,
+          732,
+          3658,
+          5077,
+          13184,
+          5933,
+          732,
+          16334,
+          20084,
+          24724
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6539390510879457,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 44171264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666
+      }
+    },
+    {
+      "query_id": "Q1054342_P54_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q1054342_P54_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "South China AA",
+        "token_ids": [
+          3658,
+          5077,
+          24724
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1714666159823537,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490558464,
+        "kv_cache_bytes": 27525120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1054342_P54_2016",
+          "Q1054342_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003933783620595932,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1860,
+          "total_bytes": 1838660,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Eastern Sports Club",
+        "token_ids": [
+          13827,
+          13184,
+          5933
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20678558107465506,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 42205184,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1054342_P54_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q1054342_P54_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Hong Kong Pegasus FC",
+        "token_ids": [
+          12966,
+          12544,
+          26806,
+          293,
+          381,
+          9138
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2638808824121952,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490689536,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1054342_P54_2016",
+          "Q1054342_P54_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003516125027090311,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1860,
+          "total_bytes": 1838660,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Hong Kong Pegasus FC",
+        "token_ids": [
+          12966,
+          12544,
+          26806,
+          293,
+          381,
+          9138
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2872552378103137,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1054342_P54_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q1054342_P54_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Kitchee SC",
+        "token_ids": [
+          28796,
+          279,
+          631,
+          28706,
+          9730
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23560754396021366,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490558464,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1054342_P54_2016",
+          "Q1054342_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.00395873561501503,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1860,
+          "total_bytes": 1838660,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Eastern Sports Club / Hong Kong Pegasus FC",
+        "token_ids": [
+          13827,
+          13184,
+          5933,
+          732,
+          12966,
+          12544,
+          26806,
+          293,
+          381,
+          9138
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.40633701998740435,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.7272727272727273
+      }
+    },
+    {
+      "query_id": "Q1054342_P54_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q1054342_P54_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Kitchee SC",
+        "token_ids": [
+          25565,
+          631,
+          28706,
+          9730
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20360597874969244,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490689536,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1054342_P54_2016",
+          "Q1054342_P54_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003694784827530384,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1860,
+          "total_bytes": 1838660,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Kitchee SC",
+        "token_ids": [
+          13402,
+          631,
+          28706,
+          9730
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22826124168932438,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 42336256,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1054342_P54_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q1054342_P54_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Eastern Sports Club",
+        "token_ids": [
+          13827,
+          13184,
+          5933
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17167148692533374,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490558464,
+        "kv_cache_bytes": 27525120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1054342_P54_2016",
+          "Q1054342_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037921457551419735,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1860,
+          "total_bytes": 1838660,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Eastern Sports Club / Kitchee SC",
+        "token_ids": [
+          13827,
+          13184,
+          5933,
+          732,
+          13402,
+          631,
+          28706,
+          9730
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3497419529594481,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.75
+      }
+    },
+    {
+      "query_id": "Q1054342_P54_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q1054342_P54_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Eastern Sports Club",
+        "token_ids": [
+          13827,
+          13184,
+          5933
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17334591317921877,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490689536,
+        "kv_cache_bytes": 27525120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1054342_P54_2016",
+          "Q1054342_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037992000579833984,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1860,
+          "total_bytes": 1838660,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Eastern Sports Club / Kitchee SC",
+        "token_ids": [
+          13827,
+          13184,
+          5933,
+          732,
+          13402,
+          631,
+          28706,
+          9730
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3415983831509948,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.75
+      }
+    },
+    {
+      "query_id": "Q1054342_P54_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q1054342_P54_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Eastern Sports Club",
+        "token_ids": [
+          13827,
+          13184,
+          5933
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.18070747191086411,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490558464,
+        "kv_cache_bytes": 27525120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1054342_P54_2016",
+          "Q1054342_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004426297266036272,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1860,
+          "total_bytes": 1838660,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Eastern Sports Club / Kitchee SC",
+        "token_ids": [
+          13827,
+          13184,
+          5933,
+          732,
+          13402,
+          631,
+          28706,
+          9730
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3618365987204015,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.75
+      }
+    },
+    {
+      "query_id": "Q1054342_P54_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q1054342_P54_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Eastern Sports Club",
+        "token_ids": [
+          13827,
+          13184,
+          5933
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1741233360953629,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490689536,
+        "kv_cache_bytes": 27525120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1054342_P54_2016",
+          "Q1054342_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.006098513957113028,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1860,
+          "total_bytes": 1838660,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Eastern Sports Club / Kitchee SC",
+        "token_ids": [
+          13827,
+          13184,
+          5933,
+          732,
+          13402,
+          631,
+          28706,
+          9730
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.35011440701782703,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.75
+      }
+    },
+    {
+      "query_id": "Q1054342_P54_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q1054342_P54_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Eastern Sports Club",
+        "token_ids": [
+          13827,
+          13184,
+          5933
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1750315590761602,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490558464,
+        "kv_cache_bytes": 27525120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1054342_P54_2016",
+          "Q1054342_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037841335870325565,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1860,
+          "total_bytes": 1838660,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Eastern Sports Club / Kitchee SC",
+        "token_ids": [
+          13827,
+          13184,
+          5933,
+          732,
+          13402,
+          631,
+          28706,
+          9730
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.34898487525060773,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.75
+      }
+    },
+    {
+      "query_id": "Q1054342_P54_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q1054342_P54_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Eastern Sports Club",
+        "token_ids": [
+          13827,
+          13184,
+          5933
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17654597898945212,
+        "prompt_tokens": 207,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490689536,
+        "kv_cache_bytes": 27525120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1054342_P54_2016",
+          "Q1054342_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003763459622859955,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1860,
+          "total_bytes": 1838660,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Eastern Sports Club / Kitchee SC",
+        "token_ids": [
+          13827,
+          13184,
+          5933,
+          732,
+          13402,
+          631,
+          28706,
+          9730
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.44789062067866325,
+        "prompt_tokens": 319,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519075328,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.75
+      }
+    }
+  ],
+  "write_seconds": 0.3053634921088815,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 896,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 224,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1835008,
+      "index_key_bytes": 1792,
+      "metadata_and_format_bytes": 1860,
+      "total_bytes": 1838660,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 224,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1835008,
+    "index_key_bytes": 1792,
+    "metadata_and_format_bytes": 1860,
+    "total_bytes": 1838660,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

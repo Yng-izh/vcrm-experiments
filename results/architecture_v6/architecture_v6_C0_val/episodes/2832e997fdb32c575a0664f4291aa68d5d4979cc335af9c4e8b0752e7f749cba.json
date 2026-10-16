@@ -1,0 +1,487 @@
+{
+  "id": "templama:val:Q16217237:P102",
+  "group": "Q16217237:P102",
+  "split": "val",
+  "versions": 6,
+  "queries": [
+    {
+      "query_id": "Q16217237_P102_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q16217237_P102_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Daniel Constantin is a member of the Democratic Liberal Party.",
+        "token_ids": [
+          25314,
+          755,
+          15120,
+          262,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          12821,
+          18736,
+          6636,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4772213161922991,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499690496,
+        "kv_cache_bytes": 28966912,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q16217237_P102_2020",
+          "Q16217237_P102_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037725111469626427,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1668,
+          "total_bytes": 1707140,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.26666666666666666,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Daniel Constantin is a member of the Alliance of Liberals and Democrats Party.",
+        "token_ids": [
+          8103,
+          15120,
+          262,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          20966,
+          302,
+          8592,
+          973,
+          304,
+          17016,
+          6636,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6039898078888655,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528240128,
+        "kv_cache_bytes": 44040192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666
+      }
+    },
+    {
+      "query_id": "Q16217237_P102_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q16217237_P102_2016",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Daniel Constantin is a member of the Democratic Liberal Party.",
+        "token_ids": [
+          25314,
+          755,
+          15120,
+          262,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          12821,
+          18736,
+          6636,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.46742268512025476,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499821568,
+        "kv_cache_bytes": 28966912,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q16217237_P102_2020",
+          "Q16217237_P102_2016"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003663437906652689,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1668,
+          "total_bytes": 1707140,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.26666666666666666,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "National Liberal Party",
+        "token_ids": [
+          3610,
+          18736,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19596719415858388,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528240128,
+        "kv_cache_bytes": 42336256,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.2
+      }
+    },
+    {
+      "query_id": "Q16217237_P102_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q16217237_P102_2017",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Daniel Constantin is a member of the Democratic Liberal Party.",
+        "token_ids": [
+          25314,
+          755,
+          15120,
+          262,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          12821,
+          18736,
+          6636,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4753640769049525,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499690496,
+        "kv_cache_bytes": 28966912,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q16217237_P102_2020",
+          "Q16217237_P102_2017"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003984048962593079,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1668,
+          "total_bytes": 1707140,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.26666666666666666,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Daniel Constantin is a member of the Alliance of Liberals and Democrats Party (Romania).",
+        "token_ids": [
+          8103,
+          15120,
+          262,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          20966,
+          302,
+          8592,
+          973,
+          304,
+          17016,
+          6636,
+          325,
+          28018,
+          4877,
+          609
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6891356399282813,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528240128,
+        "kv_cache_bytes": 44433408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.7368421052631579
+      }
+    },
+    {
+      "query_id": "Q16217237_P102_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q16217237_P102_2018",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Daniel Constantin is a member of the Democratic Union of Hungarians in Romania.",
+        "token_ids": [
+          25314,
+          755,
+          15120,
+          262,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          12821,
+          7085,
+          302,
+          15171,
+          26335,
+          297,
+          3945,
+          4877,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6415637210011482,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499821568,
+        "kv_cache_bytes": 29622272,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q16217237_P102_2020",
+          "Q16217237_P102_2018"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0040185521356761456,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1668,
+          "total_bytes": 1707140,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.13333333333333333,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Daniel Constantin is a member of the National Liberal Party.",
+        "token_ids": [
+          8103,
+          15120,
+          262,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          3610,
+          18736,
+          6636,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4738286631181836,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528240128,
+        "kv_cache_bytes": 43515904,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.16666666666666666
+      }
+    },
+    {
+      "query_id": "Q16217237_P102_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q16217237_P102_2018",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Daniel Constantin is a member of the National Liberal Party.",
+        "token_ids": [
+          8103,
+          15120,
+          262,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          3610,
+          18736,
+          6636,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4553921176120639,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499690496,
+        "kv_cache_bytes": 28835840,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q16217237_P102_2020",
+          "Q16217237_P102_2018"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037407781928777695,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1668,
+          "total_bytes": 1707140,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.16666666666666666,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Daniel Constantin is a member of the National Liberal Party.",
+        "token_ids": [
+          8103,
+          15120,
+          262,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          3610,
+          18736,
+          6636,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.48098237020894885,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528240128,
+        "kv_cache_bytes": 43515904,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.16666666666666666
+      }
+    }
+  ],
+  "write_seconds": 0.2203519158065319,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 768,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 208,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1703936,
+      "index_key_bytes": 1536,
+      "metadata_and_format_bytes": 1668,
+      "total_bytes": 1707140,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 208,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1703936,
+    "index_key_bytes": 1536,
+    "metadata_and_format_bytes": 1668,
+    "total_bytes": 1707140,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

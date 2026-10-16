@@ -1,0 +1,369 @@
+{
+  "id": "templama:val:Q208425:P54",
+  "group": "Q208425:P54",
+  "split": "val",
+  "versions": 6,
+  "queries": [
+    {
+      "query_id": "Q208425_P54_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q208425_P54_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Michael Bradley plays for Borussia Mönchengladbach.",
+        "token_ids": [
+          5459,
+          12906,
+          2047,
+          8928,
+          354,
+          9411,
+          28397,
+          351,
+          5438,
+          1839,
+          1727,
+          316,
+          11875,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6380948890000582,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499169280,
+        "kv_cache_bytes": 28704768,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q208425_P54_2015",
+          "Q208425_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003996622748672962,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1623,
+          "total_bytes": 1707095,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.5,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Club de Fútbol Monterrey",
+        "token_ids": [
+          5933,
+          340,
+          401,
+          24043,
+          2329,
+          3217,
+          360,
+          6439
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.42279522819444537,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527489536,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q208425_P54_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q208425_P54_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Michael Bradley plays for AS Roma.",
+        "token_ids": [
+          5459,
+          12906,
+          2047,
+          8928,
+          354,
+          8128,
+          17246,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.40047265915200114,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499038208,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q208425_P54_2015",
+          "Q208425_P54_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004010086879134178,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1623,
+          "total_bytes": 1707095,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.5,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Michael Bradley plays for Club de Fútbol Monterrey.",
+        "token_ids": [
+          5459,
+          12906,
+          2047,
+          8928,
+          354,
+          5933,
+          340,
+          401,
+          24043,
+          2329,
+          3217,
+          360,
+          6439,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.661768879275769,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527489536,
+        "kv_cache_bytes": 43384832,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q208425_P54_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q208425_P54_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Michael Bradley plays for AS Roma.",
+        "token_ids": [
+          5459,
+          12906,
+          2047,
+          8928,
+          354,
+          8128,
+          17246,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4019034462980926,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499169280,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q208425_P54_2015",
+          "Q208425_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004272765014320612,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1623,
+          "total_bytes": 1707095,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.5,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Club de Fútbol Monterrey",
+        "token_ids": [
+          5933,
+          340,
+          401,
+          24043,
+          2329,
+          3217,
+          360,
+          6439
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4273284520022571,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527489536,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q208425_P54_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q208425_P54_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Michael Bradley plays for AS Roma.",
+        "token_ids": [
+          5459,
+          12906,
+          2047,
+          8928,
+          354,
+          8128,
+          17246,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3921319991350174,
+        "prompt_tokens": 205,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499038208,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q208425_P54_2015",
+          "Q208425_P54_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004110122099518776,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1623,
+          "total_bytes": 1707095,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.5,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Club de Fútbol Monterrey",
+        "token_ids": [
+          5933,
+          340,
+          401,
+          24043,
+          2329,
+          3217,
+          360,
+          6439
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4272404429502785,
+        "prompt_tokens": 317,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527489536,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.27460131607949734,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 768,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 208,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1703936,
+      "index_key_bytes": 1536,
+      "metadata_and_format_bytes": 1623,
+      "total_bytes": 1707095,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 208,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1703936,
+    "index_key_bytes": 1536,
+    "metadata_and_format_bytes": 1623,
+    "total_bytes": 1707095,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

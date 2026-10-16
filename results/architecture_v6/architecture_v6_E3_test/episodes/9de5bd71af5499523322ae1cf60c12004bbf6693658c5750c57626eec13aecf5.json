@@ -1,0 +1,858 @@
+{
+  "id": "templama:test:Q11207061:P108",
+  "group": "Q11207061:P108",
+  "split": "test",
+  "versions": 2,
+  "queries": [
+    {
+      "query_id": "Q11207061_P108_2010",
+      "latest": false,
+      "as_of": "2010-01-01T00:00:00",
+      "selected_entry_id": "Q11207061_P108_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "University of Strathclyde",
+        "token_ids": [
+          2900,
+          302,
+          3838,
+          498,
+          28717,
+          346,
+          450
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3411361509934068,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490906624,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11207061_P108_2012",
+          "Q11207061_P108_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038387253880500793,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 764,
+          "total_bytes": 1180924,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "University of Strathclyde.",
+        "token_ids": [
+          2900,
+          302,
+          3838,
+          498,
+          28717,
+          346,
+          450,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4026868361979723,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q11207061_P108_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q11207061_P108_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "University of Strathclyde",
+        "token_ids": [
+          2900,
+          302,
+          3838,
+          498,
+          28717,
+          346,
+          450
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.33947941521182656,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11207061_P108_2012",
+          "Q11207061_P108_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004037392325699329,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 764,
+          "total_bytes": 1180924,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "University of Strathclyde.",
+        "token_ids": [
+          2900,
+          302,
+          3838,
+          498,
+          28717,
+          346,
+          450,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3997007040306926,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q11207061_P108_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q11207061_P108_2012",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "University of Sydney",
+        "token_ids": [
+          2900,
+          302,
+          14469
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19441789761185646,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490906624,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11207061_P108_2012",
+          "Q11207061_P108_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003710879012942314,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 764,
+          "total_bytes": 1180924,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "University of Strathclyde.",
+        "token_ids": [
+          2900,
+          302,
+          3838,
+          498,
+          28717,
+          346,
+          450,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3997103008441627,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666
+      }
+    },
+    {
+      "query_id": "Q11207061_P108_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q11207061_P108_2012",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "University of Sydney",
+        "token_ids": [
+          14953,
+          472,
+          302,
+          14469
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22937576984986663,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11207061_P108_2012",
+          "Q11207061_P108_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004194438923150301,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 764,
+          "total_bytes": 1180924,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "University of Strathclyde",
+        "token_ids": [
+          2900,
+          302,
+          3838,
+          498,
+          28717,
+          346,
+          450
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3613546150736511,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666
+      }
+    },
+    {
+      "query_id": "Q11207061_P108_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q11207061_P108_2012",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "University of Sydney",
+        "token_ids": [
+          14953,
+          472,
+          302,
+          14469
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22901795245707035,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490906624,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11207061_P108_2012",
+          "Q11207061_P108_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003941380884498358,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 764,
+          "total_bytes": 1180924,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "University of Strathclyde",
+        "token_ids": [
+          2900,
+          302,
+          3838,
+          498,
+          28717,
+          346,
+          450
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.36292843660339713,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666
+      }
+    },
+    {
+      "query_id": "Q11207061_P108_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q11207061_P108_2012",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "University of Sydney",
+        "token_ids": [
+          2900,
+          302,
+          14469
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19590059109032154,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11207061_P108_2012",
+          "Q11207061_P108_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.00397417601197958,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 764,
+          "total_bytes": 1180924,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "University of Strathclyde",
+        "token_ids": [
+          2900,
+          302,
+          3838,
+          498,
+          28717,
+          346,
+          450
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.36512993508949876,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666
+      }
+    },
+    {
+      "query_id": "Q11207061_P108_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q11207061_P108_2012",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "University of Sydney",
+        "token_ids": [
+          2900,
+          302,
+          14469
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19324272777885199,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490906624,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11207061_P108_2012",
+          "Q11207061_P108_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004022891167551279,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 764,
+          "total_bytes": 1180924,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "University of Strathclyde",
+        "token_ids": [
+          2900,
+          302,
+          3838,
+          498,
+          28717,
+          346,
+          450
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3611687286756933,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666
+      }
+    },
+    {
+      "query_id": "Q11207061_P108_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q11207061_P108_2012",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "University of Sydney",
+        "token_ids": [
+          2900,
+          302,
+          14469
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.19832124095410109,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11207061_P108_2012",
+          "Q11207061_P108_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004980485886335373,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 764,
+          "total_bytes": 1180924,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "University of Strathclyde",
+        "token_ids": [
+          2900,
+          302,
+          3838,
+          498,
+          28717,
+          346,
+          450
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3757570320740342,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666
+      }
+    },
+    {
+      "query_id": "Q11207061_P108_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q11207061_P108_2012",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "University of Sydney",
+        "token_ids": [
+          2900,
+          302,
+          14469
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2026737779378891,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490906624,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11207061_P108_2012",
+          "Q11207061_P108_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004785614088177681,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 764,
+          "total_bytes": 1180924,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "University of Strathclyde",
+        "token_ids": [
+          2900,
+          302,
+          3838,
+          498,
+          28717,
+          346,
+          450
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3822983340360224,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666
+      }
+    },
+    {
+      "query_id": "Q11207061_P108_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q11207061_P108_2012",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "University of Sydney",
+        "token_ids": [
+          2900,
+          302,
+          14469
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1993084168061614,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11207061_P108_2012",
+          "Q11207061_P108_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0040611522272229195,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 764,
+          "total_bytes": 1180924,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "University of Strathclyde.",
+        "token_ids": [
+          2900,
+          302,
+          3838,
+          498,
+          28717,
+          346,
+          450,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4160826187580824,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666
+      }
+    },
+    {
+      "query_id": "Q11207061_P108_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q11207061_P108_2012",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "University of Sydney",
+        "token_ids": [
+          2900,
+          302,
+          14469
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20218274276703596,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490906624,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11207061_P108_2012",
+          "Q11207061_P108_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004257407039403915,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 764,
+          "total_bytes": 1180924,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "University of Strathclyde",
+        "token_ids": [
+          2900,
+          302,
+          3838,
+          498,
+          28717,
+          346,
+          450
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.37641309993341565,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666
+      }
+    }
+  ],
+  "write_seconds": 0.08864902518689632,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 256,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 144,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1179648,
+      "index_key_bytes": 512,
+      "metadata_and_format_bytes": 764,
+      "total_bytes": 1180924,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 144,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1179648,
+    "index_key_bytes": 512,
+    "metadata_and_format_bytes": 764,
+    "total_bytes": 1180924,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

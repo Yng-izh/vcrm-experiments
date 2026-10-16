@@ -1,0 +1,570 @@
+{
+  "id": "templama:test:Q1041:P6",
+  "group": "Q1041:P6",
+  "split": "test",
+  "versions": 3,
+  "queries": [
+    {
+      "query_id": "Q1041_P6_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q1041_P6_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Mahammed Dionne",
+        "token_ids": [
+          10947,
+          13555,
+          384,
+          296,
+          485
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2339490526355803,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491559936,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1041_P6_2020",
+          "Q1041_P6_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003377614077180624,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 936,
+          "total_bytes": 1312424,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Mahammed Dionne",
+        "token_ids": [
+          10947,
+          13555,
+          384,
+          296,
+          485
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2544653401710093,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520077312,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1041_P6_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q1041_P6_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Mahammed Dionne",
+        "token_ids": [
+          10947,
+          13555,
+          384,
+          296,
+          485
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2354433978907764,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491428864,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1041_P6_2020",
+          "Q1041_P6_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036493088118731976,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 936,
+          "total_bytes": 1312424,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Mahammed Dionne",
+        "token_ids": [
+          10947,
+          13555,
+          384,
+          296,
+          485
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.25684872828423977,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520077312,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1041_P6_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q1041_P6_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Mahammed Dionne",
+        "token_ids": [
+          10947,
+          13555,
+          384,
+          296,
+          485
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2365866438485682,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491559936,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1041_P6_2020",
+          "Q1041_P6_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004262391943484545,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 936,
+          "total_bytes": 1312424,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Mahammed Dionne",
+        "token_ids": [
+          10947,
+          13555,
+          384,
+          296,
+          485
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.25640956591814756,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520077312,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1041_P6_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q1041_P6_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Mahammed Dionne",
+        "token_ids": [
+          10947,
+          13555,
+          384,
+          296,
+          485
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23000733414664865,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491428864,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1041_P6_2020",
+          "Q1041_P6_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037034139968454838,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 936,
+          "total_bytes": 1312424,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Mahammed Dionne",
+        "token_ids": [
+          10947,
+          13555,
+          384,
+          296,
+          485
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2593838581815362,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520077312,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1041_P6_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q1041_P6_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Mahammed Dionne",
+        "token_ids": [
+          10947,
+          13555,
+          384,
+          296,
+          485
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23369173891842365,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491559936,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1041_P6_2020",
+          "Q1041_P6_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003659925889223814,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 936,
+          "total_bytes": 1312424,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Mahammed Dionne",
+        "token_ids": [
+          10947,
+          13555,
+          384,
+          296,
+          485
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.25342912413179874,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520077312,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1041_P6_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q1041_P6_2019",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Macky Sall / Mahammed Sall / Macky Sall is the head of the government of Senegal.",
+        "token_ids": [
+          28755,
+          468,
+          28724,
+          318,
+          455,
+          732,
+          10947,
+          13555,
+          318,
+          455,
+          732,
+          20437,
+          28724,
+          318,
+          455,
+          349,
+          272,
+          1335,
+          302,
+          272,
+          3058,
+          302,
+          5355,
+          641,
+          282,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.85368214501068,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491428864,
+        "kv_cache_bytes": 31064064,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1041_P6_2020",
+          "Q1041_P6_2019"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037262942641973495,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 936,
+          "total_bytes": 1312424,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.2857142857142857,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Macky Sall",
+        "token_ids": [
+          20437,
+          28724,
+          318,
+          455
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22375672403723001,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520077312,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1041_P6_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q1041_P6_2020",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Macky Sall",
+        "token_ids": [
+          20437,
+          28724,
+          318,
+          455
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20056642685085535,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491559936,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1041_P6_2020",
+          "Q1041_P6_2019"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0035533299669623375,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 936,
+          "total_bytes": 1312424,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Macky Sall",
+        "token_ids": [
+          20437,
+          28724,
+          318,
+          455
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2268055840395391,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15520077312,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.1319205486215651,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 384,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 160,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1310720,
+      "index_key_bytes": 768,
+      "metadata_and_format_bytes": 936,
+      "total_bytes": 1312424,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 160,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1310720,
+    "index_key_bytes": 768,
+    "metadata_and_format_bytes": 936,
+    "total_bytes": 1312424,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

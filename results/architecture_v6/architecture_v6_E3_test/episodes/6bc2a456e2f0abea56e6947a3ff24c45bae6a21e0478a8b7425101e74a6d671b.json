@@ -1,0 +1,685 @@
+{
+  "id": "templama:test:Q1066032:P39",
+  "group": "Q1066032:P39",
+  "split": "test",
+  "versions": 2,
+  "queries": [
+    {
+      "query_id": "Q1066032_P39_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q1066032_P39_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "auxiliary bishop",
+        "token_ids": [
+          5672,
+          27967,
+          287,
+          12019
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20675029512494802,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491341824,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1066032_P39_2016",
+          "Q1066032_P39_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004275680053979158,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 750,
+          "total_bytes": 1180910,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "auxiliary bishop",
+        "token_ids": [
+          5672,
+          27967,
+          287,
+          12019
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22612959472462535,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1066032_P39_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q1066032_P39_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "auxiliary bishop",
+        "token_ids": [
+          5672,
+          27967,
+          287,
+          12019
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20682312874123454,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491210752,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1066032_P39_2016",
+          "Q1066032_P39_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003614331129938364,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 750,
+          "total_bytes": 1180910,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "auxiliary bishop",
+        "token_ids": [
+          5672,
+          27967,
+          287,
+          12019
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23058443004265428,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1066032_P39_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q1066032_P39_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "auxiliary bishop",
+        "token_ids": [
+          5672,
+          27967,
+          287,
+          12019
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20184342842549086,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491341824,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1066032_P39_2016",
+          "Q1066032_P39_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003833957016468048,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 750,
+          "total_bytes": 1180910,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "auxiliary bishop",
+        "token_ids": [
+          5672,
+          27967,
+          287,
+          12019
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2283626077696681,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1066032_P39_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q1066032_P39_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "auxiliary bishop",
+        "token_ids": [
+          5672,
+          27967,
+          287,
+          12019
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20155202597379684,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491210752,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1066032_P39_2016",
+          "Q1066032_P39_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003710196353495121,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 750,
+          "total_bytes": 1180910,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "auxiliary bishop",
+        "token_ids": [
+          5672,
+          27967,
+          287,
+          12019
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22669988870620728,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1066032_P39_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q1066032_P39_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Catholic bishop",
+        "token_ids": [
+          28743,
+          498,
+          7437,
+          287,
+          12019
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23394607286900282,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491341824,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1066032_P39_2016",
+          "Q1066032_P39_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036209849640727043,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 750,
+          "total_bytes": 1180910,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "auxiliary bishop",
+        "token_ids": [
+          5672,
+          27967,
+          287,
+          12019
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22822195617482066,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q1066032_P39_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q1066032_P39_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Catholic bishop",
+        "token_ids": [
+          28743,
+          498,
+          7437,
+          287,
+          12019
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23030547611415386,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491210752,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1066032_P39_2016",
+          "Q1066032_P39_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037734918296337128,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 750,
+          "total_bytes": 1180910,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "auxiliary bishop",
+        "token_ids": [
+          5672,
+          27967,
+          287,
+          12019
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22670591762289405,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q1066032_P39_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q1066032_P39_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Catholic bishop",
+        "token_ids": [
+          28743,
+          498,
+          7437,
+          287,
+          12019
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23215366434305906,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491341824,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1066032_P39_2016",
+          "Q1066032_P39_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003722704015672207,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 750,
+          "total_bytes": 1180910,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "auxiliary bishop",
+        "token_ids": [
+          5672,
+          27967,
+          287,
+          12019
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22658574022352695,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q1066032_P39_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q1066032_P39_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Catholic bishop",
+        "token_ids": [
+          28743,
+          498,
+          7437,
+          287,
+          12019
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2314852331764996,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491210752,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1066032_P39_2016",
+          "Q1066032_P39_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003595496993511915,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 750,
+          "total_bytes": 1180910,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "auxiliary bishop",
+        "token_ids": [
+          5672,
+          27967,
+          287,
+          12019
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22771915793418884,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q1066032_P39_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q1066032_P39_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Catholic bishop",
+        "token_ids": [
+          28743,
+          498,
+          7437,
+          287,
+          12019
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23609436303377151,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491341824,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1066032_P39_2016",
+          "Q1066032_P39_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037825494073331356,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 144,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1179648,
+          "index_key_bytes": 512,
+          "metadata_and_format_bytes": 750,
+          "total_bytes": 1180910,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "auxiliary bishop",
+        "token_ids": [
+          5672,
+          27967,
+          287,
+          12019
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22549982415512204,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    }
+  ],
+  "write_seconds": 0.08542587561532855,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 256,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 144,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1179648,
+      "index_key_bytes": 512,
+      "metadata_and_format_bytes": 750,
+      "total_bytes": 1180910,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 144,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1179648,
+    "index_key_bytes": 512,
+    "metadata_and_format_bytes": 750,
+    "total_bytes": 1180910,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

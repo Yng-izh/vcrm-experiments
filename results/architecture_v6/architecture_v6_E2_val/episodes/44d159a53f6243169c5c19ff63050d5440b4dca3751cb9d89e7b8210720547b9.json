@@ -1,0 +1,185 @@
+{
+  "id": "templama:val:Q22302425:P69",
+  "group": "Q22302425:P69",
+  "split": "val",
+  "versions": 4,
+  "queries": [
+    {
+      "query_id": "Q22302425_P69_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q22302425_P69_2018",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Sierra Canyon School",
+        "token_ids": [
+          26048,
+          334,
+          1164,
+          266,
+          4228
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2455758061259985,
+        "prompt_tokens": 204,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15498820096,
+        "kv_cache_bytes": 27394048,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q22302425_P69_2020",
+          "Q22302425_P69_2018"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004115392919629812,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1252,
+          "total_bytes": 1444068,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.4,
+        "wrong_version": 1
+      },
+      "uncompressed_pair": {
+        "answer": "Crossroads School",
+        "token_ids": [
+          10464,
+          311,
+          6722,
+          4228
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23719779518432915,
+        "prompt_tokens": 316,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527238656,
+        "kv_cache_bytes": 41943040,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q22302425_P69_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q22302425_P69_2019",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Sierra Canyon School",
+        "token_ids": [
+          26048,
+          334,
+          1164,
+          266,
+          4228
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.24845950910821557,
+        "prompt_tokens": 204,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15498951168,
+        "kv_cache_bytes": 27394048,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q22302425_P69_2020",
+          "Q22302425_P69_2019"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004026666050776839,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1252,
+          "total_bytes": 1444068,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Crossroads School",
+        "token_ids": [
+          10464,
+          311,
+          6722,
+          4228
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2421279640402645,
+        "prompt_tokens": 316,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527238656,
+        "kv_cache_bytes": 41943040,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.18572307005524635,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 512,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 176,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1441792,
+      "index_key_bytes": 1024,
+      "metadata_and_format_bytes": 1252,
+      "total_bytes": 1444068,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 176,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1441792,
+    "index_key_bytes": 1024,
+    "metadata_and_format_bytes": 1252,
+    "total_bytes": 1444068,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

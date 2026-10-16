@@ -1,0 +1,1034 @@
+{
+  "id": "templama:test:Q1058:P39",
+  "group": "Q1058:P39",
+  "split": "test",
+  "versions": 3,
+  "queries": [
+    {
+      "query_id": "Q1058_P39_2010",
+      "latest": false,
+      "as_of": "2010-01-01T00:00:00",
+      "selected_entry_id": "Q1058_P39_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Member of a Legislative Assembly",
+        "token_ids": [
+          15178,
+          302,
+          264,
+          26216,
+          1197,
+          12033
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2669608616270125,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491341824,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1058_P39_2015",
+          "Q1058_P39_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003671628888696432,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 945,
+          "total_bytes": 1312433,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.8,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Member of a Legislative Assembly",
+        "token_ids": [
+          15178,
+          302,
+          264,
+          26216,
+          1197,
+          12033
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.291854287032038,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.8
+      }
+    },
+    {
+      "query_id": "Q1058_P39_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q1058_P39_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Member of a Legislative Assembly",
+        "token_ids": [
+          15178,
+          302,
+          264,
+          26216,
+          1197,
+          12033
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.26507224701344967,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491210752,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1058_P39_2015",
+          "Q1058_P39_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036355899646878242,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 945,
+          "total_bytes": 1312433,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.8,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Member of a Legislative Assembly",
+        "token_ids": [
+          15178,
+          302,
+          264,
+          26216,
+          1197,
+          12033
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2895261528901756,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.8
+      }
+    },
+    {
+      "query_id": "Q1058_P39_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q1058_P39_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Member of a Legislative Assembly",
+        "token_ids": [
+          15178,
+          302,
+          264,
+          26216,
+          1197,
+          12033
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2697948720306158,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491341824,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1058_P39_2015",
+          "Q1058_P39_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036558439023792744,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 945,
+          "total_bytes": 1312433,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.8,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Member of a Legislative Assembly",
+        "token_ids": [
+          15178,
+          302,
+          264,
+          26216,
+          1197,
+          12033
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2911426732316613,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.8
+      }
+    },
+    {
+      "query_id": "Q1058_P39_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q1058_P39_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Member of a Legislative Assembly",
+        "token_ids": [
+          15178,
+          302,
+          264,
+          26216,
+          1197,
+          12033
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2699555358849466,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491210752,
+        "kv_cache_bytes": 28311552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1058_P39_2015",
+          "Q1058_P39_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003965539857745171,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 945,
+          "total_bytes": 1312433,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.8,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Member of a Legislative Assembly",
+        "token_ids": [
+          15178,
+          302,
+          264,
+          26216,
+          1197,
+          12033
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2920667137950659,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.8
+      }
+    },
+    {
+      "query_id": "Q1058_P39_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q1058_P39_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Minister of Personnel, Public Grievances and Pensions",
+        "token_ids": [
+          5805,
+          1330,
+          302,
+          6441,
+          8062,
+          28725,
+          4271,
+          420,
+          10212,
+          2233,
+          304,
+          367,
+          5143
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.479701885022223,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491341824,
+        "kv_cache_bytes": 29229056,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1058_P39_2015",
+          "Q1058_P39_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003867924213409424,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 945,
+          "total_bytes": 1312433,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.8571428571428571,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Narendra Modi holds the position of Minister of Personnel, Public Grievances and Pensions.",
+        "token_ids": [
+          418,
+          492,
+          292,
+          520,
+          3813,
+          28710,
+          8288,
+          272,
+          2840,
+          302,
+          8241,
+          302,
+          6441,
+          8062,
+          28725,
+          4271,
+          420,
+          10212,
+          2233,
+          304,
+          367,
+          5143,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.8122480819001794,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 45219840,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.631578947368421
+      }
+    },
+    {
+      "query_id": "Q1058_P39_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q1058_P39_2015",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Minister of Personnel, Public Grievances and Pensions",
+        "token_ids": [
+          5805,
+          1330,
+          302,
+          6441,
+          8062,
+          28725,
+          4271,
+          420,
+          10212,
+          2233,
+          304,
+          367,
+          5143
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.47907737642526627,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491210752,
+        "kv_cache_bytes": 29229056,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1058_P39_2015",
+          "Q1058_P39_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003649681806564331,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 945,
+          "total_bytes": 1312433,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.8571428571428571,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Narendra Modi holds the position of Minister of Personnel, Public Grievances and Pensions.",
+        "token_ids": [
+          418,
+          492,
+          292,
+          520,
+          3813,
+          28710,
+          8288,
+          272,
+          2840,
+          302,
+          8241,
+          302,
+          6441,
+          8062,
+          28725,
+          4271,
+          420,
+          10212,
+          2233,
+          304,
+          367,
+          5143,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.8104770970530808,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 45219840,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.631578947368421
+      }
+    },
+    {
+      "query_id": "Q1058_P39_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q1058_P39_2015",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Minister of Personnel, Public Grievances and Pensions",
+        "token_ids": [
+          5805,
+          1330,
+          302,
+          6441,
+          8062,
+          28725,
+          4271,
+          420,
+          10212,
+          2233,
+          304,
+          367,
+          5143
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4727565790526569,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491341824,
+        "kv_cache_bytes": 29229056,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1058_P39_2015",
+          "Q1058_P39_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003815809730440378,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 945,
+          "total_bytes": 1312433,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.8571428571428571,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Narendra Modi holds the position of Minister of Personnel, Public Grievances and Pensions.",
+        "token_ids": [
+          418,
+          492,
+          292,
+          520,
+          3813,
+          28710,
+          8288,
+          272,
+          2840,
+          302,
+          8241,
+          302,
+          6441,
+          8062,
+          28725,
+          4271,
+          420,
+          10212,
+          2233,
+          304,
+          367,
+          5143,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.8070311592891812,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 45219840,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.631578947368421
+      }
+    },
+    {
+      "query_id": "Q1058_P39_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q1058_P39_2015",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Minister of Personnel, Public Grievances and Pensions",
+        "token_ids": [
+          5805,
+          1330,
+          302,
+          6441,
+          8062,
+          28725,
+          4271,
+          420,
+          10212,
+          2233,
+          304,
+          367,
+          5143
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4702564780600369,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491210752,
+        "kv_cache_bytes": 29229056,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1058_P39_2015",
+          "Q1058_P39_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003854024223983288,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 945,
+          "total_bytes": 1312433,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.8571428571428571,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Narendra Modi holds the position of Minister of Personnel, Public Grievances and Pensions.",
+        "token_ids": [
+          418,
+          492,
+          292,
+          520,
+          3813,
+          28710,
+          8288,
+          272,
+          2840,
+          302,
+          8241,
+          302,
+          6441,
+          8062,
+          28725,
+          4271,
+          420,
+          10212,
+          2233,
+          304,
+          367,
+          5143,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.8175258487462997,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 45219840,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.631578947368421
+      }
+    },
+    {
+      "query_id": "Q1058_P39_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q1058_P39_2015",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Minister of Personnel, Public Grievances and Pensions",
+        "token_ids": [
+          5805,
+          1330,
+          302,
+          6441,
+          8062,
+          28725,
+          4271,
+          420,
+          10212,
+          2233,
+          304,
+          367,
+          5143
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.49500496219843626,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491341824,
+        "kv_cache_bytes": 29229056,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1058_P39_2015",
+          "Q1058_P39_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038929516449570656,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 945,
+          "total_bytes": 1312433,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.8571428571428571,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Narendra Modi holds the position of Minister of Personnel, Public Grievances and Pensions.",
+        "token_ids": [
+          418,
+          492,
+          292,
+          520,
+          3813,
+          28710,
+          8288,
+          272,
+          2840,
+          302,
+          8241,
+          302,
+          6441,
+          8062,
+          28725,
+          4271,
+          420,
+          10212,
+          2233,
+          304,
+          367,
+          5143,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.8423332781530917,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 45219840,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.631578947368421
+      }
+    },
+    {
+      "query_id": "Q1058_P39_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q1058_P39_2015",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Minister of Personnel, Public Grievances and Pensions",
+        "token_ids": [
+          5805,
+          1330,
+          302,
+          6441,
+          8062,
+          28725,
+          4271,
+          420,
+          10212,
+          2233,
+          304,
+          367,
+          5143
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.48155376594513655,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491210752,
+        "kv_cache_bytes": 29229056,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1058_P39_2015",
+          "Q1058_P39_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003942662384361029,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 945,
+          "total_bytes": 1312433,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.8571428571428571,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Narendra Modi holds the position of Minister of Personnel, Public Grievances and Pensions.",
+        "token_ids": [
+          418,
+          492,
+          292,
+          520,
+          3813,
+          28710,
+          8288,
+          272,
+          2840,
+          302,
+          8241,
+          302,
+          6441,
+          8062,
+          28725,
+          4271,
+          420,
+          10212,
+          2233,
+          304,
+          367,
+          5143,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.8104150290600955,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 45219840,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.631578947368421
+      }
+    },
+    {
+      "query_id": "Q1058_P39_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q1058_P39_2015",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Minister of Personnel, Public Grievances and Pensions",
+        "token_ids": [
+          5805,
+          1330,
+          302,
+          6441,
+          8062,
+          28725,
+          4271,
+          420,
+          10212,
+          2233,
+          304,
+          367,
+          5143
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4703779937699437,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491341824,
+        "kv_cache_bytes": 29229056,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1058_P39_2015",
+          "Q1058_P39_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0035732202231884003,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 945,
+          "total_bytes": 1312433,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.8571428571428571,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Narendra Modi holds the position of Minister of Personnel, Public Grievances and Pensions.",
+        "token_ids": [
+          418,
+          492,
+          292,
+          520,
+          3813,
+          28710,
+          8288,
+          272,
+          2840,
+          302,
+          8241,
+          302,
+          6441,
+          8062,
+          28725,
+          4271,
+          420,
+          10212,
+          2233,
+          304,
+          367,
+          5143,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.8093865811824799,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 45219840,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.631578947368421
+      }
+    }
+  ],
+  "write_seconds": 0.11991246743127704,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 384,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 160,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1310720,
+      "index_key_bytes": 768,
+      "metadata_and_format_bytes": 945,
+      "total_bytes": 1312433,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 160,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1310720,
+    "index_key_bytes": 768,
+    "metadata_and_format_bytes": 945,
+    "total_bytes": 1312433,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

@@ -1,0 +1,907 @@
+{
+  "id": "templama:test:Q1032587:P102",
+  "group": "Q1032587:P102",
+  "split": "test",
+  "versions": 7,
+  "queries": [
+    {
+      "query_id": "Q1032587_P102_2010",
+      "latest": false,
+      "as_of": "2010-01-01T00:00:00",
+      "selected_entry_id": "Q1032587_P102_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Socialists' Party of Catalonia",
+        "token_ids": [
+          28735,
+          24186,
+          1583,
+          28742,
+          6636,
+          302,
+          18959,
+          9578
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3219043421559036,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491124736,
+        "kv_cache_bytes": 28442624,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1032587_P102_2019",
+          "Q1032587_P102_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.005226811859756708,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1877,
+          "total_bytes": 1838677,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Ernest Maragall is a member of the Republican Left of Catalonia.",
+        "token_ids": [
+          27915,
+          1471,
+          357,
+          455,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          12294,
+          18365,
+          302,
+          18959,
+          9578,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.560645341873169,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 44040192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.3076923076923077
+      }
+    },
+    {
+      "query_id": "Q1032587_P102_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q1032587_P102_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Socialists' Party of Catalonia",
+        "token_ids": [
+          28735,
+          24186,
+          1583,
+          28742,
+          6636,
+          302,
+          18959,
+          9578
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.32215338619425893,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490993664,
+        "kv_cache_bytes": 28442624,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1032587_P102_2019",
+          "Q1032587_P102_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038593891076743603,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1877,
+          "total_bytes": 1838677,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Republican Left of Catalonia",
+        "token_ids": [
+          12294,
+          18365,
+          302,
+          18959,
+          9578
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2576715862378478,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q1032587_P102_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q1032587_P102_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "New Catalan Left / Socialist Left Catalonia",
+        "token_ids": [
+          2972,
+          18959,
+          276,
+          18365,
+          732,
+          7575,
+          392,
+          18365,
+          18959,
+          9578
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3845295337960124,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491124736,
+        "kv_cache_bytes": 28704768,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1032587_P102_2019",
+          "Q1032587_P102_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003814450930804014,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1877,
+          "total_bytes": 1838677,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.6666666666666666,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Ernest Maragall is a member of the New Catalan Left.",
+        "token_ids": [
+          27915,
+          1471,
+          357,
+          455,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          1450,
+          18959,
+          276,
+          18365,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5355749339796603,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 43909120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5454545454545454
+      }
+    },
+    {
+      "query_id": "Q1032587_P102_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q1032587_P102_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "New Catalan Left",
+        "token_ids": [
+          2972,
+          18959,
+          276,
+          18365
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.21660442696884274,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490993664,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1032587_P102_2019",
+          "Q1032587_P102_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036909389309585094,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1877,
+          "total_bytes": 1838677,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "New Catalan Left",
+        "token_ids": [
+          1450,
+          18959,
+          276,
+          18365
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23337615793570876,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q1032587_P102_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q1032587_P102_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "New Catalan Left",
+        "token_ids": [
+          2972,
+          18959,
+          276,
+          18365
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20325928321108222,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491124736,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1032587_P102_2019",
+          "Q1032587_P102_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0034001353196799755,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1877,
+          "total_bytes": 1838677,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Ernest Maragall is a member of the New Catalan Left.",
+        "token_ids": [
+          27915,
+          1471,
+          357,
+          455,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          1450,
+          18959,
+          276,
+          18365,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5319986129179597,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 43909120,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5454545454545454
+      }
+    },
+    {
+      "query_id": "Q1032587_P102_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q1032587_P102_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Leftwing Movement",
+        "token_ids": [
+          7549,
+          9988,
+          25361
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17299823928624392,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490993664,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1032587_P102_2019",
+          "Q1032587_P102_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0039043580181896687,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1877,
+          "total_bytes": 1838677,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Republican Left",
+        "token_ids": [
+          12294,
+          18365
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.16608699271455407,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42336256,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1032587_P102_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q1032587_P102_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Leftwing Movement",
+        "token_ids": [
+          7549,
+          9988,
+          25361
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17603666801005602,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491124736,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1032587_P102_2019",
+          "Q1032587_P102_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003319278359413147,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1877,
+          "total_bytes": 1838677,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Republican Left",
+        "token_ids": [
+          12294,
+          18365
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.16535073705017567,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42336256,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1032587_P102_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q1032587_P102_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Leftwing Movement",
+        "token_ids": [
+          7549,
+          9988,
+          25361
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17227358557283878,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490993664,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1032587_P102_2019",
+          "Q1032587_P102_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003519596066325903,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1877,
+          "total_bytes": 1838677,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Republican Left",
+        "token_ids": [
+          12294,
+          18365
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.16645964607596397,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42336256,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q1032587_P102_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q1032587_P102_2018",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Ernest Maragall is a member of the Republican Left of Catalonia.",
+        "token_ids": [
+          27915,
+          1471,
+          357,
+          455,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          12294,
+          18365,
+          302,
+          18959,
+          9578,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5315080266445875,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491124736,
+        "kv_cache_bytes": 29360128,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1032587_P102_2019",
+          "Q1032587_P102_2018"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036571151576936245,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1877,
+          "total_bytes": 1838677,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.6153846153846154,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Republican Left of Catalonia / Leftwing Movement",
+        "token_ids": [
+          12294,
+          18365,
+          302,
+          18959,
+          9578,
+          732,
+          18365,
+          9988,
+          25361
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3842429048381746,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.8
+      }
+    },
+    {
+      "query_id": "Q1032587_P102_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q1032587_P102_2019",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Ernest Maragall is a member of the Republican Left of Catalonia.",
+        "token_ids": [
+          27915,
+          1471,
+          357,
+          455,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          12294,
+          18365,
+          302,
+          18959,
+          9578,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5242796172387898,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490993664,
+        "kv_cache_bytes": 29360128,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1032587_P102_2019",
+          "Q1032587_P102_2018"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036642509512603283,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1877,
+          "total_bytes": 1838677,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.6153846153846154,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Republican Left of Catalonia / Leftwing Movement",
+        "token_ids": [
+          12294,
+          18365,
+          302,
+          18959,
+          9578,
+          732,
+          18365,
+          9988,
+          25361
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3795746648684144,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.8
+      }
+    },
+    {
+      "query_id": "Q1032587_P102_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q1032587_P102_2019",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Ernest Maragall is a member of the Republican Left of Catalonia.",
+        "token_ids": [
+          27915,
+          1471,
+          357,
+          455,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          12294,
+          18365,
+          302,
+          18959,
+          9578,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5306484531611204,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491124736,
+        "kv_cache_bytes": 29360128,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q1032587_P102_2019",
+          "Q1032587_P102_2018"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003773692063987255,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 224,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1835008,
+          "index_key_bytes": 1792,
+          "metadata_and_format_bytes": 1877,
+          "total_bytes": 1838677,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.6153846153846154,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Republican Left of Catalonia / Leftwing Movement",
+        "token_ids": [
+          12294,
+          18365,
+          302,
+          18959,
+          9578,
+          732,
+          18365,
+          9988,
+          25361
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.37844932498410344,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.8
+      }
+    }
+  ],
+  "write_seconds": 0.27895438484847546,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 896,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 224,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1835008,
+      "index_key_bytes": 1792,
+      "metadata_and_format_bytes": 1877,
+      "total_bytes": 1838677,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 224,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1835008,
+    "index_key_bytes": 1792,
+    "metadata_and_format_bytes": 1877,
+    "total_bytes": 1838677,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

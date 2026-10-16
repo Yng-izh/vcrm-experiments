@@ -1,0 +1,861 @@
+{
+  "id": "templama:test:Q108451:P108",
+  "group": "Q108451:P108",
+  "split": "test",
+  "versions": 3,
+  "queries": [
+    {
+      "query_id": "Q108451_P108_2010",
+      "latest": false,
+      "as_of": "2010-01-01T00:00:00",
+      "selected_entry_id": "Q108451_P108_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "RWTH Aachen University",
+        "token_ids": [
+          399,
+          28780,
+          3151,
+          330,
+          23517,
+          2900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.26088260021060705,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q108451_P108_2018",
+          "Q108451_P108_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003662899136543274,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "RWTH Aachen University",
+        "token_ids": [
+          399,
+          28780,
+          3151,
+          330,
+          23517,
+          2900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2870965623296797,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q108451_P108_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q108451_P108_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "RWTH Aachen University",
+        "token_ids": [
+          399,
+          28780,
+          3151,
+          330,
+          23517,
+          2900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2662895801477134,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490906624,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q108451_P108_2018",
+          "Q108451_P108_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004029133822768927,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "RWTH Aachen University",
+        "token_ids": [
+          399,
+          28780,
+          3151,
+          330,
+          23517,
+          2900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.28884477401152253,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q108451_P108_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q108451_P108_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "RWTH Aachen University",
+        "token_ids": [
+          399,
+          28780,
+          3151,
+          330,
+          23517,
+          2900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2601099330931902,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q108451_P108_2018",
+          "Q108451_P108_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003788853995501995,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "RWTH Aachen University",
+        "token_ids": [
+          399,
+          28780,
+          3151,
+          330,
+          23517,
+          2900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2889443850144744,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q108451_P108_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q108451_P108_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "RWTH Aachen University",
+        "token_ids": [
+          399,
+          28780,
+          3151,
+          330,
+          23517,
+          2900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2645317828282714,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490906624,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q108451_P108_2018",
+          "Q108451_P108_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038270270451903343,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "RWTH Aachen University",
+        "token_ids": [
+          399,
+          28780,
+          3151,
+          330,
+          23517,
+          2900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2846358781680465,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q108451_P108_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q108451_P108_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "RWTH Aachen University",
+        "token_ids": [
+          399,
+          28780,
+          3151,
+          330,
+          23517,
+          2900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2655942100100219,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q108451_P108_2018",
+          "Q108451_P108_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003573601134121418,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "RWTH Aachen University",
+        "token_ids": [
+          399,
+          28780,
+          3151,
+          330,
+          23517,
+          2900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.28883371222764254,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q108451_P108_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q108451_P108_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "RWTH Aachen University",
+        "token_ids": [
+          399,
+          28780,
+          3151,
+          330,
+          23517,
+          2900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2619916503317654,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490906624,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q108451_P108_2018",
+          "Q108451_P108_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037635602056980133,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "RWTH Aachen University",
+        "token_ids": [
+          399,
+          28780,
+          3151,
+          330,
+          23517,
+          2900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.28635019110515714,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q108451_P108_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q108451_P108_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "RWTH Aachen University",
+        "token_ids": [
+          399,
+          28780,
+          3151,
+          330,
+          23517,
+          2900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.26359190698713064,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q108451_P108_2018",
+          "Q108451_P108_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003886111080646515,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "RWTH Aachen University",
+        "token_ids": [
+          399,
+          28780,
+          3151,
+          330,
+          23517,
+          2900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2877034852281213,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42729472,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q108451_P108_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q108451_P108_2017",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "University of South Carolina / RWTH Aachen University",
+        "token_ids": [
+          14953,
+          472,
+          302,
+          3658,
+          11434,
+          732,
+          399,
+          28780,
+          3151,
+          330,
+          23517,
+          2900
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4445618628524244,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490906624,
+        "kv_cache_bytes": 28835840,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q108451_P108_2018",
+          "Q108451_P108_2017"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003764654044061899,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.7272727272727273,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "University of South Carolina",
+        "token_ids": [
+          2900,
+          302,
+          3658,
+          11434
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.22945774905383587,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q108451_P108_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q108451_P108_2018",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "University of South Carolina",
+        "token_ids": [
+          14953,
+          472,
+          302,
+          3658,
+          11434
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23012381698936224,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q108451_P108_2018",
+          "Q108451_P108_2017"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0035019749775528908,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "University of South Carolina",
+        "token_ids": [
+          2900,
+          302,
+          3658,
+          11434
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23145505879074335,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q108451_P108_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q108451_P108_2018",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "University of South Carolina",
+        "token_ids": [
+          14953,
+          472,
+          302,
+          3658,
+          11434
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23275772016495466,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490906624,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q108451_P108_2018",
+          "Q108451_P108_2017"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003614958841353655,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "University of South Carolina",
+        "token_ids": [
+          2900,
+          302,
+          3658,
+          11434
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2277298872359097,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q108451_P108_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q108451_P108_2018",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "University of South Carolina",
+        "token_ids": [
+          14953,
+          472,
+          302,
+          3658,
+          11434
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2349235969595611,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q108451_P108_2018",
+          "Q108451_P108_2017"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037645609118044376,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 972,
+          "total_bytes": 1312460,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "University of South Carolina",
+        "token_ids": [
+          2900,
+          302,
+          3658,
+          11434
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23665632819756866,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.11315434100106359,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 384,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 160,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1310720,
+      "index_key_bytes": 768,
+      "metadata_and_format_bytes": 972,
+      "total_bytes": 1312460,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 160,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1310720,
+    "index_key_bytes": 768,
+    "metadata_and_format_bytes": 972,
+    "total_bytes": 1312460,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

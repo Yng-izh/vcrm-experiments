@@ -1,0 +1,888 @@
+{
+  "id": "templama:test:Q10357316:P127",
+  "group": "Q10357316:P127",
+  "split": "test",
+  "versions": 3,
+  "queries": [
+    {
+      "query_id": "Q10357316_P127_2010",
+      "latest": false,
+      "as_of": "2010-01-01T00:00:00",
+      "selected_entry_id": "Q10357316_P127_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Port of Aveiro branch line is owned by REFER.",
+        "token_ids": [
+          4194,
+          302,
+          27170,
+          4812,
+          9799,
+          1407,
+          349,
+          10496,
+          486,
+          4515,
+          19627,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4390415013767779,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490993664,
+        "kv_cache_bytes": 28966912,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10357316_P127_2016",
+          "Q10357316_P127_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003603336401283741,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 990,
+          "total_bytes": 1312478,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.2,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Infrastructures of Portugal",
+        "token_ids": [
+          560,
+          10512,
+          3699,
+          1238,
+          302,
+          16160
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.28512945119291544,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q10357316_P127_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q10357316_P127_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Port of Aveiro branch line is owned by REFER.",
+        "token_ids": [
+          4194,
+          302,
+          27170,
+          4812,
+          9799,
+          1407,
+          349,
+          10496,
+          486,
+          4515,
+          19627,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.438136032782495,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491124736,
+        "kv_cache_bytes": 28966912,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10357316_P127_2016",
+          "Q10357316_P127_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003757718950510025,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 990,
+          "total_bytes": 1312478,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.2,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Infrastructures of Portugal",
+        "token_ids": [
+          560,
+          10512,
+          3699,
+          1238,
+          302,
+          16160
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2863251999951899,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q10357316_P127_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q10357316_P127_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Port of Aveiro branch line is owned by REFER.",
+        "token_ids": [
+          4194,
+          302,
+          27170,
+          4812,
+          9799,
+          1407,
+          349,
+          10496,
+          486,
+          4515,
+          19627,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4416769896633923,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490993664,
+        "kv_cache_bytes": 28966912,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10357316_P127_2016",
+          "Q10357316_P127_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004190482199192047,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 990,
+          "total_bytes": 1312478,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.2,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Infrastructures of Portugal",
+        "token_ids": [
+          560,
+          10512,
+          3699,
+          1238,
+          302,
+          16160
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.28809419833123684,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q10357316_P127_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q10357316_P127_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Port of Aveiro branch line is owned by REFER.",
+        "token_ids": [
+          4194,
+          302,
+          27170,
+          4812,
+          9799,
+          1407,
+          349,
+          10496,
+          486,
+          4515,
+          19627,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4383476269431412,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491124736,
+        "kv_cache_bytes": 28966912,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10357316_P127_2016",
+          "Q10357316_P127_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003369174897670746,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 990,
+          "total_bytes": 1312478,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.2,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Infrastructures of Portugal",
+        "token_ids": [
+          560,
+          10512,
+          3699,
+          1238,
+          302,
+          16160
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.28843585634604096,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q10357316_P127_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q10357316_P127_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Port of Aveiro branch line is owned by REFER.",
+        "token_ids": [
+          4194,
+          302,
+          27170,
+          4812,
+          9799,
+          1407,
+          349,
+          10496,
+          486,
+          4515,
+          19627,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4419682240113616,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490993664,
+        "kv_cache_bytes": 28966912,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10357316_P127_2016",
+          "Q10357316_P127_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003700068686157465,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 990,
+          "total_bytes": 1312478,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.2,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Infrastructures of Portugal",
+        "token_ids": [
+          560,
+          10512,
+          3699,
+          1238,
+          302,
+          16160
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.28741990495473146,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q10357316_P127_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q10357316_P127_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "REFER",
+        "token_ids": [
+          4515,
+          19627
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.14597207633778453,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491124736,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10357316_P127_2016",
+          "Q10357316_P127_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0035022119991481304,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 990,
+          "total_bytes": 1312478,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Infrastructures of Portugal",
+        "token_ids": [
+          560,
+          10512,
+          3699,
+          1238,
+          302,
+          16160
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2863402981311083,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10357316_P127_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q10357316_P127_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "REFER",
+        "token_ids": [
+          4515,
+          19627
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.14493740582838655,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490993664,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10357316_P127_2016",
+          "Q10357316_P127_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003746449016034603,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 990,
+          "total_bytes": 1312478,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Infrastructures of Portugal",
+        "token_ids": [
+          560,
+          10512,
+          3699,
+          1238,
+          302,
+          16160
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2874235906638205,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10357316_P127_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q10357316_P127_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Infrastructures of Portugal",
+        "token_ids": [
+          560,
+          10512,
+          3699,
+          1238,
+          302,
+          16160
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2635185201652348,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491124736,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10357316_P127_2016",
+          "Q10357316_P127_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003617286216467619,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 990,
+          "total_bytes": 1312478,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Infrastructures of Portugal",
+        "token_ids": [
+          560,
+          10512,
+          3699,
+          1238,
+          302,
+          16160
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.28586465073749423,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10357316_P127_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q10357316_P127_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Infrastructures of Portugal",
+        "token_ids": [
+          560,
+          10512,
+          3699,
+          1238,
+          302,
+          16160
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2612596810795367,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490993664,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10357316_P127_2016",
+          "Q10357316_P127_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003591409884393215,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 990,
+          "total_bytes": 1312478,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Infrastructures of Portugal",
+        "token_ids": [
+          560,
+          10512,
+          3699,
+          1238,
+          302,
+          16160
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.28629857720807195,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10357316_P127_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q10357316_P127_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Infrastructures of Portugal",
+        "token_ids": [
+          560,
+          10512,
+          3699,
+          1238,
+          302,
+          16160
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2605907707475126,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491124736,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10357316_P127_2016",
+          "Q10357316_P127_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0034270472824573517,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 990,
+          "total_bytes": 1312478,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Infrastructures of Portugal",
+        "token_ids": [
+          560,
+          10512,
+          3699,
+          1238,
+          302,
+          16160
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.285780421923846,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q10357316_P127_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q10357316_P127_2016",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Infrastructures of Portugal",
+        "token_ids": [
+          560,
+          10512,
+          3699,
+          1238,
+          302,
+          16160
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.26163509208709,
+        "prompt_tokens": 209,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490993664,
+        "kv_cache_bytes": 28180480,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q10357316_P127_2016",
+          "Q10357316_P127_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0035091969184577465,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 990,
+          "total_bytes": 1312478,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Infrastructures of Portugal",
+        "token_ids": [
+          560,
+          10512,
+          3699,
+          1238,
+          302,
+          16160
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2858481090515852,
+        "prompt_tokens": 321,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519576576,
+        "kv_cache_bytes": 42860544,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.14521958120167255,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 384,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 160,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1310720,
+      "index_key_bytes": 768,
+      "metadata_and_format_bytes": 990,
+      "total_bytes": 1312478,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 160,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1310720,
+    "index_key_bytes": 768,
+    "metadata_and_format_bytes": 990,
+    "total_bytes": 1312478,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

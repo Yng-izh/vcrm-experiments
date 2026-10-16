@@ -1,0 +1,737 @@
+{
+  "id": "templama:test:Q11445:P6",
+  "group": "Q11445:P6",
+  "split": "test",
+  "versions": 3,
+  "queries": [
+    {
+      "query_id": "Q11445_P6_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q11445_P6_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Muhammad Anton is the head of the government of Malang.",
+        "token_ids": [
+          25605,
+          8999,
+          349,
+          272,
+          1335,
+          302,
+          272,
+          3058,
+          302,
+          4380,
+          602,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.46818018006160855,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491210752,
+        "kv_cache_bytes": 29097984,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11445_P6_2019",
+          "Q11445_P6_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038567972369492054,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 945,
+          "total_bytes": 1312433,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.4,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Muhammad Anton is the head of the government of Malang.",
+        "token_ids": [
+          25605,
+          8999,
+          349,
+          272,
+          1335,
+          302,
+          272,
+          3058,
+          302,
+          4380,
+          602,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.48598332330584526,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 43778048,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.4
+      }
+    },
+    {
+      "query_id": "Q11445_P6_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q11445_P6_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Muhammad Anton is the head of the government of Malang.",
+        "token_ids": [
+          25605,
+          8999,
+          349,
+          272,
+          1335,
+          302,
+          272,
+          3058,
+          302,
+          4380,
+          602,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4596143960952759,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491341824,
+        "kv_cache_bytes": 29097984,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11445_P6_2019",
+          "Q11445_P6_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003966970834881067,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 945,
+          "total_bytes": 1312433,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.4,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Muhammad Anton is the head of the government of Malang.",
+        "token_ids": [
+          25605,
+          8999,
+          349,
+          272,
+          1335,
+          302,
+          272,
+          3058,
+          302,
+          4380,
+          602,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4739947197958827,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 43778048,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.4
+      }
+    },
+    {
+      "query_id": "Q11445_P6_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q11445_P6_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Muhammad Anton is the head of the government of Malang.",
+        "token_ids": [
+          25605,
+          8999,
+          349,
+          272,
+          1335,
+          302,
+          272,
+          3058,
+          302,
+          4380,
+          602,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.44912937469780445,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491210752,
+        "kv_cache_bytes": 29097984,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11445_P6_2019",
+          "Q11445_P6_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003830268047749996,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 945,
+          "total_bytes": 1312433,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.4,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Muhammad Anton is the head of the government of Malang.",
+        "token_ids": [
+          25605,
+          8999,
+          349,
+          272,
+          1335,
+          302,
+          272,
+          3058,
+          302,
+          4380,
+          602,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.47692801197990775,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 43778048,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.4
+      }
+    },
+    {
+      "query_id": "Q11445_P6_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q11445_P6_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Muhammad Anton is the head of the government of Malang.",
+        "token_ids": [
+          25605,
+          8999,
+          349,
+          272,
+          1335,
+          302,
+          272,
+          3058,
+          302,
+          4380,
+          602,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.45502548897638917,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491341824,
+        "kv_cache_bytes": 29097984,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11445_P6_2019",
+          "Q11445_P6_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0036076512187719345,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 945,
+          "total_bytes": 1312433,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.4,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Muhammad Anton is the head of the government of Malang.",
+        "token_ids": [
+          25605,
+          8999,
+          349,
+          272,
+          1335,
+          302,
+          272,
+          3058,
+          302,
+          4380,
+          602,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4805635241791606,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 43778048,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.4
+      }
+    },
+    {
+      "query_id": "Q11445_P6_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q11445_P6_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Muhammad Anton is the head of the government of Malang.",
+        "token_ids": [
+          25605,
+          8999,
+          349,
+          272,
+          1335,
+          302,
+          272,
+          3058,
+          302,
+          4380,
+          602,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4548879889771342,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491210752,
+        "kv_cache_bytes": 29097984,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11445_P6_2019",
+          "Q11445_P6_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004859137814491987,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 945,
+          "total_bytes": 1312433,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.4,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Muhammad Anton is the head of the government of Malang.",
+        "token_ids": [
+          25605,
+          8999,
+          349,
+          272,
+          1335,
+          302,
+          272,
+          3058,
+          302,
+          4380,
+          602,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4877652209252119,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 43778048,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.4
+      }
+    },
+    {
+      "query_id": "Q11445_P6_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q11445_P6_2018",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Muhammad Anton",
+        "token_ids": [
+          25605,
+          8999
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.15096411295235157,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491341824,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11445_P6_2019",
+          "Q11445_P6_2018"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038032219745218754,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 945,
+          "total_bytes": 1312433,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Sutiaji is the head of the government of Malang.",
+        "token_ids": [
+          318,
+          329,
+          515,
+          3632,
+          349,
+          272,
+          1335,
+          302,
+          272,
+          3058,
+          302,
+          4380,
+          602,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5416606441140175,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 44040192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.25
+      }
+    },
+    {
+      "query_id": "Q11445_P6_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q11445_P6_2019",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Sutiaji is the head of the government of Malang.",
+        "token_ids": [
+          28735,
+          329,
+          515,
+          3632,
+          349,
+          272,
+          1335,
+          302,
+          272,
+          3058,
+          302,
+          4380,
+          602,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5160949318669736,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491210752,
+        "kv_cache_bytes": 29360128,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11445_P6_2019",
+          "Q11445_P6_2018"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0039059920236468315,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 945,
+          "total_bytes": 1312433,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.25,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Sutiaji is the head of the government of Malang.",
+        "token_ids": [
+          318,
+          329,
+          515,
+          3632,
+          349,
+          272,
+          1335,
+          302,
+          272,
+          3058,
+          302,
+          4380,
+          602,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5340166077949107,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 44040192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.25
+      }
+    },
+    {
+      "query_id": "Q11445_P6_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q11445_P6_2019",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Sutiaji is the head of the government of Malang.",
+        "token_ids": [
+          28735,
+          329,
+          515,
+          3632,
+          349,
+          272,
+          1335,
+          302,
+          272,
+          3058,
+          302,
+          4380,
+          602,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5109223378822207,
+        "prompt_tokens": 210,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15491341824,
+        "kv_cache_bytes": 29360128,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11445_P6_2019",
+          "Q11445_P6_2018"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003893433138728142,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 160,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1310720,
+          "index_key_bytes": 768,
+          "metadata_and_format_bytes": 945,
+          "total_bytes": 1312433,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.25,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Sutiaji is the head of the government of Malang.",
+        "token_ids": [
+          318,
+          329,
+          515,
+          3632,
+          349,
+          272,
+          1335,
+          302,
+          272,
+          3058,
+          302,
+          4380,
+          602,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5489864377304912,
+        "prompt_tokens": 322,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519826432,
+        "kv_cache_bytes": 44040192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.25
+      }
+    }
+  ],
+  "write_seconds": 0.13053576834499836,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 384,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 160,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1310720,
+      "index_key_bytes": 768,
+      "metadata_and_format_bytes": 945,
+      "total_bytes": 1312433,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 160,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1310720,
+    "index_key_bytes": 768,
+    "metadata_and_format_bytes": 945,
+    "total_bytes": 1312433,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

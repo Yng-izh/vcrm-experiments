@@ -1,0 +1,10 @@
+{
+  "base_config": "config.json",
+  "run_prefix": "paper_v1",
+  "feature_root": "/share/latent2/vcrm_icae/features/paper_v1_official",
+  "steps": ["baseline", "C16", "D16", "C32", "D32", "longmemeval_transfer"],
+  "codec_epochs": 1,
+  "history_slots": [16, 32],
+  "seed": 42,
+  "note": "Train/filtered validation/held-out test remain distinct. No codec training before reader gate and manual error review. Phase2 archival 11.20% is not a matched-reader control."
+}

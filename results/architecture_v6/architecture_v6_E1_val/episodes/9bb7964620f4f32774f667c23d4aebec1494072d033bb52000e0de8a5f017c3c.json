@@ -1,0 +1,458 @@
+{
+  "id": "templama:val:Q28549362:P102",
+  "group": "Q28549362:P102",
+  "split": "val",
+  "versions": 4,
+  "queries": [
+    {
+      "query_id": "Q28549362_P102_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q28549362_P102_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Leïla Chaibi is a member of the French Communist Party.",
+        "token_ids": [
+          1337,
+          28920,
+          2220,
+          23330,
+          593,
+          28710,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          4949,
+          21743,
+          6636,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.572530210018158,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500474880,
+        "kv_cache_bytes": 29622272,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q28549362_P102_2016",
+          "Q28549362_P102_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038277986459434032,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1266,
+          "total_bytes": 1444082,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.2,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Left Party / New Anticapitalist Party",
+        "token_ids": [
+          18365,
+          6636,
+          732,
+          1450,
+          3821,
+          294,
+          377,
+          1803,
+          392,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.436837803106755,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528992256,
+        "kv_cache_bytes": 43646976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.75
+      }
+    },
+    {
+      "query_id": "Q28549362_P102_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q28549362_P102_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Leïla Chaibi is a member of the Front de Gauche.",
+        "token_ids": [
+          1337,
+          28920,
+          2220,
+          23330,
+          593,
+          28710,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          13794,
+          340,
+          420,
+          581,
+          631,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6151636787690222,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500343808,
+        "kv_cache_bytes": 29884416,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q28549362_P102_2016",
+          "Q28549362_P102_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004214551765471697,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1266,
+          "total_bytes": 1444082,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Left Party",
+        "token_ids": [
+          18365,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1773303966037929,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528992256,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q28549362_P102_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q28549362_P102_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Leïla Chaibi is a member of the Front de Gauche.",
+        "token_ids": [
+          1337,
+          28920,
+          2220,
+          23330,
+          593,
+          28710,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          13794,
+          340,
+          420,
+          581,
+          631,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6344708921387792,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500474880,
+        "kv_cache_bytes": 29884416,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q28549362_P102_2016",
+          "Q28549362_P102_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004186465870589018,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1266,
+          "total_bytes": 1444082,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Left Party",
+        "token_ids": [
+          18365,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17071790480986238,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528992256,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q28549362_P102_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q28549362_P102_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Leïla Chaibi is a member of the Front de Gauche.",
+        "token_ids": [
+          1337,
+          28920,
+          2220,
+          23330,
+          593,
+          28710,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          13794,
+          340,
+          420,
+          581,
+          631,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6317389667965472,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500343808,
+        "kv_cache_bytes": 29884416,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q28549362_P102_2016",
+          "Q28549362_P102_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004099966958165169,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1266,
+          "total_bytes": 1444082,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Left Party",
+        "token_ids": [
+          18365,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17791317263618112,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528992256,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q28549362_P102_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q28549362_P102_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Leïla Chaibi is a member of the Unsubmissive France party.",
+        "token_ids": [
+          1337,
+          28920,
+          2220,
+          23330,
+          593,
+          28710,
+          349,
+          264,
+          4292,
+          302,
+          272,
+          935,
+          1666,
+          7924,
+          495,
+          4843,
+          4150,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6752166948281229,
+        "prompt_tokens": 211,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15500474880,
+        "kv_cache_bytes": 30015488,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q28549362_P102_2016",
+          "Q28549362_P102_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004435468930751085,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 176,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1441792,
+          "index_key_bytes": 1024,
+          "metadata_and_format_bytes": 1266,
+          "total_bytes": 1444082,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.2,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Left Party",
+        "token_ids": [
+          18365,
+          6636
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1715610371902585,
+        "prompt_tokens": 323,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15528992256,
+        "kv_cache_bytes": 42598400,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    }
+  ],
+  "write_seconds": 0.063189463224262,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 512,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 176,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1441792,
+      "index_key_bytes": 1024,
+      "metadata_and_format_bytes": 1266,
+      "total_bytes": 1444082,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 176,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1441792,
+    "index_key_bytes": 1024,
+    "metadata_and_format_bytes": 1266,
+    "total_bytes": 1444082,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

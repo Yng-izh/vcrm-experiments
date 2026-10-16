@@ -1,0 +1,878 @@
+{
+  "id": "templama:test:Q117743:P54",
+  "group": "Q117743:P54",
+  "split": "test",
+  "versions": 6,
+  "queries": [
+    {
+      "query_id": "Q117743_P54_2010",
+      "latest": false,
+      "as_of": "2010-01-01T00:00:00",
+      "selected_entry_id": "Q117743_P54_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "West Indies cricket team",
+        "token_ids": [
+          3797,
+          1756,
+          497,
+          26023,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23930559307336807,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q117743_P54_2017",
+          "Q117743_P54_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038870717398822308,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1623,
+          "total_bytes": 1707095,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Rajshahi Kings",
+        "token_ids": [
+          16818,
+          811,
+          912,
+          28710,
+          19188
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.26783452089875937,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42336256,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q117743_P54_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q117743_P54_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "West Indies cricket team",
+        "token_ids": [
+          3797,
+          1756,
+          497,
+          26023,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.24108244385570288,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q117743_P54_2017",
+          "Q117743_P54_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.004034134093672037,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1623,
+          "total_bytes": 1707095,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Rajshahi Kings",
+        "token_ids": [
+          16818,
+          811,
+          912,
+          28710,
+          19188
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2590985959395766,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42336256,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q117743_P54_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q117743_P54_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "West Indies cricket team",
+        "token_ids": [
+          3797,
+          1756,
+          497,
+          26023,
+          1918
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.24704875936731696,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q117743_P54_2017",
+          "Q117743_P54_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003713068086653948,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1623,
+          "total_bytes": 1707095,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Rajshahi Kings",
+        "token_ids": [
+          16818,
+          811,
+          912,
+          28710,
+          19188
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2616708753630519,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42336256,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q117743_P54_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q117743_P54_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Sunrisers Hyderabad",
+        "token_ids": [
+          7057,
+          3665,
+          404,
+          10540,
+          826,
+          20882
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.27568002324551344,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q117743_P54_2017",
+          "Q117743_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0037650172598659992,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1623,
+          "total_bytes": 1707095,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Darren Sammy plays for Rajasthan Kings.",
+        "token_ids": [
+          8220,
+          951,
+          4157,
+          1916,
+          8928,
+          354,
+          16818,
+          293,
+          23018,
+          19188,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4448621696792543,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q117743_P54_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q117743_P54_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Sunrisers Hyderabad",
+        "token_ids": [
+          7057,
+          3665,
+          404,
+          10540,
+          826,
+          20882
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2721308460459113,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q117743_P54_2017",
+          "Q117743_P54_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.005994620732963085,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1623,
+          "total_bytes": 1707095,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Darren Sammy plays for Rajasthan Kings.",
+        "token_ids": [
+          8220,
+          951,
+          4157,
+          1916,
+          8928,
+          354,
+          16818,
+          293,
+          23018,
+          19188,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4377838410437107,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 43122688,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q117743_P54_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q117743_P54_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Royal Challengers Bangalore",
+        "token_ids": [
+          8413,
+          15239,
+          13899,
+          13261,
+          282,
+          431
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.26768365129828453,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q117743_P54_2017",
+          "Q117743_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038504162803292274,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1623,
+          "total_bytes": 1707095,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Royal Challengers Bangalore",
+        "token_ids": [
+          8413,
+          15239,
+          13899,
+          13261,
+          282,
+          431
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.28791499603539705,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q117743_P54_2016",
+      "latest": false,
+      "as_of": "2016-01-01T00:00:00",
+      "selected_entry_id": "Q117743_P54_2016",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Royal Challengers Bangalore",
+        "token_ids": [
+          28754,
+          5703,
+          15239,
+          13899,
+          13261,
+          282,
+          431
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.29978849459439516,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q117743_P54_2017",
+          "Q117743_P54_2016"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003962133079767227,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1623,
+          "total_bytes": 1707095,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Royal Challengers Bangalore",
+        "token_ids": [
+          8413,
+          15239,
+          13899,
+          13261,
+          282,
+          431
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.28907858673483133,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 1,
+        "f1": 1.0
+      }
+    },
+    {
+      "query_id": "Q117743_P54_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q117743_P54_2017",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Rajshahi Kings",
+        "token_ids": [
+          28754,
+          1150,
+          811,
+          912,
+          28710,
+          19188
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2686819857917726,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q117743_P54_2017",
+          "Q117743_P54_2016"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003568630665540695,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1623,
+          "total_bytes": 1707095,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Royal Challengers Bangalore",
+        "token_ids": [
+          8413,
+          15239,
+          13899,
+          13261,
+          282,
+          431
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2859051628038287,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q117743_P54_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q117743_P54_2017",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Rajshahi Kings",
+        "token_ids": [
+          28754,
+          1150,
+          811,
+          912,
+          28710,
+          19188
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.26534050703048706,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q117743_P54_2017",
+          "Q117743_P54_2016"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003856611903756857,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1623,
+          "total_bytes": 1707095,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Royal Challengers Bangalore",
+        "token_ids": [
+          8413,
+          15239,
+          13899,
+          13261,
+          282,
+          431
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.28450569696724415,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q117743_P54_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q117743_P54_2017",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Rajshahi Kings",
+        "token_ids": [
+          28754,
+          1150,
+          811,
+          912,
+          28710,
+          19188
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2658936893567443,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490340352,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q117743_P54_2017",
+          "Q117743_P54_2016"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003831741400063038,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1623,
+          "total_bytes": 1707095,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Royal Challengers Bangalore",
+        "token_ids": [
+          8413,
+          15239,
+          13899,
+          13261,
+          282,
+          431
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.28428850742056966,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q117743_P54_2020",
+      "latest": true,
+      "as_of": "2020-01-01T00:00:00",
+      "selected_entry_id": "Q117743_P54_2017",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "Rajshahi Kings",
+        "token_ids": [
+          28754,
+          1150,
+          811,
+          912,
+          28710,
+          19188
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2622528518550098,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490471424,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q117743_P54_2017",
+          "Q117743_P54_2016"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.0038613020442426205,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1623,
+          "total_bytes": 1707095,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Darren Sammy plays for Royal Challengers Bangalore.",
+        "token_ids": [
+          8220,
+          951,
+          4157,
+          1916,
+          8928,
+          354,
+          8413,
+          15239,
+          13899,
+          13261,
+          282,
+          431,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4974959441460669,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15518824448,
+        "kv_cache_bytes": 43384832,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    }
+  ],
+  "write_seconds": 0.25295224878937006,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 768,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 208,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1703936,
+      "index_key_bytes": 1536,
+      "metadata_and_format_bytes": 1623,
+      "total_bytes": 1707095,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 208,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1703936,
+    "index_key_bytes": 1536,
+    "metadata_and_format_bytes": 1623,
+    "total_bytes": 1707095,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

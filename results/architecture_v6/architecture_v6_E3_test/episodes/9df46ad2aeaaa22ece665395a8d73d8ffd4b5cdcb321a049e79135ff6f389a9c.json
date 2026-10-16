@@ -1,0 +1,554 @@
+{
+  "id": "templama:test:Q11576:P54",
+  "group": "Q11576:P54",
+  "split": "test",
+  "versions": 6,
+  "queries": [
+    {
+      "query_id": "Q11576_P54_2010",
+      "latest": false,
+      "as_of": "2010-01-01T00:00:00",
+      "selected_entry_id": "Q11576_P54_2010",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Real Madrid CF",
+        "token_ids": [
+          7960,
+          14334,
+          16308
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.1807984015904367,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 27656192,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11576_P54_2015",
+          "Q11576_P54_2010"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003742627799510956,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1608,
+          "total_bytes": 1707080,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Raúl González plays for New York Cosmos / FC Schalke 04.",
+        "token_ids": [
+          11074,
+          28863,
+          28714,
+          15929,
+          16845,
+          19557,
+          8928,
+          354,
+          1450,
+          2726,
+          15905,
+          7186,
+          732,
+          9138,
+          1609,
+          282,
+          405,
+          28705,
+          28734,
+          28781,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.7493808078579605,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 44695552,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.46153846153846156
+      }
+    },
+    {
+      "query_id": "Q11576_P54_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q11576_P54_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Raúl González plays for FC Schalke 04.",
+        "token_ids": [
+          11074,
+          28863,
+          28714,
+          15929,
+          16845,
+          19557,
+          8928,
+          354,
+          9138,
+          1609,
+          282,
+          405,
+          28705,
+          28734,
+          28781,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5671592690050602,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490906624,
+        "kv_cache_bytes": 29360128,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11576_P54_2015",
+          "Q11576_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003987353760749102,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1608,
+          "total_bytes": 1707080,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.6,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Raúl González plays for New York Cosmos.",
+        "token_ids": [
+          11074,
+          28863,
+          28714,
+          15929,
+          16845,
+          19557,
+          8928,
+          354,
+          1450,
+          2726,
+          15905,
+          7186,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5083178780041635,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 43646976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q11576_P54_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q11576_P54_2012",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Al Sadd Sports Club",
+        "token_ids": [
+          976,
+          318,
+          988,
+          13184,
+          5933
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23445857921615243,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11576_P54_2015",
+          "Q11576_P54_2012"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003994272090494633,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1608,
+          "total_bytes": 1707080,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Al Sadd Sports Club / FC Schalke 04",
+        "token_ids": [
+          976,
+          318,
+          988,
+          13184,
+          5933,
+          732,
+          9138,
+          1609,
+          282,
+          405,
+          28705,
+          28734,
+          28781
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4996607000939548,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 43646976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.7272727272727273
+      }
+    },
+    {
+      "query_id": "Q11576_P54_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q11576_P54_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Al Sadd Sports Club",
+        "token_ids": [
+          976,
+          318,
+          988,
+          13184,
+          5933
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.23471628595143557,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490906624,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11576_P54_2015",
+          "Q11576_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003880398813635111,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1608,
+          "total_bytes": 1707080,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "New York Cosmos",
+        "token_ids": [
+          1450,
+          2726,
+          15905,
+          7186
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2276737573556602,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 42467328,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q11576_P54_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q11576_P54_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Al Sadd Sports Club",
+        "token_ids": [
+          976,
+          318,
+          988,
+          13184,
+          5933
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2331239441409707,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490775552,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11576_P54_2015",
+          "Q11576_P54_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003846879117190838,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1608,
+          "total_bytes": 1707080,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Raúl González plays for Al Sadd Sports Club / New York Cosmos / New York Cosmos",
+        "token_ids": [
+          11074,
+          28863,
+          28714,
+          15929,
+          16845,
+          19557,
+          8928,
+          354,
+          976,
+          318,
+          988,
+          13184,
+          5933,
+          732,
+          1450,
+          2726,
+          15905,
+          7186,
+          732,
+          1450,
+          2726,
+          15905,
+          7186
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.8086718949489295,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 44957696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.4444444444444444
+      }
+    },
+    {
+      "query_id": "Q11576_P54_2015",
+      "latest": true,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q11576_P54_2015",
+      "selected_kind": "full",
+      "answer": {
+        "answer": "New York Cosmos",
+        "token_ids": [
+          1450,
+          2726,
+          15905,
+          7186
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.20852686185389757,
+        "prompt_tokens": 208,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15490906624,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q11576_P54_2015",
+          "Q11576_P54_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.003892673645168543,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 208,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 1703936,
+          "index_key_bytes": 1536,
+          "metadata_and_format_bytes": 1608,
+          "total_bytes": 1707080,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Raúl González plays for Al Sadd Sports Club / New York Cosmos / New York Cosmos",
+        "token_ids": [
+          11074,
+          28863,
+          28714,
+          15929,
+          16845,
+          19557,
+          8928,
+          354,
+          976,
+          318,
+          988,
+          13184,
+          5933,
+          732,
+          1450,
+          2726,
+          15905,
+          7186,
+          732,
+          1450,
+          2726,
+          15905,
+          7186
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.8161766291595995,
+        "prompt_tokens": 320,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15519325184,
+        "kv_cache_bytes": 44957696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.35294117647058826
+      }
+    }
+  ],
+  "write_seconds": 0.2568803601898253,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 768,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 208,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 1703936,
+      "index_key_bytes": 1536,
+      "metadata_and_format_bytes": 1608,
+      "total_bytes": 1707080,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 208,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 1703936,
+    "index_key_bytes": 1536,
+    "metadata_and_format_bytes": 1608,
+    "total_bytes": 1707080,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}

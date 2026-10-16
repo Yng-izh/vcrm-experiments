@@ -1,0 +1,703 @@
+{
+  "id": "templama:val:Q129700:P54",
+  "group": "Q129700:P54",
+  "split": "val",
+  "versions": 9,
+  "queries": [
+    {
+      "query_id": "Q129700_P54_2011",
+      "latest": false,
+      "as_of": "2011-01-01T00:00:00",
+      "selected_entry_id": "Q129700_P54_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Manchester City F.C.",
+        "token_ids": [
+          17533,
+          3805,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.2761448291130364,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499386368,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q129700_P54_2020",
+          "Q129700_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.00870057800784707,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 256,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 2097152,
+          "index_key_bytes": 2304,
+          "metadata_and_format_bytes": 2395,
+          "total_bytes": 2101851,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Mario Balotelli plays for Brescia Calcio.",
+        "token_ids": [
+          20564,
+          9573,
+          322,
+          8763,
+          8928,
+          354,
+          365,
+          411,
+          5011,
+          2984,
+          12636,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.49400513898581266,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527739392,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q129700_P54_2012",
+      "latest": false,
+      "as_of": "2012-01-01T00:00:00",
+      "selected_entry_id": "Q129700_P54_2011",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Manchester City F.C.",
+        "token_ids": [
+          17533,
+          3805,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.27930387994274497,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499255296,
+        "kv_cache_bytes": 27787264,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q129700_P54_2020",
+          "Q129700_P54_2011"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.008779903873801231,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 256,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 2097152,
+          "index_key_bytes": 2304,
+          "metadata_and_format_bytes": 2395,
+          "total_bytes": 2101851,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 1,
+        "f1": 1.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Mario Balotelli plays for Brescia Calcio.",
+        "token_ids": [
+          20564,
+          9573,
+          322,
+          8763,
+          8928,
+          354,
+          365,
+          411,
+          5011,
+          2984,
+          12636,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4822058738209307,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527739392,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.0
+      }
+    },
+    {
+      "query_id": "Q129700_P54_2013",
+      "latest": false,
+      "as_of": "2013-01-01T00:00:00",
+      "selected_entry_id": "Q129700_P54_2013",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Milton Keynes Dons F.C.",
+        "token_ids": [
+          28755,
+          9398,
+          4702,
+          1035,
+          274,
+          384,
+          1053,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.43126335507258773,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499386368,
+        "kv_cache_bytes": 28442624,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q129700_P54_2020",
+          "Q129700_P54_2013"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.009032084606587887,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 256,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 2097152,
+          "index_key_bytes": 2304,
+          "metadata_and_format_bytes": 2395,
+          "total_bytes": 2101851,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.2857142857142857,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Mario Balotelli plays for Brescia Calcio.",
+        "token_ids": [
+          20564,
+          9573,
+          322,
+          8763,
+          8928,
+          354,
+          365,
+          411,
+          5011,
+          2984,
+          12636,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.48909139493480325,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527739392,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.2222222222222222
+      }
+    },
+    {
+      "query_id": "Q129700_P54_2014",
+      "latest": false,
+      "as_of": "2014-01-01T00:00:00",
+      "selected_entry_id": "Q129700_P54_2014",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "AC Milan",
+        "token_ids": [
+          11949,
+          23600
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.17127437330782413,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499255296,
+        "kv_cache_bytes": 27262976,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q129700_P54_2020",
+          "Q129700_P54_2014"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.009707286022603512,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 256,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 2097152,
+          "index_key_bytes": 2304,
+          "metadata_and_format_bytes": 2395,
+          "total_bytes": 2101851,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.4,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Mario Balotelli plays for Brescia Calcio.",
+        "token_ids": [
+          20564,
+          9573,
+          322,
+          8763,
+          8928,
+          354,
+          365,
+          411,
+          5011,
+          2984,
+          12636,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.4808498346246779,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527739392,
+        "kv_cache_bytes": 43253760,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.2222222222222222
+      }
+    },
+    {
+      "query_id": "Q129700_P54_2015",
+      "latest": false,
+      "as_of": "2015-01-01T00:00:00",
+      "selected_entry_id": "Q129700_P54_2015",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Oliver Giroud plays for Arsenal F.C.",
+        "token_ids": [
+          28762,
+          16342,
+          25560,
+          2456,
+          8928,
+          354,
+          1010,
+          22792,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.46833027387037873,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499386368,
+        "kv_cache_bytes": 28573696,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q129700_P54_2020",
+          "Q129700_P54_2015"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.009380986914038658,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 256,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 2097152,
+          "index_key_bytes": 2304,
+          "metadata_and_format_bytes": 2395,
+          "total_bytes": 2101851,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.25,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Mario Balotelli plays for Associazione Calcio Milan.",
+        "token_ids": [
+          20564,
+          9573,
+          322,
+          8763,
+          8928,
+          354,
+          3348,
+          402,
+          515,
+          9826,
+          2984,
+          12636,
+          23600,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5384718300774693,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527739392,
+        "kv_cache_bytes": 43515904,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.6
+      }
+    },
+    {
+      "query_id": "Q129700_P54_2017",
+      "latest": false,
+      "as_of": "2017-01-01T00:00:00",
+      "selected_entry_id": "Q129700_P54_2017",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Olympique de Marseille",
+        "token_ids": [
+          28762,
+          7184,
+          1651,
+          340,
+          1471,
+          331,
+          2457
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.3042878550477326,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499255296,
+        "kv_cache_bytes": 27918336,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q129700_P54_2020",
+          "Q129700_P54_2017"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.008891683537513018,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 256,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 2097152,
+          "index_key_bytes": 2304,
+          "metadata_and_format_bytes": 2395,
+          "total_bytes": 2101851,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 1
+      },
+      "uncompressed_pair": {
+        "answer": "Mario Balotelli plays for OGC Nice.",
+        "token_ids": [
+          20564,
+          9573,
+          322,
+          8763,
+          8928,
+          354,
+          451,
+          9389,
+          22277,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.41750965220853686,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527739392,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q129700_P54_2018",
+      "latest": false,
+      "as_of": "2018-01-01T00:00:00",
+      "selected_entry_id": "Q129700_P54_2017",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Middleboro F.C.",
+        "token_ids": [
+          28755,
+          3287,
+          3622,
+          28709,
+          401,
+          28723,
+          28743,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.33443718729540706,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499386368,
+        "kv_cache_bytes": 28049408,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q129700_P54_2020",
+          "Q129700_P54_2017"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.008717180229723454,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 256,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 2097152,
+          "index_key_bytes": 2304,
+          "metadata_and_format_bytes": 2395,
+          "total_bytes": 2101851,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.0,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Mario Balotelli plays for OGC Nice.",
+        "token_ids": [
+          20564,
+          9573,
+          322,
+          8763,
+          8928,
+          354,
+          451,
+          9389,
+          22277,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.41989575792104006,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527739392,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    },
+    {
+      "query_id": "Q129700_P54_2019",
+      "latest": false,
+      "as_of": "2019-01-01T00:00:00",
+      "selected_entry_id": "Q129700_P54_2019",
+      "selected_kind": "code",
+      "answer": {
+        "answer": "Mario Balotelli plays for Olympique de Marseille.",
+        "token_ids": [
+          28755,
+          3756,
+          9573,
+          322,
+          8763,
+          8928,
+          354,
+          8562,
+          1651,
+          340,
+          1471,
+          331,
+          2457,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.6489103678613901,
+        "prompt_tokens": 206,
+        "read_latent_slots": 148,
+        "peak_gpu_bytes": 15499255296,
+        "kv_cache_bytes": 28835840,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false,
+        "selected_entry_ids": [
+          "Q129700_P54_2020",
+          "Q129700_P54_2019"
+        ],
+        "role_time_slots": 4,
+        "codec_recovery_seconds": 0.009684438817203045,
+        "auxiliary_anchor_slots": 0,
+        "resident_accounting": {
+          "resident_latent_slots": 256,
+          "slot_budget": 2048,
+          "keyframe_slots": 128,
+          "memory_bytes": 2097152,
+          "index_key_bytes": 2304,
+          "metadata_and_format_bytes": 2395,
+          "total_bytes": 2101851,
+          "byte_guardrail": null,
+          "protocol": "final_current_snapshot_v1",
+          "online_update_supported": false,
+          "additional_anchor_slots": 0
+        },
+        "protocol": "current plus historical m-slot read; offline final-current snapshot"
+      },
+      "score": {
+        "accuracy": 0,
+        "f1": 0.6,
+        "wrong_version": 0
+      },
+      "uncompressed_pair": {
+        "answer": "Mario Balotelli plays for OGC Nice.",
+        "token_ids": [
+          20564,
+          9573,
+          322,
+          8763,
+          8928,
+          354,
+          451,
+          9389,
+          22277,
+          28723
+        ],
+        "generation_limit_hit": false,
+        "read_seconds": 0.5003212699666619,
+        "prompt_tokens": 318,
+        "read_latent_slots": 260,
+        "peak_gpu_bytes": 15527739392,
+        "kv_cache_bytes": 42991616,
+        "raw_history_access": false,
+        "decoder_adapter_enabled": false
+      },
+      "uncompressed_pair_score": {
+        "accuracy": 0,
+        "f1": 0.5
+      }
+    }
+  ],
+  "write_seconds": 0.28437017975375056,
+  "write_trace": [
+    {
+      "dropped": [],
+      "protocol": "final_current_snapshot_v1",
+      "source_full_slots": 1152,
+      "source_features_retained": false,
+      "online_update_supported": false,
+      "resident_latent_slots": 256,
+      "slot_budget": 2048,
+      "keyframe_slots": 128,
+      "memory_bytes": 2097152,
+      "index_key_bytes": 2304,
+      "metadata_and_format_bytes": 2395,
+      "total_bytes": 2101851,
+      "byte_guardrail": null,
+      "additional_anchor_slots": 0
+    }
+  ],
+  "accounting": {
+    "resident_latent_slots": 256,
+    "slot_budget": 2048,
+    "keyframe_slots": 128,
+    "memory_bytes": 2097152,
+    "index_key_bytes": 2304,
+    "metadata_and_format_bytes": 2395,
+    "total_bytes": 2101851,
+    "byte_guardrail": null,
+    "protocol": "final_current_snapshot_v1",
+    "online_update_supported": false,
+    "additional_anchor_slots": 0
+  },
+  "roundtrip_equal": true
+}
