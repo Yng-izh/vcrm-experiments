@@ -35,7 +35,7 @@ OUT = RUNS / "c2_test.jsonl"
 SUMMARY = RUNS / "c2_test_summary.json"
 N_SHARDS = int(os.environ.get("C2_SHARDS", "3"))
 CONCURRENCY = int(os.environ.get("C2_CONCURRENCY", "16"))
-PORTS = {0: 8001, 1: 8000, 2: 8004}  # GPU 9 / 0 / 4
+PORTS = {0: 8001, 1: 8006, 2: 8007}  # GPU 2 / 3 / 4 (ports remapped by t2, captain-approved 2026-10-19)
 
 _readers_lock = threading.Lock()
 _readers = {}
