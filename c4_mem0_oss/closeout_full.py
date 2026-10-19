@@ -23,6 +23,11 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 N_QUERIES = 34963
+PROTOCOL = "csr_v1"  # Controlled State Routing rev1 (unified with C1/C2/C3)
+CONFLICT_NOTE = (
+    "conflict_n uses the METADATA definition (identical to C1/C2/C3): a query "
+    "is conflicting iff its state_key has >= 2 distinct answer sets across its "
+    "versions; denominator n=34,407 on the full test split.")
 
 
 def md5(p):
@@ -102,7 +107,7 @@ def write_coverage_audit(ledger_glob, expected_json):
                       "episodes_with_any_ledger - episodes_complete != 0, the "
                       "incomplete_detail lists every missing event_id.",
     }
-    out = HERE / "runs" / "write_coverage.json"
+    out = HERE / "runs_csr_v1" / "write_coverage.json"
     out.write_text(json.dumps(report, indent=2, ensure_ascii=False))
     print(f"[coverage] expected={report['expected_episodes']} "
           f"with_any_ledger={report['episodes_with_any_ledger']} "
@@ -141,7 +146,7 @@ def main(argv=None):
 
     # reconcile against the prepared test split (qid list mirror if prepared
     # json is not local; the mirror itself is dumped from templama_test.json)
-    prep = HERE / "runs" / "templama_test_qids.json"
+    prep = HERE / "runs_csr_v1" / "templama_test_qids.json"
     if prep.exists():
         all_q = set(json.loads(prep.read_text()))
     else:
@@ -184,9 +189,10 @@ def main(argv=None):
                               "are NOT cited anywhere (contract prohibition)",
         "pin_sha": rows[0]["route"]["pin_sha"],
         "writer_model": rows[0]["writer_model"],
-        # protocol naming (audit): retrieval is filtered per-episode via the
-        # mem0 user_id; the route is named honestly, not as a state oracle.
-        "protocol": "controlled_state_routing",
+        # protocol naming: same frozen definition as C1/C2/C3 (csr_v1) —
+        # retrieval is filtered per-episode via the mem0 user_id filter.
+        "protocol": PROTOCOL,
+        "CONFLICT_NOTE": CONFLICT_NOTE,
         "n_scored": n, "n_errored": 0 if not errs else errs,
         "scores": {"em_raw": col("em_raw"), "f1_raw": col("f1_raw"),
                    "em_extracted": col("em_extracted"), "f1_extracted": col("f1_extracted")},
@@ -196,6 +202,16 @@ def main(argv=None):
                                "em_extracted": sum(x["em_extracted"] for x in rs) / len(rs),
                                "f1_extracted": sum(x["f1_extracted"] for x in rs) / len(rs)}
                            for t, rs in types.items()},
+        # metadata conflict slice (n must be 34,407) + latest slice, parity
+        # with c1_hybrid_rag/scoring.aggregate
+        "conflict_n": len([r for r in rows if r.get("conflicting")]),
+        "conflict_em_extracted": (sum(r["em_extracted"] for r in rows if r.get("conflicting"))
+                                  / max(1, len([r for r in rows if r.get("conflicting")]))),
+        "conflict_f1_extracted": (sum(r["f1_extracted"] for r in rows if r.get("conflicting"))
+                                  / max(1, len([r for r in rows if r.get("conflicting")]))),
+        "latest_n": len([r for r in rows if r.get("latest")]),
+        "latest_em_extracted": (sum(r["em_extracted"] for r in rows if r.get("latest"))
+                                / max(1, len([r for r in rows if r.get("latest")]))),
         "retrieval": {"facts_avg": sum(len(r["retrieved_facts"]) for r in rows) / n,
                       "nonempty_rate": sum(bool(r["retrieved_facts"]) for r in rows) / n},
         "shards": {f: md5(f) for f in shard_files},
@@ -203,7 +219,7 @@ def main(argv=None):
             "status": "skipped",
             "reason": "no ledgers or no expected-event list available locally"},
     }
-    out_s = HERE / "runs" / "full_run_summary.json"
+    out_s = HERE / "runs_csr_v1" / "full_run_summary.json"
     out_s.write_text(json.dumps(summary, indent=2, ensure_ascii=False))
     print(f"[closeout] summary written {out_s}")
     print(json.dumps(summary["scores"], indent=2))

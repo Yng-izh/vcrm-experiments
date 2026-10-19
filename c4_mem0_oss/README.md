@@ -22,10 +22,20 @@ Raw (pre-extraction) appendix: em_raw 0.00246 / f1_raw 0.14825. Retrieval: facts
 ## Protocol: Controlled State Routing (csr_v1)
 
 The unified protocol definition is [`PROTOCOL_CSR_V1.md`](../PROTOCOL_CSR_V1.md).
-C4's as_of injection and per-episode routing already satisfy csr_v1: **csr_v1
-is consistent with the as_of injection already merged into C4 — no further
-code changes are required**; on rerun, use a separate output directory
-(`runs_csr_v1/`) and do not overwrite the legacy `runs/`.
+C4's as_of injection and per-episode routing already satisfied the semantic
+part of csr_v1; the remaining bookkeeping gaps were closed so the C4 numbers
+are directly comparable with C1/C2/C3:
+
+- rows now carry `protocol: "csr_v1"`, `latest`, and `conflicting`
+  (metadata definition: same `state_key` with ≥2 distinct answer sets,
+  order-insensitive `tuple(sorted(answers))`; denominator n=34,407)
+- `route.protocol` renamed from `controlled_state_routing` to `csr_v1`
+- output directory is `runs_csr_v1/` (legacy `runs/` untouched); resume
+  refuses rows whose `protocol != csr_v1`
+- `closeout_full.py` emits the conflict slice (`conflict_n`,
+  `conflict_em_extracted`, `conflict_f1_extracted`) and the latest slice
+  (`latest_n`, `latest_em_extracted`) in `full_run_summary.json`, so the
+  conflict column is reproducible from the code instead of a manual step.
 
 ## Protocol (frozen)
 
@@ -48,8 +58,8 @@ code changes are required**; on rerun, use a separate output directory
 **Current C4/VCRM TempLAMA results belong to Controlled State Routing.** The
 write path never touches oracle fields (contract §6); the read path uses the
 query's as_of year as a legitimate query condition and the per-episode
-`user_id` filter — the `route.protocol: "controlled_state_routing"` field in
-each runner row names this honestly. These results must not be presented as
+`user_id` filter — the `route.protocol: "csr_v1"` field in each runner row
+names this honestly. These results must not be presented as
 end-to-end memory-system retrieval numbers.
 
 ## Files
@@ -57,10 +67,10 @@ end-to-end memory-system retrieval numbers.
 - `CONTRACT_C4_MEM0_OSS.md` — frozen experiment contract (FROZEN_MD5 0109281fd4c8be13d4019be7912897bf)
 - `write_phase.py` — crash-proof/resumable 4-process memory writer (md5 6c572321…)
 - `merge_qdrant_shards.py` — shard merge + verify (13,423 points, VERIFY PASSED)
-- `runner.py` — Phase B reader/eval runner, 4-shard aware (per-shard history_db_path; md5 8bdcef28…)
+- `runner.py` — Phase B reader/eval runner, N-shard aware (per-shard history_db_path; writes `runs_csr_v1/`)
 - `reader.py` — frozen C1 reader (md5 97da5e75…, do not modify)
 - `c1_scoring.py`, `selftest.py`, `gen_ast_report.py`, `closeout_full.py`, `split_write_shards.py`, `summarize_smoke.py`, `inject.py`
-- `runs/` — full_run_summary.json, full_run_t8_aggregate.json, conflict qid mirror, GPU inventories, ast_scan_report (small artifacts only; full outputs on server)
+- `runs_csr_v1/` — post-fix outputs (csr_v1 protocol): `full_run_summary.json` with the conflict/latest slices, `write_coverage.json`; legacy `runs/` keeps the superseded artifacts
 
 ## Integrity
 

@@ -16,9 +16,9 @@ path — it never touches as_of on events. On the READ path, the query's
 as_of year is a legitimate query condition (TempLAMA is time-anchored QA):
 retrieval and the reader prompt both use search_text = "As of {as_of},
 {question}" so the temporal scope is explicit. The row records "as_of" and
-"query_text" for protocol audit, and route.protocol is named
-"controlled_state_routing" honestly — retrieval is still filtered via the
-per-episode user_id (ep_of[qid]), not a hidden state mechanism.
+"query_text" for protocol audit, and route.protocol is "csr_v1" (the
+unified protocol id shared with C1/C2/C3) — retrieval is still filtered via
+the per-episode user_id (ep_of[qid]), not a hidden state mechanism.
 
 Usage:
   python runner.py --smoke                     # 20-query smoke (§9 rev-6: hist16/latest4 from sample100)
@@ -56,6 +56,8 @@ WRITER_BASE_URL = "https://api.ccode.vip/v1"   # relay endpoint (contract §9 re
 # C1 frozen prompt template (CONTRACT_C1_HYBRID_RAG.md §3, verbatim)
 from inject import PROMPT_TEMPLATE, build_prompt, chat_wrap  # type: ignore  # noqa: E402
 
+PROTOCOL = "csr_v1"  # Controlled State Routing rev1 (unified with C1/C2/C3)
+
 EVENT_FIELDS = ("id", "time", "text")   # event whitelist (contract §6)
 
 
@@ -67,6 +69,17 @@ def load_queries(split):
             qs[q["id"]] = q
             ep_of[q["id"]] = ep["id"]
     return qs, ep_of
+
+
+def conflict_flags(qs, ep_of):
+    """Metadata definition (unified with C1/C2/C3): conflicting = the same
+    state_key has >= 2 distinct answer sets across its queries."""
+    answers_by_key = {}
+    for q in qs.values():
+        sig = tuple(sorted(q["answers"]))
+        answers_by_key.setdefault(q["state_key"], set()).add(sig)
+    multi = {k for k, sigs in answers_by_key.items() if len(sigs) >= 2}
+    return {qid: q["state_key"] in multi for qid, q in qs.items()}
 
 
 def build_memory():
@@ -113,13 +126,14 @@ def main():
     tag = args.tag or ("smoke20" if args.smoke else "full_34963")
     if args.num_shards > 1:
         tag = f"{tag}_shard{args.shard}of{args.num_shards}"
-    out_dir = HERE / "runs"
+    out_dir = HERE / "runs_csr_v1"
     out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / f"{tag}.jsonl"
     errors_path = out_dir / f"{tag}_errors.json"
     errors = json.loads(errors_path.read_text()) if errors_path.exists() else {}
 
     qs, ep_of = load_queries(args.split)
+    flags = conflict_flags(qs, ep_of)
     if args.smoke:
         # §9 rev-6: smoke = 20 queries (seed42, stratified hist16/latest4),
         # taken as the first 16 historical + first 4 latest of sample100
@@ -145,7 +159,13 @@ def main():
     if out_path.exists():
         for line in out_path.read_text().splitlines():
             if line.strip():
-                done.add(json.loads(line)["query_id"])
+                r = json.loads(line)
+                if r.get("protocol") != PROTOCOL:
+                    raise SystemExit(
+                        f"[resume] refusing to resume: {out_path} contains "
+                        f"rows with protocol={r.get('protocol')!r} "
+                        f"(expected {PROTOCOL!r})")
+                done.add(r["query_id"])
     todo = [i for i in ids if i not in done]
     print(f"[c4] {len(ids)} selected, {len(done)} done, {len(todo)} todo -> {out_path}", flush=True)
 
@@ -192,7 +212,9 @@ def main():
                 s = score_query(answer, ground_truth, extracted=extracted)
                 row = {
                     "query_id": qid, "episode_id": ep_of[qid],
+                    "protocol": PROTOCOL,
                     "question": q["question"], "type": q["type"],
+                    "latest": q["latest"], "conflicting": flags[qid],
                     # protocol-audit fields: the as_of year actually injected
                     # into the retrieval/prompt query, and the exact query text.
                     "as_of": as_of,
@@ -209,7 +231,7 @@ def main():
                     "writer_model": WRITER_MODEL, "writer_tokens": None,
                     "route": {"status": "mem0_oss", "pin_sha": PIN_SHA,
                               "search_topk": args.topk,
-                              "protocol": "controlled_state_routing"},
+                              "protocol": PROTOCOL},
                     "shard": args.shard if args.num_shards > 1 else 0,
                 }
                 f.write(json.dumps(row, ensure_ascii=False) + "\n")
