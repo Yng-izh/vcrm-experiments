@@ -55,8 +55,10 @@ def mask_view(q):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--tag", default="smoke100")
+    ap.add_argument("--tag", default="c3_smoke20")
     ap.add_argument("--limit", type=int, default=100)
+    ap.add_argument("--query-ids", default="",
+                    help="JSON file {\"query_ids\": [...]} restricting todo to those qids")
     ap.add_argument("--device", default="cuda:0")
     ap.add_argument("--shard", type=int, default=-1)
     ap.add_argument("--nshards", type=int, default=1)
@@ -89,7 +91,10 @@ def main():
         for q in ep["queries"]:
             qs[q["id"]] = q
     import hashlib as _hl
-    if args.shard >= 0:
+    if args.query_ids:
+        allowed = set(json.loads(Path(args.query_ids).read_text())["query_ids"])
+        todo = [i for i in ids if i in allowed]
+    elif args.shard >= 0:
         todo = [i for i in ids if int(_hl.md5(i.encode()).hexdigest(), 16) % args.nshards == args.shard]
     else:
         todo = [i for i in ids]
@@ -118,11 +123,11 @@ def main():
     assert reader.shape[0] == config["memory_tokens"] == 128
 
     # ---- C1 retrieval frontend (verbatim reuse; corpus = original text) -----
-    events_c1 = json.loads((C1 / "runs/corpus_test.json").read_text())["events"]
+    events_c1 = json.loads((C1 / "runs_csr_v1/corpus_test.json").read_text())["events"]
     events_by_id = {e["event_id"]: e for e in events_c1}
     index = RetrievalIndex(events_c1, device="cpu",
                            bge_path=str(ROOT / "models/bge-base-en-v1.5"),
-                           cache_path=str(C1 / "runs/emb_test_cuda.npy"))
+                           cache_path=str(C1 / "runs_csr_v1/emb_test_cuda.npy"))
     # map c1 corpus events (episode_id, orig_id) back to episode events by text+time
     text_to_eventid = {}
     for e in events_c1:

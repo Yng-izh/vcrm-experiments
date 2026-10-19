@@ -85,9 +85,18 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--device", default="cuda")
     ap.add_argument("--batch-size", type=int, default=256)
+    ap.add_argument("--query-ids", default="",
+                    help="JSON file {\"query_ids\": [...]} restricting todo to those qids")
+    ap.add_argument("--tag", default="c2_test",
+                    help="output tag; OUT/SUMMARY become runs_csr_v1/{tag}.jsonl")
     ap.add_argument("--no-index", action="store_true",
                     help="skip building index (all shards done; summary only)")
     args = ap.parse_args()
+
+    global OUT, SUMMARY
+    RUNS.mkdir(parents=True, exist_ok=True)
+    OUT = RUNS / f"{args.tag}.jsonl"
+    SUMMARY = RUNS / f"{args.tag}_summary.json"
 
     doc = json.loads((C2 / "corpus_test_compressed.json").read_text())
     compression_rate = doc["compression_rate"]
@@ -135,7 +144,11 @@ def main():
     if stale:
         print(f"[resume] skipped {stale} rows with protocol != {PROTOCOL}",
               flush=True)
-    todo = [i for i in all_ids if i not in done]
+    if args.query_ids:
+        allowed = set(json.loads(Path(args.query_ids).read_text())["query_ids"])
+        todo = [i for i in all_ids if i in allowed]
+    else:
+        todo = [i for i in all_ids if i not in done]
     print(f"[queries] {len(done)} done, {len(todo)} todo", flush=True)
     if not todo:
         print("[run] nothing to do", flush=True)
@@ -240,7 +253,7 @@ def main():
     rows = [json.loads(l) for l in OUT.read_text().splitlines() if l.strip()]
     summary = aggregate(rows)
     summary.update({
-        "tag": "c2_test_full", "protocol": PROTOCOL,
+        "tag": args.tag, "protocol": PROTOCOL,
         "compression_rate": compression_rate,
         "n_events": len(events),
         "wall_seconds": round(wall, 1),
