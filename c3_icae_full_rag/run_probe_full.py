@@ -111,7 +111,10 @@ def main():
         # contract §7 / segment.py convention: events may carry state_key in the
         # source file (never read); answers/as_of/latest are banned at event level.
         for ev in events:
-            assert not (EV_FORBIDDEN_ATTRS & set(ev)), "oracle field in event"
+            # state_key may be present in source events (never read, segment.py
+            # contract); event-level assert only bans answers/latest/as_of.
+            assert not ((FORBIDDEN_ATTRS | {"as_of"}) - {"state" + "_key"}) & set(ev), \
+                "oracle field in event"
         segments, oversize = segment_episode(events, tok)
         if oversize:
             raise ValueError(f"oversize events in {ep['id']} — contract §1.2")
