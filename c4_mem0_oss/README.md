@@ -11,7 +11,13 @@ External baseline for the v3 main table (row 5): Mem0 open-source memory system 
 | conflict (metadata) | 0.1327 | 0.3209 | 34,407 |
 | **overall** | **0.1321** | **0.3240** | **34,963** |
 
-Raw (pre-extraction) appendix: em_raw 0.00246 / f1_raw 0.14825. Retrieval: facts_avg 3.47, nonempty 99.49%. Read latency 2.453 s/query (measured, end-to-end incl. retry). Write cost $0.479 measured (4,038 episodes, gpt-4o-mini via mem0 writer), far below the $200 cap.
+Raw (pre-extraction) appendix: em_raw 0.00246 / f1_raw 0.14825. Retrieval: facts_avg 3.47, nonempty 99.49%. Read latency 2.453 s/query (measured, end-to-end incl. retry). Write cost: estimated / partially observed (tiktoken fallback; mem0 add() usage not surfaced; relay billing pending) — $0.479 extrapolated from tiktoken estimates over 4,038 episodes, gpt-4o-mini via mem0 writer, far below the $200 cap.
+
+> **SUPERSEDED**: the numbers above were produced under the pre-fix protocol
+> (no as_of year injected into the read-path query; episode-level resume).
+> They are kept for provenance only; the as_of-injected protocol (see
+> Revisions in `CONTRACT_C4_MEM0_OSS.md`) requires a full rerun before any
+> of these figures can be cited.
 
 ## Protocol (frozen)
 
@@ -21,6 +27,22 @@ Raw (pre-extraction) appendix: em_raw 0.00246 / f1_raw 0.14825. Retrieval: facts
 - **Extraction**: frozen ex28 rule (post-hoc deterministic extraction, identical to C1/C2)
 - **Metrics**: EM/F1 on raw and extracted views; frozen c1_scoring.py; server-side `vcrm/metrics.py` is authoritative (independently recomputed in audit, agreement to 8 decimal places)
 - **Denominator**: 34,963, no exclusions. conflict subset = same state_key with ≥2 distinct answer-set versions (n=34,407, identical to C1/C2 implementation)
+
+## Protocol naming: Controlled State Routing vs End-to-End Retrieval
+
+| | End-to-End Retrieval | Controlled State Routing (this work) |
+|---|---|---|
+| Write path | raw event text ingested; store owns consolidation | raw event text ingested via mem0 add() (`{id, time, text}` views only) |
+| Read path | free-form query against the store; the store is the only state | query carries the episode's as_of year ("As of {as_of}, {question}"); retrieval filtered per-episode via mem0 `user_id` |
+| State | implicit in the store | controlled: one store namespace per episode; no hidden state oracle touched |
+| Claim | measures the memory system end-to-end | measures the memory system as a controlled per-episode state under a frozen reader protocol |
+
+**Current C4/VCRM TempLAMA results belong to Controlled State Routing.** The
+write path never touches oracle fields (contract §6); the read path uses the
+query's as_of year as a legitimate query condition and the per-episode
+`user_id` filter — the `route.protocol: "controlled_state_routing"` field in
+each runner row names this honestly. These results must not be presented as
+end-to-end memory-system retrieval numbers.
 
 ## Files
 

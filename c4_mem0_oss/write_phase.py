@@ -120,9 +120,21 @@ def main():
     out_dir = HERE / "runs"
     out_dir.mkdir(parents=True, exist_ok=True)
     ledger_path = out_dir / f"{args.tag}_cost_ledger.jsonl"
-    done_eps = set()
+    # Event-level resume: a ledger row is written per ingested event, so the
+    # done-set is the set of (episode_id, event_id) pairs actually written.
+    # An episode is todo if ANY of its events is missing; on rerun only the
+    # missing events are re-written (no whole-episode redo).
+    done_pairs = set()
     if args.resume and ledger_path.exists():
-        done_eps = {json.loads(l)["episode_id"] for l in ledger_path.open() if l.strip()}
+        for l in ledger_path.open():
+            if not l.strip():
+                continue
+            rec = json.loads(l)
+            if rec.get("kind") == "episode_complete":
+                continue
+            if rec.get("event_id") is not None:
+                done_pairs.add((rec["episode_id"], rec["event_id"]))
+    done_eps = {ep_id for ep_id, _ in done_pairs}
 
     eps = json.loads((ROOT / f"data/prepared/templama_{args.split}.json").read_text())
     if args.episodes_from:
@@ -130,8 +142,14 @@ def main():
         eps = [ep for ep in eps if ep["id"] in want]
     if args.limit_episodes:
         eps = eps[: args.limit_episodes]
-    todo = [ep for ep in eps if ep["id"] not in done_eps]
-    print(f"[write] episodes={len(eps)} done={len(done_eps)} todo={len(todo)}", flush=True)
+    todo = []
+    for ep in eps:
+        need = [ev for ev in ingestion_view(ep) if (ep["id"], ev["id"]) not in done_pairs]
+        if need:
+            todo.append((ep, need))
+    n_events_done = len(done_pairs)
+    print(f"[write] episodes={len(eps)} done_eps={len(done_eps)} "
+          f"events_done={n_events_done} todo_eps={len(todo)}", flush=True)
 
     from mem0 import Memory
     # Parallel-write isolation: mem0 builds migrations_qdrant (a locked Qdrant
@@ -174,10 +192,10 @@ def main():
     t0 = time.time()
     ledger = ledger_path.open("a")
     n = -1
-    for n, ep in enumerate(todo):
-        events = ingestion_view(ep)
+    for n, (ep, events) in enumerate(todo):
         try:
-            # one add() per event text; mem0 dedupes/consolidates internally
+            # one add() per MISSING event text only (event-level resume);
+            # mem0 dedupes/consolidates internally
             for ev in events:
                 prompt_text = f"[{ev['time']}] {ev['text']}"
                 res, _attempts = add_with_retry(
@@ -207,12 +225,19 @@ def main():
                     "cost_usd": round(estimate_cost(pt, ct), 8), "usage_provenance": provenance,
                     "writer_model": WRITER_MODEL, "pin_sha": PIN_SHA,
                 }) + "\n")
+            # all events of this episode present in the ledger now -> one
+            # episode_complete marker row (kind field distinguishes it from
+            # per-event cost rows; carries no cost).
+            ledger.write(json.dumps({
+                "kind": "episode_complete",
+                "episode_id": ep["id"], "n_events": len(events),
+                "ts": time.time(),
+            }) + "\n")
             ledger.flush()
             n_ok += 1
         except Exception as exc:
-            # crash-proof: mark this ep failed, keep the process alive for the
-            # rest of the shard (done-set semantics: ep with any failed event is
-            # NOT written to ledger, so a rerun redoes it whole)
+            # event-level resume semantics: failed events are not in the
+            # ledger, so a rerun redoes only the missing events
             n_failed_eps += 1
             log_error(args.tag, ep["id"], None, exc)
             traceback.print_exc()

@@ -14,6 +14,15 @@ def allowed_lines(fname):
             line = src[node.lineno - 1]
             if "JSONL field name per contract §4" in line or 'q["answers"]' in line:
                 lines.add(node.lineno)
+            # Read-path as_of whitelist (contract §6 constrains only the write
+            # path; on the READ side injecting the query year is a legitimate
+            # query condition, per external review fix t1):
+            #   - q.get("as_of") : fallback chain q["as_of"] -> q["time"]
+            #   - "as_of": as_of : row protocol-audit field recording the
+            #     injected year + exact query text (query_text)
+            if node.value == "as_of" and ('q.get("as_of")' in line
+                                          or '"as_of": as_of,' in line):
+                lines.add(node.lineno)
     return lines
 report = {"generated": datetime.datetime.now().isoformat(),
           "scope": ["runner.py", "write_phase.py", "c1_scoring.py"],

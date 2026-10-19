@@ -8,8 +8,17 @@ Pipeline per query:
   semantics) -> EM/F1 via vcrm metrics + frozen ex28 extraction -> JSONL row.
 
 Oracle isolation (contract §6): write and read paths see only {id, time, text}
-event views; answers/as_of/latest/state_key never touched. Eval-side labels
+event views; answers/latest/state_key never touched. Eval-side labels
 (type/answers) are attached only at the eval-side boundary (scoring + row).
+
+as_of on the read path (audit note): contract §6 constrains only the WRITE
+path — it never touches as_of on events. On the READ path, the query's
+as_of year is a legitimate query condition (TempLAMA is time-anchored QA):
+retrieval and the reader prompt both use search_text = "As of {as_of},
+{question}" so the temporal scope is explicit. The row records "as_of" and
+"query_text" for protocol audit, and route.protocol is named
+"controlled_state_routing" honestly — retrieval is still filtered via the
+per-episode user_id (ep_of[qid]), not a hidden state mechanism.
 
 Usage:
   python runner.py --smoke                     # 20-query smoke (§9 rev-6: hist16/latest4 from sample100)
@@ -150,17 +159,31 @@ def main():
         for n, qid in enumerate(todo):
             q = qs[qid]
             try:
+                # Read path: inject the query year (as_of) into the retrieval
+                # query — legitimate query condition on the read side (contract
+                # §6 constrains only the write path). Fallback chain: q["as_of"]
+                # -> q["time"] -> raw question (logged as a warning).
+                as_of = q.get("as_of")
+                if as_of is None:
+                    as_of = q.get("time")
+                if as_of is not None:
+                    search_text = f"As of {as_of}, {q['question']}"
+                else:
+                    search_text = q["question"]
+                    print(f"[c4] WARNING {qid}: no as_of/time; using bare question", flush=True)
                 # mem0 v2.2.1 search: query-only positional; user_id must go via
                 # filters (top-level entity params rejected, _reject_top_level_
                 # entity_params); result = {"results": [{"memory":..., "score":...}]}
-                hits = memory.search(q["question"],
+                hits = memory.search(search_text,
                                      top_k=args.topk,
                                      filters={"user_id": ep_of[qid]})
                 fact_texts = [h["memory"] for h in hits if isinstance(h, dict) and h.get("memory")] \
                     if isinstance(hits, list) else [r["memory"] for r in hits.get("results", [])]
                 topk_hits += len(fact_texts)
                 topk_nonempty += bool(fact_texts)
-                prompt = chat_wrap(build_prompt(q["question"], fact_texts), tok)
+                # Reader prompt uses the SAME time-anchored search_text
+                # (build_prompt signature unchanged; question slot replaced).
+                prompt = chat_wrap(build_prompt(search_text, fact_texts), tok)
                 answer, prompt_tokens, read_seconds = c1_reader.read_answer(prompt)
                 extracted = extract_answer(answer)
                 # ---- eval-side boundary: above is retrieval/write (oracle-free),
@@ -170,6 +193,10 @@ def main():
                 row = {
                     "query_id": qid, "episode_id": ep_of[qid],
                     "question": q["question"], "type": q["type"],
+                    # protocol-audit fields: the as_of year actually injected
+                    # into the retrieval/prompt query, and the exact query text.
+                    "as_of": as_of,
+                    "query_text": search_text,
                     "answers": ground_truth,  # JSONL field name per contract §4
                     "prompt_tokens": prompt_tokens,
                     "raw_answer": answer, "extracted_answer": extracted,
@@ -181,7 +208,8 @@ def main():
                     if isinstance(hits, list) else hits.get("results", []),
                     "writer_model": WRITER_MODEL, "writer_tokens": None,
                     "route": {"status": "mem0_oss", "pin_sha": PIN_SHA,
-                              "search_topk": args.topk},
+                              "search_topk": args.topk,
+                              "protocol": "controlled_state_routing"},
                     "shard": args.shard if args.num_shards > 1 else 0,
                 }
                 f.write(json.dumps(row, ensure_ascii=False) + "\n")
