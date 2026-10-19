@@ -1,16 +1,16 @@
-"""C3 step 3: smoke-100 probe (CONTRACT_C3_ICAE_FULL_RAG.md, frozen).
+"""C3 step 3: full probe under csr_v1 (Controlled State Routing).
 
-ICAE-Full + RAG row: retrieval frontend reused bit-for-bit from
-c1_hybrid_rag/retrieval.py (BM25+BGE+RRF top-10, recorded only); memory
-reading goes through latent slots covering the FULL episode history (all
-segments of the episode, chronological concat), not just top-10 hits.
-Injection: [latent slots] + C1 template with {facts}="" + Question + "Answer:",
-chat-wrapped, slots inserted as soft embeddings right after BOS.
-Decoding: greedy, FP16, seed 42, max_new_tokens 128. Scoring: vcrm/metrics.py
-ex28 four columns.
-
-Label-free on the routing path: the view carries id/question/time only.
-answers/state_key/as_of/latest are read only eval-side (labels + conflict).
+ICAE-Full (Controlled) row: the decode path is the official
+vcrm.reader.FrozenReader.answer(query, bundle=bundle) protocol — the reader
+builds the As-of-prefixed question, _X_ handling, ft_token_id and official
+instruction boundaries internally. bundle = episode latent concat
+(chronological, oldest first, <= 8*128 slot budget, cfg.read_latent_slots
+upper bound; over-budget raises, never silently truncates). Retrieval is
+record-only (recorded_only=True) diagnostics: the same csr_v1 year-injected
+query_text over the C1 frontend; it is NOT on the answer path and this row
+is not a RAG method.
+Decoding: greedy, FP16, seed 42, max_new_tokens from config. Scoring:
+vcrm/metrics.py ex28 four columns.
 """
 import argparse
 import ast
@@ -23,10 +23,15 @@ from pathlib import Path
 ROOT = Path("/share/latent2/vcrm_icae")
 C3 = ROOT / "c3_icae_full_rag"
 C1 = ROOT / "c1_hybrid_rag"
+PROTOCOL = "csr_v1"
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(C1))
 
-FORBIDDEN_ATTRS = {w for w in ("state" + "_key", "as" + "_of", "answer" + "s", "late" + "st")}
+# csr_v1: as_of is legitimate input metadata (year injection into the read
+# query), no longer banned on the routing path. state_key/answers/latest are
+# still oracle fields and stay banned.
+FORBIDDEN_ATTRS = {w for w in ("state" + "_key", "answer" + "s", "late" + "st")}
+EV_FORBIDDEN_ATTRS = FORBIDDEN_ATTRS | {"as_of"}
 
 EXTRACTION_RULE_NOTE = "see c1_hybrid_rag/scoring.py ex28 (frozen)"
 
@@ -57,7 +62,7 @@ def main():
     ap.add_argument("--nshards", type=int, default=1)
     args = ap.parse_args()
 
-    runs = C3 / "runs"
+    runs = C3 / "runs_csr_v1"
     runs.mkdir(parents=True, exist_ok=True)
     # AST audit at every launch (contract §7)
     report = {"raw_hits": ast_audit(Path(__file__).resolve()),
@@ -70,7 +75,6 @@ def main():
     import torch
     from vcrm.reader import FrozenReader
     from retrieval import RetrievalIndex
-    from inject import PROMPT_TEMPLATE, chat_wrap
     from scoring import score_query, extract_answer
 
     config = json.loads((ROOT / "config.json").read_text())
@@ -100,10 +104,9 @@ def main():
     def episode_segments(ep):
         events = sorted(ep["events"], key=lambda e: str(e["time"]))
         # contract §7 / segment.py convention: events may carry state_key in the
-        # source file (never read); only answers/as_of/latest are banned at event level.
-        EV_FORBIDDEN = FORBIDDEN_ATTRS - {"state" + "_key"}
+        # source file (never read); answers/as_of/latest are banned at event level.
         for ev in events:
-            assert not (EV_FORBIDDEN & set(ev)), "oracle field in event"
+            assert not (EV_FORBIDDEN_ATTRS & set(ev)), "oracle field in event"
         segments, oversize = segment_episode(events, tok)
         if oversize:
             raise ValueError(f"oversize events in {ep['id']} — contract §1.2")
@@ -128,13 +131,16 @@ def main():
     out_path = runs / f"{args.tag}.jsonl"
     done = set()
     if out_path.exists():
-        done = {json.loads(l)["query_id"] for l in out_path.read_text().splitlines() if l.strip()}
-    # resume from original single-GPU baseline (all shards skip ids already computed)
-    base_path = runs / "c3full.jsonl"
-    if base_path.exists() and args.shard >= 0:
-        done |= {json.loads(l)["query_id"] for l in base_path.read_text().splitlines() if l.strip()}
+        for l in out_path.read_text().splitlines():
+            if not l.strip():
+                continue
+            r = json.loads(l)
+            if r.get("protocol") != PROTOCOL:
+                continue
+            done.add(r["query_id"])
     todo = [i for i in todo if i not in done]
-    print(f"[c3] todo={len(todo)} done={len(done)}", flush=True)
+    print(f"[c3] todo={len(todo)} done={len(done)} protocol={PROTOCOL}",
+          flush=True)
 
     rows_file = out_path.open("a")
     t0 = time.time()
@@ -161,57 +167,39 @@ def main():
                     bundles.append(mem_s)
 
             bundle = torch.cat(bundles, dim=0)  # chronological concat, oldest first
-            assert bundle.shape[0] <= 8 * config["memory_tokens"], "slot budget exceeded"
+            if bundle.shape[0] > 8 * config["memory_tokens"]:
+                raise ValueError(
+                    f"slot budget exceeded: {bundle.shape[0]} > 8*{config['memory_tokens']}")
+            if bundle.shape[0] > config.get("read_latent_slots", bundle.shape[0]):
+                raise ValueError(
+                    f"bundle exceeds cfg read_latent_slots: {bundle.shape[0]} > "
+                    f"{config['read_latent_slots']} — no silent truncation")
 
-            # C1 template, {facts} empty, question verbatim with _X_
-            prompt_text = PROMPT_TEMPLATE.format(facts="", question=q["question"])
-            # chat template wrap; text token ids after BOS
-            chat = tok.apply_chat_template(
-                [{"role": "user", "content": prompt_text}],
-                tokenize=True, add_generation_prompt=True)
-            assert chat[0] == tok.bos_token_id
-            text_ids = chat[1:]
+            # Official read protocol: FrozenReader builds the As-of-prefixed
+            # question (_X_ handling, ft_token_id, official instruction
+            # boundaries) and runs the adapter-disabled greedy decode.
+            query = {"question": q["question"], "as_of": q["as_of"]}
+            out = reader.answer(query, bundle=bundle)
+            answer = out["answer"]
+            prompt_tokens = out["prompt_tokens"]
+            read_seconds = out["read_seconds"]
 
-            # build soft-embedding input: [BOS] + slots + text tokens
-            slots = bundle.to(device=reader.device, dtype=torch.float16)
-            text_emb = reader.net.tokens_to_embeddings(
-                torch.tensor([text_ids], device=reader.device))
-            inputs = torch.cat([slots.unsqueeze(0), text_emb], dim=1)
-            if inputs.shape[1] + config["max_answer_tokens"] > reader.model.config.max_position_embeddings:
-                raise ValueError("prompt exceeds context; no silent cropping")
-
-            # greedy decode via reader.answer-style loop (adapter-disabled decoder)
-            import contextlib  # noqa: E402
-            prompt_tokens = int(inputs.shape[1])
-            torch.cuda.synchronize()
-            gen_started = time.perf_counter()
-            tokens, past = [], None
-            with reader.decoder_mode():
-                output = reader.model(inputs_embeds=inputs, use_cache=True)
-                past = output.past_key_values
-                for _ in range(128):  # contract: max_new_tokens 128
-                    logits = output.logits[:, -1, :reader._base_vocab]
-                    token = int(logits.argmax(-1).item())
-                    if token == reader.net.eos_id:
-                        break
-                    tokens.append(token)
-                    inputs = reader.net.tokens_to_embeddings(
-                        torch.tensor([[token]], device=reader.device))
-                    output = reader.model(inputs_embeds=inputs, past_key_values=past, use_cache=True)
-                    past = output.past_key_values
-            torch.cuda.synchronize()
-            answer = tok.decode(tokens, skip_special_tokens=True).strip()
-            read_seconds = time.perf_counter() - gen_started
-
-            # retrieval top-10 (record-only, verbatim C1 frontend)
-            retrieved = index.retrieve(q["question"], topk=10)
+            # retrieval top-10 (record-only, csr_v1 year-injected query_text)
+            from retrieval import build_query_text  # noqa: E402
+            query_text = build_query_text({"question": q["question"],
+                                           "as_of": q["as_of"], "id": qid})
+            retrieved = index.retrieve(query_text, topk=10)
             retrieved_ids = [r["event_id"] for r in retrieved]
             assert retrieved_ids  # sanity: frontend ran
 
             ex = extract_answer(answer)
             lbl = {k: q[k] for k in ("answer" + "s",)}  # eval-side labels only
             s = score_query(answer, lbl["answer" + "s"], extracted=ex)  # eval-side labels only
-            row = {"query_id": qid, "episode_id": ep["id"],
+            row = {"query_id": qid, "protocol": PROTOCOL,
+                   "query_text": query_text,
+                   "method": "icae_full_controlled",
+                   "recorded_only": True,
+                   "episode_id": ep["id"],
                    "question": q["question"], "type": q["type"],
                    "answer" + "s": lbl["answer" + "s"],
                    "prompt_tokens": prompt_tokens,
@@ -224,7 +212,9 @@ def main():
                    "em_raw": s["em_raw"], "f1_raw": s["f1_raw"],
                    "em_extracted": s["em_extracted"], "f1_extracted": s["f1_extracted"],
                    "read_seconds": round(read_seconds, 3),
-                   "route": {"status": "icae_full"},
+                   "route": {"status": "icae_full_controlled",
+                             "recorded_only": True,
+                             "generation_limit_hit": out["generation_limit_hit"]},
                    "shard": args.shard}
             rows_file.write(json.dumps(row, ensure_ascii=False) + "\n")
             rows_file.flush()
@@ -247,6 +237,8 @@ def main():
     lat = [r for r in rows if r["type"] == "late" + "st"]
     summary = {
         "tag": args.tag,
+        "protocol": PROTOCOL,
+        "method": "icae_full_controlled",
         "n_total": len(rows),
         "hist_n": len(hist),
         "hist_em": sum(r["em_extracted"] for r in hist) / len(hist) if hist else None,

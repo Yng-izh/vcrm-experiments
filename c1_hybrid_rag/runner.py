@@ -25,8 +25,10 @@ sys.path.insert(0, str(ROOT))
 from corpus import build_corpus, load_corpus          # noqa: E402
 from inject import build_facts, build_prompt, chat_wrap  # noqa: E402
 from reader import read_answer                         # noqa: E402
-from retrieval import RetrievalIndex                   # noqa: E402
+from retrieval import RetrievalIndex, build_query_text     # noqa: E402
 from scoring import aggregate, extract_answer, score_query  # noqa: E402
+
+PROTOCOL = "csr_v1"  # Controlled State Routing rev1
 
 
 def load_queries(split):
@@ -41,16 +43,15 @@ def load_queries(split):
 
 
 def conflict_flags(qs, ep_of):
-    """v2 §3.2: conflicting = same state_key has multiple versions and this
-    query's as_of is earlier than the latest version's as_of for that key."""
-    latest_by_key, asof_by_key = {}, {}
+    """Metadata definition (unified with C2/C4): conflicting = the same
+    state_key has >= 2 distinct answer sets across its queries."""
+    answers_by_key = {}
     for q in qs.values():
-        k = q["state_key"]
-        asof_by_key[k] = max(asof_by_key.get(k, ""), q["as_of"])
-    flags = {}
-    for qid, q in qs.items():
-        flags[qid] = q["as_of"] < asof_by_key[q["state_key"]] and not q["latest"]
-    return flags
+        key = q["state_key"]
+        sig = tuple(sorted(q["answers"]))
+        answers_by_key.setdefault(key, set()).add(sig)
+    multi = {k for k, sigs in answers_by_key.items() if len(sigs) >= 2}
+    return {qid: q["state_key"] in multi for qid, q in qs.items()}
 
 
 def main():
@@ -65,7 +66,7 @@ def main():
     args = ap.parse_args()
 
     tag = args.tag or f"c1_{args.split}" + (f"_{args.limit or 'diag'}" if args.limit or args.query_ids else "")
-    out_dir = HERE / "runs"
+    out_dir = HERE / "runs_csr_v1"
     out_dir.mkdir(exist_ok=True)
     out_path = out_dir / f"{tag}.jsonl"
     summary_path = out_dir / f"{tag}_summary.json"
@@ -91,12 +92,19 @@ def main():
     if args.limit:
         ids = ids[: args.limit]
 
-    # resume
+    # resume (csr_v1: only rows carrying protocol==csr_v1 count as done;
+    # any existing row with a foreign/missing protocol refuses resume)
     done = set()
     if out_path.exists():
         for line in out_path.read_text().splitlines():
             if line.strip():
-                done.add(json.loads(line)["query_id"])
+                r = json.loads(line)
+                if r.get("protocol") != PROTOCOL:
+                    raise SystemExit(
+                        f"[resume] refusing to resume: {out_path} contains "
+                        f"rows with protocol={r.get('protocol')!r} "
+                        f"(expected {PROTOCOL!r})")
+                done.add(r["query_id"])
     todo = [i for i in ids if i not in done]
     print(f"[queries] {len(ids)} selected, {len(done)} done, {len(todo)} todo -> {out_path}")
 
@@ -125,9 +133,11 @@ def main():
     with out_path.open("a") as f:
         for n, qid in enumerate(todo):
             q = qs[qid]
-            retrieved = index.retrieve(q["question"], topk=10)
+            query_text = build_query_text(q)
+            retrieved = index.retrieve(query_text, topk=10,
+                                       episode_id=ep_of[qid])
             fact_texts, hits = build_facts(events_by_id, retrieved)
-            prompt = chat_wrap(build_prompt(q["question"], fact_texts), tok)
+            prompt = chat_wrap(build_prompt(query_text, fact_texts), tok)
             answer, prompt_tokens, read_seconds = read_answer(prompt)
             extracted = extract_answer(answer)
             s = score_query(answer, q["answers"], extracted=extracted)
@@ -135,6 +145,8 @@ def main():
             # (resolved post-hoc in analysis; placeholder kept for schema parity)
             row = {
                 "query_id": qid, "episode_id": ep_of[qid],
+                "protocol": PROTOCOL,
+                "query_text": query_text,
                 "question": q["question"], "type": q["type"], "latest": q["latest"],
                 "as_of": q["as_of"], "answers": q["answers"], "conflicting": flags[qid],
                 "retrieved_event_ids": [r["event_id"] for r in retrieved],
@@ -162,11 +174,12 @@ def finish_summary(rows, qs, ep_of, summary_path, args, write_seconds, n_events,
     got = {r["query_id"] for r in rows}
     summary = aggregate(rows)
     corpus_bytes = None
-    cp = HERE / "runs" / f"corpus_{args.split}.json"
+    cp = HERE / "runs_csr_v1" / f"corpus_{args.split}.json"
     if cp.exists():
         corpus_bytes = cp.stat().st_size
     summary.update({
         "tag": args.tag or f"c1_{args.split}",
+        "protocol": PROTOCOL,
         "n_events": n_events,
         "persistent_mb": round((corpus_bytes or 0) / 1e6, 2),
         "write_seconds": write_seconds,
@@ -186,7 +199,7 @@ def finish_summary(rows, qs, ep_of, summary_path, args, write_seconds, n_events,
 
 def check_completeness(tag, split, query_ids_file=None, limit=None):
     """Contract §5: run invalid unless all selected queries present."""
-    out_path = HERE / "runs" / f"{tag}.jsonl"
+    out_path = HERE / "runs_csr_v1" / f"{tag}.jsonl"
     rows = [json.loads(l) for l in out_path.read_text().splitlines() if l.strip()]
     got = {r["query_id"] for r in rows}
     if query_ids_file:

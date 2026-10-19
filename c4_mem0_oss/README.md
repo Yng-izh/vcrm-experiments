@@ -19,6 +19,14 @@ Raw (pre-extraction) appendix: em_raw 0.00246 / f1_raw 0.14825. Retrieval: facts
 > Revisions in `CONTRACT_C4_MEM0_OSS.md`) requires a full rerun before any
 > of these figures can be cited.
 
+## Protocol: Controlled State Routing (csr_v1)
+
+The unified protocol definition is [`PROTOCOL_CSR_V1.md`](../PROTOCOL_CSR_V1.md).
+C4's as_of injection and per-episode routing already satisfy csr_v1: **csr_v1
+is consistent with the as_of injection already merged into C4 — no further
+code changes are required**; on rerun, use a separate output directory
+(`runs_csr_v1/`) and do not overwrite the legacy `runs/`.
+
 ## Protocol (frozen)
 
 - **Memory system**: mem0ai v2.2.1 @ 94c3fe9f238f3dbf29c9ce98643bd71eb13077cd, native retrieval top-10; embedder BGE-base-en-v1.5 (local, 768d)

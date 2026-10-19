@@ -18,6 +18,20 @@ def bm25_tokenize(text):
     return re.split(r"\W+", text.lower())
 
 
+def build_query_text(q):
+    """Unified as_of injection (csr_v1): "As of {year}, {question}".
+
+    Falls back to q["time"] when as_of is missing; if neither exists, returns
+    the raw question and prints a warning (no silent year fabrication).
+    """
+    year = q.get("as_of") or q.get("time")
+    if not year:
+        print(f"[build_query_text] WARNING: no as_of/time for query "
+              f"{q.get('id', '?')}; using bare question")
+        return q["question"]
+    return f"As of {year}, {q['question']}"
+
+
 class RetrievalIndex:
     def __init__(self, events, device="cuda", bge_path="models/bge-base-en-v1.5",
                  fp16=True, cache_path=None, batch_size=256):
@@ -25,6 +39,7 @@ class RetrievalIndex:
         import json, os
         self.events = events
         self.ids = [e["event_id"] for e in events]
+        self.episode_of = [e.get("episode_id") for e in events]
         # --- sparse ---
         tokenized = [bm25_tokenize(e["text"]) for e in events]
         self.bm25 = BM25Okapi(tokenized)
@@ -65,11 +80,30 @@ class RetrievalIndex:
         sims = self.emb @ q  # cosine (both normalized)
         return np.argsort(-sims)[:k]
 
-    def retrieve(self, query, topk=10, bm25_k=50, dense_k=50, rrf_k=60):
+    def retrieve(self, query, topk=10, bm25_k=50, dense_k=50, rrf_k=60,
+                 episode_id=None):
         """RRF: score = sum over lists 1/(rrf_k + rank_i). Returns list of
-        {event_id, rrf, bm25_rank, dense_rank} sorted by rrf desc, id asc."""
-        b = self.bm25_top(query, bm25_k)
-        d = self.dense_top(query, dense_k)
+        {event_id, rrf, bm25_rank, dense_rank} sorted by rrf desc, id asc.
+
+        csr_v1 (Controlled State Routing): when episode_id is given, the
+        candidate set is filtered to that episode's events BEFORE BM25/dense
+        ranking; RRF runs over the filtered candidate lists only.
+        """
+        cand = np.arange(len(self.ids))
+        if episode_id is not None:
+            cand = np.array([i for i in cand
+                             if self.episode_of[i] == episode_id])
+            if len(cand) == 0:
+                return []
+        # BM25 over filtered candidates
+        tok = bm25_tokenize(query)
+        bm_scores = self.bm25.get_scores(tok)
+        b = cand[np.argsort(-bm_scores[cand])[:bm25_k]].tolist()
+        # dense over filtered candidates
+        qv = self.model.encode([query], normalize_embeddings=True,
+                               convert_to_numpy=True).astype(np.float32)[0]
+        sims = self.emb[cand] @ qv
+        d = cand[np.argsort(-sims)[:dense_k]].tolist()
         scores = {}
         rank = {}
         for r, i in enumerate(b):

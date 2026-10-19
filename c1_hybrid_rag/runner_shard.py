@@ -27,8 +27,21 @@ sys.path.insert(0, str(ROOT))
 from corpus import load_corpus                       # noqa: E402
 from inject import build_facts, build_prompt, chat_wrap  # noqa: E402
 from reader_async import read_answers_async          # noqa: E402
-from retrieval import RetrievalIndex                 # noqa: E402
+from retrieval import RetrievalIndex, build_query_text  # noqa: E402
 from scoring import aggregate, extract_answer, score_query  # noqa: E402
+
+PROTOCOL = "csr_v1"  # Controlled State Routing rev1
+
+
+def conflict_flags(qs):
+    """Metadata definition (unified with C2/C4): conflicting = the same
+    state_key has >= 2 distinct answer sets across its queries."""
+    answers_by_key = {}
+    for q in qs.values():
+        sig = tuple(sorted(q["answers"]))
+        answers_by_key.setdefault(q["state_key"], set()).add(sig)
+    multi = {k for k, sigs in answers_by_key.items() if len(sigs) >= 2}
+    return {qid: q["state_key"] in multi for qid, q in qs.items()}
 
 
 def load_queries(split):
@@ -68,7 +81,7 @@ def main():
     ap.add_argument("--log-every", type=int, default=10, help="cycles")
     args = ap.parse_args()
 
-    out_dir = HERE / "runs"
+    out_dir = HERE / "runs_csr_v1"
     out_dir.mkdir(exist_ok=True)
     shard_paths = [out_dir / f"{args.tag}.shard{k}.jsonl" for k in range(args.n_shards)]
     merged_path = out_dir / f"{args.tag}.jsonl"
@@ -84,12 +97,19 @@ def main():
     ids = list(qs)
 
     # resume: union of done ids across shards + legacy merged file
+    # (csr_v1: rows must carry protocol==csr_v1 or resume is refused)
     done = set()
     for p in shard_paths + [merged_path]:
         if p.exists():
             for line in p.read_text().splitlines():
                 if line.strip():
-                    done.add(json.loads(line)["query_id"])
+                    r = json.loads(line)
+                    if r.get("protocol") != PROTOCOL:
+                        raise SystemExit(
+                            f"[resume] refusing to resume: {p} contains rows "
+                            f"with protocol={r.get('protocol')!r} "
+                            f"(expected {PROTOCOL!r})")
+                    done.add(r["query_id"])
     todo = [i for i in ids if i not in done]
     print(f"[queries] {len(ids)} selected, {len(done)} done, {len(todo)} todo "
           f"(shards={args.n_shards}, concurrency={args.concurrency})", flush=True)
@@ -111,6 +131,7 @@ def main():
     from transformers import AutoTokenizer
     tok = AutoTokenizer.from_pretrained(str(ROOT / "models/Mistral-7B-Instruct-v0.2"))
 
+    flags = conflict_flags(qs)
     files = [p.open("a") for p in shard_paths]
     n_done_cycle = 0
     t_start = time.time()
@@ -121,10 +142,13 @@ def main():
             prompts, metas = [], []
             for qid in batch_ids:
                 q = qs[qid]
-                retrieved = index.retrieve(q["question"], topk=10)
+                query_text = build_query_text(q)
+                retrieved = index.retrieve(query_text, topk=10,
+                                           episode_id=ep_of[qid])
                 fact_texts, _ = build_facts(events_by_id, retrieved)
-                prompts.append(chat_wrap(build_prompt(q["question"], fact_texts), tok))
-                metas.append((qid, q, [r["event_id"] for r in retrieved], fact_texts))
+                prompts.append(chat_wrap(build_prompt(query_text, fact_texts), tok))
+                metas.append((qid, q, [r["event_id"] for r in retrieved],
+                              fact_texts, query_text))
             # fan out: each query goes to its shard's endpoint
             loop = asyncio.new_event_loop()
             asyncio.set_event_loop(loop)
@@ -139,19 +163,21 @@ def main():
                 async with aiohttp.ClientSession(
                         connector=aiohttp.TCPConnector(limit=args.concurrency * args.n_shards)) as session:
                     tasks = [one(shard_urls[shard_of(qid)], p)
-                             for (qid, _, _, _), p in zip(metas, prompts)]
+                             for (qid, _, _, _, _), p in zip(metas, prompts)]
                     return await asyncio.gather(*tasks)
             results = loop.run_until_complete(fan())
             loop.close()
 
-            for (qid, q, ev_ids, fact_texts), (answer, ptoks) in zip(metas, results):
+            for (qid, q, ev_ids, fact_texts, query_text), (answer, ptoks) in zip(metas, results):
                 extracted = extract_answer(answer)
                 s = score_query(answer, q["answers"], extracted=extracted)
                 row = {
                     "query_id": qid, "episode_id": ep_of[qid],
+                    "protocol": PROTOCOL,
+                    "query_text": query_text,
                     "question": q["question"], "type": q["type"], "latest": q["latest"],
                     "as_of": q["as_of"], "answers": q["answers"],
-                    "conflicting": True,  # placeholder; recomputed in summary
+                    "conflicting": flags[qid],
                     "retrieved_event_ids": ev_ids, "fact_texts": fact_texts,
                     "prompt_tokens": ptoks,
                     "raw_answer": answer, "extracted_answer": extracted,
@@ -194,7 +220,7 @@ def main():
     if not missing:
         summary = aggregate(merged)
         summary.update({
-            "tag": args.tag, "n_events": len(events),
+            "tag": args.tag, "protocol": PROTOCOL, "n_events": len(events),
             "runner": "sharded", "n_shards": args.n_shards,
             "reader_concurrency_per_instance": args.concurrency,
             "shard_urls": shard_urls,

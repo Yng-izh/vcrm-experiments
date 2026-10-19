@@ -25,12 +25,14 @@ sys.path.insert(0, str(ROOT))
 from corpus import load_corpus  # noqa: E402
 from inject import build_facts, build_prompt, chat_wrap  # noqa: E402
 from reader import read_answer  # noqa: E402  (URL overridden below)
-from retrieval import RetrievalIndex  # noqa: E402
+from retrieval import RetrievalIndex, build_query_text  # noqa: E402
 from scoring import aggregate, extract_answer, score_query  # noqa: E402
 
 SPLIT = "test"
-OUT = C2 / "runs/c2_test.jsonl"
-SUMMARY = C2 / "runs/c2_test_summary.json"
+PROTOCOL = "csr_v1"
+RUNS = C2 / "runs_csr_v1"
+OUT = RUNS / "c2_test.jsonl"
+SUMMARY = RUNS / "c2_test_summary.json"
 N_SHARDS = int(os.environ.get("C2_SHARDS", "3"))
 CONCURRENCY = int(os.environ.get("C2_CONCURRENCY", "16"))
 PORTS = {0: 8001, 1: 8000, 2: 8004}  # GPU 9 / 0 / 4
@@ -120,10 +122,19 @@ def main():
     print(f"[queries] {len(all_ids)} total", flush=True)
 
     done = set()
+    stale = 0
+    RUNS.mkdir(parents=True, exist_ok=True)
     if OUT.exists():
         for line in OUT.read_text().splitlines():
             if line.strip():
-                done.add(json.loads(line)["query_id"])
+                r = json.loads(line)
+                if r.get("protocol") != PROTOCOL:
+                    stale += 1
+                    continue
+                done.add(r["query_id"])
+    if stale:
+        print(f"[resume] skipped {stale} rows with protocol != {PROTOCOL}",
+              flush=True)
     todo = [i for i in all_ids if i not in done]
     print(f"[queries] {len(done)} done, {len(todo)} todo", flush=True)
     if not todo:
@@ -160,14 +171,18 @@ def main():
 
             def work(qid):
                 q = qs[qid]
-                retrieved = index.retrieve(q["question"], topk=10)
+                query_text = build_query_text(q)
+                retrieved = index.retrieve(query_text, topk=10,
+                                           episode_id=ep_of[qid])
                 fact_texts, hits = build_facts(events_by_id, retrieved)
-                prompt = chat_wrap(build_prompt(q["question"], fact_texts), tok)
+                prompt = chat_wrap(build_prompt(query_text, fact_texts), tok)
                 answer, prompt_tokens, _ = read_answer(prompt)
                 extracted = extract_answer(answer)
                 s = score_query(answer, q["answers"], extracted=extracted)
                 return {
-                    "query_id": qid, "episode_id": ep_of[qid],
+                    "query_id": qid, "protocol": PROTOCOL,
+                    "query_text": query_text,
+                    "episode_id": ep_of[qid],
                     "question": q["question"], "type": q["type"],
                     "latest": q["latest"], "as_of": q["as_of"],
                     "answers": q["answers"],
@@ -217,14 +232,15 @@ def main():
     wall = time.time() - t_all
     print(f"[done] wall {wall:.0f}s errors {len(errors)}", flush=True)
     if errors:
-        (C2 / "runs/c2_test_errors.json").write_text(
+        RUNS.mkdir(parents=True, exist_ok=True)
+        (RUNS / "c2_test_errors.json").write_text(
             json.dumps(errors, indent=1))
         print(f"[ERRORS] {len(errors)} rows failed — rerun to resume", flush=True)
         return
     rows = [json.loads(l) for l in OUT.read_text().splitlines() if l.strip()]
     summary = aggregate(rows)
     summary.update({
-        "tag": "c2_test_full",
+        "tag": "c2_test_full", "protocol": PROTOCOL,
         "compression_rate": compression_rate,
         "n_events": len(events),
         "wall_seconds": round(wall, 1),

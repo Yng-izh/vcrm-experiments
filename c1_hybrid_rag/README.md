@@ -22,3 +22,20 @@ md5 reader.py scoring.py inject.py   # macOS (or md5sum on Linux)
 
 Any future protocol change on the server must be re-mirrored with a new
 Revision entry in the consuming experiment contract.
+
+## Protocol: Controlled State Routing (csr_v1)
+
+C1 runs under the **Controlled State Routing rev1** protocol (`csr_v1`), see
+[`PROTOCOL_CSR_V1.md`](../PROTOCOL_CSR_V1.md): queries are injected with the
+explicit as_of year (`build_query_text` → `"As of {as_of}, {question}"`, used
+for both retrieval and the Reader prompt); retrieval is restricted to the
+query's own episode (`retrieve(episode_id=...)` filter before BM25/BGE+RRF);
+`conflicting` uses the unified metadata definition (same `state_key` has ≥ 2
+distinct answer sets). This is **not** End-to-End Retrieval: the as_of year
+and per-episode scoping are declared query conditions, not a black-box store.
+Each output row carries `protocol: "csr_v1"` and `query_text`; resume refuses
+files with foreign protocol rows. New runs write to `runs_csr_v1/`.
+
+> **SUPERSEDED**: all results produced before `csr_v1` (no as_of injection,
+> cross-episode retrieval, old "non-latest-year" conflict definition) are
+> superseded (pre-csr protocol) and kept for provenance only.
