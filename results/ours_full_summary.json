@@ -1,0 +1,53 @@
+{
+ "tag": "ours_full",
+ "n_rows": 34963,
+ "protocol_note": "Ours = label-free routing probe; protocol recorded per row via route.status (csr_v1 control state routing)",
+ "overall": {
+  "n": 34963,
+  "em": 0.4946,
+  "f1": 0.6363
+ },
+ "hist": {
+  "n": 30906,
+  "em": 0.4614,
+  "f1": 0.6061
+ },
+ "latest": {
+  "n": 4057,
+  "em": 0.7474,
+  "f1": 0.866
+ },
+ "conflict": {
+  "n": 34407,
+  "em": 0.4985,
+  "f1": 0.6357
+ },
+ "nonconflict": {
+  "n": 556,
+  "em": 0.2554,
+  "f1": 0.6744
+ },
+ "route": {
+  "counts": {
+   "ok": 29352,
+   "no_association": 5611
+  },
+  "ok_rate": 0.8395,
+  "no_association_rate": 0.1605
+ },
+ "no_association_subset": {
+  "n": 5611,
+  "em": 0.2445,
+  "f1": 0.5459
+ },
+ "ok_subset": {
+  "n": 29352,
+  "em": 0.5424,
+  "f1": 0.6536
+ },
+ "efficiency": {
+  "mean_prompt_tokens": 202.44,
+  "mean_read_seconds": 0.4154
+ },
+ "is_current_rate": 0.4045
+}
