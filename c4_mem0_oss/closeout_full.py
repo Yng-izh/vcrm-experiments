@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Full-run closeout: qid reconciliation, concat c4_test.jsonl, 4-column summary.
 
-Runs LOCALLY on the 4 shard jsonl files fetched from the server.
+Runs on the shard jsonl files produced by runner.py (one per shard).
 Contract: c4_test.jsonl must contain every test query exactly once (34,963).
 Scoring columns already embedded per-row by runner (c1_scoring) — verified here
 by recomputing the aggregate; no platform scores anywhere.
@@ -124,14 +124,17 @@ def write_coverage_audit(ledger_glob, expected_json):
 
 def main(argv=None):
     ap = argparse.ArgumentParser()
-    ap.add_argument("shards", nargs="*", help="4 shard result jsonl files")
+    ap.add_argument("shards", nargs="*", help="shard result jsonl files (one per runner shard)")
     ap.add_argument("--ledger-glob", default="runs/*_cost_ledger.jsonl",
                     help="glob of cost ledgers (smoke ∪ full union) relative to c4_mem0_oss/")
     ap.add_argument("--expected-events-json", default=None,
                     help="JSON file {episode_id: [event_id, ...]} with the expected event list")
     args = ap.parse_args(argv)
     shard_files = sorted(args.shards)
-    assert len(shard_files) == 4, f"need 4 shard jsonl, got {len(shard_files)}"
+    # shard count is an execution detail (4 on the original run, 6 on the
+    # csr_v1 full run where only 6 GPUs were free); coverage is enforced by the
+    # qid reconciliation below, not by the shard count.
+    assert len(shard_files) >= 1, f"need at least 1 shard jsonl, got {len(shard_files)}"
     rows, qids = [], set()
     for f in shard_files:
         cnt = 0
@@ -160,7 +163,7 @@ def main(argv=None):
     # concat in shard order -> contract artifact
     out = HERE / "c4_test.jsonl"
     with out.open("w") as f:
-        for r in rows:  # stable: shard0..3, original order within each
+        for r in rows:  # stable: shard order, original order within each
             f.write(json.dumps(r, ensure_ascii=False) + "\n")
     print(f"[closeout] wrote {out.name} md5={md5(out)}")
 
@@ -211,6 +214,8 @@ def main(argv=None):
                                   / max(1, len([r for r in rows if r.get("conflicting")]))),
         "latest_n": len([r for r in rows if r.get("latest")]),
         "latest_em_extracted": (sum(r["em_extracted"] for r in rows if r.get("latest"))
+                                / max(1, len([r for r in rows if r.get("latest")]))),
+        "latest_f1_extracted": (sum(r["f1_extracted"] for r in rows if r.get("latest"))
                                 / max(1, len([r for r in rows if r.get("latest")]))),
         "retrieval": {"facts_avg": sum(len(r["retrieved_facts"]) for r in rows) / n,
                       "nonempty_rate": sum(bool(r["retrieved_facts"]) for r in rows) / n},
