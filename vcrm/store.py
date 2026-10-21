@@ -459,3 +459,367 @@ class CurrentSnapshotStore(KeyframeStore):
     def accounting(self):
         return super().accounting() | {'protocol': self.format_name, 'online_update_supported': False,
                                        'additional_anchor_slots': 0}
+
+
+INCREMENTAL_FORMAT = 'incremental_independent_current_v1'
+INCREMENTAL_BUDGET_MODES = ('retain_all',)
+
+
+class IncrementalCurrentStore(KeyframeStore):
+    """Online version store for the frozen independent E3 codec.
+
+    One state = one fact group identity resolved upstream (StateIndex/StateRouter).
+    Every state keeps exactly one full current memory (128 slots); older versions
+    are compressed exactly once into a 16-slot code by the frozen E3 codec and are
+    never used as encoder inputs again. Writes are driven by a resolved
+    StateDecision, so this store never reads any oracle state field:
+
+        CREATE     store the incoming full memory as the new current version
+        UPDATE     compress the previous current into a single 16-slot code, then
+                   store the incoming full memory as the new current version
+        DUPLICATE  keep the payload untouched, record the alias only
+        DEFER      keep an independent pending record; the live current version is
+                   NOT downgraded because the conflict is unresolved
+
+    Budget protocol: the retired `resident_slot_budget = 2048` keyframe ceiling does
+    not apply here (4057 fact groups x 128 slots = 519,296 resident slots), so this
+    class only implements an explicit `budget_mode='retain_all'` tier that reports
+    bytes and slots through `accounting()`. Retain-all never evicts: a byte
+    guardrail (`byte_budget`) rejects the write and rolls it back instead of
+    silently dropping live state. A formal efficiency experiment must add a
+    separate flow-control/eviction policy on top of this store rather than
+    reusing the keyframe FIFO.
+    """
+    magic = b'VCRMIC1\n'
+    format_name = INCREMENTAL_FORMAT
+    aux_magic = b'VCRMIP1\n'
+
+    def __init__(self, codec, key_dimensions=128, byte_budget=None, budget_mode='retain_all'):
+        if budget_mode not in INCREMENTAL_BUDGET_MODES:
+            raise ValueError(f'Unsupported incremental store budget mode {budget_mode!r}')
+        if codec.conditioned:
+            raise ValueError('Incremental E3 store requires independent codec')
+        # The parent constructor insists on a positive slot ceiling; retain_all
+        # clears it right afterwards because slot accounting is informational here.
+        super().__init__(codec, 1, 2, key_dimensions, byte_budget)
+        self.slot_budget = None
+        self.budget_mode = budget_mode
+        self.pending, self.duplicates, self.rejections = [], [], []
+        # Single-slot undo for StateIndex.commit_with(): only the most recent commit
+        # can still be rolled back, so this never grows with the number of writes
+        # (a full snapshot includes the pending 128x4096 FP16 payloads). Never serialized.
+        self._commit_undo = {}
+
+    # -- write path -------------------------------------------------------
+    def ingest(self, *args, **kwargs):
+        raise RuntimeError('Incremental E3 store writes only through ingest_decision(); '
+                           'keyframe ingest would rebase versions without a resolved decision')
+
+    def ingest_decision(self, event, memory, semantic_key, decision):
+        from .fact_schema import STATE_ACTIONS
+        action, state = decision.action, decision.state_id
+        if action not in STATE_ACTIONS:
+            raise ValueError(f'Unknown state action {action!r}')
+        if not state:
+            raise ValueError('Incremental store writes need an explicit resolved state id')
+        if action in ('UPDATE', 'DUPLICATE') and self.current(state) is None:
+            raise ValueError(f'{action} requires an existing current version')
+        if action == 'CREATE' and self.current(state) is not None:
+            raise ValueError('CREATE requires a state without a live current version')
+        if self._known_id(event['id']):
+            raise ValueError('Duplicate version id')
+        previous = self.current(state)
+        if previous and event['time'] < previous['time']:
+            # A refusal is a diagnostic record, not an id reservation: the same event
+            # re-submitted in chronological order must still be accepted (see _known_id).
+            self.rejections.append({'id': event['id'], 'state': state, 'time': event['time'],
+                                    'reason': 'out_of_order'})
+            raise ValueError('Incremental versions must be written in chronological order')
+        wire = self._full_wire(memory)
+        key = self._key_wire(semantic_key)
+        # Every action goes through the same transaction: mutate -> validate -> budget
+        # guard -> commit, and roll the whole write back on any failure. No branch may
+        # return before the guard (DEFER grows by a full 128x4096 FP16 record, DUPLICATE
+        # appends metadata), otherwise the store would hold state it cannot persist.
+        snapshot = self._snapshot()
+        downgraded = None
+        try:
+            if action == 'DUPLICATE':
+                # Payload is deliberately untouched: the alias is metadata only.
+                self.duplicates.append({'id': event['id'], 'state': state, 'time': event['time'],
+                                        'matched_id': previous['id']})
+            elif action == 'DEFER':
+                # An unresolved conflict must not downgrade the live current version.
+                self.pending.append({'id': event['id'], 'state': state, 'time': event['time'],
+                                     'confidence': float(decision.confidence), 'reason': decision.reason,
+                                     'key': key, 'payload': wire})
+            else:
+                if action == 'UPDATE':
+                    # Compress a temporary copy of the live current, validate it, then commit.
+                    downgraded = previous['id']
+                    if previous['kind'] != 'full' or previous['compression_count'] or previous['keyframe'] is False:
+                        raise AssertionError('Only a live full current version can be compressed')
+                    with torch.no_grad():
+                        code = self.codec.encode(self._memory(previous), None).detach().cpu().float()
+                    code_wire = code.numpy().astype('<f2')
+                    if code.shape != (self.codec.slots, self.codec.dimension) or not np.isfinite(code_wire).all():
+                        raise ValueError('Codec returned invalid or FP16-overflowing historical code')
+                entry = {'id': event['id'], 'state': state, 'time': event['time'], 'kind': 'full',
+                         'keyframe': True, 'anchor_id': None, 'compression_count': 0,
+                         'key': key.copy(), 'payload': wire}
+                if action == 'UPDATE':
+                    previous.update(kind='code', keyframe=False, anchor_id=None,
+                                    compression_count=1, payload=code_wire)
+                self.entries.append(entry)
+                self.blocks[state] = entry['id']
+                self.counts[state] = self.counts.get(state, 0) + 1
+            self.validate_protocol()
+            self._guard_budget()
+        except Exception:
+            self._restore(snapshot)
+            raise
+        return self._receipt(action, event, state, downgraded)
+
+    # -- StateIndex transaction adapter (t5 contract) ----------------------
+    def commit(self, record=None, fact=None, *, memory=None, semantic_key=None, decision=None):
+        """`StateIndex.commit_with(store, ...)` 的薄适配层；写入语义完全交给 ingest_decision()。
+
+        字段映射（record/fact → ingest_decision 的 event / 参数）：
+            record.state_id      → decision.state_id（状态身份来自解析层；event 里没有 state_key）
+            fact.id              → event['id']，同时就是返回的版本号 version_id
+            fact.observed_at     → event['time']（ISO8601，用于版本排序与 as_of 可见性）
+            record.semantic_key  → semantic_key（128 维；显式传参时以参数为准）
+            memory=              → 该事实的原始 full memory。**UPDATE 必须显式传入**（旧 current
+                                   要用它之外的新版本来替换，缺了无法写入），DEFER 同样必须传入
+                                   （pending 记录要保留原始 full memory）；DUPLICATE 不改 payload，
+                                   但当前实现仍统一要求 memory= 以便做同一次 full/FP16 校验。
+                                   本适配层绝不从 fact 文本重建 latent，也不会把 m-slot code
+                                   当 full memory 写入；缺失时直接 ValueError，绝不静默降级。
+        缺省动作：`record.current_version_id` 为空 → CREATE，否则 UPDATE；调用方传入
+        `decision=`（UpdateResolver 的真实决策）时一律以它为准。
+
+        返回 `{'version_id': <非空 str>, 'action': <str>, ...receipt}`，同时满足
+        StateIndex._coerce_version_id 接受的 `str` / `{'version_id': ...}` 两种形态。
+        写入失败时 ingest_decision 已自行回滚并抛异常，由 commit_with 转成 StoreCommitError；
+        成功时的快照只保留在内存里供 `rollback(result)` 撤销，不进入序列化字节。
+        """
+        from .fact_schema import StateDecision
+        if record is None or fact is None:
+            raise ValueError('commit() needs record= and fact= (StateIndex.commit_with contract)')
+        state_id = getattr(record, 'state_id', None)
+        version_id = getattr(fact, 'id', None)
+        observed_at = getattr(fact, 'observed_at', None)
+        if not state_id:
+            raise ValueError('commit() requires record.state_id')
+        if not version_id:
+            raise ValueError('commit() requires fact.id as the version id')
+        if not observed_at:
+            raise ValueError('commit() requires fact.observed_at as the event time')
+        if memory is None:
+            raise ValueError('commit() requires the original full memory= for this fact')
+        if semantic_key is None:
+            semantic_key = getattr(record, 'semantic_key', None)
+        if semantic_key is None:
+            raise ValueError('commit() requires semantic_key= or record.semantic_key')
+        if decision is None:
+            action = 'CREATE' if not getattr(record, 'current_version_id', None) else 'UPDATE'
+            decision = StateDecision(action, state_id, 1., 'commit adapter default')
+        if decision.state_id != state_id:
+            raise ValueError('decision.state_id must match record.state_id')
+        event = {'id': version_id, 'time': str(observed_at)}
+        snapshot = self._snapshot()
+        receipt = self.ingest_decision(event, memory, semantic_key, decision)
+        # Keep exactly one undo slot: the previous commit's snapshot is dropped here,
+        # so N commits hold one snapshot, not N.
+        self._commit_undo.clear()
+        self._commit_undo[version_id] = snapshot
+        return {'version_id': version_id, **receipt}
+
+    def rollback(self, result):
+        """撤销一次已成功的 commit()（StateIndex 索引更新失败时的尽力回滚钩子）。
+
+        result 可以是 commit() 的返回字典，也可以直接是版本号；只保留最近一次 commit 的快照
+        （StateIndex 的索引失败紧跟在同一次 commit 之后），其它版本号返回 False。
+        """
+        version_id = result.get('version_id') if isinstance(result, dict) else result
+        snapshot = self._commit_undo.pop(version_id, None) if isinstance(version_id, str) else None
+        if snapshot is None:
+            return False
+        self._restore(snapshot)
+        return True
+
+    # -- write helpers ----------------------------------------------------
+    def _known_id(self, version_id):
+        """已入库/已登记的身份；rejections 刻意不算占用。
+
+        拒绝记录只是"这次写入被拒"的诊断痕迹（与 validate_protocol 的唯一性集合一致：
+        entries + pending + duplicates）。把被拒 id 也算成占用会让同一条事件按正确顺序
+        重投时永远拿到 'Duplicate version id'，等于静默丢数据。
+        """
+        return (any(e['id'] == version_id for e in self.entries) or
+                any(r['id'] == version_id for r in self.pending) or
+                any(r['id'] == version_id for r in self.duplicates))
+
+    def _full_wire(self, memory):
+        if (memory.ndim != 2 or memory.shape[1] != self.codec.dimension or
+                memory.shape[0] <= self.codec.slots or not torch.isfinite(memory).all()):
+            raise ValueError('Write only original full memory, never an m-slot code')
+        wire = memory.detach().cpu().float().numpy().astype('<f2')
+        if not np.isfinite(wire).all():
+            raise ValueError('Memory cannot be represented as finite FP16')
+        return wire
+
+    def _key_wire(self, semantic_key):
+        key = np.asarray(semantic_key, dtype='<f2')
+        if key.shape != (self.key_dimensions,) or not np.isfinite(key).all():
+            raise ValueError('Invalid semantic key')
+        return key
+
+    def _snapshot(self):
+        import copy
+        return copy.deepcopy((self.entries, self.blocks, self.counts,
+                              self.pending, self.duplicates, self.rejections))
+
+    def _restore(self, snapshot):
+        self.entries, self.blocks, self.counts, self.pending, self.duplicates, self.rejections = snapshot
+
+    def _guard_budget(self):
+        if self.byte_budget is None:
+            return
+        total = len(self.serialize())
+        if total > self.byte_budget:
+            raise ValueError(f'Incremental store byte budget exceeded ({total} > {self.byte_budget}); '
+                             'explicit rejection instead of silent eviction')
+
+    def _enforce_budget(self):
+        raise RuntimeError('Retain-all incremental store never evicts; budget violations are rejected')
+
+    def _receipt(self, action, event, state, downgraded):
+        return {'action': action, 'id': event['id'], 'state': state, 'time': event['time'],
+                'downgraded': downgraded, **self.accounting()}
+
+    # -- invariants -------------------------------------------------------
+    def validate_protocol(self):
+        if self.codec.conditioned:
+            raise ValueError('Incremental E3 store requires independent codec')
+        ids = [e['id'] for e in self.entries] + [r['id'] for r in self.pending] + \
+              [r['id'] for r in self.duplicates]
+        if len(ids) != len(set(ids)):
+            raise ValueError('Duplicate incremental version or pending id')
+        live = {e['state'] for e in self.entries}
+        if any(r['matched_id'] not in {e['id'] for e in self.entries} for r in self.duplicates):
+            raise ValueError('Duplicate record must reference a stored version')
+        for state in live:
+            versions = [e for e in self.entries if e['state'] == state]
+            current = self.current(state)
+            full = [e for e in versions if e['kind'] == 'full']
+            if (full != [current] or not current['keyframe'] or current['compression_count'] or
+                    current['anchor_id'] is not None or self.blocks.get(state) != current['id']):
+                raise ValueError('Incremental store needs exactly one full current per state')
+            if versions[-1] is not current:
+                raise ValueError('The newest version of a state must be its full current')
+            times = [e['time'] for e in versions]
+            if times != sorted(times):
+                raise ValueError('Incremental versions must stay in chronological order')
+            for entry in versions:
+                if not np.isfinite(entry['payload']).all():
+                    raise ValueError('Non-finite incremental latent payload')
+                if entry['kind'] == 'code':
+                    if (entry['keyframe'] or entry['compression_count'] != 1 or entry['anchor_id'] is not None or
+                            entry['payload'].shape != (self.codec.slots, self.codec.dimension) or
+                            entry['time'] > current['time']):
+                        raise ValueError('Incremental codes are single-compression m-slot payloads of one current')
+                elif entry['kind'] != 'full':
+                    raise ValueError('Incremental store holds only full currents and compressed codes')
+                elif entry['payload'].shape[1] != self.codec.dimension or entry['payload'].shape[0] <= self.codec.slots:
+                    raise ValueError('Incremental current version must hold the original full memory')
+        for record in self.pending:
+            if (record['payload'].ndim != 2 or record['payload'].shape[1] != self.codec.dimension or
+                    record['payload'].shape[0] <= self.codec.slots or
+                    not np.isfinite(record['payload']).all() or
+                    record['key'].shape != (self.key_dimensions,)):
+                raise ValueError('Pending record must keep an independent original full memory')
+
+    # -- persistence ------------------------------------------------------
+    def serialize(self):
+        base = super().serialize()
+        descriptions, payloads, offset = [], [], 0
+        for record in self.pending:
+            key = record['key'].astype('<f2').tobytes()
+            payload = record['payload'].astype('<f2').tobytes()
+            descriptions.append({k: record[k] for k in ('id', 'state', 'time', 'confidence', 'reason')} |
+                                {'offset': offset, 'key_bytes': len(key), 'payload_bytes': len(payload),
+                                 'shape': list(record['payload'].shape)})
+            payloads.append(key + payload)
+            offset += len(key) + len(payload)
+        header = json.dumps({'format': self.format_name, 'budget_mode': self.budget_mode,
+                             'pending': descriptions,
+                             'duplicates': [{k: r[k] for k in ('id', 'state', 'time', 'matched_id')}
+                                            for r in self.duplicates],
+                             'rejections': [{k: r[k] for k in ('id', 'state', 'time', 'reason')}
+                                            for r in self.rejections]},
+                            sort_keys=True, separators=(',', ':')).encode()
+        return base + self.aux_magic + struct.pack('<Q', len(header)) + header + b''.join(payloads)
+
+    def save(self, path):
+        data = self.serialize()
+        if self.byte_budget is not None and len(data) > self.byte_budget:
+            raise AssertionError('Incremental byte budget exceeded')
+        atomic_bytes(path, data)
+        return len(data)
+
+    @classmethod
+    def load(cls, path, codec, key_dimensions=128, byte_budget=None, budget_mode='retain_all'):
+        data = Path(path).read_bytes()
+        if not data.startswith(cls.magic):
+            raise ValueError('Invalid incremental memory format')
+        size = struct.unpack('<Q', data[8:16])[0]
+        header = json.loads(data[16:16 + size])
+        if header['format'] != cls.format_name:
+            raise ValueError('Memory protocol/format mismatch')
+        if (header['dimension'], header['codec_slots'], header['conditioned']) != (
+                codec.dimension, codec.slots, codec.conditioned):
+            raise ValueError('Incremental codec identity mismatch')
+        store = cls(codec, header['key_dimensions'], byte_budget, budget_mode)
+        if header['codec_sha256'] != store.codec_signature:
+            raise ValueError('Incremental codec weights identity mismatch')
+        store.blocks, store.counts = header['blocks'], header['counts']
+        entries_end = 16 + size + sum(d['key_bytes'] + d['payload_bytes'] for d in header['entries'])
+        raw = data[16 + size:entries_end]
+        for desc in header['entries']:
+            start = desc['offset']
+            end = start + desc['key_bytes']
+            payload = np.frombuffer(raw[end:end + desc['payload_bytes']], dtype='<f2').reshape(desc['shape']).copy()
+            store.entries.append({k: desc[k] for k in ('id', 'state', 'time', 'kind', 'keyframe',
+                                                       'anchor_id', 'compression_count')} |
+                                 {'key': np.frombuffer(raw[start:end], dtype='<f2').copy(), 'payload': payload})
+        tail = data[entries_end:]
+        if not tail.startswith(cls.aux_magic):
+            raise ValueError('Incremental memory is missing its pending/duplicate block')
+        begin = len(cls.aux_magic) + 8
+        aux_size = struct.unpack('<Q', tail[len(cls.aux_magic):begin])[0]
+        aux = json.loads(tail[begin:begin + aux_size])
+        aux_raw = tail[begin + aux_size:]
+        for desc in aux['pending']:
+            start = desc['offset']
+            end = start + desc['key_bytes']
+            payload = np.frombuffer(aux_raw[end:end + desc['payload_bytes']], dtype='<f2').reshape(desc['shape']).copy()
+            store.pending.append({k: desc[k] for k in ('id', 'state', 'time', 'confidence', 'reason')} |
+                                 {'key': np.frombuffer(aux_raw[start:end], dtype='<f2').copy(), 'payload': payload})
+        store.duplicates = [{k: r[k] for k in ('id', 'state', 'time', 'matched_id')} for r in aux['duplicates']]
+        store.rejections = [{k: r[k] for k in ('id', 'state', 'time', 'reason')} for r in aux['rejections']]
+        if byte_budget is not None and len(data) > byte_budget:
+            raise ValueError('Loaded incremental memory exceeds byte budget')
+        store.validate_protocol()
+        return store
+
+    def accounting(self):
+        pending_slots = sum(int(r['payload'].shape[0]) for r in self.pending)
+        return super().accounting() | {
+            'protocol': self.format_name, 'budget_mode': self.budget_mode,
+            'resident_slot_budget_applied': False,
+            'current_versions': sum(1 for e in self.entries if e['kind'] == 'full'),
+            'compressed_versions': sum(1 for e in self.entries if e['kind'] == 'code'),
+            'pending_records': len(self.pending), 'duplicate_records': len(self.duplicates),
+            'rejection_records': len(self.rejections), 'pending_latent_slots': pending_slots,
+            'resident_latent_slots': self.resident_slots() + pending_slots}

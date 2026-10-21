@@ -74,3 +74,22 @@ single-GPU; shard across GPUs to scale linearly.
 retrieved_session_dates, prompt_tokens, read_seconds`.
 No answer extraction/normalization, no scores. Field naming here is
 provisional; the official-eval field mapping is owned by t12/t14.
+
+## 同协议对照：Latent E3 管线（P4，t7）
+
+本 baseline 的对照方法在 `lme_s_latent/run_e3.py`（E3 ICAE latent memory +
+状态版本链 + 冻结 reader）。两条链路共用**同一套官方 eval 接线**（`runs/<tag>/`
+→ `make_official_eval_input.py` → `run_official_eval.sh`），差异只在记忆载体与
+时间通道：
+
+| 维度 | Text RAG（本目录） | Latent E3（`lme_s_latent/`） |
+|---|---|---|
+| 记忆作用域 | 本题 haystack（per-item BM25+BGE+RRF 索引） | 本题 haystack（每题独立 StateIndex/Store） |
+| 时间通道 | 无 | `window_end = QueryTimeResolver`（历史锚末刻优先，其次提问时刻） |
+| reader | vLLM Mistral-7B-Instruct（C1 shim） | `vcrm.reader.FrozenReader`（E3 ICAE） |
+| 输出 | `runs/<tag>/<qid>.json`（8 字段） | 同上 + `<tag>.jsonl` + `<tag>_summary.json`（分级错误分析） |
+
+运行矩阵、显存/耗时估算与「P4 需用户放行后才能执行」的阻塞清单见
+`lme_s_latent/README.md`。对照时必须**分口径**呈现：本 baseline 没有时间通道与
+状态层，因此 latent 侧的 `update_source_counts` / `update_deferred` 等桶在本
+baseline 侧为 **N/A**（不是 0）。

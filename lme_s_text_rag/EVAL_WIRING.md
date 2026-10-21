@@ -43,3 +43,23 @@ LME_TAG=<TAG> bash lme_s_text_rag/run_official_eval.sh --execute
 
 # 3) 读取官方分数：official_eval_out/<TAG>/ 下的 eval-results 与 print_qa_metrics 打印
 ```
+
+## 同协议第二方法：Latent E3（t7，P4）
+
+`lme_s_latent/run_e3.py` 产出**同一形状**的 `runs/<tag>/<question_id>.json`
+（含 `question_id` + `hypothesis`，多出的诊断字段不影响本链路），因此上面三个
+步骤**原样可用**，只是 `--tag` 换成 latent 的 tag：
+
+```bash
+# 1) latent 侧产出 hypothesis（code-only 阶段用 stub；GPU 全量需用户放行）
+python3 lme_s_latent/run_e3.py --data <OFFICIAL_S_JSON> --reader icae --arch-exp E3 \
+    --tag lme_s_latent_e3_on --shard 0 --shards 4 --recency-update
+# 2) 官方链路（runs 目录默认就是 lme_s_text_rag/runs，无需额外参数）
+LME_TAG=lme_s_latent_e3_on bash lme_s_text_rag/run_official_eval.sh            # dry-run
+LME_TAG=lme_s_latent_e3_on bash lme_s_text_rag/run_official_eval.sh --execute  # 需 OPENAI_API_KEY
+```
+
+注意：`make_official_eval_input.py` 的 `--runs-dir` 传字符串会
+`TypeError`（该文件属 t14，本链路未改），所以 latent 脚本的 `--runs-dir` 默认
+对齐本链路的默认 runs 目录 `lme_s_text_rag/runs`。两种方法的 tag 必须不同
+（如 `lme_s_text_rag_*` vs `lme_s_latent_e3_*`），否则对账会混。
