@@ -300,7 +300,10 @@ def dump_pass(mod, args: argparse.Namespace, metrics, components,
     summary['wall_seconds'] = time.perf_counter() - started
     summary['decision_counts_source'] = ('gold_identity' if mode.startswith('oracle')
                                          else 'resolver')
-    stem = f'{args.tag}_{mode}_{args.time_mode}_{args.limit}'
+    # 分片时把 shard 编进文件名：否则多个分片的 scores/decisions/summary 互相覆盖，
+    # 只剩最后写入者的内容（全量跑时逐题误差分析就没了）。
+    shard_suffix = f'_s{args.shard}of{args.shards}' if args.shards > 1 else ''
+    stem = f'{args.tag}_{mode}_{args.time_mode}_{args.limit}{shard_suffix}'
     scores_path = out / f'{stem}.scores.jsonl'
     decisions_path = out / f'{stem}.decisions.jsonl'
     with scores_path.open('w') as handle:

@@ -1,0 +1,23 @@
+[preflight] E3: /share/latent2/vcrm_icae/runs/architecture_v6_E3_train | codec_value_path=full | val manifest=/share/latent2/vcrm_icae/runs/architecture_v6_E3_val/manifest.json
+{
+  "shard": 0,
+  "shards": 7,
+  "episodes": 580,
+  "first_episode": "templama:test:Q100:P6",
+  "last_episode": "templama:test:Q995028:P286",
+  "budget": {
+    "episodes": 580,
+    "pool_writes_per_pass": 9873,
+    "queries_per_pass": 4970,
+    "latest_queries": 580,
+    "mean_pool_events": 17.02241379310345,
+    "max_pool_events": 30
+  }
+}
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [01:12<02:25, 72.68s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [02:23<01:11, 71.75s/it]Loading checkpoint shards: 100%|██████████| 3/3 [03:31<00:00, 69.93s/it]Loading checkpoint shards: 100%|██████████| 3/3 [03:31<00:00, 70.51s/it]
+The new embeddings will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+The new lm_head weights will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+[components] icae+checkpoint:/share/latent2/vcrm_icae/runs/architecture_v6_E3_train | load_seconds=302.4
+[shard 0/7] predicted: episodes=580 queries=4970 writes=9873 em=0.4233 e2e_em=0.4233 recall@1=1.0 wall=4581.3s
+[shard 0/7] oracle_pooled: episodes=580 queries=4970 writes=9873 em=0.4270 e2e_em=0.4270 recall@1=1.0 wall=4469.4s
+[shard 0/7] done: 2 pass, bundle -> probe/runs/p3_full/p3_full_bundle_s0_*.json

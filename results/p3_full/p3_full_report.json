@@ -1,0 +1,228 @@
+{
+  "tag": "p3_full",
+  "provenance": {
+    "git_commit": null,
+    "merged_utc": "2026-10-21T13:52:05Z",
+    "sources": {
+      "oracle_pooled": [
+        "probe/runs/p3_full/p3_full_bundle_s0_oracle_pooled.json",
+        "probe/runs/p3_full/p3_full_bundle_s1_oracle_pooled.json",
+        "probe/runs/p3_full/p3_full_bundle_s2_oracle_pooled.json",
+        "probe/runs/p3_full/p3_full_bundle_s3_oracle_pooled.json",
+        "probe/runs/p3_full/p3_full_bundle_s4_oracle_pooled.json",
+        "probe/runs/p3_full/p3_full_bundle_s5_oracle_pooled.json",
+        "probe/runs/p3_full/p3_full_bundle_s6_oracle_pooled.json"
+      ],
+      "predicted": [
+        "probe/runs/p3_full/p3_full_bundle_s0_predicted.json",
+        "probe/runs/p3_full/p3_full_bundle_s1_predicted.json",
+        "probe/runs/p3_full/p3_full_bundle_s2_predicted.json",
+        "probe/runs/p3_full/p3_full_bundle_s3_predicted.json",
+        "probe/runs/p3_full/p3_full_bundle_s4_predicted.json",
+        "probe/runs/p3_full/p3_full_bundle_s5_predicted.json",
+        "probe/runs/p3_full/p3_full_bundle_s6_predicted.json"
+      ]
+    },
+    "argv": [
+      "probe/run_auto_association_loss.py",
+      "--merge",
+      "--out",
+      "probe/runs/p3_full",
+      "--tag",
+      "p3_full",
+      "--modes",
+      "predicted,oracle_pooled"
+    ]
+  },
+  "protocol": {
+    "dataset": "templama_test",
+    "data_root": "/share/latent2/vcrm_icae/data/prepared",
+    "sample": "stride",
+    "sample_stride": 1,
+    "episodes_in_split": 4057,
+    "first_episode": "templama:test:Q100:P6",
+    "last_episode": "templama:test:Q995028:P286",
+    "limit": 4057,
+    "neighbours": 4,
+    "top_k": 5,
+    "time_mode": "window_end",
+    "recency_update": true,
+    "recency_min_confidence": 0.0,
+    "arch_exp": "E3",
+    "reader": "icae",
+    "components": "icae+checkpoint:/share/latent2/vcrm_icae/runs/architecture_v6_E3_train",
+    "shards": 7,
+    "budget": {
+      "episodes": 580,
+      "pool_writes_per_pass": 9873,
+      "queries_per_pass": 4970,
+      "latest_queries": 580,
+      "mean_pool_events": 17.02241379310345,
+      "max_pool_events": 30
+    },
+    "cost_note": "每个 pass 独立重建 store；池内 store 只含 1+neighbours 个 episode 的状态。budget 是本 shard 的实际写/读次数。"
+  },
+  "modes": {
+    "oracle_pooled": {
+      "mode": "oracle_pooled",
+      "reader": "icae",
+      "components": "icae+checkpoint:/share/latent2/vcrm_icae/runs/architecture_v6_E3_train",
+      "recency_update": true,
+      "episodes": 4057,
+      "queries": 34963,
+      "writes": 67720,
+      "wall_seconds": 31678.560464623384,
+      "decision_counts": {
+        "CREATE": 20285,
+        "UPDATE": 47435,
+        "DUPLICATE": 0,
+        "DEFER": 0
+      },
+      "update_source_counts": {
+        "explicit_replacement": 0,
+        "exclusive_superseded_by_recency": 0,
+        "snapshot_superseded": 0,
+        "not_update": 0
+      },
+      "state_pairwise": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 20664,
+        "fp": 0,
+        "fn": 0
+      },
+      "false_merge_rate": 0.0,
+      "false_split_rate": 0.0,
+      "pool_false_merge_rate": 0.0,
+      "pool_false_split_rate": 0.0,
+      "pool_pools": 4057,
+      "pool_pairs_cross_gold": 453811,
+      "query_state_recall_at_1": 1.0,
+      "query_state_recall_at_3": 1.0,
+      "query_state_recall_n": 34963,
+      "history_version_accuracy": 0.09503009124441857,
+      "history_version_accuracy_upper_bound_reason": "window_end_exceeds_all_event_times",
+      "em_conditional": 0.4575408288762406,
+      "f1_conditional": 0.5660936106349207,
+      "end_to_end_em": 0.4575408288762406,
+      "end_to_end_f1": 0.5660936106349207,
+      "answer_coverage": 1.0,
+      "no_state_match_rate": 0.0,
+      "mean_read_seconds": 0.39094628857654495,
+      "mean_read_latent_slots": 147.71375454051426,
+      "mean_write_seconds": 0.0,
+      "store_bytes_per_episode": 6783937.560759182,
+      "latest": {
+        "n": 4057,
+        "em_conditional": 0.8279516884397338,
+        "em_end_to_end": 0.8279516884397338,
+        "f1_conditional": 0.9200698657661098,
+        "version_accuracy": 0.27606605866403744,
+        "note": "em_conditional 只在 no_state_match=False 的 latest 行上算（会高估）；em_end_to_end 分母 = 全部 latest 行，是可与 oracle 对齐的口径。"
+      },
+      "latest_attribution": {
+        "n": 4057,
+        "association_ok": 4057,
+        "association_miss": 0,
+        "association_rate": 1.0,
+        "em_all": 0.8279516884397338,
+        "em_given_association_ok": 0.8279516884397338,
+        "version_accuracy_given_association_ok": 0.27606605866403744,
+        "em_given_version_ok": 0.8223214285714285,
+        "association_attributable_loss_upper": 0.0,
+        "note": "em_given_association_ok 是条件量；association_attributable_loss_upper = (1 - association_rate) * em_given_association_ok，表示\"关联全对且下游质量不变\"能补回的上限，不是逐题反事实。"
+      }
+    },
+    "predicted": {
+      "mode": "predicted",
+      "reader": "icae",
+      "components": "icae+checkpoint:/share/latent2/vcrm_icae/runs/architecture_v6_E3_train",
+      "recency_update": true,
+      "episodes": 4057,
+      "queries": 34963,
+      "writes": 67720,
+      "wall_seconds": 34530.073889003135,
+      "decision_counts": {
+        "CREATE": 4055,
+        "UPDATE": 8896,
+        "DUPLICATE": 564,
+        "DEFER": 3614
+      },
+      "update_source_counts": {
+        "explicit_replacement": 2,
+        "exclusive_superseded_by_recency": 3576,
+        "snapshot_superseded": 5318,
+        "not_update": 8233
+      },
+      "state_pairwise": {
+        "precision": 1.0,
+        "recall": 0.9998545384018619,
+        "f1": 0.9999272639107771,
+        "tp": 20621,
+        "fp": 0,
+        "fn": 3
+      },
+      "false_merge_rate": 0.0,
+      "false_split_rate": 0.0002467308166790032,
+      "pool_false_merge_rate": 0.0,
+      "pool_false_split_rate": 0.00014533053006888667,
+      "pool_pools": 4057,
+      "pool_pairs_cross_gold": 451978,
+      "query_state_recall_at_1": 1.0,
+      "query_state_recall_at_3": 1.0,
+      "query_state_recall_n": 34922,
+      "history_version_accuracy": 0.09621180206746816,
+      "history_version_accuracy_upper_bound_reason": "window_end_exceeds_all_event_times",
+      "em_conditional": 0.4536965426369912,
+      "f1_conditional": 0.5646928970290417,
+      "end_to_end_em": 0.45302176586677345,
+      "end_to_end_f1": 0.563853036872719,
+      "answer_coverage": 0.9985127134399222,
+      "no_state_match_rate": 0.0014872865600777966,
+      "mean_read_seconds": 0.3850288590791285,
+      "mean_read_latent_slots": 147.40148156622715,
+      "mean_write_seconds": 0.24514365954751208,
+      "store_bytes_per_episode": 6686072.228740449,
+      "latest": {
+        "n": 4057,
+        "em_conditional": 0.808736426456071,
+        "em_end_to_end": 0.8077397091446882,
+        "f1_conditional": 0.9053424989164122,
+        "version_accuracy": 0.2672754195459033,
+        "note": "em_conditional 只在 no_state_match=False 的 latest 行上算（会高估）；em_end_to_end 分母 = 全部 latest 行，是可与 oracle 对齐的口径。"
+      },
+      "latest_attribution": {
+        "n": 4057,
+        "association_ok": 4052,
+        "association_miss": 5,
+        "association_rate": 0.9987675622381069,
+        "em_all": 0.8077397091446882,
+        "em_given_association_ok": 0.808736426456071,
+        "version_accuracy_given_association_ok": 0.2672754195459033,
+        "em_given_version_ok": 0.8245614035087719,
+        "association_attributable_loss_upper": 0.000996717311382927,
+        "note": "em_given_association_ok 是条件量；association_attributable_loss_upper = (1 - association_rate) * em_given_association_ok，表示\"关联全对且下游质量不变\"能补回的上限，不是逐题反事实。"
+      }
+    }
+  },
+  "loss": {
+    "paired_against": "oracle_pooled（同池、同窗口口径、同读取路径，只换状态身份来源）",
+    "delta_latest_em_end_to_end": 0.02021197929504559,
+    "delta_latest_em_conditional": 0.019215261983662746,
+    "delta_end_to_end_em": 0.004519063009467139,
+    "delta_em_conditional": 0.0038442862392493726,
+    "delta_query_state_recall_at_1": 0.0,
+    "delta_answer_coverage": 0.001487286560077794,
+    "relative_loss_latest_em": 0.024412027389103887,
+    "predicted_association_attributable_loss_upper": 0.000996717311382927,
+    "note": "delta = oracle_pooled - predicted，正数 = 自动关联造成的损失。oracle_global 池结构不同（全部 episode 一个状态空间），只作第二参照，不参与 delta。"
+  },
+  "reading_notes": [
+    "predicted 是唯一可当自动关联证据的 pass；oracle_* 只是上界。",
+    "em/f1 为条件口径；跨 pass 比较请用 end_to_end_em / latest.em_end_to_end。",
+    "window_end 口径下 history_version_accuracy 结构性为 0，不作结论。",
+    "recency_update=on 时 UPDATE 才可能形成多版本；update_source_counts 里 exclusive_superseded_by_recency 的数量说明 rule5b 实际生效多少条。",
+    "stub reader 的 EM 无语言意义（plumbing_stub=True 时不得引用任何分数）。"
+  ]
+}
