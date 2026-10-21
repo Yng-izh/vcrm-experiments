@@ -256,6 +256,25 @@ class Metrics:
         fallback = [row for row in self.rows if row.get('hybrid_fallback')]
         em = sum(row['em'] for row in latent) / len(latent) if latent else 0.0
         f1_score = sum(row['f1'] for row in latent) / len(latent) if latent else 0.0
+
+        # 端到端（全查询分母）：上面的 em/f1 是条件口径（只在 no_state_match=False 的行上算），
+        # 关联失败又没作答的题被整体剔出分母，会系统性抬高自动关联的"成功率"。这里补一套
+        # 覆盖全部 queries 的指标：no_state_match 且无有效回答的题按 0 分计入分母。
+        # F2 约束不变：hybrid_fallback 行（parametric 回退，未经 latent 读取）在主表口径下
+        # 同样计 0，其自身得分仍单列在 parametric_fallback。
+        def _e2e(row: Mapping[str, Any], key: str) -> float:
+            if row['no_state_match'] and not str(row.get('answer') or '').strip():
+                return 0.0
+            if row.get('hybrid_fallback'):
+                return 0.0
+            return float(row[key])
+
+        end_to_end_em = (sum(_e2e(row, 'em') for row in self.rows) / len(self.rows)
+                         if self.rows else 0.0)
+        end_to_end_f1 = (sum(_e2e(row, 'f1') for row in self.rows) / len(self.rows)
+                         if self.rows else 0.0)
+        answer_coverage = (len(answered) / len(self.rows)) if self.rows else 0.0
+
         fallback_em = sum(row['em'] for row in fallback) / len(fallback) if fallback else None
         fallback_f1 = sum(row['f1'] for row in fallback) / len(fallback) if fallback else None
         history = [row for row in self.rows
@@ -314,7 +333,15 @@ class Metrics:
                                         / len(latest) if latest else None),
             'latest_version_n': len(latest),
             'em': em,
-            'metric_scope': 'em/f1 仅 latent 路径（hybrid_fallback=False）；parametric 回退单列，不混算',
+            'metric_scope': ('em/f1 为条件口径：仅 latent 路径（no_state_match=False 且 '
+                             'hybrid_fallback=False）；parametric 回退单列，不混算。'
+                             '端到端成功率请看 end_to_end_em/end_to_end_f1（分母=全部 queries）'),
+            'end_to_end_em': end_to_end_em,
+            'end_to_end_f1': end_to_end_f1,
+            'end_to_end_metric_scope': ('分母 = 全部 queries（含 no_state_match）；'
+                                        'no_state_match 且无有效回答按 0 分；'
+                                        'hybrid_fallback 行在主表口径下亦按 0 分'),
+            'answer_coverage': answer_coverage,
             'hybrid_fallback': bool(args.hybrid_fallback),
             'hybrid_fallback_count': len(fallback),
             'hybrid_fallback_rate': (len(fallback) / len(self.rows)) if self.rows else 0.0,
