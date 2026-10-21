@@ -528,6 +528,9 @@ def score_query(runtime: PredictedRuntime, episode: Mapping[str, Any],
         'f1': token_f1(prediction, answers) if answers else 0.0,
         'gold_type': gold_type,
         'gold_state': query.get('state_key'),          # 仅评估
+        # 金标状态映射到的主预测 state_id（仅评估）：没有它就无法把"关联错"与
+        # "版本选错/读取出错"分开，latest 损失分解依赖本字段。
+        'gold_state_id': gold_state_id,
         'gold_version_time': gold_version_time,        # 仅评估
         'recall_at_1': None if gold_state_id is None else int(
             bool(candidates[:1]) and candidates[0] == gold_state_id),
