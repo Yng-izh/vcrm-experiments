@@ -68,6 +68,18 @@ ATTRIBUTE_ALIASES: Dict[str, str] = {
     'alma mater': 'alma_mater',
     'occupation': 'occupation',
     'genre': 'genre',
+    # p3_100ep 暴露的真实句式：这些短语原先没有别名，会被 slug 成 head_coach 之外
+    # 的零散键（或被判 UNKNOWN），导致同一关系在写入侧和查询侧拿到不同属性键。
+    'head coach': 'head_coach',
+    'head coaches': 'head_coach',
+    'chair': 'chair',
+    'chairman': 'chair',
+    'chairperson': 'chair',
+    'member of': 'member_of',
+    'member': 'member_of',
+    'member of sports team': 'member_of_sports_team',
+    'sports team': 'member_of_sports_team',
+    'position held': 'position_held',
 }
 
 #: ---------------------------------------------------------------------------
@@ -87,12 +99,29 @@ CARDINALITY_EXCLUSIVE = frozenset({
     'head_of_state', 'country_of_citizenship', 'residence', 'place_of_birth',
     'date_of_birth', 'alma_mater', 'religion', 'gender', 'capital', 'currency',
     'official_language', 'leader', 'director', 'ceo', 'owner', 'parent_organization',
+    'head_coach', 'chair',
 })
 
 CARDINALITY_MULTI_VALUED = frozenset({
     'languages_spoken', 'children', 'award_received', 'member_of_sports_team',
     'cast_member', 'genre', 'field_of_work', 'notable_work', 'sibling',
     'participant', 'composer', 'screenwriter', 'author',
+})
+
+#: 年度快照可覆盖（time-scoped）属性：取值在某一年成立，后一年的同主体同属性快照
+#: 即视为对上一年的替代（UpdateResolver rule5c）。
+#:
+#: 这是 CARDINALITY_EXCLUSIVE 的**扩展集**，不是替代：EXCLUSIVE 属性仍走 rule5/rule5b
+#: （显式替代 / recency_update），口径不混。这里只收 rule5/5b 覆盖不到的两类：
+#:   1) 可能多值、但时间上互斥的关系（球队/组织成员、任职）；
+#:   2) 逐年快照量（population / area / largest_city）。
+#: 刻意**排除**累积型多值（children / award_received / genre / notable_work /
+#: sibling / field_of_work …）——累积关系不会被新快照替代，仍然 DEFER。
+SNAPSHOT_SUPERSEDES = frozenset({
+    'member_of', 'member_of_sports_team', 'member_of_political_party',
+    'head_coach', 'chair', 'coach', 'manager', 'chief_executive',
+    'population', 'area', 'largest_city', 'mayor', 'prime_minister',
+    'monarch', 'president',
 })
 
 #: 三档名称与可选策略。
@@ -745,6 +774,7 @@ __all__ = [
     'MULTI_VALUED_ATTRIBUTES',
     'PendingMerge',
     'SEMANTIC_DIMENSIONS',
+    'SNAPSHOT_SUPERSEDES',
     'StateIndex',
     'StateRecord',
     'StoreCommitError',

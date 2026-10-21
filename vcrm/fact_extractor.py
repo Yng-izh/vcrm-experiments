@@ -22,7 +22,12 @@ from typing import Any, Callable, Dict, List, Mapping, Optional, Sequence, Tuple
 
 from .data_views import PUBLIC_WRITE_KEYS, assert_no_oracle, assert_public_id_independent
 from .fact_schema import AtomicFact
-from .state_index import normalize_attribute, normalize_subject, normalize_text
+from .state_index import (
+    ATTRIBUTE_ALIASES,
+    normalize_attribute,
+    normalize_subject,
+    normalize_text,
+)
 
 #: 抽不出主体/属性时的哨兵键（非空，但语义上明确是「未知」）。
 UNRESOLVED_SUBJECT = '<unresolved:subject>'
@@ -44,24 +49,69 @@ _MONTHS = {
 _WS = re.compile(r'\s+')
 _LINE = re.compile(r'[^\n]+')
 _ROLE_PREFIX = re.compile(r'^\s*(?P<role>[A-Za-z][A-Za-z ._-]{0,23}?)\s*:\s*(?P<content>.+)$')
-_SENTENCE = re.compile(r'[^.!?]+[.!?]*')
+_SENTENCE_PUNCT = re.compile(r'[.!?]')
+#: 句号不算句末的缩写（首字母缩写/小数另行处理），否则 "Andrew Y. Ng" 会被拆碎。
+_ABBREVIATIONS = frozenset({
+    'mr', 'mrs', 'ms', 'dr', 'prof', 'sr', 'jr', 'st', 'inc', 'ltd', 'co', 'corp',
+    'vs', 'etc', 'no', 'dept', 'univ', 'approx', 'fig', 'al', 'est', 'ave', 'blvd', 'rd',
+})
 _TIME_PREFIX = re.compile(
     r'^\s*(?:in|during|as of|back in|on)\s+(?P<stamp>[^:,;]{2,32}?)\s*[:,]\s*', re.I)
 _COPULA = re.compile(
     r'\s+(?:is|was|are|were|became|becomes|has been|have been|had been)\s+', re.I)
 _POSSESSIVE = re.compile(r"^(?P<subject>.+?)['\u2019]s\s+(?P<attribute>.+)$")
-_INVERSE = re.compile(r'^(?:the\s+)?(?P<attribute>[a-z][a-z \-]*?)\s+of\s+(?P<owner>.+)$', re.I)
 _POSSESSIVE_PRONOUN = re.compile(
     r'^(?P<pronoun>his|her|hers|their|theirs|its|my|mine|our|ours|your|yours)\s+(?P<attribute>.+)$',
     re.I)
 
+#: 完整关系短语表（长短语优先）。反向句式必须先按短语匹配：
+#: "Thomas Menino is the head of the government of Boston" 要解析成
+#: (subject=Boston, attribute=head_of_government)，按第一个 of 切分会得到
+#: (subject="the government of Boston", attribute="head")，既错身份又让 resolver
+#: 把 head 当成未知属性、无法形成版本链。
+_INVERSE_PHRASES: Tuple[str, ...] = tuple(sorted(
+    set(ATTRIBUTE_ALIASES) | {
+        'head coach', 'chair', 'chairman', 'chairperson', 'member of',
+        'member of sports team', 'sports team', 'chief executive', 'managing director',
+    }, key=len, reverse=True))
+
+_INVERSE_PHRASE = re.compile(
+    r'^(?:the\s+)?(?P<attribute>'
+    + '|'.join(re.escape(phrase) for phrase in _INVERSE_PHRASES)
+    + r')\s+of\s+(?P<owner>.+)$', re.I)
+
 #: 动词模板 → 规范属性名（模板式属性规范化，与 relation id 无关）。
+#: 顺序即优先级；新补的条目对应 p3_100ep 里真实出现、但原先一个都没抽到的句式。
 _VERB_TEMPLATES: Tuple[Tuple[re.Pattern, str], ...] = (
     (re.compile(r'^(?P<subject>.+?)\s+(?:works at|works for|is employed by|joined)\s+(?P<value>.+)$', re.I), 'employer'),
     (re.compile(r'^(?P<subject>.+?)\s+(?:lives in|moved to|is based in|relocated to)\s+(?P<value>.+)$', re.I), 'residence'),
     (re.compile(r'^(?P<subject>.+?)\s+(?:is married to|got married to|married)\s+(?P<value>.+)$', re.I), 'spouse'),
     (re.compile(r'^(?P<subject>.+?)\s+(?:was born in|is from|comes from)\s+(?P<value>.+)$', re.I), 'place_of_birth'),
     (re.compile(r'^(?P<subject>.+?)\s+(?:studied at|graduated from)\s+(?P<value>.+)$', re.I), 'alma_mater'),
+    # "X plays for Y"（p3_100ep 中 22/100 条 latest 题）
+    (re.compile(r'^(?P<subject>.+?)\s+(?:plays for|played for|is playing for)\s+(?P<value>.+)$', re.I),
+     'member_of_sports_team'),
+    # "X holds the position of Y"（13/100）
+    # 刻意不含 "is the head of"：那类句子要走反向系表模板，主体是 of 后面的实体。
+    (re.compile(r'^(?P<subject>.+?)\s+(?:holds? the position of|held the position of|'
+                r'serves? as|served as)\s+(?P<value>.+)$', re.I),
+     'position_held'),
+    # "X attended Y"（3/100）
+    (re.compile(r'^(?P<subject>.+?)\s+attended\s+(?P<value>.+)$', re.I), 'alma_mater'),
+    # "X is owned by Y"（3/100）：值在右侧，主体在左侧
+    (re.compile(r'^(?P<subject>.+?)\s+(?:is owned by|was owned by)\s+(?P<value>.+)$', re.I), 'owner'),
+    # 成员关系：先匹配带 political party 的完整说法，再退回通用 member_of
+    (re.compile(r'^(?P<subject>.+?)\s+is a member of (?:the\s+)?(?P<value>.+?)\s+political party$', re.I),
+     'member_of_political_party'),
+    (re.compile(r'^(?P<subject>.+?)\s+(?:is a member of|became a member of)\s+(?P<value>.+)$', re.I),
+     'member_of'),
+    # 反向动词模板：head_coach / chair 属于**球队/机构**，主体在右侧、人在左侧。
+    # 按正向读会存成 (人, head_coach) → 球队，而查询侧要的是 (球队, head_coach)，
+    # 两侧身份永远对不上——这正是 "_X_ is the head coach of CLUB" 全部无状态的原因。
+    (re.compile(r'^(?P<value>.+?)\s+(?:is the head coach of|coaches|coached)\s+(?P<subject>.+)$', re.I),
+     'head_coach'),
+    (re.compile(r'^(?P<value>.+?)\s+(?:is the chair(?:man|person)? of|chairs|chaired)\s+(?P<subject>.+)$', re.I),
+     'chair'),
 )
 
 
@@ -70,7 +120,10 @@ _LEADING_VERB_TEMPLATES: Tuple[Tuple[re.Pattern, str], ...] = (
     (re.compile(r'^(?:works at|works for|lives in|moved to|is based in|relocated to)\s+(?P<value>.+)$', re.I), 'residence'),
     (re.compile(r'^(?:is married to|married)\s+(?P<value>.+)$', re.I), 'spouse'),
     (re.compile(r'^(?:was born in|is from|comes from)\s+(?P<value>.+)$', re.I), 'place_of_birth'),
-    (re.compile(r'^(?:studied at|graduated from)\s+(?P<value>.+)$', re.I), 'alma_mater'),
+    (re.compile(r'^(?:studied at|graduated from|attended)\s+(?P<value>.+)$', re.I), 'alma_mater'),
+    (re.compile(r'^(?:plays for|played for)\s+(?P<value>.+)$', re.I), 'member_of_sports_team'),
+    (re.compile(r'^(?:holds? the position of|serves? as)\s+(?P<value>.+)$', re.I), 'position_held'),
+    (re.compile(r'^(?:is a member of|became a member of)\s+(?P<value>.+)$', re.I), 'member_of'),
 )
 
 
@@ -180,6 +233,86 @@ def _is_pronoun(mention: str) -> bool:
     return key in PRONOUNS
 
 
+def _sentence_boundaries(text: str) -> List[int]:
+    """句末切分位置（切在标点之后）。
+
+    句号只在"前一个 token 不是人名首字母 / 缩写 / 小数"时才算句末，因此
+    `Andrew Y. Ng plays for X`、`U.S. Army`、`3.14` 都不会被切开；`!`/`?` 一律算句末。
+    点式缩写（`U.S.`）算句末：单字母但前面紧邻点号，说明它是缩写的结尾而不是人名首字母。
+    """
+    out: List[int] = []
+    for match in _SENTENCE_PUNCT.finditer(text):
+        index = match.start()
+        if text[index] != '.':
+            out.append(index + 1)
+            continue
+        start = index
+        while start > 0 and text[start - 1].isalnum():
+            start -= 1
+        token = text[start:index]
+        if not token:
+            out.append(index + 1)
+            continue
+        if len(token) == 1:
+            if start > 0 and text[start - 1] == '.':
+                out.append(index + 1)
+            continue
+        if token.isdigit():
+            if index + 1 < len(text) and text[index + 1].isdigit():
+                continue                                   # 小数（3.14）不是句末
+            out.append(index + 1)                          # "…in 1990. She …" 是句末
+            continue
+        if token.lower() in _ABBREVIATIONS:
+            continue
+        out.append(index + 1)
+    return out
+
+
+def _split_inverse(text: str) -> Optional[Tuple[str, str]]:
+    """未知关系短语的回退：按**最右**一个 " of " 切分 → (attribute, owner)。
+
+    按第一个 of 切分会把 "the head of the government of Boston" 拆成
+    (attribute="head", owner="the government of Boston")，主体和属性都错。
+    """
+    index = text.lower().rfind(' of ')
+    if index <= 0:
+        return None
+    attribute, owner = text[:index].strip(), text[index + 4:].strip()
+    if not attribute or not owner or not re.match(r'^[a-z]', attribute, re.I):
+        return None
+    return attribute, owner
+
+
+def split_copula(text: str) -> Optional[Tuple[str, str]]:
+    """按系表动词切成 (左侧, 右侧)；没有系表返回 None。"""
+    parts = _COPULA.split(text, maxsplit=1)
+    if len(parts) != 2:
+        return None
+    left, right = parts[0].strip(), parts[1].strip()
+    if not left or not right:
+        return None
+    return left, right
+
+
+def parse_inverse_relation(text: str) -> Optional[Tuple[str, str, float]]:
+    """把 "<关系短语> of <实体>" 解析成 (subject_text, attribute, confidence)。
+
+    写入侧（``_parse_clause`` 的反向系表分支）与查询侧（掩码落在主语位置）共用
+    这一份规范化：先按完整关系短语（长短语优先）匹配，再回退到最右 of 切分。
+    """
+    inverse = _INVERSE_PHRASE.match(text)
+    if inverse:
+        attribute = normalize_attribute(inverse.group('attribute'))
+        if attribute:
+            return _clean_surface(inverse.group('owner')), attribute, 0.8
+    split = _split_inverse(text)
+    if split is not None:
+        attribute = normalize_attribute(split[0])
+        if attribute:
+            return _clean_surface(split[1]), attribute, 0.75
+    return None
+
+
 class FactExtractor:
     """确定性事实抽取器（TempLAMA 单事实 + LongMemEval 多事实骨架）。
 
@@ -285,11 +418,15 @@ class FactExtractor:
         if not self.split_multi_fact:
             return [(text, 0, len(text))]
         out: List[Tuple[str, int, int]] = []
-        for match in _SENTENCE.finditer(text):
-            piece = match.group(0)
-            if not piece.strip():
-                continue
-            out.append((piece, match.start(), match.end()))
+        start = 0
+        for boundary in _sentence_boundaries(text):
+            piece = text[start:boundary]
+            if piece.strip():
+                out.append((piece, start, boundary))
+            start = boundary
+        tail = text[start:]
+        if tail.strip():
+            out.append((tail, start, len(text)))
         return out or [(text, 0, len(text))]
 
     def _iter_clauses(self, sentence: str, offset: int) -> List[Tuple[str, int, int]]:
@@ -402,12 +539,14 @@ class FactExtractor:
                 if subject and attribute and value:
                     return subject, attribute, value, 0.9, ('of_template',)
             # 3) 反向系表："Paris is the capital of France"
-            inverse = _INVERSE.match(right)
-            if inverse:
-                subject = self._resolve_subject(inverse.group('owner'), context)
-                attribute = normalize_attribute(inverse.group('attribute'))
+            #    关系短语与切分规则由 parse_inverse_relation 统一提供，查询侧共用同一份。
+            inverse = parse_inverse_relation(right)
+            if inverse is not None:
+                owner_text, attribute, confidence = inverse
+                subject = self._resolve_subject(owner_text, context)
                 if subject and attribute and left:
-                    return subject, attribute, _clean_surface(left), 0.75, ('inverse_template',)
+                    return (subject, attribute, _clean_surface(left), confidence,
+                            ('inverse_template',))
             # 3.5) 物主代词 + 属性："Her employer is Acme" → 主体由代词消解钩子给出
             possessive_pronoun = _POSSESSIVE_PRONOUN.match(left)
             if possessive_pronoun:
@@ -458,5 +597,7 @@ __all__ = [
     'UNKNOWN_TIME',
     'UNRESOLVED_ATTRIBUTE',
     'UNRESOLVED_SUBJECT',
+    'parse_inverse_relation',
     'parse_observed_at',
+    'split_copula',
 ]

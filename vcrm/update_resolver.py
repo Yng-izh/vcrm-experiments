@@ -8,6 +8,10 @@ from __future__ import annotations
 #   rule5  同主体同属性 + 单值排他属性 + 显式「替代」表达 -> UPDATE
 #   rule5b 同主体同属性 + 单值排他属性 + 新事实观察时间严格更晚 -> UPDATE
 #          （**显式策略开关** recency_update，默认 False；打开后才生效）
+#   rule5c 同主体同属性 + time-scoped 属性（SNAPSHOT_SUPERSEDES）+ 新事实是
+#          **带年份前缀的年度快照**且时间严格更晚 -> UPDATE
+#          （**显式策略开关** snapshot_update，默认 True；只对快照句生效，
+#           日常陈述不受影响，累积型多值属性如 children/award_received 永远 DEFER）
 #   rule6  多值 / 否定 / 冲突 / 不确定       -> DEFER（存独立待确认记录，不改 Current）
 #
 # rule5 与 rule5b 的 reason 前缀分开：'explicit_replacement:' 与
@@ -35,6 +39,7 @@ from .state_index import (
     CARDINALITY_POLICIES,
     EXCLUSIVE_ATTRIBUTES,
     MULTI_VALUED_ATTRIBUTES,
+    SNAPSHOT_SUPERSEDES,
     IndexCommitError,
     StateIndex,
     StateRecord,
@@ -54,6 +59,12 @@ REPLACEMENT_MARKERS = re.compile(
     r'changed\s+(?:to|from)|switched\s+to|updated\s+to|steps?\s+down|stepped\s+down|'
     r'resigned|took\s+over|is\s+the\s+new|became|becomes)\b', re.I)
 
+#: 年度快照语义：事实文本以显式时间前缀开头（"In 2016: ..." / "As of 2016, ..." / "2016: ..."）。
+#: rule5c 只对这类输入生效——它表达的是"2016 年的快照"而不是"日常陈述"。
+SNAPSHOT_PREFIX = re.compile(
+    r'^\s*(?:(?:in|during|as\s+of|back\s+in|on|by|for)\s+(?:19|20)\d{2}\b'
+    r'|(?:19|20)\d{2}\s*[:,])', re.I)
+
 #: 否定/撤回表达：一律 DEFER，不做覆盖也不做合并。
 NEGATION_MARKERS = re.compile(
     r"(?:\bnot\b|\bnever\b|\bno\s+longer\b|\bwithout\b|\bdenies\b|\bdenied\b|"
@@ -72,6 +83,7 @@ RULES: Dict[str, str] = {
     'rule4': 'value_equivalent_duplicate',
     'rule5': 'exclusive_attribute_explicit_replacement_update',
     'rule5b': 'exclusive_superseded_by_recency_update',
+    'rule5c': 'dated_snapshot_supersedes_time_scoped_attribute',
     'rule6': 'defer_pending_review',
 }
 
@@ -138,7 +150,8 @@ class UpdateResolver:
                  recency_confidence_floor: float = 0.5,
                  recency_confidence_ceiling: float = 0.85,
                  recency_gap_days_full: float = 365.0,
-                 recency_min_confidence: float = 0.0) -> None:
+                 recency_min_confidence: float = 0.0,
+                 snapshot_update: bool = True) -> None:
         if cardinality_policy not in CARDINALITY_POLICIES:
             raise ValueError(
                 f'unknown cardinality_policy {cardinality_policy!r}; expected {CARDINALITY_POLICIES}')
@@ -161,6 +174,9 @@ class UpdateResolver:
         self.recency_confidence_ceiling = float(recency_confidence_ceiling)
         self.recency_gap_days_full = float(recency_gap_days_full)
         self.recency_min_confidence = float(recency_min_confidence)
+        # rule5c 显式策略开关：只对"带年份前缀的年度快照"生效，默认开启；
+        # 置 False 即回到"非排他属性一律 DEFER"的旧行为。
+        self.snapshot_update = bool(snapshot_update)
 
     # -- 判定辅助 ---------------------------------------------------------
     @staticmethod
@@ -251,6 +267,37 @@ class UpdateResolver:
         return StateDecision('UPDATE', target.state_id, confidence,
                              f'exclusive_superseded_by_recency:{attribute}|cardinality={bucket}')
 
+    @staticmethod
+    def _is_dated_snapshot(fact: Any) -> bool:
+        """输入是否是一条"年度快照"（文本以显式年份前缀开头）。"""
+        return bool(SNAPSHOT_PREFIX.match(_fact_field(fact, 'text')))
+
+    def _snapshot_update(self, fact: Any, target: StateRecord,
+                         attribute: str, bucket: str) -> Optional[StateDecision]:
+        """rule5c：年度快照 + time-scoped 属性 + 新快照严格更晚 ⇒ 覆盖旧快照。
+
+        只处理 rule5/rule5b 覆盖不到的属性（SNAPSHOT_SUPERSEDES，见 state_index），
+        因此排他属性上的口径仍由 explicit_replacement / recency 统计，不混算。
+        返回 None 表示「本条不适用」，由调用方按原规则继续（通常是 DEFER）。
+        """
+        if not self.snapshot_update:
+            return None
+        if attribute not in SNAPSHOT_SUPERSEDES:
+            return None
+        if not self._is_dated_snapshot(fact):              # 日常陈述不按快照处理
+            return None
+        new_time = parse_timestamp(_fact_field(fact, 'observed_at'))
+        old_time = parse_timestamp(getattr(target, 'current_observed_at', ''))
+        if new_time is None or old_time is None:           # 不可解析 → 不猜
+            return None
+        if new_time <= old_time:                           # 相等或更早 → 不猜
+            return None
+        confidence = self._recency_confidence((new_time - old_time).total_seconds() / 86400.0)
+        if confidence < self.recency_min_confidence:       # 校准门槛未过 → 不猜
+            return None
+        return StateDecision('UPDATE', target.state_id, confidence,
+                             f'snapshot_superseded:{attribute}|cardinality={bucket}')
+
     # -- 主入口 -----------------------------------------------------------
     def resolve(self, new_fact: Any, candidates: Sequence[StateRecord],
                 state_index: StateIndex) -> StateDecision:
@@ -307,6 +354,14 @@ class UpdateResolver:
 
         attribute = normalize_attribute(_fact_field(new_fact, 'attribute'))
         bucket = self.cardinality_of(attribute)
+
+        # rule5c（年度快照覆盖）：带年份前缀的快照 + time-scoped 属性 + 严格更晚 → UPDATE。
+        # 放在基数门槛之前，因为成员关系这类属性本体上是 MULTI_VALUED，但在"逐年快照"
+        # 语义下同一年只能有一个取值；累积型多值不在 SNAPSHOT_SUPERSEDES 里，仍然 DEFER。
+        if attribute in SNAPSHOT_SUPERSEDES:
+            snapshot_decision = self._snapshot_update(new_fact, target, attribute, bucket)
+            if snapshot_decision is not None:
+                return snapshot_decision
 
         # rule6（多值属性）：第二个不同取值不能覆盖
         if bucket == 'MULTI_VALUED':
@@ -502,6 +557,7 @@ __all__ = [
     'NEGATION_MARKERS',
     'REPLACEMENT_MARKERS',
     'RULES',
+    'SNAPSHOT_PREFIX',
     'UNRESOLVED_ATTRIBUTES',
     'UNRESOLVED_SUBJECTS',
     'UpdateResolver',

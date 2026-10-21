@@ -96,7 +96,8 @@ EXTRA_BUCKETS: Sequence[str] = ('correct', 'abstention_unscored', 'no_gold')
 ALL_BUCKETS: Sequence[str] = ERROR_BUCKETS + EXTRA_BUCKETS
 #: UPDATE 来源分口径（reason 前缀，t15 契约）。
 UPDATE_SOURCE_PREFIXES: Sequence[str] = ('explicit_replacement',
-                                         'exclusive_superseded_by_recency')
+                                         'exclusive_superseded_by_recency',
+                                         'snapshot_superseded')
 
 
 # ---------------------------------------------------------------------------

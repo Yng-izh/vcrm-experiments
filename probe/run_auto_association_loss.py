@@ -74,7 +74,8 @@ EVAL_MODES = {'predicted': 'predicted_state', 'oracle_pooled': 'oracle_state',
               'oracle_global': 'oracle_state'}
 FORBIDDEN_PHYSICAL_GPUS = ('0', '1')      # 本工作区禁用设备
 DECISION_KEYS = ('CREATE', 'UPDATE', 'DUPLICATE', 'DEFER')
-UPDATE_SOURCE_KEYS = ('explicit_replacement', 'exclusive_superseded_by_recency', 'not_update')
+UPDATE_SOURCE_KEYS = ('explicit_replacement', 'exclusive_superseded_by_recency',
+                      'snapshot_superseded', 'not_update')
 
 
 # ---------------------------------------------------------------------------

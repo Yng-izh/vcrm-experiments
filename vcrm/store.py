@@ -285,9 +285,23 @@ class KeyframeStore:
             dropped.append(victim['id'])
         return dropped
 
-    def select_version(self, state, as_of=None):
-        entries = [e for e in self.entries if e['state'] == state and (not as_of or e['time'] <= as_of)]
-        return max(entries, key=lambda e: (e['time'], e['id']), default=None)
+    def select_version(self, state, as_of=None, *, allow_future_fallback: bool = False):
+        """按 as_of 取版本：as_of 之后写入的版本不可见。
+
+        as_of 之前一条版本都没有（该状态在 as_of 时点尚未出现）时返回 None；
+        ``allow_future_fallback=True`` 时改为返回最新版本，用于"查询窗口末端早于
+        该状态首个版本"的读取（TempLAMA 的 window_end 常早于最后一年）。
+        这种回退读的是 as_of 之后的版本，调用方必须用 version_after_target_time
+        单独标注、单独统计，不得与正常 as-of 读取混算。
+        """
+        entries = [e for e in self.entries if e['state'] == state]
+        visible = [e for e in entries if not as_of or e['time'] <= as_of]
+        if visible:
+            return max(visible, key=lambda e: (e['time'], e['id']))
+        if allow_future_fallback and entries:
+            known = [e for e in entries if e['time'] != 'unknown'] or entries
+            return max(known, key=lambda e: (e['time'], e['id']))
+        return None
 
     def bundle(self, selected, markers=None, slot_limit=None):
         pieces = []

@@ -20,11 +20,18 @@ from .fact_extractor import (
     UNRESOLVED_ATTRIBUTE,
     UNRESOLVED_SUBJECT,
     FactExtractor,
+    parse_inverse_relation,
+    split_copula,
 )
 from .fact_schema import AtomicFact, StateDecision
 from .index import SemanticIndex, inferred_as_of
 from .io import file_digest, read_json
-from .state_index import IndexCommitError, StateIndex, value_fingerprint
+from .state_index import (
+    IndexCommitError,
+    StateIndex,
+    normalize_text,
+    value_fingerprint,
+)
 from .state_router import StateRouter, cosine_similarity
 from .store import CurrentSnapshotStore, IncrementalCurrentStore, KeyframeStore
 from .streaming import SpanWriter
@@ -216,11 +223,38 @@ class QueryParser:
             {'id': QUERY_FACT_ID, 'text': text, 'time': UNKNOWN_TIME})
         for fact in result.facts:
             if fact.subject != UNRESOLVED_SUBJECT and fact.attribute != UNRESOLVED_ATTRIBUTE:
+                # 掩码落在主语位置时，正向读法会得到 subject=unknown 这种空身份；
+                # 先试反向读法（答案在主语、实体在宾语），拿不到再按原结果返回。
+                if normalize_text(fact.subject) == normalize_text(QUERY_PLACEHOLDER):
+                    inverted = self._inverse_mask_subject(question, text)
+                    if inverted is not None:
+                        return inverted
                 return {'resolved': True, 'question': question,
                         'subject': fact.subject, 'attribute': fact.attribute, 'reason': ''}
         return {'resolved': False, 'question': question,
                 'subject': UNRESOLVED_SUBJECT, 'attribute': UNRESOLVED_ATTRIBUTE,
                 'reason': 'unresolved_identity'}
+
+    @staticmethod
+    def _inverse_mask_subject(question: str, masked: str) -> Optional[Dict[str, Any]]:
+        """掩码落在主语位置时的反向读法。
+
+        TempLAMA 有一部分关系是反着写的："_X_ is the head coach of CLUB"——答案是主语，
+        实体在宾语位置。正向模板会把掩码当成 subject，状态身份变成 unknown，候选池里
+        永远找不到。这里在系表右侧按**写入侧同一份**关系短语规则取 (subject, attribute)，
+        答案仍然落在掩码位置。
+        """
+        parts = split_copula(masked)
+        if parts is None:
+            return None
+        parsed = parse_inverse_relation(parts[1])
+        if parsed is None:
+            return None
+        subject, attribute, _ = parsed
+        if not subject or not attribute:
+            return None
+        return {'resolved': True, 'question': question, 'subject': subject,
+                'attribute': attribute, 'reason': 'inverse_mask_subject'}
 
 
 def _reader_cfg(reader: Any) -> Mapping[str, Any]:
@@ -242,7 +276,7 @@ class PredictedRuntime:
                  query_parser: Optional[QueryParser] = None,
                  time_mode: str = 'window_end', allow_as_of: bool = False,
                  hybrid_fallback: bool = False, defer_store_memory: bool = False,
-                 top_k: int = 5) -> None:
+                 top_k: int = 5, as_of_future_fallback: bool = True) -> None:
         if time_mode not in TIME_MODES:
             raise ValueError(f'time_mode must be one of {TIME_MODES}, got {time_mode!r}')
         if time_mode == 'as_of' and not allow_as_of:
@@ -264,6 +298,10 @@ class PredictedRuntime:
         self.query_parser = query_parser or QueryParser()
         self.time_mode = time_mode
         self.hybrid_fallback = bool(hybrid_fallback)
+        # as-of 可见性：查询时刻早于该状态的全部版本时（TempLAMA 的 window_end 常早于
+        # 最后一年），仍然读出最新版本，而不是当成"无状态"。这类读取会在结果里带
+        # version_after_target_time=True，必须单独分口径统计。
+        self.as_of_future_fallback = bool(as_of_future_fallback)
         # DEFER 的可选能力：把待确认事实的原始 full memory 也写进 store.pending。
         # 默认 False —— 未确认取值不进 latent 读取路径；打开后每条 pending 多占
         # 128 x 4096 FP16 ≈ 1MB，且 store.pending 永不参与 select_version/bundle。
@@ -477,15 +515,25 @@ class PredictedRuntime:
                     'similarity': cosine_similarity(semantic_key, record.semantic_key)}
                    for rank, record in enumerate(candidates, start=1)]
         timings['retrieve_seconds'] = time.perf_counter() - started
+        # 语义相似 ≠ 状态身份相同：候选池刻意保留「同属性、不同主体」的状态（stage1
+        # 的硬过滤口径），所以读取前必须核对规范化后的 (subject, attribute)。
+        # 不加这一步就会从别的实体的状态里读出答案，而且这种错误不会体现在召回里。
+        identity_matched = [record for record in candidates
+                            if record.matches_subject(fact.subject)
+                            and record.matches_attribute(fact.attribute)]
         chosen, selected = None, None
-        for record in candidates:
+        for record in identity_matched:
             # target_time is None → 无时间约束 → 最新可见版本；绝不补其它时间字段。
-            selected = self.store.select_version(record.state_id, target_time)
+            selected = self.store.select_version(
+                record.state_id, target_time,
+                allow_future_fallback=self.as_of_future_fallback)
             if selected is not None:
                 chosen = record
                 break
         if selected is None:
             result = base | {'answer': '', 'state_id': None, 'candidates': ranking,
+                             'identity_matched_state_ids':
+                                 [record.state_id for record in identity_matched],
                              'no_state_match': True, 'selected_version_id': None,
                              'version_role': None, 'timings': timings}
             if self.hybrid_fallback:
@@ -498,7 +546,10 @@ class PredictedRuntime:
         read = self.read_state(chosen.state_id, view, target_time=target_time,
                                selected=selected, reader_query=reader_query)
         timings.update(read.pop('timings', {}))
-        return base | {'candidates': ranking, 'timings': timings} | read
+        return base | {'candidates': ranking,
+                       'identity_matched_state_ids':
+                           [record.state_id for record in identity_matched],
+                       'timings': timings} | read
 
     def read_state(self, state_id: str, view: Mapping[str, Any], *,
                    target_time: Optional[str] = None,
@@ -514,7 +565,9 @@ class PredictedRuntime:
         if reader_query is None:
             reader_query = self._reader_query(view)
         if selected is None:
-            selected = self.store.select_version(state_id, target_time)
+            selected = self.store.select_version(
+                state_id, target_time,
+                allow_future_fallback=self.as_of_future_fallback)
         if selected is None:
             return {'answer': '', 'state_id': state_id, 'no_state_match': True,
                     'selected_version_id': None, 'version_role': None,
@@ -536,6 +589,11 @@ class PredictedRuntime:
                 'no_state_match': False,
                 'selected_version_id': selected['id'],
                 'selected_version_time': selected['time'],
+                # as-of 回退读取：读到的版本晚于查询时刻。单独分口径，不与正常读取混算。
+                'version_after_target_time': bool(
+                    target_time and target_time != 'unknown'
+                    and selected['time'] != 'unknown'
+                    and selected['time'] > target_time),
                 'version_role': 'current' if selected is current else 'historical',
                 'bundle_version_ids': [entry['id'] for entry in entries],
                 'read_latent_slots': result.get('read_latent_slots', 0),

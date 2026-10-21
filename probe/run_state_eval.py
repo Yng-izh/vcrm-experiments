@@ -64,7 +64,8 @@ MODES = ('oracle_state', 'predicted_state', 'global_e2e')
 _TOKEN = re.compile(r'[a-z]+')
 _STOPWORDS = frozenset('a an the is are was were of in on at to for and or it that '
                        'this with by as from'.split())
-UPDATE_SOURCE_PREFIXES = ('explicit_replacement', 'exclusive_superseded_by_recency')
+UPDATE_SOURCE_PREFIXES = ('explicit_replacement', 'exclusive_superseded_by_recency',
+                          'snapshot_superseded')
 
 
 # ---------------------------------------------------------------------------
@@ -521,6 +522,8 @@ def score_query(runtime: PredictedRuntime, episode: Mapping[str, Any],
         'selected_version_id': result.get('selected_version_id'),
         'selected_version_time': selected_time,
         'version_role': result.get('version_role'),
+        # as-of 回退读取标记：True = 读到的版本晚于查询时刻（单独分口径）。
+        'version_after_target_time': bool(result.get('version_after_target_time')),
         'answer': prediction,
         'em': exact(prediction, answers) if answers else 0,
         'hybrid_fallback': bool(result.get('hybrid_fallback')),
