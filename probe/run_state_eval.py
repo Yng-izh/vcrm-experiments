@@ -167,6 +167,12 @@ class Metrics:
         self.false_merged_states = 0
         self.gold_states = 0
         self.false_split_states = 0
+        # 混合池合并诊断（与上面的目标 episode 口径分开累计，见 add_pool_facts）
+        self.pool_pools = 0
+        self.pool_cross_gold_pairs = 0
+        self.pool_merged_pairs = 0
+        self.pool_skipped = 0
+        self.pool_merged_triples: set = set()
         self.time_source: Counter = Counter()
         self.decisions: Counter = Counter()
         self.update_sources: Counter = Counter()
@@ -205,6 +211,32 @@ class Metrics:
         self.false_merged_states += sum(1 for golds in by_state.values() if len(golds) > 1)
         self.gold_states += len(by_gold)
         self.false_split_states += sum(1 for states in by_gold.values() if len(states) > 1)
+
+    def add_pool_facts(self, facts: Sequence[Mapping[str, Any]]) -> None:
+        """混合池合并诊断：一次传入**整个池**的事实（predicted_state = 目标 + 邻近 episode）。
+
+        与 add_facts() 的差别：add_facts() 在 predicted_state 里只收到目标 episode 的事实，
+        "目标事实 A 与邻近事实 B 被错误合到同一预测状态"这类跨 episode 错误合并看不见。
+        这里对池内事实两两配对，统计"跨金标状态却共享同一预测 state_id"的对。
+
+        口径说明：predicted_state 每个 episode 建一个池，池间会重叠（同一邻近 episode 出现在
+        多个池里），所以 pairs_* 是按池累计的绝对值，不得当作独立样本数；比率
+        （false_merge_rate）不受重叠影响。跨池去重口径另给
+        merged_cross_gold_state_triples = {(金标A, 金标B, 预测state)} 组合数，与池划分无关。
+        """
+        usable = [f for f in facts if f.get('state_id') and f.get('gold')]
+        self.pool_skipped += len(facts) - len(usable)   # DEFER 等无 state/gold 的事实
+        self.pool_pools += 1
+        for i in range(len(usable)):
+            for j in range(i + 1, len(usable)):
+                left, right = usable[i], usable[j]
+                if left['gold'] == right['gold']:
+                    continue                            # 只统计跨金标状态的对
+                self.pool_cross_gold_pairs += 1
+                if left['state_id'] == right['state_id']:
+                    self.pool_merged_pairs += 1
+                    golds = tuple(sorted((str(left['gold']), str(right['gold']))))
+                    self.pool_merged_triples.add(golds + (str(left['state_id']),))
 
     def add_decisions(self, decisions: Iterable[Mapping[str, Any]],
                       only_fact_ids: Optional[Iterable[str]] = None) -> None:
@@ -302,6 +334,23 @@ class Metrics:
             'writes': self.writes,
             'state_pairwise': {'precision': precision, 'recall': recall, 'f1': f1,
                                'tp': self.tp, 'fp': self.fp, 'fn': self.fn},
+            'state_pairwise_scope': ('目标 episode 事实口径：predicted_state 模式下只喂目标 '
+                                     'episode 的事实，不含邻近 episode；下面的 '
+                                     'false_merge_rate/false_split_rate 同此范围。'
+                                     '跨 episode 的错误合并看 pool_merge_diagnostic'),
+            'pool_merge_diagnostic': {
+                'scope': ('混合池内全事实两两配对（predicted_state = 目标 + 邻近 episode），'
+                          '只统计跨金标状态的对；池间重叠按池累计，比率有效、绝对值非独立样本'),
+                'pools': self.pool_pools,
+                'pairs_cross_gold': self.pool_cross_gold_pairs,
+                'pairs_false_merged': self.pool_merged_pairs,
+                'false_merge_rate': (self.pool_merged_pairs / self.pool_cross_gold_pairs
+                                     if self.pool_cross_gold_pairs else None),
+                'merged_cross_gold_state_triples': len(self.pool_merged_triples),
+                'facts_skipped_no_state_or_gold': self.pool_skipped,
+                'note': ('目标 episode 口径的 false_merge_rate 无法证明"不混淆不同事实"；'
+                         '该结论必须引用本诊断。global_e2e 的池 = 全部事实，与本口径一致。'),
+            },
             'false_merge_rate': (self.false_merged_states / self.pred_states
                                  if self.pred_states else 0.0),
             'false_split_rate': (self.false_split_states / self.gold_states
@@ -513,6 +562,8 @@ def run_predicted_state(args, episodes, components) -> Metrics:
                 runtime, episode, query, None, result, gold_states, args,
                 diagnostic_read(runtime, result.get('state_id'), query, window_end, args)))
         own = [fact for fact in facts if fact['episode'] == episode['id']]
+        # 目标 episode 口径（原有指标，保留）+ 整池口径（跨 episode 合并诊断）
+        metrics.add_pool_facts(facts)
         metrics.add_facts(own)
         metrics.add_decisions(runtime.decisions, {fact['fact_id'] for fact in own})
         metrics.add_store(runtime.store)
@@ -537,6 +588,7 @@ def run_global_e2e(args, episodes, components) -> Metrics:
             metrics.add_row(score_query(
                 runtime, episode, query, None, result, gold_states, args,
                 diagnostic_read(runtime, result.get('state_id'), query, window_end, args)))
+    metrics.add_pool_facts(facts)      # 池 = 全部事实，与 add_facts 同口径
     metrics.add_facts(facts)
     metrics.add_decisions(runtime.decisions)
     metrics.add_store(runtime.store)
@@ -580,6 +632,7 @@ def run_oracle_state(args, episodes, components) -> Metrics:
             metrics.writes += 1
             oracle_facts.append({'fact_id': view['id'], 'state_id': state_id, 'gold': gold,
                                  'episode': episode['id'], 'decision': decision.action})
+    metrics.add_pool_facts(oracle_facts)   # oracle 按金标建状态，跨金标合并率应为 0
     metrics.add_facts(oracle_facts)
     for episode in episodes:
         window_end = window_end_of(episode)
