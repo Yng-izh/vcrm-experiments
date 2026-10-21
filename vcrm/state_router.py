@@ -151,19 +151,30 @@ def retrieve_candidates(fact: Any, state_index: StateIndex, top_k: int = 5, *,
                         ranker: Optional[Ranker] = None,
                         allow_lexical_subject_fallback: bool = True,
                         min_lexical_overlap: float = 0.6) -> List[StateRecord]:
-    """两阶段候选检索：先硬过滤，再用语义键余弦辅助排序，返回 top_k 条。"""
+    """两阶段候选检索：先硬过滤，再用语义键余弦辅助排序，返回 top_k 条。
+
+    精确身份（subject_key, attribute_key 完全相同）命中时**无条件进入候选并排在最前**：
+    候选拥挤时纯语义排序可能把它挤出 top_k，UpdateResolver 只看到近似候选就会误判
+    CREATE，而 StateIndex.build_record 禁止重复创建同一身份 → 写入直接抛错。剩余名额
+    仍按原有语义排序取得，检索架构不变。
+    """
     if not isinstance(state_index, StateIndex):
         raise TypeError('retrieve_candidates expects a StateIndex')
     if not isinstance(top_k, int) or isinstance(top_k, bool) or top_k < 1:
         raise ValueError(f'top_k must be a positive int, got {top_k!r}')
+    exact = state_index.find(_fact_field(fact, 'subject'), _fact_field(fact, 'attribute'))
     pool = stage1_filter(fact, state_index,
                          allow_lexical_subject_fallback=allow_lexical_subject_fallback,
                          min_lexical_overlap=min_lexical_overlap)
     if not pool:
-        return []
-    ranked = stage2_rank(fact, pool, semantic_key=semantic_key,
-                         semantic_key_fn=semantic_key_fn, ranker=ranker)
-    return [record for _, record in ranked[:top_k]]
+        return [exact] if exact is not None else []
+    ranked = [record for _, record in stage2_rank(
+        fact, pool, semantic_key=semantic_key,
+        semantic_key_fn=semantic_key_fn, ranker=ranker)]
+    if exact is None:
+        return ranked[:top_k]
+    return [exact] + [record for record in ranked
+                      if record.state_id != exact.state_id][:max(0, top_k - 1)]
 
 
 def route(fact: Any, state_index: StateIndex, resolver: Any, top_k: int = 5, **kwargs: Any) -> StateDecision:

@@ -14,6 +14,7 @@ from vcrm.state_router import (
     retrieve_candidates,
     route,
     stage1_filter,
+    stage2_rank,
 )
 from vcrm.update_resolver import UpdateResolver
 
@@ -69,11 +70,13 @@ class RetrieveCandidatesTest(unittest.TestCase):
         self.assertEqual(len(retrieve_candidates(self.fact, self.index, top_k=2)), 2)
 
     def test_semantic_key_orders_but_does_not_decide(self):
-        # 故意让「不同主体同属性」的语义键更接近，排序会把它顶到前面
+        # 故意让「不同主体同属性」的语义键更接近：近似匹配内部按语义排序，但精确身份
+        # (france, capital) 必须仍排最前（否则候选拥挤时会被 top_k 挤掉）
         fact_key = unit_key(2)  # 与 Germany/capital 的键完全一致
         candidates = retrieve_candidates(self.fact, self.index, top_k=5, semantic_key=fact_key)
         self.assertEqual(candidates[0].attribute_key, 'capital')
-        self.assertEqual(candidates[0].subject_key, 'germany')
+        self.assertEqual(candidates[0].subject_key, 'france')     # 精确身份优先
+        self.assertEqual(candidates[1].subject_key, 'germany')    # 近似候选按语义排序
         # 但决策仍然只能落到 France/capital：主体不同的候选必须被拒绝合并
         resolver = UpdateResolver()
         decision = route(self.fact, self.index, resolver, top_k=5, semantic_key=fact_key)
@@ -122,6 +125,55 @@ class RetrieveCandidatesTest(unittest.TestCase):
         self.assertAlmostEqual(cosine_similarity(unit_key(0), unit_key(0)), 1.0)
         self.assertAlmostEqual(cosine_similarity(unit_key(0), unit_key(1)), 0.0)
         self.assertIsNone(cosine_similarity(None, unit_key(0)))
+
+
+class CrowdedCandidateTest(unittest.TestCase):
+    """top_k 候选拥挤：精确身份必须无条件进入候选且排最前。
+
+    反例路径（可从代码直接推出）：纯语义排序把精确身份挤出 top_k → UpdateResolver 只看到
+    近似候选 → 误判 CREATE → StateIndex.build_record 因身份重复抛错，写入失败。
+    """
+
+    def crowded(self):
+        index = StateIndex()
+        correct = index.add_keys('France', 'capital', 'Paris', semantic_key=unit_key(0))
+        for i in range(6):                       # 同主体、不同属性、语义极相似的干扰状态
+            index.add_keys('France', f'distractor_{i}', f'x{i}', semantic_key=unit_key(1))
+        return index, correct
+
+    def fact(self):
+        return make_fact('France', 'capital', 'Lyon',
+                         text="France's capital is now Lyon",
+                         observed_at='2021-01-01T00:00:00', fact_id='fact_000099')
+
+    def test_exact_identity_survives_crowded_top_k(self):
+        index, correct = self.crowded()
+        candidates = retrieve_candidates(self.fact(), index, top_k=5,
+                                         semantic_key=unit_key(1))
+        self.assertEqual(len(candidates), 5)
+        self.assertEqual(candidates[0].state_id, correct.state_id)
+        self.assertEqual(sum(1 for r in candidates if r.state_id == correct.state_id), 1)
+
+    def test_semantic_only_truncation_would_lose_it(self):
+        # 反例固化：去掉精确身份保障后，纯语义 top_k 里没有正确状态，写入必然报错
+        index, correct = self.crowded()
+        fact = self.fact()
+        ranked = stage2_rank(fact, stage1_filter(fact, index), semantic_key=unit_key(1))
+        truncated = [record for _, record in ranked[:5]]
+        self.assertNotIn(correct.state_id, [r.state_id for r in truncated])
+        self.assertEqual(UpdateResolver().resolve(fact, truncated, index).action, 'CREATE')
+        with self.assertRaises(ValueError):
+            index.build_record(fact)
+
+    def test_update_succeeds_with_crowded_candidates(self):
+        index, correct = self.crowded()
+        fact = self.fact()
+        decision = route(fact, index, UpdateResolver(), top_k=5, semantic_key=unit_key(1))
+        self.assertEqual(decision.action, 'UPDATE')
+        self.assertEqual(decision.state_id, correct.state_id)
+        record = index.commit(decision.state_id, fact.id, observed_at=fact.observed_at)
+        self.assertEqual(record.current_version_id, fact.id)
+        self.assertEqual(record.current_observed_at, fact.observed_at)
 
 
 class RouterClassTest(unittest.TestCase):
