@@ -173,6 +173,9 @@ class Metrics:
         self.pool_merged_pairs = 0
         self.pool_skipped = 0
         self.pool_merged_triples: set = set()
+        self.pool_same_gold_pairs = 0
+        self.pool_split_pairs = 0
+        self.pool_split_triples: set = set()
         self.time_source: Counter = Counter()
         self.decisions: Counter = Counter()
         self.update_sources: Counter = Counter()
@@ -217,7 +220,8 @@ class Metrics:
 
         与 add_facts() 的差别：add_facts() 在 predicted_state 里只收到目标 episode 的事实，
         "目标事实 A 与邻近事实 B 被错误合到同一预测状态"这类跨 episode 错误合并看不见。
-        这里对池内事实两两配对，统计"跨金标状态却共享同一预测 state_id"的对。
+        这里对池内事实两两配对，统计"跨金标状态却共享同一预测 state_id"的对（错误合并），
+        以及对称的"同一金标状态却落到不同预测 state_id"的对（错误拆分）。
 
         口径说明：predicted_state 每个 episode 建一个池，池间会重叠（同一邻近 episode 出现在
         多个池里），所以 pairs_* 是按池累计的绝对值，不得当作独立样本数；比率
@@ -231,7 +235,13 @@ class Metrics:
             for j in range(i + 1, len(usable)):
                 left, right = usable[i], usable[j]
                 if left['gold'] == right['gold']:
-                    continue                            # 只统计跨金标状态的对
+                    # 同一金标状态却落到不同预测状态 = 错误拆分（与错误合并对称的漏报）
+                    self.pool_same_gold_pairs += 1
+                    if left['state_id'] != right['state_id']:
+                        self.pool_split_pairs += 1
+                        states = tuple(sorted((str(left['state_id']), str(right['state_id']))))
+                        self.pool_split_triples.add((str(left['gold']),) + states)
+                    continue                            # 跨金标对只看下面的分支
                 self.pool_cross_gold_pairs += 1
                 if left['state_id'] == right['state_id']:
                     self.pool_merged_pairs += 1
@@ -350,6 +360,16 @@ class Metrics:
                 'facts_skipped_no_state_or_gold': self.pool_skipped,
                 'note': ('目标 episode 口径的 false_merge_rate 无法证明"不混淆不同事实"；'
                          '该结论必须引用本诊断。global_e2e 的池 = 全部事实，与本口径一致。'),
+            },
+            'pool_split_diagnostic': {
+                'scope': ('与 pool_merge_diagnostic 对称：池内同一金标状态却落到不同预测 '
+                          'state_id 的对；池间重叠按池累计，比率有效、绝对值非独立样本'),
+                'pairs_same_gold': self.pool_same_gold_pairs,
+                'pairs_false_split': self.pool_split_pairs,
+                'false_split_rate': (self.pool_split_pairs / self.pool_same_gold_pairs
+                                     if self.pool_same_gold_pairs else None),
+                'split_state_triples': len(self.pool_split_triples),
+                'note': '目标 episode 口径的 false_split_rate 同样漏掉跨 episode 的拆分。',
             },
             'false_merge_rate': (self.false_merged_states / self.pred_states
                                  if self.pred_states else 0.0),
