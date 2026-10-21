@@ -1,0 +1,111 @@
+{
+ "tag": "ours_v6",
+ "arch": "architecture_v6/E3",
+ "protocol": "csr_v1",
+ "n_rows": 34963,
+ "merged_md5": "59d4d16e941e233ceb2b4649ae32177e",
+ "checkpoint": "runs/architecture_v6_E3_train",
+ "eval_config": "runs/architecture_v6_E3_val/manifest.json",
+ "codec_value_path": "full",
+ "route": {
+  "latent": 33085,
+  "fallback_text": 1878,
+  "latent_rate": 0.9463,
+  "fallback_rate": 0.0537,
+  "fallback_scope": "episode",
+  "fallback_corpus": "full_text",
+  "fallback_events_out_of_episode": 0
+ },
+ "overall": {
+  "n": 34963,
+  "em": 0.8512,
+  "f1": 0.9346
+ },
+ "hist": {
+  "n": 30906,
+  "em": 0.8527,
+  "f1": 0.9353
+ },
+ "latest": {
+  "n": 4057,
+  "em": 0.8398,
+  "f1": 0.9295
+ },
+ "conflict": {
+  "n": 34407,
+  "em": 0.8603,
+  "f1": 0.938
+ },
+ "latent_only": {
+  "n": 33085,
+  "em": 0.8677,
+  "f1": 0.9444,
+  "hist": {
+   "n": 29226,
+   "em": 0.8683,
+   "f1": 0.9444
+  },
+  "latest": {
+   "n": 3859,
+   "em": 0.8634,
+   "f1": 0.9451
+  },
+  "conflict": {
+   "n": 32564,
+   "em": 0.8766,
+   "f1": 0.9479
+  }
+ },
+ "fallback_only": {
+  "n": 1878,
+  "em": 0.5612,
+  "f1": 0.7615,
+  "hist": {
+   "n": 1680,
+   "em": 0.5827,
+   "f1": 0.7774
+  },
+  "latest": {
+   "n": 198,
+   "em": 0.3788,
+   "f1": 0.6266
+  },
+  "conflict": {
+   "n": 1843,
+   "em": 0.5719,
+   "f1": 0.7635
+  }
+ },
+ "latest_latent_is_current_all_true": true,
+ "paired_vs_c1": {
+  "n": 34963,
+  "ours_em": 0.8512,
+  "ours_f1": 0.9346,
+  "c1_em": 0.3906,
+  "c1_f1": 0.6003,
+  "f1_win": 19802,
+  "f1_loss": 1919,
+  "f1_tie": 13242
+ },
+ "efficiency": {
+  "mean_prompt_tokens": 203.02,
+  "mean_read_seconds": 0.3647
+ },
+ "gpus": [
+  3,
+  9
+ ],
+ "shards": 2,
+ "wall_clock_hours": 9.2,
+ "known_issues": [
+  "2 rows with empty extracted_answer (Q4961400_P54_2019/2020, fallback)",
+  "leak audit pending before citing EM 0.85 as final",
+  "architecture_v6_E3_test has only 172 episodes; E3 test scores not citable"
+ ],
+ "superseded": {
+  "tag": "ours_full (C16)",
+  "overall_em": 0.4946,
+  "overall_f1": 0.6363,
+  "md5": "95985bb3b572f43bd881be4d39d0ec62"
+ }
+}

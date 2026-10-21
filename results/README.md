@@ -1,5 +1,15 @@
 # Completed Experiment Artifacts
 
+## csr_v1 controlled state routing (latest)
+
+| File | Contents |
+|---|---|
+| `full_test_report.md` | Five-method frozen table (34,963 test queries): Ours (v6/E3) 0.8512 EM, C1 0.3906, C3 0.3624, C4 0.2504, C2 0.1123 |
+| `ours_v6_summary.json` | Machine-readable Ours v6/E3 summary incl. latent-vs-fallback split |
+| `ours_protocol_split.md` | Pure-latent vs text-fallback split + protocol-consistency fix record |
+| `smoke20_report.md` | Pre-full-run gate report (20 pinned qids, 3 methods) |
+| `BACKUP_PATHS_20261020.txt` | Off-site hidden backup locations of the project tree |
+
 The latest ICAE C16/D16 results are under `icae_aligned_v3/`; see
 [`icae_aligned_v3/README.zh.md`](icae_aligned_v3/README.zh.md) for the protocol,
 scores, limitations, and source snapshot. The fixed 481-query diagnostic gives

@@ -1,8 +1,10 @@
 # PROTOCOL_CSR_V1 — Controlled State Routing rev1 (frozen definition)
 
 Protocol ID: `csr_v1` (Controlled State Routing rev1).
-Status: code changes complete + dryrun; **no experiments run yet** under this
-protocol. All pre-`csr_v1` results are SUPERSEDED (see below).
+Status: **complete and frozen.** Code changes done, gate passed, and all five
+methods (C1/C2/C3/C4/Ours) have full 34,963-query test runs under this
+protocol. See `results/full_test_report.md` for the frozen five-method table.
+All pre-`csr_v1` results are SUPERSEDED (see below).
 
 ## 1. Definition
 
@@ -82,4 +84,17 @@ are left untouched; all new runs write to separate `runs_csr_v1/` directories.
 3. **Full run**: execute the full official test runs under csr_v1 in the
    dedicated `runs_csr_v1/` output directories; freeze results.
 
-No experiment has been executed yet (code changes + dryrun only).
+**Status of the three steps: all executed.**
+
+1. Validation batch: smoke20 (20 pinned qids, `runs_csr_v1_meta/smoke20_qids.json`) plus the
+   481-query diagnostic — see `results/smoke20_report.md`.
+2. Gate: passed (protocol fields present, conflict flags consistent, as_of injection
+   verified, episode-scoped retrieval verified, superseded dirs untouched).
+3. Full run: C1/C2/C3 (8 shards), C4 (6 shards), Ours (8 shards on C16, re-run on
+   architecture v6/E3 with 2 shards) — 34,963 rows each, frozen in the dedicated
+   `runs_csr_v1/` directories. Ours rows live in `probe/runs/`.
+
+Post-freeze correction (2026-10-21): the Ours `no_association` fallback was found to use a
+cross-episode retrieval over LLMLingua-2 compressed text, which violated the episode-scoped
+read path; it was fixed to episode-scoped full-text retrieval and the full run repeated on
+architecture v6/E3. The earlier C16 Ours numbers are SUPERSEDED.

@@ -2,7 +2,9 @@
 
 Masked query -> SemanticIndex.associate (frozen 0.8/0.05) -> text-inferred t ->
 select_version -> current+historical bundle -> ICAE reader.
-Association failure falls back to shared RRF top-10 filtered to e['time'] <= t.
+Association failure falls back to an EPISODE-SCOPED full-text RRF top-10
+(retrieval set = this episode's own uncompressed events only) filtered to
+e['time'] <= t.
 Zero contact with answers/state_key/latest/as_of fields on the routing path.
 """
 import argparse
@@ -57,6 +59,7 @@ def main():
     ap.add_argument("--tag", default="probe")
     ap.add_argument("--shard", type=int, default=0)
     ap.add_argument("--shards", type=int, default=1)
+    ap.add_argument("--arch-exp", default="E3", choices=["E1", "E2", "E3", "E4"])
     args = ap.parse_args()
 
     import torch
@@ -67,9 +70,10 @@ def main():
     from retrieval import RetrievalIndex
     from scoring import extract_answer, score_query
 
-    manifest = read_json(ROOT / "runs/aligned_v3_C16_val/manifest.json")
-    config = manifest["config"]
-    training_root = ROOT / "runs/aligned_v3_C16_train"
+    # t11: architecture-v6 loading (E1-E4, default E3) via v6_loader; replaces
+    # the hardcoded aligned_v3_C16 block. manifest is the val manifest Path.
+    from v6_loader import load_v6
+    config, training_root, manifest = load_v6(args.arch_exp)
 
     out_path = PROBE / f"runs/{args.tag}_{args.limit}.jsonl" if args.shards <= 1 else \
         PROBE / f"runs/{args.tag}_{args.limit}_shard{args.shard}.jsonl"
@@ -131,6 +135,11 @@ def main():
         return store
 
     ep_by_id = {ep["id"]: ep for ep in episodes}
+    # full-text event times per episode id (from prepared data, uncompressed)
+    ep_ft_time = {}
+    for _ep in episodes:
+        for _ev in _ep["events"]:
+            ep_ft_time[f"{_ep['id']}::{_ev['id']}"] = _ev["time"]
     # shared retrieval frontend; events = compressed corpus (id/time/text carry their
     # own timestamps -> the time filter uses event-side fields, not query labels)
     comp = json.loads((ROOT / "c2_llmlingua2_rag/corpus_test_compressed.json").read_text())
@@ -142,6 +151,45 @@ def main():
             fact_time[eid] = ev["time"]
     retriever = RetrievalIndex(ret_events, device="cpu", bge_path=str(ROOT / "models/bge-base-en-v1.5"))
     text_by_id = {e["event_id"]: e["text"] for e in ret_events}
+
+    # ---- t8: episode-scoped full-text fallback retriever ------------------
+    # csr_v1: the no_association fallback must be episode-scoped and use
+    # uncompressed (full-text) events of the SAME episode only — never the
+    # global compressed corpus. Built lazily per episode; BGE loads once.
+    _bge_loaded = {"flag": False}
+    _ep_retrievers = {}
+
+    def build_episode_retriever(ep):
+        """RetrievalIndex over ep's own full-text events (cached per episode)."""
+        ep_id = ep["id"]
+        if ep_id not in _ep_retrievers:
+            if not _bge_loaded["flag"]:
+                print("[probe] loading BGE for fallback retriever (once)", flush=True)
+                _bge_loaded["flag"] = True
+            evs = [{"event_id": f"{ep_id}::{ev['id']}",
+                    "episode_id": ep_id,
+                    "text": ev["text"], "time": ev["time"]}
+                   for ev in ep["events"]]
+            _ep_retrievers[ep_id] = RetrievalIndex(
+                evs, device="cpu", bge_path=str(ROOT / "models/bge-base-en-v1.5"))
+        return _ep_retrievers[ep_id]
+
+    _fallback_text_by_id = {}
+
+    def fallback_retrieve(ep, question, t):
+        """Episode-scoped full-text fallback: rank ep events, filter time<=t, top-10."""
+        rt = build_episode_retriever(ep)
+        hits = rt.retrieve(question, topk=50)
+        hits = [h for h in hits
+                if h["event_id"] in ep_ft_time and ep_ft_time[h["event_id"]] <= t][:10]
+        texts = []
+        for h in hits:
+            eid = h["event_id"]
+            if eid not in _fallback_text_by_id:
+                _fallback_text_by_id[eid] = next(
+                    ev["text"] for ev in ep["events"] if f"{ep['id']}::{ev['id']}" == eid)
+            texts.append(_fallback_text_by_id[eid])
+        return hits, "\n".join(texts)
 
     rows_file = out_path.open("a")
     for n, qid in enumerate(todo):
@@ -158,12 +206,14 @@ def main():
             assoc = SemanticIndex.associate(key, runtime.store.entries,
                                             config["state_similarity"])
             if assoc is None:
-                # filtered fallback: RRF top-10 with e['time'] <= t (option a)
-                hits = retriever.retrieve(view["question"], topk=50)
-                hits = [h for h in hits if h["event_id"] in fact_time and fact_time[h["event_id"]] <= t][:10]
-                text = "\n".join(text_by_id[h["event_id"]] for h in hits)
-                result = reader.answer(view, text=text)
+                # t8: episode-scoped full-text fallback (csr_v1-consistent):
+                # rank ONLY this episode's own uncompressed events, time<=t, top-10
+                hits, fb_text = fallback_retrieve(ep, view["question"], t)
+                result = reader.answer(view, text=fb_text)
                 route = {"status": "no_association",
+                         "path": "fallback_text",
+                         "fallback_scope": "episode",
+                         "fallback_corpus": "full_text",
                          "near_miss": {"top_sim": ranked[0][0] if ranked else None,
                                        "top_id": ranked[0][1]["id"] if ranked else None},
                          "t": t, "fallback_events": [h["event_id"] for h in hits]}
@@ -176,7 +226,7 @@ def main():
                     route = {"status": "version_evicted", "state": state, "t": t}
                     entries = [current]
                 else:
-                    route = {"status": "ok", "state": state, "t": t,
+                    route = {"status": "ok", "path": "latent", "state": state, "t": t,
                              "selected_id": selected["id"],
                              "is_current": selected is current,
                              "association_similarity": assoc["similarity"]}
