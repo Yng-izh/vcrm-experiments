@@ -1,0 +1,285 @@
+=== markers ===
+{
+  "split": "templama_val",
+  "episodes_in_shard": 525,
+  "limit_questions": 80,
+  "shard": 0,
+  "shards": 1,
+  "identity": "gold",
+  "question_source": "constructed"
+}
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:29<00:59, 29.90s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [01:30<00:47, 47.75s/it]Loading checkpoint shards: 100%|██████████| 3/3 [02:02<00:00, 40.51s/it]Loading checkpoint shards: 100%|██████████| 3/3 [02:02<00:00, 40.68s/it]
+The new embeddings will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+The new lm_head weights will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+[traj] episode 1/73 templama:val:Q10905:P54 questions=1 rows=1
+[traj] episode 2/73 templama:val:Q2551877:P54 questions=1 rows=2
+[traj] episode 3/73 templama:val:Q101859:P286 questions=1 rows=3
+[traj] episode 4/73 templama:val:Q15983409:P102 questions=1 rows=4
+[traj] episode 5/73 templama:val:Q11997:P286 questions=1 rows=5
+[traj] episode 6/73 templama:val:Q260725:P54 questions=1 rows=6
+[traj] episode 7/73 templama:val:Q10233:P54 questions=1 rows=7
+[traj] episode 8/73 templama:val:Q297146:P54 questions=1 rows=8
+[traj] episode 9/73 templama:val:Q1346314:P286 questions=1 rows=9
+[traj] episode 10/73 templama:val:Q2634730:P286 questions=1 rows=10
+[traj] episode 11/73 templama:val:Q1025:P6 questions=1 rows=11
+[traj] episode 12/73 templama:val:Q3140358:P54 questions=1 rows=12
+[traj] episode 13/73 templama:val:Q170117:P286 questions=1 rows=13
+[traj] episode 14/73 templama:val:Q292507:P54 questions=1 rows=14
+[traj] episode 15/73 templama:val:Q10384918:P54 questions=1 rows=15
+[traj] episode 16/73 templama:val:Q10356884:P108 questions=1 rows=16
+[traj] episode 17/73 templama:val:Q2092290:P54 questions=1 rows=17
+[traj] episode 18/73 templama:val:Q310369:P54 questions=1 rows=18
+[traj] episode 19/73 templama:val:Q1049:P6 questions=1 rows=19
+[traj] episode 20/73 templama:val:Q35:P6 questions=1 rows=20
+[traj] episode 21/73 templama:val:Q221671:P286 questions=1 rows=21
+[traj] episode 22/73 templama:val:Q3535065:P54 questions=1 rows=22
+[traj] episode 23/73 templama:val:Q1077159:P108 questions=1 rows=23
+[traj] episode 24/73 templama:val:Q103699:P6 questions=1 rows=24
+[traj] episode 25/73 templama:val:Q223450:P286 questions=1 rows=25
+[traj] episode 26/73 templama:val:Q3701673:P54 questions=1 rows=26
+[traj] episode 27/73 templama:val:Q1085:P6 questions=1 rows=27
+[traj] episode 28/73 templama:val:Q350616:P54 questions=1 rows=28
+[traj] episode 29/73 templama:val:Q239938:P54 questions=1 rows=29
+[traj] episode 30/73 templama:val:Q3703887:P54 questions=1 rows=30
+[traj] episode 31/73 templama:val:Q11719711:P102 questions=1 rows=31
+[traj] episode 32/73 templama:val:Q478341:P286 questions=1 rows=32
+[traj] episode 33/73 templama:val:Q3270032:P108 questions=1 rows=33
+[traj] episode 34/73 templama:val:Q3917804:P488 questions=1 rows=34
+[traj] episode 35/73 templama:val:Q11954:P54 questions=1 rows=35
+[traj] episode 36/73 templama:val:Q5278068:P54 questions=1 rows=36
+[traj] episode 37/73 templama:val:Q337453:P39 questions=1 rows=37
+[traj] episode 38/73 templama:val:Q427491:P286 questions=1 rows=38
+[traj] episode 39/73 templama:val:Q1197:P6 questions=1 rows=39
+[traj] episode 40/73 templama:val:Q105844:P286 questions=1 rows=40
+[traj] episode 41/73 templama:val:Q371136:P286 questions=1 rows=41
+[traj] episode 42/73 templama:val:Q615077:P39 questions=1 rows=42
+[traj] episode 43/73 templama:val:Q122880:P488 questions=1 rows=43
+[traj] episode 44/73 templama:val:Q5606319:P54 questions=1 rows=44
+[traj] episode 45/73 templama:val:Q4272255:P108 questions=1 rows=45
+[traj] episode 46/73 templama:val:Q828490:P488 questions=1 rows=46
+[traj] episode 47/73 templama:val:Q141971:P286 questions=1 rows=47
+[traj] episode 48/73 templama:val:Q71:P6 questions=1 rows=48
+[traj] episode 49/73 templama:val:Q47050:P286 questions=1 rows=49
+[traj] episode 50/73 templama:val:Q856790:P286 questions=1 rows=50
+[traj] episode 51/73 templama:val:Q1420661:P102 questions=1 rows=51
+[traj] episode 52/73 templama:val:Q10773317:P69 questions=1 rows=52
+[traj] episode 53/73 templama:val:Q4707064:P54 questions=1 rows=53
+[traj] episode 54/73 templama:val:Q1466907:P488 questions=1 rows=54
+[traj] episode 55/73 templama:val:Q1077594:P39 questions=1 rows=55
+[traj] episode 56/73 templama:val:Q482789:P488 questions=1 rows=56
+[traj] episode 57/73 templama:val:Q15051198:P108 questions=1 rows=57
+[traj] episode 58/73 templama:val:Q10819807:P39 questions=1 rows=58
+[traj] episode 59/73 templama:val:Q49711:P286 questions=1 rows=59
+[traj] episode 60/73 templama:val:Q15081858:P488 questions=1 rows=60
+[traj] episode 61/73 templama:val:Q1086856:P108 questions=1 rows=61
+[traj] episode 62/73 templama:val:Q52448602:P108 questions=1 rows=62
+[traj] episode 63/73 templama:val:Q151269:P54 questions=1 rows=63
+[traj] episode 64/73 templama:val:Q1093223:P102 questions=1 rows=64
+[traj] episode 65/73 templama:val:Q5626203:P108 questions=1 rows=65
+[traj] episode 66/73 templama:val:Q1540020:P286 questions=1 rows=66
+[traj] episode 67/73 templama:val:Q11196:P6 questions=1 rows=67
+[traj] episode 68/73 templama:val:Q656542:P488 questions=1 rows=68
+[traj] episode 69/73 templama:val:Q1563383:P488 questions=1 rows=69
+[traj] episode 70/73 templama:val:Q11213484:P69 questions=1 rows=70
+[traj] episode 71/73 templama:val:Q6943223:P108 questions=1 rows=71
+[traj] episode 72/73 templama:val:Q161038:P54 questions=1 rows=72
+[traj] episode 73/73 templama:val:Q1185837:P488 questions=1 rows=73
+# 实验一：Pair vs 全轨迹读取（traj_v1_markers）
+
+- git: `None` | reader: `icae` | components: `icae+checkpoint:runs/trajectory_v1_markers/published` | citable=True
+- 数据: `templama_val`，题目来源=constructed，题数=73，identity=gold，neighbours=4，版本数 3–8，max_slots=256
+- 可见性截止：episode window_end (max event time)；future fallback 已强制关闭
+
+| 指标 | A: pair | B: trajectory | Δ(B−A) |
+| --- | --- | --- | --- |
+| 题数 | 73 | 73 | n/a |
+| 跨版本题准确率（主指标） | 0.4110 | 0.2877 | -0.1233 |
+| 严格 EM | 0.3973 | 0.2603 | -0.1370 |
+| 所需版本全在 bundle 内 | 0.2740 | 1.0000 | 0.7260 |
+| 历史答成 current 的比例 | 0.1515 | 0.0909 | -0.0606 |
+| （该指标分母） | 33 | 33 | n/a |
+| 平均读取 slots | 148.0000 | 193.6164 | 45.6164 |
+| 平均轨迹长度 | 2.0000 | 4.5342 | 2.5342 |
+| 平均读取秒 | 0.6908 | 0.5147 | -0.1762 |
+| 未来 current 被挡次数 | 0 | 0 | n/a |
+| 被挡未来版本总数 | 0 | 0 | n/a |
+
+## 分族准确率
+
+| family | n | A: pair | B: trajectory | Δ | pair 可达性 | traj 可达性 |
+| --- | --- | --- | --- | --- | --- | --- |
+| compare_years | 20 | 0.5000 | 0.5500 | 0.0500 | 0.0000 | 1.0000 |
+| count_values | 20 | 0.0000 | 0.0500 | 0.0500 | 0.0000 | 1.0000 |
+| ordinal_back | 13 | 0.0000 | 0.2308 | 0.2308 | 0.0000 | 1.0000 |
+| recall_year | 20 | 1.0000 | 0.3000 | -0.7000 | 1.0000 | 1.0000 |
+
+## 配对结论
+
+- 配对题数：73
+- trajectory 胜 / pair 胜 / 平：5 / 14 / 54
+- 平均准确率差（B − A）：-0.1233，按 family 聚类的 bootstrap 95% CI：[-0.5125, 0.1695]
+- **判定：pair_better**
+
+分族配对：
+
+| family | n | A | B | Δ | 判定 |
+| --- | --- | --- | --- | --- | --- |
+| compare_years | 20 | 0.5000 | 0.5500 | 0.0500 | trajectory_better |
+| count_values | 20 | 0.0000 | 0.0500 | 0.0500 | trajectory_better |
+| ordinal_back | 13 | 0.0000 | 0.2308 | 0.2308 | trajectory_better |
+| recall_year | 20 | 1.0000 | 0.3000 | -0.7000 | pair_better |
+
+## 读表约束
+
+- 这些是从 TempLAMA validation 事件版本链构造的受控诊断题，不是官方分数，不得用于声称开放域泛化。
+- 两臂共用同一事实池、同一状态身份、同一 cutoff、同一题面、同一 pair 选择上界，唯一变量是 read_state 的 read_mode。
+- recall_year 的题面自带年份，pair 用年份即可选对版本 —— 这一族是"trajectory 会不会被多版本干扰"的探针；ordinal_back / count_values / compare_years 结构上必须同时看到多个版本。
+- all_required_in_bundle_rate 是可达性：pair 只装 2 个版本，跨版本题的金标版本可能根本不在 bundle 里；accuracy 的差异必须和这一列一起读。
+- wrong_current_answer_rate 只在取值型 family（recall_year / ordinal_back）且 current 取值≠金标的题上算，分母见 wrong_current_applicable。
+- 定长 latent 预算下 reader 永远会输出一个答案，答出率恒为 1，故不报噪声率。
+- stub reader 的分数无语言意义（plumbing_stub=True 时不得引用任何分数）。
+
+=== markers exit=0 ===
+=== joint ===
+{
+  "split": "templama_val",
+  "episodes_in_shard": 525,
+  "limit_questions": 80,
+  "shard": 0,
+  "shards": 1,
+  "identity": "gold",
+  "question_source": "constructed"
+}
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:59<01:58, 59.18s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [01:26<00:40, 40.29s/it]Loading checkpoint shards: 100%|██████████| 3/3 [02:23<00:00, 47.86s/it]Loading checkpoint shards: 100%|██████████| 3/3 [02:23<00:00, 47.71s/it]
+The new embeddings will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+The new lm_head weights will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+[traj] episode 1/73 templama:val:Q10905:P54 questions=1 rows=1
+[traj] episode 2/73 templama:val:Q2551877:P54 questions=1 rows=2
+[traj] episode 3/73 templama:val:Q101859:P286 questions=1 rows=3
+[traj] episode 4/73 templama:val:Q15983409:P102 questions=1 rows=4
+[traj] episode 5/73 templama:val:Q11997:P286 questions=1 rows=5
+[traj] episode 6/73 templama:val:Q260725:P54 questions=1 rows=6
+[traj] episode 7/73 templama:val:Q10233:P54 questions=1 rows=7
+[traj] episode 8/73 templama:val:Q297146:P54 questions=1 rows=8
+[traj] episode 9/73 templama:val:Q1346314:P286 questions=1 rows=9
+[traj] episode 10/73 templama:val:Q2634730:P286 questions=1 rows=10
+[traj] episode 11/73 templama:val:Q1025:P6 questions=1 rows=11
+[traj] episode 12/73 templama:val:Q3140358:P54 questions=1 rows=12
+[traj] episode 13/73 templama:val:Q170117:P286 questions=1 rows=13
+[traj] episode 14/73 templama:val:Q292507:P54 questions=1 rows=14
+[traj] episode 15/73 templama:val:Q10384918:P54 questions=1 rows=15
+[traj] episode 16/73 templama:val:Q10356884:P108 questions=1 rows=16
+[traj] episode 17/73 templama:val:Q2092290:P54 questions=1 rows=17
+[traj] episode 18/73 templama:val:Q310369:P54 questions=1 rows=18
+[traj] episode 19/73 templama:val:Q1049:P6 questions=1 rows=19
+[traj] episode 20/73 templama:val:Q35:P6 questions=1 rows=20
+[traj] episode 21/73 templama:val:Q221671:P286 questions=1 rows=21
+[traj] episode 22/73 templama:val:Q3535065:P54 questions=1 rows=22
+[traj] episode 23/73 templama:val:Q1077159:P108 questions=1 rows=23
+[traj] episode 24/73 templama:val:Q103699:P6 questions=1 rows=24
+[traj] episode 25/73 templama:val:Q223450:P286 questions=1 rows=25
+[traj] episode 26/73 templama:val:Q3701673:P54 questions=1 rows=26
+[traj] episode 27/73 templama:val:Q1085:P6 questions=1 rows=27
+[traj] episode 28/73 templama:val:Q350616:P54 questions=1 rows=28
+[traj] episode 29/73 templama:val:Q239938:P54 questions=1 rows=29
+[traj] episode 30/73 templama:val:Q3703887:P54 questions=1 rows=30
+[traj] episode 31/73 templama:val:Q11719711:P102 questions=1 rows=31
+[traj] episode 32/73 templama:val:Q478341:P286 questions=1 rows=32
+[traj] episode 33/73 templama:val:Q3270032:P108 questions=1 rows=33
+[traj] episode 34/73 templama:val:Q3917804:P488 questions=1 rows=34
+[traj] episode 35/73 templama:val:Q11954:P54 questions=1 rows=35
+[traj] episode 36/73 templama:val:Q5278068:P54 questions=1 rows=36
+[traj] episode 37/73 templama:val:Q337453:P39 questions=1 rows=37
+[traj] episode 38/73 templama:val:Q427491:P286 questions=1 rows=38
+[traj] episode 39/73 templama:val:Q1197:P6 questions=1 rows=39
+[traj] episode 40/73 templama:val:Q105844:P286 questions=1 rows=40
+[traj] episode 41/73 templama:val:Q371136:P286 questions=1 rows=41
+[traj] episode 42/73 templama:val:Q615077:P39 questions=1 rows=42
+[traj] episode 43/73 templama:val:Q122880:P488 questions=1 rows=43
+[traj] episode 44/73 templama:val:Q5606319:P54 questions=1 rows=44
+[traj] episode 45/73 templama:val:Q4272255:P108 questions=1 rows=45
+[traj] episode 46/73 templama:val:Q828490:P488 questions=1 rows=46
+[traj] episode 47/73 templama:val:Q141971:P286 questions=1 rows=47
+[traj] episode 48/73 templama:val:Q71:P6 questions=1 rows=48
+[traj] episode 49/73 templama:val:Q47050:P286 questions=1 rows=49
+[traj] episode 50/73 templama:val:Q856790:P286 questions=1 rows=50
+[traj] episode 51/73 templama:val:Q1420661:P102 questions=1 rows=51
+[traj] episode 52/73 templama:val:Q10773317:P69 questions=1 rows=52
+[traj] episode 53/73 templama:val:Q4707064:P54 questions=1 rows=53
+[traj] episode 54/73 templama:val:Q1466907:P488 questions=1 rows=54
+[traj] episode 55/73 templama:val:Q1077594:P39 questions=1 rows=55
+[traj] episode 56/73 templama:val:Q482789:P488 questions=1 rows=56
+[traj] episode 57/73 templama:val:Q15051198:P108 questions=1 rows=57
+[traj] episode 58/73 templama:val:Q10819807:P39 questions=1 rows=58
+[traj] episode 59/73 templama:val:Q49711:P286 questions=1 rows=59
+[traj] episode 60/73 templama:val:Q15081858:P488 questions=1 rows=60
+[traj] episode 61/73 templama:val:Q1086856:P108 questions=1 rows=61
+[traj] episode 62/73 templama:val:Q52448602:P108 questions=1 rows=62
+[traj] episode 63/73 templama:val:Q151269:P54 questions=1 rows=63
+[traj] episode 64/73 templama:val:Q1093223:P102 questions=1 rows=64
+[traj] episode 65/73 templama:val:Q5626203:P108 questions=1 rows=65
+[traj] episode 66/73 templama:val:Q1540020:P286 questions=1 rows=66
+[traj] episode 67/73 templama:val:Q11196:P6 questions=1 rows=67
+[traj] episode 68/73 templama:val:Q656542:P488 questions=1 rows=68
+[traj] episode 69/73 templama:val:Q1563383:P488 questions=1 rows=69
+[traj] episode 70/73 templama:val:Q11213484:P69 questions=1 rows=70
+[traj] episode 71/73 templama:val:Q6943223:P108 questions=1 rows=71
+[traj] episode 72/73 templama:val:Q161038:P54 questions=1 rows=72
+[traj] episode 73/73 templama:val:Q1185837:P488 questions=1 rows=73
+# 实验一：Pair vs 全轨迹读取（traj_v1_joint）
+
+- git: `None` | reader: `icae` | components: `icae+checkpoint:runs/trajectory_v1_joint/published` | citable=True
+- 数据: `templama_val`，题目来源=constructed，题数=73，identity=gold，neighbours=4，版本数 3–8，max_slots=256
+- 可见性截止：episode window_end (max event time)；future fallback 已强制关闭
+
+| 指标 | A: pair | B: trajectory | Δ(B−A) |
+| --- | --- | --- | --- |
+| 题数 | 73 | 73 | n/a |
+| 跨版本题准确率（主指标） | 0.3836 | 0.3973 | 0.0137 |
+| 严格 EM | 0.2877 | 0.2603 | -0.0274 |
+| 所需版本全在 bundle 内 | 0.2740 | 1.0000 | 0.7260 |
+| 历史答成 current 的比例 | 0.1515 | 0.0606 | -0.0909 |
+| （该指标分母） | 33 | 33 | n/a |
+| 平均读取 slots | 148.0000 | 193.6164 | 45.6164 |
+| 平均轨迹长度 | 2.0000 | 4.5342 | 2.5342 |
+| 平均读取秒 | 0.8417 | 0.6908 | -0.1509 |
+| 未来 current 被挡次数 | 0 | 0 | n/a |
+| 被挡未来版本总数 | 0 | 0 | n/a |
+
+## 分族准确率
+
+| family | n | A: pair | B: trajectory | Δ | pair 可达性 | traj 可达性 |
+| --- | --- | --- | --- | --- | --- | --- |
+| compare_years | 20 | 0.5000 | 0.5000 | 0.0000 | 0.0000 | 1.0000 |
+| count_values | 20 | 0.0000 | 0.1000 | 0.1000 | 0.0000 | 1.0000 |
+| ordinal_back | 13 | 0.0000 | 0.2308 | 0.2308 | 0.0000 | 1.0000 |
+| recall_year | 20 | 0.9000 | 0.7000 | -0.2000 | 1.0000 | 1.0000 |
+
+## 配对结论
+
+- 配对题数：73
+- trajectory 胜 / pair 胜 / 平：6 / 5 / 62
+- 平均准确率差（B − A）：0.0137，按 family 聚类的 bootstrap 95% CI：[-0.1250, 0.1525]
+- **判定：trajectory_better**
+
+分族配对：
+
+| family | n | A | B | Δ | 判定 |
+| --- | --- | --- | --- | --- | --- |
+| compare_years | 20 | 0.5000 | 0.5000 | 0.0000 | tie |
+| count_values | 20 | 0.0000 | 0.1000 | 0.1000 | trajectory_better |
+| ordinal_back | 13 | 0.0000 | 0.2308 | 0.2308 | trajectory_better |
+| recall_year | 20 | 0.9000 | 0.7000 | -0.2000 | pair_better |
+
+## 读表约束
+
+- 这些是从 TempLAMA validation 事件版本链构造的受控诊断题，不是官方分数，不得用于声称开放域泛化。
+- 两臂共用同一事实池、同一状态身份、同一 cutoff、同一题面、同一 pair 选择上界，唯一变量是 read_state 的 read_mode。
+- recall_year 的题面自带年份，pair 用年份即可选对版本 —— 这一族是"trajectory 会不会被多版本干扰"的探针；ordinal_back / count_values / compare_years 结构上必须同时看到多个版本。
+- all_required_in_bundle_rate 是可达性：pair 只装 2 个版本，跨版本题的金标版本可能根本不在 bundle 里；accuracy 的差异必须和这一列一起读。
+- wrong_current_answer_rate 只在取值型 family（recall_year / ordinal_back）且 current 取值≠金标的题上算，分母见 wrong_current_applicable。
+- 定长 latent 预算下 reader 永远会输出一个答案，答出率恒为 1，故不报噪声率。
+- stub reader 的分数无语言意义（plumbing_stub=True 时不得引用任何分数）。
+
+=== joint exit=0 ===
+EVAL DONE

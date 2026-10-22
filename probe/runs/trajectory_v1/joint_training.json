@@ -1,0 +1,20 @@
+{
+  "stage": "joint",
+  "init_from": "runs/trajectory_v1_markers/codec.safetensors",
+  "trainable": [
+    "codec",
+    "markers"
+  ],
+  "samples": 2138,
+  "retain_pairs": 2954,
+  "min_versions": 3,
+  "max_versions": 8,
+  "rank_weight": 0.5,
+  "retain_weight": 0.5,
+  "ranking_objective": "listwise_softmax over {gold} + {all other version answers}",
+  "negative_pool": "all other historical versions of the same state",
+  "bundle_layout": "current(128) first, then histories(16 each) ascending by time",
+  "time_convention": "target year in question text; Current date slot = observation cutoff",
+  "target_time_passed_to_reader": false,
+  "completed": true
+}

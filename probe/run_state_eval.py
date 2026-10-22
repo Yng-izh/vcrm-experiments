@@ -32,6 +32,7 @@ UPDATE 来源口径（t15）：
 本脚本只做 CPU 可跑的通路 + 指标；GPU 全量运行需 captain 批准（命令清单见报告）。
 """
 import argparse
+import os
 import hashlib
 import json
 import re
@@ -144,6 +145,8 @@ def build_components(args: argparse.Namespace) -> Components:
         return Components(reader, codec, markers, index, f'stub+{label}')
     from vcrm.runtime import SlotMemoryRuntime
     config, training_root, _ = _load_v6(args.arch_exp)
+    # 评测新 checkpoint 用：VCRM_TRAINING_ROOT 覆盖默认训练目录（默认行为不变）
+    training_root = os.environ.get('VCRM_TRAINING_ROOT', training_root)
     runtime = SlotMemoryRuntime.from_checkpoint(config, training_root)
     return Components(runtime.reader, runtime.codec, runtime.markers, runtime.index,
                       f'icae+checkpoint:{training_root}')

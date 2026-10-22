@@ -1,0 +1,143 @@
+=== stage 1: markers (2 epochs, E3 + reader + encoder frozen) ===
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:54<01:49, 54.96s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [01:23<00:39, 39.23s/it]Loading checkpoint shards: 100%|██████████| 3/3 [02:28<00:00, 51.25s/it]Loading checkpoint shards: 100%|██████████| 3/3 [02:28<00:00, 49.58s/it]
+The new embeddings will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+The new lm_head weights will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+[markers] epoch 1 step 1/2138 loss=1.5247 ce=0.2454 rank=0.8163
+[markers] epoch 1 step 50/2138 loss=0.3025 ce=0.1926 rank=0.2199
+[markers] epoch 1 step 100/2138 loss=1.8266 ce=1.1045 rank=1.4443
+[markers] epoch 1 step 150/2138 loss=1.6094 ce=0.8487 rank=1.5214
+[markers] epoch 1 step 200/2138 loss=0.4202 ce=0.1538 rank=0.5328
+[markers] epoch 1 step 250/2138 loss=6.6360 ce=5.2342 rank=2.8036
+[markers] epoch 1 step 300/2138 loss=0.5037 ce=0.2638 rank=0.4798
+[markers] epoch 1 step 350/2138 loss=0.0280 ce=0.0157 rank=0.0245
+[markers] epoch 1 step 400/2138 loss=3.0558 ce=1.7795 rank=2.5525
+[markers] epoch 1 step 450/2138 loss=0.5330 ce=0.1710 rank=0.7239
+[markers] epoch 1 step 500/2138 loss=0.3587 ce=0.0462 rank=0.6249
+[markers] epoch 1 step 550/2138 loss=3.6299 ce=2.3263 rank=2.6071
+[markers] epoch 1 step 600/2138 loss=2.0100 ce=1.2115 rank=1.5971
+[markers] epoch 1 step 650/2138 loss=0.6517 ce=0.2463 rank=0.8108
+[markers] epoch 1 step 700/2138 loss=0.3160 ce=0.0485 rank=0.5350
+[markers] epoch 1 step 750/2138 loss=0.8936 ce=0.4383 rank=0.9107
+[markers] epoch 1 step 800/2138 loss=0.2572 ce=0.0188 rank=0.4769
+[markers] epoch 1 step 850/2138 loss=0.1165 ce=0.0213 rank=0.1903
+[markers] epoch 1 step 900/2138 loss=0.1899 ce=0.0528 rank=0.2741
+[markers] epoch 1 step 950/2138 loss=0.6133 ce=0.2585 rank=0.7096
+[markers] epoch 1 step 1000/2138 loss=0.4836 ce=0.1569 rank=0.6535
+[markers] epoch 1 step 1050/2138 loss=0.0867 ce=0.0156 rank=0.1423
+[markers] epoch 1 step 1100/2138 loss=3.8862 ce=2.5399 rank=2.6926
+[markers] epoch 1 step 1150/2138 loss=0.5555 ce=0.2288 rank=0.6534
+[markers] epoch 1 step 1200/2138 loss=0.4958 ce=0.3070 rank=0.3775
+[markers] epoch 1 step 1250/2138 loss=3.0972 ce=2.0429 rank=2.1086
+[markers] epoch 1 step 1300/2138 loss=0.1825 ce=0.0799 rank=0.2053
+[markers] epoch 1 step 1350/2138 loss=0.1274 ce=0.0078 rank=0.2390
+[markers] epoch 1 step 1400/2138 loss=0.4223 ce=0.1049 rank=0.6346
+[markers] epoch 1 step 1450/2138 loss=0.2410 ce=0.0198 rank=0.4423
+[markers] epoch 1 step 1500/2138 loss=1.8833 ce=1.6591 rank=0.4484
+[markers] epoch 1 step 1550/2138 loss=0.9767 ce=0.4779 rank=0.9976
+[markers] epoch 1 step 1600/2138 loss=1.0117 ce=0.6686 rank=0.6861
+[markers] epoch 1 step 1650/2138 loss=1.8500 ce=1.7913 rank=0.1175
+[markers] epoch 1 step 1700/2138 loss=0.0602 ce=0.0140 rank=0.0924
+[markers] epoch 1 step 1750/2138 loss=1.0218 ce=0.4906 rank=1.0624
+[markers] epoch 1 step 1800/2138 loss=0.4941 ce=0.0972 rank=0.7938
+[markers] epoch 1 step 1850/2138 loss=0.4041 ce=0.1901 rank=0.4280
+[markers] epoch 1 step 1900/2138 loss=0.0336 ce=0.0176 rank=0.0318
+[markers] epoch 1 step 1950/2138 loss=0.3615 ce=0.0349 rank=0.6532
+[markers] epoch 1 step 2000/2138 loss=0.9752 ce=0.6171 rank=0.7163
+[markers] epoch 1 step 2050/2138 loss=0.0595 ce=0.0139 rank=0.0912
+[markers] epoch 1 step 2100/2138 loss=0.0520 ce=0.0029 rank=0.0982
+[markers] epoch 2 step 1/2138 loss=0.3675 ce=0.0025 rank=0.0722
+[markers] epoch 2 step 50/2138 loss=0.2364 ce=0.0907 rank=0.2914
+[markers] epoch 2 step 100/2138 loss=0.1697 ce=0.0029 rank=0.3336
+[markers] epoch 2 step 150/2138 loss=1.0278 ce=0.9487 rank=0.1584
+[markers] epoch 2 step 200/2138 loss=0.6759 ce=0.2349 rank=0.8820
+[markers] epoch 2 step 250/2138 loss=1.5523 ce=0.9224 rank=1.2597
+[markers] epoch 2 step 300/2138 loss=0.0987 ce=0.0564 rank=0.0846
+[markers] epoch 2 step 350/2138 loss=0.1753 ce=0.0030 rank=0.3447
+[markers] epoch 2 step 400/2138 loss=0.9091 ce=0.6044 rank=0.6094
+[markers] epoch 2 step 450/2138 loss=2.1342 ce=1.1881 rank=1.8922
+[markers] epoch 2 step 500/2138 loss=0.0901 ce=0.0096 rank=0.1609
+[markers] epoch 2 step 550/2138 loss=0.8954 ce=0.3932 rank=1.0044
+[markers] epoch 2 step 600/2138 loss=0.3077 ce=0.0335 rank=0.5484
+[markers] epoch 2 step 650/2138 loss=3.5304 ce=2.1509 rank=2.7589
+[markers] epoch 2 step 700/2138 loss=0.2570 ce=0.1728 rank=0.1685
+[markers] epoch 2 step 750/2138 loss=0.2629 ce=0.0913 rank=0.3433
+[markers] epoch 2 step 800/2138 loss=0.0147 ce=0.0045 rank=0.0204
+[markers] epoch 2 step 850/2138 loss=0.7523 ce=0.2804 rank=0.9437
+[markers] epoch 2 step 900/2138 loss=0.7832 ce=0.3459 rank=0.8746
+[markers] epoch 2 step 950/2138 loss=2.6745 ce=1.8176 rank=1.7138
+[markers] epoch 2 step 1000/2138 loss=0.8452 ce=0.3483 rank=0.9939
+[markers] epoch 2 step 1050/2138 loss=0.0635 ce=0.0034 rank=0.1203
+[markers] epoch 2 step 1100/2138 loss=0.2447 ce=0.0511 rank=0.3874
+[markers] epoch 2 step 1150/2138 loss=0.0036 ce=0.0008 rank=0.0056
+[markers] epoch 2 step 1200/2138 loss=0.0052 ce=0.0002 rank=0.0101
+[markers] epoch 2 step 1250/2138 loss=0.0547 ce=0.0244 rank=0.0605
+[markers] epoch 2 step 1300/2138 loss=4.2869 ce=2.8005 rank=2.9729
+[markers] epoch 2 step 1350/2138 loss=0.5390 ce=0.1487 rank=0.7805
+[markers] epoch 2 step 1400/2138 loss=0.0031 ce=0.0011 rank=0.0040
+[markers] epoch 2 step 1450/2138 loss=0.0031 ce=0.0029 rank=0.0004
+[markers] epoch 2 step 1500/2138 loss=0.0130 ce=0.0017 rank=0.0225
+[markers] epoch 2 step 1550/2138 loss=0.0070 ce=0.0046 rank=0.0047
+[markers] epoch 2 step 1600/2138 loss=0.1744 ce=0.0046 rank=0.3398
+[markers] epoch 2 step 1650/2138 loss=0.1039 ce=0.0064 rank=0.1950
+[markers] epoch 2 step 1700/2138 loss=0.0115 ce=0.0110 rank=0.0009
+[markers] epoch 2 step 1750/2138 loss=1.2348 ce=0.8995 rank=0.6708
+[markers] epoch 2 step 1800/2138 loss=0.0448 ce=0.0017 rank=0.0862
+[markers] epoch 2 step 1850/2138 loss=0.2130 ce=0.0520 rank=0.3219
+[markers] epoch 2 step 1900/2138 loss=0.0213 ce=0.0196 rank=0.0034
+[markers] epoch 2 step 1950/2138 loss=0.0648 ce=0.0028 rank=0.1241
+[markers] epoch 2 step 2000/2138 loss=0.1307 ce=0.0010 rank=0.2594
+[markers] epoch 2 step 2050/2138 loss=0.2632 ce=0.0081 rank=0.5101
+[markers] epoch 2 step 2100/2138 loss=0.2091 ce=0.0046 rank=0.4090
+stage1 steps=4276 seconds=6196
+stage1 first={'stage': 'markers', 'epoch': 1, 'step': 1, 'loss': 1.524684190750122, 'qa_ce': 0.24536333978176117, 'rank': 0.81626296043396, 'histories': 6}
+stage1 last ={'stage': 'markers', 'epoch': 2, 'step': 2138, 'loss': 2.542862892150879, 'qa_ce': 1.5164326429367065, 'rank': 2.052860736846924, 'histories': 5}
+=== stage 2: joint (1 epoch, codec + markers) ===
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:45<01:30, 45.07s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [01:45<00:54, 54.03s/it]Loading checkpoint shards: 100%|██████████| 3/3 [02:08<00:00, 40.00s/it]Loading checkpoint shards: 100%|██████████| 3/3 [02:08<00:00, 42.90s/it]
+[joint] epoch 1 step 1/2138 loss=1.4644 ce=0.6630 rank=1.0245
+[joint] epoch 1 step 50/2138 loss=0.3013 ce=0.1514 rank=0.2997
+[joint] epoch 1 step 100/2138 loss=1.9660 ce=1.1948 rank=1.5424
+[joint] epoch 1 step 150/2138 loss=11.8462 ce=8.9441 rank=5.8042
+[joint] epoch 1 step 200/2138 loss=0.1465 ce=0.0071 rank=0.2790
+[joint] epoch 1 step 250/2138 loss=5.9902 ce=3.6857 rank=4.6089
+[joint] epoch 1 step 300/2138 loss=0.1647 ce=0.0178 rank=0.2937
+[joint] epoch 1 step 350/2138 loss=0.0521 ce=0.0144 rank=0.0754
+[joint] epoch 1 step 400/2138 loss=1.6002 ce=0.8932 rank=1.4140
+[joint] epoch 1 step 450/2138 loss=0.2418 ce=0.0139 rank=0.4558
+[joint] epoch 1 step 500/2138 loss=0.2107 ce=0.0301 rank=0.3612
+[joint] epoch 1 step 550/2138 loss=0.5219 ce=0.2863 rank=0.4713
+[joint] epoch 1 step 600/2138 loss=0.2144 ce=0.2041 rank=0.0205
+[joint] epoch 1 step 650/2138 loss=1.5009 ce=0.8420 rank=1.3178
+[joint] epoch 1 step 700/2138 loss=1.9503 ce=1.1489 rank=1.6027
+[joint] epoch 1 step 750/2138 loss=2.2215 ce=1.4461 rank=1.5509
+[joint] epoch 1 step 800/2138 loss=0.2947 ce=0.0581 rank=0.4733
+[joint] epoch 1 step 850/2138 loss=0.1325 ce=0.0098 rank=0.2454
+[joint] epoch 1 step 900/2138 loss=0.0735 ce=0.0376 rank=0.0719
+[joint] epoch 1 step 950/2138 loss=1.0753 ce=1.0233 rank=0.1039
+[joint] epoch 1 step 1000/2138 loss=0.0373 ce=0.0003 rank=0.0739
+[joint] epoch 1 step 1050/2138 loss=3.0552 ce=2.0068 rank=2.0968
+[joint] epoch 1 step 1100/2138 loss=2.6769 ce=2.1646 rank=1.0246
+[joint] epoch 1 step 1150/2138 loss=0.9430 ce=0.9066 rank=0.0728
+[joint] epoch 1 step 1200/2138 loss=0.6676 ce=0.4250 rank=0.4851
+[joint] epoch 1 step 1250/2138 loss=3.5995 ce=2.3242 rank=2.5505
+[joint] epoch 1 step 1300/2138 loss=0.0952 ce=0.0113 rank=0.1676
+[joint] epoch 1 step 1350/2138 loss=0.0008 ce=0.0004 rank=0.0007
+[joint] epoch 1 step 1400/2138 loss=1.1484 ce=0.5932 rank=1.1104
+[joint] epoch 1 step 1450/2138 loss=0.1545 ce=0.0791 rank=0.1506
+[joint] epoch 1 step 1500/2138 loss=1.9003 ce=1.5272 rank=0.7461
+[joint] epoch 1 step 1550/2138 loss=1.8107 ce=1.0705 rank=1.4805
+[joint] epoch 1 step 1600/2138 loss=2.2308 ce=1.3010 rank=1.8596
+[joint] epoch 1 step 1650/2138 loss=0.0002 ce=0.0001 rank=0.0002
+[joint] epoch 1 step 1700/2138 loss=0.0003 ce=0.0001 rank=0.0003
+[joint] epoch 1 step 1750/2138 loss=0.5863 ce=0.5382 rank=0.0961
+[joint] epoch 1 step 1800/2138 loss=0.0031 ce=0.0001 rank=0.0059
+[joint] epoch 1 step 1850/2138 loss=0.1918 ce=0.1419 rank=0.0997
+[joint] epoch 1 step 1900/2138 loss=0.5062 ce=0.4049 rank=0.2027
+[joint] epoch 1 step 1950/2138 loss=0.1668 ce=0.0005 rank=0.3326
+[joint] epoch 1 step 2000/2138 loss=1.1914 ce=1.0615 rank=0.2598
+[joint] epoch 1 step 2050/2138 loss=1.2511 ce=1.1407 rank=0.2208
+[joint] epoch 1 step 2100/2138 loss=0.0045 ce=0.0002 rank=0.0087
+stage2 steps=2138 seconds=3179
+stage2 first={'stage': 'joint', 'epoch': 1, 'step': 1, 'loss': 1.464409589767456, 'qa_ce': 0.6630109548568726, 'rank': 1.0245426893234253, 'histories': 6}
+stage2 last ={'stage': 'joint', 'epoch': 1, 'step': 2138, 'loss': 3.5567448139190674, 'qa_ce': 2.2134687900543213, 'rank': 2.686552047729492, 'histories': 3}
+TOTAL seconds=9376
+TRAINING DONE

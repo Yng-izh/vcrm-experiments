@@ -334,8 +334,13 @@ def evaluate_question(cvq, mod, runtime, resolver, episode, question, state_id, 
                         if any(cvq.matches_value(gold, value) for gold in question['answers'])}
         matched = next((index for index, value in enumerate(values)
                         if cvq.matches_value(answer, value)), None)
-        wrong_year = int(matched is not None and matched not in gold_indices)
-        distance = (min(abs(matched - index) for index in gold_indices) if wrong_year else 0)
+        # count_values / compare_years 的答案不是版本值（数字、yes/no），
+        # 这两类没有"答成了哪个年份"可言，wrong_year 恒为 0。
+        if not values or not gold_indices:
+            matched, wrong_year, distance = None, 0, 0
+        else:
+            wrong_year = int(matched is not None and matched not in gold_indices)
+            distance = min(abs(matched - index) for index in gold_indices) if wrong_year else 0
         row[mode] = {
             'answer': answer,
             'correct': int(scored['correct']),
@@ -389,8 +394,9 @@ def block(rows: Sequence[Mapping[str, Any]], mode: str) -> Dict[str, Any]:
             sum(1 for row in applicable if row[mode]['wrong_current']), len(applicable)),
         'wrong_current_applicable': len(applicable),
         'wrong_year_rate': _rate(sum(1 for cell in cells if cell['wrong_year']), len(cells)),
-        'wrong_year_distance_mean': _mean([cell['wrong_year_distance'] for cell in cells
-                                           if cell['wrong_year']]),
+        'wrong_year_distance_mean': (
+            sum(cell['wrong_year_distance'] for cell in cells if cell['wrong_year'])
+            / max(1, sum(1 for cell in cells if cell['wrong_year']))),
         'mean_read_latent_slots': _mean([cell['read_latent_slots'] for cell in cells]),
         'mean_trajectory_length': _mean([cell['trajectory_length'] for cell in cells]),
         'mean_read_seconds': _mean([cell['read_seconds'] for cell in cells

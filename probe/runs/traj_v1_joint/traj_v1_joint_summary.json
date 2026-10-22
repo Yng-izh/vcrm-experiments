@@ -1,0 +1,181 @@
+{
+  "tag": "traj_v1_joint",
+  "git_commit": null,
+  "created_utc": "2026-10-22T06:15:46Z",
+  "reader": "icae",
+  "components": "icae+checkpoint:runs/trajectory_v1_joint/published",
+  "citable": true,
+  "protocol": {
+    "dataset": "templama_val",
+    "data_root": "/share/latent2/vcrm_icae/data/prepared",
+    "question_source": "constructed",
+    "questions": 73,
+    "identity": "gold",
+    "neighbours": 4,
+    "arch_exp": "E3",
+    "min_versions": 3,
+    "max_versions": 8,
+    "max_slots": 256,
+    "target_time": "none",
+    "include_latest": false,
+    "observation_cutoff": "episode window_end (max event time)",
+    "shard": 0,
+    "shards": 1,
+    "gpu": {
+      "cuda_visible_devices": "9",
+      "physical_gpu_ids": [
+        "9"
+      ]
+    },
+    "families": [
+      "compare_years",
+      "count_values",
+      "ordinal_back",
+      "recall_year"
+    ]
+  },
+  "modes": {
+    "pair": {
+      "n": 73,
+      "accuracy": 0.3835616438356164,
+      "strict_em": 0.2876712328767123,
+      "all_required_in_bundle_rate": 0.273972602739726,
+      "wrong_current_answer_rate": 0.15151515151515152,
+      "wrong_current_applicable": 33,
+      "wrong_year_rate": 0.1095890410958904,
+      "wrong_year_distance_mean": 1.375,
+      "mean_read_latent_slots": 148.0,
+      "mean_trajectory_length": 2.0,
+      "mean_read_seconds": 0.8417004965156418,
+      "future_current_suppressed": 0,
+      "hidden_future_versions": 0
+    },
+    "trajectory": {
+      "n": 73,
+      "accuracy": 0.3972602739726027,
+      "strict_em": 0.2602739726027397,
+      "all_required_in_bundle_rate": 1.0,
+      "wrong_current_answer_rate": 0.06060606060606061,
+      "wrong_current_applicable": 33,
+      "wrong_year_rate": 0.0547945205479452,
+      "wrong_year_distance_mean": 1.0,
+      "mean_read_latent_slots": 193.6164383561644,
+      "mean_trajectory_length": 4.534246575342466,
+      "mean_read_seconds": 0.6908183529245833,
+      "future_current_suppressed": 0,
+      "hidden_future_versions": 0
+    }
+  },
+  "by_family": {
+    "compare_years": {
+      "n": 20,
+      "pair_accuracy": 0.5,
+      "trajectory_accuracy": 0.5,
+      "pair_all_required_in_bundle_rate": 0.0,
+      "trajectory_all_required_in_bundle_rate": 1.0
+    },
+    "count_values": {
+      "n": 20,
+      "pair_accuracy": 0.0,
+      "trajectory_accuracy": 0.1,
+      "pair_all_required_in_bundle_rate": 0.0,
+      "trajectory_all_required_in_bundle_rate": 1.0
+    },
+    "ordinal_back": {
+      "n": 13,
+      "pair_accuracy": 0.0,
+      "trajectory_accuracy": 0.23076923076923078,
+      "pair_all_required_in_bundle_rate": 0.0,
+      "trajectory_all_required_in_bundle_rate": 1.0
+    },
+    "recall_year": {
+      "n": 20,
+      "pair_accuracy": 0.9,
+      "trajectory_accuracy": 0.7,
+      "pair_all_required_in_bundle_rate": 1.0,
+      "trajectory_all_required_in_bundle_rate": 1.0
+    }
+  },
+  "paired": {
+    "group": "all",
+    "n_paired": 73,
+    "trajectory_wins": 6,
+    "pair_wins": 5,
+    "ties": 62,
+    "mean_delta_accuracy": 0.0136986301369863,
+    "ci95_by_family": [
+      -0.125,
+      0.15254237288135594
+    ],
+    "verdict": "trajectory_better"
+  },
+  "paired_by_family": {
+    "compare_years": {
+      "group": "compare_years",
+      "n_paired": 20,
+      "trajectory_wins": 1,
+      "pair_wins": 1,
+      "ties": 18,
+      "mean_delta_accuracy": 0.0,
+      "ci95_by_family": [
+        0.0,
+        0.0
+      ],
+      "verdict": "tie"
+    },
+    "count_values": {
+      "group": "count_values",
+      "n_paired": 20,
+      "trajectory_wins": 2,
+      "pair_wins": 0,
+      "ties": 18,
+      "mean_delta_accuracy": 0.1,
+      "ci95_by_family": [
+        0.1,
+        0.1
+      ],
+      "verdict": "trajectory_better"
+    },
+    "ordinal_back": {
+      "group": "ordinal_back",
+      "n_paired": 13,
+      "trajectory_wins": 3,
+      "pair_wins": 0,
+      "ties": 10,
+      "mean_delta_accuracy": 0.23076923076923078,
+      "ci95_by_family": [
+        0.23076923076923078,
+        0.23076923076923078
+      ],
+      "verdict": "trajectory_better"
+    },
+    "recall_year": {
+      "group": "recall_year",
+      "n_paired": 20,
+      "trajectory_wins": 0,
+      "pair_wins": 4,
+      "ties": 16,
+      "mean_delta_accuracy": -0.2,
+      "ci95_by_family": [
+        -0.2,
+        -0.2
+      ],
+      "verdict": "pair_better"
+    }
+  },
+  "reading_notes": [
+    "这些是从 TempLAMA validation 事件版本链构造的受控诊断题，不是官方分数，不得用于声称开放域泛化。",
+    "两臂共用同一事实池、同一状态身份、同一 cutoff、同一题面、同一 pair 选择上界，唯一变量是 read_state 的 read_mode。",
+    "recall_year 的题面自带年份，pair 用年份即可选对版本 —— 这一族是\"trajectory 会不会被多版本干扰\"的探针；ordinal_back / count_values / compare_years 结构上必须同时看到多个版本。",
+    "all_required_in_bundle_rate 是可达性：pair 只装 2 个版本，跨版本题的金标版本可能根本不在 bundle 里；accuracy 的差异必须和这一列一起读。",
+    "wrong_current_answer_rate 只在取值型 family（recall_year / ordinal_back）且 current 取值≠金标的题上算，分母见 wrong_current_applicable。",
+    "定长 latent 预算下 reader 永远会输出一个答案，答出率恒为 1，故不报噪声率。",
+    "stub reader 的分数无语言意义（plumbing_stub=True 时不得引用任何分数）。"
+  ],
+  "wall_seconds": 602.2669010357931,
+  "outputs": {
+    "rows": "probe/runs/traj_v1_joint/traj_v1_joint_rows.jsonl",
+    "summary": "probe/runs/traj_v1_joint/traj_v1_joint_summary.json",
+    "report": "probe/runs/traj_v1_joint/traj_v1_joint_report.md"
+  }
+}
