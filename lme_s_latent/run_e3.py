@@ -73,12 +73,11 @@ if str(REPO_ROOT) not in sys.path:
 from vcrm.codec import VersionMarkers
 from vcrm.data import timestamp as normalize_timestamp
 from vcrm.data_views import PublicEventCounter, public_write_event
-from vcrm.fact_extractor import FactExtractor
 from vcrm.index import SemanticIndex
 from vcrm.io import read_records, write_json
 from vcrm.metrics import exact, f1 as token_f1, normalize
 from vcrm.query_time import QueryTimeResolver, TIME_ANCHORS
-from vcrm.runtime import PredictedRuntime, QueryParser
+from vcrm.runtime import PredictedRuntime, build_frontend
 from vcrm.state_index import SEMANTIC_DIMENSIONS, StateIndex
 from vcrm.state_router import StateRouter
 from vcrm.store import IncrementalCurrentStore
@@ -183,19 +182,48 @@ def _load_v6(arch_exp: str):
 
 
 def new_runtime(args: argparse.Namespace, components: Components) -> PredictedRuntime:
-    """每题一个新的 runtime：状态索引 / Current 存储 / 事件编号全部独立。"""
+    """每题一个新的 runtime：状态索引 / Current 存储 / 事件编号全部独立。
+
+    前端由 --frontend 决定（rules = 现有硬规则；llm = 通用模型前端，占位）。
+    实验二的受控对照只换这一个变量，E3 / 状态层 / 版本层 / 读取层完全不动。
+    """
     store = IncrementalCurrentStore(components.codec, key_dimensions=SEMANTIC_DIMENSIONS,
                                     budget_mode='retain_all')
     resolver = UpdateResolver(recency_update=bool(args.recency_update),
                               recency_min_confidence=float(args.recency_min_confidence))
+    frontend = getattr(args, 'frontend', 'rules')
+    parser_kwargs = ({'max_identities': int(getattr(args, 'max_query_states', 3))}
+                     if frontend == 'llm' else {})
+    extractor, query_parser = build_frontend(
+        frontend, llm_client=build_llm_client(args),
+        query_parser_kwargs=parser_kwargs)
     return PredictedRuntime(components.reader, components.codec, components.markers,
                             components.index, store, StateIndex(),
                             router=StateRouter(top_k=args.top_k), resolver=resolver,
-                            extractor=FactExtractor(), query_parser=QueryParser(),
+                            extractor=extractor, query_parser=query_parser,
                             time_mode='window_end', allow_as_of=False,
                             defer_store_memory=bool(args.defer_store_memory),
                             hybrid_fallback=bool(args.hybrid_fallback),
-                            top_k=args.top_k)
+                            top_k=args.top_k, frontend=frontend,
+                            read_mode=getattr(args, 'read_mode', 'pair'),
+                            multi_state=bool(getattr(args, 'multi_state', False)),
+                            max_query_states=int(getattr(args, 'max_query_states', 3)))
+
+
+def build_llm_client(args: argparse.Namespace):
+    """构造模型客户端；未接入真实模型时返回 None（→ PlaceholderLLM 显式报错）。
+
+    真实模型只需在这里加一个分支并返回实现了 ``complete(prompt, system=...,
+    max_tokens=...) -> str`` 的对象；vcrm/llm_fact_extractor.py 与
+    vcrm/llm_query_parser.py 一行都不用改。
+    """
+    model = getattr(args, 'llm_model', None)
+    if not model or model == 'placeholder':
+        return None
+    raise SystemExit(
+        f'--llm-model {model!r} 还没有对应实现：在 lme_s_latent/run_e3.py:'
+        'build_llm_client() 里加一个分支返回实现 complete() 的客户端。'
+        '在此之前 --frontend llm 会显式失败，绝不静默退回规则抽取。')
 
 
 # ---------------------------------------------------------------------------
@@ -359,6 +387,13 @@ def build_row(item: Mapping[str, Any], resolved: Any, result: Mapping[str, Any],
             'selected_version_id': result.get('selected_version_id'),
             'selected_version_time': result.get('selected_version_time'),
             'version_role': result.get('version_role'),
+            'read_mode': result.get('read_mode', getattr(args, 'read_mode', 'pair')),
+            'frontend': getattr(args, 'frontend', 'rules'),
+            'observation_cutoff': result.get('observation_cutoff'),
+            'trajectory_length': int(result.get('trajectory_length') or 0),
+            'hidden_future_versions': int(result.get('hidden_future_versions') or 0),
+            'future_current_suppressed': bool(result.get('future_current_suppressed')),
+            'multi_state_ids': list(result.get('multi_state_ids') or []),
             'candidates': candidates,
             'n_states': len({entry['state_id'] for entry in written['ledger']
                              if entry['state_id']}),
@@ -509,6 +544,18 @@ def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
     parser.add_argument('--hybrid-fallback', action='store_true', default=False,
                         help='透传给 PredictedRuntime 的 hybrid_fallback 分口径开关'
                              '（默认 off；口径与 probe/run_state_eval.py 的同名开关一致）')
+    parser.add_argument('--frontend', choices=['rules', 'llm'], default='rules',
+                        help='rules = 现有确定性硬规则（默认）；llm = 通用模型抽取/解析'
+                             '（实验二 B 臂；模型未接入时显式失败，不静默退回规则）')
+    parser.add_argument('--llm-model', default='placeholder',
+                        help='模型标识；placeholder = 未接入（--frontend llm 会直接报错）')
+    parser.add_argument('--multi-state', action='store_true', default=False,
+                        help='允许一次读取多个相关状态（多跳/多事实问题；默认关）')
+    parser.add_argument('--max-query-states', type=int, default=3,
+                        help='多状态读取的状态数上限（同时作为解析器的 identities 上限）')
+    parser.add_argument('--read-mode', choices=['pair', 'trajectory'], default='pair',
+                        help='pair = 当时可见最新版本 + 1 个历史版本（默认）；'
+                             'trajectory = 当时可见的全部版本')
     return parser.parse_args(argv)
 
 
@@ -545,9 +592,15 @@ def main(argv: Optional[Sequence[str]] = None) -> Dict[str, Any]:
             counter = PublicEventCounter()
             written = write_item(runtime, item, counter, args.max_sessions)
             resolved = resolver.resolve(item['question'], asked_at=item['question_date'])
-            # 查询视图只给 question；时间只经 window_end 进入 public_query。
-            result = runtime.answer_predicted({'question': item['question']},
-                                              window_end=resolved.window_end)
+            # t16：目标时间与可观察截止分开。查询只经 window_end 进入 public_query；
+            # observation_cutoff 作为可见性硬上界传给读取层（不给 future fallback 留口子）。
+            bounds = resolver.resolve_bounds(item['question'],
+                                             asked_at=item['question_date'],
+                                             observation_cutoff=resolved.window_end)
+            result = runtime.answer_predicted(
+                {'question': item['question']}, window_end=resolved.window_end,
+                read_mode=getattr(args, 'read_mode', 'pair'),
+                observation_cutoff=bounds.observation_cutoff)
             hypothesis = str(result.get('answer') or '')
             em = exact(hypothesis, item['answers']) if item['answers'] else 0
             f1_score = token_f1(hypothesis, item['answers']) if item['answers'] else 0.0

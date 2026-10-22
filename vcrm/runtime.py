@@ -182,6 +182,14 @@ QUERY_MASK_TOKENS: Sequence[str] = ('_X_', '____', '___', '_ _')
 QUERY_PLACEHOLDER = 'unknown'
 QUERY_FACT_ID = 'query_view'
 
+#: 读取模式（受控对照的两个臂）。
+#:   pair       当时可见的最新版本 + 一个历史版本（既有口径）
+#:   trajectory 当时可见的全部版本，按时间升序，每条带 role/time marker
+READ_MODES: Sequence[str] = ('pair', 'trajectory')
+
+#: 前端实现：'rules' = 现有确定性硬规则；'llm' = 通用模型抽取/解析（占位，待接入）。
+FRONTENDS: Sequence[str] = ('rules', 'llm')
+
 #: 决策日志的固定字段（契约）；日志里禁止出现任何 Oracle 字段。
 DECISION_LOG_KEYS: Sequence[str] = (
     'event_id', 'fact_id', 'predicted_state_id', 'candidate_state_ids', 'decision',
@@ -257,6 +265,32 @@ class QueryParser:
                 'attribute': attribute, 'reason': 'inverse_mask_subject'}
 
 
+def build_frontend(kind: str = 'rules', *, llm_client: Any = None,
+                   extractor_kwargs: Optional[Mapping[str, Any]] = None,
+                   query_parser_kwargs: Optional[Mapping[str, Any]] = None):
+    """按配置构造 (extractor, query_parser) —— 规则前端 / 模型前端两种实现。
+
+    实验二的受控对照只有这一个变量：
+        rules  现有确定性硬规则（依赖数据集句式，换数据集会 0 覆盖）
+        llm    通用模型抽取 + 通用查询解析（同一 E3、同一状态层、同一读取路径）
+
+    ``llm`` 前端必须显式给 ``llm_client``（实现 ``complete(prompt, ...) -> str``）；
+    没给就退化成 ``PlaceholderLLM``，任何调用都直接抛错——**绝不静默退回规则抽取**，
+    否则对照实验会变成"两次跑同一个规则前端"。
+    """
+    if kind not in FRONTENDS:
+        raise ValueError(f'frontend must be one of {FRONTENDS}, got {kind!r}')
+    extractor_kwargs = dict(extractor_kwargs or {})
+    query_parser_kwargs = dict(query_parser_kwargs or {})
+    if kind == 'rules':
+        return FactExtractor(**extractor_kwargs), QueryParser(**query_parser_kwargs)
+    from .llm_fact_extractor import LLMFactExtractor, PlaceholderLLM
+    from .llm_query_parser import LLMQueryParser
+    client = llm_client if llm_client is not None else PlaceholderLLM()
+    return (LLMFactExtractor(client, **extractor_kwargs),
+            LLMQueryParser(client, **query_parser_kwargs))
+
+
 def _reader_cfg(reader: Any) -> Mapping[str, Any]:
     cfg = getattr(reader, 'cfg', None)
     return cfg if isinstance(cfg, Mapping) else {}
@@ -276,7 +310,10 @@ class PredictedRuntime:
                  query_parser: Optional[QueryParser] = None,
                  time_mode: str = 'window_end', allow_as_of: bool = False,
                  hybrid_fallback: bool = False, defer_store_memory: bool = False,
-                 top_k: int = 5, as_of_future_fallback: bool = True) -> None:
+                 top_k: int = 5, as_of_future_fallback: bool = True,
+                 frontend: str = 'rules', llm_client: Any = None,
+                 read_mode: str = 'pair', multi_state: bool = False,
+                 max_query_states: int = 3) -> None:
         if time_mode not in TIME_MODES:
             raise ValueError(f'time_mode must be one of {TIME_MODES}, got {time_mode!r}')
         if time_mode == 'as_of' and not allow_as_of:
@@ -285,6 +322,8 @@ class PredictedRuntime:
                 "query['time'] == query['as_of'] == the gold version timestamp on TempLAMA, "
                 'so passing it through would hand select_version the answer. Pass '
                 'allow_as_of=True only for a controlled contrast / temporal-QA run.')
+        if read_mode not in READ_MODES:
+            raise ValueError(f'read_mode must be one of {READ_MODES}, got {read_mode!r}')
         if not isinstance(state_index, StateIndex):
             raise TypeError('PredictedRuntime needs a vcrm.state_index.StateIndex')
         if not hasattr(store, 'ingest_decision'):
@@ -294,9 +333,22 @@ class PredictedRuntime:
         self.store, self.state_index = store, state_index
         self.router = router or StateRouter(top_k=top_k)
         self.resolver = resolver or UpdateResolver()
-        self.extractor = extractor or FactExtractor()
-        self.query_parser = query_parser or QueryParser()
+        # 抽取/解析前端：'rules' = 现有确定性硬规则；'llm' = 通用模型前端（占位）。
+        # 显式传入 extractor/query_parser 时以显式对象为准（保持既有调用不变）。
+        if extractor is None or query_parser is None:
+            built_extractor, built_parser = build_frontend(frontend, llm_client=llm_client)
+            extractor = extractor or built_extractor
+            query_parser = query_parser or built_parser
+        self.frontend = frontend
+        self.extractor = extractor
+        self.query_parser = query_parser
         self.time_mode = time_mode
+        self.read_mode = read_mode
+        # 多跳/多事实问题：允许一次读取多个相关状态（默认关，单状态口径不变）。
+        self.multi_state = bool(multi_state)
+        if int(max_query_states) < 1:
+            raise ValueError('max_query_states must be >= 1')
+        self.max_query_states = int(max_query_states)
         self.hybrid_fallback = bool(hybrid_fallback)
         # as-of 可见性：查询时刻早于该状态的全部版本时（TempLAMA 的 window_end 常早于
         # 最后一年），仍然读出最新版本，而不是当成"无状态"。这类读取会在结果里带
@@ -484,10 +536,21 @@ class PredictedRuntime:
 
     # -- query path -------------------------------------------------------
     def answer_predicted(self, query: Mapping[str, Any], *, window_end: Optional[str] = None,
-                         time_mode: Optional[str] = None) -> Dict[str, Any]:
-        """回答一条查询；时间只走 public_query 的 time 通道。"""
+                         time_mode: Optional[str] = None,
+                         read_mode: Optional[str] = None,
+                         observation_cutoff: Optional[str] = None) -> Dict[str, Any]:
+        """回答一条查询；时间只走 public_query 的 time 通道。
+
+        ``read_mode`` / ``observation_cutoff`` 是实验一的两个开关：
+        read_mode 默认取构造时的 self.read_mode（默认 'pair'，与既有口径一致）；
+        observation_cutoff 默认 None = 旧行为（无可见性截止）。给定时只读当时
+        已经可见的版本，并强制关闭 future fallback。
+        """
         started = time.perf_counter()
         mode = self.time_mode if time_mode is None else time_mode
+        read_mode = self.read_mode if read_mode is None else read_mode
+        if read_mode not in READ_MODES:
+            raise ValueError(f'read_mode must be one of {READ_MODES}, got {read_mode!r}')
         if mode == 'as_of' and self.time_mode != 'as_of':
             raise ValueError("this runtime is pinned to time_mode='window_end'")
         view = public_query(query, time_mode=mode, window_end=window_end)
@@ -497,6 +560,7 @@ class PredictedRuntime:
         timings = {'parse_seconds': time.perf_counter() - started}
         base = {'time': target_time, 'target_time': target_time, 'time_mode': mode,
                 'time_source': view['time_source'], 'hybrid_fallback': False,
+                'read_mode': read_mode, 'observation_cutoff': observation_cutoff,
                 'parsed_subject': parsed['subject'], 'parsed_attribute': parsed['attribute']}
         if not parsed['resolved']:
             return base | {'answer': '', 'state_id': None, 'candidates': [],
@@ -521,12 +585,17 @@ class PredictedRuntime:
         identity_matched = [record for record in candidates
                             if record.matches_subject(fact.subject)
                             and record.matches_attribute(fact.attribute)]
+        if self.multi_state:
+            identity_matched = self._extend_identities(
+                identity_matched, parsed, semantic_key, fact)
+        # 可见性：给了 observation_cutoff 就按它裁剪，且不许 future fallback 绕过。
+        allow_fallback = bool(self.as_of_future_fallback) and observation_cutoff is None
+        selection_bound = target_time or observation_cutoff
         chosen, selected = None, None
         for record in identity_matched:
-            # target_time is None → 无时间约束 → 最新可见版本；绝不补其它时间字段。
+            # selection_bound is None → 无时间约束 → 最新可见版本；绝不补其它时间字段。
             selected = self.store.select_version(
-                record.state_id, target_time,
-                allow_future_fallback=self.as_of_future_fallback)
+                record.state_id, selection_bound, allow_future_fallback=allow_fallback)
             if selected is not None:
                 chosen = record
                 break
@@ -543,61 +612,232 @@ class PredictedRuntime:
                                    'hybrid_fallback': True,
                                    'fallback': 'no_memory_parametric'}
             return result
+        if self.multi_state:
+            # 多跳/多事实问题：一个 (subject, attribute) 装不下，允许多个状态一起读。
+            multi = self._read_multi_state(identity_matched, reader_query, read_mode,
+                                           selection_bound, observation_cutoff, allow_fallback)
+            if multi is not None:
+                timings.update(multi.pop('timings', {}))
+                return base | {'candidates': ranking,
+                               'identity_matched_state_ids':
+                                   [record.state_id for record in identity_matched],
+                               'timings': timings} | multi
         read = self.read_state(chosen.state_id, view, target_time=target_time,
-                               selected=selected, reader_query=reader_query)
+                               selected=selected, reader_query=reader_query,
+                               read_mode=read_mode, observation_cutoff=observation_cutoff)
         timings.update(read.pop('timings', {}))
         return base | {'candidates': ranking,
                        'identity_matched_state_ids':
                            [record.state_id for record in identity_matched],
                        'timings': timings} | read
 
+    def _extend_identities(self, matched, parsed, semantic_key, fact):
+        """把查询解析器给出的**额外**身份也检索一遍（多跳/多事实问题）。
+
+        规则版 QueryParser 只给单一身份，这里返回原列表、零开销；模型版
+        ``parse_multi`` 会给 identities 列表，多出来的每个身份单独检索候选，
+        只保留规范化 (subject, attribute) 完全匹配的状态，按 state_id 去重。
+        """
+        identities = list(parsed.get('identities') or [])
+        if len(identities) < 2:
+            return matched
+        seen = {record.state_id for record in matched}
+        extra = list(matched)
+        for index, identity in enumerate(identities[1:self.max_query_states], start=1):
+            subject, attribute = identity[0], identity[1]
+            probe = AtomicFact(id=f'{fact.id}:{index}', text=fact.text,
+                               observed_at=fact.observed_at, subject=subject,
+                               attribute=attribute, value='', source_id=fact.source_id)
+            candidates = self.router.retrieve_candidates(
+                probe, self.state_index, semantic_key=semantic_key)
+            for record in candidates:
+                if record.state_id in seen:
+                    continue
+                if record.matches_subject(subject) and record.matches_attribute(attribute):
+                    seen.add(record.state_id)
+                    extra.append(record)
+        return extra
+
+    def _read_multi_state(self, records, reader_query, read_mode, selection_bound,
+                          observation_cutoff, allow_fallback) -> Optional[Dict[str, Any]]:
+        """多状态读取：每个命中的状态各取 pair 读取的条目，拼成一个 bundle 一次读完。
+
+        只在 ``multi_state=True`` 且命中 ≥2 个状态时生效；预算按 ``_read_budget``
+        贪心装填，装不下的状态记进 ``multi_state_dropped``（不静默丢失，也不越界）。
+        返回 None 表示退回单状态路径。
+        """
+        if len(records) < 2:
+            return None
+        budget = self._read_budget(None)
+        groups, used = [], 0
+        for record in records[:self.max_query_states]:
+            selected = self.store.select_version(
+                record.state_id, selection_bound, allow_future_fallback=allow_fallback)
+            if selected is None:
+                continue
+            visible = self.store.visible_versions(record.state_id, observation_cutoff)
+            newest = visible[-1] if visible else self.store.current(record.state_id)
+            if newest is None:
+                continue
+            history = selected if selected is not newest else (
+                visible[-2] if len(visible) > 1 else None)
+            entries = [newest] + ([history] if history is not None else [])
+            cost = self.store.trajectory_slots(entries)
+            if used + cost > budget:
+                continue
+            groups.append((record, entries))
+            used += cost
+        if len(groups) < 2:
+            return None
+        entries = [entry for _, group in groups for entry in group]
+        current_ids = {group[0]['id'] for _, group in groups}
+        bundle = self.store.bundle(entries, self.markers, budget, current_ids=current_ids)
+        if bundle is not None and hasattr(bundle, 'to'):
+            device = getattr(self.reader, 'device', None)
+            if device is not None and bundle.device != device:
+                bundle = bundle.to(device)
+        started = time.perf_counter()
+        result = self.reader.answer(reader_query, bundle)
+        return {'answer': result.get('answer', ''), 'no_state_match': False,
+                'state_id': groups[0][0].state_id,
+                'multi_state': True,
+                'multi_state_ids': [record.state_id for record, _ in groups],
+                'multi_state_dropped': len(records[:self.max_query_states]) - len(groups),
+                'selected_version_id': groups[0][1][0]['id'],
+                'selected_version_time': groups[0][1][0]['time'],
+                'version_role': 'current',
+                'bundle_version_ids': [entry['id'] for entry in entries],
+                'bundle_version_times': [entry['time'] for entry in entries],
+                'trajectory_length': len(entries),
+                'read_latent_slots': result.get('read_latent_slots', 0),
+                'timings': {'read_seconds': time.perf_counter() - started}}
+
     def read_state(self, state_id: str, view: Mapping[str, Any], *,
                    target_time: Optional[str] = None,
                    selected: Optional[Mapping[str, Any]] = None,
-                   reader_query: Optional[Mapping[str, Any]] = None) -> Dict[str, Any]:
-        """在给定状态下读一个版本（current + 紧邻历史）并交给 FrozenReader。
+                   reader_query: Optional[Mapping[str, Any]] = None,
+                   read_mode: str = 'pair',
+                   observation_cutoff: Optional[str] = None,
+                   max_slots: Optional[int] = None,
+                   max_versions: int = 8) -> Dict[str, Any]:
+        """在给定状态下读取 memory 并交给 FrozenReader；两种读取模式受控对照。
 
-        target_time is None → 无时间约束 → 最新可见版本（不补任何其它时间字段）。
-        只吃公开视图；oracle_state 对照也只是把 state_id 换成金标映射出来的编号，
-        读取路径与本函数完全一致。
+        read_mode='pair'（既有口径，默认）
+            当时可见的最新版本 + 一个历史版本（"Current·128 + History·16"）。
+        read_mode='trajectory'（实验一新增）
+            当时可见的**全部**版本，按时间升序，每条自带 role/time marker
+            （"Current·128 + History k·16"），由 store.select_trajectory 按预算裁剪。
+
+        可见性（本函数必须遵守的硬约束）
+            ``observation_cutoff`` 是系统当时可能观测到的最后时刻。给出它时：
+              1. 只读 ``time <= observation_cutoff`` 的版本；
+              2. **强制关闭** ``allow_future_fallback``——晚于截止的版本不可读，
+                 哪怕 store 里存着更晚的 current；
+              3. 结果里用 ``future_current_suppressed`` / ``hidden_future_versions``
+                 显式记录"被挡掉的未来信息"，便于分口径统计。
+
+        ``observation_cutoff=None`` 时行为与旧实现逐字段一致（无时间约束 = 读最终
+        current），因此既有对照结果不受影响。
         """
         started = time.perf_counter()
+        if read_mode not in READ_MODES:
+            raise ValueError(f'read_mode must be one of {READ_MODES}, got {read_mode!r}')
         if reader_query is None:
             reader_query = self._reader_query(view)
-        if selected is None:
-            selected = self.store.select_version(
-                state_id, target_time,
-                allow_future_fallback=self.as_of_future_fallback)
-        if selected is None:
-            return {'answer': '', 'state_id': state_id, 'no_state_match': True,
-                    'selected_version_id': None, 'version_role': None,
-                    'bundle_version_ids': [], 'read_latent_slots': 0,
-                    'timings': {'read_seconds': time.perf_counter() - started}}
-        current = self.store.current(state_id)
-        historical = selected if selected is not current else next(
-            (entry for entry in reversed(self.store.entries)
-             if entry['state'] == state_id and entry is not current), None)
-        entries = [current] + ([historical] if historical is not None else [])
-        bundle = self.store.bundle(entries, self.markers,
-                                   _reader_cfg(self.reader).get('read_latent_slots'))
+        budget = self._read_budget(max_slots)
+        # 给了可观察截止就绝不允许 future fallback 绕过可见性约束。
+        allow_fallback = bool(self.as_of_future_fallback) and observation_cutoff is None
+        base = {'state_id': state_id, 'read_mode': read_mode,
+                'observation_cutoff': observation_cutoff, 'target_time': target_time}
+        missing = base | {'answer': '', 'no_state_match': True, 'selected_version_id': None,
+                          'selected_version_time': None, 'version_role': None,
+                          'bundle_version_ids': [], 'bundle_version_times': [],
+                          'trajectory_length': 0, 'read_latent_slots': 0,
+                          'timings': {'read_seconds': time.perf_counter() - started}}
+        if read_mode == 'trajectory':
+            entries = self.store.select_trajectory(
+                state_id, observed_until=observation_cutoff, max_slots=budget,
+                max_versions=max_versions)
+            if not entries:
+                return missing
+            current_id = entries[0]['id']          # canonical: current 在首位
+            selected_entry = entries[0]
+            current_ids = {current_id}
+        else:
+            if selected is None:
+                # 目标时间优先（"当时哪个版本是答案"），没有目标时间就用可观察截止
+                # 作为选择上界；两者都没有 = 无时间约束。
+                bound = target_time or observation_cutoff
+                selected = self.store.select_version(
+                    state_id, bound, allow_future_fallback=allow_fallback)
+            if (selected is not None and observation_cutoff is not None
+                    and selected['time'] > observation_cutoff):
+                # 兜底：调用方传进来的 selected 或目标时间越界时，一律裁到截止时刻之内。
+                selected = self.store.select_version(
+                    state_id, observation_cutoff, allow_future_fallback=False)
+            if selected is None:
+                return missing
+            visible = self.store.visible_versions(state_id, observation_cutoff)
+            newest = visible[-1] if visible else self.store.current(state_id)
+            if newest is None:
+                return missing
+            history = selected if selected is not newest else (
+                visible[-2] if len(visible) > 1 else None)
+            entries = [newest] + ([history] if history is not None else [])
+            entries = self._pack_entries(entries, budget)
+            if not entries:
+                entries = [newest]
+            entries = self.store.canonical_order(entries, newest['id'])
+            current_id = entries[0]['id']
+            current_ids = {current_id}
+            selected_entry = selected
+        entries = self.store.assert_canonical(entries, current_id)
+        bundle = self.store.bundle(entries, self.markers, budget, current_ids=current_ids)
         if bundle is not None and hasattr(bundle, 'to'):
             device = getattr(self.reader, 'device', None)
             if device is not None and bundle.device != device:
                 bundle = bundle.to(device)
         result = self.reader.answer(reader_query, bundle)
-        return {'answer': result.get('answer', ''), 'state_id': state_id,
-                'no_state_match': False,
-                'selected_version_id': selected['id'],
-                'selected_version_time': selected['time'],
-                # as-of 回退读取：读到的版本晚于查询时刻。单独分口径，不与正常读取混算。
-                'version_after_target_time': bool(
-                    target_time and target_time != 'unknown'
-                    and selected['time'] != 'unknown'
-                    and selected['time'] > target_time),
-                'version_role': 'current' if selected is current else 'historical',
-                'bundle_version_ids': [entry['id'] for entry in entries],
-                'read_latent_slots': result.get('read_latent_slots', 0),
-                'timings': {'read_seconds': time.perf_counter() - started}}
+        current = self.store.current(state_id)
+        return base | {
+            'answer': result.get('answer', ''),
+            'no_state_match': False,
+            'selected_version_id': selected_entry['id'],
+            'selected_version_time': selected_entry['time'],
+            # as-of 回退读取：读到的版本晚于查询目标时刻。单独分口径，不与正常读取混算。
+            'version_after_target_time': bool(
+                target_time and target_time != 'unknown'
+                and selected_entry['time'] != 'unknown'
+                and selected_entry['time'] > target_time),
+            'version_role': 'current' if selected_entry['id'] in current_ids else 'historical',
+            'bundle_layout': ['current' if entry['id'] in current_ids else 'historical'
+                              for entry in entries],
+            'bundle_version_ids': [entry['id'] for entry in entries],
+            'bundle_version_times': [entry['time'] for entry in entries],
+            'trajectory_length': len(entries),
+            'hidden_future_versions': self.store.hidden_future_count(state_id, observation_cutoff),
+            'future_current_suppressed': bool(
+                current is not None and observation_cutoff is not None
+                and current['time'] > observation_cutoff),
+            'read_latent_slots': result.get('read_latent_slots', 0),
+            'timings': {'read_seconds': time.perf_counter() - started}}
+
+    def _read_budget(self, max_slots: Optional[int]) -> int:
+        """decoder 端可用的 latent slot 预算：调用方上限 ≤ reader 配置上限。"""
+        configured = _reader_cfg(self.reader).get('read_latent_slots')
+        budget = int(max_slots or configured or 256)
+        return min(budget, int(configured)) if configured else budget
+
+    def _pack_entries(self, entries, budget: int, marker_slots: int = 2):
+        """按预算贪心装入条目（保持传入顺序，超预算即停止）。"""
+        packed, used = [], 0
+        for entry in entries:
+            cost = self.store.entry_slots(entry) + marker_slots
+            if used + cost > budget:
+                break
+            packed.append(entry)
+            used += cost
+        return packed
 
     @staticmethod
     def _reader_query(view: Mapping[str, Any]) -> Dict[str, Any]:
@@ -619,9 +859,12 @@ class PredictedRuntime:
 
 __all__ = [
     'DECISION_LOG_KEYS',
+    'FRONTENDS',
     'PredictedRuntime',
     'QUERY_MASK_TOKENS',
     'QUERY_PLACEHOLDER',
     'QueryParser',
+    'READ_MODES',
+    'build_frontend',
     'validate_decision_log',
 ]

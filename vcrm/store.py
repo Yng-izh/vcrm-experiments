@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 import struct
+from typing import Any, Collection, Dict, List, Optional
 
 import numpy as np
 import torch
@@ -303,12 +304,116 @@ class KeyframeStore:
             return max(known, key=lambda e: (e['time'], e['id']))
         return None
 
-    def bundle(self, selected, markers=None, slot_limit=None):
+    # -- trajectory reads (experiment 1: pair vs full trajectory) -----------
+    def entry_slots(self, entry) -> int:
+        """该版本在 decoder 端占用的 latent slot 数（文本条目记 0）。"""
+        payload = entry['payload']
+        return 0 if isinstance(payload, bytes) else int(payload.shape[0])
+
+    def canonical_order(self, entries, current_id):
+        """唯一读取布局：current 在前，其余按时间升序。
+
+        训练（training.trajectory_bundle）与推理（read_state 的 pair/trajectory
+        两条路径）都必须经过这里，否则 current 的位置、历史的顺序会各自漂移，
+        多版本训练再好也会被训练-推理不一致吃掉。
+        """
+        current = [entry for entry in entries if entry['id'] == current_id]
+        rest = sorted((entry for entry in entries if entry['id'] != current_id),
+                      key=lambda entry: (entry['time'], entry['id']))
+        return current + rest
+
+    def assert_canonical(self, entries, current_id):
+        """布局自检：current 必须在首位且唯一，历史必须时间升序。"""
+        if not entries or entries[0]['id'] != current_id:
+            raise AssertionError('canonical layout requires the current entry first')
+        if sum(entry['id'] == current_id for entry in entries) != 1:
+            raise AssertionError('canonical layout requires exactly one current entry')
+        times = [entry['time'] for entry in entries[1:]]
+        if times != sorted(times):
+            raise AssertionError('historical entries must be in ascending time order')
+        return entries
+
+    def visible_versions(self, state, observed_until=None) -> List[Dict[str, Any]]:
+        """该状态在 ``observed_until`` 之前**已经可见**的版本，按时间升序。
+
+        ``observed_until=None`` → 无时间约束，返回全部版本（与 ``select_version``
+        同口径：时间未知的版本只在无约束时可见）。
+        """
+        entries = [e for e in self.entries if e['state'] == state]
+        if observed_until:
+            entries = [e for e in entries if e['time'] <= observed_until]
+        return sorted(entries, key=lambda e: (e['time'], e['id']))
+
+    def select_trajectory(self, state, observed_until=None, max_slots: int = 256, *,
+                          marker_slots: int = 2, max_versions: int = 8
+                          ) -> List[Dict[str, Any]]:
+        """返回该状态在 ``observed_until`` 之前的**完整演化轨迹**（时间升序）。
+
+        与 ``select_version`` 的分工：
+            select_version  只回答"当时的最新可见版本是哪一个"（1 条）；
+            select_trajectory  把当时已经可见的**全部**版本交给 reader，由每个版本
+            自带的 role/time marker 自己定位（"Current·128 + History k·16"）。
+
+        可见性（这是本函数存在的理由）：``observed_until`` 是硬上界，
+        ``allow_future_fallback`` 那套回退在这里**不存在**——晚于截止时刻的版本
+        一律不返回，哪怕 store 里存着更晚的 current。
+
+        预算：从**最新**的可见版本往回取（信息量最大），每条按
+        ``entry_slots(entry) + marker_slots`` 记账，超出 ``max_slots`` 或达到
+        ``max_versions`` 即停止，再把结果反转为时间升序。E3 上
+        128 + 7×16 + 8×2 = 256，即 8 个版本正好吃满 256-slot 预算。
+
+        条件化 codec（D 变体）被显式拒绝：它的历史 code 要用**最终 current** 当
+        decode 的 anchor，而最终 current 相对 ``observed_until`` 就是未来信息。
+        """
+        if max_slots < 1 or marker_slots < 0:
+            raise ValueError('max_slots must be >= 1 and marker_slots >= 0')
+        if max_versions < 1:
+            raise ValueError('max_versions must be >= 1')
+        if getattr(self.codec, 'conditioned', False) and observed_until is not None:
+            raise ValueError(
+                'Conditioned codecs decode historical codes against the final current '
+                'memory, which is future information relative to observed_until; '
+                'cutoff-bounded trajectory reads need an independent codec (E3)')
+        visible = self.visible_versions(state, observed_until)
+        chosen, used = [], 0
+        for entry in reversed(visible):
+            if len(chosen) >= max_versions:
+                break
+            cost = self.entry_slots(entry) + marker_slots
+            if used + cost > max_slots:
+                break
+            chosen.append(entry)
+            used += cost
+        chosen.reverse()                                     # 时间升序
+        return self.canonical_order(chosen, chosen[-1]['id'])
+
+    def trajectory_slots(self, entries, marker_slots: int = 2) -> int:
+        """轨迹在 decoder 端的总 slot 数（含 role/time marker）。"""
+        return sum(self.entry_slots(entry) + marker_slots for entry in entries)
+
+    def hidden_future_count(self, state, observed_until) -> int:
+        """该状态里晚于 ``observed_until``、因而被读取路径排除的版本数。"""
+        if not observed_until:
+            return 0
+        return sum(1 for e in self.entries if e['state'] == state and e['time'] > observed_until)
+
+    def bundle(self, selected, markers=None, slot_limit=None,
+               current_ids: Optional[Collection[str]] = None):
+        """把选中版本解码后拼成 decoder memory。
+
+        ``current_ids``：哪些条目要打 'current' role。给了就用它（轨迹读取时
+        "当时可见的最新版本"不是 store 的最终 current，必须显式指定）；不给则退回
+        旧语义（``self.current(state)`` 即 current）。
+        """
         pieces = []
         for entry in selected:
             memory = self.decode(entry)
             if markers is not None:
-                role = 'current' if entry is self.current(entry['state']) else 'historical'
+                if current_ids is None:
+                    role = 'current' if entry is self.current(entry['state']) else 'historical'
+                else:
+                    role = 'current' if entry['id'] in current_ids else 'historical'
                 memory = markers(memory, role, entry['time'])
             pieces.append(memory)
         result = torch.cat(pieces) if pieces else None

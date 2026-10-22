@@ -111,6 +111,270 @@ def snapshot_pairs(episodes):
     return pairs
 
 
+def _history_context(histories, target_index, budget, rng):
+    """取真实的其他历史版本做上下文：target 必留，先留时间相邻的，再随机补足。"""
+    if len(histories) <= budget:
+        return list(histories)
+    keep = {target_index}
+    for offset in (1, -1, 2, -2, 3, -3):
+        if len(keep) >= budget:
+            break
+        neighbour = target_index + offset
+        if 0 <= neighbour < len(histories):
+            keep.add(neighbour)
+    rest = [i for i in range(len(histories)) if i not in keep]
+    rng.shuffle(rest)
+    keep.update(rest[:max(0, budget - len(keep))])
+    return [histories[i] for i in sorted(keep)]
+
+
+def trajectory_samples(episodes, *, protocol='final_current_snapshot_v1', min_versions=3,
+                       max_versions=8, max_negatives=None, seed=42):
+    """把版本链展开成"多版本判别"样本（替换 temporal_pairs 的角色，不改数据）。
+
+    与 temporal_pairs / snapshot_pairs 的差别只有一个：
+        旧：一条样本 = current + 1 个历史候选 → 学"能不能读出这一个版本"
+        新：一条样本 = current + k(>=2) 个历史候选 → 学"能不能挑对那个年份"
+
+    监督侧字段（target_index / target_time）只用于取答案与构造负例，绝不进 reader：
+    reader 的时间线索只来自问题文本（与推理一致）。
+    """
+    if protocol != 'final_current_snapshot_v1':
+        raise ValueError('Trajectory samples require the final-current snapshot protocol')
+    rng = random.Random(seed)
+    samples = []
+    for episode in episodes:
+        events = ingestion_view(episode)
+        if len(events) < min_versions:
+            continue
+        if any(a['time'] >= b['time'] for a, b in zip(events, events[1:])):
+            raise ValueError('Trajectory training needs strictly chronological observed versions')
+        latest_queries = [q for q in episode['queries'] if q['latest']]
+        if len(latest_queries) != 1:
+            raise ValueError('Snapshot requires exactly one final-current query')
+        latest, current = latest_queries[0], events[-1]
+
+        qa_by_event = {}
+        for q in episode['queries']:
+            if q['latest']:
+                continue
+            eligible = [e for e in events if e['time'] <= q['as_of']]
+            if not eligible:
+                continue
+            selected = eligible[-1]
+            if selected['id'] == current['id']:
+                continue
+            qa_by_event.setdefault(selected['id'], []).append(q)
+
+        histories = [e for e in events[:-1] if e['id'] in qa_by_event]
+        if len(histories) < min_versions - 1:
+            continue
+
+        for target_index, old in enumerate(histories):
+            question = min(qa_by_event[old['id']],
+                           key=lambda q: (q['time'] != old['time'], q['time'], q['id']))
+            context = _history_context(histories, target_index, max_versions - 1, rng)
+            gold = {normalize(a) for a in question['answers']}
+            negatives = []
+            for entry in context:
+                if entry['id'] == old['id']:
+                    continue
+                for answer in qa_by_event[entry['id']][0]['answers']:
+                    if normalize(answer) not in gold:
+                        negatives.append(answer)
+            negatives = list(dict.fromkeys(negatives))
+            if max_negatives is not None:          # 默认不截断：负例池 = 所有其它版本
+                negatives = negatives[:max_negatives]
+            if not negatives:
+                continue
+            samples.append({
+                'id': f"{episode['id']}:traj:{old['id']}",
+                'state_key': old['state_key'],
+                'current': current, 'anchor': current,
+                'histories': context,
+                'target': old, 'target_index': context.index(old),
+                'target_time': old['time'],
+                'question': question, 'answers': question['answers'],
+                # 时间线索必须来自问题文本（与推理完全同构）：年份进题面，
+                # reader 的 "Current date" 槽放观测截止，而不是目标年份。
+                'reader_query': {'question': f"In {old['time'][:4]}: {question['question']}",
+                                 'time': current['time'], 'time_source': 'window_end'},
+                'negative_answers': negatives, 'latest': latest,
+                'n_versions': len(events)})
+    return samples
+
+
+def trajectory_bundle(markers, codec, memories, current_memory, current_time):
+    """唯一拼装路径：current(128) 在前，历史(16 each)按时间升序在后。
+
+    ``memories`` = [(memory, time), ...] 已按时间升序。
+    与 store.canonical_order + store.bundle(current_ids={current}) 逐位同构。
+    """
+    pieces = [markers(current_memory, 'current', current_time)]
+    for memory, time_value in memories:
+        pieces.append(markers(codec(memory, current_memory), 'historical', time_value))
+    return torch.cat(pieces)
+
+
+def trajectory_ranking_loss(reader, question, bundle, gold_answer, negative_answers,
+                            max_negatives=None):
+    """多版本判别损失（listwise）：在 {金标} ∪ {所有其它版本的答案} 上做一次 softmax。
+
+    ``rank = -log( exp(correct) / (exp(correct) + sum exp(wrong_i)) )``
+         = -correct + logsumexp([correct] + wrongs)
+
+    为什么不用 pairwise hinge：实测 gap 双峰（40% 为负、42% 已超过 margin），
+    hinge 会让已经满足的那一半永远零梯度。listwise 的分母里永远有别的候选，
+    不会饱和，也不需要 margin 超参。
+    ``mean_answer_logprob`` 按答案 token 数平均，不同长度的名字可以直接比。
+    """
+    logits, target = reader.answer_logits(question, gold_answer, bundle)
+    correct = mean_answer_logprob(logits, target)
+    ce = F.cross_entropy(logits.reshape(-1, logits.shape[-1]), target.reshape(-1))
+    wrongs = []
+    for negative in (negative_answers if max_negatives is None
+                     else negative_answers[:max_negatives]):
+        neg_logits, neg_target = reader.answer_logits(question, negative, bundle)
+        wrongs.append(mean_answer_logprob(neg_logits, neg_target))
+    if not wrongs:
+        return ce, ce.new_zeros(())
+    candidates = torch.cat((correct.reshape(1), torch.stack(wrongs)))
+    rank = torch.logsumexp(candidates, dim=0) - correct
+    return ce, rank
+
+
+def _load_e3(codec, markers, path):
+    """从已有 checkpoint 初始化 codec + markers（index 不参与本任务，不加载）。"""
+    from safetensors.torch import load_file
+    state = load_file(str(path))
+    for prefix, module in (('codec', codec), ('markers', markers)):
+        module.load_state_dict(
+            {k[len(prefix) + 1:]: v for k, v in state.items() if k.startswith(prefix + '.')},
+            strict=True)
+
+
+def train_trajectory(config, root, stage='markers', init_from=None, limit=None):
+    """多版本判别式训练。两步分开跑，回答"现有历史信息够不够"这个问题。
+
+    stage='markers'  冻结 E3 与 encoder/reader，只训练 VersionMarkers
+    stage='joint'    codec + markers 一起训（必须先跑完 markers 步，用它的权重初始化）
+
+    压缩码一律现算（codec(memory, anchor)），不复用任何持久化 payload；
+    joint 步之后旧 store 的 codec_sha256 不再匹配，必须重建，不能沿用旧码。
+    """
+    from .codec import SlotCodec, VersionMarkers
+    from .reader import FrozenReader
+
+    if not config.get('allow_training'):
+        raise RuntimeError('Training disabled; explicitly authorize a new config')
+    if stage not in ('markers', 'joint'):
+        raise ValueError("stage must be 'markers' or 'joint'")
+    if stage == 'joint' and not init_from:
+        raise ValueError('joint stage must start from the markers-stage checkpoint')
+    source = init_from or config.get('trajectory_init_from')
+    if not source:
+        raise ValueError('trajectory_init_from (or init_from) must point at a checkpoint')
+
+    episodes = train_only(config, limit)
+    samples = trajectory_samples(
+        episodes, min_versions=config.get('trajectory_min_versions', 3),
+        max_versions=config.get('trajectory_max_versions', 8),
+        max_negatives=config.get('trajectory_max_negatives', 2), seed=config['seed'])
+    retain_pairs = snapshot_pairs(episodes)
+    if not samples:
+        raise ValueError('No eligible trajectory samples')
+
+    root = Path(root)
+    root.mkdir(parents=True, exist_ok=True)
+    reader = FrozenReader(config)
+    codec = SlotCodec(reader.shape[1], config['history_slots'], config['codec_width'],
+                      config['codec_heads'], False, 0., config['seed'],
+                      config.get('codec_variant', 'residual'),
+                      config.get('decode_conditioned'), config.get('codec_value_path'),
+                      config.get('codec_activation_rms_cap')).to(reader.device)
+    markers = VersionMarkers(reader.shape[1]).to(reader.device)
+    _load_e3(codec, markers, source)
+
+    codec.requires_grad_(stage == 'joint')
+    markers.requires_grad_(True)
+    parameters = [p for p in list(markers.parameters()) + list(codec.parameters())
+                  if p.requires_grad]
+    optimizer = torch.optim.AdamW(parameters, lr=config.get('trajectory_learning_rate', 1e-4))
+    rank_weight = config.get('rank_weight', 0.5)
+    retain_weight = config.get('retain_weight', 0.5)
+    retain_every = max(1, int(config.get('retain_every', 4)))
+
+    def memory_of(event):
+        return reader.encode_event(event).to(reader.device).float()
+
+    rng = random.Random(config['seed'])
+    history = []
+    for epoch in range(config.get('trajectory_epochs', 2)):
+        rng.shuffle(samples)
+        for step, sample in enumerate(samples):
+            current_memory = memory_of(sample['current'])
+            memories = [(memory_of(entry), entry['time']) for entry in sample['histories']]
+            bundle = trajectory_bundle(markers, codec, memories,
+                                       current_memory, sample['current']['time'])
+            visible = sample['reader_query']
+            ce, rank = trajectory_ranking_loss(
+                reader, visible, bundle, sample['answers'][0], sample['negative_answers'],
+                max_negatives=config.get('trajectory_max_negatives'))
+            loss = ce + rank_weight * rank
+
+            if retain_weight and retain_pairs and step % retain_every == 0:
+                pair = retain_pairs[(step // retain_every) % len(retain_pairs)]
+                pair_current = memory_of(pair['current'])
+                pair_bundle = trajectory_bundle(
+                    markers, codec, [(memory_of(pair['old']), pair['old']['time'])],
+                    pair_current, pair['current']['time'])
+                q = {'question': f"In {pair['old']['time'][:4]}: {pair['historical']['question']}",
+                     'time': pair['current']['time'], 'time_source': 'window_end'}
+                answer = pair['historical']['answers'][0]
+                student, target = reader.answer_logits(q, answer, pair_bundle)
+                with torch.no_grad():
+                    teacher, teacher_target = reader.answer_logits(
+                        q, answer, memory_of(pair['old']))
+                if not torch.equal(teacher_target, target):
+                    raise ValueError('Teacher/student answer prefixes differ')
+                pair_ce, pair_kl = distillation_loss(student, teacher, target,
+                                                     config['distillation_temperature'])
+                loss = loss + retain_weight * (pair_ce + config['distillation_weight'] * pair_kl)
+
+            if not torch.isfinite(loss):
+                raise ValueError(f'Non-finite loss at sample {sample["id"]}')
+            optimizer.zero_grad(set_to_none=True)
+            loss.backward()
+            torch.nn.utils.clip_grad_norm_(parameters, config.get('trajectory_grad_clip', 1.0))
+            optimizer.step()
+            if step == 0 or (step + 1) % 50 == 0:
+                print(f"[{stage}] epoch {epoch + 1} step {step + 1}/{len(samples)} "
+                      f"loss={float(loss.detach()):.4f} ce={float(ce.detach()):.4f} "
+                      f"rank={float(rank.detach()):.4f}", flush=True)
+            history.append({'stage': stage, 'epoch': epoch + 1, 'step': step + 1,
+                            'loss': float(loss.detach()), 'qa_ce': float(ce.detach()),
+                            'rank': float(rank.detach()),
+                            'histories': len(sample['histories'])})
+
+    save_weights(root / 'codec.safetensors',
+                 {**{f'codec.{k}': v for k, v in codec.state_dict().items()},
+                  **{f'markers.{k}': v for k, v in markers.state_dict().items()}})
+    write_json(root / 'trajectory_training.json', {
+        'stage': stage, 'init_from': str(source),
+        'trainable': ['markers'] if stage == 'markers' else ['codec', 'markers'],
+        'samples': len(samples), 'retain_pairs': len(retain_pairs),
+        'min_versions': config.get('trajectory_min_versions', 3),
+        'max_versions': config.get('trajectory_max_versions', 8),
+        'rank_weight': rank_weight, 'retain_weight': retain_weight,
+        'ranking_objective': 'listwise_softmax over {gold} + {all other version answers}',
+        'negative_pool': 'all other historical versions of the same state',
+        'bundle_layout': 'current(128) first, then histories(16 each) ascending by time',
+        'time_convention': 'target year in question text; Current date slot = observation cutoff',
+        'target_time_passed_to_reader': False,
+        'completed': True})
+    return history
+
+
 @torch.no_grad()
 def matched_teacher_bundle(markers, current, old, pair):
     # Same train-time marker weights and ordering as student; no teacher gradients.

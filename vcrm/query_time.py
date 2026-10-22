@@ -204,6 +204,59 @@ class TimeResolution:
                 'ask_time': self.ask_time}
 
 
+def _min_time(*values: Optional[str]) -> Optional[str]:
+    present = [str(value) for value in values if value]
+    return min(present) if present else None
+
+
+@dataclass(frozen=True)
+class QueryTimeBounds:
+    """查询时间的**两条互相独立**的边界（t16：目标时间 / 可观察截止）。
+
+    为什么必须拆开（这是"读到哪个版本"这一层最容易错的地方）：
+
+    * ``target_time``：问题文本指向的历史时刻。只有问题里出现**可唯一折算**的时间锚
+      时才有值。它是"哪个版本是答案"的选择上界。
+    * ``observation_cutoff``：系统当时**可能已经观测到**的最后时刻（提问时刻，或
+      episode 观测窗口末刻）。它是可见性**硬上界**：晚于它的版本一律不可读，
+      即使 store 里存着更晚的 current。
+
+    两者混用会同时造成两类错误：把 ``ask_time`` 当成历史目标时间（时间维度免费解掉），
+    或把存储里的最终 current 当成"当时可见的版本"（未来信息混进读取）。
+    """
+
+    target_time: Optional[str] = None
+    observation_cutoff: Optional[str] = None
+    time_anchor: str = TIME_ANCHOR_ASK_TIME
+    anchor_ambiguous: bool = False
+    anchor_text: Optional[str] = None
+    anchor_kind: str = 'none'
+    reason: str = ''
+    ask_time: Optional[str] = None
+
+    @property
+    def selection_bound(self) -> Optional[str]:
+        """版本选择上界 = min(可观察截止, 目标时间)；两者皆 None 时无约束。"""
+        return _min_time(self.observation_cutoff, self.target_time)
+
+    def visible(self, timestamp: Optional[str]) -> bool:
+        """该时间戳的版本是否在可观察截止之前可见（无截止 → 全部可见）。"""
+        if not self.observation_cutoff:
+            return True
+        if not timestamp or str(timestamp) == 'unknown':
+            return False
+        return str(timestamp) <= str(self.observation_cutoff)
+
+    def as_dict(self) -> Dict[str, Any]:
+        return {'target_time': self.target_time,
+                'observation_cutoff': self.observation_cutoff,
+                'selection_bound': self.selection_bound,
+                'time_anchor': self.time_anchor,
+                'anchor_ambiguous': self.anchor_ambiguous,
+                'anchor_text': self.anchor_text, 'anchor_kind': self.anchor_kind,
+                'reason': self.reason, 'ask_time': self.ask_time}
+
+
 class QueryTimeResolver:
     """确定性的查询时间解析器：问题文本历史锚优先，其次提问时刻。
 
@@ -275,8 +328,34 @@ class QueryTimeResolver:
         return TimeResolution(ask_iso, TIME_ANCHOR_ASK_TIME, False, None, 'none',
                               'no_temporal_expression', ask_iso)
 
+    def resolve_bounds(self, question: str, asked_at: Any = None, *,
+                       observation_cutoff: Optional[str] = None) -> QueryTimeBounds:
+        """把一次查询拆成「目标时间」与「可观察截止」两条边界。
+
+        observation_cutoff 显式给出时（例如 episode 观测窗口末刻 / 数据集声明的
+        "当前时刻"）直接作为可见性硬上界；否则退回提问时刻。
+
+        target_time **只在问题文本里有可唯一折算的时间锚时才有值**：
+        ``resolve()`` 落到 ``ask_time`` 的那条分支（无时间表达 / 相对词不可折算）
+        一律不给目标时间，避免把"系统当前时间"当成历史目标时间。
+        """
+        resolution = self.resolve(question, asked_at)
+        cutoff = observation_cutoff or resolution.ask_time
+        target = (resolution.window_end
+                  if resolution.time_anchor == TIME_ANCHOR_QUESTION_TEXT else None)
+        reason = resolution.reason
+        if observation_cutoff and not resolution.ask_time:
+            reason = f'{reason}|cutoff_from_caller'
+        return QueryTimeBounds(target_time=target, observation_cutoff=cutoff,
+                               time_anchor=resolution.time_anchor,
+                               anchor_ambiguous=resolution.anchor_ambiguous,
+                               anchor_text=resolution.anchor_text,
+                               anchor_kind=resolution.anchor_kind, reason=reason,
+                               ask_time=resolution.ask_time)
+
 
 __all__ = [
+    'QueryTimeBounds',
     'QueryTimeResolver',
     'TIME_ANCHORS',
     'TIME_ANCHOR_ASK_TIME',
