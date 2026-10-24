@@ -144,6 +144,8 @@ def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
                         help='TempLAMA validation（data-root 下的 templama_val.json）')
     parser.add_argument('--episodes', type=int, default=0,
                         help='只扫前 N 个 episode（0 = 全部；题目按 family 轮转取满 limit）')
+    parser.add_argument('--episode-offset', type=int, default=0,
+                        help='跳过前 N 个 episode，用于换一批未用过的验证状态')
     parser.add_argument('--neighbours', type=int, default=4,
                         help='混合事实池的邻近 episode 数（两臂共用同一池）')
     parser.add_argument('--identity', choices=IDENTITIES, default='gold',
@@ -196,6 +198,8 @@ def load_episodes(mod, args: argparse.Namespace) -> List[Mapping[str, Any]]:
         available = sorted(p.stem for p in Path(args.data_root).glob('*.json'))
         raise SystemExit(f'缺少准备好的 split：{path}\n可用 split：{available}')
     episodes = mod.read_json(path)
+    if args.episode_offset:                    # 跳过已参与分析的验证状态
+        episodes = episodes[args.episode_offset:]
     if args.episodes:
         episodes = episodes[:args.episodes]
     if args.shards > 1:

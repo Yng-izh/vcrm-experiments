@@ -1,0 +1,37 @@
+{
+  "tag": "dialogue_v1",
+  "protocol": "dialogue_end_to_end_v1",
+  "split": "longmemeval_test",
+  "question_types": [
+    "temporal-reasoning",
+    "knowledge-update",
+    "multi-session"
+  ],
+  "components": "icae+checkpoint:/share/latent2/vcrm_icae/runs/architecture_v6_E3_train",
+  "rows": 20,
+  "scored_rows": 0,
+  "judge_errors": 0,
+  "judge_deferred": true,
+  "error_detail": [],
+  "overall": {
+    "pair": {
+      "n": 0
+    },
+    "trajectory": {
+      "n": 0
+    }
+  },
+  "by_type": {},
+  "paired": {
+    "pair_wins": 0,
+    "trajectory_wins": 0,
+    "ties": 0
+  },
+  "arms_agree_rate": 1.0,
+  "wall_seconds": 18542.3,
+  "caveats": [
+    "端到端口径：状态身份由管线自己预测，不是金标写池；结论属于\"管线整体\"。",
+    "判分用官方 LongMemEval prompt + 自定义 judge（非官方 GPT-4o 分数）。",
+    "LongMemEval-S 问题多不依赖版本更替；这里量的是\"对话流入记忆后还能不能读出来\"。"
+  ]
+}

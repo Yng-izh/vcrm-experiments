@@ -148,6 +148,9 @@ def build_components(args: argparse.Namespace) -> Components:
     # 评测新 checkpoint 用：VCRM_TRAINING_ROOT 覆盖默认训练目录（默认行为不变）
     training_root = os.environ.get('VCRM_TRAINING_ROOT', training_root)
     runtime = SlotMemoryRuntime.from_checkpoint(config, training_root)
+    # 批量编码扩展挂在实例上（reader.py 受 sha256 锁定，不改文件；不挂载时回退逐条）。
+    from vcrm.reader_batch import attach_batch_encode
+    attach_batch_encode(runtime.reader)
     return Components(runtime.reader, runtime.codec, runtime.markers, runtime.index,
                       f'icae+checkpoint:{training_root}')
 

@@ -10,7 +10,8 @@ meta = read_json(SRC / "codec_training.json")
 index_keys = {k: v for k, v in load_file(str(SRC / "codec.safetensors")).items()
               if k.startswith("index.")}
 print("index tensors copied:", len(index_keys))
-for run in ("runs/trajectory_v1_markers", "runs/trajectory_v1_joint"):
+for run in ("runs/trajectory_v1_markers", "runs/trajectory_v1_joint",
+            "runs/cross_version_v2"):
     src = Path(run)
     merged = dict(load_file(str(src / "codec.safetensors")))
     merged.update(index_keys)

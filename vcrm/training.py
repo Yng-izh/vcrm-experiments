@@ -128,19 +128,97 @@ def _history_context(histories, target_index, budget, rng):
     return [histories[i] for i in sorted(keep)]
 
 
-def trajectory_samples(episodes, *, protocol='final_current_snapshot_v1', min_versions=3,
+def _ordered_negatives(values, times, required_times, current_values, gold_norm):
+    """负例按"离目标年份最近"排序：current 值优先，然后时间上相邻的版本。
+
+    listwise 损失吃整个池，排序只影响诊断和将来的截断；但把 current 值放进池里
+    是必要的——"答成最新值"是当前最主要的错误（基线 30.3%）。
+    """
+    times = list(times or [])
+    values = list(values or [])[:len(times)]
+    wanted = {str(x) for x in (required_times or [])}
+    anchors = [i for i, t in enumerate(times) if str(t) in wanted]
+    scored = [(0, value) for value in (current_values or [])
+              if normalize(value) not in gold_norm]
+    for index, value in enumerate(values):
+        if normalize(value) in gold_norm:
+            continue
+        distance = min((abs(index - anchor) for anchor in anchors), default=index + 1)
+        scored.append((distance, value))
+    seen, ordered = set(), []
+    for _, value in sorted(scored, key=lambda item: item[0]):
+        key = normalize(value)
+        if key in seen or key in gold_norm:
+            continue
+        seen.add(key)
+        ordered.append(value)
+    return ordered
+
+
+def _question_samples(episodes, questions, families, min_versions, max_versions,
+                      max_negatives):
+    """新口径：直接吃 cross_version_questions.build_questions 的产出。
+
+    题面由造题器生成，训练和评测用同一段代码出题，不靠手抄模板对齐。
+    支持 recall_year / ordinal_back / compare_years 三族混合；count_values 暂缓。
+    """
+    episodes_by_id = {episode['id']: episode for episode in episodes}
+    samples = []
+    for question in questions:
+        if question['family'] not in families:
+            continue
+        episode = episodes_by_id.get(question['episode_id'])
+        if episode is None:
+            continue
+        events = ingestion_view(episode)
+        if not (min_versions <= len(events) <= max_versions):
+            continue                       # 与评测的 select_trajectory 上界对齐
+        current, histories = events[-1], events[:-1]
+        gold = list(question['answers'])
+        gold_norm = {normalize(a) for a in gold}
+        negatives = _ordered_negatives(
+            question.get('version_values'), [e['time'] for e in histories],
+            question.get('required_version_times'),
+            question.get('newest_values') or [], gold_norm)
+        if question['family'] == 'compare_years':
+            flipped = 'no' if gold[0].strip().lower().startswith('y') else 'yes'
+            negatives = [flipped] + negatives
+        if max_negatives is not None:
+            negatives = negatives[:max_negatives]
+        if not negatives:
+            continue                       # 没有区分任务，丢掉
+        samples.append({
+            'id': question['id'], 'family': question['family'],
+            'state_key': question.get('state_key') or '',
+            'current': current, 'anchor': current, 'histories': histories,
+            'target_index': next((i for i, v in enumerate(question.get('version_values') or [])
+                                  if normalize(v) in gold_norm), None),
+            'reader_query': {'question': question['question'],
+                             'time': current['time'], 'time_source': 'window_end'},
+            'answers': gold, 'negative_answers': negatives,
+            'latest': question, 'n_versions': len(events)})
+    return samples
+
+
+def trajectory_samples(episodes, *, questions=None, families=None,
+                       protocol='final_current_snapshot_v1', min_versions=3,
                        max_versions=8, max_negatives=None, seed=42):
     """把版本链展开成"多版本判别"样本（替换 temporal_pairs 的角色，不改数据）。
 
-    与 temporal_pairs / snapshot_pairs 的差别只有一个：
-        旧：一条样本 = current + 1 个历史候选 → 学"能不能读出这一个版本"
-        新：一条样本 = current + k(>=2) 个历史候选 → 学"能不能挑对那个年份"
+    两条路径：
+        questions=None   旧口径：每个历史版本一条 recall_year 样本（向后兼容）
+        questions=[...]  新口径：直接吃 cross_version_questions.build_questions 的产出，
+                         支持 recall_year / ordinal_back / compare_years 三族混合
 
     监督侧字段（target_index / target_time）只用于取答案与构造负例，绝不进 reader：
     reader 的时间线索只来自问题文本（与推理一致）。
     """
     if protocol != 'final_current_snapshot_v1':
         raise ValueError('Trajectory samples require the final-current snapshot protocol')
+    families = tuple(families or ('recall_year', 'ordinal_back', 'compare_years'))
+    if questions is not None:
+        return _question_samples(episodes, questions, families, min_versions,
+                                 max_versions, max_negatives)
     rng = random.Random(seed)
     samples = []
     for episode in episodes:
@@ -253,7 +331,8 @@ def _load_e3(codec, markers, path):
             strict=True)
 
 
-def train_trajectory(config, root, stage='markers', init_from=None, limit=None):
+def train_trajectory(config, root, stage='markers', init_from=None, limit=None,
+                     questions=None):
     """多版本判别式训练。两步分开跑，回答"现有历史信息够不够"这个问题。
 
     stage='markers'  冻结 E3 与 encoder/reader，只训练 VersionMarkers
@@ -277,9 +356,12 @@ def train_trajectory(config, root, stage='markers', init_from=None, limit=None):
 
     episodes = train_only(config, limit)
     samples = trajectory_samples(
-        episodes, min_versions=config.get('trajectory_min_versions', 3),
+        episodes, questions=questions,
+        families=tuple(config.get('trajectory_families')
+                       or ('recall_year', 'ordinal_back', 'compare_years')),
+        min_versions=config.get('trajectory_min_versions', 3),
         max_versions=config.get('trajectory_max_versions', 8),
-        max_negatives=config.get('trajectory_max_negatives', 2), seed=config['seed'])
+        max_negatives=config.get('trajectory_max_negatives'), seed=config['seed'])
     retain_pairs = snapshot_pairs(episodes)
     if not samples:
         raise ValueError('No eligible trajectory samples')
@@ -367,7 +449,12 @@ def train_trajectory(config, root, stage='markers', init_from=None, limit=None):
         'max_versions': config.get('trajectory_max_versions', 8),
         'rank_weight': rank_weight, 'retain_weight': retain_weight,
         'ranking_objective': 'listwise_softmax over {gold} + {all other version answers}',
-        'negative_pool': 'all other historical versions of the same state',
+        'negative_pool': 'all other version values + current value, nearest-year first',
+        'families': sorted({s.get('family', 'recall_year') for s in samples}),
+        'samples_by_family': {f: sum(1 for s in samples
+                                     if s.get('family', 'recall_year') == f)
+                              for f in sorted({s.get('family', 'recall_year')
+                                               for s in samples})},
         'bundle_layout': 'current(128) first, then histories(16 each) ascending by time',
         'time_convention': 'target year in question text; Current date slot = observation cutoff',
         'target_time_passed_to_reader': False,

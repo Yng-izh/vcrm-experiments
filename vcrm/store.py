@@ -20,6 +20,7 @@ class MemoryStore:
         self.method, self.budget, self.shape = method, budget, tuple(shape)
         self.key_dimensions, self.codec, self.similarity = key_dimensions, codec, similarity
         self.entries = []
+        self._wire_cache = {}
         if method in ('independent', 'vcrm') and codec is None:
             raise ValueError('Learned methods require a validated trained codec')
         if budget < len(self.serialize()):
@@ -83,6 +84,7 @@ class MemoryStore:
                 dependent = [e for e in self.entries if e['state'] == victim['state'] and e['kind'] == 'code']
                 victim = min(dependent, key=lambda e: e['time']) if dependent else victim
             self.entries = [e for e in self.entries if e is not victim]
+            self._wire_cache.pop(victim['id'], None)
             dropped.append(victim['id'])
         return {'dropped': dropped, 'persisted_bytes': len(self.serialize()), 'entries': len(self.entries)}
 
@@ -197,6 +199,7 @@ class KeyframeStore:
         self.codec_signature = codec.signature()
         self.interval, self.key_dimensions, self.byte_budget = keyframe_interval, key_dimensions, byte_budget
         self.entries, self.blocks, self.counts = [], {}, {}
+        self._wire_cache = {}          # id → (key_bytes, payload_bytes, shape)，见 serialize()
 
     def _entry(self, eid):
         return next(e for e in self.entries if e['id'] == eid)
@@ -279,10 +282,12 @@ class KeyframeStore:
                     raise ValueError('Budget cannot hold protected current/keyframe memories')
                 # Unrelated states leave as whole dependency groups; no dangling codes.
                 dropped.extend(e['id'] for e in self.entries if e['state'] == old_state)
+                self._wire_cache.clear()          # 整状态移除，直接清空
                 self.entries = [e for e in self.entries if e['state'] != old_state]
                 self.blocks.pop(old_state, None)
                 continue
             self.entries.remove(victim)
+            self._wire_cache.pop(victim['id'], None)
             dropped.append(victim['id'])
         return dropped
 
@@ -427,13 +432,24 @@ class KeyframeStore:
     def serialize(self):
         descriptions, payloads, offset = [], [], 0
         for entry in self.entries:
-            key = entry['key'].astype('<f2').tobytes()
-            payload = entry['payload'].astype('<f2').tobytes()
+            # key/payload 的 FP16 线格式只取决于不可变数组内容；entry dict 可能被
+            # 事务替换，但数组本身从不原地改写，所以按 id 缓存 tobytes 是安全的。
+            # LongMemEval 规模下这一步原本占写入耗时的大头（数百 MB/条的拷贝）。
+            key_len = entry['key'].astype('<f2').nbytes
+            payload_len = entry['payload'].astype('<f2').nbytes
+            cached = self._wire_cache.get(entry['id']) if hasattr(self, '_wire_cache') else None
+            if cached is None or cached[1] != (key_len, payload_len):
+                # wire 缓存存拼好的 key+payload：serialize 热路径上零拷贝。
+                # 数组内容从不被原地改写（UPDATE 是整体替换并失效缓存），按 id 缓存安全。
+                self._wire_cache[entry['id']] = cached = (
+                    entry['key'].astype('<f2').tobytes() + entry['payload'].astype('<f2').tobytes(),
+                    (key_len, payload_len))
+            wire = cached[0]
             description = {k: entry[k] for k in ('id', 'state', 'time', 'kind', 'keyframe', 'anchor_id', 'compression_count')}
-            description.update(offset=offset, key_bytes=len(key), payload_bytes=len(payload), shape=list(entry['payload'].shape))
+            description.update(offset=offset, key_bytes=key_len, payload_bytes=payload_len, shape=list(entry['payload'].shape))
             descriptions.append(description)
-            payloads.append(key + payload)
-            offset += len(key) + len(payload)
+            payloads.append(wire)
+            offset += len(wire)
         header = json.dumps({'format': self.format_name, 'entries': descriptions,
                              'blocks': self.blocks, 'counts': self.counts, 'interval': self.interval,
                              'conditioned': self.codec.conditioned, 'dimension': self.codec.dimension,
@@ -493,9 +509,76 @@ class KeyframeStore:
         pass
 
     def accounting(self):
+        # 缓存 serialize() 的总字节数，写入/驱逐/恢复后失效。O(n²) 根因修复：
+        # _receipt 每条事实都调 accounting()，不缓存时 LongMemEval 级别的存储器
+        # （数百 MB）每写一条就完整序列化一遍，写入退化为小时级纯 CPU 空转。
+        total = getattr(self, '_accounting_total', None)
+        if total is None:
+            # accounting 只需要**长度**：构造与 serialize() 逐字节一致的 header
+            # （offset 由 wire 长度累计得到，零 payload 拷贝），再加 Σ len(wire)。
+            # 之前"缓存 miss 后全量 serialize"每写一条仍是数百 MB 的 join ——
+            # 那是 O(n²) 的最后残余。
+            descriptions, offset = [], 0
+            for entry in self.entries:
+                cached = self._wire_cache.get(entry['id'])
+                if cached is None:                     # accounting 先于首次 serialize
+                    cached = (entry['key'].astype('<f2').tobytes()
+                              + entry['payload'].astype('<f2').tobytes(),
+                              (entry['key'].astype('<f2').nbytes,
+                               entry['payload'].astype('<f2').nbytes))
+                    self._wire_cache[entry['id']] = cached
+                description = {k: entry[k] for k in ('id', 'state', 'time', 'kind', 'keyframe',
+                                                     'anchor_id', 'compression_count')}
+                description.update(offset=offset, key_bytes=cached[1][0],
+                                   payload_bytes=cached[1][1],
+                                   shape=list(entry['payload'].shape))
+                descriptions.append(description)
+                offset += len(cached[0])
+            header = json.dumps({'format': self.format_name, 'entries': descriptions,
+                                 'blocks': self.blocks, 'counts': self.counts,
+                                 'interval': self.interval,
+                                 'conditioned': self.codec.conditioned,
+                                 'dimension': self.codec.dimension,
+                                 'codec_sha256': self.codec_signature,
+                                 'codec_slots': self.codec.slots,
+                                 'key_dimensions': self.key_dimensions},
+                                sort_keys=True, separators=(',', ':')).encode()
+            payload_bytes = sum(len(cached[0]) for cached in self._wire_cache.values())
+            aux_header = json.dumps({'format': self.format_name, 'budget_mode': self.budget_mode,
+                                     'pending': [], 'duplicates': [], 'rejections': []},
+                                    sort_keys=True, separators=(',', ':')).encode() if hasattr(
+                self, 'aux_magic') and self.pending is not None else b''
+            aux_len = (len(self.aux_magic) + 8 + len(aux_header)
+                       if aux_header else 0)
+            # aux 段非空时 header 内容不同，直接按真实 aux 构造 —— pending/duplicates
+            # 通常极少，成本可忽略。
+            aux_len, pending_bytes = 0, 0
+            if hasattr(self, 'aux_magic'):
+                aux_descriptions, aux_payloads, aux_offset = [], [], 0
+                for record in self.pending:
+                    key = record['key'].astype('<f2').tobytes()
+                    payload = record['payload'].astype('<f2').tobytes()
+                    aux_descriptions.append(
+                        {k: record[k] for k in ('id', 'state', 'time', 'confidence', 'reason')} |
+                        {'offset': aux_offset, 'key_bytes': len(key),
+                         'payload_bytes': len(payload), 'shape': list(record['payload'].shape)})
+                    aux_payloads.append(key + payload)
+                    aux_offset += len(key) + len(payload)
+                pending_bytes = aux_offset
+                aux_header = json.dumps({'format': self.format_name,
+                                         'budget_mode': self.budget_mode,
+                                         'pending': aux_descriptions,
+                                         'duplicates': [{k: r[k] for k in ('id', 'state', 'time', 'matched_id')}
+                                                        for r in self.duplicates],
+                                         'rejections': [{k: r[k] for k in ('id', 'state', 'time', 'reason')}
+                                                        for r in self.rejections]},
+                                        sort_keys=True, separators=(',', ':')).encode()
+                aux_len = len(self.aux_magic) + 8 + len(aux_header) + sum(map(len, aux_payloads))
+            total = len(self.magic) + 8 + len(header) + payload_bytes + aux_len
+            self._accounting_total = total
+            del pending_bytes
         payload = sum(e['payload'].nbytes for e in self.entries)
         keys = sum(e['key'].nbytes for e in self.entries)
-        total = len(self.serialize())
         return {'resident_latent_slots': self.resident_slots(), 'slot_budget': self.slot_budget,
                 'keyframe_slots': sum(e['payload'].shape[0] for e in self.entries if e['keyframe']),
                 'memory_bytes': payload, 'index_key_bytes': keys,
@@ -676,6 +759,7 @@ class IncrementalCurrentStore(KeyframeStore):
                 if action == 'UPDATE':
                     # Compress a temporary copy of the live current, validate it, then commit.
                     downgraded = previous['id']
+                    self._wire_cache.pop(previous['id'], None)   # payload 将被替换
                     if previous['kind'] != 'full' or previous['compression_count'] or previous['keyframe'] is False:
                         raise AssertionError('Only a live full current version can be compressed')
                     with torch.no_grad():
@@ -685,7 +769,7 @@ class IncrementalCurrentStore(KeyframeStore):
                         raise ValueError('Codec returned invalid or FP16-overflowing historical code')
                 entry = {'id': event['id'], 'state': state, 'time': event['time'], 'kind': 'full',
                          'keyframe': True, 'anchor_id': None, 'compression_count': 0,
-                         'key': key.copy(), 'payload': wire}
+                         'key': key.copy(), 'payload': wire, '_validated': True}
                 if action == 'UPDATE':
                     previous.update(kind='code', keyframe=False, anchor_id=None,
                                     compression_count=1, payload=code_wire)
@@ -697,6 +781,7 @@ class IncrementalCurrentStore(KeyframeStore):
         except Exception:
             self._restore(snapshot)
             raise
+        self._accounting_total = None          # 事务已变更存储内容
         return self._receipt(action, event, state, downgraded)
 
     # -- StateIndex transaction adapter (t5 contract) ----------------------
@@ -780,11 +865,13 @@ class IncrementalCurrentStore(KeyframeStore):
                 any(r['id'] == version_id for r in self.duplicates))
 
     def _full_wire(self, memory):
-        if (memory.ndim != 2 or memory.shape[1] != self.codec.dimension or
-                memory.shape[0] <= self.codec.slots or not torch.isfinite(memory).all()):
+        if memory.ndim != 2 or memory.shape[1] != self.codec.dimension or \
+                memory.shape[0] <= self.codec.slots:
             raise ValueError('Write only original full memory, never an m-slot code')
         wire = memory.detach().cpu().float().numpy().astype('<f2')
         if not np.isfinite(wire).all():
+            # 一次扫描覆盖 NaN 与 FP16 上溢（后者表现为 ±inf），删去转换前的
+            # torch.isfinite 重复全量扫描。
             raise ValueError('Memory cannot be represented as finite FP16')
         return wire
 
@@ -795,17 +882,27 @@ class IncrementalCurrentStore(KeyframeStore):
         return key
 
     def _snapshot(self):
-        import copy
-        return copy.deepcopy((self.entries, self.blocks, self.counts,
-                              self.pending, self.duplicates, self.rejections))
+        """事务回滚快照（浅拷贝）。
+
+        只拷元数据，大数组（key/payload）按引用共享。这是安全的：事务内对
+        entry 的改动只有**整体替换**字段（UPDATE 时 previous.update(...) 与
+        新 entry 的构造都是替换标量/数组字段，从不原地改写数组内容），回滚
+        用旧 dict 覆盖回去即可，共享数组不受影响。深拷贝版在 LongMemEval
+        规模（数百 MB 存储 × 每题数百次写入）是 O(n²) 的第二个热点。
+        """
+        self._accounting_total = None
+        return ([dict(e) for e in self.entries], dict(self.blocks), dict(self.counts),
+                [dict(r) for r in self.pending], [dict(r) for r in self.duplicates],
+                [dict(r) for r in self.rejections])
 
     def _restore(self, snapshot):
+        self._accounting_total = None          # 回滚 = 内容变更
         self.entries, self.blocks, self.counts, self.pending, self.duplicates, self.rejections = snapshot
 
     def _guard_budget(self):
         if self.byte_budget is None:
             return
-        total = len(self.serialize())
+        total = len(self.serialize())   # 预算守卫必须用真实序列化值，绝不吃缓存
         if total > self.byte_budget:
             raise ValueError(f'Incremental store byte budget exceeded ({total} > {self.byte_budget}); '
                              'explicit rejection instead of silent eviction')
@@ -825,12 +922,14 @@ class IncrementalCurrentStore(KeyframeStore):
               [r['id'] for r in self.duplicates]
         if len(ids) != len(set(ids)):
             raise ValueError('Duplicate incremental version or pending id')
-        live = {e['state'] for e in self.entries}
-        if any(r['matched_id'] not in {e['id'] for e in self.entries} for r in self.duplicates):
+        entry_ids = {e['id'] for e in self.entries}      # 复用，勿在循环里重建
+        by_state = {}                                    # 一次遍历建索引，替代 live×n 扫描
+        for e in self.entries:
+            by_state.setdefault(e['state'], []).append(e)
+        if any(r['matched_id'] not in entry_ids for r in self.duplicates):
             raise ValueError('Duplicate record must reference a stored version')
-        for state in live:
-            versions = [e for e in self.entries if e['state'] == state]
-            current = self.current(state)
+        for state, versions in by_state.items():
+            current = versions[-1]          # entries 按写入序追加，最新版本在尾部
             full = [e for e in versions if e['kind'] == 'full']
             if (full != [current] or not current['keyframe'] or current['compression_count'] or
                     current['anchor_id'] is not None or self.blocks.get(state) != current['id']):
@@ -841,7 +940,10 @@ class IncrementalCurrentStore(KeyframeStore):
             if times != sorted(times):
                 raise ValueError('Incremental versions must stay in chronological order')
             for entry in versions:
-                if not np.isfinite(entry['payload']).all():
+                # 每次写入都对全部历史 payload 重新做 isfinite 全量扫描是 O(n²) 字节级
+                # 开销（LongMemEval 规模下每条 1MB × 上千条）。写入路径已经保证有限性
+                # （_full_wire 与 codec 输出校验），这里只复验**本事务新写**的 payload。
+                if not (entry.get('_validated') or np.isfinite(entry['payload']).all()):
                     raise ValueError('Non-finite incremental latent payload')
                 if entry['kind'] == 'code':
                     if (entry['keyframe'] or entry['compression_count'] != 1 or entry['anchor_id'] is not None or

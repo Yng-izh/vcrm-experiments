@@ -363,17 +363,35 @@ class PredictedRuntime:
         self.decisions: List[Dict[str, Any]] = []
 
     # -- write path -------------------------------------------------------
-    def write_predicted(self, event: Mapping[str, Any]) -> Dict[str, Any]:
-        """把一条公开写视图 {'id','text','time'} 写入状态层与 Current 存储。"""
+    def write_predicted(self, event: Mapping[str, Any], batch_encode: bool = True) -> Dict[str, Any]:
+        """把一条公开写视图 {'id','text','time'} 写入状态层与 Current 存储。
+
+        batch_encode=True 时把本事件的全部待写事实一次性批量过 reader（GPU 上
+        batch=8 而非逐条 batch=1），LongMemEval 每 episode 数百条事实时写入提速
+        数倍。批量结果与逐条 encode_event 语义一致。
+        """
         assert_no_oracle(event, 'PredictedRuntime.write_predicted', allowed=PUBLIC_WRITE_KEYS)
         started = time.perf_counter()
         result = self.extractor.extract_detailed(event)
-        receipts = [self._write_fact(fact, event) for fact in result.facts]
+        writable = [f for f in result.facts
+                    if f.subject != UNRESOLVED_SUBJECT and f.attribute != UNRESOLVED_ATTRIBUTE]
+        # encode_texts_batch 由入口经 vcrm.reader_batch.attach_batch_encode(reader)
+        # 挂载（reader.py 受训练元数据 sha256 锁定，不能改文件本身）；未挂载时自动
+        # 回退逐条 encode_event，行为与旧版一致。
+        memories = (self.reader.encode_texts_batch(
+                        [self.reader.event_text({'time': f.observed_at, 'text': f.text})
+                         for f in writable])
+                    if batch_encode and writable and hasattr(self.reader, 'encode_texts_batch')
+                    else None)
+        memory_by_id = {f.id: m for f, m in zip(writable, memories)} if memories else {}
+        receipts = [self._write_fact(fact, event, memory=memory_by_id.get(fact.id))
+                    for fact in result.facts]
         return {'event_id': event['id'], 'time': event['time'], 'facts': len(result.facts),
                 'receipts': receipts, 'unresolved': len(result.unresolved),
                 'write_seconds': time.perf_counter() - started}
 
-    def _write_fact(self, fact: AtomicFact, event: Mapping[str, Any]) -> Dict[str, Any]:
+    def _write_fact(self, fact: AtomicFact, event: Mapping[str, Any],
+                    memory: Optional[torch.Tensor] = None) -> Dict[str, Any]:
         # 版本号与 t14 的 store.commit() 适配层对齐：version_id = fact.id
         # （抽取器内全局唯一；万一重放同一事件，才退化到 event:fact 组合号）。
         version_id = fact.id
@@ -386,7 +404,8 @@ class PredictedRuntime:
                              confidence=0.0, reason='unresolved_identity',
                              old_version_id=None, new_version_id=None,
                              compression=False, store_written=False)
-        memory = self.reader.encode_event({'time': fact.observed_at, 'text': fact.text})
+        if memory is None:
+            memory = self.reader.encode_event({'time': fact.observed_at, 'text': fact.text})
         semantic_key = self.index.key(memory)
         candidates = self.router.retrieve_candidates(
             fact, self.state_index, semantic_key=semantic_key)
@@ -505,7 +524,21 @@ class PredictedRuntime:
                          store_written=True)
 
     def _write_duplicate(self, version_event, fact, memory, semantic_key, decision, candidates):
-        receipt = self.store.ingest_decision(version_event, memory, semantic_key, decision)
+        try:
+            receipt = self.store.ingest_decision(version_event, memory, semantic_key, decision)
+        except ValueError as exc:
+            # LongMemEval 对话池里同状态事实的 observed_at 可能乱序（同 session 抽取
+            # 顺序 ≠ 文本时间序）。DUPLICATE 不产生新版本，时间上早于 current 的重复
+            # 事实没有可写入的版本槽 —— 记台账（store_written=False）跳过，不中断
+            # 整个 episode。与 store 侧 out_of_order rejections 语义一致。
+            if 'chronological order' not in str(exc):
+                raise
+            return self._log(version_event, fact, action='DUPLICATE',
+                             state_id=decision.state_id,
+                             candidates=candidates, confidence=decision.confidence,
+                             reason=f'{decision.reason}|skipped_out_of_order',
+                             old_version_id=None, new_version_id=None,
+                             compression=False, store_written=False)
         record = self.state_index.get(decision.state_id)
         # DUPLICATE 不产生新版本：指针、value_fingerprint、current_observed_at 全都不动。
         # updated_at 是索引写入的墙钟时间，不能拿 fact.observed_at 冒充（t15 口径）。

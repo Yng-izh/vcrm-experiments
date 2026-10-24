@@ -179,26 +179,37 @@ def _recall_year(episode, timeline, key_text, wanted_index) -> Optional[Dict[str
                  f"{entry['year']:04d}-12-31T23:59:59")
 
 
-def _ordinal_back(episode, timeline, key_text, steps: int = 2) -> Optional[Dict[str, Any]]:
-    """倒数第 steps+1 个版本的值（"两次变更之前"），需要版本序关系。"""
+def _ordinal_back(episode, timeline, key_text, steps: int = 2,
+                  all_anchors: bool = False) -> List[Dict[str, Any]]:
+    """锚点往前数 steps 个版本的值（"两次变更之前"），需要版本序关系。
+
+    ``all_anchors=False`` 只问最新版本（评测口径，一状态最多一题）；
+    ``all_anchors=True``  任意"前面还有 steps 个版本"的年份都能当锚点（训练口径）。
+    锚点不在最新位置时题目更难：模型得先在链子中间定位那个年份，再往回数。
+    """
     if len(timeline) < steps + 2:
-        return None
-    gold_index = len(timeline) - 1 - steps
-    gold = timeline[gold_index]
-    # 金标版本必须与更新的两个版本取值**完全不相交**：
-    # ① "两次变更之前"这句话本身要求中间真的换了值；
-    # ② 只要有一个名字重复出现，reader 读成相邻版本也会被判对（松判），
-    #    这条题就不再区分"读对序关系"和"读错版本"。
-    newer = [entry['norm'] for entry in timeline[gold_index + 1:]]
-    if any(newer_values & gold['norm'] for newer_values in newer):
-        return None
-    anchor = timeline[-1]
+        return []
     record = inline_record(key_text)
-    question = (f"Two changes before {anchor['year']}, which value filled the blank _X_ "
-                f"in the record '{record}'? Answer with the value.")
-    return _base(episode, 'ordinal_back', timeline, key_text, question,
-                 list(gold['values']), [gold['year']], [gold['time']],
-                 f"{anchor['year']:04d}-12-31T23:59:59")
+    anchors = range(len(timeline)) if all_anchors else [len(timeline) - 1]
+    out: List[Dict[str, Any]] = []
+    for anchor_index in anchors:
+        gold_index = anchor_index - steps
+        if gold_index < 0:
+            continue
+        gold, anchor = timeline[gold_index], timeline[anchor_index]
+        # 金标必须与锚点及其之前的 steps 个版本取值**完全不相交**：
+        # ① "两次变更之前"这句话本身要求中间真的换了值；
+        # ② 只要有一个名字重复出现，reader 读成相邻版本也会被判对（松判），
+        #    这条题就不再区分"读对序关系"和"读错版本"。
+        between = [entry['norm'] for entry in timeline[gold_index + 1:anchor_index + 1]]
+        if any(values & gold['norm'] for values in between):
+            continue
+        question = (f"Two changes before {anchor['year']}, which value filled the blank _X_ "
+                    f"in the record '{record}'? Answer with the value.")
+        out.append(_base(episode, 'ordinal_back', timeline, key_text, question,
+                         list(gold['values']), [gold['year']], [gold['time']],
+                         f"{anchor['year']:04d}-12-31T23:59:59"))
+    return out
 
 
 def _count_values(episode, timeline, key_text) -> Optional[Dict[str, Any]]:
@@ -247,46 +258,95 @@ def _compare_years(episode, timeline, key_text, want_same: bool) -> Optional[Dic
                  f"{a['year']:04d}-12-31T23:59:59")
 
 
-def candidates_for(episode: Mapping[str, Any]) -> Dict[str, List[Dict[str, Any]]]:
+def candidates_for(episode: Mapping[str, Any], recall_disjoint: str = 'strict',
+                   ordinal_all_anchors: bool = False
+                   ) -> Dict[str, List[Dict[str, Any]]]:
     """一条 episode 能支撑的全部候选题（按 family 分组）。
 
-    同一状态在同一 family 下最多出一题，保证"每条题对应一个独立状态"，
-    配对统计不引入同状态内相关性。
+    ``recall_disjoint`` 只影响 recall_year：
+        strict        与所有其它版本都不相交，且一状态只取最早一题（评测口径）
+        current_only  只要求与 current 不相交，历史年份之间允许重名，每版一题（训练口径）
+        none          完全不检查
+    ``ordinal_all_anchors`` 只影响 ordinal_back：True 时任意合法年份都能当锚点，
+    而不是写死最新版本（训练口径；评测保持 False，历史结果可比）。
+
+    strict 下同一状态在同一 family 下最多出一题，保证"每条题对应一个独立状态"，
+    配对统计不引入同状态内相关性；训练口径则允许一个状态出多题。
     """
+    if recall_disjoint not in ('strict', 'current_only', 'none'):
+        raise ValueError("recall_disjoint must be strict / current_only / none")
     timeline = timeline_of(episode)
     if timeline is None or not (3 <= len(timeline) <= 8):
         return {}
     key_text = key_text_of(episode)
     out: Dict[str, List[Dict[str, Any]]] = {family: [] for family in FAMILIES}
 
-    # recall_year：金标必须是历史版本，且该取值在**其它任何版本里都不出现** ——
-    # ① 与 current 不相交，"答成 current" 才能被识别为错误；
-    # ② 与相邻年份也不相交，否则 reader 读成隔壁年份也会被判对（松判），
-    #    这条题就测不出"能不能定位到那一年"。取最早满足条件的年份。
+    # recall_year：年份写在题面里，所以"取值唯一"对训练不是必需的。
+    #   strict        金标与所有其它版本都不相交，一状态只取最早一题（评测口径）
+    #   current_only  只要求与 current 不相交 —— "答成最新值"必须被判错，
+    #                 历史年份之间允许重名，每个历史版本各出一题（训练口径）
+    #   none          完全不检查
     newest_values = timeline[-1]['norm']
     for index in range(len(timeline) - 1):
-        others = set()
-        for other_index, other in enumerate(timeline):
-            if other_index != index:
-                others |= other['norm']
-        if timeline[index]['norm'] & (newest_values | others):
-            continue
+        if recall_disjoint == 'strict':
+            others = set()
+            for other_index, other in enumerate(timeline):
+                if other_index != index:
+                    others |= other['norm']
+            if timeline[index]['norm'] & (newest_values | others):
+                continue
+        elif recall_disjoint == 'current_only':
+            if timeline[index]['norm'] & newest_values:
+                continue
         candidate = _recall_year(episode, timeline, key_text, index)
         if candidate:
             out['recall_year'].append(candidate)
-        break
+        if recall_disjoint == 'strict':
+            break
 
-    for builder, family in ((_ordinal_back, 'ordinal_back'),
-                            (_count_values, 'count_values')):
-        candidate = builder(episode, timeline, key_text)
-        if candidate:
-            out[family].append(candidate)
+    out['ordinal_back'].extend(
+        _ordinal_back(episode, timeline, key_text, all_anchors=ordinal_all_anchors))
+    candidate = _count_values(episode, timeline, key_text)
+    if candidate:
+        out['count_values'].append(candidate)
 
     for want_same in (False, True):
         candidate = _compare_years(episode, timeline, key_text, want_same)
         if candidate:
             out['compare_years'].append(candidate)
     return out
+
+
+def build_training_questions(episodes: Sequence[Mapping[str, Any]], families=None,
+                             recall_disjoint: str = 'current_only',
+                             ordinal_all_anchors: bool = True
+                             ) -> List[Dict[str, Any]]:
+    """训练用：取一条 episode 能支撑的**全部**候选题。
+
+    与 build_questions 的差别只有两处，都是为训练服务：
+      ① 不按状态去重、不按族配额轮转（训练需要每个状态的多道题）；
+      ② recall_year 默认放宽成 current_only（年份已在题面里，不必与其它历史版本互斥）。
+    题面仍由同一批 builder 生成，所以训练和评测的措辞逐字一致。
+    """
+    families = tuple(families or FAMILIES)
+    questions: List[Dict[str, Any]] = []
+    used_ids: set = set()
+    for episode in episodes:
+        candidates = candidates_for(episode, recall_disjoint=recall_disjoint,
+                                    ordinal_all_anchors=ordinal_all_anchors)
+        for family in families:
+            for item in candidates.get(family) or []:
+                candidate = dict(item)
+                suffix = '-'.join(str(year) for year in candidate.get('gold_years') or [])
+                base_id = f"{candidate['id']}::{suffix}" if suffix else candidate['id']
+                unique, bump = base_id, 2
+                while unique in used_ids:
+                    unique = f'{base_id}#{bump}'
+                    bump += 1
+                used_ids.add(unique)
+                candidate['id'] = unique
+                questions.append(candidate)
+    return questions
 
 
 def build_questions(episodes: Sequence[Mapping[str, Any]], limit: int,

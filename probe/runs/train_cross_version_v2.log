@@ -1,0 +1,57 @@
+questions loaded: 2442
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:32<01:04, 32.11s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [01:00<00:30, 30.10s/it]Loading checkpoint shards: 100%|██████████| 3/3 [01:21<00:00, 25.94s/it]Loading checkpoint shards: 100%|██████████| 3/3 [01:21<00:00, 27.26s/it]
+The new embeddings will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+The new lm_head weights will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+[joint] epoch 1 step 1/2442 loss=0.3917 ce=0.0108 rank=0.0717
+[joint] epoch 1 step 50/2442 loss=0.0772 ce=0.0000 rank=0.1543
+[joint] epoch 1 step 100/2442 loss=0.0070 ce=0.0003 rank=0.0136
+[joint] epoch 1 step 150/2442 loss=0.0013 ce=0.0001 rank=0.0024
+[joint] epoch 1 step 200/2442 loss=0.0631 ce=0.0000 rank=0.1262
+[joint] epoch 1 step 250/2442 loss=0.0000 ce=0.0000 rank=0.0000
+[joint] epoch 1 step 300/2442 loss=0.0007 ce=0.0000 rank=0.0014
+[joint] epoch 1 step 350/2442 loss=0.0324 ce=0.0014 rank=0.0620
+[joint] epoch 1 step 400/2442 loss=2.0240 ce=1.4612 rank=1.1256
+[joint] epoch 1 step 450/2442 loss=4.6603 ce=3.3130 rank=2.6946
+[joint] epoch 1 step 500/2442 loss=0.0009 ce=0.0000 rank=0.0017
+[joint] epoch 1 step 550/2442 loss=0.8267 ce=0.4198 rank=0.8137
+[joint] epoch 1 step 600/2442 loss=0.0902 ce=0.0593 rank=0.0617
+[joint] epoch 1 step 650/2442 loss=0.0016 ce=0.0001 rank=0.0030
+[joint] epoch 1 step 700/2442 loss=0.0005 ce=0.0002 rank=0.0005
+[joint] epoch 1 step 750/2442 loss=0.0000 ce=0.0000 rank=0.0000
+[joint] epoch 1 step 800/2442 loss=0.0002 ce=0.0000 rank=0.0003
+[joint] epoch 1 step 850/2442 loss=0.0000 ce=0.0000 rank=0.0000
+[joint] epoch 1 step 900/2442 loss=1.2567 ce=1.0951 rank=0.3232
+[joint] epoch 1 step 950/2442 loss=0.0000 ce=0.0000 rank=0.0000
+[joint] epoch 1 step 1000/2442 loss=0.0455 ce=0.0071 rank=0.0768
+[joint] epoch 1 step 1050/2442 loss=0.0000 ce=0.0000 rank=0.0000
+[joint] epoch 1 step 1100/2442 loss=0.0001 ce=0.0000 rank=0.0002
+[joint] epoch 1 step 1150/2442 loss=3.2342 ce=3.1708 rank=0.1268
+[joint] epoch 1 step 1200/2442 loss=0.3107 ce=0.1260 rank=0.3695
+[joint] epoch 1 step 1250/2442 loss=0.0005 ce=0.0000 rank=0.0010
+[joint] epoch 1 step 1300/2442 loss=0.0315 ce=0.0037 rank=0.0557
+[joint] epoch 1 step 1350/2442 loss=0.0002 ce=0.0000 rank=0.0003
+[joint] epoch 1 step 1400/2442 loss=0.0030 ce=0.0018 rank=0.0025
+[joint] epoch 1 step 1450/2442 loss=1.3853 ce=1.1254 rank=0.5197
+[joint] epoch 1 step 1500/2442 loss=0.0128 ce=0.0092 rank=0.0072
+[joint] epoch 1 step 1550/2442 loss=4.5621 ce=3.8766 rank=1.3709
+[joint] epoch 1 step 1600/2442 loss=1.6685 ce=1.6144 rank=0.1082
+[joint] epoch 1 step 1650/2442 loss=0.0150 ce=0.0000 rank=0.0299
+[joint] epoch 1 step 1700/2442 loss=0.4649 ce=0.0735 rank=0.7829
+[joint] epoch 1 step 1750/2442 loss=4.3445 ce=2.8036 rank=3.0819
+[joint] epoch 1 step 1800/2442 loss=0.0000 ce=0.0000 rank=0.0000
+[joint] epoch 1 step 1850/2442 loss=0.0007 ce=0.0000 rank=0.0014
+[joint] epoch 1 step 1900/2442 loss=0.0001 ce=0.0001 rank=0.0000
+[joint] epoch 1 step 1950/2442 loss=0.5925 ce=0.5913 rank=0.0024
+[joint] epoch 1 step 2000/2442 loss=0.2446 ce=0.2287 rank=0.0317
+[joint] epoch 1 step 2050/2442 loss=3.3490 ce=2.7738 rank=1.1503
+[joint] epoch 1 step 2100/2442 loss=0.0343 ce=0.0052 rank=0.0583
+[joint] epoch 1 step 2150/2442 loss=2.9179 ce=1.8148 rank=2.2061
+[joint] epoch 1 step 2200/2442 loss=0.0224 ce=0.0048 rank=0.0352
+[joint] epoch 1 step 2250/2442 loss=0.0003 ce=0.0000 rank=0.0005
+[joint] epoch 1 step 2300/2442 loss=0.0003 ce=0.0000 rank=0.0007
+[joint] epoch 1 step 2350/2442 loss=0.0420 ce=0.0001 rank=0.0839
+[joint] epoch 1 step 2400/2442 loss=3.5597 ce=2.2187 rank=2.6820
+steps=2442 seconds=5301
+first={'stage': 'joint', 'epoch': 1, 'step': 1, 'loss': 0.3917200565338135, 'qa_ce': 0.010774732567369938, 'rank': 0.07165912538766861, 'histories': 4}
+last ={'stage': 'joint', 'epoch': 1, 'step': 2442, 'loss': 0.24898789823055267, 'qa_ce': 0.18392173945903778, 'rank': 0.13013231754302979, 'histories': 4}
+TRAINING DONE
