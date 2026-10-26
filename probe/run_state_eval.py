@@ -55,7 +55,7 @@ from vcrm.fact_schema import StateDecision
 from vcrm.index import SemanticIndex
 from vcrm.io import read_json, write_json
 from vcrm.metrics import exact, f1 as token_f1
-from vcrm.runtime import PredictedRuntime, QueryParser, validate_decision_log
+from vcrm.runtime import PredictedRuntime, QueryParser, build_frontend, validate_decision_log
 from vcrm.state_index import SEMANTIC_DIMENSIONS, StateIndex, value_fingerprint
 from vcrm.state_router import StateRouter
 from vcrm.store import IncrementalCurrentStore
@@ -343,6 +343,10 @@ class Metrics:
                                      for key in UPDATE_SOURCE_PREFIXES + ('not_update',)},
             'decision_counts': dict(sorted(self.decisions.items())),
             'reader': args.reader,
+            'frontend': getattr(args, 'frontend', 'rules'),
+            'llm': ({'config': args.llm_config,
+                     'cache_root': getattr(args, 'llm_cache_root', None)}
+                    if getattr(args, 'frontend', 'rules') == 'llm' else None),
             'components': components.label,
             'arch_exp': args.arch_exp,
             'budget_mode': args.budget_mode,
@@ -474,14 +478,35 @@ def make_resolver(args: argparse.Namespace) -> UpdateResolver:
                           recency_min_confidence=float(args.recency_min_confidence))
 
 
+def make_frontend(args: argparse.Namespace):
+    """rules（默认，行为不变）或 llm（实验二 B 臂）。
+
+    frontend=llm 必须给 --llm-config；缺了就显式报错，**绝不静默退回规则前端**
+    （否则 B 臂会变成"规则前端再跑一遍"，对照失效）。llm 前端默认套一层磁盘缓存，
+    保证 B/C/D 三组共享同一份模型输出（可审计、可复现）。
+    """
+    frontend = getattr(args, 'frontend', 'rules')
+    if frontend == 'rules':
+        return build_frontend('rules')
+    if not getattr(args, 'llm_config', None):
+        raise SystemExit('--frontend llm 需要 --llm-config PATH '
+                         '（JSON: {model, base_url, key_env, max_tokens?, temperature?}）')
+    from vcrm.llm_client import build_llm_client
+    cache_root = getattr(args, 'llm_cache_root', None) or str(Path(args.out) / 'llm_cache')
+    client = build_llm_client(args.llm_config, cache_root=cache_root)
+    args.llm_cache_root = cache_root
+    return build_frontend('llm', llm_client=client)
+
+
 def new_runtime(args: argparse.Namespace, components: Components) -> PredictedRuntime:
     codec = components.codec
     store = IncrementalCurrentStore(codec, key_dimensions=SEMANTIC_DIMENSIONS,
                                     budget_mode=args.budget_mode)
+    extractor, query_parser = make_frontend(args)
     return PredictedRuntime(components.reader, codec, components.markers, components.index,
                             store, StateIndex(), router=StateRouter(top_k=args.top_k),
-                            resolver=make_resolver(args), extractor=FactExtractor(),
-                            query_parser=QueryParser(), time_mode=args.time_mode,
+                            resolver=make_resolver(args), extractor=extractor,
+                            query_parser=query_parser, time_mode=args.time_mode,
                             allow_as_of=(args.time_mode == 'as_of'),
                             hybrid_fallback=args.hybrid_fallback,
                             defer_store_memory=args.defer_store_memory, top_k=args.top_k)
@@ -736,10 +761,21 @@ def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
     parser.add_argument('--neighbours', type=int, default=4,
                         help='predicted_state 混合事实池的邻近 episode 数')
     parser.add_argument('--reader', choices=['icae', 'stub'], default='icae')
+    parser.add_argument('--frontend', choices=['rules', 'llm'], default='rules',
+                        help='rules = 确定性硬规则（默认，行为不变）；llm = 通用模型抽取/解析'
+                             '（实验二 B 臂；必须配 --llm-config，缺省显式报错）')
+    parser.add_argument('--llm-config', default=None,
+                        help='frontend=llm 必填：JSON 配置路径 '
+                             '{model, base_url, key_env, max_tokens?, temperature?}')
+    parser.add_argument('--llm-cache-root', default=None,
+                        help='LLM 输出磁盘缓存目录（默认 <out>/llm_cache；B/C/D 三组共用同一目录）')
     parser.add_argument('--arch-exp', default='E3', choices=['E1', 'E2', 'E3', 'E4'])
     parser.add_argument('--hidden', type=int, default=4096, help='stub reader / local codec 维度')
     parser.add_argument('--memory-slots', type=int, default=128)
-    return parser.parse_args(argv)
+    args = parser.parse_args(argv)
+    if args.frontend == 'llm' and not args.llm_config:
+        parser.error('--frontend llm 需要 --llm-config PATH')
+    return args
 
 
 def main(argv: Optional[Sequence[str]] = None) -> Dict[str, Any]:

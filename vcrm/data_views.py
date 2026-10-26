@@ -87,6 +87,21 @@ def public_query(query: Mapping[str, Any], time_mode: str = 'window_end',
 
     返回值 {'question', 'time', 'time_source'}；time_source ∈ TIME_SOURCES，
     评测器据此分口径统计，as_of 口径结果不得与 window_end 口径混算。
+
+    t25 时间语义审计（本函数**不区分** target/cutoff，语义由调用方决定）：
+
+    * ``time`` 在这里是**目标时间**（``target_time``）通道 —— 下游
+      ``PredictedRuntime`` 用它做版本选择上界（``select_version(state, target_time)``）。
+      它应当来自问题文本解析（``vcrm.query_time.resolve_query_time(...).target_time``），
+      无历史锚时传 ``window_end=None``（= 读最新可见版本）。
+    * **可见性截止**（``observation_cutoff``）**不能**经这个参数传递：
+      ``public_query`` 不接收它，它由 ``answer_predicted(observation_cutoff=...)``
+      直接进读取层。cutoff 只允许来自公开合法信息（``question_date`` / 提问时刻 /
+      episode 观测窗口末刻），**绝不允许**传 ``target_time``。
+    * ``time_mode='as_of'`` 是 TempLAMA 旧口径（金标版本时间戳 == 观测时刻），
+      只允许在 ``vcrm.query_time.resolve_bounds(..., time_mode='as_of',
+      allow_as_of=True)`` 显式开启的对照路径上使用。
+    * 行为与 t13 契约一致：本函数**不**做任何时间推断，也不读 ``query['as_of']``。
     """
     source = _as_mapping(query, 'public_query')
     if time_mode not in TIME_MODES:

@@ -41,6 +41,11 @@ def templama(path, split):
             text = row['query'].replace('_X_', ' / '.join(answers))
             answer_set = tuple(sorted(a['wikidata_id'] if 'wikidata_id' in a else a['name'] for a in row['answer']))
             if answer_set != previous_answers:
+                # t25 时间通道口径（TempLAMA 特例）：这里的 ``time`` 是**带日期陈述句**
+                # 的陈述时间（数据本身就是"某年的事实"），TempLAMA 没有"对话发生时间"，
+                # 因此 target_time 与 cutoff 在该数据集上同源（旧口径），
+                # 只允许经 ``query_time.resolve_bounds(..., time_mode='as_of',
+                # allow_as_of=True)`` 显式开启。
                 events.append({'id': row['id'], 'time': date, 'text': f"In {row['date']}: {text}",
                                'state_key': f'{entity}:{relation}', 'key_text': row['query']})
             previous_answers = answer_set
@@ -63,6 +68,11 @@ def longmemeval(path):
         values = zip(row['haystack_session_ids'], row['haystack_dates'], row['haystack_sessions'])
         if not len(row['haystack_session_ids']) == len(row['haystack_dates']) == len(row['haystack_sessions']):
             raise ValueError('Misaligned session ids/dates')
+        # t25 时间通道口径（LongMemEval）：写入侧 ``event['time']`` 只承载
+        # **对话发生时间**（session date），不是文本里提到的事件发生时间。
+        # 事件发生时间（"2018 年我住在柏林"）留在文本里，由 FactExtractor 的
+        # ``observed_at`` 从文本解析，绝不由时间通道承载——否则 2023 年讲述的
+        # 2018 事实会被写成 2018 的时间戳，读侧按 cutoff 一裁就整条消失。
         events = [{'id': f'event_{i:06d}', 'time': timestamp(date),
                    'text': '\n'.join(f"{turn['role']}: {turn['content']}" for turn in turns)}
                   for i, (sid, date, turns) in enumerate(values)]

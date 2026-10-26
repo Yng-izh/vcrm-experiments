@@ -20,6 +20,46 @@
 * 禁止把 question_date 当历史目标时间：``ask_time`` 只作为观测窗口末刻的
   fallback，永远不被当作「目标版本时间戳」使用（那会把时间维度免费解掉）。
 
+t25 统一口径（把"历史锚点"与"观察截止"彻底分开，纠正四处旧行为）：
+
+* ``target_time``：**只**从问题文本解析（本模块既有解析器）；无锚 → ``None``
+  （= 读最新可见版本）。
+* ``observation_cutoff``：**只**取公开合法信息（``question_date`` / 提问时刻 /
+  episode 观测窗口末刻），**绝不**取 ``target_time``。缺失 → ``None``
+  （既有"读全部已写入"行为）并在审计字段标 ``time_source='missing_question_date'``。
+* ``time_mode='window_end'``（默认）下 cutoff = ``question_date``；
+  ``time_mode='as_of'`` 是 TempLAMA 旧口径（``target_time == cutoff``）的兼容路径，
+  必须显式 ``allow_as_of=True`` 才允许。
+
+四处来源审计（t25 实施前 → 实施后）：
+
+1. ``vcrm/query_time.py``（本文件）
+   前：``resolve_bounds(question, asked_at, observation_cutoff=)`` 的 cutoff 已经取
+   ``ask_time``（正确），但调用方普遍把 ``resolution.window_end``（历史锚）回填成
+   ``observation_cutoff``，等价于让 target 冒充 cutoff；``time_mode`` 没有参数化，
+   TempLAMA 的 ``target_time==cutoff`` 口径与 LME 口径混在同一分支里。
+   后：``resolve_bounds(..., time_mode='window_end'|'as_of', allow_as_of=False)``，
+   ``time_mode='as_of'`` 必须显式开启；``QueryTimeBounds`` 增加
+   ``time_mode`` / ``time_source`` / ``allow_as_of`` 审计字段。
+2. ``vcrm/data_views.py``（``public_query``）
+   前：``time`` 只来自调用方 ``window_end``（或 as_of 口径的 ``query['time']``），
+   但它不区分"这是 target 还是 cutoff"，调用方传错就静默接受。
+   后：文档写明 ``window_end`` 语义 = ``target_time``（版本选择上界），
+   可见性截止必须走 ``observation_cutoff`` 参数；行为不变（t13 契约冻结）。
+3. ``lme_s_latent/run_e3.py``
+   前：``resolver.resolve_bounds(..., observation_cutoff=resolved.window_end)`` 且
+   ``answer_predicted(window_end=resolved.window_end, ...)`` —— 2018 年锚点被同时当成
+   target 和 cutoff，2023 年才讲述的 2018 证据被排除。
+   后：``bounds = resolver.resolve_bounds(question, asked_at=question_date)``，
+   ``window_end=bounds.target_time``、``observation_cutoff=bounds.observation_cutoff``
+   （= question_date）。
+4. ``probe/run_dialogue_eval.py``
+   前：``window_end = mod.window_end_of(episode)``（= 对话末刻，公开可得）被同时传给
+   ``window_end=`` 与 ``observation_cutoff=``，即把对话末刻当成 target_time。
+   后：cutoff 用 ``window_end_of(episode)``，target 用
+   ``QueryTimeResolver.resolve_bounds(question, asked_at=cutoff,
+   observation_cutoff=cutoff).target_time``。
+
 与 ``vcrm.data_views`` 的分工：
 
 * ``time_source``（'window_end' / 'unknown'）由 ``public_query`` 产出，进
@@ -43,6 +83,22 @@ TIME_ANCHOR_QUESTION_TEXT = 'question_text_anchor'
 TIME_ANCHOR_ASK_TIME = 'ask_time'
 #: sidecar 子口径词表（不进 PUBLIC_QUERY_KEYS）。
 TIME_ANCHORS: Sequence[str] = (TIME_ANCHOR_QUESTION_TEXT, TIME_ANCHOR_ASK_TIME)
+
+#: query_time 侧的 time_mode（与 ``vcrm.data_views.TIME_MODES`` 同名词表）。
+#: 'window_end' = Predicted 正式默认；'as_of' = TempLAMA 旧口径兼容路径。
+QUERY_TIME_MODES: Sequence[str] = ('window_end', 'as_of')
+
+#: observation_cutoff 的来源（**sidecar 审计口径**，只写进我们自己的 jsonl/summary，
+#: 不扩 ``data_views.TIME_SOURCES``，避免 t6 的 ``--time-mode`` 语义漂移）。
+TIME_SOURCE_QUESTION_DATE = 'question_date'
+TIME_SOURCE_CALLER = 'cutoff_from_caller'
+TIME_SOURCE_MISSING_QUESTION_DATE = 'missing_question_date'
+TIME_SOURCE_AS_OF_LEGACY = 'as_of_legacy'
+TIME_SOURCE_UNKNOWN = 'unknown'
+OBSERVATION_CUTOFF_SOURCES: Sequence[str] = (
+    TIME_SOURCE_QUESTION_DATE, TIME_SOURCE_CALLER,
+    TIME_SOURCE_MISSING_QUESTION_DATE, TIME_SOURCE_AS_OF_LEGACY, TIME_SOURCE_UNKNOWN,
+)
 
 _MONTHS: Dict[str, int] = {
     'january': 1, 'february': 2, 'march': 3, 'april': 4, 'may': 5, 'june': 6,
@@ -227,6 +283,13 @@ class QueryTimeBounds:
 
     target_time: Optional[str] = None
     observation_cutoff: Optional[str] = None
+    #: 'window_end'（默认，cutoff 取提问时刻）/'as_of'（TempLAMA 旧口径：target==cutoff）
+    time_mode: str = 'window_end'
+    #: observation_cutoff 的来源审计：question_date / cutoff_from_caller /
+    #: missing_question_date / as_of_legacy / unknown
+    time_source: str = TIME_SOURCE_QUESTION_DATE
+    #: 是否显式允许了 TempLAMA 旧口径（time_mode='as_of'）
+    allow_as_of: bool = False
     time_anchor: str = TIME_ANCHOR_ASK_TIME
     anchor_ambiguous: bool = False
     anchor_text: Optional[str] = None
@@ -251,6 +314,9 @@ class QueryTimeBounds:
         return {'target_time': self.target_time,
                 'observation_cutoff': self.observation_cutoff,
                 'selection_bound': self.selection_bound,
+                'time_mode': self.time_mode,
+                'time_source': self.time_source,
+                'allow_as_of': self.allow_as_of,
                 'time_anchor': self.time_anchor,
                 'anchor_ambiguous': self.anchor_ambiguous,
                 'anchor_text': self.anchor_text, 'anchor_kind': self.anchor_kind,
@@ -329,34 +395,102 @@ class QueryTimeResolver:
                               'no_temporal_expression', ask_iso)
 
     def resolve_bounds(self, question: str, asked_at: Any = None, *,
-                       observation_cutoff: Optional[str] = None) -> QueryTimeBounds:
-        """把一次查询拆成「目标时间」与「可观察截止」两条边界。
+                       observation_cutoff: Optional[str] = None,
+                       time_mode: str = 'window_end',
+                       allow_as_of: bool = False) -> QueryTimeBounds:
+        """把一次查询拆成「目标时间」与「可观察截止」两条**互不冒充**的边界。
 
-        observation_cutoff 显式给出时（例如 episode 观测窗口末刻 / 数据集声明的
-        "当前时刻"）直接作为可见性硬上界；否则退回提问时刻。
+        统一口径（t25）：
 
-        target_time **只在问题文本里有可唯一折算的时间锚时才有值**：
-        ``resolve()`` 落到 ``ask_time`` 的那条分支（无时间表达 / 相对词不可折算）
-        一律不给目标时间，避免把"系统当前时间"当成历史目标时间。
+        * ``target_time``：只从问题文本解析；无锚 → ``None``（读最新可见版本）。
+        * ``observation_cutoff``：只取公开合法信息，优先级
+          ``observation_cutoff`` 参数（调用方给的 episode 观测窗口末刻 / 数据集声明的
+          当前时刻）> ``question_date`` > ``None``。**绝不**取 ``target_time``。
+          ``None`` 表示不设可见性截止（既有"读全部已写入"行为）。
+        * ``time_mode='window_end'``（默认）：cutoff = question_date；
+          question_date 缺失 → cutoff=None 且 ``time_source='missing_question_date'``
+          （不猜年份、不退回历史锚）。
+        * ``time_mode='as_of'``（TempLAMA 旧口径兼容，``target_time == cutoff``）：
+          必须显式 ``allow_as_of=True``，否则 ``ValueError``。
         """
+        if time_mode not in QUERY_TIME_MODES:
+            raise ValueError(
+                f'resolve_bounds: time_mode must be one of {QUERY_TIME_MODES}, got {time_mode!r}')
+        if time_mode == 'as_of' and not allow_as_of:
+            raise ValueError(
+                "resolve_bounds: time_mode='as_of' 会把 target_time 当成 observation_cutoff "
+                '(TempLAMA 旧口径)，必须显式 allow_as_of=True')
         resolution = self.resolve(question, asked_at)
-        cutoff = observation_cutoff or resolution.ask_time
         target = (resolution.window_end
                   if resolution.time_anchor == TIME_ANCHOR_QUESTION_TEXT else None)
         reason = resolution.reason
-        if observation_cutoff and not resolution.ask_time:
-            reason = f'{reason}|cutoff_from_caller'
+
+        if time_mode == 'as_of':
+            # TempLAMA 旧口径：金标版本时间戳即观测时刻（target_time == cutoff）。
+            cutoff = target or resolution.ask_time or observation_cutoff
+            source = TIME_SOURCE_AS_OF_LEGACY
+            if target is None:
+                reason = f'{reason}|as_of_without_target'
+            return QueryTimeBounds(target_time=target, observation_cutoff=cutoff,
+                                   time_mode=time_mode, time_source=source,
+                                   allow_as_of=True, time_anchor=resolution.time_anchor,
+                                   anchor_ambiguous=resolution.anchor_ambiguous,
+                                   anchor_text=resolution.anchor_text,
+                                   anchor_kind=resolution.anchor_kind, reason=reason,
+                                   ask_time=resolution.ask_time)
+
+        if observation_cutoff:
+            cutoff, source = str(observation_cutoff), TIME_SOURCE_CALLER
+            if not resolution.ask_time:
+                reason = f'{reason}|cutoff_from_caller'
+        elif resolution.ask_time:
+            cutoff, source = resolution.ask_time, TIME_SOURCE_QUESTION_DATE
+        else:
+            # question_date 缺失：不猜（不退回历史锚，也不退回 store 最新时间）。
+            cutoff, source = None, TIME_SOURCE_MISSING_QUESTION_DATE
+            reason = f'{reason}|missing_question_date'
         return QueryTimeBounds(target_time=target, observation_cutoff=cutoff,
-                               time_anchor=resolution.time_anchor,
+                               time_mode=time_mode, time_source=source,
+                               allow_as_of=False, time_anchor=resolution.time_anchor,
                                anchor_ambiguous=resolution.anchor_ambiguous,
                                anchor_text=resolution.anchor_text,
                                anchor_kind=resolution.anchor_kind, reason=reason,
                                ask_time=resolution.ask_time)
 
 
+def resolve_query_time(question: str, question_date: Any = None, *,
+                       time_mode: str = 'window_end',
+                       allow_as_of: bool = False,
+                       observation_cutoff: Optional[str] = None) -> QueryTimeBounds:
+    """便捷入口：一次调用得到 (target_time, observation_cutoff) 两条边界。
+
+    典型用法（LongMemEval 默认路径）::
+
+        bounds = resolve_query_time(item['question'], item['question_date'])
+        runtime.answer_predicted({'question': item['question']},
+                                 window_end=bounds.target_time,
+                                 observation_cutoff=bounds.observation_cutoff)
+
+    TempLAMA 旧口径（``target_time == cutoff``）必须显式开启::
+
+        bounds = resolve_query_time(q, q_date, time_mode='as_of', allow_as_of=True)
+    """
+    return QueryTimeResolver().resolve_bounds(
+        question, question_date, observation_cutoff=observation_cutoff,
+        time_mode=time_mode, allow_as_of=allow_as_of)
+
+
 __all__ = [
+    'OBSERVATION_CUTOFF_SOURCES',
+    'QUERY_TIME_MODES',
     'QueryTimeBounds',
     'QueryTimeResolver',
+    'TIME_SOURCE_AS_OF_LEGACY',
+    'TIME_SOURCE_CALLER',
+    'TIME_SOURCE_MISSING_QUESTION_DATE',
+    'TIME_SOURCE_QUESTION_DATE',
+    'TIME_SOURCE_UNKNOWN',
+    'resolve_query_time',
     'TIME_ANCHORS',
     'TIME_ANCHOR_ASK_TIME',
     'TIME_ANCHOR_QUESTION_TEXT',

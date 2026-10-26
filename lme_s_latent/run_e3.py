@@ -60,6 +60,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 import time
 from collections import Counter
@@ -78,7 +79,7 @@ from vcrm.io import read_records, write_json
 from vcrm.metrics import exact, f1 as token_f1, normalize
 from vcrm.query_time import QueryTimeResolver, TIME_ANCHORS
 from vcrm.runtime import PredictedRuntime, build_frontend
-from vcrm.state_index import SEMANTIC_DIMENSIONS, StateIndex
+from vcrm.state_index import SEMANTIC_DIMENSIONS, StateIndex, normalize_subject
 from vcrm.state_router import StateRouter
 from vcrm.store import IncrementalCurrentStore
 from vcrm.update_resolver import UpdateResolver
@@ -102,6 +103,33 @@ UPDATE_SOURCE_PREFIXES: Sequence[str] = ('explicit_replacement',
 # ---------------------------------------------------------------------------
 # data: LongMemEval-S parsing (same field contract as vcrm.data.longmemeval)
 # ---------------------------------------------------------------------------
+def render_session(turns: Sequence[Mapping[str, Any]]) -> str:
+    """把一轮 session 渲染成文本；role 前缀**幂等**（P4-F1 修复）。
+
+    ``vcrm.fact_extractor`` 每段只剥**一层** role 前缀
+    （``fact_extractor.py`` 的 ``_ROLE_PREFIX`` 分支）。若这里对已带前缀的 content
+    再叠一层，就会得到 ``user: user: Alice ...``，抽取器剥完剩 ``user: Alice``
+    → ``subject_key='user_alice'``，而查询侧 ``QueryParser`` 给的是 ``'alice'``，
+    两边对不上（路由靠语义相似度还能蒙到候选，但主体口径已经错了）。
+
+    真实 LongMemEval 的 ``content`` 不带 role 前缀，但已渲染过的 transcript 会被
+    重投（复跑、拼接、人工改数据），所以这里必须幂等：先把 content 里**自身 role**
+    的重复前缀全部剥掉，再加且只加一层。回归用例见
+    ``tests/test_lme_latent.py::RolePrefixIdempotencyTest``。
+    """
+    lines: List[str] = []
+    for turn in turns:
+        role = str(turn.get('role') or '')
+        content = str(turn.get('content') or '')
+        if role:
+            pattern = re.compile(rf'^\s*{re.escape(role)}\s*:\s*', re.IGNORECASE)
+            while pattern.match(content):
+                content = pattern.sub('', content, count=1)
+            content = f'{role}: {content}'
+        lines.append(content)
+    return '\n'.join(lines)
+
+
 def parse_item(row: Mapping[str, Any]) -> Dict[str, Any]:
     """单题解析：haystack 三个对齐数组 → 按时间排序的 session 列表。
 
@@ -121,8 +149,7 @@ def parse_item(row: Mapping[str, Any]) -> Dict[str, Any]:
     for session_id, date, turns in zip(ids, dates, sessions):
         parsed.append({'session_id': str(session_id),
                        'time': normalize_timestamp(date),
-                       'text': '\n'.join(f"{turn['role']}: {turn['content']}"
-                                         for turn in turns)})
+                       'text': render_session(turns)})
     parsed.sort(key=lambda session: session['time'])
     answer = row.get('answer')
     return {'question_id': question_id,
@@ -204,6 +231,7 @@ def new_runtime(args: argparse.Namespace, components: Components) -> PredictedRu
                             time_mode='window_end', allow_as_of=False,
                             defer_store_memory=bool(args.defer_store_memory),
                             hybrid_fallback=bool(args.hybrid_fallback),
+                            as_of_future_fallback=bool(args.as_of_future_fallback),
                             top_k=args.top_k, frontend=frontend,
                             read_mode=getattr(args, 'read_mode', 'pair'),
                             multi_state=bool(getattr(args, 'multi_state', False)),
@@ -211,18 +239,31 @@ def new_runtime(args: argparse.Namespace, components: Components) -> PredictedRu
 
 
 def build_llm_client(args: argparse.Namespace):
-    """构造模型客户端；未接入真实模型时返回 None（→ PlaceholderLLM 显式报错）。
+    """构造模型客户端：给 ``--llm-config`` 就接 OpenAI 兼容客户端 + 磁盘缓存。
 
-    真实模型只需在这里加一个分支并返回实现了 ``complete(prompt, system=...,
-    max_tokens=...) -> str`` 的对象；vcrm/llm_fact_extractor.py 与
-    vcrm/llm_query_parser.py 一行都不用改。
+    配置格式与 ``vcrm/judge.py`` 同构（三个键名都接受 judge 别名）::
+
+        {"model": "...", "base_url": "https://.../v1", "key_env": "OPENAI_API_KEY",
+         "max_tokens": 512, "temperature": 0}
+
+    没给 ``--llm-config`` 时保持旧语义：``--llm-model placeholder``（默认）→ None
+    （``build_frontend`` 会退化成 ``PlaceholderLLM``，任何调用显式抛错），其它模型名
+    仍然显式失败——绝不静默退回规则抽取。缓存目录默认 ``<runs-dir>/<tag>/llm_cache``，
+    保证 B/C/D 三组读到同一份模型输出。
     """
+    config_path = getattr(args, 'llm_config', None)
+    if config_path:
+        from vcrm.llm_client import build_llm_client as _build_client
+        cache_root = (getattr(args, 'llm_cache_root', None)
+                      or str(Path(args.runs_dir) / args.tag / 'llm_cache'))
+        args.llm_cache_root = cache_root
+        return _build_client(config_path, cache_root=cache_root)
     model = getattr(args, 'llm_model', None)
     if not model or model == 'placeholder':
         return None
     raise SystemExit(
-        f'--llm-model {model!r} 还没有对应实现：在 lme_s_latent/run_e3.py:'
-        'build_llm_client() 里加一个分支返回实现 complete() 的客户端。'
+        f'--llm-model {model!r} 需要配 --llm-config PATH 才能构造客户端'
+        '（JSON: {model, base_url, key_env, max_tokens?, temperature?}）；'
         '在此之前 --frontend llm 会显式失败，绝不静默退回规则抽取。')
 
 
@@ -412,7 +453,9 @@ def build_row(item: Mapping[str, Any], resolved: Any, result: Mapping[str, Any],
             'recency_update': bool(args.recency_update),
             'recency_min_confidence': float(args.recency_min_confidence),
             'hybrid_fallback': bool(args.hybrid_fallback),          # 本次运行的分口径开关
-            'fallback_used': bool(result.get('hybrid_fallback'))}   # 本题是否真走了回退
+            'fallback_used': bool(result.get('hybrid_fallback')),   # 本题是否真走了回退
+            'as_of_future_fallback': bool(args.as_of_future_fallback),
+            'version_after_target_time': bool(result.get('version_after_target_time'))}
 
 
 def summarise(args: argparse.Namespace, components: Components, rows: Sequence[Mapping[str, Any]],
@@ -460,6 +503,9 @@ def summarise(args: argparse.Namespace, components: Components, rows: Sequence[M
         'recency_min_confidence': float(args.recency_min_confidence),
         'defer_store_memory': bool(args.defer_store_memory),
         'hybrid_fallback': bool(args.hybrid_fallback),
+        'as_of_future_fallback': bool(args.as_of_future_fallback),
+        'version_after_target_time_count': sum(1 for row in rows
+                                               if row['version_after_target_time']),
         'decision_counts': dict(sorted(decisions.items())),
         'update_source_counts': {key: int(update_sources.get(key, 0))
                                  for key in UPDATE_SOURCE_PREFIXES + ('not_update',)},
@@ -497,6 +543,8 @@ def summarise(args: argparse.Namespace, components: Components, rows: Sequence[M
         'wall_seconds': time.perf_counter() - started,
         'notes': [
             'memory namespace = 本题 haystack（每题独立 runtime，不跨题共享索引）。',
+            'as_of_future_fallback 默认 off：window_end 是硬上界，不读窗口之后写入的版本'
+            '（runtime 默认 True 是为 TempLAMA 口径，本管线显式关闭并记录）。',
             'time_mode 只有 window_end：window_end = QueryTimeResolver 的产物'
             '（历史锚末刻优先，其次提问时刻），question_date 从不作为历史目标时间。',
             'time_anchor / anchor_ambiguous 是 sidecar 子口径，不进 PUBLIC_QUERY_KEYS；'
@@ -508,6 +556,62 @@ def summarise(args: argparse.Namespace, components: Components, rows: Sequence[M
             '这是查询侧解析限制，P4 全量跑前需先定口径。',
         ],
     }
+
+
+# ---------------------------------------------------------------------------
+# self-check: 主体口径对账（P4-F3）
+# ---------------------------------------------------------------------------
+def self_check(args: argparse.Namespace, items: Sequence[Mapping[str, Any]],
+               components: Components, resolver: QueryTimeResolver) -> Dict[str, Any]:
+    """打印「写入侧 state subject_key」vs「查询侧 QueryParser subject」对账表。
+
+    用途：role 前缀叠加、主体归一化漂移会让两侧主体口径分叉 —— 路由靠语义相似度
+    还能蒙到候选，但状态身份已经错了，hypothesis 会悄悄变空。这个自查就是提前
+    把分叉打出来。**hypothesis 为空 = 链路失败，不是"低分"**，因此有空 hypothesis
+    时本函数返回 ok=False（CLI 退出码 1）。
+    """
+    rows = []
+    for item in items:
+        runtime = new_runtime(args, components)
+        written = write_item(runtime, item, PublicEventCounter(), args.max_sessions)
+        resolved = resolver.resolve(item['question'], asked_at=item['question_date'])
+        parsed = runtime.query_parser.parse(item['question'])
+        result = runtime.answer_predicted({'question': item['question']},
+                                          window_end=resolved.window_end)
+        hypothesis = str(result.get('answer') or '')
+        subjects = sorted({record.subject_key for record in runtime.state_index.records})
+        # 状态身份用归一化主体键（state_index.normalize_subject）；QueryParser 给的是
+        # 表面形式，所以对账必须先把查询侧也归一化，否则永远 False（假阴性）。
+        query_key = normalize_subject(parsed['subject']) if parsed['subject'] else ''
+        rows.append({'question_id': item['question_id'],
+                     'query_subject': parsed['subject'],
+                     'query_subject_key': query_key,
+                     'query_attribute': parsed['attribute'],
+                     'query_resolved': bool(parsed['resolved']),
+                     'state_subjects': subjects,
+                     'subject_aligned': bool(query_key) and query_key in subjects,
+                     'n_states': len(runtime.state_index),
+                     'n_facts': len(written['ledger']),
+                     'hypothesis_chars': len(hypothesis),
+                     'empty_hypothesis': not hypothesis,
+                     'time_anchor': resolved.time_anchor,
+                     'window_end': resolved.window_end})
+    empty = [row['question_id'] for row in rows if row['empty_hypothesis']]
+    unaligned = [row['question_id'] for row in rows if not row['subject_aligned']]
+    print('[self-check] question_id | query_subject | state_subjects | aligned | hyp_chars')
+    for row in rows:
+        print(f"[self-check] {row['question_id']} | {row['query_subject']!r} "
+              f"→ {row['query_subject_key']!r} | {row['state_subjects']} | "
+              f"{row['subject_aligned']} | {row['hypothesis_chars']}")
+    summary = {'items': len(rows), 'empty_hypothesis': empty, 'subject_unaligned': unaligned,
+               'ok': not empty,
+               'note': 'hypothesis 为空 = 链路失败（主体口径分叉/无状态命中），'
+                       '不得只当低分处理；subject_unaligned 行需先修渲染或归一化。',
+               'rows': rows}
+    print(json.dumps({key: summary[key] for key in ('items', 'empty_hypothesis',
+                                                    'subject_unaligned', 'ok')},
+                     ensure_ascii=False))
+    return summary
 
 
 # ---------------------------------------------------------------------------
@@ -541,6 +645,14 @@ def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
                         help='未在独立验证集校准前不得设非零值当结论')
     parser.add_argument('--defer-store-memory', action='store_true', default=False,
                         help='DEFER 时把原始 full memory 写进 store.pending（默认关）')
+    parser.add_argument('--as-of-future-fallback', action='store_true', default=False,
+                        help='窗口末端早于该状态首个版本时是否回退读最新版本。默认 **off**：'
+                             'LongMemEval 的历史锚（如 in 2019）是硬上界，回退会把 2023 的'
+                             '事实读成 2019 的答案；runtime 默认 True 是为 TempLAMA 口径，'
+                             '本管线显式关掉并记录')
+    parser.add_argument('--self-check', action='store_true', default=False,
+                        help='只做主体口径对账：打印 QueryParser subject vs state '
+                             'subject_key，不写 runs 产物；有空 hypothesis 时退出码 1')
     parser.add_argument('--hybrid-fallback', action='store_true', default=False,
                         help='透传给 PredictedRuntime 的 hybrid_fallback 分口径开关'
                              '（默认 off；口径与 probe/run_state_eval.py 的同名开关一致）')
@@ -549,6 +661,11 @@ def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
                              '（实验二 B 臂；模型未接入时显式失败，不静默退回规则）')
     parser.add_argument('--llm-model', default='placeholder',
                         help='模型标识；placeholder = 未接入（--frontend llm 会直接报错）')
+    parser.add_argument('--llm-config', default=None,
+                        help='OpenAI 兼容客户端配置路径 {model, base_url, key_env, '
+                             'max_tokens?, temperature?}；给了就接真实客户端 + 磁盘缓存')
+    parser.add_argument('--llm-cache-root', default=None,
+                        help='LLM 输出缓存目录（默认 <runs-dir>/<tag>/llm_cache）')
     parser.add_argument('--multi-state', action='store_true', default=False,
                         help='允许一次读取多个相关状态（多跳/多事实问题；默认关）')
     parser.add_argument('--max-query-states', type=int, default=3,
@@ -569,6 +686,12 @@ def main(argv: Optional[Sequence[str]] = None) -> Dict[str, Any]:
         items = items[:args.limit]
     todo = items[args.shard::args.shards]
 
+    components = build_components(args)
+    resolver = QueryTimeResolver()
+    if args.self_check:
+        report = self_check(args, items[:args.limit or len(items)], components, resolver)
+        return report if report['ok'] else sys.exit(1)
+
     runs_dir = Path(args.runs_dir)
     out_dir = runs_dir / args.tag
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -580,8 +703,6 @@ def main(argv: Optional[Sequence[str]] = None) -> Dict[str, Any]:
     print(f'[lme-latent] items={len(items)} done={len(done)} todo={len(todo)} '
           f'recency_update={bool(args.recency_update)} reader={args.reader}', flush=True)
 
-    components = build_components(args)
-    resolver = QueryTimeResolver()
     rows: List[Dict[str, Any]] = []
 
     for index, item in enumerate(todo):
@@ -592,13 +713,15 @@ def main(argv: Optional[Sequence[str]] = None) -> Dict[str, Any]:
             counter = PublicEventCounter()
             written = write_item(runtime, item, counter, args.max_sessions)
             resolved = resolver.resolve(item['question'], asked_at=item['question_date'])
-            # t16：目标时间与可观察截止分开。查询只经 window_end 进入 public_query；
-            # observation_cutoff 作为可见性硬上界传给读取层（不给 future fallback 留口子）。
+            # t25 时间语义：target_time 与 observation_cutoff 来源彻底分开。
+            #   target_time         = 问题文本解析出的历史锚（无锚 → None = 读最新可见）
+            #   observation_cutoff  = question_date（提问时刻，公开合法信息）
+            # **不能**再把历史锚当 cutoff：LongMemEval 里 2018 年的事实常在 2023 年的
+            # 会话里才被讲述，用 2018 锚当截止会把唯一相关证据排除掉。
             bounds = resolver.resolve_bounds(item['question'],
-                                             asked_at=item['question_date'],
-                                             observation_cutoff=resolved.window_end)
+                                             asked_at=item['question_date'])
             result = runtime.answer_predicted(
-                {'question': item['question']}, window_end=resolved.window_end,
+                {'question': item['question']}, window_end=bounds.target_time,
                 read_mode=getattr(args, 'read_mode', 'pair'),
                 observation_cutoff=bounds.observation_cutoff)
             hypothesis = str(result.get('answer') or '')
@@ -607,6 +730,11 @@ def main(argv: Optional[Sequence[str]] = None) -> Dict[str, Any]:
             bucket = classify_error(item, result, written['ledger'], em)
             row = build_row(item, resolved, result, written, hypothesis, em, f1_score,
                             runtime.decisions, bucket, args)
+            # t25 审计字段：target 与 cutoff 各自的来源（sidecar，不进官方两键）
+            row['target_time'] = bounds.target_time
+            row['query_time_mode'] = bounds.time_mode
+            row['query_time_source'] = bounds.time_source
+            row['query_time_allow_as_of'] = bounds.allow_as_of
             write_json(out_dir / f'{question_id}.json', official_row(item, row))
             rows.append(row)
             print(f"[lme-latent] {index + 1}/{len(todo)} {question_id} "

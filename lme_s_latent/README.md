@@ -33,6 +33,10 @@
 ## 运行矩阵
 
 ```bash
+# A0) 主体口径自查（P4-F1/F3）：打印 QueryParser subject vs state subject_key
+#     有任意空 hypothesis 即退出码 1 —— 空 hypothesis = 链路失败，不是"低分"
+python3 lme_s_latent/run_e3.py --data <S_JSON> --self-check --limit 5
+
 # A) CPU 冒烟（stub reader，5 题，off/on 两种 recency 模式，均无 GPU）
 python3 lme_s_latent/run_e3.py --data <S_JSON> --reader stub --limit 5 \
     --tag lme_s_latent_smoke_off --no-resume
@@ -71,6 +75,8 @@ LME_TAG=lme_s_latent_e3_on bash lme_s_text_rag/run_official_eval.sh --execute  #
 `decision_counts`、`update_source_counts`（`explicit_replacement` /
 `exclusive_superseded_by_recency` 分列）、`hybrid_fallback`（默认 off，透传给
 `PredictedRuntime`，口径与 `probe/run_state_eval.py` 同名开关一致）、
+`as_of_future_fallback`（**本管线强制默认 off**，见阻塞清单第 7 条）+
+`version_after_target_time_count`、
 `error_buckets`（四必需桶 + `update_deferred` + `correct` /
 `abstention_unscored` / `no_gold`）。
 
@@ -99,6 +105,38 @@ LME_TAG=lme_s_latent_e3_on bash lme_s_text_rag/run_official_eval.sh --execute  #
 | 读取 | 500 次解码，≈1–2 s/题（prefill 512 分块 + 贪心 256 tokens） | C1/C4 实测口径 |
 | CPU stub 冒烟 | 5 题 <1 s（无 GPU、无权重） | 本仓库单测实测 |
 
+## 主体口径自查（必跑）
+
+`--self-check` 打印「写入侧 `state_index` 的 `subject_key`」与「查询侧
+`QueryParser.parse(question)['subject']` 归一化后」的对账表，并在**任何**
+hypothesis 为空时返回退出码 1：
+
+```bash
+python3 lme_s_latent/run_e3.py --data <S_JSON> --self-check --limit 5
+# [self-check] q1 | 'Alice' → 'alice' | ['alice'] | True | 21
+# {"items": 5, "empty_hypothesis": [], "subject_unaligned": [], "ok": true}
+```
+
+判读口径：
+- **`empty_hypothesis` 非空 = 链路失败**（主体口径分叉 / 无状态命中），必须当阻断
+  问题修，**不得只当"低分"上报**；官方链路也会因为空 hypothesis 直接失败。
+- `subject_unaligned` 非空 = 两侧主体键不一致，先修渲染或归一化再跑全量。
+- 侧别说明：`QueryParser` 返回表面形式（`'Alice'`），状态身份用
+  `state_index.normalize_subject` 归一化（`'alice'`），对账时必须两侧都归一化。
+
+## 已知风险：role 前缀与主体归一化（P4-F1）
+
+`vcrm.fact_extractor` 每段只剥**一层** role 前缀。若 session 文本在渲染时又叠了
+一层（历史 bug：`render_session` 无条件 `f"{role}: {content}"`，而夹具/重投数据的
+content 自带 `user: `），会得到 `user: user: Alice ...` → 抽取器剥完剩
+`user: Alice` → `subject_key='user_alice'`，与查询侧 `'alice'` 分叉。路由靠语义
+相似度还能蒙到候选，所以**不会报错，只会悄悄答错或答空**。
+
+现状：`render_session()` 已改为幂等（先剥掉 content 里自身 role 的重复前缀，再加
+且只加一层），回归用例 `tests/test_lme_latent.py::RolePrefixIdempotencyTest`
+（双重前缀 vs 单层前缀必须同 `subject_key`、且 hypothesis 非空）。全量跑之前仍应
+先跑一次 `--self-check`。
+
 ## 阻塞清单（P4 需用户放行后才能执行）
 
 1. **GPU 全量**：`--reader icae` 需要冻结 E3 checkpoint + CUDA；本轮只跑 CPU stub。
@@ -112,6 +150,14 @@ LME_TAG=lme_s_latent_e3_on bash lme_s_text_rag/run_official_eval.sh --execute  #
    `docs/LME_S_OFFICIAL_EVAL_SPEC.md`）。
 5. **`recency_min_confidence` 校准**：未在独立验证集校准前不得设非零值当结论；
    校准属于放行清单。
+6. **主体口径（role 前缀/归一化）**：见上节。全量跑前必须 `--self-check` 全绿
+   （无空 hypothesis、无 subject_unaligned）；空 hypothesis 一律按链路失败处理，
+   不得混进"低分"统计。
+7. **`as_of_future_fallback` 必须保持 off**：`PredictedRuntime` 默认 True（为
+   TempLAMA 的 window_end 口径），本管线显式关闭 —— 历史锚（`in 2019`）是硬上界，
+   回退读窗口之后的版本会把 2023 的事实当成 2019 的答案。summary 里
+   `as_of_future_fallback` / `version_after_target_time_count` 必须为
+   `false` / `0`，否则该批结果不可用。
 
 ## 外部发现（不在本任务范围，未修改）
 

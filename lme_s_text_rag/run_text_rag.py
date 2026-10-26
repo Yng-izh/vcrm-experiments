@@ -55,12 +55,14 @@ Usage:
       --tag lme_s_smoke --limit 50 --shard 0 --shards 1
 
 Input format (LongMemEval-S / official haystack file, one JSON per line or a
-JSON list — auto-detected): each item has at least
-  question_id, question, question_type, and haystack sessions. Session field
-names follow the official release (question.statement / sessions with
-session_id, session_date, turns) but a per-dataset adapter is isolated in
-`normalize_item` — adjust there if the schema differs; paths are NOT
-hardcoded (pass --data).
+JSON list — auto-detected): each item is an official cleaned row with
+question_id, question, question_type, question_date, answer, and the three
+index-aligned arrays haystack_session_ids / haystack_dates / haystack_sessions
+(the last one is a list of turn lists, NOT session dicts). Parsing is delegated
+to the shared loader `vcrm.lme_data.parse_item`, so this baseline and the latent
+pipeline read exactly the same sessions in exactly the same order; misaligned
+arrays raise instead of being zip-truncated. Paths are NOT hardcoded (pass
+--data).
 """
 from __future__ import annotations
 
@@ -73,42 +75,35 @@ from pathlib import Path
 ROOT = Path("/share/latent2/vcrm_icae")
 PROBE = ROOT / "c1_hybrid_rag"
 HERE = Path(__file__).resolve().parent
+REPO_ROOT = HERE.parent
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(PROBE))
+sys.path.insert(0, str(REPO_ROOT))
+
+from vcrm.lme_data import parse_item as parse_lme_item  # noqa: E402  (shared loader)
 
 
 def normalize_item(item):
-    """Adapter: return {question_id, question, question_type, sessions:[...]}.
+    """Adapter: official cleaned row -> {question_id, question, question_type, sessions}.
 
-    sessions: list of {session_id, date, text} sorted by date ascending.
-    Each turn is rendered as 'USER: ...' / 'ASSISTANT: ...'; the session text
-    is the date-prefixed concatenation of its turns in original order.
+    Parsing is delegated to `vcrm.lme_data.parse_item` — the SAME loader the
+    latent pipeline uses — so both baselines see identical sessions in identical
+    order. The official cleaned schema stores `haystack_sessions` as a list of
+    TURN LISTS aligned by index with `haystack_session_ids` / `haystack_dates`;
+    the loader raises on misalignment instead of zip-truncating.
+
+    sessions: list of {session_id, date, text} sorted by date ascending (stable).
+    Each turn is rendered as 'role: content' (same rendering as the latent
+    pipeline); the session text is the date-prefixed concatenation of its turns
+    in original order, where the date prefix keeps the official raw date string.
     """
-    qid = item.get("question_id") or item.get("qid") or item.get("id")
-    qtype = item.get("question_type") or item.get("type") or ""
-    question = item.get("question") or item.get("question_text") or ""
-    raw_sessions = item.get("sessions") or item.get("haystack_sessions") or item.get("context") or []
-    sessions = []
-    for i, s in enumerate(raw_sessions):
-        if isinstance(s, str):  # already-rendered fallback
-            sessions.append({"session_id": s[:32] or f"s{i}", "date": "", "text": s})
-            continue
-        sid = s.get("session_id") or s.get("id") or f"session_{i}"
-        date = s.get("session_date") or s.get("date") or s.get("timestamp") or ""
-        turns = s.get("turns") or s.get("messages") or s.get("session") or []
-        lines = []
-        for t in turns:
-            if isinstance(t, str):
-                lines.append(t)
-                continue
-            role = (t.get("role") or t.get("speaker") or "user").upper()
-            content = t.get("content") or t.get("text") or ""
-            lines.append(f"{role}: {content}")
-        text = f"[{date}] " + "\n".join(lines) if date else "\n".join(lines)
-        sessions.append({"session_id": str(sid), "date": str(date), "text": text})
-    sessions.sort(key=lambda s: s["date"])  # chronological order for the prompt
-    return {"question_id": str(qid), "question": question,
-            "question_type": qtype, "sessions": sessions}
+    episode = parse_lme_item(item)
+    sessions = [{"session_id": session.session_id,
+                 "date": session.date,
+                 "text": session.render(prefix_date=True)}
+                for session in episode.sessions]
+    return {"question_id": episode.question_id, "question": episode.question,
+            "question_type": episode.question_type, "sessions": sessions}
 
 
 def load_data(path):

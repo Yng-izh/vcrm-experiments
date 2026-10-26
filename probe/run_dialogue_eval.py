@@ -34,6 +34,10 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from vcrm.judge import score as judge_score          # noqa: E402
+from vcrm.query_time import QueryTimeResolver        # noqa: E402
+
+#: t25：统一时间语义（target_time 来自题面，observation_cutoff 来自对话末刻）
+QUERY_TIME = QueryTimeResolver()
 
 MODES = ('pair', 'trajectory')
 FORBIDDEN_PHYSICAL_GPUS = ('0', '1')
@@ -158,12 +162,24 @@ def write_pool(mod, runtime, pool) -> Dict[str, Any]:
 # ---------------------------------------------------------------------------
 # 单题评估：同一次写入，两臂只差 read_mode（与实验一相同的唯一变量原则）
 # ---------------------------------------------------------------------------
-def evaluate_question(runtime, episode, query, window_end, judge_config, cache_root,
+def evaluate_question(runtime, episode, query, observation_cutoff, judge_config, cache_root,
                       args, write_stats) -> Dict[str, Any]:
+    """同一次写入，两臂只差 read_mode。
+
+    t25 时间语义：``observation_cutoff``（= ``window_end_of(episode)``，对话末刻，
+    公开可得）只做可见性硬上界；**target_time** 从问题文本解析
+    （``QueryTimeResolver.resolve_bounds(...).target_time``，无锚 → None = 读最新可见）。
+    旧实现把对话末刻同时当 target 与 cutoff，等于把"当时的最新版本"当成答案，
+    会把问题指向的历史版本（以及晚讲述的历史证据）判错。
+    """
+    bounds = QUERY_TIME.resolve_bounds(query.get('question') or '',
+                                       asked_at=observation_cutoff,
+                                       observation_cutoff=observation_cutoff)
     result_by_mode: Dict[str, Mapping[str, Any]] = {}
     for mode in MODES:
         result_by_mode[mode] = runtime.answer_predicted(
-            query, window_end=window_end, read_mode=mode, observation_cutoff=window_end)
+            query, window_end=bounds.target_time, read_mode=mode,
+            observation_cutoff=bounds.observation_cutoff)
     judged: Dict[str, Any] = {}
     if args.defer_judge:
         # 离线判分模式：回答原文照存，判分字段全部留 None，等 judge_dialogue_rows.py 补
@@ -186,7 +202,9 @@ def evaluate_question(runtime, episode, query, window_end, judge_config, cache_r
         'question_id': str(query.get('id')), 'question': str(query.get('question')),
         'type': str(query.get('type')), 'answers': list(query.get('answers') or []),
         'abstention': bool(query.get('abstention')),
-        'observation_cutoff': window_end,
+        'observation_cutoff': observation_cutoff,
+        'target_time': bounds.target_time,
+        'query_time_source': bounds.time_source,
         'n_sessions': len(episode.get('events') or []),
         'n_states_in_pool': len(write_stats['states']),
         'n_facts_in_pool': len(write_stats['facts']),
@@ -325,6 +343,7 @@ def main(argv: Optional[Sequence[str]] = None) -> Dict[str, Any]:
         runtime = mod.new_runtime(run_args, components)
         pool = [episode] + mod._neighbours(episodes, index - 1, args.neighbours)
         write_stats = write_pool(mod, runtime, pool)
+        # 观测截止 = episode 观测窗口末刻（对话末刻，公开可得）；不是问题的时间锚。
         window_end = mod.window_end_of(episode)
         for query in episode.get('queries') or []:
             if len(rows) >= args.limit:

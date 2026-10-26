@@ -185,7 +185,7 @@ QUERY_FACT_ID = 'query_view'
 #: 读取模式（受控对照的两个臂）。
 #:   pair       当时可见的最新版本 + 一个历史版本（既有口径）
 #:   trajectory 当时可见的全部版本，按时间升序，每条带 role/time marker
-READ_MODES: Sequence[str] = ('pair', 'trajectory')
+READ_MODES: Sequence[str] = ('pair', 'trajectory', 'current_only')
 
 #: 前端实现：'rules' = 现有确定性硬规则；'llm' = 通用模型抽取/解析（占位，待接入）。
 FRONTENDS: Sequence[str] = ('rules', 'llm')
@@ -712,9 +712,12 @@ class PredictedRuntime:
             newest = visible[-1] if visible else self.store.current(record.state_id)
             if newest is None:
                 continue
-            history = selected if selected is not newest else (
-                visible[-2] if len(visible) > 1 else None)
-            entries = [newest] + ([history] if history is not None else [])
+            if read_mode == 'current_only':
+                entries = [newest]          # 多状态同样只读各状态的 current
+            else:
+                history = selected if selected is not newest else (
+                    visible[-2] if len(visible) > 1 else None)
+                entries = [newest] + ([history] if history is not None else [])
             cost = self.store.trajectory_slots(entries)
             if used + cost > budget:
                 continue
@@ -731,6 +734,10 @@ class PredictedRuntime:
                 bundle = bundle.to(device)
         started = time.perf_counter()
         result = self.reader.answer(reader_query, bundle)
+        bundle_latent_slots = sum(self.store.entry_slots(entry) for entry in entries)
+        excluded = sum(self._excluded_historical(record.state_id, observation_cutoff,
+                                                 group, group[0]['id'])
+                       for record, group in groups)
         return {'answer': result.get('answer', ''), 'no_state_match': False,
                 'state_id': groups[0][0].state_id,
                 'multi_state': True,
@@ -742,7 +749,10 @@ class PredictedRuntime:
                 'bundle_version_ids': [entry['id'] for entry in entries],
                 'bundle_version_times': [entry['time'] for entry in entries],
                 'trajectory_length': len(entries),
-                'read_latent_slots': result.get('read_latent_slots', 0),
+                'excluded_historical_versions': excluded,
+                'bundle_latent_slots': bundle_latent_slots,
+                'read_latent_slots': bundle_latent_slots,
+                'reader_reported_latent_slots': int(result.get('read_latent_slots') or 0),
                 'timings': {'read_seconds': time.perf_counter() - started}}
 
     def read_state(self, state_id: str, view: Mapping[str, Any], *,
@@ -760,6 +770,15 @@ class PredictedRuntime:
         read_mode='trajectory'（实验一新增）
             当时可见的**全部**版本，按时间升序，每条自带 role/time marker
             （"Current·128 + History k·16"），由 store.select_trajectory 按预算裁剪。
+        read_mode='current_only'（C/D 对照新增）
+            只解码该状态的 current（full）版本，**不读任何历史 code**：bundle 只有
+            current 的槽位（"Current·128"）。写入结果与 trajectory 完全同一份，
+            唯一变量就是"读取是否允许历史版本"，因此 C 组（current-only latent）
+            与 D 组（versioned latent）可以共用 checkpoint 做受控对照。
+            本模式刻意忽略调用方按 target_time 选出的历史版本（那正是被排除的
+            信息），但仍**严格遵守** ``observation_cutoff``：截止之后才写入的
+            current 不可读，此时返回 no_state_match 并用
+            ``future_current_suppressed`` 显式标注，绝不拿未来版本顶上。
 
         可见性（本函数必须遵守的硬约束）
             ``observation_cutoff`` 是系统当时可能观测到的最后时刻。给出它时：
@@ -786,6 +805,7 @@ class PredictedRuntime:
                           'selected_version_time': None, 'version_role': None,
                           'bundle_version_ids': [], 'bundle_version_times': [],
                           'trajectory_length': 0, 'read_latent_slots': 0,
+                          'bundle_latent_slots': 0, 'excluded_historical_versions': 0,
                           'timings': {'read_seconds': time.perf_counter() - started}}
         if read_mode == 'trajectory':
             entries = self.store.select_trajectory(
@@ -796,6 +816,24 @@ class PredictedRuntime:
             current_id = entries[0]['id']          # canonical: current 在首位
             selected_entry = entries[0]
             current_ids = {current_id}
+        elif read_mode == 'current_only':
+            # C 组读取口径：只读 current full 版本，历史 code 一律不解码。
+            # 过滤在 runtime 层完成（不改 store 读取原语），写入侧完全共用。
+            current_entry = self.store.current(state_id)
+            if current_entry is None:
+                return missing
+            if observation_cutoff is not None and current_entry['time'] > observation_cutoff:
+                # 截止时刻之后才写入的 current 不可读；本模式没有历史版本可退回。
+                return missing | {
+                    'future_current_suppressed': True,
+                    'hidden_future_versions':
+                        self.store.hidden_future_count(state_id, observation_cutoff),
+                    'excluded_historical_versions':
+                        self._excluded_historical(state_id, observation_cutoff, [], None)}
+            entries = [current_entry]
+            current_id = current_entry['id']
+            current_ids = {current_id}
+            selected_entry = current_entry
         else:
             if selected is None:
                 # 目标时间优先（"当时哪个版本是答案"），没有目标时间就用可观察截止
@@ -832,6 +870,12 @@ class PredictedRuntime:
                 bundle = bundle.to(device)
         result = self.reader.answer(reader_query, bundle)
         current = self.store.current(state_id)
+        # 确定性的 bundle 槽位账：不含 marker，等于各条目 payload 槽位之和。
+        # read_latent_slots 统一取这个账目（而不是 reader 自报值），这样
+        # current_only 的读数恰为"每状态 current 槽位数之和"，C/D 两组的槽位
+        # 口径可直接相减；reader 自报值原样留在 reader_reported_latent_slots。
+        bundle_latent_slots = sum(self.store.entry_slots(entry) for entry in entries)
+        reported_slots = int(result.get('read_latent_slots') or 0)
         return base | {
             'answer': result.get('answer', ''),
             'no_state_match': False,
@@ -852,7 +896,12 @@ class PredictedRuntime:
             'future_current_suppressed': bool(
                 current is not None and observation_cutoff is not None
                 and current['time'] > observation_cutoff),
-            'read_latent_slots': result.get('read_latent_slots', 0),
+            # C/D 对比可量化的审计字段：被本读取模式排除掉的历史版本数。
+            'excluded_historical_versions': self._excluded_historical(
+                state_id, observation_cutoff, entries, current_id),
+            'bundle_latent_slots': bundle_latent_slots,
+            'read_latent_slots': bundle_latent_slots,
+            'reader_reported_latent_slots': reported_slots,
             'timings': {'read_seconds': time.perf_counter() - started}}
 
     def _read_budget(self, max_slots: Optional[int]) -> int:
@@ -871,6 +920,21 @@ class PredictedRuntime:
             packed.append(entry)
             used += cost
         return packed
+
+    def _excluded_historical(self, state_id, observation_cutoff, entries, current_id) -> int:
+        """被本次读取排除掉的、当时可见的历史版本数（C/D 对照的量化口径）。
+
+        只统计 ``time <= observation_cutoff`` 的版本（截止之后的不算"被排除"，
+        它们本来就不可见，单独记在 ``hidden_future_versions``），再减去实际进了
+        bundle 的条目：
+          - current_only：全部可见历史都被排除（= 该状态的可见历史版本数）；
+          - pair：只保留一个历史位，其余可见历史被排除；
+          - trajectory：只有预算装不下的部分被排除。
+        """
+        visible = self.store.visible_versions(state_id, observation_cutoff)
+        kept = {entry['id'] for entry in entries}
+        return sum(1 for entry in visible
+                   if entry['id'] not in kept and entry['id'] != current_id)
 
     @staticmethod
     def _reader_query(view: Mapping[str, Any]) -> Dict[str, Any]:

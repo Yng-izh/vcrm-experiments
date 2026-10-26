@@ -52,7 +52,7 @@ def make_row(question_id, question, question_date, sessions, answer='', question
 def make_args(**overrides):
     base = dict(reader='stub', arch_exp='E3', hidden=32, memory_slots=8, top_k=5,
                 recency_update=False, recency_min_confidence=0.0, defer_store_memory=False,
-                hybrid_fallback=False,
+                hybrid_fallback=False, as_of_future_fallback=False,
                 tag='unit', runs_dir='unused', data='unused', limit=0, shard=0, shards=1,
                 max_sessions=0, no_resume=True)
     base.update(overrides)
@@ -84,8 +84,10 @@ class ParseParityTest(unittest.TestCase):
                 question_id=f'q{index:03d}_abs' if index % 7 == 0 else f'q{index:03d}',
                 question=f'What did I say about topic {index}?',
                 question_date='2024/02/03 (Sat) 11:00',
-                sessions=[('2021/03/04 (Thu) 09:00', f'user: note {index} alpha'),
-                          ('2023/08/09 (Wed) 10:30', f'user: note {index} beta')],
+                # 注意：vcrm.data 无条件渲染 f"{role}: {content}"，所以对齐用的
+                # content 必须是**不带** role 前缀的原始文本（真实数据形态）。
+                sessions=[('2021/03/04 (Thu) 09:00', f'note {index} alpha'),
+                          ('2023/08/09 (Wed) 10:30', f'note {index} beta')],
                 answer=f'answer {index}', question_type='single-session-user'))
 
         with tempfile.TemporaryDirectory() as tmp:
@@ -243,6 +245,76 @@ class GradedErrorBucketTest(unittest.TestCase):
         self.assertEqual(counts['not_update'], 1)
 
 
+class RolePrefixIdempotencyTest(unittest.TestCase):
+    """P4-F1 回归：role 前缀渲染必须幂等，主体口径两侧必须对齐。
+
+    背景：fact_extractor 每段只剥一层 role 前缀；夹具/重投数据若 content 自带
+    'user: '，旧渲染会得到 'user: user: Alice ...' → subject='user: Alice'
+    （subject_key='user_alice'），与查询侧 'alice' 分叉。
+    """
+
+    def test_render_collapses_repeated_role_prefixes(self):
+        once = run_e3.render_session([{'role': 'user', 'content': 'Alice lives in Lisbon.'}])
+        twice = run_e3.render_session([{'role': 'user',
+                                        'content': 'user: Alice lives in Lisbon.'}])
+        thrice = run_e3.render_session([{'role': 'user',
+                                         'content': 'user: user: Alice lives in Lisbon.'}])
+        self.assertEqual(once, 'user: Alice lives in Lisbon.')
+        self.assertEqual(twice, once)
+        self.assertEqual(thrice, once)
+
+    def test_render_keeps_other_roles_and_plain_content(self):
+        rendered = run_e3.render_session([{'role': 'assistant', 'content': 'Sure.'},
+                                          {'role': 'user', 'content': 'Note: ok'}])
+        self.assertEqual(rendered, 'assistant: Sure.\nuser: Note: ok')
+
+    def _subject_key(self, content):
+        item = run_e3.parse_item(make_row(
+            'q_role', 'Alice lives in _X_?', '2024/01/05 (Fri) 10:00',
+            [('2021/03/01 (Mon) 09:00', content)], answer='Lisbon'))
+        runtime, written, _, result = answer(item)
+        keys = [record.subject_key for record in runtime.state_index.records]
+        return keys, written, result
+
+    def test_double_prefix_and_single_prefix_share_subject_key(self):
+        keys_double, written_double, result_double = self._subject_key(
+            'user: user: Alice lives in Lisbon.')
+        keys_single, written_single, _ = self._subject_key('Alice lives in Lisbon.')
+        self.assertEqual(keys_double, keys_single)
+        self.assertEqual(keys_double, ['alice'])                 # 不是 'user_alice'
+        self.assertEqual([entry['clause'] for entry in written_double['ledger']],
+                         [entry['clause'] for entry in written_single['ledger']])
+        # 对齐后 hypothesis 必须非空（空 = 链路失败，不是低分）
+        self.assertTrue(result_double['answer'])
+
+    def test_query_subject_matches_state_subject_key(self):
+        from vcrm.state_index import normalize_subject
+        item = run_e3.parse_item(make_row(
+            'q_align', 'Alice lives in _X_?', '2024/01/05 (Fri) 10:00',
+            [('2021/03/01 (Mon) 09:00', 'user: user: Alice lives in Lisbon.')], answer='Lisbon'))
+        runtime, _, _, result = answer(item)
+        parsed = runtime.query_parser.parse(item['question'])
+        keys = {record.subject_key for record in runtime.state_index.records}
+        self.assertIn(normalize_subject(parsed['subject']), keys)
+        self.assertFalse(result['no_state_match'])
+        self.assertTrue(result['answer'])
+
+    def test_self_check_reports_ok_and_flags_empty_hypothesis(self):
+        rows = [make_row('q_sc', 'Alice lives in _X_?', '2024/01/05 (Fri) 10:00',
+                         [('2021/03/01 (Mon) 09:00', 'user: user: Alice lives in Lisbon.')],
+                         answer='Lisbon')]
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / 'selfcheck.json'
+            path.write_text(json.dumps(rows))
+            args = make_args(self_check=True, data=str(path), limit=1)
+            components = run_e3.build_components(args)
+            report = run_e3.self_check(args, run_e3.load_items(str(path)), components,
+                                       QueryTimeResolver())
+        self.assertTrue(report['ok'])
+        self.assertEqual(report['empty_hypothesis'], [])
+        self.assertEqual(report['subject_unaligned'], [])
+        self.assertEqual(report['rows'][0]['state_subjects'], ['alice'])
+
 class EndToEndFiveItemTest(unittest.TestCase):
     """5 题端到端（stub reader）：off/on 两种 recency 模式都要能跑通，且输出可进官方链路。"""
 
@@ -303,9 +375,18 @@ class EndToEndFiveItemTest(unittest.TestCase):
         self.assertEqual(rows['q2']['window_end'], '2019-12-31T23:59:59')
         self.assertEqual(rows['q2']['time_source'], 'window_end')
         self.assertNotEqual(rows['q2']['window_end'], rows['q2']['ask_time'])
-        # 默认 recency_update=off：q1/q3 的第二次陈述落 DEFER → update_deferred 单列
-        self.assertGreaterEqual(summary['error_buckets']['update_deferred'], 2)
+        # 基准（P4-F1 修复后重测）：q1/q3 的第二次陈述落 DEFER → update_deferred=2，
+        # 其余三题状态与版本都命中，答错只归 reader_wrong=3。
+        self.assertEqual(summary['error_buckets'],
+                         {'fact_extraction_failed': 0, 'update_deferred': 2,
+                          'state_match_failed': 0, 'version_select_failed': 0,
+                          'reader_wrong': 3, 'correct': 0,
+                          'abstention_unscored': 0, 'no_gold': 0})
+        self.assertEqual(summary['no_state_match_rate'], 0.0)
         self.assertEqual(summary['update_source_counts']['exclusive_superseded_by_recency'], 0)
+        # window_end 是硬上界：不得读窗口之后写入的版本
+        self.assertEqual(summary['as_of_future_fallback'], False)
+        self.assertEqual(summary['version_after_target_time_count'], 0)
         # 五个桶都在（含 0），且分级桶顺序固定
         for bucket in ('fact_extraction_failed', 'update_deferred', 'state_match_failed',
                        'version_select_failed', 'reader_wrong', 'correct',
@@ -319,9 +400,13 @@ class EndToEndFiveItemTest(unittest.TestCase):
 
         self.assertTrue(summary['recency_update'])
         self.assertEqual(summary['hybrid_fallback'], False)   # 分口径开关默认 off
-        self.assertEqual(summary['error_buckets']['update_deferred'], 0)
-        self.assertGreaterEqual(
-            summary['update_source_counts']['exclusive_superseded_by_recency'], 2)
+        self.assertEqual(summary['error_buckets'],
+                         {'fact_extraction_failed': 0, 'update_deferred': 0,
+                          'state_match_failed': 0, 'version_select_failed': 0,
+                          'reader_wrong': 5, 'correct': 0,
+                          'abstention_unscored': 0, 'no_gold': 0})
+        self.assertEqual(summary['no_state_match_rate'], 0.0)
+        self.assertEqual(summary['update_source_counts']['exclusive_superseded_by_recency'], 3)
         # q1 的窗口末刻 = 提问时刻 → 最新可见版本（2023-06 Berlin）
         self.assertEqual(rows['q1']['selected_version_time'], '2023-06-01T12:00:00')
         self.assertEqual(rows['q1']['version_role'], 'current')

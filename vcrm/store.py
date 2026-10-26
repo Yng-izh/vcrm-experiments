@@ -664,7 +664,7 @@ class CurrentSnapshotStore(KeyframeStore):
 
 
 INCREMENTAL_FORMAT = 'incremental_independent_current_v1'
-INCREMENTAL_BUDGET_MODES = ('retain_all',)
+INCREMENTAL_BUDGET_MODES = ('retain_all', 'drop_oldest')
 
 
 class IncrementalCurrentStore(KeyframeStore):
@@ -685,12 +685,24 @@ class IncrementalCurrentStore(KeyframeStore):
 
     Budget protocol: the retired `resident_slot_budget = 2048` keyframe ceiling does
     not apply here (4057 fact groups x 128 slots = 519,296 resident slots), so this
-    class only implements an explicit `budget_mode='retain_all'` tier that reports
-    bytes and slots through `accounting()`. Retain-all never evicts: a byte
-    guardrail (`byte_budget`) rejects the write and rolls it back instead of
-    silently dropping live state. A formal efficiency experiment must add a
-    separate flow-control/eviction policy on top of this store rather than
-    reusing the keyframe FIFO.
+    class implements two explicit, pre-declared tiers that both report bytes and
+    slots through `accounting()`:
+
+        budget_mode='retain_all'（默认，主对照口径）
+            永不淘汰。`byte_budget` 是硬护栏：超预算的写入显式拒绝并整体回滚，
+            绝不静默丢弃活跃状态。
+        budget_mode='drop_oldest'（相同持久化字节预算的受控对照口径）
+            超预算时按**预先写明的确定性顺序**淘汰，而不是拒绝：
+              1. 先清非版本账：pending → duplicates → rejections（清空即记 audit）；
+              2. 再淘汰历史 code：全局按 (entry['time'], entry['id']) 升序逐条淘汰；
+              3. 仍超预算 → 显式 ValueError（整笔写入回滚），绝不假装成功。
+            **current（full）版本永不淘汰**：它是该状态唯一的 128-slot 当前记忆，
+            淘汰它等于丢数据；因此单状态 current + 格式开销装不下时只能拒绝。
+            每次淘汰都记进 `self.evictions`（淘汰了哪些 id、释放多少字节），
+            并通过写入回执的 `evicted` 字段与 `accounting()['evictions']` 暴露；
+            audit 只留在内存里，不占持久化字节。
+
+    字节构成与测量方法见 docs/store_budget.md（公式 + probe/measure_store_bytes.py）。
     """
     magic = b'VCRMIC1\n'
     format_name = INCREMENTAL_FORMAT
@@ -699,6 +711,9 @@ class IncrementalCurrentStore(KeyframeStore):
     def __init__(self, codec, key_dimensions=128, byte_budget=None, budget_mode='retain_all'):
         if budget_mode not in INCREMENTAL_BUDGET_MODES:
             raise ValueError(f'Unsupported incremental store budget mode {budget_mode!r}')
+        if budget_mode == 'drop_oldest' and byte_budget is None:
+            # 淘汰策略必须有明确预算，否则"drop_oldest"名不副实（永不触发）。
+            raise ValueError('budget_mode=drop_oldest requires an explicit byte_budget')
         if codec.conditioned:
             raise ValueError('Incremental E3 store requires independent codec')
         # The parent constructor insists on a positive slot ceiling; retain_all
@@ -707,6 +722,9 @@ class IncrementalCurrentStore(KeyframeStore):
         self.slot_budget = None
         self.budget_mode = budget_mode
         self.pending, self.duplicates, self.rejections = [], [], []
+        # 淘汰审计（仅 drop_oldest 会写）。刻意不进序列化：审计是诊断信息，
+        # 让它占持久化字节会反过来推动淘汰，形成自我放大的预算反馈环。
+        self.evictions = []
         # Single-slot undo for StateIndex.commit_with(): only the most recent commit
         # can still be rolled back, so this never grows with the number of writes
         # (a full snapshot includes the pending 128x4096 FP16 payloads). Never serialized.
@@ -744,7 +762,9 @@ class IncrementalCurrentStore(KeyframeStore):
         # return before the guard (DEFER grows by a full 128x4096 FP16 record, DUPLICATE
         # appends metadata), otherwise the store would hold state it cannot persist.
         snapshot = self._snapshot()
+        evict_audit_start = len(self.evictions)
         downgraded = None
+        evicted = []
         try:
             if action == 'DUPLICATE':
                 # Payload is deliberately untouched: the alias is metadata only.
@@ -777,12 +797,13 @@ class IncrementalCurrentStore(KeyframeStore):
                 self.blocks[state] = entry['id']
                 self.counts[state] = self.counts.get(state, 0) + 1
             self.validate_protocol()
-            self._guard_budget()
+            evicted = self._guard_budget()
         except Exception:
             self._restore(snapshot)
+            del self.evictions[evict_audit_start:]   # 回滚后淘汰审计也要撤销
             raise
         self._accounting_total = None          # 事务已变更存储内容
-        return self._receipt(action, event, state, downgraded)
+        return self._receipt(action, event, state, downgraded, evicted)
 
     # -- StateIndex transaction adapter (t5 contract) ----------------------
     def commit(self, record=None, fact=None, *, memory=None, semantic_key=None, decision=None):
@@ -900,19 +921,79 @@ class IncrementalCurrentStore(KeyframeStore):
         self.entries, self.blocks, self.counts, self.pending, self.duplicates, self.rejections = snapshot
 
     def _guard_budget(self):
+        """预算守卫：retain_all 拒绝、drop_oldest 按固定顺序淘汰；返回淘汰审计。"""
         if self.byte_budget is None:
-            return
+            return []
         total = len(self.serialize())   # 预算守卫必须用真实序列化值，绝不吃缓存
-        if total > self.byte_budget:
+        if total <= self.byte_budget:
+            return []
+        if self.budget_mode != 'drop_oldest':
             raise ValueError(f'Incremental store byte budget exceeded ({total} > {self.byte_budget}); '
                              'explicit rejection instead of silent eviction')
+        return self._drop_oldest(total)
+
+    def _drop_oldest(self, total):
+        """drop_oldest 的确定性淘汰：非版本账 → 最旧历史 code → 仍超预算则拒绝。
+
+        淘汰顺序只依赖 (entry['time'], entry['id'])，与写入顺序、dict 序无关，
+        因此同一份写入序列在任何进程里都会淘汰同一批版本（可复现的对照口径）。
+        每一步都重新量真实序列化字节（淘汰极少发生，精确优先于增量估算）。
+        """
+        groups, freed = [], 0
+        # 1) 非版本账：pending/duplicates/rejections 不影响 current 不变量，先清。
+        for name in ('pending', 'duplicates', 'rejections'):
+            records = getattr(self, name)
+            if not records:
+                continue
+            before = len(self.serialize())
+            ids = [record['id'] for record in records]
+            setattr(self, name, [])
+            self._accounting_total = None
+            freed += before - len(self.serialize())
+            groups.append({'group': name, 'ids': ids,
+                           'reason': 'budget_drop_non_version_record'})
+            if len(self.serialize()) <= self.byte_budget:
+                return self._record_evictions(groups, freed)
+        # 2) 历史 code：全局按 (time, id) 升序淘汰；current(full) 永不参与。
+        victims = sorted((e for e in self.entries if e['kind'] == 'code'),
+                         key=lambda e: (e['time'], e['id']))
+        for victim in victims:
+            if len(self.serialize()) <= self.byte_budget:
+                break
+            before = len(self.serialize())
+            self.entries = [e for e in self.entries if e['id'] != victim['id']]
+            self._wire_cache.pop(victim['id'], None)
+            self._accounting_total = None
+            freed += before - len(self.serialize())
+            groups.append({'group': 'historical_code', 'ids': [victim['id']],
+                           'state': victim['state'], 'time': victim['time'],
+                           'reason': 'budget_drop_oldest_code'})
+        # 3) 淘汰后必须重新过不变量与预算；仍超预算 → 显式拒绝（整笔写入回滚）。
+        self.validate_protocol()
+        total = len(self.serialize())
+        if total > self.byte_budget:
+            raise ValueError(f'Incremental store byte budget exceeded even after evicting every '
+                             f'historical code ({total} > {self.byte_budget}); the live full current '
+                             'version can never be evicted, so this write is rejected')
+        return self._record_evictions(groups, freed)
+
+    def _record_evictions(self, groups, freed):
+        if not groups:
+            return []
+        record = {'seq': len(self.evictions), 'byte_budget': self.byte_budget,
+                  'freed_bytes': freed, 'groups': groups}
+        self.evictions.append(record)
+        self._accounting_total = None
+        return [record]
 
     def _enforce_budget(self):
-        raise RuntimeError('Retain-all incremental store never evicts; budget violations are rejected')
+        raise RuntimeError(
+            'Incremental store evicts only through the declared policy: retain_all rejects the '
+            'write, drop_oldest evicts via _drop_oldest(); the keyframe FIFO never applies')
 
-    def _receipt(self, action, event, state, downgraded):
+    def _receipt(self, action, event, state, downgraded, evicted=()):
         return {'action': action, 'id': event['id'], 'state': state, 'time': event['time'],
-                'downgraded': downgraded, **self.accounting()}
+                'downgraded': downgraded, 'evicted': list(evicted), **self.accounting()}
 
     # -- invariants -------------------------------------------------------
     def validate_protocol(self):
@@ -960,6 +1041,14 @@ class IncrementalCurrentStore(KeyframeStore):
                     not np.isfinite(record['payload']).all() or
                     record['key'].shape != (self.key_dimensions,)):
                 raise ValueError('Pending record must keep an independent original full memory')
+
+    def accounting(self):
+        return super().accounting() | {
+            'budget_mode': self.budget_mode,
+            'evictions': len(self.evictions),
+            'evicted_ids': [version_id for record in self.evictions
+                            for group in record['groups'] for version_id in group['ids']],
+            'evicted_bytes': sum(record['freed_bytes'] for record in self.evictions)}
 
     # -- persistence ------------------------------------------------------
     def serialize(self):
@@ -1020,6 +1109,10 @@ class IncrementalCurrentStore(KeyframeStore):
         begin = len(cls.aux_magic) + 8
         aux_size = struct.unpack('<Q', tail[len(cls.aux_magic):begin])[0]
         aux = json.loads(tail[begin:begin + aux_size])
+        if aux.get('budget_mode', 'retain_all') != budget_mode:
+            # 预算模式是读取口径的一部分：显式不匹配，绝不静默换模式。
+            raise ValueError(f'Incremental budget mode mismatch: file={aux.get("budget_mode")!r} '
+                             f'caller={budget_mode!r}; load with the mode the store was written in')
         aux_raw = tail[begin + aux_size:]
         for desc in aux['pending']:
             start = desc['offset']
@@ -1038,6 +1131,11 @@ class IncrementalCurrentStore(KeyframeStore):
         pending_slots = sum(int(r['payload'].shape[0]) for r in self.pending)
         return super().accounting() | {
             'protocol': self.format_name, 'budget_mode': self.budget_mode,
+            # 淘汰审计（仅 drop_oldest 非空）：条数、被淘汰的版本 id、累计释放字节
+            'evictions': len(self.evictions),
+            'evicted_ids': [version_id for record in self.evictions
+                            for group in record['groups'] for version_id in group['ids']],
+            'evicted_bytes': sum(record['freed_bytes'] for record in self.evictions),
             'resident_slot_budget_applied': False,
             'current_versions': sum(1 for e in self.entries if e['kind'] == 'full'),
             'compressed_versions': sum(1 for e in self.entries if e['kind'] == 'code'),
