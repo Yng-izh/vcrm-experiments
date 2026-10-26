@@ -250,6 +250,7 @@ class KeyframeStore:
                 code_wire = code.float().numpy().astype('<f2')
                 if code.shape != (self.codec.slots, self.codec.dimension) or not np.isfinite(code_wire).all():
                     raise ValueError('Codec returned invalid or FP16-overflowing historical code')
+                self._wire_cache.pop(previous['id'], None)   # payload 将被替换
                 previous.update(kind='code', payload=code_wire,
                                 anchor_id=anchor_id if self.codec.conditioned else None, compression_count=1)
             count = self.counts.get(state, 0)
@@ -264,7 +265,9 @@ class KeyframeStore:
             dropped = self._enforce_budget()
         except Exception:
             self.entries, self.blocks, self.counts = snapshot
+            self._accounting_total = None      # 回滚 = 内容变更
             raise
+        self._accounting_total = None          # 写路径已变更 entries/payload
         return {'dropped': dropped, **self.accounting()}
 
     def _enforce_budget(self):
@@ -285,9 +288,11 @@ class KeyframeStore:
                 self._wire_cache.clear()          # 整状态移除，直接清空
                 self.entries = [e for e in self.entries if e['state'] != old_state]
                 self.blocks.pop(old_state, None)
+                self._accounting_total = None   # 淘汰 = 内容变更
                 continue
             self.entries.remove(victim)
             self._wire_cache.pop(victim['id'], None)
+            self._accounting_total = None       # 淘汰 = 内容变更
             dropped.append(victim['id'])
         return dropped
 
@@ -521,11 +526,14 @@ class KeyframeStore:
             descriptions, offset = [], 0
             for entry in self.entries:
                 cached = self._wire_cache.get(entry['id'])
-                if cached is None:                     # accounting 先于首次 serialize
+                # 与 serialize() 同一自愈口径：缓存里的 (key_bytes, payload_bytes) 与
+                # 当前 entry 不符（例如 UPDATE 把 full 降级成 m-slot code 后 payload
+                # 被整体替换）时必须重建，否则字节账虚高、与文件长度对不上。
+                expected = (entry['key'].astype('<f2').nbytes,
+                            entry['payload'].astype('<f2').nbytes)
+                if cached is None or cached[1] != expected:
                     cached = (entry['key'].astype('<f2').tobytes()
-                              + entry['payload'].astype('<f2').tobytes(),
-                              (entry['key'].astype('<f2').nbytes,
-                               entry['payload'].astype('<f2').nbytes))
+                              + entry['payload'].astype('<f2').tobytes(), expected)
                     self._wire_cache[entry['id']] = cached
                 description = {k: entry[k] for k in ('id', 'state', 'time', 'kind', 'keyframe',
                                                      'anchor_id', 'compression_count')}
@@ -543,7 +551,7 @@ class KeyframeStore:
                                  'codec_slots': self.codec.slots,
                                  'key_dimensions': self.key_dimensions},
                                 sort_keys=True, separators=(',', ':')).encode()
-            payload_bytes = sum(len(cached[0]) for cached in self._wire_cache.values())
+            payload_bytes = sum(len(self._wire_cache[entry['id']][0]) for entry in self.entries)
             aux_header = json.dumps({'format': self.format_name, 'budget_mode': self.budget_mode,
                                      'pending': [], 'duplicates': [], 'rejections': []},
                                     sort_keys=True, separators=(',', ':')).encode() if hasattr(
@@ -636,12 +644,14 @@ class CurrentSnapshotStore(KeyframeStore):
         self.entries = rows
         self.blocks = {state: event['id'] for state, event in current.items()}
         self.counts = {state: sum(e['state'] == state for e in rows) for state in current}
+        self._accounting_total = None           # build 已整体替换 entries
         try:
             self.validate_protocol()
             if self.resident_slots() > self.slot_budget or (self.byte_budget is not None and len(self.serialize()) > self.byte_budget):
                 raise ValueError('Snapshot budget cannot retain all versions; no eviction in main comparison')
         except Exception:
             self.entries, self.blocks, self.counts = [], {}, {}
+            self._accounting_total = None
             raise
         return {'dropped': [], 'protocol': self.format_name, 'source_full_slots': sum(v.shape[0] for v in memories.values()),
                 'source_features_retained': False, 'online_update_supported': False, **self.accounting()}

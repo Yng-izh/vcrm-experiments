@@ -43,5 +43,8 @@ def test_worker_does_not_acquire_parent_run_lock(tmp_path, monkeypatch):
 def test_retired_stages_unavailable():
     assert 'reproduce' not in runner().STAGES
     assert 'train' not in runner().STAGES
-    assert 'features' not in runner().STAGES
+    # 'features' / 'features-finalize' 是服务器 run.py 里的合法新 stage（特征编码/落盘），
+    # 不是退役 stage；只有 reproduce / train 已退役。
+    assert 'features' in runner().STAGES
+    assert 'features-finalize' in runner().STAGES
     assert 'adapt' in runner().STAGES

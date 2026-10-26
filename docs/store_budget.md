@@ -85,6 +85,44 @@ delta_total = delta_memory_bytes + delta_index_key_bytes + delta_metadata_bytes
 }
 ```
 
+### 3.1 实测回填（CPU，`--episodes 5`，合成写入计划，2026-10-26）
+
+命令（服务器 `v100-2`，无 GPU，E3 尺寸 `dimension=4096 / slots=128 / codec_slots=16`）：
+
+```bash
+CUDA_VISIBLE_DEVICES= PYTHONPATH=.:probe env_py310/bin/python probe/measure_store_bytes.py \
+    --episodes 5 --facts-per-episode 12 --states 4 --pending-every 4 \
+    --out runs/store_bytes_ep5.json
+CUDA_VISIBLE_DEVICES= PYTHONPATH=.:probe env_py310/bin/python probe/measure_store_bytes.py \
+    --episodes 5 --facts-per-episode 12 --states 4 --pending-every 0 \
+    --out runs/store_bytes_ep5_nodefer.json
+```
+
+两次都是 60 次写入 / 4 个状态；`--pending-every 4` 让每第 4 条写成 DEFER。
+
+| 配置 | current | 历史 code | pending | 常驻 payload 合计 |
+| --- | --- | --- | --- | --- |
+| DEFER 1/4（15 条 pending） | 3,145,728 B（**12.9%**） | 5,505,024 B（**22.6%**） | 15,728,640 B（**64.5%**） | 24,379,392 B |
+| 无 DEFER（0 条 pending） | 4,194,304 B（36.4%） | 7,340,032 B（63.6%） | 0 B（0%） | 11,534,336 B |
+
+配套数字：DEFER 1/4 时 `total_bytes = 24,407,481 B`（每写入均值 406,785 B）；
+无 DEFER 时 `total_bytes = 11,562,822 B`（每写入均值 192,707 B）；
+`floor_bytes_currents_only = 4,195,328 B`（4 状态 × 1 MiB + key）。
+输出留档：`runs/store_bytes_ep5.json`、`runs/store_bytes_ep5_nodefer.json`。
+
+**结论：「pending 才是字节大头」成立，且量级比预估更极端。** 只要 DEFER 比例达到
+1/4，pending 就占常驻 payload 的 64.5%，是 current 的 5 倍、历史 code 的 2.9 倍。
+解析门槛：一条 pending = 1 个 full（1 MiB）= 8 条历史 code，所以 DEFER 比例一旦
+超过约 1/9，pending 总量就会反超历史 code 总量；无 DEFER 时反过来由历史 code 主导
+（63.6%），current 只占 36.4%（4 状态 × 1 条 current 是硬地板）。
+
+**分项口径修正（实测发现）**：`accounting()['memory_bytes']` 只统计 **entries** 的
+payload，pending 记录的 payload **不进** `memory_bytes`，而是落在
+`metadata_and_format_bytes` 桶里（DEFER 1/4 时该桶 15,744,804 B ≈ 15 MiB，几乎全是
+pending payload）。所以看"pending 占多少"必须用 `measure_store_bytes.py` 的
+`resident_payload_by_kind`（直接对 `entries`/`pending` 求 payload 字节），不能只看
+`memory_bytes`；三桶相加仍恒等于文件长度（该恒等式由 `test_slots.py` 守住）。
+
 定预算的经验做法（第四步用）：
 
 1. 用 `summary.bytes_per_episode_mean` × 目标 episode 数 → 无淘汰时的需求；

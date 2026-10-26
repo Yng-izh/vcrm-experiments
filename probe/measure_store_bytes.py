@@ -63,8 +63,10 @@ def synthetic_plan(episodes: int, facts_per_episode: int, states: int) -> List[D
     for episode in range(episodes):
         events = []
         for index in range(facts_per_episode):
-            state = f's{index % states:04d}'
-            year = 2016 + (index // states)
+            # 全局单调递增序号：跨 episode 复用的状态也必须按时间顺序写入
+            seq = episode * facts_per_episode + index
+            state = f's{seq % states:04d}'
+            year = 2016 + (seq // states)
             events.append({'id': f'e{episode:04d}_f{index:04d}', 'state': state,
                            'time': f'{year}-01-01T00:00:00'})
         plan.append({'episode_id': f'synthetic_{episode:04d}', 'events': events})
@@ -95,24 +97,41 @@ def dataset_plan(path: Path, episodes: int) -> List[Dict[str, Any]]:
     return plan
 
 
+def kind_bytes(store: IncrementalCurrentStore) -> Dict[str, int]:
+    """按条目类型拆 payload 字节：current(full) / historical(code) / pending。"""
+    current = sum(int(e['payload'].nbytes) for e in store.entries if e['kind'] == 'full')
+    historical = sum(int(e['payload'].nbytes) for e in store.entries if e['kind'] == 'code')
+    pending = sum(int(r['payload'].nbytes) for r in store.pending)
+    return {'current': current, 'historical': historical, 'pending': pending}
+
+
 def measure(plan: Sequence[Dict[str, Any]], *, dimension: int, memory_slots: int,
-            codec_slots: int, key_dimensions: int) -> Dict[str, Any]:
+            codec_slots: int, key_dimensions: int,
+            pending_every: int = 0) -> Dict[str, Any]:
     codec = build_codec(dimension, codec_slots)
     store = IncrementalCurrentStore(codec, key_dimensions=key_dimensions)   # retain_all
     semantic_key = key_vector('measure store bytes', key_dimensions)
     episodes, seed = [], 0
     for episode in plan:
         per_write = []
-        episode_totals = {'payload': 0, 'index': 0, 'metadata': 0, 'total': 0}
+        episode_totals = {'payload': 0, 'index': 0, 'metadata': 0, 'total': 0,
+                          'current': 0, 'historical': 0, 'pending': 0}
         for event in episode['events']:
             before = store.accounting()
+            kinds_before = kind_bytes(store)
             state = event['state']
-            action = 'CREATE' if store.current(state) is None else 'UPDATE'
+            # --pending-every N：每第 N 条写成 DEFER，制造真实的 pending 字节
+            deferred = bool(pending_every) and (seed + 1) % pending_every == 0
+            if deferred:
+                action = 'DEFER'
+            else:
+                action = 'CREATE' if store.current(state) is None else 'UPDATE'
             seed += 1
             receipt = store.ingest_decision(
                 {'id': event['id'], 'time': event['time']},
                 full_memory(seed, dimension, memory_slots), semantic_key,
-                StateDecision(action, state, .9, 'measure'))
+                StateDecision(action, state, .4 if deferred else .9,
+                              'measure_pending' if deferred else 'measure'))
             after = store.accounting()
             delta = {name: after[key] - before[key] for name, key in
                      (('payload', 'memory_bytes'), ('index', 'index_key_bytes'),
@@ -120,19 +139,30 @@ def measure(plan: Sequence[Dict[str, Any]], *, dimension: int, memory_slots: int
             # 三项之和必须等于真实字节增量（守卫用的是真实 serialize 值）
             assert delta['payload'] + delta['index'] + delta['metadata'] == delta['total'], (
                 'byte accounting must add up', delta)
+            kinds_after = kind_bytes(store)
+            kinds_delta = {kind: kinds_after[kind] - kinds_before[kind]
+                           for kind in ('current', 'historical', 'pending')}
             per_write.append({'id': event['id'], 'action': action, 'state': state,
                               'delta_bytes': delta['total'],
                               'payload_bytes': delta['payload'],
                               'index_bytes': delta['index'],
                               'metadata_bytes': delta['metadata'],
+                              'payload_current_bytes': kinds_delta['current'],
+                              'payload_historical_bytes': kinds_delta['historical'],
+                              'payload_pending_bytes': kinds_delta['pending'],
                               'total_bytes_after': after['total_bytes']})
-            for name in episode_totals:
+            for name in ('payload', 'index', 'metadata', 'total'):
                 episode_totals[name] += delta[name]
+            for name in ('current', 'historical', 'pending'):
+                episode_totals[name] += kinds_delta[name]
         episodes.append({'episode_id': episode['episode_id'], 'writes': len(per_write),
                          'episode_write_bytes': episode_totals, 'per_write': per_write})
     writes = sum(episode['writes'] for episode in episodes)
     totals = {name: sum(episode['episode_write_bytes'][name] for episode in episodes)
-              for name in ('payload', 'index', 'metadata', 'total')}
+              for name in ('payload', 'index', 'metadata', 'total',
+                           'current', 'historical', 'pending')}
+    resident = kind_bytes(store)
+    resident_total = sum(resident.values()) or 1
     states = len({event['state'] for episode in plan for event in episode['events']})
     summary = {'episodes': len(episodes), 'writes': writes, 'states': states,
                'payload': totals['payload'], 'index': totals['index'],
@@ -141,6 +171,13 @@ def measure(plan: Sequence[Dict[str, Any]], *, dimension: int, memory_slots: int
                'bytes_per_write_mean': totals['total'] / max(1, writes),
                'per_state_mean': totals['total'] / max(1, states),
                'store_total_bytes': store.accounting()['total_bytes'],
+               'resident_payload_by_kind': resident,
+               'resident_payload_share': {kind: resident[kind] / resident_total
+                                          for kind in resident},
+               'written_payload_by_kind': {kind: totals[kind]
+                                           for kind in ('current', 'historical', 'pending')},
+               'written_payload_share': {kind: totals[kind] / (totals['payload'] or 1)
+                                         for kind in ('current', 'historical', 'pending')},
                'floor_bytes_currents_only': states * (memory_slots * dimension * 2
                                                       + key_dimensions * 2),
                'final_accounting': store.accounting()}
@@ -166,7 +203,8 @@ def drop_oldest_probe(plan: Sequence[Dict[str, Any]], budget: int, *, dimension:
             try:
                 store.ingest_decision({'id': event['id'], 'time': event['time']},
                                       full_memory(seed, dimension, memory_slots), semantic_key,
-                                      StateDecision(action, state, .9, 'measure'))
+                                      StateDecision(action, state, .4 if deferred else .9,
+                              'measure_pending' if deferred else 'measure'))
             except ValueError as error:      # 地板都装不下：记录后停止（不静默吞掉）
                 return {'byte_budget': budget, 'rejected': True, 'error': str(error),
                         'evictions': store.evictions, 'accounting': store.accounting()}
@@ -188,6 +226,8 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     parser.add_argument('--memory-slots', type=int, default=128, help='current 的 slot 数')
     parser.add_argument('--codec-slots', type=int, default=DEFAULT_CODEC_SLOTS)
     parser.add_argument('--key-dimensions', type=int, default=DEFAULT_KEY_DIMENSIONS)
+    parser.add_argument('--pending-every', type=int, default=0,
+                        help='每第 N 条写成 DEFER（制造 pending 字节，默认 0=不产生 pending）')
     parser.add_argument('--budget-fraction', type=float, default=None,
                         help='可选：按 summary.total × fraction 作为固定预算，量 drop_oldest 淘汰账')
     args = parser.parse_args(argv)
@@ -198,7 +238,8 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         raise SystemExit('no events to measure: check --dataset / --facts-per-episode')
 
     report = measure(plan, dimension=args.dimension, memory_slots=args.memory_slots,
-                     codec_slots=args.codec_slots, key_dimensions=args.key_dimensions)
+                     codec_slots=args.codec_slots, key_dimensions=args.key_dimensions,
+                     pending_every=args.pending_every)
     if args.budget_fraction is not None:
         budget = int(report['summary']['total'] * args.budget_fraction)
         report['drop_oldest'] = drop_oldest_probe(
@@ -211,6 +252,8 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     print(f'episodes={summary["episodes"]} writes={summary["writes"]} states={summary["states"]}')
     print(f'bytes: payload={summary["payload"]} index={summary["index"]} '
           f'metadata={summary["metadata"]} total={summary["total"]}')
+    print(f'payload_by_kind={summary["resident_payload_by_kind"]} '
+          f'share={ {k: round(v, 4) for k, v in summary["resident_payload_share"].items()} }')
     print(f'per_episode={summary["bytes_per_episode_mean"]:.0f} '
           f'per_write={summary["bytes_per_write_mean"]:.0f} '
           f'floor={summary["floor_bytes_currents_only"]}')
