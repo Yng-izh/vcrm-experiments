@@ -1,0 +1,17 @@
+{
+  "rows": 500,
+  "scored_rows": 500,
+  "judge_errors": 0,
+  "accuracy_overall": 0.244,
+  "judge_seconds": 61.9,
+  "judge_model": "Qwen3.5-9B",
+  "protocol": "Official LongMemEval prompt; custom judge (Qwen3.5-9B), not official GPT-4o scores",
+  "accuracy_by_type": {
+    "single-session-user": 0.2571,
+    "multi-session": 0.218,
+    "knowledge-update": 0.3718,
+    "single-session-preference": 0.0,
+    "temporal-reasoning": 0.1805,
+    "single-session-assistant": 0.3929
+  }
+}

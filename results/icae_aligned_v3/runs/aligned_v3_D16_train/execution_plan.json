@@ -1,7 +1,0 @@
-{
-  "stage": "codec-train",
-  "gpus": [
-    2
-  ],
-  "shards": 1
-}

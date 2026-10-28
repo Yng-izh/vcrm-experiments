@@ -1,17 +1,0 @@
-[preflight] E3: /share/latent2/vcrm_icae/runs/architecture_v6_E3_train | codec_value_path=full | val manifest=/share/latent2/vcrm_icae/runs/architecture_v6_E3_val/manifest.json
-{
-  "shard": 0,
-  "shards": 2,
-  "episodes": 50,
-  "first_episode": "templama:test:Q100:P6",
-  "last_episode": "templama:test:Q924638:P54",
-  "budget": {
-    "episodes": 50,
-    "pool_writes_per_pass": 818,
-    "queries_per_pass": 413,
-    "latest_queries": 50,
-    "mean_pool_events": 16.36,
-    "max_pool_events": 22
-  }
-}
-Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [01:13<02:26, 73.42s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [02:38<01:20, 80.06s/it]Loading checkpoint shards: 100%|██████████| 3/3 [03:52<00:00, 77.43s/it]Loading checkpoint shards: 100%|██████████| 3/3 [03:52<00:00, 77.48s/it]

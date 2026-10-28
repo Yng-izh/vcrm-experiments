@@ -1,0 +1,41 @@
+{
+  "tag": "a",
+  "group": "text_rag",
+  "dataset": "longmemeval_s",
+  "components": "text",
+  "items": 500,
+  "failed": 0,
+  "failed_ids": [],
+  "empty_answers": 2,
+  "empty_answer_ids": [
+    "1da05512",
+    "2e6d26dc"
+  ],
+  "cutoff_source": "question_date",
+  "as_of_future_fallback": false,
+  "read_mode": null,
+  "frontend": "rules",
+  "text_index": "lexical",
+  "llm_cache_root": "runs/main_v1/a/llm_cache",
+  "mean_write_bytes": 494208.232,
+  "mean_write_seconds": 0.04816557246539742,
+  "mean_read_seconds": 7.499173721790314,
+  "mean_read_slots": 0.0,
+  "mean_input_tokens": 30298.596,
+  "no_state_match": 0,
+  "decision_counts": {},
+  "state_count_total": 0,
+  "state_count_mean": 0.0,
+  "router_mode": "identity",
+  "write_bytes_equal_across_groups": "not_comparable",
+  "write_bytes_compare_reason": "not_comparable: 单组运行无法自证跨组字节相等；逐字节相等仅在「同机 + 同序（先跑一组填满前端缓存）+ CPU 确定性编码」下可判定。GPU 上编码浮点非确定性会翻转路由/压缩判定（t32 实测 C/D write_bytes 3/5 不等），此时唯一诚实锚点是decision_counts 与 state_count 一致。",
+  "cross_group_anchors": [
+    "decision_counts",
+    "state_count"
+  ],
+  "parametric_only": 0,
+  "nonempty_answer": 498,
+  "llm_cache": null,
+  "wall_seconds": 3789.6518214750104,
+  "predictions": "runs/main_v1/a/text_rag/predictions.jsonl"
+}

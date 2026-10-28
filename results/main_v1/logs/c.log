@@ -1,0 +1,595 @@
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:26<00:53, 26.98s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:54<00:27, 27.33s/it]Loading checkpoint shards: 100%|██████████| 3/3 [01:17<00:00, 25.50s/it]Loading checkpoint shards: 100%|██████████| 3/3 [01:17<00:00, 25.96s/it]
+The new embeddings will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+The new lm_head weights will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+[main-eval:current_only] 1/500 001be529 answer_chars=240 write_bytes=38817530
+[main-eval:current_only] 2/500 00ca467f answer_chars=116 write_bytes=65045144
+[main-eval:current_only] 3/500 0100672e answer_chars=2 write_bytes=105960511
+[main-eval:current_only] 4/500 01493427 answer_chars=228 write_bytes=65045144
+[main-eval:current_only] 5/500 031748ae answer_chars=196 write_bytes=53504945
+[main-eval:current_only] 6/500 031748ae_abs answer_chars=95 write_bytes=124844380
+[main-eval:current_only] 7/500 06878be2 answer_chars=274 write_bytes=74487125
+[main-eval:current_only] 8/500 06db6396 answer_chars=62 write_bytes=94420196
+[main-eval:current_only] 9/500 06f04340 answer_chars=245 write_bytes=83929106
+[main-eval:current_only] 10/500 07741c44 answer_chars=27 write_bytes=98616743
+[main-eval:current_only] 11/500 07741c45 answer_chars=243 write_bytes=30424547
+[main-eval:current_only] 12/500 078150f1 answer_chars=199 write_bytes=49308509
+[main-eval:current_only] 13/500 07b6f563 answer_chars=266 write_bytes=107009510
+[main-eval:current_only] 14/500 0862e8bf answer_chars=168 write_bytes=66094476
+[main-eval:current_only] 15/500 0862e8bf_abs answer_chars=207 write_bytes=53504945
+[main-eval:current_only] 16/500 08e075c7 answer_chars=66 write_bytes=49308509
+[main-eval:current_only] 17/500 08f4fc43 answer_chars=0 write_bytes=39866751
+[main-eval:current_only] 18/500 0977f2af answer_chars=162 write_bytes=142679585
+[main-eval:current_only] 19/500 099778bb answer_chars=57 write_bytes=71339798
+[main-eval:current_only] 20/500 09ba9854 answer_chars=174 write_bytes=101764183
+[main-eval:current_only] 21/500 09ba9854_abs answer_chars=172 write_bytes=97567970
+[main-eval:current_only] 22/500 09d032c9 answer_chars=262 write_bytes=66094476
+[main-eval:current_only] 23/500 0a34ad58 answer_chars=264 write_bytes=79732893
+[main-eval:current_only] 24/500 0a995998 answer_chars=61 write_bytes=54554054
+[main-eval:current_only] 25/500 0bb5a684 answer_chars=126 write_bytes=54554054
+[main-eval:current_only] 26/500 0bc8ad92 answer_chars=108 write_bytes=82879997
+[main-eval:current_only] 27/500 0bc8ad93 answer_chars=102 write_bytes=122746160
+[main-eval:current_only] 28/500 0db4c65d answer_chars=81 write_bytes=119599053
+[main-eval:current_only] 29/500 0ddfec37 answer_chars=86 write_bytes=112256627
+[main-eval:current_only] 30/500 0ddfec37_abs answer_chars=86 write_bytes=109107841
+[main-eval:current_only] 31/500 0e4e4c46 answer_chars=124 write_bytes=55603163
+[main-eval:current_only] 32/500 0e5e2d1a answer_chars=0 write_bytes=67143362
+[main-eval:current_only] 33/500 0ea62687 answer_chars=0 write_bytes=91272869
+[main-eval:current_only] 34/500 0edc2aef answer_chars=153 write_bytes=62946926
+[main-eval:current_only] 35/500 0f05491a answer_chars=81 write_bytes=63996258
+[main-eval:current_only] 36/500 10d9b85a answer_chars=72 write_bytes=30424770
+[main-eval:current_only] 37/500 10e09553 answer_chars=199 write_bytes=90223760
+[main-eval:current_only] 38/500 118b2229 answer_chars=125 write_bytes=90223760
+[main-eval:current_only] 39/500 1192316e answer_chars=67 write_bytes=41964746
+[main-eval:current_only] 40/500 129d1232 answer_chars=332 write_bytes=125893490
+[main-eval:current_only] 41/500 1568498a answer_chars=271 write_bytes=120648163
+[main-eval:current_only] 42/500 15745da0 answer_chars=206 write_bytes=82879997
+[main-eval:current_only] 43/500 15745da0_abs answer_chars=95 write_bytes=81830888
+[main-eval:current_only] 44/500 157a136e answer_chars=263 write_bytes=119598941
+[main-eval:current_only] 45/500 16c90bf4 answer_chars=218 write_bytes=100714850
+[main-eval:current_only] 46/500 184da446 answer_chars=74 write_bytes=93371087
+[main-eval:current_only] 47/500 18bc8abd answer_chars=132 write_bytes=76585566
+[main-eval:current_only] 48/500 18dcd5a5 answer_chars=154 write_bytes=73438127
+[main-eval:current_only] 49/500 1903aded answer_chars=259 write_bytes=124844380
+[main-eval:current_only] 50/500 195a1a1b answer_chars=220 write_bytes=50357841
+[main-eval:current_only] 51/500 19b5f2b3 answer_chars=26 write_bytes=35670092
+[main-eval:current_only] 52/500 19b5f2b3_abs answer_chars=271 write_bytes=84978215
+[main-eval:current_only] 53/500 1a1907b4 answer_chars=219 write_bytes=40915637
+[main-eval:current_only] 54/500 1a8a66a6 answer_chars=43 write_bytes=116451835
+[main-eval:current_only] 55/500 1b9b7252 answer_chars=289 write_bytes=86027324
+[main-eval:current_only] 56/500 1c0ddc50 answer_chars=239 write_bytes=79732670
+[main-eval:current_only] 57/500 1c549ce4 answer_chars=129 write_bytes=53505168
+[main-eval:current_only] 58/500 1cea1afa answer_chars=33 write_bytes=143728360
+[main-eval:current_only] 59/500 1d4da289 answer_chars=304 write_bytes=116451835
+[main-eval:current_only] 60/500 1d4e3b97 answer_chars=329 write_bytes=98616632
+[main-eval:current_only] 61/500 1da05512 answer_chars=315 write_bytes=88126549
+[main-eval:current_only] 62/500 1de5cff2 answer_chars=164 write_bytes=81831335
+[main-eval:current_only] 63/500 1e043500 answer_chars=259 write_bytes=52455836
+[main-eval:current_only] 64/500 1f2b8d4f answer_chars=104 write_bytes=110156840
+[main-eval:current_only] 65/500 1faac195 answer_chars=216 write_bytes=119598941
+[main-eval:current_only] 66/500 2133c1b5 answer_chars=203 write_bytes=102813293
+[main-eval:current_only] 67/500 2133c1b5_abs answer_chars=298 write_bytes=60848931
+[main-eval:current_only] 68/500 21436231 answer_chars=101 write_bytes=134286370
+[main-eval:current_only] 69/500 21d02d0d answer_chars=314 write_bytes=41964969
+[main-eval:current_only] 70/500 22d2cb42 answer_chars=222 write_bytes=47210291
+[main-eval:current_only] 71/500 2311e44b answer_chars=127 write_bytes=81830999
+[main-eval:current_only] 72/500 2311e44b_abs answer_chars=137 write_bytes=119599725
+[main-eval:current_only] 73/500 2318644b answer_chars=299 write_bytes=78683672
+[main-eval:current_only] 74/500 25e5aa4f answer_chars=275 write_bytes=114353615
+[main-eval:current_only] 75/500 2698e78f answer_chars=29 write_bytes=139531920
+[main-eval:current_only] 76/500 2698e78f_abs answer_chars=31 write_bytes=83929329
+[main-eval:current_only] 77/500 26bdc477 answer_chars=147 write_bytes=73438016
+[main-eval:current_only] 78/500 27016adc answer_chars=217 write_bytes=77634452
+[main-eval:current_only] 79/500 2788b940 answer_chars=316 write_bytes=95469305
+[main-eval:current_only] 80/500 28bcfaac answer_chars=299 write_bytes=66094364
+[main-eval:current_only] 81/500 28dc39ac answer_chars=311 write_bytes=35670315
+[main-eval:current_only] 82/500 29f2956b answer_chars=265 write_bytes=94420196
+[main-eval:current_only] 83/500 29f2956b_abs answer_chars=309 write_bytes=122746271
+[main-eval:current_only] 84/500 2a1811e2 answer_chars=73 write_bytes=44062964
+[main-eval:current_only] 85/500 2b8f3739 answer_chars=319 write_bytes=119598830
+[main-eval:current_only] 86/500 2bf43736 answer_chars=0 write_bytes=78683784
+[main-eval:current_only] 87/500 2c63a862 answer_chars=85 write_bytes=165759670
+[main-eval:current_only] 88/500 2ce6a0f2 answer_chars=107 write_bytes=78683561
+[main-eval:current_only] 89/500 2e6d26dc answer_chars=0 write_bytes=145826580
+[main-eval:current_only] 90/500 2ebe6c90 answer_chars=64 write_bytes=24129893
+[main-eval:current_only] 91/500 2ebe6c92 answer_chars=123 write_bytes=34621094
+[main-eval:current_only] 92/500 311778f1 answer_chars=331 write_bytes=38817419
+[main-eval:current_only] 93/500 32260d93 answer_chars=291 write_bytes=35670092
+[main-eval:current_only] 94/500 3249768e answer_chars=198 write_bytes=91272869
+[main-eval:current_only] 95/500 352ab8bd answer_chars=0 write_bytes=119598941
+[main-eval:current_only] 96/500 35a27287 answer_chars=238 write_bytes=51407062
+[main-eval:current_only] 97/500 36580ce8 answer_chars=49 write_bytes=155268681
+[main-eval:current_only] 98/500 36b9f61e answer_chars=236 write_bytes=59799599
+[main-eval:current_only] 99/500 370a8ff4 answer_chars=87 write_bytes=49308509
+[main-eval:current_only] 100/500 37d43f65 answer_chars=191 write_bytes=93371198
+[main-eval:current_only] 101/500 37f165cf answer_chars=219 write_bytes=25179002
+[main-eval:current_only] 102/500 38146c39 answer_chars=322 write_bytes=72388907
+[main-eval:current_only] 103/500 3a704032 answer_chars=184 write_bytes=105960511
+[main-eval:current_only] 104/500 3b6f954b answer_chars=52 write_bytes=68192471
+[main-eval:current_only] 105/500 3ba21379 answer_chars=199 write_bytes=84978326
+[main-eval:current_only] 106/500 3c1045c8 answer_chars=328 write_bytes=54554054
+[main-eval:current_only] 107/500 3d86fd0a answer_chars=30 write_bytes=93371198
+[main-eval:current_only] 108/500 3e321797 answer_chars=271 write_bytes=99666076
+[main-eval:current_only] 109/500 3f1e9474 answer_chars=258 write_bytes=53505168
+[main-eval:current_only] 110/500 3fdac837 answer_chars=115 write_bytes=63996258
+[main-eval:current_only] 111/500 3fe836c9 answer_chars=0 write_bytes=112255283
+[main-eval:current_only] 112/500 4100d0a0 answer_chars=109 write_bytes=60849155
+[main-eval:current_only] 113/500 41275add answer_chars=287 write_bytes=83929106
+[main-eval:current_only] 114/500 41698283 answer_chars=184 write_bytes=23080784
+[main-eval:current_only] 115/500 42ec0761 answer_chars=213 write_bytes=108058843
+[main-eval:current_only] 116/500 4388e9dd answer_chars=180 write_bytes=63996035
+[main-eval:current_only] 117/500 45dc21b6 answer_chars=307 write_bytes=74487236
+[main-eval:current_only] 118/500 46a3abf7 answer_chars=27 write_bytes=98616743
+[main-eval:current_only] 119/500 488d3006 answer_chars=261 write_bytes=97567523
+[main-eval:current_only] 120/500 4adc0475 answer_chars=220 write_bytes=78683896
+[main-eval:current_only] 121/500 4b24c848 answer_chars=113 write_bytes=100715297
+[main-eval:current_only] 122/500 4baee567 answer_chars=0 write_bytes=70291024
+[main-eval:current_only] 123/500 4bc144e2 answer_chars=160 write_bytes=112255619
+[main-eval:current_only] 124/500 4c36ccef answer_chars=223 write_bytes=77634675
+[main-eval:current_only] 125/500 4d6b87c8 answer_chars=99 write_bytes=72388907
+[main-eval:current_only] 126/500 4dfccbf7 answer_chars=136 write_bytes=45112073
+[main-eval:current_only] 127/500 4dfccbf8 answer_chars=140 write_bytes=59799599
+[main-eval:current_only] 128/500 4f54b7c9 answer_chars=91 write_bytes=112255283
+[main-eval:current_only] 129/500 4fd1909e answer_chars=261 write_bytes=58750601
+[main-eval:current_only] 130/500 5025383b answer_chars=83 write_bytes=76585566
+[main-eval:current_only] 131/500 505af2f5 answer_chars=248 write_bytes=79732781
+[main-eval:current_only] 132/500 50635ada answer_chars=222 write_bytes=55603498
+[main-eval:current_only] 133/500 51a45a95 answer_chars=289 write_bytes=109107730
+[main-eval:current_only] 134/500 51b23612 answer_chars=279 write_bytes=155268793
+[main-eval:current_only] 135/500 51c32626 answer_chars=227 write_bytes=77634787
+[main-eval:current_only] 136/500 54026fce answer_chars=331 write_bytes=111206173
+[main-eval:current_only] 137/500 545bd2b5 answer_chars=312 write_bytes=98616743
+[main-eval:current_only] 138/500 55241a1f answer_chars=276 write_bytes=86027659
+[main-eval:current_only] 139/500 561fabcd answer_chars=115 write_bytes=133237707
+[main-eval:current_only] 140/500 577d4d32 answer_chars=111 write_bytes=75536793
+[main-eval:current_only] 141/500 57f827a0 answer_chars=282 write_bytes=89174762
+[main-eval:current_only] 142/500 5809eb10 answer_chars=0 write_bytes=95469528
+[main-eval:current_only] 143/500 5831f84d answer_chars=172 write_bytes=65045144
+[main-eval:current_only] 144/500 58470ed2 answer_chars=0 write_bytes=69241580
+[main-eval:current_only] 145/500 58bf7951 answer_chars=12 write_bytes=58750490
+[main-eval:current_only] 146/500 58ef2f1c answer_chars=130 write_bytes=89174651
+[main-eval:current_only] 147/500 59524333 answer_chars=52 write_bytes=45112073
+[main-eval:current_only] 148/500 5a4f22c0 answer_chars=64 write_bytes=94420307
+[main-eval:current_only] 149/500 5a7937c8 answer_chars=108 write_bytes=25179002
+[main-eval:current_only] 150/500 5c40ec5b answer_chars=41 write_bytes=73438351
+[main-eval:current_only] 151/500 5d3d2817 answer_chars=65 write_bytes=86027435
+[main-eval:current_only] 152/500 5e1b23de answer_chars=47 write_bytes=56652272
+[main-eval:current_only] 153/500 60036106 answer_chars=326 write_bytes=29375438
+[main-eval:current_only] 154/500 60159905 answer_chars=306 write_bytes=92321978
+[main-eval:current_only] 155/500 603deb26 answer_chars=259 write_bytes=65045479
+[main-eval:current_only] 156/500 60472f9c answer_chars=243 write_bytes=95469305
+[main-eval:current_only] 157/500 6071bd76 answer_chars=52 write_bytes=84978326
+[main-eval:current_only] 158/500 60bf93ed answer_chars=75 write_bytes=49308732
+[main-eval:current_only] 159/500 60bf93ed_abs answer_chars=60 write_bytes=147924800
+[main-eval:current_only] 160/500 60d45044 answer_chars=109 write_bytes=67143362
+[main-eval:current_only] 161/500 618f13b2 answer_chars=213 write_bytes=37768310
+[main-eval:current_only] 162/500 61f8c8f8 answer_chars=0 write_bytes=99665741
+[main-eval:current_only] 163/500 6222b6eb answer_chars=0 write_bytes=130090377
+[main-eval:current_only] 164/500 6456829e answer_chars=158 write_bytes=17835239
+[main-eval:current_only] 165/500 6456829e_abs answer_chars=149 write_bytes=60848708
+[main-eval:current_only] 166/500 65240037 answer_chars=225 write_bytes=71339798
+[main-eval:current_only] 167/500 6613b389 answer_chars=51 write_bytes=91273092
+[main-eval:current_only] 168/500 66f24dbb answer_chars=54 write_bytes=130090153
+[main-eval:current_only] 169/500 67e0d0f2 answer_chars=133 write_bytes=74487125
+[main-eval:current_only] 170/500 681a1674 answer_chars=23 write_bytes=39866751
+[main-eval:current_only] 171/500 69fee5aa answer_chars=0 write_bytes=65045144
+[main-eval:current_only] 172/500 6a1eabeb answer_chars=55 write_bytes=69241580
+[main-eval:current_only] 173/500 6a27ffc2 answer_chars=264 write_bytes=79732781
+[main-eval:current_only] 174/500 6ade9755 answer_chars=286 write_bytes=54554054
+[main-eval:current_only] 175/500 6ae235be answer_chars=0 write_bytes=40915748
+[main-eval:current_only] 176/500 6aeb4375 answer_chars=306 write_bytes=129041379
+[main-eval:current_only] 177/500 6aeb4375_abs answer_chars=247 write_bytes=103862403
+[main-eval:current_only] 178/500 6b168ec8 answer_chars=78 write_bytes=145826580
+[main-eval:current_only] 179/500 6b7dfb22 answer_chars=280 write_bytes=52455836
+[main-eval:current_only] 180/500 6c49646a answer_chars=66 write_bytes=70290689
+[main-eval:current_only] 181/500 6cb6f249 answer_chars=120 write_bytes=57701381
+[main-eval:current_only] 182/500 6d550036 answer_chars=205 write_bytes=78683561
+[main-eval:current_only] 183/500 6e984301 answer_chars=174 write_bytes=110156951
+[main-eval:current_only] 184/500 6e984302 answer_chars=192 write_bytes=55603163
+[main-eval:current_only] 185/500 6f9b354f answer_chars=134 write_bytes=109108289
+[main-eval:current_only] 186/500 7024f17c answer_chars=122 write_bytes=27277220
+[main-eval:current_only] 187/500 70b3e69b answer_chars=0 write_bytes=53504945
+[main-eval:current_only] 188/500 71017276 answer_chars=317 write_bytes=43013966
+[main-eval:current_only] 189/500 71017277 answer_chars=198 write_bytes=86027435
+[main-eval:current_only] 190/500 71315a70 answer_chars=69 write_bytes=140581141
+[main-eval:current_only] 191/500 7161e7e2 answer_chars=0 write_bytes=11540585
+[main-eval:current_only] 192/500 71a3fd6b answer_chars=70 write_bytes=109107730
+[main-eval:current_only] 193/500 720133ac answer_chars=47 write_bytes=57701381
+[main-eval:current_only] 194/500 726462e0 answer_chars=157 write_bytes=67143362
+[main-eval:current_only] 195/500 72e3ee87 answer_chars=64 write_bytes=97567634
+[main-eval:current_only] 196/500 73d42213 answer_chars=118 write_bytes=58750601
+[main-eval:current_only] 197/500 7401057b answer_chars=297 write_bytes=55603163
+[main-eval:current_only] 198/500 7405e8b1 answer_chars=218 write_bytes=57701492
+[main-eval:current_only] 199/500 7527f7e2 answer_chars=107 write_bytes=105960400
+[main-eval:current_only] 200/500 75499fd8 answer_chars=173 write_bytes=63996035
+[main-eval:current_only] 201/500 75832dbd answer_chars=243 write_bytes=75536234
+[main-eval:current_only] 202/500 75f70248 answer_chars=294 write_bytes=81830888
+[main-eval:current_only] 203/500 76d63226 answer_chars=165 write_bytes=63996035
+[main-eval:current_only] 204/500 778164c6 answer_chars=233 write_bytes=48259400
+[main-eval:current_only] 205/500 77eafa52 answer_chars=34 write_bytes=122746160
+[main-eval:current_only] 206/500 7a87bd0c answer_chars=77 write_bytes=69242027
+[main-eval:current_only] 207/500 7a8d0b71 answer_chars=73 write_bytes=87076992
+[main-eval:current_only] 208/500 7e00a6cb answer_chars=254 write_bytes=98616632
+[main-eval:current_only] 209/500 7e974930 answer_chars=4 write_bytes=101763960
+[main-eval:current_only] 210/500 8077ef71 answer_chars=106 write_bytes=117501281
+[main-eval:current_only] 211/500 80ec1f4f answer_chars=111 write_bytes=62946926
+[main-eval:current_only] 212/500 80ec1f4f_abs answer_chars=115 write_bytes=96518414
+[main-eval:current_only] 213/500 81507db6 answer_chars=109 write_bytes=78683672
+[main-eval:current_only] 214/500 830ce83f answer_chars=0 write_bytes=18884459
+[main-eval:current_only] 215/500 8464fc84 answer_chars=189 write_bytes=80782002
+[main-eval:current_only] 216/500 852ce960 answer_chars=8 write_bytes=56652272
+[main-eval:current_only] 217/500 853b0a1d answer_chars=244 write_bytes=13638914
+[main-eval:current_only] 218/500 8550ddae answer_chars=257 write_bytes=46161182
+[main-eval:current_only] 219/500 85fa3a3f answer_chars=6 write_bytes=88125765
+[main-eval:current_only] 220/500 86b68151 answer_chars=264 write_bytes=93371087
+[main-eval:current_only] 221/500 86f00804 answer_chars=232 write_bytes=65045144
+[main-eval:current_only] 222/500 8752c811 answer_chars=295 write_bytes=71339798
+[main-eval:current_only] 223/500 87f22b4a answer_chars=289 write_bytes=89174986
+[main-eval:current_only] 224/500 88432d0a answer_chars=111 write_bytes=105960847
+[main-eval:current_only] 225/500 88432d0a_abs answer_chars=108 write_bytes=76585790
+[main-eval:current_only] 226/500 89527b6b answer_chars=0 write_bytes=78683561
+[main-eval:current_only] 227/500 8979f9ec answer_chars=257 write_bytes=60848708
+[main-eval:current_only] 228/500 89941a93 answer_chars=145 write_bytes=34620983
+[main-eval:current_only] 229/500 89941a94 answer_chars=79 write_bytes=71340693
+[main-eval:current_only] 230/500 8a137a7f answer_chars=8 write_bytes=51406727
+[main-eval:current_only] 231/500 8a2466db answer_chars=296 write_bytes=95469305
+[main-eval:current_only] 232/500 8aef76bc answer_chars=199 write_bytes=119598830
+[main-eval:current_only] 233/500 8b9d4367 answer_chars=0 write_bytes=66094253
+[main-eval:current_only] 234/500 8c18457d answer_chars=270 write_bytes=40915637
+[main-eval:current_only] 235/500 8cf4d046 answer_chars=269 write_bytes=44063411
+[main-eval:current_only] 236/500 8cf51dda answer_chars=305 write_bytes=111206173
+[main-eval:current_only] 237/500 8e91e7d9 answer_chars=184 write_bytes=60848708
+[main-eval:current_only] 238/500 8e9d538c answer_chars=286 write_bytes=39866528
+[main-eval:current_only] 239/500 8ebdbe50 answer_chars=60 write_bytes=69241580
+[main-eval:current_only] 240/500 8fb83627 answer_chars=62 write_bytes=60848708
+[main-eval:current_only] 241/500 91b15a6e answer_chars=308 write_bytes=65045144
+[main-eval:current_only] 242/500 92a0aa75 answer_chars=142 write_bytes=73438016
+[main-eval:current_only] 243/500 945e3d21 answer_chars=56 write_bytes=68192471
+[main-eval:current_only] 244/500 94f70d80 answer_chars=80 write_bytes=115402390
+[main-eval:current_only] 245/500 95228167 answer_chars=255 write_bytes=158416123
+[main-eval:current_only] 246/500 95bcc1c8 answer_chars=91 write_bytes=83929106
+[main-eval:current_only] 247/500 982b5123 answer_chars=269 write_bytes=104911401
+[main-eval:current_only] 248/500 982b5123_abs answer_chars=49 write_bytes=54554054
+[main-eval:current_only] 249/500 993da5e2 answer_chars=95 write_bytes=107009510
+[main-eval:current_only] 250/500 9a707b81 answer_chars=154 write_bytes=89174651
+[main-eval:current_only] 251/500 9a707b82 answer_chars=213 write_bytes=113304170
+[main-eval:current_only] 252/500 9aaed6a3 answer_chars=171 write_bytes=82879997
+[main-eval:current_only] 253/500 9bbe84a2 answer_chars=90 write_bytes=32522876
+[main-eval:current_only] 254/500 9d25d4e0 answer_chars=119 write_bytes=84978215
+[main-eval:current_only] 255/500 9ea5eabc answer_chars=6 write_bytes=127992381
+[main-eval:current_only] 256/500 9ee3ecd6 answer_chars=74 write_bytes=102813293
+[main-eval:current_only] 257/500 a06e4cfe answer_chars=186 write_bytes=103862180
+[main-eval:current_only] 258/500 a08a253f answer_chars=106 write_bytes=111206733
+[main-eval:current_only] 259/500 a11281a2 answer_chars=328 write_bytes=57701381
+[main-eval:current_only] 260/500 a1cc6108 answer_chars=41 write_bytes=103862180
+[main-eval:current_only] 261/500 a1eacc2a answer_chars=306 write_bytes=110157175
+[main-eval:current_only] 262/500 a2f3aa27 answer_chars=242 write_bytes=76585902
+[main-eval:current_only] 263/500 a3045048 answer_chars=181 write_bytes=108058731
+[main-eval:current_only] 264/500 a3332713 answer_chars=320 write_bytes=57701381
+[main-eval:current_only] 265/500 a346bb18 answer_chars=274 write_bytes=99665964
+[main-eval:current_only] 266/500 a3838d2b answer_chars=0 write_bytes=75536234
+[main-eval:current_only] 267/500 a40e080f answer_chars=221 write_bytes=90223983
+[main-eval:current_only] 268/500 a4996e51 answer_chars=59 write_bytes=121697050
+[main-eval:current_only] 269/500 a82c026e answer_chars=289 write_bytes=37768757
+[main-eval:current_only] 270/500 a89d7624 answer_chars=271 write_bytes=126943495
+[main-eval:current_only] 271/500 a96c20ee answer_chars=85 write_bytes=57701716
+[main-eval:current_only] 272/500 a96c20ee_abs answer_chars=209 write_bytes=63996258
+[main-eval:current_only] 273/500 a9f6b44c answer_chars=121 write_bytes=116451500
+[main-eval:current_only] 274/500 aae3761f answer_chars=131 write_bytes=98616743
+[main-eval:current_only] 275/500 ac031881 answer_chars=316 write_bytes=129040820
+[main-eval:current_only] 276/500 ad7109d1 answer_chars=250 write_bytes=50357618
+[main-eval:current_only] 277/500 af082822 answer_chars=307 write_bytes=107009845
+[main-eval:current_only] 278/500 af8d2e46 answer_chars=52 write_bytes=104911513
+[main-eval:current_only] 279/500 afdc33df answer_chars=261 write_bytes=60849043
+[main-eval:current_only] 280/500 affe2881 answer_chars=0 write_bytes=28326329
+[main-eval:current_only] 281/500 b01defab answer_chars=70 write_bytes=105960400
+[main-eval:current_only] 282/500 b0479f84 answer_chars=253 write_bytes=90223760
+[main-eval:current_only] 283/500 b29f3365 answer_chars=96 write_bytes=91272980
+[main-eval:current_only] 284/500 b320f3f8 answer_chars=57 write_bytes=104911290
+[main-eval:current_only] 285/500 b3c15d39 answer_chars=87 write_bytes=97567746
+[main-eval:current_only] 286/500 b46e15ed answer_chars=164 write_bytes=98616632
+[main-eval:current_only] 287/500 b46e15ee answer_chars=93 write_bytes=48259735
+[main-eval:current_only] 288/500 b5ef892d answer_chars=105 write_bytes=84978326
+[main-eval:current_only] 289/500 b6019101 answer_chars=186 write_bytes=74487348
+[main-eval:current_only] 290/500 b6025781 answer_chars=271 write_bytes=79732670
+[main-eval:current_only] 291/500 b759caee answer_chars=244 write_bytes=118549943
+[main-eval:current_only] 292/500 b86304ba answer_chars=157 write_bytes=22031675
+[main-eval:current_only] 293/500 b9cfe692 answer_chars=58 write_bytes=114353391
+[main-eval:current_only] 294/500 ba358f49 answer_chars=87 write_bytes=60848708
+[main-eval:current_only] 295/500 ba358f49_abs answer_chars=49 write_bytes=120648051
+[main-eval:current_only] 296/500 ba61f0b9 answer_chars=125 write_bytes=38817419
+[main-eval:current_only] 297/500 bb7c3b45 answer_chars=37 write_bytes=51406727
+[main-eval:current_only] 298/500 bbf86515 answer_chars=83 write_bytes=76585566
+[main-eval:current_only] 299/500 bc149d6b answer_chars=236 write_bytes=82880108
+[main-eval:current_only] 300/500 bc8a6e93 answer_chars=292 write_bytes=33571874
+[main-eval:current_only] 301/500 bc8a6e93_abs answer_chars=45 write_bytes=47210291
+[main-eval:current_only] 302/500 bcbe585f answer_chars=116 write_bytes=65045255
+[main-eval:current_only] 303/500 bf659f65 answer_chars=220 write_bytes=113304281
+[main-eval:current_only] 304/500 c14c00dd answer_chars=58 write_bytes=63996146
+[main-eval:current_only] 305/500 c18a7dc8 answer_chars=301 write_bytes=92322425
+[main-eval:current_only] 306/500 c19f7a0b answer_chars=57 write_bytes=115402949
+[main-eval:current_only] 307/500 c2ac3c61 answer_chars=133 write_bytes=55603163
+[main-eval:current_only] 308/500 c4a1ceb8 answer_chars=265 write_bytes=70290800
+[main-eval:current_only] 309/500 c4ea545c answer_chars=323 write_bytes=100714850
+[main-eval:current_only] 310/500 c4f10528 answer_chars=264 write_bytes=27277220
+[main-eval:current_only] 311/500 c5e8278d answer_chars=97 write_bytes=51406727
+[main-eval:current_only] 312/500 c6853660 answer_chars=87 write_bytes=62946926
+[main-eval:current_only] 313/500 c7cf7dfd answer_chars=217 write_bytes=87076433
+[main-eval:current_only] 314/500 c7dc5443 answer_chars=65 write_bytes=105960623
+[main-eval:current_only] 315/500 c8090214 answer_chars=156 write_bytes=76585454
+[main-eval:current_only] 316/500 c8090214_abs answer_chars=117 write_bytes=163661450
+[main-eval:current_only] 317/500 c8c3f81d answer_chars=233 write_bytes=68192582
+[main-eval:current_only] 318/500 c8f1aeed answer_chars=0 write_bytes=57701828
+[main-eval:current_only] 319/500 c960da58 answer_chars=263 write_bytes=35670203
+[main-eval:current_only] 320/500 c9f37c46 answer_chars=0 write_bytes=99665741
+[main-eval:current_only] 321/500 caf03d32 answer_chars=250 write_bytes=87077776
+[main-eval:current_only] 322/500 caf9ead2 answer_chars=55 write_bytes=107009845
+[main-eval:current_only] 323/500 cc06de0d answer_chars=48 write_bytes=88125653
+[main-eval:current_only] 324/500 cc539528 answer_chars=236 write_bytes=50357618
+[main-eval:current_only] 325/500 cc5ded98 answer_chars=145 write_bytes=136384813
+[main-eval:current_only] 326/500 cc6d1ec1 answer_chars=102 write_bytes=62947149
+[main-eval:current_only] 327/500 ccb36322 answer_chars=250 write_bytes=72388907
+[main-eval:current_only] 328/500 ce6d2d27 answer_chars=170 write_bytes=47210291
+[main-eval:current_only] 329/500 ceb54acb answer_chars=260 write_bytes=46161182
+[main-eval:current_only] 330/500 cf22b7bf answer_chars=277 write_bytes=80781779
+[main-eval:current_only] 331/500 d01c6aa8 answer_chars=223 write_bytes=71339798
+[main-eval:current_only] 332/500 d23cf73b answer_chars=115 write_bytes=38817419
+[main-eval:current_only] 333/500 d24813b1 answer_chars=274 write_bytes=84978326
+[main-eval:current_only] 334/500 d3ab962e answer_chars=317 write_bytes=83929106
+[main-eval:current_only] 335/500 d52b4f67 answer_chars=227 write_bytes=78684232
+[main-eval:current_only] 336/500 d596882b answer_chars=186 write_bytes=55603163
+[main-eval:current_only] 337/500 d6062bb9 answer_chars=210 write_bytes=70290800
+[main-eval:current_only] 338/500 d6233ab6 answer_chars=320 write_bytes=27277331
+[main-eval:current_only] 339/500 d682f1a2 answer_chars=178 write_bytes=71339798
+[main-eval:current_only] 340/500 d7c942c3 answer_chars=193 write_bytes=68192471
+[main-eval:current_only] 341/500 d851d5ba answer_chars=77 write_bytes=91272869
+[main-eval:current_only] 342/500 d905b33f answer_chars=239 write_bytes=103862515
+[main-eval:current_only] 343/500 dad224aa answer_chars=42 write_bytes=87076433
+[main-eval:current_only] 344/500 db467c8c answer_chars=62 write_bytes=105961183
+[main-eval:current_only] 345/500 dc439ea3 answer_chars=287 write_bytes=71339798
+[main-eval:current_only] 346/500 dccbc061 answer_chars=207 write_bytes=78683784
+[main-eval:current_only] 347/500 dcfa8644 answer_chars=160 write_bytes=67143362
+[main-eval:current_only] 348/500 dd2973ad answer_chars=70 write_bytes=56652607
+[main-eval:current_only] 349/500 dfde3500 answer_chars=76 write_bytes=98616632
+[main-eval:current_only] 350/500 e01b8e2f answer_chars=59 write_bytes=57701381
+[main-eval:current_only] 351/500 e25c3b8d answer_chars=232 write_bytes=76585454
+[main-eval:current_only] 352/500 e3038f8c answer_chars=330 write_bytes=96518525
+[main-eval:current_only] 353/500 e3fc4d6e answer_chars=0 write_bytes=52455836
+[main-eval:current_only] 354/500 e47becba answer_chars=32 write_bytes=97567970
+[main-eval:current_only] 355/500 e48988bc answer_chars=185 write_bytes=62946926
+[main-eval:current_only] 356/500 e493bb7c answer_chars=138 write_bytes=78683561
+[main-eval:current_only] 357/500 e4e14d04 answer_chars=141 write_bytes=56652272
+[main-eval:current_only] 358/500 e56a43b9 answer_chars=63 write_bytes=90223760
+[main-eval:current_only] 359/500 e5ba910e_abs answer_chars=238 write_bytes=83929106
+[main-eval:current_only] 360/500 e6041065 answer_chars=100 write_bytes=87076433
+[main-eval:current_only] 361/500 e61a7584 answer_chars=287 write_bytes=63996146
+[main-eval:current_only] 362/500 e66b632c answer_chars=70 write_bytes=81830888
+[main-eval:current_only] 363/500 e831120c answer_chars=110 write_bytes=73438016
+[main-eval:current_only] 364/500 e8a79c70 answer_chars=64 write_bytes=52456059
+[main-eval:current_only] 365/500 e9327a54 answer_chars=234 write_bytes=96518525
+[main-eval:current_only] 366/500 e982271f answer_chars=34 write_bytes=129041043
+[main-eval:current_only] 367/500 eac54adc answer_chars=129 write_bytes=60848708
+[main-eval:current_only] 368/500 eac54add answer_chars=291 write_bytes=109107841
+[main-eval:current_only] 369/500 eaca4986 answer_chars=261 write_bytes=90224319
+[main-eval:current_only] 370/500 eace081b answer_chars=104 write_bytes=49308956
+[main-eval:current_only] 371/500 ec81a493 answer_chars=88 write_bytes=44062964
+[main-eval:current_only] 372/500 ed4ddc30 answer_chars=105 write_bytes=51406838
+[main-eval:current_only] 373/500 edced276 answer_chars=100 write_bytes=61897817
+[main-eval:current_only] 374/500 edced276_abs answer_chars=263 write_bytes=87076433
+[main-eval:current_only] 375/500 eeda8a6d answer_chars=314 write_bytes=74487125
+[main-eval:current_only] 376/500 eeda8a6d_abs answer_chars=106 write_bytes=81831111
+[main-eval:current_only] 377/500 ef66a6e5 answer_chars=135 write_bytes=38817419
+[main-eval:current_only] 378/500 ef9cf60a answer_chars=107 write_bytes=95469416
+[main-eval:current_only] 379/500 efc3f7c2 answer_chars=62 write_bytes=58750490
+[main-eval:current_only] 380/500 f0853d11 answer_chars=0 write_bytes=48259400
+[main-eval:current_only] 381/500 f0e564bc answer_chars=107 write_bytes=90224207
+[main-eval:current_only] 382/500 f35224e0 answer_chars=242 write_bytes=47210514
+[main-eval:current_only] 383/500 f4f1d8a4 answer_chars=114 write_bytes=70290689
+[main-eval:current_only] 384/500 f4f1d8a4_abs answer_chars=318 write_bytes=116451947
+[main-eval:current_only] 385/500 f523d9fe answer_chars=194 write_bytes=41964969
+[main-eval:current_only] 386/500 f685340e answer_chars=240 write_bytes=70290800
+[main-eval:current_only] 387/500 f685340e_abs answer_chars=115 write_bytes=81831335
+[main-eval:current_only] 388/500 f8c5f88b answer_chars=292 write_bytes=81830888
+[main-eval:current_only] 389/500 f9e8c073 answer_chars=59 write_bytes=144778365
+[main-eval:current_only] 390/500 faba32e5 answer_chars=0 write_bytes=68192582
+[main-eval:current_only] 391/500 fca70973 answer_chars=256 write_bytes=52455836
+[main-eval:current_only] 392/500 fca762bc answer_chars=256 write_bytes=36719201
+[main-eval:current_only] 393/500 fea54f57 answer_chars=0 write_bytes=78683561
+[main-eval:current_only] 394/500 gpt4_0a05b494 answer_chars=0 write_bytes=48259623
+[main-eval:current_only] 395/500 gpt4_0b2f1d21 answer_chars=0 write_bytes=73438016
+[main-eval:current_only] 396/500 gpt4_15e38248 answer_chars=112 write_bytes=89174651
+[main-eval:current_only] 397/500 gpt4_18c2b244 answer_chars=217 write_bytes=80782002
+[main-eval:current_only] 398/500 gpt4_1916e0ea answer_chars=222 write_bytes=104911513
+[main-eval:current_only] 399/500 gpt4_194be4b3 answer_chars=138 write_bytes=50358625
+[main-eval:current_only] 400/500 gpt4_1a1dc16d answer_chars=0 write_bytes=68192471
+[main-eval:current_only] 401/500 gpt4_1d4ab0c9 answer_chars=179 write_bytes=76585454
+[main-eval:current_only] 402/500 gpt4_1d80365e answer_chars=69 write_bytes=54554725
+[main-eval:current_only] 403/500 gpt4_1e4a8aeb answer_chars=184 write_bytes=104911290
+[main-eval:current_only] 404/500 gpt4_1e4a8aec answer_chars=56 write_bytes=41964746
+[main-eval:current_only] 405/500 gpt4_213fd887 answer_chars=48 write_bytes=101763960
+[main-eval:current_only] 406/500 gpt4_21adecb5 answer_chars=113 write_bytes=35670092
+[main-eval:current_only] 407/500 gpt4_2312f94c answer_chars=77 write_bytes=73438127
+[main-eval:current_only] 408/500 gpt4_2487a7cb answer_chars=58 write_bytes=78683672
+[main-eval:current_only] 409/500 gpt4_2655b836 answer_chars=98 write_bytes=73438016
+[main-eval:current_only] 410/500 gpt4_2ba83207 answer_chars=115 write_bytes=71340021
+[main-eval:current_only] 411/500 gpt4_2c50253f answer_chars=49 write_bytes=38817419
+[main-eval:current_only] 412/500 gpt4_2d58bcd6 answer_chars=43 write_bytes=84978326
+[main-eval:current_only] 413/500 gpt4_2f56ae70 answer_chars=0 write_bytes=43013855
+[main-eval:current_only] 414/500 gpt4_2f584639 answer_chars=0 write_bytes=92321978
+[main-eval:current_only] 415/500 gpt4_2f8be40d answer_chars=238 write_bytes=109107730
+[main-eval:current_only] 416/500 gpt4_2f91af09 answer_chars=292 write_bytes=76585566
+[main-eval:current_only] 417/500 gpt4_31ff4165 answer_chars=326 write_bytes=39866528
+[main-eval:current_only] 418/500 gpt4_372c3eed answer_chars=110 write_bytes=59799934
+[main-eval:current_only] 419/500 gpt4_372c3eed_abs answer_chars=108 write_bytes=129040931
+[main-eval:current_only] 420/500 gpt4_385a5000 answer_chars=0 write_bytes=55603163
+[main-eval:current_only] 421/500 gpt4_45189cb4 answer_chars=237 write_bytes=88125542
+[main-eval:current_only] 422/500 gpt4_468eb063 answer_chars=168 write_bytes=70290800
+[main-eval:current_only] 423/500 gpt4_468eb064 answer_chars=0 write_bytes=101764631
+[main-eval:current_only] 424/500 gpt4_483dd43c answer_chars=35 write_bytes=131139375
+[main-eval:current_only] 425/500 gpt4_4929293a answer_chars=64 write_bytes=81830888
+[main-eval:current_only] 426/500 gpt4_4929293b answer_chars=26 write_bytes=68192471
+[main-eval:current_only] 427/500 gpt4_4cd9eba1 answer_chars=0 write_bytes=69241803
+[main-eval:current_only] 428/500 gpt4_4edbafa2 answer_chars=0 write_bytes=57701381
+[main-eval:current_only] 429/500 gpt4_4ef30696 answer_chars=87 write_bytes=94420643
+[main-eval:current_only] 430/500 gpt4_4fc4f797 answer_chars=234 write_bytes=76586350
+[main-eval:current_only] 431/500 gpt4_5438fa52 answer_chars=49 write_bytes=66094700
+[main-eval:current_only] 432/500 gpt4_5501fe77 answer_chars=288 write_bytes=49308509
+[main-eval:current_only] 433/500 gpt4_59149c77 answer_chars=145 write_bytes=53505056
+[main-eval:current_only] 434/500 gpt4_59149c78 answer_chars=83 write_bytes=75536234
+[main-eval:current_only] 435/500 gpt4_59c863d7 answer_chars=142 write_bytes=107009510
+[main-eval:current_only] 436/500 gpt4_5dcc0aab answer_chars=0 write_bytes=72388907
+[main-eval:current_only] 437/500 gpt4_61e13b3c answer_chars=220 write_bytes=43013966
+[main-eval:current_only] 438/500 gpt4_65aabe59 answer_chars=39 write_bytes=83929106
+[main-eval:current_only] 439/500 gpt4_68e94287 answer_chars=61 write_bytes=71339798
+[main-eval:current_only] 440/500 gpt4_68e94288 answer_chars=259 write_bytes=66094364
+[main-eval:current_only] 441/500 gpt4_6dc9b45b answer_chars=183 write_bytes=72388907
+[main-eval:current_only] 442/500 gpt4_6ed717ea answer_chars=146 write_bytes=47210291
+[main-eval:current_only] 443/500 gpt4_70e84552 answer_chars=35 write_bytes=112255060
+[main-eval:current_only] 444/500 gpt4_70e84552_abs answer_chars=63 write_bytes=77634563
+[main-eval:current_only] 445/500 gpt4_731e37d7 answer_chars=175 write_bytes=99665852
+[main-eval:current_only] 446/500 gpt4_74aed68e answer_chars=217 write_bytes=70290689
+[main-eval:current_only] 447/500 gpt4_76048e76 answer_chars=0 write_bytes=72389018
+[main-eval:current_only] 448/500 gpt4_78cf46a3 answer_chars=0 write_bytes=62946926
+[main-eval:current_only] 449/500 gpt4_7a0daae1 answer_chars=269 write_bytes=126943047
+[main-eval:current_only] 450/500 gpt4_7abb270c answer_chars=208 write_bytes=57701492
+[main-eval:current_only] 451/500 gpt4_7bc6cf22 answer_chars=36 write_bytes=60848819
+[main-eval:current_only] 452/500 gpt4_7ca326fa answer_chars=104 write_bytes=76585343
+[main-eval:current_only] 453/500 gpt4_7ddcf75f answer_chars=138 write_bytes=91272980
+[main-eval:current_only] 454/500 gpt4_7de946e7 answer_chars=40 write_bytes=72389466
+[main-eval:current_only] 455/500 gpt4_7f6b06db answer_chars=319 write_bytes=130090041
+[main-eval:current_only] 456/500 gpt4_7fce9456 answer_chars=146 write_bytes=53504945
+[main-eval:current_only] 457/500 gpt4_8279ba02 answer_chars=117 write_bytes=129040931
+[main-eval:current_only] 458/500 gpt4_8279ba03 answer_chars=31 write_bytes=67143473
+[main-eval:current_only] 459/500 gpt4_85da3956 answer_chars=247 write_bytes=31473767
+[main-eval:current_only] 460/500 gpt4_88806d6e answer_chars=29 write_bytes=45112073
+[main-eval:current_only] 461/500 gpt4_8c8961ae answer_chars=301 write_bytes=92322425
+[main-eval:current_only] 462/500 gpt4_8e165409 answer_chars=206 write_bytes=60849155
+[main-eval:current_only] 463/500 gpt4_93159ced answer_chars=191 write_bytes=61897928
+[main-eval:current_only] 464/500 gpt4_93159ced_abs answer_chars=85 write_bytes=38817419
+[main-eval:current_only] 465/500 gpt4_93f6379c answer_chars=79 write_bytes=71339798
+[main-eval:current_only] 466/500 gpt4_98f46fc6 answer_chars=46 write_bytes=95469416
+[main-eval:current_only] 467/500 gpt4_9a159967 answer_chars=162 write_bytes=94420307
+[main-eval:current_only] 468/500 gpt4_a1b77f9c answer_chars=259 write_bytes=25179113
+[main-eval:current_only] 469/500 gpt4_a2d1d1f6 answer_chars=150 write_bytes=62947149
+[main-eval:current_only] 470/500 gpt4_a56e767c answer_chars=213 write_bytes=76585343
+[main-eval:current_only] 471/500 gpt4_ab202e7f answer_chars=86 write_bytes=98617527
+[main-eval:current_only] 472/500 gpt4_af6db32f answer_chars=113 write_bytes=83929217
+[main-eval:current_only] 473/500 gpt4_b0863698 answer_chars=86 write_bytes=127991710
+[main-eval:current_only] 474/500 gpt4_b4a80587 answer_chars=0 write_bytes=102813181
+[main-eval:current_only] 475/500 gpt4_b5700ca0 answer_chars=36 write_bytes=48259400
+[main-eval:current_only] 476/500 gpt4_b5700ca9 answer_chars=302 write_bytes=63996035
+[main-eval:current_only] 477/500 gpt4_c27434e8 answer_chars=109 write_bytes=73438016
+[main-eval:current_only] 478/500 gpt4_c27434e8_abs answer_chars=225 write_bytes=61897817
+[main-eval:current_only] 479/500 gpt4_cd90e484 answer_chars=256 write_bytes=89174651
+[main-eval:current_only] 480/500 gpt4_d12ceb0e answer_chars=74 write_bytes=53505168
+[main-eval:current_only] 481/500 gpt4_d31cdae3 answer_chars=0 write_bytes=161563230
+[main-eval:current_only] 482/500 gpt4_d6585ce8 answer_chars=203 write_bytes=82879997
+[main-eval:current_only] 483/500 gpt4_d6585ce9 answer_chars=0 write_bytes=27277220
+[main-eval:current_only] 484/500 gpt4_d84a3211 answer_chars=106 write_bytes=105961183
+[main-eval:current_only] 485/500 gpt4_d9af6064 answer_chars=110 write_bytes=111206733
+[main-eval:current_only] 486/500 gpt4_e05b82a6 answer_chars=135 write_bytes=80782114
+[main-eval:current_only] 487/500 gpt4_e061b84f answer_chars=265 write_bytes=77634452
+[main-eval:current_only] 488/500 gpt4_e061b84g answer_chars=204 write_bytes=102813293
+[main-eval:current_only] 489/500 gpt4_e072b769 answer_chars=58 write_bytes=40915748
+[main-eval:current_only] 490/500 gpt4_e414231e answer_chars=198 write_bytes=77634452
+[main-eval:current_only] 491/500 gpt4_e414231f answer_chars=53 write_bytes=87076992
+[main-eval:current_only] 492/500 gpt4_ec93e27f answer_chars=29 write_bytes=114353280
+[main-eval:current_only] 493/500 gpt4_f2262a51 answer_chars=87 write_bytes=83929329
+[main-eval:current_only] 494/500 gpt4_f420262c answer_chars=122 write_bytes=87076433
+[main-eval:current_only] 495/500 gpt4_f420262d answer_chars=180 write_bytes=60848708
+[main-eval:current_only] 496/500 gpt4_f49edff3 answer_chars=223 write_bytes=45112073
+[main-eval:current_only] 497/500 gpt4_fa19884c answer_chars=92 write_bytes=84978550
+[main-eval:current_only] 498/500 gpt4_fa19884d answer_chars=307 write_bytes=94420196
+[main-eval:current_only] 499/500 gpt4_fe651585 answer_chars=0 write_bytes=71340021
+[main-eval:current_only] 500/500 gpt4_fe651585_abs answer_chars=0 write_bytes=120648051
+{
+  "tag": "c",
+  "group": "current_only",
+  "dataset": "longmemeval_s",
+  "components": "icae+checkpoint:/share/latent2/vcrm_icae/runs/architecture_v6_E3_train",
+  "items": 500,
+  "failed": 0,
+  "failed_ids": [],
+  "empty_answers": 44,
+  "empty_answer_ids": [
+    "08f4fc43",
+    "0e5e2d1a",
+    "0ea62687",
+    "2bf43736",
+    "2e6d26dc",
+    "352ab8bd",
+    "3fe836c9",
+    "4baee567",
+    "5809eb10",
+    "58470ed2",
+    "61f8c8f8",
+    "6222b6eb",
+    "69fee5aa",
+    "6ae235be",
+    "70b3e69b",
+    "7161e7e2",
+    "830ce83f",
+    "89527b6b",
+    "8b9d4367",
+    "a3838d2b",
+    "affe2881",
+    "c8f1aeed",
+    "c9f37c46",
+    "e3fc4d6e",
+    "f0853d11",
+    "faba32e5",
+    "fea54f57",
+    "gpt4_0a05b494",
+    "gpt4_0b2f1d21",
+    "gpt4_1a1dc16d",
+    "gpt4_2f56ae70",
+    "gpt4_2f584639",
+    "gpt4_385a5000",
+    "gpt4_468eb064",
+    "gpt4_4cd9eba1",
+    "gpt4_4edbafa2",
+    "gpt4_5dcc0aab",
+    "gpt4_76048e76",
+    "gpt4_78cf46a3",
+    "gpt4_b4a80587",
+    "gpt4_d31cdae3",
+    "gpt4_d6585ce9",
+    "gpt4_fe651585",
+    "gpt4_fe651585_abs"
+  ],
+  "cutoff_source": "question_date",
+  "as_of_future_fallback": false,
+  "read_mode": "current_only",
+  "frontend": "llm",
+  "text_index": "lexical",
+  "llm_cache_root": "runs/main_v1/llm_cache",
+  "mean_write_bytes": 78883029.05,
+  "mean_write_seconds": 6.398228513235226,
+  "mean_read_seconds": 1.0778815612345933,
+  "mean_read_slots": 116.736,
+  "mean_input_tokens": 0.0,
+  "no_state_match": 44,
+  "decision_counts": {
+    "CREATE": 37595,
+    "DEFER": 4175,
+    "DUPLICATE": 598
+  },
+  "state_count_total": 37595,
+  "state_count_mean": 75.19,
+  "router_mode": "semantic",
+  "write_bytes_equal_across_groups": "not_comparable",
+  "write_bytes_compare_reason": "not_comparable: 单组运行无法自证跨组字节相等；逐字节相等仅在「同机 + 同序（先跑一组填满前端缓存）+ CPU 确定性编码」下可判定。GPU 上编码浮点非确定性会翻转路由/压缩判定（t32 实测 C/D write_bytes 3/5 不等），此时唯一诚实锚点是decision_counts 与 state_count 一致。",
+  "cross_group_anchors": [
+    "decision_counts",
+    "state_count"
+  ],
+  "parametric_only": 0,
+  "nonempty_answer": 456,
+  "llm_cache": {
+    "model": "Qwen3.5-9B",
+    "cache_root": "runs/main_v1/llm_cache",
+    "hits": 19373,
+    "misses": 4994
+  },
+  "wall_seconds": 28402.650686561596,
+  "predictions": "runs/main_v1/c/current_only/predictions.jsonl"
+}

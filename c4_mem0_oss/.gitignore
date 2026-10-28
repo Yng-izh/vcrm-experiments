@@ -1,6 +1,0 @@
-runs/full_34963_shard*.jsonl
-runs/*.log
-c4_test.jsonl
-qdrant_data_full*
-__pycache__/
-*.pyc

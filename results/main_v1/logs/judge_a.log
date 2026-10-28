@@ -1,0 +1,37 @@
+[judge] 25/500 acc=11
+[judge] 50/500 acc=18
+[judge] 75/500 acc=27
+[judge] 100/500 acc=36
+[judge] 125/500 acc=43
+[judge] 150/500 acc=51
+[judge] 175/500 acc=64
+[judge] 200/500 acc=70
+[judge] 225/500 acc=82
+[judge] 250/500 acc=90
+[judge] 275/500 acc=102
+[judge] 300/500 acc=111
+[judge] 325/500 acc=127
+[judge] 350/500 acc=135
+[judge] 375/500 acc=140
+[judge] 400/500 acc=154
+[judge] 425/500 acc=164
+[judge] 450/500 acc=177
+[judge] 475/500 acc=193
+[judge] 500/500 acc=206
+{
+ "rows": 500,
+ "scored_rows": 500,
+ "judge_errors": 0,
+ "accuracy_overall": 0.412,
+ "judge_seconds": 99.3,
+ "judge_model": "Qwen3.5-9B",
+ "protocol": "Official LongMemEval prompt; custom judge (Qwen3.5-9B), not official GPT-4o scores",
+ "accuracy_by_type": {
+  "single-session-user": 0.2143,
+  "multi-session": 0.5263,
+  "knowledge-update": 0.2949,
+  "single-session-preference": 0.1667,
+  "temporal-reasoning": 0.5414,
+  "single-session-assistant": 0.375
+ }
+}
