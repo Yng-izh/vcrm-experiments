@@ -16,6 +16,7 @@ import contextlib
 import importlib.util
 import io
 import json
+import os
 import tempfile
 import unittest
 from pathlib import Path
@@ -105,6 +106,12 @@ class MainEvalProtocolTest(unittest.TestCase):
         left = {row['question_id']: row['write_bytes'] for row in current}
         right = {row['question_id']: row['write_bytes'] for row in versioned}
         self.assertEqual(left, right)          # 唯一变量是 read_mode，写入路径相同
+        # T32-F7：GPU 上的诚实锚点 = 决策计数与状态数（字节数会因编码非确定性抖动）
+        self.assertEqual({row['question_id']: row['decision_counts'] for row in current},
+                         {row['question_id']: row['decision_counts'] for row in versioned})
+        self.assertEqual({row['question_id']: row['state_count'] for row in current},
+                         {row['question_id']: row['state_count'] for row in versioned})
+        self.assertTrue(all(row['state_count'] > 0 for row in current))
         self.assertEqual({row['config']['read_mode'] for row in current}, {'current_only'})
         self.assertEqual({row['config']['read_mode'] for row in versioned}, {'trajectory'})
 
@@ -188,6 +195,83 @@ class DenominatorTest(unittest.TestCase):
         self.assertEqual(summary['items'], 1)               # [q1, q2][1::2] = [q2]
 
 
+class _FakeResponse:
+    def __init__(self, payload: bytes) -> None:
+        self._payload = payload
+
+    def read(self) -> bytes:
+        return self._payload
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *exc):
+        return False
+
+
+class VLLMTextAnswererAuthTest(unittest.TestCase):
+    """t32-F6：/v1/completions 必须带 Authorization: Bearer <key>，缺 key 显式报错。"""
+
+    KEY_ENV = 'VCRM_TEST_VLLM_KEY'
+
+    def setUp(self):
+        self._saved = os.environ.get(self.KEY_ENV)
+        self._original = main_eval.urllib.request.urlopen
+        self.requests = []
+
+    def tearDown(self):
+        main_eval.urllib.request.urlopen = self._original
+        if self._saved is None:
+            os.environ.pop(self.KEY_ENV, None)
+        else:
+            os.environ[self.KEY_ENV] = self._saved
+
+    def _install_fake(self, text=' Paris'):
+        def fake_urlopen(request, timeout=None):
+            self.requests.append(request)
+            return _FakeResponse(json.dumps({'choices': [{'text': text}],
+                                             'usage': {'prompt_tokens': 7}}).encode())
+        main_eval.urllib.request.urlopen = fake_urlopen
+
+    def test_authorization_header_is_injected(self):
+        os.environ[self.KEY_ENV] = 'sk-test-123'
+        self._install_fake()
+        answerer = main_eval.VLLMTextAnswerer('http://host:6012/v1/completions', 'Qwen3.5-9B',
+                                              key_env=self.KEY_ENV)
+        result = answerer.answer('The capital of France is')
+        self.assertEqual(result['answer'], 'Paris')
+        self.assertEqual(len(self.requests), 1)
+        self.assertEqual(self.requests[0].get_header('Authorization'), 'Bearer sk-test-123')
+        self.assertEqual(self.requests[0].get_header('Content-type'), 'application/json')
+
+    def test_missing_key_raises_without_request(self):
+        os.environ.pop(self.KEY_ENV, None)
+        self._install_fake()
+        answerer = main_eval.VLLMTextAnswerer('http://host:6012/v1/completions', 'm',
+                                              key_env=self.KEY_ENV)
+        with self.assertRaises(RuntimeError) as caught:
+            answerer.answer('q')
+        self.assertIn(self.KEY_ENV, str(caught.exception))
+        self.assertEqual(self.requests, [])      # 缺 key 不重试、不发请求
+
+    def test_empty_key_env_disables_auth(self):
+        os.environ.pop(self.KEY_ENV, None)
+        self._install_fake()
+        answerer = main_eval.VLLMTextAnswerer('http://localhost:8001/v1/completions', 'm',
+                                              key_env=None)
+        answerer.answer('q')
+        self.assertIsNone(self.requests[0].get_header('Authorization'))
+
+    def test_cli_default_and_factory_pass_through(self):
+        args = main_eval.parse_args(['--group', 'text_rag', '--data', 'x.json',
+                                     '--text-reader', 'vllm'])
+        self.assertEqual(args.vllm_key_env, 'VCRM_LLM_KEY')
+        self.assertEqual(main_eval.build_answerer(args).key_env, 'VCRM_LLM_KEY')
+        custom = main_eval.parse_args(['--group', 'text_rag', '--data', 'x.json',
+                                       '--text-reader', 'vllm', '--vllm-key-env', 'OTHER_KEY'])
+        self.assertEqual(main_eval.build_answerer(custom).key_env, 'OTHER_KEY')
+
+
 class FrontendValidationTest(unittest.TestCase):
     def test_llm_frontend_without_config_fails_loudly(self):
         with self.assertRaises(SystemExit) as caught:
@@ -216,6 +300,110 @@ class FrontendValidationTest(unittest.TestCase):
         self.assertEqual(main_eval.GROUP_READ_MODE['versioned'], 'trajectory')
         with self.assertRaises(SystemExit):
             main_eval.parse_args(['--group', 'nope', '--data', 'x.json'])
+
+
+class WriteBytesCaliberTest(unittest.TestCase):
+    """T32-F7：字节口径的可判定性必须显式记账，不能默认"跨组相等"。"""
+
+    def test_summary_declares_not_comparable(self):
+        self.assertIn('not_comparable', main_eval.WRITE_BYTES_COMPARE_NOTE)
+        self.assertEqual(main_eval.COMPARABLE_ANCHORS, ('decision_counts', 'state_count'))
+
+    def test_compare_is_deterministic_only_when_declared(self):
+        left = [{'question_id': 'q1', 'write_bytes': 10, 'decision_counts': {'CREATE': 1},
+                 'state_count': 1}]
+        right = [{'question_id': 'q1', 'write_bytes': 10, 'decision_counts': {'CREATE': 1},
+                  'state_count': 1}]
+        strict = main_eval.compare_write_bytes(left, right)
+        self.assertTrue(strict['comparable'])
+        self.assertTrue(strict['equal'])
+        loose = main_eval.compare_write_bytes(left, right, same_machine_and_order=False)
+        self.assertFalse(loose['comparable'])                  # 不假装能判字节
+        self.assertIsNone(loose['equal'])
+        self.assertEqual(loose['anchors'],
+                         {'decision_counts_equal': True, 'state_count_equal': True})
+
+    def test_compare_reports_divergent_bytes_under_deterministic_settings(self):
+        left = [{'question_id': 'q1', 'write_bytes': 10, 'decision_counts': {'CREATE': 1},
+                 'state_count': 1}]
+        right = [{'question_id': 'q1', 'write_bytes': 11, 'decision_counts': {'CREATE': 1},
+                  'state_count': 1}]
+        verdict = main_eval.compare_write_bytes(left, right)
+        self.assertTrue(verdict['comparable'])
+        self.assertFalse(verdict['equal'])
+        self.assertIn('divergent', verdict['reason'])
+
+    def test_compare_rejects_mismatched_question_sets(self):
+        verdict = main_eval.compare_write_bytes([{'question_id': 'q1', 'write_bytes': 1}],
+                                                [{'question_id': 'q2', 'write_bytes': 1}])
+        self.assertFalse(verdict['comparable'])
+        self.assertIn('question_id sets differ', verdict['reason'])
+
+
+class ParametricOnlyTest(unittest.TestCase):
+    """T32-F2：没有状态命中时，文本组不得用空上下文喂模型（那是参数化幻觉）。"""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.root = Path(self.tmp.name)
+        self.data = self.root / 'lme_s.json'
+        self.data.write_text(json.dumps([
+            make_row('q1', 'What did I buy last year?',
+                     [('2021/03/01 (Mon) 09:00', 'Alice lives in Lisbon.')], answer='a car'),
+        ]))
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def test_no_state_match_means_empty_answer_not_hallucination(self):
+        buffer = io.StringIO()
+        with contextlib.redirect_stdout(buffer):
+            summary = main_eval.main(['--group', 'state_text', '--data', str(self.data),
+                                      '--tag', 'para', '--runs-root',
+                                      str(self.root / 'runs'), '--reader', 'stub'])
+        rows = [json.loads(line) for line in
+                (self.root / 'runs' / 'para' / 'state_text' / 'predictions.jsonl'
+                 ).read_text().splitlines() if line.strip()]
+        self.assertEqual(len(rows), 1)
+        row = rows[0]
+        self.assertTrue(row['no_state_match'])
+        self.assertEqual(row['answer'], '')          # 不调 reader，不留幻觉
+        self.assertEqual(row['input_tokens'], 0)
+        self.assertTrue(row['parametric_only'])
+        self.assertEqual(summary['parametric_only'], 1)
+        self.assertEqual(summary['nonempty_answer'], 0)
+        # T32-F7：GPU 可用的跨组锚点在 summary 里必须可直接对比
+        self.assertIn('CREATE', summary['decision_counts'])
+        self.assertGreater(summary['state_count_total'], 0)
+
+    def test_summary_reports_cache_and_nonempty(self):
+        buffer = io.StringIO()
+        with contextlib.redirect_stdout(buffer):
+            summary = main_eval.main(['--group', 'text_rag', '--data', str(self.data),
+                                      '--tag', 'para2', '--runs-root',
+                                      str(self.root / 'runs')])
+        self.assertEqual(summary['nonempty_answer'], 1)
+        self.assertIn('llm_cache', summary)
+        self.assertIsNone(summary['llm_cache'])      # rules 前端没有缓存客户端
+        # T32-F7：字节口径与 GPU 可用锚点
+        self.assertEqual(summary['write_bytes_equal_across_groups'], 'not_comparable')
+        self.assertIn('not_comparable', summary['write_bytes_compare_reason'])
+        self.assertEqual(summary['cross_group_anchors'], ['decision_counts', 'state_count'])
+
+
+class CheckpointRequirementTest(unittest.TestCase):
+    """T32-F5：icae 跑必须给 --checkpoint，否则 sha256 只能是 none。"""
+
+    def test_icae_requires_checkpoint(self):
+        with self.assertRaises(SystemExit) as caught:
+            main_eval.parse_args(['--group', 'versioned', '--data', 'x.json',
+                                  '--reader', 'icae'])
+        self.assertNotEqual(caught.exception.code, 0)
+
+    def test_icae_with_checkpoint_is_accepted(self):
+        args = main_eval.parse_args(['--group', 'versioned', '--data', 'x.json',
+                                     '--reader', 'icae', '--checkpoint', '/tmp/ckpt'])
+        self.assertEqual(args.checkpoint, '/tmp/ckpt')
 
 
 class JudgeWiringTest(unittest.TestCase):

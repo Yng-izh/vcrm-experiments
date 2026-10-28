@@ -47,6 +47,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import sys
 import time
@@ -64,10 +65,11 @@ from vcrm.fact_extractor import FactExtractor              # noqa: E402
 from vcrm.index import SemanticIndex                       # noqa: E402
 from vcrm.io import file_digest, write_json                # noqa: E402
 from vcrm.lme_data import Episode, load_lme_s              # noqa: E402
+from vcrm.query_alignment import StateVocabularyAligner     # noqa: E402
 from vcrm.query_time import QueryTimeResolver              # noqa: E402
 from vcrm.runtime import PredictedRuntime, QueryParser      # noqa: E402
 from vcrm.state_index import SEMANTIC_DIMENSIONS, StateIndex, normalize_subject  # noqa: E402
-from vcrm.state_router import StateRouter                  # noqa: E402
+from vcrm.state_router import ROUTER_MODES, StateRouter      # noqa: E402
 from vcrm.store import IncrementalCurrentStore             # noqa: E402
 from vcrm.update_resolver import UpdateResolver            # noqa: E402
 
@@ -91,6 +93,18 @@ QUERY_AUDIT_FIELDS: Tuple[str, ...] = ('query_time_source', 'query_cutoff_source
                                        'query_window_end', 'query_time_anchor')
 #: 观测上界来源口径（本轮固定 question_date；"对话末刻"不是等价默认）。
 CUTOFF_SOURCES: Tuple[str, ...] = ('question_date',)
+
+#: 字节口径的可判定条件（T32-F7）。write_bytes 逐字节相等**只在**同机 + 同序
+#: （先跑一组把前端缓存填满）+ CPU 确定性编码下可判定；GPU 上编码浮点非确定性会
+#: 让 semantic_key 微变，进而翻转路由/压缩判定，状态数与字节数都会不同
+#: （t32 实测 C/D 3/5 不等）。GPU 对比请改用 decision_counts / state_count。
+WRITE_BYTES_COMPARE_NOTE = (
+    'not_comparable: 单组运行无法自证跨组字节相等；逐字节相等仅在「同机 + 同序'
+    '（先跑一组填满前端缓存）+ CPU 确定性编码」下可判定。GPU 上编码浮点非确定性会'
+    '翻转路由/压缩判定（t32 实测 C/D write_bytes 3/5 不等），此时唯一诚实锚点是'
+    'decision_counts 与 state_count 一致。')
+#: 跨组对比锚点（GPU 可用）：同一写入代码路径下的决策计数与状态数。
+COMPARABLE_ANCHORS: Tuple[str, ...] = ('decision_counts', 'state_count')
 
 #: 文本组检索索引实现：lexical = 依赖零的词法基线；hybrid = 复用 text-RAG 的
 #: BM25+BGE+RRF（需要 rank_bm25/sentence_transformers，CPU 单测不用）。
@@ -137,11 +151,32 @@ class VLLMTextAnswerer:
     name = 'vllm_text_reader'
 
     def __init__(self, url: str, model: str, max_new_tokens: int = 256,
-                 retries: int = 6, timeout: float = 600.0) -> None:
+                 retries: int = 6, timeout: float = 600.0,
+                 key_env: Optional[str] = None) -> None:
         self.url, self.model = url, model
         self.max_new_tokens, self.retries, self.timeout = max_new_tokens, retries, timeout
+        #: Bearer key 的环境变量名（t32-F6）。None/'' = 显式关闭鉴权（本地无鉴权 vLLM）。
+        self.key_env = key_env
+
+    def auth_header(self) -> Dict[str, str]:
+        """``Authorization: Bearer <key>``。
+
+        ``key_env`` 为空 → 不带头（向后兼容本地无鉴权服务）；给了 key_env 但环境变量
+        缺失 → ``RuntimeError``，与 ``vcrm/llm_client.py`` 同语义：不静默发无鉴权请求
+        （否则 401 会被重试循环吞成"服务不可用"，把配置错误伪装成网络故障）。
+        """
+        if not self.key_env:
+            return {}
+        key = os.environ.get(self.key_env)
+        if not key:
+            raise RuntimeError(
+                f'vllm credentials missing: environment variable {self.key_env!r} is not set; '
+                'refusing to send an unauthenticated request (no silent fallback)')
+        return {'Authorization': 'Bearer ' + key}
 
     def answer(self, prompt: str) -> Dict[str, Any]:
+        # key 在重试循环外解析：缺 key 立即抛，不会被 6 次重试吞掉。
+        headers = {'Content-Type': 'application/json'} | self.auth_header()
         payload = {'model': self.model, 'prompt': prompt, 'temperature': 0.0,
                    'max_tokens': self.max_new_tokens, 'seed': 42}
         last: Optional[Exception] = None
@@ -149,8 +184,7 @@ class VLLMTextAnswerer:
             try:
                 started = time.time()
                 request = urllib.request.Request(
-                    self.url, data=json.dumps(payload).encode(),
-                    headers={'Content-Type': 'application/json'})
+                    self.url, data=json.dumps(payload).encode(), headers=headers)
                 with urllib.request.urlopen(request, timeout=self.timeout) as response:
                     body = json.loads(response.read())
                 return {'answer': str(body['choices'][0]['text']).strip(),
@@ -236,21 +270,34 @@ def build_components(args: argparse.Namespace) -> Components:
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     config, training_root, _ = module.load_v6(args.arch_exp)
+    # 与 probe/run_state_eval.build_components 参考实现逐行对齐（T32-F4）：
+    # ① VCRM_TRAINING_ROOT 覆盖默认训练目录；② 挂批量编码（reader.py 受 sha256
+    # 锁定不改文件，只把批量编码挂到实例上；不挂则退回逐条编码，~10 分钟/题）。
+    training_root = os.environ.get('VCRM_TRAINING_ROOT', training_root)
     runtime = SlotMemoryRuntime.from_checkpoint(config, training_root)
+    from vcrm.reader_batch import attach_batch_encode
+    attach_batch_encode(runtime.reader)
     return Components(runtime.reader, runtime.codec, runtime.markers, runtime.index,
                       f'icae+checkpoint:{training_root}')
 
 
-def build_frontend_pair(args: argparse.Namespace) -> Tuple[Any, Any]:
-    """返回 (extractor, query_parser)；--frontend llm 需 --llm-config（CLI 已校验）。"""
+def build_frontend_pair(args: argparse.Namespace) -> Tuple[Any, Any, Any]:
+    """返回 (extractor, query_parser, llm_client)；llm 前端需 --llm-config（CLI 已校验）。
+
+    ``llm`` 前端的查询解析器带一个 ``StateVocabularyAligner``（T32-F1）：模型给出的
+    subject/attribute 会逐 episode 对齐到写入侧真实状态键空间，避免
+    ``subject='I'`` vs ``subject='1997 jeep wrangler'`` 这类永不相交导致的静默答空。
+    """
     if args.frontend == 'rules':
-        return FactExtractor(), QueryParser()
+        return FactExtractor(), QueryParser(), None
     from vcrm.runtime import build_frontend
     from vcrm.llm_client import CachedLLMClient, build_llm_client
     client = CachedLLMClient(build_llm_client(args.llm_config),
                              cache_root=args.llm_cache_root)
-    return build_frontend('llm', llm_client=client,
-                          query_parser_kwargs={'max_identities': 3})
+    extractor, parser = build_frontend(
+        'llm', llm_client=client,
+        query_parser_kwargs={'max_identities': 3, 'aligner': StateVocabularyAligner()})
+    return extractor, parser, client
 
 
 def new_runtime(args: argparse.Namespace, components: Components,
@@ -259,15 +306,31 @@ def new_runtime(args: argparse.Namespace, components: Components,
                                     budget_mode='retain_all')
     resolver = UpdateResolver(recency_update=bool(args.recency_update),
                               recency_min_confidence=float(args.recency_min_confidence))
+    state_index = StateIndex()
+    aligner = getattr(query_parser, 'aligner', None)
+    if aligner is not None:                # 逐 episode 重建词表（每题独立 runtime）
+        aligner.bind(state_index)
     return PredictedRuntime(components.reader, components.codec, components.markers,
-                            components.index, store, StateIndex(),
-                            router=StateRouter(top_k=args.top_k), resolver=resolver,
+                            components.index, store, state_index,
+                            router=StateRouter(top_k=args.top_k,
+                                               router_mode=getattr(args, 'router_mode',
+                                                                   'identity')),
+                            resolver=resolver,
                             extractor=extractor, query_parser=query_parser,
                             time_mode='window_end', allow_as_of=False,
                             hybrid_fallback=bool(args.hybrid_fallback),
                             defer_store_memory=bool(args.defer_store_memory),
                             as_of_future_fallback=False,      # LongMemEval：window_end 是硬上界
                             read_mode=read_mode, top_k=args.top_k)
+
+
+def decision_counts(ledger: Sequence[Mapping[str, Any]]) -> Dict[str, int]:
+    """写入决策计数（CREATE/UPDATE/DUPLICATE/DEFER）——GPU 上的跨组对比锚点。"""
+    counts: Dict[str, int] = {}
+    for entry in ledger:
+        key = str(entry.get('decision') or 'unknown')
+        counts[key] = counts.get(key, 0) + 1
+    return counts
 
 
 def write_episode(runtime: PredictedRuntime, episode: Episode) -> Dict[str, Any]:
@@ -375,6 +438,25 @@ def run_state_text_group(args: argparse.Namespace, episode: Episode, components:
         chosen = [session for session in episode.sessions
                   if session.session_id in wanted]
     write_bytes = int(runtime.store.accounting()['total_bytes'])
+    extra = {'state_id': state_id,
+             'selected_version_id': (selected_version or {}).get('id'),
+             'read_session_ids': [session.session_id for session in chosen],
+             'no_state_match': selected_version is None,
+             'parametric_only': False,
+             'alignment': getattr(query_parser, 'last_alignment', []),
+             'decision_counts': decision_counts(written['ledger']),
+             'state_count': len(runtime.state_index.records),
+             'retrieval_audit': getattr(runtime.router, 'last_retrieval_audit', {}),
+             'n_facts': len(written['ledger'])}
+    if selected_version is None:
+        # T32-F2：没有命中任何状态时，上下文是空的 —— 此时调文本 reader 只会得到
+        # 参数化幻觉（实测 846–974 字、prompt 仅 36 token）。显式留空并单独记账，
+        # 绝不让"空上下文长答案"混进 B 组非空率。
+        extra['parametric_only'] = True
+        return {'answer': '', 'read_slots': None, 'input_tokens': 0,
+                'write_bytes': write_bytes, 'write_seconds': written['write_seconds'],
+                'read_seconds': 0.0, 'extra': extra,
+                'resolution': resolution, 'window_end': window_end}
     prompt = render_text_prompt(episode.question, [
         {'date': session.date, 'text': session.text} for session in chosen])
     reply = answerer.answer(prompt)
@@ -384,11 +466,7 @@ def run_state_text_group(args: argparse.Namespace, episode: Episode, components:
             'write_bytes': write_bytes,
             'write_seconds': written['write_seconds'],
             'read_seconds': float(reply.get('seconds') or 0.0),
-            'extra': {'state_id': state_id,
-                      'selected_version_id': (selected_version or {}).get('id'),
-                      'read_session_ids': [session.session_id for session in chosen],
-                      'no_state_match': selected_version is None,
-                      'n_facts': len(written['ledger'])},
+            'extra': extra,
             'resolution': resolution, 'window_end': window_end}
 
 
@@ -413,6 +491,12 @@ def run_latent_group(args: argparse.Namespace, episode: Episode, components: Com
                       'no_state_match': bool(result.get('no_state_match')),
                       'hybrid_fallback': bool(result.get('hybrid_fallback')),
                       'read_mode': read_mode,
+                      'parametric_only': bool(result.get('hybrid_fallback')),
+                      'alignment': getattr(runtime.query_parser, 'last_alignment', []),
+                      'decision_counts': decision_counts(written['ledger']),
+                      'state_count': len(runtime.state_index.records),
+                      'retrieval_audit': getattr(runtime.router, 'last_retrieval_audit', {}),
+                      'attribute_fallback': bool(result.get('attribute_fallback')),
                       'n_facts': len(written['ledger'])},
             'resolution': resolution, 'window_end': window_end}
 
@@ -463,8 +547,53 @@ def failed_row(args: argparse.Namespace, episode: Episode, error: str,
     return row
 
 
+def _sum_decision_counts(rows: Sequence[Mapping[str, Any]]) -> Dict[str, int]:
+    totals: Dict[str, int] = {}
+    for row in rows:
+        for key, value in (row.get('decision_counts') or {}).items():
+            totals[str(key)] = totals.get(str(key), 0) + int(value)
+    return totals
+
+
+def compare_write_bytes(left_rows: Sequence[Mapping[str, Any]],
+                        right_rows: Sequence[Mapping[str, Any]], *,
+                        same_machine_and_order: bool = True,
+                        deterministic_encoding: bool = True) -> Dict[str, Any]:
+    """跨组对比（T32-F7）：字节口径只在同机同序 + 确定性编码时可判定。
+
+    不可判定时**绝不返回 True/False 假象**，而是 ``comparable=False`` + 原因；
+    GPU 上改用 ``decision_counts`` / ``state_count`` 作为锚点。
+    """
+    left = {row['question_id']: int(row.get('write_bytes') or 0) for row in left_rows}
+    right = {row['question_id']: int(row.get('write_bytes') or 0) for row in right_rows}
+    if set(left) != set(right):
+        return {'comparable': False, 'equal': None,
+                'reason': 'question_id sets differ between groups'}
+    if not (same_machine_and_order and deterministic_encoding):
+        counts_equal = all((left_row.get('decision_counts') or {}) ==
+                           (right_row.get('decision_counts') or {})
+                           for left_row, right_row in
+                           zip(sorted(left_rows, key=lambda row: row['question_id']),
+                               sorted(right_rows, key=lambda row: row['question_id'])))
+        states_equal = all(int(left_row.get('state_count') or 0) ==
+                           int(right_row.get('state_count') or 0)
+                           for left_row, right_row in
+                           zip(sorted(left_rows, key=lambda row: row['question_id']),
+                               sorted(right_rows, key=lambda row: row['question_id'])))
+        return {'comparable': False, 'equal': None, 'reason': WRITE_BYTES_COMPARE_NOTE,
+                'anchors': {'decision_counts_equal': counts_equal,
+                            'state_count_equal': states_equal}}
+    per_item = [{'question_id': qid, 'left': left[qid], 'right': right[qid],
+                 'equal': left[qid] == right[qid]} for qid in sorted(left)]
+    return {'comparable': True, 'equal': all(item['equal'] for item in per_item),
+            'per_item': per_item,
+            'reason': 'byte-identical' if all(item['equal'] for item in per_item)
+            else 'divergent even under deterministic settings: inspect encoder/cache state'}
+
+
 def summarise(args: argparse.Namespace, rows: Sequence[Mapping[str, Any]],
-              components_label: str, started: float) -> Dict[str, Any]:
+              components_label: str, started: float,
+              llm_client: Any = None) -> Dict[str, Any]:
     failed = [row['question_id'] for row in rows if row.get('error')]
     empty = [row['question_id'] for row in rows if not row.get('answer') and not row.get('error')]
     return {'tag': args.tag, 'group': args.group, 'dataset': 'longmemeval_s',
@@ -487,6 +616,17 @@ def summarise(args: argparse.Namespace, rows: Sequence[Mapping[str, Any]],
              'mean_input_tokens': (sum(row['input_tokens'] or 0 for row in rows) / len(rows)
                                    if rows else 0.0),
              'no_state_match': sum(1 for row in rows if row.get('no_state_match')),
+             'decision_counts': _sum_decision_counts(rows),
+             'state_count_total': sum(int(row.get('state_count') or 0) for row in rows),
+             'state_count_mean': (sum(int(row.get('state_count') or 0) for row in rows)
+                                  / len(rows) if rows else 0.0),
+             'router_mode': getattr(args, 'router_mode', 'identity'),
+             'write_bytes_equal_across_groups': 'not_comparable',
+             'write_bytes_compare_reason': WRITE_BYTES_COMPARE_NOTE,
+             'cross_group_anchors': list(COMPARABLE_ANCHORS),
+             'parametric_only': sum(1 for row in rows if row.get('parametric_only')),
+             'nonempty_answer': sum(1 for row in rows if str(row.get('answer') or '').strip()),
+             'llm_cache': (llm_client.stats() if hasattr(llm_client, 'stats') else None),
              'wall_seconds': time.perf_counter() - started,
              'predictions': str(predictions_path(args))}
 
@@ -561,6 +701,12 @@ def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
     parser.add_argument('--text-reader', choices=['stub', 'vllm'], default='stub')
     parser.add_argument('--vllm-url', default='http://localhost:8001/v1/completions')
     parser.add_argument('--vllm-model', default='mistral-7b')
+    parser.add_argument('--router-mode', choices=ROUTER_MODES, default='identity',
+                        help='候选召回口径：identity = 默认两阶段硬过滤（行为不变）；'
+                             'semantic = 语义 top-k + 主体硬门 + 属性软排序（P4 实验变量）')
+    parser.add_argument('--vllm-key-env', default='VCRM_LLM_KEY',
+                        help='Bearer key 的环境变量名（t32-F6；默认 VCRM_LLM_KEY）；'
+                             "传空串显式关闭鉴权（本地无鉴权 vLLM）")
     parser.add_argument('--max-new-tokens', type=int, default=256)
     parser.add_argument('--text-index', choices=list(TEXT_INDEX_MODES), default='lexical')
     parser.add_argument('--cutoff-source', choices=list(CUTOFF_SOURCES),
@@ -586,13 +732,17 @@ def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
         args.llm_cache_root = str(Path(args.runs_root) / args.tag / 'llm_cache')
     if args.shards < 1:
         parser.error('--shards must be >= 1')
+    if args.reader == 'icae' and not args.checkpoint:
+        parser.error('--reader icae 需要 --checkpoint PATH（否则 checkpoint_sha256 只能是 none，'
+                     '该批结果不可复现/不可审计）')
     return args
 
 
 def build_answerer(args: argparse.Namespace) -> Any:
     if args.text_reader == 'stub':
         return StubTextAnswerer()
-    return VLLMTextAnswerer(args.vllm_url, args.vllm_model, args.max_new_tokens)
+    return VLLMTextAnswerer(args.vllm_url, args.vllm_model, args.max_new_tokens,
+                            key_env=args.vllm_key_env)
 
 
 def main(argv: Optional[Sequence[str]] = None) -> Dict[str, Any]:
@@ -609,10 +759,10 @@ def main(argv: Optional[Sequence[str]] = None) -> Dict[str, Any]:
 
     resolver = QueryTimeResolver()
     answerer = build_answerer(args)
-    components = extractor = query_parser = None
+    components = extractor = query_parser = llm_client = None
     if args.group != 'text_rag':
         components = build_components(args)
-        extractor, query_parser = build_frontend_pair(args)
+        extractor, query_parser, llm_client = build_frontend_pair(args)
         components_label = components.label
 
     rows: List[Dict[str, Any]] = []
@@ -641,7 +791,7 @@ def main(argv: Optional[Sequence[str]] = None) -> Dict[str, Any]:
     with out.open('w') as handle:
         for row in rows:
             handle.write(json.dumps(row, ensure_ascii=False) + '\n')
-    summary = summarise(args, rows, components_label, started)
+    summary = summarise(args, rows, components_label, started, llm_client=llm_client)
     write_json(out.parent / 'summary.json', summary)
     if args.judge_config:
         summary['judge'] = judge_predictions(args, todo, rows)

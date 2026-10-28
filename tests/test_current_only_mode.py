@@ -309,5 +309,81 @@ class PairModeRegressionTest(unittest.TestCase):
         self.assertEqual(trajectory['excluded_historical_versions'], 0)
 
 
+class _FixedQueryParser:
+    """固定返回组合式 attribute 的解析器桩（模拟 LLM 前端在自由问句上的输出）。"""
+
+    def __init__(self, subject, attribute):
+        self.subject = subject
+        self.attribute = attribute
+        self.last_alignment = []
+
+    def parse(self, question):
+        return {'resolved': True, 'question': question, 'subject': self.subject,
+                'attribute': self.attribute, 'reason': '',
+                'identities': [(self.subject, self.attribute)], 'alignment': []}
+
+
+class SemanticReadGateTest(unittest.TestCase):
+    """t33 最后一处口径：semantic 路由召回成功后，读取前的 attribute 断言不得再杀候选。
+
+    现场（gpu_smoke3）：候选 9 个、subject_gate 全 passed、语义相似度 0.88–0.96，
+    但 ``answer_predicted`` 的 identity_matched 仍要求 attribute 字符串相等 →
+    组合式问句属性与事实短键不相交 → 候选全灭 → 静默答空。
+    """
+
+    QUESTION = 'What is the capital of France these days?'
+    COMPOSITE = 'capital city of France today'
+
+    def _runtime(self, router_mode):
+        reader = VersionAwareReader()
+        store = IncrementalCurrentStore(make_codec(), key_dimensions=SEMANTIC_DIMENSIONS)
+        runtime = PredictedRuntime(
+            reader, make_codec(), VersionMarkers(HIDDEN), DeterministicIndex(),
+            store, StateIndex(),
+            router=StateRouter(top_k=5, router_mode=router_mode),
+            resolver=UpdateResolver(recency_update=True, recency_min_confidence=0.0),
+            extractor=FactExtractor(),
+            query_parser=_FixedQueryParser('France', self.COMPOSITE),
+            time_mode='window_end', allow_as_of=False)
+        counter = PublicEventCounter()
+        for pair in (FR_2016, FR_2018, FR_2020):
+            runtime.write_predicted(public_event(counter.next_id(), pair))
+        entries = list(store.entries)
+        for index, entry in enumerate(entries):
+            reader.versions[entry['id']] = store.decode(entry)
+            reader.order[entry['id']] = index
+        reader.labels[entries[-1]['id']] = 'Paris'
+        self.assertTrue(runtime.state_index.records)
+        # 前提校验：组合式 attribute 与写入侧短键确实不相交
+        for record in runtime.state_index.records:
+            self.assertFalse(record.matches_attribute(self.COMPOSITE))
+        return runtime, reader
+
+    def _ask(self, runtime, reader):
+        reader.bundles.clear()
+        return runtime.answer_predicted(
+            {'id': 'q1', 'question': self.QUESTION, 'time': '2021-01-01T00:00:00',
+             'as_of': '2021-01-01T00:00:00', 'answers': [], 'latest': True,
+             'type': 'latest'},
+            window_end='2021-01-01T00:00:00', read_mode='pair')
+
+    def test_semantic_mode_reads_through_attribute_mismatch(self):
+        runtime, reader = self._runtime('semantic')
+        result = self._ask(runtime, reader)
+        self.assertTrue(result['candidates'])
+        self.assertFalse(result['no_state_match'])
+        self.assertTrue(result['attribute_fallback'])     # 审计：attribute 走了软匹配
+        self.assertEqual(result['answer'], 'Paris')       # 真的读出了内容
+
+    def test_identity_mode_is_bitwise_unchanged(self):
+        runtime, reader = self._runtime('identity')
+        result = self._ask(runtime, reader)
+        self.assertTrue(result['candidates'])             # 主体命中，候选非空
+        self.assertTrue(result['no_state_match'])         # 但 attribute 不等 → 拒读
+        self.assertEqual(result['answer'], '')
+        self.assertNotIn('attribute_fallback', result)    # 结构逐比特不变
+        self.assertNotIn('router_mode', result)
+
+
 if __name__ == '__main__':
     unittest.main()

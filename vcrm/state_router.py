@@ -16,6 +16,7 @@ import math
 from typing import Any, Callable, Dict, Iterable, List, Optional, Sequence, Tuple
 
 from .fact_schema import AtomicFact, StateDecision
+from .query_alignment import DEFAULT_MIN_SUBJECT_SCORE, match_subject_key
 from .state_index import (
     SEMANTIC_DIMENSIONS,
     StateIndex,
@@ -24,6 +25,13 @@ from .state_index import (
     normalize_subject,
     normalize_text,
 )
+
+#: 路由召回口径（t33 决策：方案乙「开关式」）。
+#:   identity —— 默认，两阶段硬过滤（主体命中 或 属性命中），行为逐比特不变；
+#:   semantic —— 纯语义 top-k 召回 + **主体身份硬门** + 属性软排序。
+#: 口径本身是论文的机制主张之一，所以做成显式开关而不是悄悄改掉全组基线。
+ROUTER_MODES: Tuple[str, ...] = ('identity', 'semantic')
+DEFAULT_ATTRIBUTE_WEIGHT = 0.15
 
 SemanticKeyFn = Callable[[Any], Optional[Sequence[float]]]
 Ranker = Callable[[Sequence[Any]], List[Tuple[float, Dict[str, Any]]]]
@@ -145,12 +153,75 @@ def stage2_rank(fact: Any, records: Sequence[StateRecord], *,
     return scored
 
 
+def semantic_retrieve(fact: Any, state_index: StateIndex, top_k: int = 5, *,
+                      semantic_key: Optional[Sequence[float]] = None,
+                      aliases: Sequence[str] = (),
+                      min_subject_score: float = DEFAULT_MIN_SUBJECT_SCORE,
+                      attribute_weight: float = DEFAULT_ATTRIBUTE_WEIGHT
+                      ) -> Tuple[List[StateRecord], Dict[str, Any]]:
+    """``router_mode='semantic'``：语义 top-k + 主体硬门 + 属性软排序。
+
+    与 identity 模式的区别只在**候选生成**：不再要求 attribute 身份精确命中
+    （自由问句的 attribute 是组合式描述，与事实的短名词短语天然不相交，硬过滤会
+    把候选池清空 → 静默答空）。主体身份仍是硬门：归一化后匹配不上就一条都不给，
+    避免从别的实体状态里读出答案。
+
+    返回 ``(records, audit)``；audit 记录 mode / 主体门结果 / 语义分与属性分，
+    供逐题审计"这条候选是怎么进来的"。
+    """
+    if not isinstance(state_index, StateIndex):
+        raise TypeError('semantic_retrieve expects a StateIndex')
+    if not isinstance(top_k, int) or isinstance(top_k, bool) or top_k < 1:
+        raise ValueError(f'top_k must be a positive int, got {top_k!r}')
+    records = state_index.records
+    subject = _fact_field(fact, 'subject')
+    attribute_key = normalize_attribute(_fact_field(fact, 'attribute'))
+    gate_key, gate_source, gate_score = match_subject_key(
+        subject, [record.subject_key for record in records], aliases,
+        min_score=min_subject_score)
+    audit: Dict[str, Any] = {
+        'mode': 'semantic',
+        'subject_gate': {'input': subject, 'matched_key': gate_key,
+                         'source': gate_source, 'score': round(float(gate_score), 4),
+                         'passed': gate_key is not None},
+        'n_records': len(records), 'n_gated': 0, 'n_candidates': 0,
+        'semantic_scores': []}
+    if gate_key is None:
+        return [], audit
+    gated = [record for record in records if record.subject_key == gate_key]
+    audit['n_gated'] = len(gated)
+    attribute_tokens = _tokens(attribute_key)
+    scored: List[Tuple[float, float, float, StateRecord]] = []
+    for record in gated:
+        semantic = cosine_similarity(semantic_key, record.semantic_key)
+        semantic = 0.0 if semantic is None else float(semantic)
+        # 属性只作排序信号，不作过滤：整句问句 attribute 与短键的包含度天然偏低，
+        # 一旦拿来当门就会把正确答案一起滤掉。
+        attribute = containment_similarity(attribute_tokens, _tokens(record.attribute_key))
+        scored.append((semantic + float(attribute_weight) * attribute, semantic,
+                       attribute, record))
+    scored.sort(key=lambda item: (-item[0], item[3].state_id))
+    audit['semantic_scores'] = [{'state_id': record.state_id,
+                                 'total': round(total, 4),
+                                 'semantic': round(semantic, 4),
+                                 'attribute': round(attribute, 4)}
+                                for total, semantic, attribute, record in scored[:top_k]]
+    audit['n_candidates'] = min(len(scored), top_k)
+    return [record for _, _, _, record in scored[:top_k]], audit
+
+
 def retrieve_candidates(fact: Any, state_index: StateIndex, top_k: int = 5, *,
                         semantic_key: Optional[Sequence[float]] = None,
                         semantic_key_fn: Optional[SemanticKeyFn] = None,
                         ranker: Optional[Ranker] = None,
                         allow_lexical_subject_fallback: bool = True,
-                        min_lexical_overlap: float = 0.6) -> List[StateRecord]:
+                        min_lexical_overlap: float = 0.6,
+                        router_mode: str = 'identity',
+                        aliases: Sequence[str] = (),
+                        min_subject_score: float = DEFAULT_MIN_SUBJECT_SCORE,
+                        attribute_weight: float = DEFAULT_ATTRIBUTE_WEIGHT,
+                        audit: Optional[Dict[str, Any]] = None
+                        ) -> List[StateRecord]:
     """两阶段候选检索：先硬过滤，再用语义键余弦辅助排序，返回 top_k 条。
 
     精确身份（subject_key, attribute_key 完全相同）命中时**无条件进入候选并排在最前**：
@@ -160,8 +231,18 @@ def retrieve_candidates(fact: Any, state_index: StateIndex, top_k: int = 5, *,
     """
     if not isinstance(state_index, StateIndex):
         raise TypeError('retrieve_candidates expects a StateIndex')
+    if router_mode not in ROUTER_MODES:
+        raise ValueError(f'router_mode must be one of {ROUTER_MODES}, got {router_mode!r}')
     if not isinstance(top_k, int) or isinstance(top_k, bool) or top_k < 1:
         raise ValueError(f'top_k must be a positive int, got {top_k!r}')
+    if router_mode == 'semantic':
+        records, report = semantic_retrieve(
+            fact, state_index, top_k=top_k, semantic_key=semantic_key, aliases=aliases,
+            min_subject_score=min_subject_score, attribute_weight=attribute_weight)
+        if audit is not None:
+            audit.clear()
+            audit.update(report)
+        return records
     exact = state_index.find(_fact_field(fact, 'subject'), _fact_field(fact, 'attribute'))
     pool = stage1_filter(fact, state_index,
                          allow_lexical_subject_fallback=allow_lexical_subject_fallback,
@@ -195,22 +276,37 @@ class StateRouter:
     def __init__(self, *, semantic_key_fn: Optional[SemanticKeyFn] = None,
                  ranker: Optional[Ranker] = None, top_k: int = 5,
                  allow_lexical_subject_fallback: bool = True,
-                 min_lexical_overlap: float = 0.6) -> None:
+                 min_lexical_overlap: float = 0.6,
+                 router_mode: str = 'identity',
+                 min_subject_score: float = DEFAULT_MIN_SUBJECT_SCORE,
+                 attribute_weight: float = DEFAULT_ATTRIBUTE_WEIGHT) -> None:
+        if router_mode not in ROUTER_MODES:
+            raise ValueError(f'router_mode must be one of {ROUTER_MODES}, got {router_mode!r}')
         self.semantic_key_fn = semantic_key_fn
         self.ranker = ranker
         self.top_k = int(top_k)
         self.allow_lexical_subject_fallback = allow_lexical_subject_fallback
         self.min_lexical_overlap = float(min_lexical_overlap)
+        self.router_mode = router_mode
+        self.min_subject_score = float(min_subject_score)
+        self.attribute_weight = float(attribute_weight)
+        #: 最近一次检索的审计（semantic 模式填 subject_gate / semantic_scores）。
+        self.last_retrieval_audit: Dict[str, Any] = {}
 
     def retrieve_candidates(self, fact: Any, state_index: StateIndex,
                             top_k: Optional[int] = None,
-                            semantic_key: Optional[Sequence[float]] = None) -> List[StateRecord]:
+                            semantic_key: Optional[Sequence[float]] = None,
+                            aliases: Sequence[str] = ()) -> List[StateRecord]:
         return retrieve_candidates(
             fact, state_index, top_k=self.top_k if top_k is None else top_k,
             semantic_key=semantic_key, semantic_key_fn=self.semantic_key_fn,
             ranker=self.ranker,
             allow_lexical_subject_fallback=self.allow_lexical_subject_fallback,
-            min_lexical_overlap=self.min_lexical_overlap)
+            min_lexical_overlap=self.min_lexical_overlap,
+            router_mode=self.router_mode, aliases=aliases,
+            min_subject_score=self.min_subject_score,
+            attribute_weight=self.attribute_weight,
+            audit=self.last_retrieval_audit)
 
     def route(self, fact: Any, state_index: StateIndex, resolver: Any,
               top_k: Optional[int] = None,
@@ -225,6 +321,8 @@ class StateRouter:
 
 
 __all__ = [
+    'DEFAULT_ATTRIBUTE_WEIGHT',
+    'ROUTER_MODES',
     'Ranker',
     'SemanticKeyFn',
     'StateRouter',
@@ -233,6 +331,7 @@ __all__ = [
     'lexical_similarity',
     'retrieve_candidates',
     'route',
+    'semantic_retrieve',
     'stage1_filter',
     'stage2_rank',
 ]

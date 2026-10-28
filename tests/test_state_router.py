@@ -9,6 +9,7 @@ from vcrm.data_views import assert_no_oracle
 from vcrm.fact_schema import AtomicFact
 from vcrm.state_index import SEMANTIC_DIMENSIONS, StateIndex
 from vcrm.state_router import (
+    ROUTER_MODES,
     StateRouter,
     cosine_similarity,
     retrieve_candidates,
@@ -197,6 +198,78 @@ class RouterClassTest(unittest.TestCase):
     def test_route_returns_state_decision_type(self):
         decision = route(make_fact('France', 'capital', 'Lyon'), self.index, self.resolver)
         self.assertIn(decision.action, ('CREATE', 'UPDATE', 'DUPLICATE', 'DEFER'))
+
+
+class SemanticRouterModeTest(unittest.TestCase):
+    """t33 方案乙：router_mode='semantic' 只换候选生成口径，identity 默认零改动。
+
+    现场问题（gpu_smoke2）：自由问句的 attribute 是组合式描述
+    （'wait_time_for_asylum_decision'），写入侧事实的 attribute 是短名词短语
+    （'wait_time'），identity 模式的 attribute 硬过滤把候选池清空 → 静默答空。
+    """
+
+    def setUp(self):
+        self.index = StateIndex()
+        self.index.add_keys('user', 'wait_time', '14 months', semantic_key=unit_key(0))
+        self.index.add_keys('user', 'employer', 'Acme', semantic_key=unit_key(1))
+        self.index.add_keys('1997 jeep wrangler', 'engine_type', '4.0L', semantic_key=unit_key(2))
+        # GPU 现场形态：问句主体是代词 'I'（归一化 'i'），写入侧主体是 'user'；
+        # attribute 是组合式描述，写入侧是短键 'wait_time'。
+        self.query = make_fact('I', 'wait time for asylum decision', '')
+
+    def test_semantic_mode_survives_disjoint_attribute(self):
+        identity = retrieve_candidates(self.query, self.index, top_k=5)
+        semantic = retrieve_candidates(self.query, self.index, top_k=5,
+                                       router_mode='semantic', semantic_key=unit_key(0))
+        self.assertEqual(identity, [])                 # 失败基线：主体对不上 + 属性不相交 → 池空
+        self.assertTrue(semantic)                      # 语义模式经 user_alias 门拿到候选
+        self.assertEqual(semantic[0].attribute_key, 'wait_time')   # 属性软排序把它排最前
+
+    def test_semantic_mode_subject_gate_is_hard(self):
+        stranger = make_fact('totally unrelated entity', 'wait time for asylum decision', '')
+        semantic = retrieve_candidates(stranger, self.index, top_k=5,
+                                       router_mode='semantic', semantic_key=unit_key(0))
+        self.assertEqual(semantic, [])                 # 主体门失败 → 一条都不给
+
+    def test_semantic_mode_user_alias_gate(self):
+        """代词主体经 user_alias 归一化后仍能过门（与对齐层同一套归一化）。"""
+        semantic = retrieve_candidates(self.query, self.index, top_k=5,
+                                       router_mode='semantic', semantic_key=unit_key(0))
+        self.assertTrue(semantic)
+        self.assertEqual({record.subject_key for record in semantic}, {'user'})
+
+    def test_semantic_mode_audit_records_gate_and_scores(self):
+        router = StateRouter(top_k=5, router_mode='semantic')
+        records = router.retrieve_candidates(self.query, self.index,
+                                            semantic_key=unit_key(0))
+        self.assertTrue(records)
+        audit = router.last_retrieval_audit
+        self.assertEqual(audit['mode'], 'semantic')
+        self.assertTrue(audit['subject_gate']['passed'])
+        self.assertEqual(audit['subject_gate']['matched_key'], 'user')
+        self.assertEqual(audit['n_candidates'], len(records))
+        self.assertLessEqual(len(audit['semantic_scores']), 5)
+        for field in ('total', 'semantic', 'attribute'):
+            self.assertIn(field, audit['semantic_scores'][0])
+
+    def test_identity_mode_remains_default_and_unchanged(self):
+        router = StateRouter(top_k=5)
+        self.assertEqual(router.router_mode, 'identity')
+        # identity 模式保留「同主体不同属性」候选（既有契约），代词主体则一条不给
+        self.assertEqual(router.retrieve_candidates(self.query, self.index), [])
+        self.assertTrue(router.retrieve_candidates(
+            make_fact('user', 'wait time for asylum decision', ''), self.index))
+        self.assertEqual(router.last_retrieval_audit, {})     # identity 不写审计
+        self.assertEqual(ROUTER_MODES, ('identity', 'semantic'))
+        with self.assertRaises(ValueError):
+            StateRouter(router_mode='fuzzy')
+
+    def test_semantic_mode_keeps_exact_identity_guarantee(self):
+        """同主体同属性仍必须进候选（否则 resolver 会误判 CREATE 撞 build_record）。"""
+        fact = make_fact('user', 'employer', '')
+        router = StateRouter(top_k=1, router_mode='semantic')
+        records = router.retrieve_candidates(fact, self.index, semantic_key=unit_key(1))
+        self.assertIn('employer', [record.attribute_key for record in records])
 
 
 if __name__ == '__main__':

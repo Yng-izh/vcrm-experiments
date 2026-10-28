@@ -50,8 +50,15 @@ List every lookup key needed to answer it, most important first. For a multi-hop
 or multi-fact question, list one key per hop / per fact instead of merging them.
 Use the literal entity name from the question. Never put the answer in a key.
 
+If the question is about the person asking ("I", "my", "me", "we"), keep the
+subject exactly as written ("I") and ALSO list "subject_aliases": the other names
+that same entity may be stored under in memory (typically "user"). Aliases never
+replace the subject — they are extra candidates, because the memory may have
+recorded the same entity under a different surface form.
+
 Respond with exactly:
-{{"identities": [{{"subject": "...", "attribute": "...", "confidence": 0.0}}]}}
+{{"identities": [{{"subject": "...", "attribute": "...", "confidence": 0.0,
+                  "subject_aliases": ["..."]}}]}}
 
 If the question cannot be mapped to any (subject, attribute) pair, return
 {{"identities": []}}.
@@ -87,7 +94,8 @@ class LLMQueryParser:
     """
 
     def __init__(self, client: Optional[LLMClient] = None, *, max_identities: int = 3,
-                 min_confidence: float = 0.0, max_tokens: int = 512) -> None:
+                 min_confidence: float = 0.0, max_tokens: int = 512,
+                 aligner: Any = None) -> None:
         if int(max_identities) < 1:
             raise ValueError('max_identities must be >= 1')
         if not 0.0 <= float(min_confidence) <= 1.0:
@@ -98,20 +106,26 @@ class LLMQueryParser:
         self.max_tokens = int(max_tokens)
         self.last_raw_response: Optional[str] = None
         self.last_truncated = 0
+        # 键空间对齐层（t32 blocker）：把模型给的身份对齐到写入侧真实状态键。
+        # None = 不对齐（既有行为，逐比特不变）；由调用方注入并按 episode 重新 bind。
+        self.aligner = aligner
+        self.last_alignment: List[Dict[str, Any]] = []
 
     # -- 与 QueryParser 相同的入口 ----------------------------------------
     def parse(self, question: str) -> Dict[str, Any]:
         """单身份口径：取置信度最高的那一个，供既有评测路径直接替换使用。"""
         result = self.parse_multi(question)
         identities = result.get('identities') or []
+        alignment = result.get('alignment') or []
         if not identities:
             return {'resolved': False, 'question': result['question'],
                     'subject': UNRESOLVED_SUBJECT, 'attribute': UNRESOLVED_ATTRIBUTE,
                     'reason': result.get('reason') or 'unresolved_identity',
-                    'identities': []}
+                    'identities': [], 'alignment': alignment}
         subject, attribute = identities[0]
         return {'resolved': True, 'question': result['question'], 'subject': subject,
-                'attribute': attribute, 'reason': '', 'identities': identities}
+                'attribute': attribute, 'reason': '', 'identities': identities,
+                'alignment': alignment}
 
     def parse_multi(self, question: str) -> Dict[str, Any]:
         """多身份口径：返回 ``identities`` 列表（多跳/多事实问题不合并）。"""
@@ -137,6 +151,7 @@ class LLMQueryParser:
                     'subject': UNRESOLVED_SUBJECT, 'attribute': UNRESOLVED_ATTRIBUTE,
                     'reason': 'llm_parse_failed', 'identities': []}
         identities: List[Tuple[str, str]] = []
+        aliases: List[List[str]] = []
         seen = set()
         for item in _identity_items(payload):
             subject = str(item.get('subject') or '').strip()
@@ -154,9 +169,18 @@ class LLMQueryParser:
                 continue
             seen.add(key)
             identities.append((subject, normalize_attribute(attribute)))
+            aliases.append([str(alias).strip() for alias in
+                            (item.get('subject_aliases') or item.get('aliases') or [])
+                            if str(alias).strip()])
         if len(identities) > self.max_identities:
             self.last_truncated = len(identities) - self.max_identities
-            identities = identities[:self.max_identities]
+            identities, aliases = identities[:self.max_identities], aliases[:self.max_identities]
+        self.last_alignment = []
+        if self.aligner is not None and identities:
+            aligned, report = self.aligner.align(identities, aliases=aliases)
+            self.last_alignment = report
+            if aligned:                       # 全 unmatched 时保留原身份，绝不吞掉
+                identities = aligned
         if not identities:
             return {'resolved': False, 'question': question,
                     'subject': UNRESOLVED_SUBJECT, 'attribute': UNRESOLVED_ATTRIBUTE,
@@ -164,7 +188,7 @@ class LLMQueryParser:
         subject, attribute = identities[0]
         return {'resolved': True, 'question': question, 'subject': subject,
                 'attribute': attribute, 'reason': '', 'identities': identities,
-                'truncated': self.last_truncated}
+                'truncated': self.last_truncated, 'alignment': self.last_alignment}
 
 
 __all__ = [

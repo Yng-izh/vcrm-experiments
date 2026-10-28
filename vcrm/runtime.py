@@ -595,6 +595,9 @@ class PredictedRuntime:
                 'time_source': view['time_source'], 'hybrid_fallback': False,
                 'read_mode': read_mode, 'observation_cutoff': observation_cutoff,
                 'parsed_subject': parsed['subject'], 'parsed_attribute': parsed['attribute']}
+        if getattr(self.router, 'router_mode', 'identity') == 'semantic':
+            # 只在 semantic 模式暴露审计字段：identity 模式的返回结构保持原样。
+            base['router_mode'] = 'semantic'
         if not parsed['resolved']:
             return base | {'answer': '', 'state_id': None, 'candidates': [],
                            'no_state_match': True, 'selected_version_id': None,
@@ -615,9 +618,23 @@ class PredictedRuntime:
         # 语义相似 ≠ 状态身份相同：候选池刻意保留「同属性、不同主体」的状态（stage1
         # 的硬过滤口径），所以读取前必须核对规范化后的 (subject, attribute)。
         # 不加这一步就会从别的实体的状态里读出答案，而且这种错误不会体现在召回里。
-        identity_matched = [record for record in candidates
-                            if record.matches_subject(fact.subject)
-                            and record.matches_attribute(fact.attribute)]
+        router_mode = getattr(self.router, 'router_mode', 'identity')
+        attribute_fallback = False
+        if router_mode == 'semantic':
+            # semantic 路由已用**主体硬门**筛过候选（见 StateRouter.semantic_retrieve），
+            # 所以读取前不再要求 attribute 字符串相等：自由问句的 attribute 是组合式
+            # 描述，与事实短键天然不相交，用它对候选做否决会把语义相似度 0.9+ 的
+            # 正确候选全杀掉（gpu_smoke3 现场）。attribute 不匹配时保留读取，但逐题
+            # 记 attribute_fallback=True 供审计；是否 no_state_match 只由主体门决定。
+            gate = (getattr(self.router, 'last_retrieval_audit', {}) or {}).get(
+                'subject_gate') or {}
+            identity_matched = list(candidates) if gate.get('passed') else []
+            attribute_fallback = bool(identity_matched) and not any(
+                record.matches_attribute(fact.attribute) for record in identity_matched)
+        else:
+            identity_matched = [record for record in candidates
+                                if record.matches_subject(fact.subject)
+                                and record.matches_attribute(fact.attribute)]
         if self.multi_state:
             identity_matched = self._extend_identities(
                 identity_matched, parsed, semantic_key, fact)
@@ -634,6 +651,8 @@ class PredictedRuntime:
                 break
         if selected is None:
             result = base | {'answer': '', 'state_id': None, 'candidates': ranking,
+                             **({'attribute_fallback': attribute_fallback}
+                                if router_mode == 'semantic' else {}),
                              'identity_matched_state_ids':
                                  [record.state_id for record in identity_matched],
                              'no_state_match': True, 'selected_version_id': None,
@@ -645,6 +664,8 @@ class PredictedRuntime:
                                    'hybrid_fallback': True,
                                    'fallback': 'no_memory_parametric'}
             return result
+        attribute_audit = ({'attribute_fallback': attribute_fallback}
+                           if router_mode == 'semantic' else {})
         if self.multi_state:
             # 多跳/多事实问题：一个 (subject, attribute) 装不下，允许多个状态一起读。
             multi = self._read_multi_state(identity_matched, reader_query, read_mode,
@@ -654,7 +675,7 @@ class PredictedRuntime:
                 return base | {'candidates': ranking,
                                'identity_matched_state_ids':
                                    [record.state_id for record in identity_matched],
-                               'timings': timings} | multi
+                               'timings': timings} | attribute_audit | multi
         read = self.read_state(chosen.state_id, view, target_time=target_time,
                                selected=selected, reader_query=reader_query,
                                read_mode=read_mode, observation_cutoff=observation_cutoff)
@@ -662,7 +683,7 @@ class PredictedRuntime:
         return base | {'candidates': ranking,
                        'identity_matched_state_ids':
                            [record.state_id for record in identity_matched],
-                       'timings': timings} | read
+                       'timings': timings} | attribute_audit | read
 
     def _extend_identities(self, matched, parsed, semantic_key, fact):
         """把查询解析器给出的**额外**身份也检索一遍（多跳/多事实问题）。

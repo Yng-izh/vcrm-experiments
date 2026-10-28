@@ -78,6 +78,7 @@ from vcrm.index import SemanticIndex
 from vcrm.io import read_records, write_json
 from vcrm.metrics import exact, f1 as token_f1, normalize
 from vcrm.query_time import QueryTimeResolver, TIME_ANCHORS
+from vcrm.query_alignment import StateVocabularyAligner
 from vcrm.runtime import PredictedRuntime, build_frontend
 from vcrm.state_index import SEMANTIC_DIMENSIONS, StateIndex, normalize_subject
 from vcrm.state_router import StateRouter
@@ -219,13 +220,20 @@ def new_runtime(args: argparse.Namespace, components: Components) -> PredictedRu
     resolver = UpdateResolver(recency_update=bool(args.recency_update),
                               recency_min_confidence=float(args.recency_min_confidence))
     frontend = getattr(args, 'frontend', 'rules')
-    parser_kwargs = ({'max_identities': int(getattr(args, 'max_query_states', 3))}
+    # T32-F1：llm 前端的查询身份必须对齐到写入侧真实状态键空间，否则
+    # subject='I' 与 subject='1997 jeep wrangler' 永不相交 → 静默答空。
+    parser_kwargs = ({'max_identities': int(getattr(args, 'max_query_states', 3)),
+                      'aligner': StateVocabularyAligner()}
                      if frontend == 'llm' else {})
     extractor, query_parser = build_frontend(
         frontend, llm_client=build_llm_client(args),
         query_parser_kwargs=parser_kwargs)
+    state_index = StateIndex()
+    aligner = getattr(query_parser, 'aligner', None)
+    if aligner is not None:               # 每题独立 runtime → 逐题重建词表
+        aligner.bind(state_index)
     return PredictedRuntime(components.reader, components.codec, components.markers,
-                            components.index, store, StateIndex(),
+                            components.index, store, state_index,
                             router=StateRouter(top_k=args.top_k), resolver=resolver,
                             extractor=extractor, query_parser=query_parser,
                             time_mode='window_end', allow_as_of=False,
