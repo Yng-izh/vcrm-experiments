@@ -249,9 +249,17 @@ def episode_to_item(episode: Episode) -> Dict[str, Any]:
 # latent 组（C / D）与 B 的写入端
 # ---------------------------------------------------------------------------
 class Components:
-    def __init__(self, reader: Any, codec: Any, markers: Any, index: Any, label: str) -> None:
+    def __init__(self, reader: Any, codec: Any, markers: Any, index: Any, label: str,
+                 checkpoint_root: Optional[str] = None,
+                 checkpoint_requested: Optional[str] = None) -> None:
         self.reader, self.codec, self.markers, self.index = reader, codec, markers, index
         self.label = label
+        #: 实际加载权重所在的目录（--checkpoint 或 VCRM_TRAINING_ROOT 或 v6_loader 默认）。
+        #: 曾经的问题：--checkpoint 只被 sha256 一下写进 summary，真实权重却由
+        #: v6_loader / VCRM_TRAINING_ROOT 决定，两者不一致时结果无法归因。现在这个
+        #: 字段是**权威来源**，并且会被写进每一行 row 的 config 快照。
+        self.checkpoint_root = checkpoint_root
+        self.checkpoint_requested = checkpoint_requested
 
 
 def build_components(args: argparse.Namespace) -> Components:
@@ -269,16 +277,44 @@ def build_components(args: argparse.Namespace) -> Components:
     spec = importlib.util.spec_from_file_location('vcrm_main_eval_v6_loader', path)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
-    config, training_root, _ = module.load_v6(args.arch_exp)
-    # 与 probe/run_state_eval.build_components 参考实现逐行对齐（T32-F4）：
-    # ① VCRM_TRAINING_ROOT 覆盖默认训练目录；② 挂批量编码（reader.py 受 sha256
-    # 锁定不改文件，只把批量编码挂到实例上；不挂则退回逐条编码，~10 分钟/题）。
-    training_root = os.environ.get('VCRM_TRAINING_ROOT', training_root)
+    config, default_root, _ = module.load_v6(args.arch_exp)
+    training_root = resolve_training_root(args, default_root, module)
     runtime = SlotMemoryRuntime.from_checkpoint(config, training_root)
     from vcrm.reader_batch import attach_batch_encode
-    attach_batch_encode(runtime.reader)
+    attach_batch_encode(runtime.reader)          # reader.py 受 sha256 锁定，只挂实例
+    args.checkpoint_resolved = training_root     # 进 config 快照（可归因）
     return Components(runtime.reader, runtime.codec, runtime.markers, runtime.index,
-                      f'icae+checkpoint:{training_root}')
+                      f'icae+checkpoint:{training_root}', checkpoint_root=training_root,
+                      checkpoint_requested=getattr(args, 'checkpoint', None))
+
+
+def resolve_training_root(args: argparse.Namespace, default_root: str, module: Any) -> str:
+    """决定**真正加载哪份权重**，并在冲突时大声失败（不再静默错配）。
+
+    旧行为的真实风险：``--checkpoint`` 只被 ``sha256_of`` 一下写进 summary，权重却
+    由 ``probe/v6_loader.load_v6`` 的默认目录（E3）或 ``VCRM_TRAINING_ROOT`` 决定。
+    于是"报告里的 checkpoint"与"跑出来的权重"可以完全不是同一份。
+
+    现在的优先级（第一个显式来源胜出）：``--checkpoint`` > ``VCRM_TRAINING_ROOT``
+    > ``v6_loader`` 的默认训练目录。若两个显式来源同时存在且不一致 → 直接报错
+    （除非显式 ``--allow-checkpoint-mismatch``），并把最终目录写进 row 的 config。
+    """
+    requested = getattr(args, 'checkpoint', None)
+    env_root = os.environ.get('VCRM_TRAINING_ROOT')
+    chosen = requested or env_root or default_root
+    chosen = str(Path(chosen).expanduser().resolve())
+    if requested and env_root:
+        env_path = Path(env_root).expanduser()
+        if env_path.exists() and env_path.resolve() != chosen:
+            message = (f'--checkpoint {chosen} 与 VCRM_TRAINING_ROOT {env_path.resolve()} '
+                       f'不一致：权重只会从 --checkpoint 加载，但环境变量会误导复现')
+            if not getattr(args, 'allow_checkpoint_mismatch', False):
+                raise SystemExit(message + '；确需如此请加 --allow-checkpoint-mismatch')
+            print(f'[main-eval] WARNING {message}', flush=True)
+    if not Path(chosen, 'manifest.json').exists():
+        raise SystemExit(f'checkpoint 目录 {chosen} 缺少 manifest.json —— 拒绝加载，'
+                         '避免把"没训练好的目录"当成冻结权重')
+    return chosen
 
 
 def build_frontend_pair(args: argparse.Namespace) -> Tuple[Any, Any, Any]:
@@ -321,7 +357,18 @@ def new_runtime(args: argparse.Namespace, components: Components,
                             hybrid_fallback=bool(args.hybrid_fallback),
                             defer_store_memory=bool(args.defer_store_memory),
                             as_of_future_fallback=False,      # LongMemEval：window_end 是硬上界
-                            read_mode=read_mode, top_k=args.top_k)
+                            read_mode=read_mode, top_k=args.top_k,
+                            # P1：多状态读取 + 证据优先（两个开关都可单独关掉做消融）
+                            multi_state=bool(getattr(args, 'multi_state', False)),
+                            max_query_states=int(getattr(args, 'max_query_states', 3)),
+                            evidence_first=bool(getattr(args, 'evidence_first', False)),
+                            evidence_top_k=int(getattr(args, 'evidence_top_k', 4)),
+                            evidence_context_turns=int(getattr(args, 'evidence_context_turns', 1)),
+                            evidence_max_units_per_session=int(
+                                getattr(args, 'evidence_max_units_per_session', 12)),
+                            # P2：历史目标时刻写进题面（与训练同一口径）
+                            target_in_question=(
+                                getattr(args, 'time_semantics', 'unified') == 'unified'))
 
 
 def decision_counts(ledger: Sequence[Mapping[str, Any]]) -> Dict[str, int]:
@@ -363,14 +410,26 @@ def write_episode(runtime: PredictedRuntime, episode: Episode) -> Dict[str, Any]
 
 def resolve_window(args: argparse.Namespace, episode: Episode,
                    resolver: QueryTimeResolver) -> Any:
-    """cutoff（t25）：默认 question_date；历史锚只经 QueryTimeResolver 折算。"""
+    """把一次查询拆成「目标时间」与「观测截止」两条边界（P2 统一口径）。
+
+    unified（默认）：``target_time`` 只来自问题文本的历史锚（没有则 None = 读最新
+    可见版本），``observation_cutoff`` = question_date。两者分别喂给
+    ``answer_predicted(window_end=..., observation_cutoff=...)``，与训练侧
+    ``vcrm.training.trajectory_samples`` 的时间语义一致。
+
+    legacy：旧行为——历史锚直接被当成 ``window_end``，同时不再传
+    ``observation_cutoff``（= 无可见性截止），历史年份被渲染成 reader 的
+    ``Current date``。保留它只为复现 t34 之前的数字。
+    """
     asked_at = episode.question_date
-    resolution = resolver.resolve(episode.question, asked_at=asked_at)
-    if args.cutoff_source == 'question_date':
-        window_end = resolution.window_end
-    else:                                                # pragma: no cover - 未来口径
+    if args.cutoff_source != 'question_date':            # pragma: no cover - 未来口径
         raise ValueError(f'unsupported cutoff source: {args.cutoff_source!r}')
-    return resolution, window_end
+    if getattr(args, 'time_semantics', 'unified') == 'legacy':
+        resolution = resolver.resolve(episode.question, asked_at=asked_at)
+        return resolution, resolution.window_end, None
+    bounds = resolver.resolve_bounds(episode.question, asked_at=asked_at)
+    resolution = resolver.resolve(episode.question, asked_at=asked_at)
+    return resolution, bounds.target_time, bounds.observation_cutoff
 
 
 # ---------------------------------------------------------------------------
@@ -412,36 +471,52 @@ def run_state_text_group(args: argparse.Namespace, episode: Episode, components:
     """B：关联层选状态/版本，读**原始 session 文本**给文本 reader。"""
     runtime = new_runtime(args, components, extractor, query_parser, 'pair')
     written = write_episode(runtime, episode)
-    resolution, window_end = resolve_window(args, episode, resolver)
+    resolution, target_time, observation_cutoff = resolve_window(args, episode, resolver)
     parsed = runtime.query_parser.parse(episode.question)
     chosen: List[Mapping[str, Any]] = []
     selected_version = None
     state_id = None
+    reader_query = runtime._reader_query(
+        {'question': episode.question, 'time': target_time, 'time_source': 'window_end'},
+        observation_time=observation_cutoff, target_time=target_time)
     if parsed['resolved']:
         from vcrm.fact_schema import AtomicFact
         query_fact = AtomicFact(id='query', text=episode.question,
-                                observed_at=window_end or 'unknown',
+                                observed_at=target_time or 'unknown',
                                 subject=parsed['subject'], attribute=parsed['attribute'],
                                 value='', source_id='query')
         semantic_key = runtime.index.key(
-            runtime.reader.encode(runtime.reader.question({'question': episode.question,
-                                                           'time': window_end})))
+            runtime.reader.encode(runtime.reader.question(reader_query)))
         for record in runtime.router.retrieve_candidates(
                 query_fact, runtime.state_index, semantic_key=semantic_key):
-            candidate = runtime.store.select_version(record.state_id, window_end)
+            candidate = runtime.store.select_version(record.state_id, target_time)
             if candidate is not None:
                 state_id, selected_version = record.state_id, candidate
                 break
+    wanted: set = set()
     if selected_version is not None:
-        wanted = {entry['session_id'] for entry in written['ledger']
-                  if entry['version_id'] == selected_version['id']}
+        wanted |= {entry['session_id'] for entry in written['ledger']
+                   if entry['version_id'] == selected_version['id']}
+    # B 组也享受 P0/P1 的证据层：状态没命中时不再"空上下文 → 参数化幻觉"，
+    # 而是把证据检索到的原始 session 交给文本 reader。
+    evidence_units = []
+    if bool(getattr(args, 'evidence_first', False)) and int(getattr(args, 'evidence_top_k', 0)):
+        hits = runtime.evidence.retrieve(
+            episode.question, k=int(args.evidence_top_k),
+            subject=parsed.get('subject'), attribute=parsed.get('attribute'),
+            observed_until=observation_cutoff)
+        evidence_units = [unit for _, unit in hits]
+        wanted |= set(runtime.evidence.session_ids(evidence_units))
+    if wanted:
         chosen = [session for session in episode.sessions
                   if session.session_id in wanted]
     write_bytes = int(runtime.store.accounting()['total_bytes'])
     extra = {'state_id': state_id,
              'selected_version_id': (selected_version or {}).get('id'),
              'read_session_ids': [session.session_id for session in chosen],
-             'no_state_match': selected_version is None,
+             'no_state_match': selected_version is None and not evidence_units,
+             'evidence_units': len(evidence_units),
+             'evidence_session_ids': runtime.evidence.session_ids(evidence_units),
              'parametric_only': False,
              'alignment': getattr(query_parser, 'last_alignment', []),
              'decision_counts': decision_counts(written['ledger']),
@@ -456,7 +531,8 @@ def run_state_text_group(args: argparse.Namespace, episode: Episode, components:
         return {'answer': '', 'read_slots': None, 'input_tokens': 0,
                 'write_bytes': write_bytes, 'write_seconds': written['write_seconds'],
                 'read_seconds': 0.0, 'extra': extra,
-                'resolution': resolution, 'window_end': window_end}
+                'resolution': resolution, 'window_end': target_time,
+                'observation_cutoff': observation_cutoff}
     prompt = render_text_prompt(episode.question, [
         {'date': session.date, 'text': session.text} for session in chosen])
     reply = answerer.answer(prompt)
@@ -467,7 +543,8 @@ def run_state_text_group(args: argparse.Namespace, episode: Episode, components:
             'write_seconds': written['write_seconds'],
             'read_seconds': float(reply.get('seconds') or 0.0),
             'extra': extra,
-            'resolution': resolution, 'window_end': window_end}
+            'resolution': resolution, 'window_end': target_time,
+            'observation_cutoff': observation_cutoff}
 
 
 def run_latent_group(args: argparse.Namespace, episode: Episode, components: Components,
@@ -476,9 +553,11 @@ def run_latent_group(args: argparse.Namespace, episode: Episode, components: Com
     """C/D：latent 写入 + latent 读取（唯一变量 = read_mode）。"""
     runtime = new_runtime(args, components, extractor, query_parser, read_mode)
     written = write_episode(runtime, episode)
-    resolution, window_end = resolve_window(args, episode, resolver)
-    result = runtime.answer_predicted({'question': episode.question}, window_end=window_end)
+    resolution, target_time, observation_cutoff = resolve_window(args, episode, resolver)
+    result = runtime.answer_predicted({'question': episode.question}, window_end=target_time,
+                                      observation_cutoff=observation_cutoff)
     timings = result.get('timings') or {}
+    evidence_stats = runtime.evidence.stats()
     return {'answer': str(result.get('answer') or ''),
             'read_slots': int(result.get('read_latent_slots') or 0),
             'input_tokens': None,
@@ -497,8 +576,19 @@ def run_latent_group(args: argparse.Namespace, episode: Episode, components: Com
                       'state_count': len(runtime.state_index.records),
                       'retrieval_audit': getattr(runtime.router, 'last_retrieval_audit', {}),
                       'attribute_fallback': bool(result.get('attribute_fallback')),
+                      'multi_state': bool(result.get('multi_state')),
+                      'multi_state_ids': result.get('multi_state_ids') or [],
+                      'bundle_version_ids': result.get('bundle_version_ids') or [],
+                      'bundle_evidence_ids': result.get('bundle_evidence_ids') or [],
+                      'evidence_latent_slots': int(result.get('evidence_latent_slots') or 0),
+                      'evidence_first': bool(result.get('evidence_first')),
+                      'evidence_units': int(result.get('evidence_units') or 0),
+                      'evidence_state_ids': result.get('evidence_state_ids') or [],
+                      'evidence_only_read': bool(result.get('evidence_only_read')),
+                      'evidence_stats': evidence_stats,
                       'n_facts': len(written['ledger'])},
-            'resolution': resolution, 'window_end': window_end}
+            'resolution': resolution, 'window_end': target_time,
+            'observation_cutoff': observation_cutoff}
 
 
 # ---------------------------------------------------------------------------
@@ -523,8 +613,12 @@ def prediction_row(args: argparse.Namespace, episode: Episode, outcome: Mapping[
            'write_seconds': float(outcome.get('write_seconds') or 0.0),
            'read_seconds': float(outcome.get('read_seconds') or 0.0),
            'query_time_source': 'window_end',
+           'query_time_semantics': getattr(args, 'time_semantics', 'unified'),
            'query_cutoff_source': args.cutoff_source,
            'query_window_end': outcome.get('window_end'),
+           'query_target_time': outcome.get('window_end'),
+           'query_observation_cutoff': outcome.get('observation_cutoff'),
+           'checkpoint_resolved': getattr(args, 'checkpoint_resolved', None),
            'query_time_anchor': getattr(resolution, 'time_anchor', None)}
     row.update(outcome.get('extra') or {})
     return row
@@ -536,6 +630,9 @@ def config_snapshot(args: argparse.Namespace) -> Dict[str, Any]:
                 if key not in ('judge_config', 'judge_cache')}
     snapshot['as_of_future_fallback'] = False        # 硬约束，不接受 CLI 覆盖
     snapshot['read_mode'] = GROUP_READ_MODE.get(args.group)
+    # 真正加载权重的目录（--checkpoint > VCRM_TRAINING_ROOT > v6_loader 默认）。
+    # 与 --checkpoint 不同时这里能一眼看出来，避免"报告 checkpoint ≠ 实跑权重"。
+    snapshot['checkpoint_resolved'] = getattr(args, 'checkpoint_resolved', None)
     return snapshot
 
 
@@ -624,6 +721,16 @@ def summarise(args: argparse.Namespace, rows: Sequence[Mapping[str, Any]],
              'write_bytes_equal_across_groups': 'not_comparable',
              'write_bytes_compare_reason': WRITE_BYTES_COMPARE_NOTE,
              'cross_group_anchors': list(COMPARABLE_ANCHORS),
+             'time_semantics': getattr(args, 'time_semantics', 'unified'),
+             'multi_state': bool(getattr(args, 'multi_state', False)),
+             'evidence_first': bool(getattr(args, 'evidence_first', False)),
+             'evidence_top_k': int(getattr(args, 'evidence_top_k', 0)),
+             'checkpoint_resolved': getattr(args, 'checkpoint_resolved', None),
+             'evidence_units_total': sum(int(row.get('evidence_units') or 0) for row in rows),
+             'evidence_in_bundle': sum(1 for row in rows
+                                       if (row.get('bundle_evidence_ids') or [])),
+             'evidence_only_read': sum(1 for row in rows if row.get('evidence_only_read')),
+             'multi_state_reads': sum(1 for row in rows if row.get('multi_state')),
              'parametric_only': sum(1 for row in rows if row.get('parametric_only')),
              'nonempty_answer': sum(1 for row in rows if str(row.get('answer') or '').strip()),
              'llm_cache': (llm_client.stats() if hasattr(llm_client, 'stats') else None),
@@ -695,7 +802,9 @@ def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
                         help='latent 组 reader；icae 需冻结 E3 checkpoint + CUDA（本轮不跑）')
     parser.add_argument('--arch-exp', default='E3', choices=['E1', 'E2', 'E3', 'E4'])
     parser.add_argument('--checkpoint', default=None,
-                        help='冻结 checkpoint 路径（写进 checkpoint_sha256）；不给则记 none')
+                        help='冻结 checkpoint 目录（权威：权重就从这里加载，并写进 '
+                             'checkpoint_sha256 / checkpoint_resolved）；不给则依次退回 '
+                             'VCRM_TRAINING_ROOT 与 v6_loader 默认目录')
     parser.add_argument('--hidden', type=int, default=32)
     parser.add_argument('--memory-slots', type=int, default=8)
     parser.add_argument('--text-reader', choices=['stub', 'vllm'], default='stub')
@@ -719,6 +828,30 @@ def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
     parser.add_argument('--recency-min-confidence', type=float, default=0.0)
     parser.add_argument('--defer-store-memory', action='store_true', default=False)
     parser.add_argument('--hybrid-fallback', action='store_true', default=False)
+    # ---- P0/P1/P2 读取路径改造开关（默认全开；--legacy-read-path 一次性回旧口径）--
+    parser.add_argument('--multi-state', dest='multi_state', action='store_true', default=True,
+                        help='允许多个状态一起读（P1；默认开）：一个 (subject, attribute) '
+                             '装不下的多跳/多事实问题不再答空')
+    parser.add_argument('--no-multi-state', dest='multi_state', action='store_false',
+                        help='关掉多状态读取（= 旧行为）')
+    parser.add_argument('--max-query-states', type=int, default=3)
+    parser.add_argument('--evidence-first', dest='evidence_first', action='store_true',
+                        default=True,
+                        help='查询先检索证据记忆，再让状态索引决定版本（P0/P1；默认开）')
+    parser.add_argument('--no-evidence-first', dest='evidence_first', action='store_false',
+                        help='关掉证据优先读取（= 只走状态路由的旧行为）')
+    parser.add_argument('--evidence-top-k', type=int, default=4)
+    parser.add_argument('--evidence-context-turns', type=int, default=1,
+                        help='证据单元保留几轮上下文（0 = 只留当前轮）')
+    parser.add_argument('--evidence-max-units-per-session', type=int, default=12)
+    parser.add_argument('--time-semantics', choices=['unified', 'legacy'], default='unified',
+                        help='unified（默认）：Current date = 观测截止、历史年份只进题面，'
+                             '与训练同口径；legacy：历史锚直接当 window_end 注入 reader')
+    parser.add_argument('--legacy-read-path', action='store_true', default=False,
+                        help='等价于 --no-multi-state --no-evidence-first --time-semantics legacy，'
+                             '只用于复现改造前的数字')
+    parser.add_argument('--allow-checkpoint-mismatch', action='store_true', default=False,
+                        help='允许 --checkpoint 与 VCRM_TRAINING_ROOT 不一致（默认直接报错）')
     parser.add_argument('--judge-config', default=None,
                         help='给就判分（第二段）；不给则只产出 predictions')
     parser.add_argument('--judge-cache', default=str(REPO_ROOT / 'probe' / 'runs'
@@ -732,9 +865,13 @@ def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
         args.llm_cache_root = str(Path(args.runs_root) / args.tag / 'llm_cache')
     if args.shards < 1:
         parser.error('--shards must be >= 1')
-    if args.reader == 'icae' and not args.checkpoint:
-        parser.error('--reader icae 需要 --checkpoint PATH（否则 checkpoint_sha256 只能是 none，'
-                     '该批结果不可复现/不可审计）')
+    if args.legacy_read_path:
+        args.multi_state, args.evidence_first = False, False
+        args.time_semantics = 'legacy'
+    if args.reader == 'icae' and not args.checkpoint \
+            and not os.environ.get('VCRM_TRAINING_ROOT'):
+        parser.error('--reader icae 需要 --checkpoint PATH 或 VCRM_TRAINING_ROOT'
+                     '（否则无法确定加载的是哪份权重，结果不可复现/不可审计）')
     return args
 
 

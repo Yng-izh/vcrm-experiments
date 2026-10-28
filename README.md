@@ -100,6 +100,21 @@ python3 /tmp/judge_main_eval.py <predictions.jsonl> judge.json <judge_cache> <st
 - 跨 GPU 结果不逐字节可比（不同 GPU 的 `write_bytes` 不稳定）；锚定指标用 `decision_counts` / `state_count`。
 - 共享 `llm_cache` 使崩溃/重启续跑不需重复调用。
 
+## 5.1 记忆/读取路径改造（P0/P1/P2）
+
+四组结果里 D−C 只有 +0.002，说明"版本化"能力没有兑现；归因不是 16-slot 压缩预算，
+而是上游信息组织与读取入口。改造已经落在代码里（默认开启，`--legacy-read-path` 回旧口径）：
+
+- **P0 证据层**（`vcrm/evidence_memory.py`）：会话按轮切成带上下文的证据单元，写入时
+  不看抽取结果；`DEFER` 只表示"版本裁决证据不足"，不再让信息不可读。
+- **P1 读取入口**（`vcrm/runtime.py`）：query → 证据检索 → 状态/版本 → 多证据 bundle →
+  reader；解析不出精确 `(subject, attribute)` 不再直接答空；保留 `StateRouter`。
+- **P2 时间语义**（`vcrm/time_semantics.py` + `vcrm/store.py::select_trajectory`）：
+  target_time 选出的版本保证进 bundle；`Current date` = 观测截止、历史年份只进题面，
+  训练与推理共用同一个提示词构造函数。
+
+细节与待验证假设见 `docs/MEMORY_READ_PATH_REFACTOR.zh.md`。
+
 ## 6. 文档索引
 
 现行：
@@ -116,6 +131,7 @@ python3 /tmp/judge_main_eval.py <predictions.jsonl> judge.json <judge_cache> <st
 - `docs/E3_LEAK_AUDIT.md` — E3 泄漏审计
 - `docs/AUTO_ASSOCIATION_REFACTOR.md` — 自动关联（query_alignment）改造
 - `docs/P2_NO_ORACLE_STATE_WRITE.zh.md`, `docs/store_budget.md` — 无 oracle 写入约束、存储预算
+- `docs/MEMORY_READ_PATH_REFACTOR.zh.md` — 记忆/读取路径改造（P0 证据层、P1 读取入口、P2 时间语义）
 - `results/main_v1/RESULTS.zh.md` — 四组 500 题结果
 
 归档（历史，已冻结）：`docs/archive/{ALIGNED_TRAINING,MATCHED_TRAINING,COMPARISON,REFINEMENT}.zh.md`

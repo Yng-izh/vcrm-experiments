@@ -12,6 +12,7 @@ from torch.nn import functional as F
 from .data import ingestion_view, query_view
 from .io import digest, file_digest, read_json, write_json
 from .metrics import normalize
+from .time_semantics import build_reader_query
 
 
 def adaptation_samples(episodes):
@@ -275,8 +276,11 @@ def trajectory_samples(episodes, *, questions=None, families=None,
                 'question': question, 'answers': question['answers'],
                 # 时间线索必须来自问题文本（与推理完全同构）：年份进题面，
                 # reader 的 "Current date" 槽放观测截止，而不是目标年份。
-                'reader_query': {'question': f"In {old['time'][:4]}: {question['question']}",
-                                 'time': current['time'], 'time_source': 'window_end'},
+                # 构造统一走 vcrm.time_semantics.build_reader_query —— runtime 用的是
+                # 同一个函数，训练/推理的时间口径物理上不可能再漂移（P2）。
+                'reader_query': build_reader_query(
+                    question['question'], target_time=old['time'],
+                    observation_time=current['time'], time_source='window_end'),
                 'negative_answers': negatives, 'latest': latest,
                 'n_versions': len(events)})
     return samples
@@ -410,8 +414,9 @@ def train_trajectory(config, root, stage='markers', init_from=None, limit=None,
                 pair_bundle = trajectory_bundle(
                     markers, codec, [(memory_of(pair['old']), pair['old']['time'])],
                     pair_current, pair['current']['time'])
-                q = {'question': f"In {pair['old']['time'][:4]}: {pair['historical']['question']}",
-                     'time': pair['current']['time'], 'time_source': 'window_end'}
+                q = build_reader_query(
+                    pair['historical']['question'], target_time=pair['old']['time'],
+                    observation_time=pair['current']['time'], time_source='window_end')
                 answer = pair['historical']['answers'][0]
                 student, target = reader.answer_logits(q, answer, pair_bundle)
                 with torch.no_grad():

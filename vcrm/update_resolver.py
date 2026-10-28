@@ -28,6 +28,18 @@ from __future__ import annotations
 # 每个决策的 reason 尾部都带 `|cardinality=<EXCLUSIVE|MULTI_VALUED|UNKNOWN>`，
 # 逐样本可查，便于评测按口径统计。
 #
+# P0 语义修正（DEFER 的职责边界）：
+#   DEFER 是**版本裁决**结论——"这条新陈述不足以改动 (subject, attribute) 的
+#   current 指针"。它**不是**可读性结论。旧实现在这里让整条信息"消失"：没有
+#   state、没有 version，于是读取路径永远看不到它（LongMemEval 的知识更新/多会话
+#   题目恰恰需要这种"当时没定论、后来才被组合出来"的证据）。
+#   现在的分工：
+#     * 版本层：DEFER 仍然不改 Current、不建 version（本模块行为不变）；
+#     * 证据层：原始对话在 vcrm.evidence_memory.EvidenceMemory 里独立可读，
+#       与这里的裁决结果无关（写入时先落证据，见 PredictedRuntime.write_predicted）。
+#   DEFER_IS_VERSION_VERDICT_ONLY 是这条边界的显式标记，供审计/文档引用。
+#
+#
 # 整个模块不读 state_key / key_text / entity / group / answers / latest / episode。
 
 import re
@@ -64,6 +76,9 @@ REPLACEMENT_MARKERS = re.compile(
 SNAPSHOT_PREFIX = re.compile(
     r'^\s*(?:(?:in|during|as\s+of|back\s+in|on|by|for)\s+(?:19|20)\d{2}\b'
     r'|(?:19|20)\d{2}\s*[:,])', re.I)
+
+#: DEFER 只表示"该版本裁决证据不足"，不表示"该信息不可读"（见文件头 P0 注释）。
+DEFER_IS_VERSION_VERDICT_ONLY = True
 
 #: 否定/撤回表达：一律 DEFER，不做覆盖也不做合并。
 NEGATION_MARKERS = re.compile(

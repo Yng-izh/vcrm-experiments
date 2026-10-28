@@ -15,6 +15,7 @@ from .data_views import (
     assert_no_oracle,
     public_query,
 )
+from .evidence_memory import EvidenceMemory, EvidenceUnit
 from .fact_extractor import (
     UNKNOWN_TIME,
     UNRESOLVED_ATTRIBUTE,
@@ -35,6 +36,7 @@ from .state_index import (
 from .state_router import StateRouter, cosine_similarity
 from .store import CurrentSnapshotStore, IncrementalCurrentStore, KeyframeStore
 from .streaming import SpanWriter
+from .time_semantics import build_reader_query
 from .update_resolver import UpdateResolver
 
 
@@ -313,7 +315,12 @@ class PredictedRuntime:
                  top_k: int = 5, as_of_future_fallback: bool = True,
                  frontend: str = 'rules', llm_client: Any = None,
                  read_mode: str = 'pair', multi_state: bool = False,
-                 max_query_states: int = 3) -> None:
+                 max_query_states: int = 3,
+                 evidence: Optional[EvidenceMemory] = None,
+                 evidence_first: bool = False, evidence_top_k: int = 4,
+                 evidence_context_turns: int = 1,
+                 evidence_max_units_per_session: int = 12,
+                 target_in_question: bool = True) -> None:
         if time_mode not in TIME_MODES:
             raise ValueError(f'time_mode must be one of {TIME_MODES}, got {time_mode!r}')
         if time_mode == 'as_of' and not allow_as_of:
@@ -358,6 +365,19 @@ class PredictedRuntime:
         # 默认 False —— 未确认取值不进 latent 读取路径；打开后每条 pending 多占
         # 128 x 4096 FP16 ≈ 1MB，且 store.pending 永不参与 select_version/bundle。
         self.defer_store_memory = bool(defer_store_memory)
+        # 证据记忆（P0/P1）：与状态更新解耦的可读取层。
+        # 显式传入时用调用方的仓库（便于跨 runtime 复用/审计）；否则按参数新建。
+        self.evidence = evidence if evidence is not None else EvidenceMemory(
+            max_units_per_session=evidence_max_units_per_session,
+            context_turns=evidence_context_turns)
+        # 证据优先读取：查询先检索证据，再由状态索引决定版本；打开后不再要求查询
+        # 被精确解析成 (subject, attribute) 才允许读取（P1）。
+        self.evidence_first = bool(evidence_first)
+        if int(evidence_top_k) < 0:
+            raise ValueError('evidence_top_k must be >= 0')
+        self.evidence_top_k = int(evidence_top_k)
+        # 历史目标时刻是否写进题面（与训练一致）；关掉即旧的"Current date=目标年份"口径。
+        self.target_in_question = bool(target_in_question)
         # 事务回滚自身的失败痕迹（只记录，不掩盖原始异常）。
         self.rollback_errors: List[str] = []
         self.decisions: List[Dict[str, Any]] = []
@@ -366,28 +386,61 @@ class PredictedRuntime:
     def write_predicted(self, event: Mapping[str, Any], batch_encode: bool = True) -> Dict[str, Any]:
         """把一条公开写视图 {'id','text','time'} 写入状态层与 Current 存储。
 
-        batch_encode=True 时把本事件的全部待写事实一次性批量过 reader（GPU 上
-        batch=8 而非逐条 batch=1），LongMemEval 每 episode 数百条事实时写入提速
-        数倍。批量结果与逐条 encode_event 语义一致。
+        写入顺序体现 P0 的因果修正：**证据先落、且不看抽取结果**。事实抽取只决定
+        "这条证据能不能挂上某个 (subject, attribute) 并参与版本裁决"，不再决定
+        "原始对话有没有资格进可读取记忆"。抽不出来的、DEFER 的、互相冲突的内容
+        全部留在 EvidenceMemory 里，读取时仍然可检索。
+
+        batch_encode=True 时把本事件的事实文本与证据单元文本合并成一批过 reader
+        （GPU 上 batch=8 而非逐条 batch=1），LongMemEval 每 episode 数百条事实时
+        写入提速数倍。批量结果与逐条 encode_event 语义一致。
         """
         assert_no_oracle(event, 'PredictedRuntime.write_predicted', allowed=PUBLIC_WRITE_KEYS)
         started = time.perf_counter()
         result = self.extractor.extract_detailed(event)
         writable = [f for f in result.facts
                     if f.subject != UNRESOLVED_SUBJECT and f.attribute != UNRESOLVED_ATTRIBUTE]
+        # ① 证据记忆：无论抽取成功与否，先把本 session 写成证据单元（P0）。
+        # provenance 给出事实在原始文本里的字符区间，用来把事实精确挂到覆盖它的
+        # 那一轮证据上（没有 provenance 的实现退回文本包含判断）。
+        spans: Dict[str, Any] = {}
+        for fact in list(result.facts) + list(result.unresolved):
+            provenance = None
+            try:
+                provenance = self.extractor.provenance(fact.id)
+            except (AttributeError, KeyError):
+                provenance = None
+            if provenance is None:
+                continue
+            start, end = getattr(provenance, 'char_start', None), getattr(provenance, 'char_end', None)
+            if start is not None and end is not None:
+                spans[fact.id] = (int(start), int(end))
+        evidence_units = self.evidence.write_session(
+            event, facts=result.facts, unresolved=result.unresolved, spans=spans)
         # encode_texts_batch 由入口经 vcrm.reader_batch.attach_batch_encode(reader)
         # 挂载（reader.py 受训练元数据 sha256 锁定，不能改文件本身）；未挂载时自动
         # 回退逐条 encode_event，行为与旧版一致。
-        memories = (self.reader.encode_texts_batch(
-                        [self.reader.event_text({'time': f.observed_at, 'text': f.text})
-                         for f in writable])
-                    if batch_encode and writable and hasattr(self.reader, 'encode_texts_batch')
-                    else None)
+        can_batch = batch_encode and hasattr(self.reader, 'encode_texts_batch')
+        fact_texts = [self.reader.event_text({'time': f.observed_at, 'text': f.text})
+                      for f in writable]
+        evidence_texts = [self.reader.event_text({'time': unit.time, 'text': unit.focus})
+                          for unit in evidence_units]
+        batch = (self.reader.encode_texts_batch(fact_texts + evidence_texts)
+                 if can_batch and (fact_texts or evidence_texts) else None)
+        memories = None if batch is None else batch[:len(fact_texts)]
+        evidence_memories = None if batch is None else batch[len(fact_texts):]
         memory_by_id = {f.id: m for f, m in zip(writable, memories)} if memories else {}
         receipts = [self._write_fact(fact, event, memory=memory_by_id.get(fact.id))
                     for fact in result.facts]
+        # ② 事实 → 状态的联系回填到证据上（DEFER 的 state_id 为 None，证据照样可读）。
+        self.evidence.link_receipts(receipts)
+        # ③ 证据 latent：写时就压缩好（16-slot 量级），读取时可进 bundle。
+        if evidence_memories:
+            self.evidence.attach_memories(evidence_units, evidence_memories)
+            self.evidence.compress(self.store.codec, anchor_of=self._anchor_memory)
         return {'event_id': event['id'], 'time': event['time'], 'facts': len(result.facts),
                 'receipts': receipts, 'unresolved': len(result.unresolved),
+                'evidence_units': len(evidence_units),
                 'write_seconds': time.perf_counter() - started}
 
     def _write_fact(self, fact: AtomicFact, event: Mapping[str, Any],
@@ -598,46 +651,93 @@ class PredictedRuntime:
         if getattr(self.router, 'router_mode', 'identity') == 'semantic':
             # 只在 semantic 模式暴露审计字段：identity 模式的返回结构保持原样。
             base['router_mode'] = 'semantic'
-        if not parsed['resolved']:
-            return base | {'answer': '', 'state_id': None, 'candidates': [],
-                           'no_state_match': True, 'selected_version_id': None,
-                           'version_role': None, 'timings': timings}
-        fact = AtomicFact(id=QUERY_FACT_ID, text=view['question'],
-                          observed_at=target_time or UNKNOWN_TIME,
-                          subject=parsed['subject'], attribute=parsed['attribute'],
-                          value='', source_id=QUERY_FACT_ID)
-        reader_query = self._reader_query(view)
-        semantic_key = self.index.key(self.reader.encode(self.reader.question(reader_query)))
-        candidates = self.router.retrieve_candidates(
-            fact, self.state_index, semantic_key=semantic_key)
-        ranking = [{'state_id': record.state_id, 'rank': rank,
-                    'subject_key': record.subject_key, 'attribute_key': record.attribute_key,
-                    'similarity': cosine_similarity(semantic_key, record.semantic_key)}
-                   for rank, record in enumerate(candidates, start=1)]
-        timings['retrieve_seconds'] = time.perf_counter() - started
-        # 语义相似 ≠ 状态身份相同：候选池刻意保留「同属性、不同主体」的状态（stage1
-        # 的硬过滤口径），所以读取前必须核对规范化后的 (subject, attribute)。
-        # 不加这一步就会从别的实体的状态里读出答案，而且这种错误不会体现在召回里。
+        # ---- P1：查询先检索证据，再让状态索引决定版本 -----------------------
+        # 这一步刻意放在"查询能否被解析成 (subject, attribute)"之前：LongMemEval 的
+        # 真实问题经常解析不出精确身份（多跳、指代、开放域属性），旧路径到这里就
+        # 直接 no_state_match 返回空答案，而证据其实一直在记忆里。
+        evidence_units: List[EvidenceUnit] = []
+        evidence_scores: List[Dict[str, Any]] = []
+        if self.evidence_first and self.evidence_top_k:
+            hits = self.evidence.retrieve(
+                view['question'], k=self.evidence_top_k,
+                subject=parsed.get('subject'), attribute=parsed.get('attribute'),
+                observed_until=observation_cutoff)
+            evidence_units = [unit for _, unit in hits]
+            evidence_scores = [{'evidence_id': unit.evidence_id, 'score': round(float(score), 4),
+                                'session_id': unit.session_id, 'time': unit.time,
+                                'state_ids': list(unit.state_ids)}
+                               for score, unit in hits]
+        evidence_state_ids = self.evidence.state_ids(evidence_units) if evidence_units else []
+        evidence_records = [self.state_index.get(state_id) for state_id in evidence_state_ids
+                            if state_id in self.state_index]
+        evidence_audit = {'evidence_first': bool(self.evidence_first),
+                          'evidence_units': len(evidence_units),
+                          'evidence_state_ids': evidence_state_ids,
+                          'evidence_hits': evidence_scores}
+        timings['evidence_seconds'] = time.perf_counter() - started
+        if not parsed['resolved'] and not evidence_records:
+            return base | evidence_audit | {
+                'answer': '', 'state_id': None, 'candidates': [],
+                'no_state_match': True, 'selected_version_id': None,
+                'version_role': None, 'timings': timings}
+        # 时间语义（P2）：Current date = 观测截止，历史目标只进题面。训练与推理
+        # 共用 vcrm.time_semantics.build_reader_query，口径不再两套。
+        reader_query = self._reader_query(view, observation_time=observation_cutoff,
+                                          target_time=target_time)
         router_mode = getattr(self.router, 'router_mode', 'identity')
         attribute_fallback = False
-        if router_mode == 'semantic':
-            # semantic 路由已用**主体硬门**筛过候选（见 StateRouter.semantic_retrieve），
-            # 所以读取前不再要求 attribute 字符串相等：自由问句的 attribute 是组合式
-            # 描述，与事实短键天然不相交，用它对候选做否决会把语义相似度 0.9+ 的
-            # 正确候选全杀掉（gpu_smoke3 现场）。attribute 不匹配时保留读取，但逐题
-            # 记 attribute_fallback=True 供审计；是否 no_state_match 只由主体门决定。
-            gate = (getattr(self.router, 'last_retrieval_audit', {}) or {}).get(
-                'subject_gate') or {}
-            identity_matched = list(candidates) if gate.get('passed') else []
-            attribute_fallback = bool(identity_matched) and not any(
-                record.matches_attribute(fact.attribute) for record in identity_matched)
+        if not parsed['resolved']:
+            # 证据优先路径：解析不出身份时，用证据挂到的状态继续读（不再答空）。
+            candidates = list(evidence_records)
+            identity_matched = list(evidence_records)
+            ranking: List[Dict[str, Any]] = []
+            semantic_key = None
+            fact = AtomicFact(id=QUERY_FACT_ID, text=view['question'],
+                              observed_at=target_time or UNKNOWN_TIME,
+                              subject=parsed['subject'], attribute=parsed['attribute'],
+                              value='', source_id=QUERY_FACT_ID)
         else:
-            identity_matched = [record for record in candidates
-                                if record.matches_subject(fact.subject)
-                                and record.matches_attribute(fact.attribute)]
-        if self.multi_state:
-            identity_matched = self._extend_identities(
-                identity_matched, parsed, semantic_key, fact)
+            fact = AtomicFact(id=QUERY_FACT_ID, text=view['question'],
+                              observed_at=target_time or UNKNOWN_TIME,
+                              subject=parsed['subject'], attribute=parsed['attribute'],
+                              value='', source_id=QUERY_FACT_ID)
+            semantic_key = self.index.key(self.reader.encode(self.reader.question(reader_query)))
+            candidates = self.router.retrieve_candidates(
+                fact, self.state_index, semantic_key=semantic_key)
+            ranking = [{'state_id': record.state_id, 'rank': rank,
+                        'subject_key': record.subject_key, 'attribute_key': record.attribute_key,
+                        'similarity': cosine_similarity(semantic_key, record.semantic_key)}
+                       for rank, record in enumerate(candidates, start=1)]
+            timings['retrieve_seconds'] = time.perf_counter() - started
+            # 语义相似 ≠ 状态身份相同：候选池刻意保留「同属性、不同主体」的状态（stage1
+            # 的硬过滤口径），所以读取前必须核对规范化后的 (subject, attribute)。
+            # 不加这一步就会从别的实体的状态里读出答案，而且这种错误不会体现在召回里。
+            if router_mode == 'semantic':
+                # semantic 路由已用**主体硬门**筛过候选（见 StateRouter.semantic_retrieve），
+                # 所以读取前不再要求 attribute 字符串相等：自由问句的 attribute 是组合式
+                # 描述，与事实短键天然不相交，用它对候选做否决会把语义相似度 0.9+ 的
+                # 正确候选全杀掉（gpu_smoke3 现场）。attribute 不匹配时保留读取，但逐题
+                # 记 attribute_fallback=True 供审计；是否 no_state_match 只由主体门决定。
+                gate = (getattr(self.router, 'last_retrieval_audit', {}) or {}).get(
+                    'subject_gate') or {}
+                identity_matched = list(candidates) if gate.get('passed') else []
+                attribute_fallback = bool(identity_matched) and not any(
+                    record.matches_attribute(fact.attribute) for record in identity_matched)
+            else:
+                identity_matched = [record for record in candidates
+                                    if record.matches_subject(fact.subject)
+                                    and record.matches_attribute(fact.attribute)]
+            if self.multi_state:
+                identity_matched = self._extend_identities(
+                    identity_matched, parsed, semantic_key, fact)
+        if self.evidence_first and evidence_records:
+            # 证据命中的状态补进读取候选：解析出的身份未必覆盖问题真正需要的那段记忆。
+            seen = {record.state_id for record in identity_matched}
+            extra = [record for record in evidence_records if record.state_id not in seen]
+            if extra:
+                # 解析出的身份排在前（优先级更高），证据补进来的排在后面；
+                # 多状态读取自身按 max_query_states 截断，这里不再重复裁剪。
+                identity_matched = list(identity_matched) + extra
         # 可见性：给了 observation_cutoff 就按它裁剪，且不许 future fallback 绕过。
         allow_fallback = bool(self.as_of_future_fallback) and observation_cutoff is None
         selection_bound = target_time or observation_cutoff
@@ -650,40 +750,59 @@ class PredictedRuntime:
                 chosen = record
                 break
         if selected is None:
-            result = base | {'answer': '', 'state_id': None, 'candidates': ranking,
-                             **({'attribute_fallback': attribute_fallback}
-                                if router_mode == 'semantic' else {}),
-                             'identity_matched_state_ids':
-                                 [record.state_id for record in identity_matched],
-                             'no_state_match': True, 'selected_version_id': None,
-                             'version_role': None, 'timings': timings}
+            result = base | evidence_audit | {
+                'answer': '', 'state_id': None, 'candidates': ranking,
+                **({'attribute_fallback': attribute_fallback}
+                   if router_mode == 'semantic' else {}),
+                'identity_matched_state_ids':
+                    [record.state_id for record in identity_matched],
+                'no_state_match': True, 'selected_version_id': None,
+                'version_role': None, 'timings': timings}
             if self.hybrid_fallback:
                 # 默认关闭；开启后也只是“无记忆参数化读取”，单独分口径统计。
                 fallback = self.reader.answer(reader_query, None)
                 result = result | {'answer': fallback.get('answer', ''),
                                    'hybrid_fallback': True,
                                    'fallback': 'no_memory_parametric'}
+            elif evidence_units:
+                # 证据仍然可读：状态层没有可读版本时，至少让证据本身进 reader。
+                pieces, used_ids, used_slots = self._evidence_pieces(
+                    evidence_units, self._read_budget(None))
+                if pieces is not None:
+                    read = self.reader.answer(reader_query, pieces)
+                    timings.update({'read_seconds': 0.0})
+                    result = result | {'answer': read.get('answer', ''),
+                                       'no_state_match': False,
+                                       'evidence_only_read': True,
+                                       'bundle_evidence_ids': used_ids,
+                                       'evidence_latent_slots': used_slots,
+                                       'read_latent_slots': used_slots,
+                                       'timings': timings}
             return result
         attribute_audit = ({'attribute_fallback': attribute_fallback}
                            if router_mode == 'semantic' else {})
         if self.multi_state:
             # 多跳/多事实问题：一个 (subject, attribute) 装不下，允许多个状态一起读。
             multi = self._read_multi_state(identity_matched, reader_query, read_mode,
-                                           selection_bound, observation_cutoff, allow_fallback)
+                                           selection_bound, observation_cutoff, allow_fallback,
+                                           evidence_units=evidence_units)
             if multi is not None:
                 timings.update(multi.pop('timings', {}))
-                return base | {'candidates': ranking,
-                               'identity_matched_state_ids':
-                                   [record.state_id for record in identity_matched],
-                               'timings': timings} | attribute_audit | multi
+                return base | evidence_audit | {
+                    'candidates': ranking,
+                    'identity_matched_state_ids':
+                        [record.state_id for record in identity_matched],
+                    'timings': timings} | attribute_audit | multi
         read = self.read_state(chosen.state_id, view, target_time=target_time,
                                selected=selected, reader_query=reader_query,
-                               read_mode=read_mode, observation_cutoff=observation_cutoff)
+                               read_mode=read_mode, observation_cutoff=observation_cutoff,
+                               evidence_units=evidence_units)
         timings.update(read.pop('timings', {}))
-        return base | {'candidates': ranking,
-                       'identity_matched_state_ids':
-                           [record.state_id for record in identity_matched],
-                       'timings': timings} | attribute_audit | read
+        return base | evidence_audit | {
+            'candidates': ranking,
+            'identity_matched_state_ids':
+                [record.state_id for record in identity_matched],
+            'timings': timings} | attribute_audit | read
 
     def _extend_identities(self, matched, parsed, semantic_key, fact):
         """把查询解析器给出的**额外**身份也检索一遍（多跳/多事实问题）。
@@ -713,7 +832,9 @@ class PredictedRuntime:
         return extra
 
     def _read_multi_state(self, records, reader_query, read_mode, selection_bound,
-                          observation_cutoff, allow_fallback) -> Optional[Dict[str, Any]]:
+                          observation_cutoff, allow_fallback, *,
+                          evidence_units: Optional[Sequence[EvidenceUnit]] = None
+                          ) -> Optional[Dict[str, Any]]:
         """多状态读取：每个命中的状态各取 pair 读取的条目，拼成一个 bundle 一次读完。
 
         只在 ``multi_state=True`` 且命中 ≥2 个状态时生效；预算按 ``_read_budget``
@@ -749,6 +870,12 @@ class PredictedRuntime:
         entries = [entry for _, group in groups for entry in group]
         current_ids = {group[0]['id'] for _, group in groups}
         bundle = self.store.bundle(entries, self.markers, budget, current_ids=current_ids)
+        used_slots = sum(self.store.entry_slots(entry) + 2 for entry in entries)
+        # P1：把检索到的证据单元一起注入（先证据、后版本，预算内贪心）。
+        pieces, evidence_ids, evidence_slots = self._evidence_pieces(
+            evidence_units, max(0, budget - used_slots))
+        if pieces is not None:
+            bundle = pieces if bundle is None else torch.cat([bundle, pieces])
         if bundle is not None and hasattr(bundle, 'to'):
             device = getattr(self.reader, 'device', None)
             if device is not None and bundle.device != device:
@@ -756,6 +883,7 @@ class PredictedRuntime:
         started = time.perf_counter()
         result = self.reader.answer(reader_query, bundle)
         bundle_latent_slots = sum(self.store.entry_slots(entry) for entry in entries)
+        bundle_latent_slots += evidence_slots
         excluded = sum(self._excluded_historical(record.state_id, observation_cutoff,
                                                  group, group[0]['id'])
                        for record, group in groups)
@@ -767,6 +895,8 @@ class PredictedRuntime:
                 'selected_version_id': groups[0][1][0]['id'],
                 'selected_version_time': groups[0][1][0]['time'],
                 'version_role': 'current',
+                'bundle_evidence_ids': evidence_ids,
+                'evidence_latent_slots': evidence_slots,
                 'bundle_version_ids': [entry['id'] for entry in entries],
                 'bundle_version_times': [entry['time'] for entry in entries],
                 'trajectory_length': len(entries),
@@ -783,7 +913,9 @@ class PredictedRuntime:
                    read_mode: str = 'pair',
                    observation_cutoff: Optional[str] = None,
                    max_slots: Optional[int] = None,
-                   max_versions: int = 8) -> Dict[str, Any]:
+                   max_versions: int = 8,
+                   evidence_units: Optional[Sequence[EvidenceUnit]] = None
+                   ) -> Dict[str, Any]:
         """在给定状态下读取 memory 并交给 FrozenReader；两种读取模式受控对照。
 
         read_mode='pair'（既有口径，默认）
@@ -829,14 +961,25 @@ class PredictedRuntime:
                           'bundle_latent_slots': 0, 'excluded_historical_versions': 0,
                           'timings': {'read_seconds': time.perf_counter() - started}}
         if read_mode == 'trajectory':
+            # P2：把 target_time 选出的那个版本**保证**装进 bundle。旧实现虽然算出了
+            # selected，却只按"最新优先"装预算，选中的历史版本可能整体装不下，
+            # 于是"已经知道该读哪个版本，却没把它注入 decoder"。
+            ensure_ids: List[str] = []
+            if selected is not None and selected.get('id'):
+                ensure_ids.append(str(selected['id']))
             entries = self.store.select_trajectory(
                 state_id, observed_until=observation_cutoff, max_slots=budget,
-                max_versions=max_versions)
+                max_versions=max_versions, ensure_ids=ensure_ids or None)
             if not entries:
                 return missing
             current_id = entries[0]['id']          # canonical: current 在首位
             selected_entry = entries[0]
             current_ids = {current_id}
+            if ensure_ids:
+                target_entry = next((entry for entry in entries
+                                     if entry['id'] in ensure_ids), None)
+                if target_entry is not None:
+                    selected_entry = target_entry
         elif read_mode == 'current_only':
             # C 组读取口径：只读 current full 版本，历史 code 一律不解码。
             # 过滤在 runtime 层完成（不改 store 读取原语），写入侧完全共用。
@@ -885,6 +1028,11 @@ class PredictedRuntime:
             selected_entry = selected
         entries = self.store.assert_canonical(entries, current_id)
         bundle = self.store.bundle(entries, self.markers, budget, current_ids=current_ids)
+        used_slots = sum(self.store.entry_slots(entry) + 2 for entry in entries)
+        pieces, evidence_ids, evidence_slots = self._evidence_pieces(
+            evidence_units, max(0, budget - used_slots))
+        if pieces is not None:
+            bundle = pieces if bundle is None else torch.cat([bundle, pieces])
         if bundle is not None and hasattr(bundle, 'to'):
             device = getattr(self.reader, 'device', None)
             if device is not None and bundle.device != device:
@@ -912,6 +1060,8 @@ class PredictedRuntime:
                               for entry in entries],
             'bundle_version_ids': [entry['id'] for entry in entries],
             'bundle_version_times': [entry['time'] for entry in entries],
+            'bundle_evidence_ids': evidence_ids,
+            'evidence_latent_slots': evidence_slots,
             'trajectory_length': len(entries),
             'hidden_future_versions': self.store.hidden_future_count(state_id, observation_cutoff),
             'future_current_suppressed': bool(
@@ -920,10 +1070,54 @@ class PredictedRuntime:
             # C/D 对比可量化的审计字段：被本读取模式排除掉的历史版本数。
             'excluded_historical_versions': self._excluded_historical(
                 state_id, observation_cutoff, entries, current_id),
-            'bundle_latent_slots': bundle_latent_slots,
-            'read_latent_slots': bundle_latent_slots,
+            'bundle_latent_slots': bundle_latent_slots + evidence_slots,
+            'read_latent_slots': bundle_latent_slots + evidence_slots,
+            'version_latent_slots': bundle_latent_slots,
             'reader_reported_latent_slots': reported_slots,
             'timings': {'read_seconds': time.perf_counter() - started}}
+
+    def _anchor_memory(self, state_id: Optional[str]):
+        """条件化 codec 需要的 anchor：该状态 current 版本解码后的 full memory。"""
+        if state_id is None or not hasattr(self.store, 'current'):
+            return None
+        entry = self.store.current(state_id)
+        if entry is None:
+            return None
+        try:
+            return self.store.decode(entry)
+        except (KeyError, ValueError, RuntimeError):
+            return None
+
+    def _evidence_pieces(self, units, budget: int):
+        """把证据单元的 latent 拼成可注入 bundle 的一段（预算内贪心，超预算跳过）。
+
+        返回 ``(tensor|None, [evidence_id], used_slots)``。证据在 bundle 里用
+        'historical' role 打标：它**不是**当前状态值，只是可读取的上下文证据；
+        VersionMarkers 只认 current/historical 两种角色，这里不新增角色，
+        以免破坏已训练的 marker 语义。
+        """
+        if not units or budget <= 0:
+            return None, [], 0
+        pieces, ids, used = [], [], 0
+        for unit in units:
+            code = getattr(unit, 'code', None)
+            if code is None:
+                code = getattr(unit, 'memory', None)
+            if code is None or not hasattr(code, 'shape') or len(code.shape) != 2:
+                continue
+            slots = int(code.shape[0])
+            if used + slots + 2 > budget:
+                continue
+            try:
+                piece = self.markers(code.float(), 'historical', unit.time)
+            except (ValueError, TypeError):
+                continue          # 时间戳不可解析的证据不注入，但文本仍可读
+            pieces.append(piece)
+            ids.append(unit.evidence_id)
+            used += slots + 2
+        if not pieces:
+            return None, [], 0
+        return torch.cat(pieces), ids, used
 
     def _read_budget(self, max_slots: Optional[int]) -> int:
         """decoder 端可用的 latent slot 预算：调用方上限 ≤ reader 配置上限。"""
@@ -957,22 +1151,45 @@ class PredictedRuntime:
         return sum(1 for entry in visible
                    if entry['id'] not in kept and entry['id'] != current_id)
 
-    @staticmethod
-    def _reader_query(view: Mapping[str, Any]) -> Dict[str, Any]:
-        """reader 提示词只允许出现公开的 window_end；unknown 时完全不注入时间。"""
-        prompt: Dict[str, Any] = {'question': view['question']}
-        if view['time'] is not None:
-            prompt['time'] = view['time']
-        return prompt
+    def _reader_query(self, view: Mapping[str, Any], *, observation_time: Optional[str] = None,
+                      target_time: Optional[str] = None) -> Dict[str, Any]:
+        """构造 reader 提示词（时间语义统一走 vcrm.time_semantics，P2）。
+
+        未给 ``observation_time`` 时保持旧行为（``view['time']`` 进 Current date 槽），
+        以免影响既有调用点；给了观测截止就切到统一口径：
+
+            Current date  = observation_time（系统当时已知的最后时刻）
+            题面前缀      = "In <target year>: ..."（历史目标时刻只出现在题面）
+
+        训练侧 ``vcrm/training.py`` 用的是同一个构造函数，因此训练与推理的 reader
+        输入逐字同构，不再出现"训练教的是按题面年份判别、推理却把年份塞进
+        Current date"的口径漂移。
+
+        ``vcrm/reader.py`` 被训练元数据 sha256 锁定，改不了；所以时间口径只能在
+        这里构造 prompt 时对齐，而不是去改 reader.question 的渲染规则。
+        """
+        if observation_time is None:
+            prompt: Dict[str, Any] = {'question': view['question']}
+            if view['time'] is not None:
+                prompt['time'] = view['time']
+            return prompt
+        return build_reader_query(view['question'], target_time=target_time,
+                                  observation_time=observation_time,
+                                  target_in_question=self.target_in_question,
+                                  time_source=view.get('time_source'))
 
     # -- diagnostics ------------------------------------------------------
     def stats(self) -> Dict[str, Any]:
         counts: Dict[str, int] = {}
         for record in self.decisions:
             counts[record['decision']] = counts.get(record['decision'], 0) + 1
-        return {'facts_written': len(self.decisions), 'decision_counts': counts,
-                'states': len(self.state_index), 'pending': self.state_index.pending_count,
-                'store': self.store.accounting()}
+        stats = {'facts_written': len(self.decisions), 'decision_counts': counts,
+                 'states': len(self.state_index), 'pending': self.state_index.pending_count,
+                 'store': self.store.accounting()}
+        stats.update(self.evidence.stats())
+        stats['evidence_first'] = bool(self.evidence_first)
+        stats['multi_state'] = bool(self.multi_state)
+        return stats
 
 
 __all__ = [

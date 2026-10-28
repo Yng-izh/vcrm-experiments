@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 import struct
-from typing import Any, Collection, Dict, List, Optional
+from typing import Any, Collection, Dict, List, Optional, Sequence
 
 import numpy as np
 import torch
@@ -355,7 +355,8 @@ class KeyframeStore:
         return sorted(entries, key=lambda e: (e['time'], e['id']))
 
     def select_trajectory(self, state, observed_until=None, max_slots: int = 256, *,
-                          marker_slots: int = 2, max_versions: int = 8
+                          marker_slots: int = 2, max_versions: int = 8,
+                          ensure_ids: Optional[Sequence[str]] = None
                           ) -> List[Dict[str, Any]]:
         """返回该状态在 ``observed_until`` 之前的**完整演化轨迹**（时间升序）。
 
@@ -375,6 +376,12 @@ class KeyframeStore:
 
         条件化 codec（D 变体）被显式拒绝：它的历史 code 要用**最终 current** 当
         decode 的 anchor，而最终 current 相对 ``observed_until`` 就是未来信息。
+
+        ``ensure_ids``（P2）：**必须**进 bundle 的版本 id（通常是 target_time 选出的
+        那一个）。修复的问题很具体：``read_state`` 明明按目标时间选出了 ``selected``，
+        但 trajectory 读取只按"最新优先"装预算，选中的历史版本可能整体装不下，
+        于是"已经找到该读哪个版本却没有把它注入 decoder"。装不下时先淘汰最旧的
+        非必须条目，绝不越过 ``max_slots``。
         """
         if max_slots < 1 or marker_slots < 0:
             raise ValueError('max_slots must be >= 1 and marker_slots >= 0')
@@ -396,7 +403,41 @@ class KeyframeStore:
             chosen.append(entry)
             used += cost
         chosen.reverse()                                     # 时间升序
+        if ensure_ids:
+            by_id = {entry['id']: entry for entry in visible}
+            required = [by_id[version_id] for version_id in dict.fromkeys(ensure_ids)
+                        if version_id in by_id]
+            chosen = self._ensure_entries(chosen, required, max_slots, marker_slots)
+        if not chosen:
+            return []
         return self.canonical_order(chosen, chosen[-1]['id'])
+
+    def _ensure_entries(self, chosen, required, max_slots: int, marker_slots: int):
+        """把 ``required`` 里的版本装进轨迹；预算不足时淘汰最旧的非必须条目。
+
+        返回新的时间升序列表。若某条必须版本即使淘汰全部非必须条目仍装不下，
+        就放弃它（由调用方的 bundle 账目与 ``ensure_missing`` 显式记录），
+        绝不静默超出 decoder 预算。
+        """
+        def used(items):
+            return sum(self.entry_slots(item) + marker_slots for item in items)
+
+        result = list(chosen)
+        protected = {entry['id'] for entry in required}
+        for entry in required:
+            if any(item['id'] == entry['id'] for item in result):
+                continue
+            cost = self.entry_slots(entry) + marker_slots
+            while result and used(result) + cost > max_slots:
+                victim = next((item for item in result if item['id'] not in protected), None)
+                if victim is None:
+                    break
+                result.remove(victim)
+            if used(result) + cost > max_slots:
+                continue
+            result.append(entry)
+        result.sort(key=lambda item: (item['time'], item['id']))
+        return result
 
     def trajectory_slots(self, entries, marker_slots: int = 2) -> int:
         """轨迹在 decoder 端的总 slot 数（含 role/time marker）。"""
