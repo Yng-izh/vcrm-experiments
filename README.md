@@ -85,7 +85,7 @@ CUDA_VISIBLE_DEVICES=8 env_py310/bin/python probe/run_main_eval.py \
   --reader icae --arch-exp E3 --checkpoint runs/architecture_v6_E3_train \
   --router-mode semantic --frontend llm \
   --llm-config llm_config.json --llm-cache-root runs/main_v1/llm_cache \
-  --extract-workers 8 --tag d
+  --tag d
 
 # 文本组（A/B）必须显式开启真实 reader，默认 stub 只产出占位符
 #   --text-reader vllm --vllm-url http://<host>:6012/v1/completions --vllm-model Qwen3.5-9B

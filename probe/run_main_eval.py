@@ -364,8 +364,10 @@ def new_runtime(args: argparse.Namespace, components: Components,
                             evidence_first=bool(getattr(args, 'evidence_first', False)),
                             evidence_top_k=int(getattr(args, 'evidence_top_k', 4)),
                             evidence_context_turns=int(getattr(args, 'evidence_context_turns', 1)),
-                            evidence_max_units_per_session=int(
-                                getattr(args, 'evidence_max_units_per_session', 12)),
+                            evidence_max_units_per_session=(
+                                int(args.evidence_max_units_per_session)
+                                if int(getattr(args, 'evidence_max_units_per_session', 0)) > 0
+                                else None),
                             # P2：历史目标时刻写进题面（与训练同一口径）
                             target_in_question=(
                                 getattr(args, 'time_semantics', 'unified') == 'unified'))
@@ -385,10 +387,12 @@ def write_episode(runtime: PredictedRuntime, episode: Episode) -> Dict[str, Any]
     counter = PublicEventCounter()
     texts: Dict[str, str] = {}
     ledger: List[Dict[str, Any]] = []
+    session_map: Dict[str, str] = {}                     # public_id → episode session_id
     seconds = 0.0
     for session in episode.sessions:                     # 加载器已按 date 升序
         public_id = counter.next_id()
         texts[public_id] = session.text
+        session_map[public_id] = session.session_id
         before = len(runtime.decisions)
         result = runtime.write_predicted(
             public_write_event({'text': session.text, 'time': session.date}, public_id))
@@ -405,7 +409,8 @@ def write_episode(runtime: PredictedRuntime, episode: Episode) -> Dict[str, Any]
                            'version_id': record['new_version_id'],
                            'session_id': session.session_id,
                            'clause': clause})
-    return {'ledger': ledger, 'write_seconds': seconds, 'n_sessions': len(episode.sessions)}
+    return {'ledger': ledger, 'write_seconds': seconds, 'n_sessions': len(episode.sessions),
+            'session_map': session_map}
 
 
 def resolve_window(args: argparse.Namespace, episode: Episode,
@@ -500,13 +505,20 @@ def run_state_text_group(args: argparse.Namespace, episode: Episode, components:
     # B 组也享受 P0/P1 的证据层：状态没命中时不再"空上下文 → 参数化幻觉"，
     # 而是把证据检索到的原始 session 交给文本 reader。
     evidence_units = []
+    evidence_session_ids: List[str] = []
     if bool(getattr(args, 'evidence_first', False)) and int(getattr(args, 'evidence_top_k', 0)):
         hits = runtime.evidence.retrieve(
             episode.question, k=int(args.evidence_top_k),
             subject=parsed.get('subject'), attribute=parsed.get('attribute'),
             observed_until=observation_cutoff)
         evidence_units = [unit for _, unit in hits]
-        wanted |= set(runtime.evidence.session_ids(evidence_units))
+        # 证据单元记的是公开写入编号（event['id']），B 组要的是 episode 的
+        # haystack session_id，必须经 write_episode 给出的映射反查。
+        session_map = written['session_map']
+        evidence_session_ids = [session_map[session_id]
+                                for session_id in runtime.evidence.session_ids(evidence_units)
+                                if session_id in session_map]
+        wanted |= set(evidence_session_ids)
     if wanted:
         chosen = [session for session in episode.sessions
                   if session.session_id in wanted]
@@ -516,17 +528,19 @@ def run_state_text_group(args: argparse.Namespace, episode: Episode, components:
              'read_session_ids': [session.session_id for session in chosen],
              'no_state_match': selected_version is None and not evidence_units,
              'evidence_units': len(evidence_units),
-             'evidence_session_ids': runtime.evidence.session_ids(evidence_units),
+             'evidence_session_ids': evidence_session_ids,
              'parametric_only': False,
              'alignment': getattr(query_parser, 'last_alignment', []),
              'decision_counts': decision_counts(written['ledger']),
              'state_count': len(runtime.state_index.records),
              'retrieval_audit': getattr(runtime.router, 'last_retrieval_audit', {}),
              'n_facts': len(written['ledger'])}
-    if selected_version is None:
-        # T32-F2：没有命中任何状态时，上下文是空的 —— 此时调文本 reader 只会得到
-        # 参数化幻觉（实测 846–974 字、prompt 仅 36 token）。显式留空并单独记账，
-        # 绝不让"空上下文长答案"混进 B 组非空率。
+    if not chosen:
+        # T32-F2：连证据都没检索到任何 session 时，上下文才是真空的 —— 此时调文本
+        # reader 只会得到参数化幻觉（实测 846–974 字、prompt 仅 36 token）。显式留空
+        # 并单独记账，绝不让"空上下文长答案"混进 B 组非空率。
+        # 反过来，只要证据检索到了 session（哪怕状态层没命中版本），就必须照常读取：
+        # 旧逻辑在 `selected_version is None` 时就返回空，把证据层的召回直接扔掉了。
         extra['parametric_only'] = True
         return {'answer': '', 'read_slots': None, 'input_tokens': 0,
                 'write_bytes': write_bytes, 'write_seconds': written['write_seconds'],
@@ -843,7 +857,8 @@ def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
     parser.add_argument('--evidence-top-k', type=int, default=4)
     parser.add_argument('--evidence-context-turns', type=int, default=1,
                         help='证据单元保留几轮上下文（0 = 只留当前轮）')
-    parser.add_argument('--evidence-max-units-per-session', type=int, default=12)
+    parser.add_argument('--evidence-max-units-per-session', type=int, default=0,
+                        help='每 session 最多保留多少证据单元；0 = 不截断（默认，P0 不丢证据）')
     parser.add_argument('--time-semantics', choices=['unified', 'legacy'], default='unified',
                         help='unified（默认）：Current date = 观测截止、历史年份只进题面，'
                              '与训练同口径；legacy：历史锚直接当 window_end 注入 reader')

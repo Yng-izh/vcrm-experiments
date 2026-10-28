@@ -78,6 +78,26 @@ checkpoint 和实跑的权重可以不是同一份。现在：
 - 目录缺 `manifest.json` → 拒绝加载；
 - 最终目录写进每一行 row 的 `checkpoint_resolved` 与 summary。
 
+## 2.1 复审补丁（第二轮）
+
+1. **证据可读但未挂状态时不再答空**：`answer_predicted` 的早返条件从
+   `not evidence_records` 收紧为 `not evidence_records and not evidence_units`。
+   证据检索到了、但事实抽取失败/DEFER 导致没有 `state_id` 时，直接进入
+   `evidence_only_read`（仅证据 latent 读取），而不是返回空答案。
+2. **证据编码用带上下文的完整文本**：`write_predicted` 编码 `unit.text`（±N 轮上下文），
+   `unit.focus` 只用于检索打分。超过 reader `encoder_max_tokens` 的单元按行贪心 +
+   超长行字符二分做**确定性切分**（`EvidenceMemory.replace_with_chunks`），切出的子单元
+   各自保留事实/状态联系，一段都不丢。同时**取消**每 session 12 条单元的数量截断
+   （`max_units_per_session=None` 为默认，`--evidence-max-units-per-session 0`）。
+3. **D 组 multi-state 不再退化成 pair**：`_read_multi_state` 的 trajectory 分支改为真正调用
+   `store.select_trajectory(..., ensure_ids=[target])`，预算按"证据预留 → 剩余平均分给各状态"
+   分配；`multi_state_ensure_missing` / `multi_state_version_counts` 逐题记录。
+   单状态 `read_state` 同样先给证据预留 slot（`_evidence_reserve`），避免版本轨迹吃满预算、
+   证据一条都进不去。
+4. **入口与文档**：README/RESULTS 里的 `--extract-workers 8` 已删除（`probe/run_main_eval.py`
+   没有该参数，写上去会直接 unrecognized arguments；抽取走串行路径）。B 组同步修掉旧逻辑：
+   证据检索到 session 就照常读，只有"证据与状态都没有"才记 `parametric_only` 并留空。
+
 ## 3. 开关与复现
 
 默认全开（`--multi-state`、`--evidence-first`、`--time-semantics unified`）。

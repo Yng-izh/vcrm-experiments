@@ -149,14 +149,21 @@ class EvidenceMemory:
     模型好不好"。等真到了"证据在 bundle 里但 reader 答错"再换检索器。
     """
 
-    def __init__(self, *, max_units_per_session: int = 12, context_turns: int = 1,
+    def __init__(self, *, max_units_per_session: Optional[int] = None, context_turns: int = 1,
                  min_tokens: int = 2, max_units_total: Optional[int] = None,
                  write_unlinked: bool = True) -> None:
-        if max_units_per_session < 1:
-            raise ValueError('max_units_per_session must be >= 1')
+        """``max_units_per_session=None``（默认）表示**不按数量截断**。
+
+        早期版本默认每 session 最多 12 条单元、超出丢弃——那等于把"证据保留"
+        这件事又做成了有损操作，和 P0 的目的相反。现在默认全部保留，只在显式
+        传正整数（做容量消融）时才截断，并逐条记进 ``dropped_units``。
+        """
+        if max_units_per_session is not None and max_units_per_session < 1:
+            raise ValueError('max_units_per_session must be >= 1 or None')
         if context_turns < 0:
             raise ValueError('context_turns must be >= 0')
-        self.max_units_per_session = int(max_units_per_session)
+        self.max_units_per_session = (None if max_units_per_session is None
+                                      else int(max_units_per_session))
         self.context_turns = int(context_turns)
         self.min_tokens = int(min_tokens)
         self.max_units_total = max_units_total
@@ -166,6 +173,7 @@ class EvidenceMemory:
         self._idf: Dict[str, float] = {}
         self._dirty = True
         self.dropped_units = 0
+        self.split_units = 0
 
     # -- write path -------------------------------------------------------
     def write_session(self, event: Mapping[str, Any], *,
@@ -223,7 +231,7 @@ class EvidenceMemory:
                                       turn_index=0,
                                       fact_ids=tuple(fact.id for fact in facts),
                                       unresolved=bool(unresolved))]
-        if len(units) > self.max_units_per_session:
+        if self.max_units_per_session is not None and len(units) > self.max_units_per_session:
             # 保留信息量最大（token 最多）的若干条，其余计数丢弃，不静默。
             self.dropped_units += len(units) - self.max_units_per_session
             units = sorted(units, key=lambda unit: (-len(unit.tokens), unit.turn_index))
@@ -242,6 +250,45 @@ class EvidenceMemory:
             self.units.append(unit)
         self._dirty = True
         return units
+
+    def replace_with_chunks(self, unit: EvidenceUnit,
+                            chunks: Sequence[str]) -> List[EvidenceUnit]:
+        """把一个证据单元按编码器上限**确定性切分**成若干子单元（不丢弃）。
+
+        切分只影响"编码给 reader 的 latent"，不影响检索：每个子单元保留原
+        ``session_id`` / ``time`` / ``turn_index`` / 事实与状态联系，id 加
+        ``#<i>`` 后缀；包含原中心轮的块继续用原 ``focus``，其余块用自己的文本
+        参与打分（否则长证据的后半段永远检索不到）。
+        """
+        # 按对象身份定位（dataclass 的值相等会把“内容相同的另一条单元”认错）
+        index = next((position for position, item in enumerate(self.units)
+                      if item is unit), None)
+        if index is None:
+            return [unit]
+        pieces = [chunk for chunk in chunks if chunk.strip()]
+        if len(pieces) <= 1:
+            if pieces:
+                unit.text = pieces[0]       # 单块：只替换编码文本，不拆单元
+            return [unit]
+        replacements: List[EvidenceUnit] = []
+        for order, chunk in enumerate(pieces):
+            focus = unit.focus if unit.focus and unit.focus in chunk else chunk
+            replacements.append(EvidenceUnit(
+                evidence_id=f'{unit.evidence_id}#{order}', session_id=unit.session_id,
+                time=unit.time, text=chunk, focus=focus, speaker=unit.speaker,
+                turn_index=unit.turn_index, fact_ids=unit.fact_ids,
+                state_ids=unit.state_ids, subjects=unit.subjects,
+                attributes=unit.attributes, unresolved=unit.unresolved))
+        self.units[index:index + 1] = replacements
+        self.split_units += len(replacements) - 1
+        self._reindex()
+        return replacements
+
+    def _reindex(self) -> None:
+        self._by_session = {}
+        for position, unit in enumerate(self.units):
+            self._by_session.setdefault(unit.session_id, []).append(position)
+        self._dirty = True
 
     @staticmethod
     def _fact_covers(fact: Any, spans: Mapping[str, Tuple[int, int]], context: str,
@@ -403,6 +450,7 @@ class EvidenceMemory:
                 'evidence_unlinked_units': len(self.units) - linked,
                 'evidence_unresolved_units': sum(1 for unit in self.units if unit.unresolved),
                 'evidence_compressed_units': sum(1 for unit in self.units if unit.code is not None),
+                'evidence_split_units': self.split_units,
                 'evidence_dropped_units': self.dropped_units}
 
     def serialize(self) -> Dict[str, Any]:

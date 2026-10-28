@@ -319,7 +319,7 @@ class PredictedRuntime:
                  evidence: Optional[EvidenceMemory] = None,
                  evidence_first: bool = False, evidence_top_k: int = 4,
                  evidence_context_turns: int = 1,
-                 evidence_max_units_per_session: int = 12,
+                 evidence_max_units_per_session: Optional[int] = None,
                  target_in_question: bool = True) -> None:
         if time_mode not in TIME_MODES:
             raise ValueError(f'time_mode must be one of {TIME_MODES}, got {time_mode!r}')
@@ -417,13 +417,17 @@ class PredictedRuntime:
                 spans[fact.id] = (int(start), int(end))
         evidence_units = self.evidence.write_session(
             event, facts=result.facts, unresolved=result.unresolved, spans=spans)
+        # 单元保留 ±N 轮上下文（检索用），编码也必须用同一份文本：只编码中心轮
+        # 会出现"检索靠上下文命中、latent 里却没有上下文"的错位。超过编码器上限
+        # 的单元按行确定性切分（replace_with_chunks），不丢弃任何一段。
+        evidence_units = self._split_evidence_for_encoder(evidence_units)
         # encode_texts_batch 由入口经 vcrm.reader_batch.attach_batch_encode(reader)
         # 挂载（reader.py 受训练元数据 sha256 锁定，不能改文件本身）；未挂载时自动
         # 回退逐条 encode_event，行为与旧版一致。
         can_batch = batch_encode and hasattr(self.reader, 'encode_texts_batch')
         fact_texts = [self.reader.event_text({'time': f.observed_at, 'text': f.text})
                       for f in writable]
-        evidence_texts = [self.reader.event_text({'time': unit.time, 'text': unit.focus})
+        evidence_texts = [self.reader.event_text({'time': unit.time, 'text': unit.text})
                           for unit in evidence_units]
         batch = (self.reader.encode_texts_batch(fact_texts + evidence_texts)
                  if can_batch and (fact_texts or evidence_texts) else None)
@@ -675,7 +679,11 @@ class PredictedRuntime:
                           'evidence_state_ids': evidence_state_ids,
                           'evidence_hits': evidence_scores}
         timings['evidence_seconds'] = time.perf_counter() - started
-        if not parsed['resolved'] and not evidence_records:
+        # 只有「查询解析不出身份」且「既没有挂上状态的证据、也没有任何证据」时才答空。
+        # 早先这里是 `not evidence_records` 就返回：证据明明检索到了、只是没绑定
+        # state_id（事实抽取失败 / DEFER），却被这条早返砍掉，根本走不到下面的
+        # evidence-only 读取——那正好违背 P0"抽不出事实的证据仍然可读"。
+        if not parsed['resolved'] and not evidence_records and not evidence_units:
             return base | evidence_audit | {
                 'answer': '', 'state_id': None, 'candidates': [],
                 'no_state_match': True, 'selected_version_id': None,
@@ -774,6 +782,7 @@ class PredictedRuntime:
                     result = result | {'answer': read.get('answer', ''),
                                        'no_state_match': False,
                                        'evidence_only_read': True,
+                                       'evidence_only_slots': used_slots,
                                        'bundle_evidence_ids': used_ids,
                                        'evidence_latent_slots': used_slots,
                                        'read_latent_slots': used_slots,
@@ -833,47 +842,67 @@ class PredictedRuntime:
 
     def _read_multi_state(self, records, reader_query, read_mode, selection_bound,
                           observation_cutoff, allow_fallback, *,
-                          evidence_units: Optional[Sequence[EvidenceUnit]] = None
-                          ) -> Optional[Dict[str, Any]]:
-        """多状态读取：每个命中的状态各取 pair 读取的条目，拼成一个 bundle 一次读完。
+                          evidence_units: Optional[Sequence[EvidenceUnit]] = None,
+                          max_versions: int = 8) -> Optional[Dict[str, Any]]:
+        """多状态读取：每个命中状态按 ``read_mode`` 取自己的条目，拼成一个 bundle 一次读完。
 
-        只在 ``multi_state=True`` 且命中 ≥2 个状态时生效；预算按 ``_read_budget``
-        贪心装填，装不下的状态记进 ``multi_state_dropped``（不静默丢失，也不越界）。
-        返回 None 表示退回单状态路径。
+        关键修正（D 组）：旧实现在多状态分支里**无条件**写成
+        ``[newest] + 1×history``，于是 versioned 组只要进入 multi-state 就退化成
+        pair 读取，"完整版本轨迹"根本没发生，也就无法判断轨迹本身的价值。现在
+        trajectory 分支直接调用 ``store.select_trajectory``，并用 ``ensure_ids``
+        保证 target_time 选出的版本进入 bundle。
+
+        预算：先给证据留一份（``_evidence_reserve``），剩下的在状态之间平均分配
+        （剩余预算 // 剩余状态数）。装不下的状态记进 ``multi_state_dropped``；
+        目标版本没装进某状态时记进 ``multi_state_ensure_missing`` —— 都不静默。
         """
         if len(records) < 2:
             return None
         budget = self._read_budget(None)
-        groups, used = [], 0
-        for record in records[:self.max_query_states]:
+        state_budget = budget - self._evidence_reserve(budget, evidence_units)
+        state_budget = max(state_budget, min(budget, 130))
+        wanted = records[:self.max_query_states]
+        groups: List[Tuple[Any, List[Dict[str, Any]], Optional[str]]] = []
+        used = 0
+        for index, record in enumerate(wanted):
+            remaining = len(wanted) - index
+            share = max(1, (state_budget - used) // remaining)
             selected = self.store.select_version(
                 record.state_id, selection_bound, allow_future_fallback=allow_fallback)
-            if selected is None:
-                continue
             visible = self.store.visible_versions(record.state_id, observation_cutoff)
             newest = visible[-1] if visible else self.store.current(record.state_id)
             if newest is None:
                 continue
             if read_mode == 'current_only':
                 entries = [newest]          # 多状态同样只读各状态的 current
+            elif read_mode == 'trajectory':
+                # 完整轨迹（不是 pair）：每个状态各自按 share 预算装到装不下为止。
+                entries = self.store.select_trajectory(
+                    record.state_id, observed_until=observation_cutoff,
+                    max_slots=share, max_versions=max_versions,
+                    ensure_ids=([selected['id']] if selected is not None else None))
+                if not entries:
+                    continue
             else:
-                history = selected if selected is not newest else (
+                history = selected if (selected is not None and selected is not newest) else (
                     visible[-2] if len(visible) > 1 else None)
-                entries = [newest] + ([history] if history is not None else [])
+                candidates = [newest] + ([history] if history is not None else [])
+                entries = self._pack_entries(candidates, share) or [newest]
+                entries = self.store.canonical_order(entries, newest['id'])
             cost = self.store.trajectory_slots(entries)
-            if used + cost > budget:
+            if used + cost > state_budget:
                 continue
-            groups.append((record, entries))
+            groups.append((record, entries,
+                           None if selected is None else selected['id']))
             used += cost
         if len(groups) < 2:
             return None
-        entries = [entry for _, group in groups for entry in group]
-        current_ids = {group[0]['id'] for _, group in groups}
-        bundle = self.store.bundle(entries, self.markers, budget, current_ids=current_ids)
-        used_slots = sum(self.store.entry_slots(entry) + 2 for entry in entries)
-        # P1：把检索到的证据单元一起注入（先证据、后版本，预算内贪心）。
+        entries = [entry for _, group, _ in groups for entry in group]
+        current_ids = {group[0]['id'] for _, group, _ in groups}
+        bundle = self.store.bundle(entries, self.markers, state_budget, current_ids=current_ids)
+        # P1：证据在版本之后注入（预算 = 全预算 - 版本已用），逐条记账。
         pieces, evidence_ids, evidence_slots = self._evidence_pieces(
-            evidence_units, max(0, budget - used_slots))
+            evidence_units, max(0, budget - used))
         if pieces is not None:
             bundle = pieces if bundle is None else torch.cat([bundle, pieces])
         if bundle is not None and hasattr(bundle, 'to'):
@@ -882,29 +911,39 @@ class PredictedRuntime:
                 bundle = bundle.to(device)
         started = time.perf_counter()
         result = self.reader.answer(reader_query, bundle)
-        bundle_latent_slots = sum(self.store.entry_slots(entry) for entry in entries)
-        bundle_latent_slots += evidence_slots
+        version_slots = sum(self.store.entry_slots(entry) for entry in entries)
+        ensure_missing = sum(1 for _, group, target in groups
+                             if target is not None
+                             and not any(entry['id'] == target for entry in group))
         excluded = sum(self._excluded_historical(record.state_id, observation_cutoff,
                                                  group, group[0]['id'])
-                       for record, group in groups)
+                       for record, group, _ in groups)
+        primary_target = groups[0][2] or groups[0][1][0]['id']
+        primary_time = next((entry['time'] for entry in groups[0][1]
+                             if entry['id'] == primary_target), groups[0][1][0]['time'])
         return {'answer': result.get('answer', ''), 'no_state_match': False,
                 'state_id': groups[0][0].state_id,
                 'multi_state': True,
-                'multi_state_ids': [record.state_id for record, _ in groups],
-                'multi_state_dropped': len(records[:self.max_query_states]) - len(groups),
-                'selected_version_id': groups[0][1][0]['id'],
-                'selected_version_time': groups[0][1][0]['time'],
-                'version_role': 'current',
+                'multi_state_ids': [record.state_id for record, _, _ in groups],
+                'multi_state_dropped': len(wanted) - len(groups),
+                'multi_state_ensure_missing': ensure_missing,
+                'multi_state_version_counts': [len(group) for _, group, _ in groups],
+                'selected_version_id': primary_target,
+                'selected_version_time': primary_time,
+                'version_role': 'current' if primary_target in current_ids else 'historical',
+                'read_mode': read_mode,
                 'bundle_evidence_ids': evidence_ids,
                 'evidence_latent_slots': evidence_slots,
                 'bundle_version_ids': [entry['id'] for entry in entries],
                 'bundle_version_times': [entry['time'] for entry in entries],
                 'trajectory_length': len(entries),
                 'excluded_historical_versions': excluded,
-                'bundle_latent_slots': bundle_latent_slots,
-                'read_latent_slots': bundle_latent_slots,
+                'version_latent_slots': version_slots,
+                'bundle_latent_slots': version_slots + evidence_slots,
+                'read_latent_slots': version_slots + evidence_slots,
                 'reader_reported_latent_slots': int(result.get('read_latent_slots') or 0),
                 'timings': {'read_seconds': time.perf_counter() - started}}
+
 
     def read_state(self, state_id: str, view: Mapping[str, Any], *,
                    target_time: Optional[str] = None,
@@ -950,6 +989,11 @@ class PredictedRuntime:
         if reader_query is None:
             reader_query = self._reader_query(view)
         budget = self._read_budget(max_slots)
+        # 版本与证据共享同一个 decoder 预算：先给证据留一份（有证据时才留），
+        # 剩下的才交给 select_trajectory / pair 装版本，避免"版本轨迹吃满预算、
+        # 证据一条都进不去"（旧实现正是这样，D 组的证据层形同虚设）。
+        version_budget = budget - self._evidence_reserve(budget, evidence_units)
+        version_budget = max(version_budget, min(budget, 130))   # 至少能装一个 current
         # 给了可观察截止就绝不允许 future fallback 绕过可见性约束。
         allow_fallback = bool(self.as_of_future_fallback) and observation_cutoff is None
         base = {'state_id': state_id, 'read_mode': read_mode,
@@ -968,7 +1012,7 @@ class PredictedRuntime:
             if selected is not None and selected.get('id'):
                 ensure_ids.append(str(selected['id']))
             entries = self.store.select_trajectory(
-                state_id, observed_until=observation_cutoff, max_slots=budget,
+                state_id, observed_until=observation_cutoff, max_slots=version_budget,
                 max_versions=max_versions, ensure_ids=ensure_ids or None)
             if not entries:
                 return missing
@@ -1019,7 +1063,7 @@ class PredictedRuntime:
             history = selected if selected is not newest else (
                 visible[-2] if len(visible) > 1 else None)
             entries = [newest] + ([history] if history is not None else [])
-            entries = self._pack_entries(entries, budget)
+            entries = self._pack_entries(entries, version_budget)
             if not entries:
                 entries = [newest]
             entries = self.store.canonical_order(entries, newest['id'])
@@ -1027,7 +1071,7 @@ class PredictedRuntime:
             current_ids = {current_id}
             selected_entry = selected
         entries = self.store.assert_canonical(entries, current_id)
-        bundle = self.store.bundle(entries, self.markers, budget, current_ids=current_ids)
+        bundle = self.store.bundle(entries, self.markers, version_budget, current_ids=current_ids)
         used_slots = sum(self.store.entry_slots(entry) + 2 for entry in entries)
         pieces, evidence_ids, evidence_slots = self._evidence_pieces(
             evidence_units, max(0, budget - used_slots))
@@ -1075,6 +1119,80 @@ class PredictedRuntime:
             'version_latent_slots': bundle_latent_slots,
             'reader_reported_latent_slots': reported_slots,
             'timings': {'read_seconds': time.perf_counter() - started}}
+
+    def _encoder_token_limit(self) -> Optional[int]:
+        """reader 的单个入口 token 上限（留 8 token 余量）；不可知时返回 None。"""
+        cfg = getattr(self.reader, 'cfg', None) or {}
+        limit = cfg.get('encoder_max_tokens')
+        if not isinstance(limit, int) or limit <= 0:
+            return None
+        return max(1, limit - 8)
+
+    def _split_evidence_for_encoder(self, units: Sequence[EvidenceUnit]
+                                    ) -> List[EvidenceUnit]:
+        """按 reader 的入口上限把证据单元切成可编码的块（确定性、不丢弃）。"""
+        if not units:
+            return list(units)
+        result: List[EvidenceUnit] = []
+        for unit in units:
+            result.extend(self.evidence.replace_with_chunks(
+                unit, self._chunk_text(unit.text)))
+        return result
+
+    def _chunk_text(self, text: str) -> List[str]:
+        """把一段文本切成 reader 吃得下的块：按行贪心，单行过长再按字符硬切。"""
+        raw = str(text)
+        limit = self._encoder_token_limit()
+        tokenizer = getattr(self.reader, 'tok', None)
+
+        def token_count(value: str) -> int:
+            if limit is None or tokenizer is None:
+                return 0
+            ids = tokenizer(value, add_special_tokens=True, truncation=False)['input_ids']
+            return len(ids)
+
+        if not raw.strip():
+            return []
+        if limit is None or tokenizer is None:
+            # 不知道上限（stub reader / 无 tokenizer）：按保守字符预算切，仍不丢弃。
+            cap = 4000
+            return [raw[i:i + cap] for i in range(0, len(raw), cap)] if len(raw) > cap else [raw]
+        if token_count(raw) <= limit:
+            return [raw]
+        chunks, current = [], ''
+        for line in raw.splitlines():
+            candidate = f'{current}\n{line}' if current else line
+            if token_count(candidate) <= limit:
+                current = candidate
+                continue
+            if current:
+                chunks.append(current)
+                current = ''
+            # 单行本身超限：按字符二分到"能装下"，不丢尾巴。
+            rest = line
+            while rest:
+                if token_count(rest) <= limit:
+                    current = rest
+                    break
+                low, high = 1, len(rest)
+                while low < high:
+                    middle = (low + high) // 2
+                    if token_count(rest[:middle]) <= limit:
+                        low = middle + 1
+                    else:
+                        high = middle
+                cut = max(1, low - 1)
+                chunks.append(rest[:cut])
+                rest = rest[cut:]
+        if current:
+            chunks.append(current)
+        return chunks or [raw]
+
+    def _evidence_reserve(self, budget: int, units: Optional[Sequence[EvidenceUnit]]) -> int:
+        """给证据留出的 slot 预算：最多 1/3，且至少给版本留 130 slot（一个 current）。"""
+        if not units or budget <= 130:
+            return 0
+        return max(0, min(int(budget / 3), budget - 130))
 
     def _anchor_memory(self, state_id: Optional[str]):
         """条件化 codec 需要的 anchor：该状态 current 版本解码后的 full memory。"""

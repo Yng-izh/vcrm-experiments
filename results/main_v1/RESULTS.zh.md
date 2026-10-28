@@ -53,7 +53,7 @@ CUDA_VISIBLE_DEVICES=8 env_py310/bin/python probe/run_main_eval.py \
   --reader icae --arch-exp E3 --checkpoint runs/architecture_v6_E3_train \
   --router-mode semantic --frontend llm \
   --llm-config llm_config.json --llm-cache-root runs/main_v1/llm_cache \
-  --extract-workers 8 --tag d
+  --tag d
 ```
 
 A/B（文本组）必须显式指定真实文本 reader，否则默认 `--text-reader stub` 只产生
@@ -82,7 +82,8 @@ results/main_v1/
 ## 6. 方法与注意事项
 
 - 写入时机在每个 group 结束时批量提交；中途崩溃靠 `llm_cache`（共享，10k+ 条目）续跑，
-  重启不重复付费；抽取并发 `--extract-workers 8`。
+  重启不重复付费；抽取为主入口内的串行路径（早期 t34 用的 `--extract-workers`
+  并发开关没有并入 `probe/run_main_eval.py`，命令里写它会直接 unrecognized arguments）。
 - 结果不可跨 GPU 逐字节比较（F7：不同 GPU 上 `write_bytes` 不具可比性），
   锚定指标用 `decision_counts` / `state_count`。
 - 判分为自定义 judge，与官方 GPT-4o 数字不可直接对齐；同一 judge 下四组横向可比。
